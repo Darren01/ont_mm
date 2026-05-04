@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+
+    <!-- External ontology local copies -->
+    <uri name="http://purl.org/gc/"
+         uri="gc.owl"/>
+
+    <uri name="http://www.w3.org/ns/prov#"
+         uri="prov-o.owl"/>
+    
+    <!-- Redirect the dead BFO Google Code IRI to a local dummy empty file -->
+    <uri name="http://bfo.googlecode.com/svn/releases/2012-07-20-graz/owl-group/bfo.owl"
+         uri="file:../source/EMPTY.owl"/>
+         
+</catalog>

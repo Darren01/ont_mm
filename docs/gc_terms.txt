@@ -1,0 +1,15 @@
+http://purl.org/gc/GeometryOptimization
+http://purl.org/gc/DftFunctional
+http://purl.org/gc/BasisSet
+http://purl.org/gc/SinglePoint
+
+http://purl.org/gc/Bond
+http://purl.org/gc/Atom
+
+http://purl.org/gc/hasInputFile
+http://purl.org/gc/hasOutputFile
+http://purl.org/gc/hasInChIString
+http://purl.org/gc/hasDftFunctional
+http://purl.org/gc/hasBasisSet
+http://purl.org/gc/hasAtom
+http://purl.org/gc/hasIndex

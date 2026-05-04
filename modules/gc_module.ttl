@@ -1,0 +1,157 @@
+@prefix : <http://purl.org/gc/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://purl.org/gc/> .
+
+<http://purl.org/gc/> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/gc/binds
+:binds rdf:type owl:ObjectProperty ;
+       rdfs:domain :Bond ;
+       rdfs:range :Atom ;
+       rdfs:comment "A property that tells which atoms are bonded."@en ;
+       rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+       rdfs:label "the act of binding of atoms"@en .
+
+
+###  http://purl.org/gc/hasAtom
+:hasAtom rdf:type owl:ObjectProperty ;
+         rdfs:range :Atom ;
+         rdfs:comment "A property that describes atoms comprised by a molecule or residue"@en ;
+         rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+         rdfs:label "has atom"@en .
+
+
+###  http://purl.org/gc/hasBasisSet
+:hasBasisSet rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Atom ;
+             rdfs:range :BasisSet .
+
+
+###  http://purl.org/gc/hasDftFunctional
+:hasDftFunctional rdf:type owl:ObjectProperty ;
+                  rdfs:comment "A property that describes DFT Functionals for the given methodology."@en ;
+                  rdfs:isDefinedBy <http://chemicalsemantics.com/> .
+
+
+###  http://purl.org/gc/hasOutputFile
+:hasOutputFile rdf:type owl:ObjectProperty ;
+               rdfs:comment "A property that specifies the Output file."@en ;
+               rdfs:label "Output File"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/gc/hasBasisSet
+:hasBasisSet rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty .
+
+
+###  http://purl.org/gc/hasInChIString
+:hasInChIString rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:range xsd:string ;
+                rdfs:comment "A property that describes the InChI String - International Chemical Identifier - a textual identifier for chemical substances."@en ;
+                rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                rdfs:label "has InChI string"@en .
+
+
+###  http://purl.org/gc/hasIndex
+:hasIndex rdf:type owl:DatatypeProperty ;
+          rdfs:range xsd:nonNegativeInteger ;
+          rdfs:comment "A property that defines a sequential arrangement of material in numerical order, i.e. Frequency Peak, Orbital or a sequence number in residue."@en ;
+          rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+          rdfs:label "has index"@en .
+
+
+###  http://purl.org/gc/hasInputFile
+:hasInputFile rdf:type owl:DatatypeProperty ;
+              rdfs:range xsd:string ;
+              rdfs:comment "A property that specifies input file for calculations."@en ;
+              rdfs:label "Input File"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/gc/Atom
+:Atom rdf:type owl:Class ;
+      owl:disjointWith :Bond ;
+      rdfs:comment "A class for Atom."@en ,
+                   "A class for atoms, the basic unit of matter."@en ;
+      rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+      rdfs:label "Atom"@en ,
+                 "Atoms"@en .
+
+
+###  http://purl.org/gc/BasisSet
+:BasisSet rdf:type owl:Class ;
+          rdfs:comment "A class for the basis set. In computational chemistry basis set is a set of functions which are combined to create molecular orbitals."@en ;
+          rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+          rdfs:label "Basis Set"@en .
+
+
+###  http://purl.org/gc/Bond
+:Bond rdf:type owl:Class .
+
+
+###  http://purl.org/gc/DftFunctional
+:DftFunctional rdf:type owl:Class ;
+               rdfs:comment "A class for DFT Functional."@en ;
+               rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+               rdfs:label "DFT Functional"@en .
+
+
+###  http://purl.org/gc/GeometryOptimization
+:GeometryOptimization rdf:type owl:Class ;
+                      rdfs:comment "A class for calculations in computational chemistry that aim to find molecular geometry of lowest energy."@en ;
+                      rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                      rdfs:label "Geometry optimization"@en .
+
+
+###  http://purl.org/gc/SinglePoint
+:SinglePoint rdf:type owl:Class ;
+             rdfs:comment "A class for Single Point calculations - computation of the energy of molecular system for given geometry."@en ;
+             rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+             rdfs:label "Single Point"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://purl.org/gc/Bond
+:Bond rdf:type owl:NamedIndividual ,
+               [ rdf:type owl:Restriction ;
+                 owl:onProperty :binds ;
+                 owl:cardinality "2"^^xsd:nonNegativeInteger
+               ] .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:Bond rdfs:comment "A class for generic chemical bond."@en ;
+      rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+      rdfs:label "Bond"@en .
+
+
+:hasBasisSet rdfs:comment "A property that allows Basis Sets to be assigned to a given quantum methodology"@en ,
+                          "A property that allows to define Basis Set -  finite set of functions used to approximately express the Molecular Orbital wavefunction(s) of system, normally atom centered, consisting of AOs differing in local angular momentum for each atom."@en ;
+             rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+             rdfs:label "has basis set"@en .
+
+
+###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi

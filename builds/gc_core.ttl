@@ -1,0 +1,430 @@
+@prefix : <http://purl.org/gc/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://purl.org/gc/> .
+
+<http://purl.org/gc/> rdf:type owl:Ontology ;
+                       <http://purl.org/dc/elements/1.1/description> "A core ontology for quantum chemistry calculations combining the Green's Chemistry ontology and PROV-O provenance terms." ;
+                       <http://purl.org/dc/elements/1.1/license> <https://creativecommons.org/licenses/by/4.0/> ,
+                                                                 "https://creativecommons.org/licenses/by/4.0/" ;
+                       <http://purl.org/dc/elements/1.1/title> "GC Core Ontology" ;
+                       <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/license
+<http://purl.org/dc/elements/1.1/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty ;
+             rdfs:comment ""@en ;
+             rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+
+
+###  http://www.w3.org/ns/prov#category
+<http://www.w3.org/ns/prov#category> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#component
+<http://www.w3.org/ns/prov#component> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#constraints
+<http://www.w3.org/ns/prov#constraints> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#definition
+<http://www.w3.org/ns/prov#definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#dm
+<http://www.w3.org/ns/prov#dm> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#editorialNote
+<http://www.w3.org/ns/prov#editorialNote> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#editorsDefinition
+<http://www.w3.org/ns/prov#editorsDefinition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#inverse
+<http://www.w3.org/ns/prov#inverse> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#n
+<http://www.w3.org/ns/prov#n> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#qualifiedForm
+<http://www.w3.org/ns/prov#qualifiedForm> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#sharesDefinitionWith
+<http://www.w3.org/ns/prov#sharesDefinitionWith> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/gc/binds
+:binds rdf:type owl:ObjectProperty ;
+       rdfs:domain :Bond ;
+       rdfs:range :Atom ;
+       rdfs:comment "A property that tells which atoms are bonded."@en ;
+       rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+       rdfs:label "the act of binding of atoms"@en .
+
+
+###  http://purl.org/gc/hasAtom
+:hasAtom rdf:type owl:ObjectProperty ;
+         rdfs:range :Atom ;
+         rdfs:comment "A property that describes atoms comprised by a molecule or residue"@en ;
+         rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+         rdfs:label "has atom"@en .
+
+
+###  http://purl.org/gc/hasBasisSet
+:hasBasisSet rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Atom ;
+             rdfs:range :BasisSet .
+
+
+###  http://purl.org/gc/hasDftFunctional
+:hasDftFunctional rdf:type owl:ObjectProperty ;
+                  rdfs:comment "A property that describes DFT Functionals for the given methodology."@en ;
+                  rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                  rdfs:label "has DFT functional"@en .
+
+
+###  http://purl.org/gc/hasOutputFile
+:hasOutputFile rdf:type owl:ObjectProperty ;
+               rdfs:comment "A property that specifies the Output file."@en ;
+               rdfs:label "Output File"@en .
+
+
+###  http://www.w3.org/ns/prov#activity
+<http://www.w3.org/ns/prov#activity> rdf:type owl:ObjectProperty ;
+                                     rdfs:domain <http://www.w3.org/ns/prov#ActivityInfluence> ;
+                                     rdfs:range <http://www.w3.org/ns/prov#Activity> ;
+                                     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+                                     rdfs:label "activity" ;
+                                     <http://www.w3.org/ns/prov#category> "qualified" ;
+                                     <http://www.w3.org/ns/prov#editorialNote> "This property behaves in spirit like rdf:object; it references the object of a prov:wasInfluencedBy triple."@en ;
+                                     <http://www.w3.org/ns/prov#editorsDefinition> "The prov:activity property references an prov:Activity which influenced a resource. This property applies to an prov:ActivityInfluence, which is given by a subproperty of prov:qualifiedInfluence from the influenced prov:Entity, prov:Activity or prov:Agent." ;
+                                     <http://www.w3.org/ns/prov#inverse> "activityOfInfluence" .
+
+
+###  http://www.w3.org/ns/prov#alternateOf
+<http://www.w3.org/ns/prov#alternateOf> rdf:type owl:ObjectProperty ;
+                                        rdfs:domain <http://www.w3.org/ns/prov#Entity> ;
+                                        rdfs:range <http://www.w3.org/ns/prov#Entity> ;
+                                        rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+                                        rdfs:label "alternateOf" ;
+                                        rdfs:seeAlso <http://www.w3.org/ns/prov#specializationOf> ;
+                                        <http://www.w3.org/ns/prov#category> "expanded" ;
+                                        <http://www.w3.org/ns/prov#component> "alternate" ;
+                                        <http://www.w3.org/ns/prov#constraints> "http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig"^^xsd:anyURI ;
+                                        <http://www.w3.org/ns/prov#definition> "Two alternate entities present aspects of the same thing. These aspects may be the same or different, and the alternate entities may or may not overlap in time."@en ;
+                                        <http://www.w3.org/ns/prov#dm> "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-alternate"^^xsd:anyURI ;
+                                        <http://www.w3.org/ns/prov#inverse> "alternateOf" ;
+                                        <http://www.w3.org/ns/prov#n> "http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-alternate"^^xsd:anyURI .
+
+
+###  http://www.w3.org/ns/prov#entity
+<http://www.w3.org/ns/prov#entity> rdf:type owl:ObjectProperty ;
+                                   rdfs:domain <http://www.w3.org/ns/prov#EntityInfluence> ;
+                                   rdfs:range <http://www.w3.org/ns/prov#Entity> ;
+                                   rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+                                   rdfs:label "entity" ;
+                                   <http://www.w3.org/ns/prov#category> "qualified" ;
+                                   <http://www.w3.org/ns/prov#editorialNote> "This property behaves in spirit like rdf:object; it references the object of a prov:wasInfluencedBy triple."@en ;
+                                   <http://www.w3.org/ns/prov#editorsDefinition> "The prov:entity property references an prov:Entity which influenced a resource. This property applies to an prov:EntityInfluence, which is given by a subproperty of prov:qualifiedInfluence from the influenced prov:Entity, prov:Activity or prov:Agent." ;
+                                   <http://www.w3.org/ns/prov#inverse> "entityOfInfluence" .
+
+
+###  http://www.w3.org/ns/prov#generated
+<http://www.w3.org/ns/prov#generated> rdf:type owl:ObjectProperty ;
+                                      owl:inverseOf <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                                      rdfs:domain <http://www.w3.org/ns/prov#Activity> ;
+                                      rdfs:range <http://www.w3.org/ns/prov#Entity> ;
+                                      rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+                                      rdfs:label "generated" ;
+                                      <http://www.w3.org/ns/prov#category> "expanded" ;
+                                      <http://www.w3.org/ns/prov#component> "entities-activities" ;
+                                      <http://www.w3.org/ns/prov#editorialNote> "prov:generated is one of few inverse property defined, to allow Activity-oriented assertions in addition to Entity-oriented assertions."@en ;
+                                      <http://www.w3.org/ns/prov#inverse> "wasGeneratedBy" ;
+                                      <http://www.w3.org/ns/prov#sharesDefinitionWith> <http://www.w3.org/ns/prov#Generation> .
+
+
+###  http://www.w3.org/ns/prov#specializationOf
+<http://www.w3.org/ns/prov#specializationOf> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf <http://www.w3.org/ns/prov#alternateOf> ;
+                                             rdfs:domain <http://www.w3.org/ns/prov#Entity> ;
+                                             rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+                                             rdfs:label "specializationOf" ;
+                                             rdfs:seeAlso <http://www.w3.org/ns/prov#alternateOf> ;
+                                             <http://www.w3.org/ns/prov#category> "expanded" ;
+                                             <http://www.w3.org/ns/prov#component> "alternate" ;
+                                             <http://www.w3.org/ns/prov#constraints> "http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig"^^xsd:anyURI ;
+                                             <http://www.w3.org/ns/prov#definition> "An entity that is a specialization of another shares all aspects of the latter, and additionally presents more specific aspects of the same thing as the latter. In particular, the lifetime of the entity being specialized contains that of any specialization. Examples of aspects include a time period, an abstraction, and a context associated with the entity."@en ;
+                                             <http://www.w3.org/ns/prov#dm> "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-specialization"^^xsd:anyURI ;
+                                             <http://www.w3.org/ns/prov#inverse> "generalizationOf" ;
+                                             <http://www.w3.org/ns/prov#n> "http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-specialization"^^xsd:anyURI .
+
+
+###  http://www.w3.org/ns/prov#used
+<http://www.w3.org/ns/prov#used> rdf:type owl:ObjectProperty ;
+                                 rdfs:domain <http://www.w3.org/ns/prov#Activity> ;
+                                 rdfs:range <http://www.w3.org/ns/prov#Entity> ;
+                                 rdfs:comment "A prov:Entity that was used by this prov:Activity. For example, :baking prov:used :spoon, :egg, :oven ."@en ;
+                                 rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+                                 rdfs:label "used" ;
+                                 <http://www.w3.org/ns/prov#category> "starting-point" ;
+                                 <http://www.w3.org/ns/prov#component> "entities-activities" ;
+                                 <http://www.w3.org/ns/prov#inverse> "wasUsedBy" ;
+                                 <http://www.w3.org/ns/prov#qualifiedForm> <http://www.w3.org/ns/prov#Usage> ,
+                                                                           <http://www.w3.org/ns/prov#qualifiedUsage> .
+
+
+###  http://www.w3.org/ns/prov#wasDerivedFrom
+<http://www.w3.org/ns/prov#wasDerivedFrom> rdf:type owl:ObjectProperty ;
+                                           rdfs:domain <http://www.w3.org/ns/prov#Entity> ;
+                                           rdfs:range <http://www.w3.org/ns/prov#Entity> ;
+                                           rdfs:comment "The more specific subproperties of prov:wasDerivedFrom (i.e., prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource) should be used when applicable."@en ;
+                                           rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+                                           rdfs:label "wasDerivedFrom" ;
+                                           <http://www.w3.org/ns/prov#category> "starting-point" ;
+                                           <http://www.w3.org/ns/prov#component> "derivations" ;
+                                           <http://www.w3.org/ns/prov#definition> "A derivation is a transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a pre-existing entity."@en ;
+                                           <http://www.w3.org/ns/prov#inverse> "hadDerivation" ;
+                                           <http://www.w3.org/ns/prov#qualifiedForm> <http://www.w3.org/ns/prov#Derivation> ,
+                                                                                     <http://www.w3.org/ns/prov#qualifiedDerivation> .
+
+
+###  http://www.w3.org/ns/prov#wasGeneratedBy
+<http://www.w3.org/ns/prov#wasGeneratedBy> rdf:type owl:ObjectProperty ;
+                                           rdfs:domain <http://www.w3.org/ns/prov#Entity> ;
+                                           rdfs:range <http://www.w3.org/ns/prov#Activity> ;
+                                           rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+                                           rdfs:label "wasGeneratedBy" ;
+                                           <http://www.w3.org/ns/prov#category> "starting-point" ;
+                                           <http://www.w3.org/ns/prov#component> "entities-activities" ;
+                                           <http://www.w3.org/ns/prov#inverse> "generated" ;
+                                           <http://www.w3.org/ns/prov#qualifiedForm> <http://www.w3.org/ns/prov#Generation> ,
+                                                                                     <http://www.w3.org/ns/prov#qualifiedGeneration> .
+
+
+###  http://www.w3.org/ns/prov#wasRevisionOf
+<http://www.w3.org/ns/prov#wasRevisionOf> rdf:type owl:ObjectProperty ;
+                                          rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasDerivedFrom> ;
+                                          rdfs:domain <http://www.w3.org/ns/prov#Entity> ;
+                                          rdfs:comment "A revision is a derivation that revises an entity into a revised version."@en ;
+                                          rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+                                          rdfs:label "wasRevisionOf" ;
+                                          <http://www.w3.org/ns/prov#category> "expanded" ;
+                                          <http://www.w3.org/ns/prov#component> "derivations" ;
+                                          <http://www.w3.org/ns/prov#inverse> "hadRevision" ;
+                                          <http://www.w3.org/ns/prov#qualifiedForm> <http://www.w3.org/ns/prov#Revision> ,
+                                                                                    <http://www.w3.org/ns/prov#qualifiedRevision> .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://www.w3.org/ns/prov#wasRevisionOf> ;
+   owl:annotatedProperty rdfs:subPropertyOf ;
+   owl:annotatedTarget <http://www.w3.org/ns/prov#wasDerivedFrom> ;
+   rdfs:comment """Revision is a derivation (see http://www.w3.org/TR/prov-dm/#term-Revision). Moreover, according to 
+http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 2012 'wasRevisionOf is a strict sub-relation of wasDerivedFrom since two entities e2 and e1 may satisfy wasDerivedFrom(e2,e1) without being a variant of each other.'"""
+ ] .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/gc/hasBasisSet
+:hasBasisSet rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty .
+
+
+###  http://purl.org/gc/hasInChIString
+:hasInChIString rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:range xsd:string ;
+                rdfs:comment "A property that describes the InChI String - International Chemical Identifier - a textual identifier for chemical substances."@en ;
+                rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                rdfs:label "has InChI string"@en .
+
+
+###  http://purl.org/gc/hasIndex
+:hasIndex rdf:type owl:DatatypeProperty ;
+          rdfs:range xsd:nonNegativeInteger ;
+          rdfs:comment "A property that defines a sequential arrangement of material in numerical order, i.e. Frequency Peak, Orbital or a sequence number in residue."@en ;
+          rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+          rdfs:label "has index"@en .
+
+
+###  http://purl.org/gc/hasInputFile
+:hasInputFile rdf:type owl:DatatypeProperty ;
+              rdfs:range xsd:string ;
+              rdfs:comment "A property that specifies input file for calculations."@en ;
+              rdfs:label "Input File"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/gc/Atom
+:Atom rdf:type owl:Class ;
+      owl:disjointWith :Bond ;
+      rdfs:comment "A class for Atom."@en ,
+                   "A class for atoms, the basic unit of matter."@en ;
+      rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+      rdfs:label "Atom"@en ,
+                 "Atoms"@en .
+
+
+###  http://purl.org/gc/BasisSet
+:BasisSet rdf:type owl:Class ;
+          rdfs:comment "A class for the basis set. In computational chemistry basis set is a set of functions which are combined to create molecular orbitals."@en ;
+          rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+          rdfs:label "Basis Set"@en .
+
+
+###  http://purl.org/gc/Bond
+:Bond rdf:type owl:Class .
+
+
+###  http://purl.org/gc/DftFunctional
+:DftFunctional rdf:type owl:Class ;
+               rdfs:comment "A class for DFT Functional."@en ;
+               rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+               rdfs:label "DFT Functional"@en .
+
+
+###  http://purl.org/gc/GeometryOptimization
+:GeometryOptimization rdf:type owl:Class ;
+                      rdfs:comment "A class for calculations in computational chemistry that aim to find molecular geometry of lowest energy."@en ;
+                      rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                      rdfs:label "Geometry optimization"@en .
+
+
+###  http://purl.org/gc/SinglePoint
+:SinglePoint rdf:type owl:Class ;
+             rdfs:comment "A class for Single Point calculations - computation of the energy of molecular system for given geometry."@en ;
+             rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+             rdfs:label "Single Point"@en .
+
+
+###  http://www.w3.org/ns/prov#Activity
+<http://www.w3.org/ns/prov#Activity> rdf:type owl:Class ;
+                                     owl:disjointWith <http://www.w3.org/ns/prov#Entity> ;
+                                     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+                                     rdfs:label "Activity" ;
+                                     <http://www.w3.org/ns/prov#category> "starting-point" ;
+                                     <http://www.w3.org/ns/prov#component> "entities-activities" ;
+                                     <http://www.w3.org/ns/prov#constraints> "http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig"^^xsd:anyURI ;
+                                     <http://www.w3.org/ns/prov#definition> "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities." ;
+                                     <http://www.w3.org/ns/prov#dm> "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-Activity"^^xsd:anyURI ;
+                                     <http://www.w3.org/ns/prov#n> "http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-Activity"^^xsd:anyURI .
+
+
+###  http://www.w3.org/ns/prov#ActivityInfluence
+<http://www.w3.org/ns/prov#ActivityInfluence> rdf:type owl:Class ;
+                                              owl:disjointWith <http://www.w3.org/ns/prov#EntityInfluence> ;
+                                              rdfs:comment "ActivityInfluence provides additional descriptions of an Activity's binary influence upon any other kind of resource. Instances of ActivityInfluence use the prov:activity property to cite the influencing Activity."@en ,
+                                                           "It is not recommended that the type ActivityInfluence be asserted without also asserting one of its more specific subclasses."@en ;
+                                              rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+                                              rdfs:label "ActivityInfluence" ;
+                                              rdfs:seeAlso <http://www.w3.org/ns/prov#activity> ;
+                                              <http://www.w3.org/ns/prov#category> "qualified" ;
+                                              <http://www.w3.org/ns/prov#editorsDefinition> "ActivitiyInfluence is the capacity of an activity to have an effect on the character, development, or behavior of another by means of generation, invalidation, communication, or other."@en .
+
+
+###  http://www.w3.org/ns/prov#Entity
+<http://www.w3.org/ns/prov#Entity> rdf:type owl:Class ;
+                                   rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+                                   rdfs:label "Entity" ;
+                                   <http://www.w3.org/ns/prov#category> "starting-point" ;
+                                   <http://www.w3.org/ns/prov#component> "entities-activities" ;
+                                   <http://www.w3.org/ns/prov#constraints> "http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig"^^xsd:anyURI ;
+                                   <http://www.w3.org/ns/prov#definition> "An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary. "@en ;
+                                   <http://www.w3.org/ns/prov#dm> "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-entity"^^xsd:anyURI ;
+                                   <http://www.w3.org/ns/prov#n> "http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-Entity"^^xsd:anyURI .
+
+
+###  http://www.w3.org/ns/prov#EntityInfluence
+<http://www.w3.org/ns/prov#EntityInfluence> rdf:type owl:Class ;
+                                            rdfs:comment "EntityInfluence provides additional descriptions of an Entity's binary influence upon any other kind of resource. Instances of EntityInfluence use the prov:entity property to cite the influencing Entity."@en ,
+                                                         "It is not recommended that the type EntityInfluence be asserted without also asserting one of its more specific subclasses."@en ;
+                                            rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+                                            rdfs:label "EntityInfluence" ;
+                                            rdfs:seeAlso <http://www.w3.org/ns/prov#entity> ;
+                                            <http://www.w3.org/ns/prov#category> "qualified" ;
+                                            <http://www.w3.org/ns/prov#editorsDefinition> "EntityInfluence is the capacity of an entity to have an effect on the character, development, or behavior of another by means of usage, start, end, derivation, or other. "@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://purl.org/gc/Bond
+:Bond rdf:type owl:NamedIndividual ,
+               [ rdf:type owl:Restriction ;
+                 owl:onProperty :binds ;
+                 owl:cardinality "2"^^xsd:nonNegativeInteger
+               ] .
+
+
+###  http://www.w3.org/ns/prov-o
+<http://www.w3.org/ns/prov-o> rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/ns/prov-o-20130312
+<http://www.w3.org/ns/prov-o-20130312> rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/ns/prov-o#
+<http://www.w3.org/ns/prov-o#> rdf:type owl:NamedIndividual ;
+                               <http://www.w3.org/ns/prov#specializationOf> <http://www.w3.org/ns/prov-o> ;
+                               <http://www.w3.org/ns/prov#wasRevisionOf> <http://www.w3.org/ns/prov-o-20130312> ;
+                               rdfs:label "PROV-O: The PROV Ontology"@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:Bond rdfs:comment "A class for generic chemical bond."@en ;
+      rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+      rdfs:label "Bond"@en .
+
+
+:hasBasisSet rdfs:comment "A property that allows Basis Sets to be assigned to a given quantum methodology"@en ,
+                          "A property that allows to define Basis Set -  finite set of functions used to approximately express the Molecular Orbital wavefunction(s) of system, normally atom centered, consisting of AOs differing in local angular momentum for each atom."@en ;
+             rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+             rdfs:label "has basis set"@en .
+
+
+###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi

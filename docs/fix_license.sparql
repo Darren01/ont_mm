@@ -1,0 +1,5 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+INSERT DATA {
+  <http://purl.org/gc/> dcterms:license <https://creativecommons.org/licenses/by/4.0/> .
+}

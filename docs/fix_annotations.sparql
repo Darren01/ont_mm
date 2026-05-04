@@ -1,0 +1,8 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+
+INSERT {
+  <http://purl.org/gc/> dc:license <https://creativecommons.org/licenses/by/4.0/> .
+  <http://www.w3.org/ns/prov-o#> rdfs:label "PROV-O: The PROV Ontology"@en .
+}
+WHERE {}
