@@ -86,7 +86,7 @@ Relevant terms are extracted, modularised, and combined into a coherent domain o
 ont_mm
 |--builds				# Combined ontology outputs
 |  |--gc_core.ttl
-|  |--ReadMe.md
+|  |--README.md
 |--docs					# Supporting queries and term lists
 |  |--fix_annotations.sparql
 |  |--fix_license.sparql
@@ -121,7 +121,7 @@ ont_mm
 |--modules				# Extracted ontology modules
 |  |--gc_module.ttl
 |  |--prov_module.ttl
-|  |--ReadMe.md
+|  |--README.md
 |--ReadMe.md
 |--scripts				# Processing and build scripts
 |--source				# Source ontologies
@@ -162,11 +162,16 @@ To provide a reusable, extensible framework for structuring computational chemis
 
 (To be defined — e.g. MIT recommended)
 
-## colophon
+## TOOLS
 
 [robot](https://robot.obolibrary.org/)
 [RStudio](https://posit.co/download/rstudio-desktop)
 [Gamess (US)](https://www.msg.chem.iastate.edu/gamess/)
+
+
+
+
+
 
 
 

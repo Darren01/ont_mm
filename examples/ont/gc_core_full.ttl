@@ -76,6 +76,10 @@
 <http://purl.org/gc/involvesAtom4> rdf:type owl:ObjectProperty .
 
 
+###  http://www.w3.org/ns/prov#wasGeneratedBy
+<http://www.w3.org/ns/prov#wasGeneratedBy> rdf:type owl:ObjectProperty .
+
+
 #################################################################
 #    Classes
 #################################################################
@@ -116,6 +120,10 @@
 <http://example.org/LogFile> rdf:type owl:Class .
 
 
+###  http://www.w3.org/ns/prov#Activity
+<http://www.w3.org/ns/prov#Activity> rdf:type owl:Class .
+
+
 #################################################################
 #    Individuals
 #################################################################
@@ -146,6 +154,12 @@
 
 ###  http://example.org/atom_9
 <http://example.org/atom_9> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/avogadro_build
+<http://example.org/avogadro_build> rdf:type owl:NamedIndividual ,
+                                             <http://www.w3.org/ns/prov#Activity> ;
+                                    rdfs:label "Structure built in Avogadro" .
 
 
 ###  http://example.org/bondFeature_C1_O1
@@ -273,6 +287,7 @@
 ###  http://example.org/file_rem01_dat
 <http://example.org/file_rem01_dat> rdf:type owl:NamedIndividual ,
                                              <http://example.org/DataFile> ;
+                                    <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_rem01> ;
                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem01.dat" ;
                                     rdfs:label "Output data rem01" .
 
@@ -280,6 +295,7 @@
 ###  http://example.org/file_rem01_inp
 <http://example.org/file_rem01_inp> rdf:type owl:NamedIndividual ,
                                              <http://example.org/InputFile> ;
+                                    <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem01.inp" ;
                                     rdfs:label "Input file rem01" .
 
@@ -287,6 +303,7 @@
 ###  http://example.org/file_rem01_log
 <http://example.org/file_rem01_log> rdf:type owl:NamedIndividual ,
                                              <http://example.org/LogFile> ;
+                                    <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_rem01> ;
                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem01.log" ;
                                     rdfs:label "Output log rem01" .
 
@@ -294,6 +311,7 @@
 ###  http://example.org/file_rem01a_dat
 <http://example.org/file_rem01a_dat> rdf:type owl:NamedIndividual ,
                                               <http://example.org/DataFile> ;
+                                     <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_rem01a> ;
                                      <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem01a.dat" ;
                                      rdfs:label "Output data rem01a" .
 
@@ -301,6 +319,7 @@
 ###  http://example.org/file_rem01a_inp
 <http://example.org/file_rem01a_inp> rdf:type owl:NamedIndividual ,
                                               <http://example.org/InputFile> ;
+                                     <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_rem01> ;
                                      <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem01a.inp" ;
                                      rdfs:label "Input file rem01a" .
 
@@ -308,6 +327,7 @@
 ###  http://example.org/file_rem01a_log
 <http://example.org/file_rem01a_log> rdf:type owl:NamedIndividual ,
                                               <http://example.org/LogFile> ;
+                                     <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_rem01a> ;
                                      <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem01a.log" ;
                                      rdfs:label "Output log rem01a" .
 
@@ -315,6 +335,7 @@
 ###  http://example.org/file_rem01b_dat
 <http://example.org/file_rem01b_dat> rdf:type owl:NamedIndividual ,
                                               <http://example.org/DataFile> ;
+                                     <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_rem01b> ;
                                      <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem01b.dat" ;
                                      rdfs:label "Output data rem01b" .
 
@@ -322,6 +343,7 @@
 ###  http://example.org/file_rem01b_inp
 <http://example.org/file_rem01b_inp> rdf:type owl:NamedIndividual ,
                                               <http://example.org/InputFile> ;
+                                     <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_rem01a> ;
                                      <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem01b.inp" ;
                                      rdfs:label "Input file rem01b" .
 
@@ -329,6 +351,7 @@
 ###  http://example.org/file_rem01b_log
 <http://example.org/file_rem01b_log> rdf:type owl:NamedIndividual ,
                                               <http://example.org/LogFile> ;
+                                     <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_rem01b> ;
                                      <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem01b.log" ;
                                      rdfs:label "Output log rem01b" .
 
