@@ -7,30 +7,24 @@
 @base <http://purl.org/gc/> .
 
 <http://purl.org/gc/> rdf:type owl:Ontology ;
-                       <http://purl.org/dc/elements/1.1/description> "A core ontology for quantum chemistry calculations combining the Green's Chemistry ontology and PROV-O provenance terms." ;
-                       <http://purl.org/dc/elements/1.1/license> <https://creativecommons.org/licenses/by/4.0/> ,
-                                                                 "https://creativecommons.org/licenses/by/4.0/" ;
-                       <http://purl.org/dc/elements/1.1/title> "GC Core Ontology" ;
-                       <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+                       <http://purl.org/dc/terms/description> "A core ontology for quantum chemistry calculations combining the Gainesville Core Ontology and PROV-O provenance terms." ;
+                       <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
+                       <http://purl.org/dc/terms/title> "GC Core Ontology" .
 
 #################################################################
 #    Annotation properties
 #################################################################
 
-###  http://purl.org/dc/elements/1.1/description
-<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/elements/1.1/license
-<http://purl.org/dc/elements/1.1/license> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/elements/1.1/title
-<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/license
 <http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2000/01/rdf-schema#comment

@@ -1,0 +1,1975 @@
+@prefix : <file:///home/darren/Projects/active/ont_mm/builds/gc_core.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <file:///home/darren/Projects/active/ont_mm/builds/gc_core.ttl> .
+
+<file:///home/darren/Projects/active/ont_mm/builds/gc_core.ttl> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://example.org/fileURL
+<http://example.org/fileURL> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/hasInputFile
+<http://example.org/hasInputFile> rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/hasOutputFile
+<http://example.org/hasOutputFile> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/DataFile
+<http://example.org/DataFile> rdf:type owl:Class .
+
+
+###  http://example.org/GeometryOptimization
+<http://example.org/GeometryOptimization> rdf:type owl:Class .
+
+
+###  http://example.org/InputFile
+<http://example.org/InputFile> rdf:type owl:Class .
+
+
+###  http://example.org/LogFile
+<http://example.org/LogFile> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/exp_rem01
+<http://example.org/exp_rem01> rdf:type owl:NamedIndividual ,
+                                        <http://example.org/GeometryOptimization> ;
+                               <http://example.org/hasInputFile> <http://example.org/file_rem01_inp> ;
+                               <http://example.org/hasOutputFile> <http://example.org/file_rem01_dat> ,
+                                                                  <http://example.org/file_rem01_log> ;
+                               rdfs:label "Geometry optimisation rem01" .
+
+
+###  http://example.org/exp_rem01a
+<http://example.org/exp_rem01a> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem01a_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem01a_dat> ,
+                                                                   <http://example.org/file_rem01a_log> ;
+                                rdfs:label "Geometry optimisation rem01a" .
+
+
+###  http://example.org/exp_rem01b
+<http://example.org/exp_rem01b> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem01b_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem01b_dat> ,
+                                                                   <http://example.org/file_rem01b_log> ;
+                                rdfs:label "Geometry optimisation rem01b" .
+
+
+###  http://example.org/exp_rem01c
+<http://example.org/exp_rem01c> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem01c_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem01c_dat> ,
+                                                                   <http://example.org/file_rem01c_log> ;
+                                rdfs:label "Geometry optimisation rem01c" .
+
+
+###  http://example.org/exp_rem01d
+<http://example.org/exp_rem01d> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem01d_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem01d_dat> ,
+                                                                   <http://example.org/file_rem01d_log> ;
+                                rdfs:label "Geometry optimisation rem01d" .
+
+
+###  http://example.org/exp_rem01dTSa
+<http://example.org/exp_rem01dTSa> rdf:type owl:NamedIndividual ,
+                                            <http://example.org/GeometryOptimization> ;
+                                   <http://example.org/hasInputFile> <http://example.org/file_rem01dTSa_inp> ;
+                                   <http://example.org/hasOutputFile> <http://example.org/file_rem01dTSa_dat> ,
+                                                                      <http://example.org/file_rem01dTSa_log> ;
+                                   rdfs:label "Geometry optimisation rem01dTSa" .
+
+
+###  http://example.org/exp_rem01dTSb
+<http://example.org/exp_rem01dTSb> rdf:type owl:NamedIndividual ,
+                                            <http://example.org/GeometryOptimization> ;
+                                   <http://example.org/hasInputFile> <http://example.org/file_rem01dTSb_inp> ;
+                                   <http://example.org/hasOutputFile> <http://example.org/file_rem01dTSb_dat> ,
+                                                                      <http://example.org/file_rem01dTSb_log> ;
+                                   rdfs:label "Geometry optimisation rem01dTSb" .
+
+
+###  http://example.org/exp_rem02
+<http://example.org/exp_rem02> rdf:type owl:NamedIndividual ,
+                                        <http://example.org/GeometryOptimization> ;
+                               <http://example.org/hasInputFile> <http://example.org/file_rem02_inp> ;
+                               <http://example.org/hasOutputFile> <http://example.org/file_rem02_dat> ,
+                                                                  <http://example.org/file_rem02_log> ;
+                               rdfs:label "Geometry optimisation rem02" .
+
+
+###  http://example.org/exp_rem02a
+<http://example.org/exp_rem02a> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem02a_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem02a_dat> ,
+                                                                   <http://example.org/file_rem02a_log> ;
+                                rdfs:label "Geometry optimisation rem02a" .
+
+
+###  http://example.org/exp_rem02b
+<http://example.org/exp_rem02b> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem02b_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem02b_dat> ,
+                                                                   <http://example.org/file_rem02b_log> ;
+                                rdfs:label "Geometry optimisation rem02b" .
+
+
+###  http://example.org/exp_rem02c
+<http://example.org/exp_rem02c> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem02c_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem02c_dat> ,
+                                                                   <http://example.org/file_rem02c_log> ;
+                                rdfs:label "Geometry optimisation rem02c" .
+
+
+###  http://example.org/exp_rem02d
+<http://example.org/exp_rem02d> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem02d_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem02d_dat> ,
+                                                                   <http://example.org/file_rem02d_log> ;
+                                rdfs:label "Geometry optimisation rem02d" .
+
+
+###  http://example.org/exp_rem02e
+<http://example.org/exp_rem02e> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem02e_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem02e_dat> ,
+                                                                   <http://example.org/file_rem02e_log> ;
+                                rdfs:label "Geometry optimisation rem02e" .
+
+
+###  http://example.org/exp_rem02f
+<http://example.org/exp_rem02f> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem02f_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem02f_dat> ,
+                                                                   <http://example.org/file_rem02f_log> ;
+                                rdfs:label "Geometry optimisation rem02f" .
+
+
+###  http://example.org/exp_rem02g
+<http://example.org/exp_rem02g> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem02g_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem02g_dat> ,
+                                                                   <http://example.org/file_rem02g_log> ;
+                                rdfs:label "Geometry optimisation rem02g" .
+
+
+###  http://example.org/exp_rem02h
+<http://example.org/exp_rem02h> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem02h_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem02h_dat> ,
+                                                                   <http://example.org/file_rem02h_log> ;
+                                rdfs:label "Geometry optimisation rem02h" .
+
+
+###  http://example.org/exp_rem02hTSa
+<http://example.org/exp_rem02hTSa> rdf:type owl:NamedIndividual ,
+                                            <http://example.org/GeometryOptimization> ;
+                                   <http://example.org/hasInputFile> <http://example.org/file_rem02hTSa_inp> ;
+                                   <http://example.org/hasOutputFile> <http://example.org/file_rem02hTSa_dat> ,
+                                                                      <http://example.org/file_rem02hTSa_log> ;
+                                   rdfs:label "Geometry optimisation rem02hTSa" .
+
+
+###  http://example.org/exp_rem03
+<http://example.org/exp_rem03> rdf:type owl:NamedIndividual ,
+                                        <http://example.org/GeometryOptimization> ;
+                               <http://example.org/hasInputFile> <http://example.org/file_rem03_inp> ;
+                               <http://example.org/hasOutputFile> <http://example.org/file_rem03_dat> ,
+                                                                  <http://example.org/file_rem03_log> ;
+                               rdfs:label "Geometry optimisation rem03" .
+
+
+###  http://example.org/exp_rem03a
+<http://example.org/exp_rem03a> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem03a_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem03a_dat> ,
+                                                                   <http://example.org/file_rem03a_log> ;
+                                rdfs:label "Geometry optimisation rem03a" .
+
+
+###  http://example.org/exp_rem03b
+<http://example.org/exp_rem03b> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem03b_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem03b_dat> ,
+                                                                   <http://example.org/file_rem03b_log> ;
+                                rdfs:label "Geometry optimisation rem03b" .
+
+
+###  http://example.org/exp_rem03c
+<http://example.org/exp_rem03c> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem03c_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem03c_dat> ,
+                                                                   <http://example.org/file_rem03c_log> ;
+                                rdfs:label "Geometry optimisation rem03c" .
+
+
+###  http://example.org/exp_rem03d
+<http://example.org/exp_rem03d> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem03d_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem03d_dat> ,
+                                                                   <http://example.org/file_rem03d_log> ;
+                                rdfs:label "Geometry optimisation rem03d" .
+
+
+###  http://example.org/exp_rem03e
+<http://example.org/exp_rem03e> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem03e_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem03e_dat> ,
+                                                                   <http://example.org/file_rem03e_log> ;
+                                rdfs:label "Geometry optimisation rem03e" .
+
+
+###  http://example.org/exp_rem03f
+<http://example.org/exp_rem03f> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem03f_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem03f_dat> ,
+                                                                   <http://example.org/file_rem03f_log> ;
+                                rdfs:label "Geometry optimisation rem03f" .
+
+
+###  http://example.org/exp_rem03g
+<http://example.org/exp_rem03g> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem03g_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem03g_dat> ,
+                                                                   <http://example.org/file_rem03g_log> ;
+                                rdfs:label "Geometry optimisation rem03g" .
+
+
+###  http://example.org/exp_rem03h
+<http://example.org/exp_rem03h> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem03h_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem03h_dat> ,
+                                                                   <http://example.org/file_rem03h_log> ;
+                                rdfs:label "Geometry optimisation rem03h" .
+
+
+###  http://example.org/exp_rem03i
+<http://example.org/exp_rem03i> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem03i_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem03i_dat> ,
+                                                                   <http://example.org/file_rem03i_log> ;
+                                rdfs:label "Geometry optimisation rem03i" .
+
+
+###  http://example.org/exp_rem04a
+<http://example.org/exp_rem04a> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem04a_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem04a_dat> ,
+                                                                   <http://example.org/file_rem04a_log> ;
+                                rdfs:label "Geometry optimisation rem04a" .
+
+
+###  http://example.org/exp_rem04b
+<http://example.org/exp_rem04b> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem04b_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem04b_dat> ,
+                                                                   <http://example.org/file_rem04b_log> ;
+                                rdfs:label "Geometry optimisation rem04b" .
+
+
+###  http://example.org/exp_rem04c
+<http://example.org/exp_rem04c> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem04c_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem04c_dat> ,
+                                                                   <http://example.org/file_rem04c_log> ;
+                                rdfs:label "Geometry optimisation rem04c" .
+
+
+###  http://example.org/exp_rem04d
+<http://example.org/exp_rem04d> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem04d_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem04d_dat> ,
+                                                                   <http://example.org/file_rem04d_log> ;
+                                rdfs:label "Geometry optimisation rem04d" .
+
+
+###  http://example.org/exp_rem04e
+<http://example.org/exp_rem04e> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem04e_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem04e_dat> ,
+                                                                   <http://example.org/file_rem04e_log> ;
+                                rdfs:label "Geometry optimisation rem04e" .
+
+
+###  http://example.org/exp_rem04f
+<http://example.org/exp_rem04f> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem04f_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem04f_dat> ,
+                                                                   <http://example.org/file_rem04f_log> ;
+                                rdfs:label "Geometry optimisation rem04f" .
+
+
+###  http://example.org/exp_rem04fTSa
+<http://example.org/exp_rem04fTSa> rdf:type owl:NamedIndividual ,
+                                            <http://example.org/GeometryOptimization> ;
+                                   <http://example.org/hasInputFile> <http://example.org/file_rem04fTSa_inp> ;
+                                   <http://example.org/hasOutputFile> <http://example.org/file_rem04fTSa_dat> ,
+                                                                      <http://example.org/file_rem04fTSa_log> ;
+                                   rdfs:label "Geometry optimisation rem04fTSa" .
+
+
+###  http://example.org/exp_rem04fTSb
+<http://example.org/exp_rem04fTSb> rdf:type owl:NamedIndividual ,
+                                            <http://example.org/GeometryOptimization> ;
+                                   <http://example.org/hasInputFile> <http://example.org/file_rem04fTSb_inp> ;
+                                   <http://example.org/hasOutputFile> <http://example.org/file_rem04fTSb_dat> ,
+                                                                      <http://example.org/file_rem04fTSb_log> ;
+                                   rdfs:label "Geometry optimisation rem04fTSb" .
+
+
+###  http://example.org/exp_rem04fTSc
+<http://example.org/exp_rem04fTSc> rdf:type owl:NamedIndividual ,
+                                            <http://example.org/GeometryOptimization> ;
+                                   <http://example.org/hasInputFile> <http://example.org/file_rem04fTSc_inp> ;
+                                   <http://example.org/hasOutputFile> <http://example.org/file_rem04fTSc_dat> ,
+                                                                      <http://example.org/file_rem04fTSc_log> ;
+                                   rdfs:label "Geometry optimisation rem04fTSc" .
+
+
+###  http://example.org/exp_rem04fTSd
+<http://example.org/exp_rem04fTSd> rdf:type owl:NamedIndividual ,
+                                            <http://example.org/GeometryOptimization> ;
+                                   <http://example.org/hasInputFile> <http://example.org/file_rem04fTSd_inp> ;
+                                   <http://example.org/hasOutputFile> <http://example.org/file_rem04fTSd_dat> ,
+                                                                      <http://example.org/file_rem04fTSd_log> ;
+                                   rdfs:label "Geometry optimisation rem04fTSd" .
+
+
+###  http://example.org/exp_rem04fTSdIRCb
+<http://example.org/exp_rem04fTSdIRCb> rdf:type owl:NamedIndividual ,
+                                                <http://example.org/GeometryOptimization> ;
+                                       <http://example.org/hasInputFile> <http://example.org/file_rem04fTSdIRCb_inp> ;
+                                       <http://example.org/hasOutputFile> <http://example.org/file_rem04fTSdIRCb_dat> ,
+                                                                          <http://example.org/file_rem04fTSdIRCb_log> ;
+                                       rdfs:label "Geometry optimisation rem04fTSdIRCb" .
+
+
+###  http://example.org/exp_rem04fTSdIRCf
+<http://example.org/exp_rem04fTSdIRCf> rdf:type owl:NamedIndividual ,
+                                                <http://example.org/GeometryOptimization> ;
+                                       <http://example.org/hasInputFile> <http://example.org/file_rem04fTSdIRCf_inp> ;
+                                       <http://example.org/hasOutputFile> <http://example.org/file_rem04fTSdIRCf_dat> ,
+                                                                          <http://example.org/file_rem04fTSdIRCf_log> ;
+                                       rdfs:label "Geometry optimisation rem04fTSdIRCf" .
+
+
+###  http://example.org/exp_rem05a
+<http://example.org/exp_rem05a> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem05a_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem05a_dat> ,
+                                                                   <http://example.org/file_rem05a_log> ;
+                                rdfs:label "Geometry optimisation rem05a" .
+
+
+###  http://example.org/exp_rem05b
+<http://example.org/exp_rem05b> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem05b_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem05b_dat> ,
+                                                                   <http://example.org/file_rem05b_log> ;
+                                rdfs:label "Geometry optimisation rem05b" .
+
+
+###  http://example.org/exp_rem05c
+<http://example.org/exp_rem05c> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem05c_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem05c_dat> ,
+                                                                   <http://example.org/file_rem05c_log> ;
+                                rdfs:label "Geometry optimisation rem05c" .
+
+
+###  http://example.org/exp_rem05d
+<http://example.org/exp_rem05d> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem05d_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem05d_dat> ,
+                                                                   <http://example.org/file_rem05d_log> ;
+                                rdfs:label "Geometry optimisation rem05d" .
+
+
+###  http://example.org/exp_rem05e
+<http://example.org/exp_rem05e> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem05e_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem05e_dat> ,
+                                                                   <http://example.org/file_rem05e_log> ;
+                                rdfs:label "Geometry optimisation rem05e" .
+
+
+###  http://example.org/exp_rem05f
+<http://example.org/exp_rem05f> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem05f_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem05f_dat> ,
+                                                                   <http://example.org/file_rem05f_log> ;
+                                rdfs:label "Geometry optimisation rem05f" .
+
+
+###  http://example.org/exp_rem05g
+<http://example.org/exp_rem05g> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem05g_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem05g_dat> ,
+                                                                   <http://example.org/file_rem05g_log> ;
+                                rdfs:label "Geometry optimisation rem05g" .
+
+
+###  http://example.org/exp_rem05h
+<http://example.org/exp_rem05h> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem05h_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem05h_dat> ,
+                                                                   <http://example.org/file_rem05h_log> ;
+                                rdfs:label "Geometry optimisation rem05h" .
+
+
+###  http://example.org/exp_rem05hTSa
+<http://example.org/exp_rem05hTSa> rdf:type owl:NamedIndividual ,
+                                            <http://example.org/GeometryOptimization> ;
+                                   <http://example.org/hasInputFile> <http://example.org/file_rem05hTSa_inp> ;
+                                   <http://example.org/hasOutputFile> <http://example.org/file_rem05hTSa_dat> ,
+                                                                      <http://example.org/file_rem05hTSa_log> ;
+                                   rdfs:label "Geometry optimisation rem05hTSa" .
+
+
+###  http://example.org/exp_rem05hTSaIRCb
+<http://example.org/exp_rem05hTSaIRCb> rdf:type owl:NamedIndividual ,
+                                                <http://example.org/GeometryOptimization> ;
+                                       <http://example.org/hasInputFile> <http://example.org/file_rem05hTSaIRCb_inp> ;
+                                       <http://example.org/hasOutputFile> <http://example.org/file_rem05hTSaIRCb_dat> ,
+                                                                          <http://example.org/file_rem05hTSaIRCb_log> ;
+                                       rdfs:label "Geometry optimisation rem05hTSaIRCb" .
+
+
+###  http://example.org/exp_rem05hTSaIRCf
+<http://example.org/exp_rem05hTSaIRCf> rdf:type owl:NamedIndividual ,
+                                                <http://example.org/GeometryOptimization> ;
+                                       <http://example.org/hasInputFile> <http://example.org/file_rem05hTSaIRCf_inp> ;
+                                       <http://example.org/hasOutputFile> <http://example.org/file_rem05hTSaIRCf_dat> ,
+                                                                          <http://example.org/file_rem05hTSaIRCf_log> ;
+                                       rdfs:label "Geometry optimisation rem05hTSaIRCf" .
+
+
+###  http://example.org/exp_rem05hTSb
+<http://example.org/exp_rem05hTSb> rdf:type owl:NamedIndividual ,
+                                            <http://example.org/GeometryOptimization> ;
+                                   <http://example.org/hasInputFile> <http://example.org/file_rem05hTSb_inp> ;
+                                   <http://example.org/hasOutputFile> <http://example.org/file_rem05hTSb_dat> ,
+                                                                      <http://example.org/file_rem05hTSb_log> ;
+                                   rdfs:label "Geometry optimisation rem05hTSb" .
+
+
+###  http://example.org/exp_rem05hTSbD3
+<http://example.org/exp_rem05hTSbD3> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/GeometryOptimization> ;
+                                     <http://example.org/hasInputFile> <http://example.org/file_rem05hTSbD3_inp> ;
+                                     <http://example.org/hasOutputFile> <http://example.org/file_rem05hTSbD3_dat> ,
+                                                                        <http://example.org/file_rem05hTSbD3_log> ;
+                                     rdfs:label "Geometry optimisation rem05hTSbD3" .
+
+
+###  http://example.org/exp_rem05hTSbIRCb
+<http://example.org/exp_rem05hTSbIRCb> rdf:type owl:NamedIndividual ,
+                                                <http://example.org/GeometryOptimization> ;
+                                       <http://example.org/hasInputFile> <http://example.org/file_rem05hTSbIRCb_inp> ;
+                                       <http://example.org/hasOutputFile> <http://example.org/file_rem05hTSbIRCb_dat> ,
+                                                                          <http://example.org/file_rem05hTSbIRCb_log> ;
+                                       rdfs:label "Geometry optimisation rem05hTSbIRCb" .
+
+
+###  http://example.org/exp_rem05hTSbIRCf
+<http://example.org/exp_rem05hTSbIRCf> rdf:type owl:NamedIndividual ,
+                                                <http://example.org/GeometryOptimization> ;
+                                       <http://example.org/hasInputFile> <http://example.org/file_rem05hTSbIRCf_inp> ;
+                                       <http://example.org/hasOutputFile> <http://example.org/file_rem05hTSbIRCf_dat> ,
+                                                                          <http://example.org/file_rem05hTSbIRCf_log> ;
+                                       rdfs:label "Geometry optimisation rem05hTSbIRCf" .
+
+
+###  http://example.org/exp_rem06a
+<http://example.org/exp_rem06a> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem06a_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem06a_dat> ,
+                                                                   <http://example.org/file_rem06a_log> ;
+                                rdfs:label "Geometry optimisation rem06a" .
+
+
+###  http://example.org/exp_rem06b
+<http://example.org/exp_rem06b> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem06b_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem06b_dat> ,
+                                                                   <http://example.org/file_rem06b_log> ;
+                                rdfs:label "Geometry optimisation rem06b" .
+
+
+###  http://example.org/exp_rem06c
+<http://example.org/exp_rem06c> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem06c_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem06c_dat> ,
+                                                                   <http://example.org/file_rem06c_log> ;
+                                rdfs:label "Geometry optimisation rem06c" .
+
+
+###  http://example.org/exp_rem06d
+<http://example.org/exp_rem06d> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem06d_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem06d_dat> ,
+                                                                   <http://example.org/file_rem06d_log> ;
+                                rdfs:label "Geometry optimisation rem06d" .
+
+
+###  http://example.org/exp_rem06e
+<http://example.org/exp_rem06e> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem06e_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem06e_dat> ,
+                                                                   <http://example.org/file_rem06e_log> ;
+                                rdfs:label "Geometry optimisation rem06e" .
+
+
+###  http://example.org/exp_rem06f
+<http://example.org/exp_rem06f> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem06f_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem06f_dat> ,
+                                                                   <http://example.org/file_rem06f_log> ;
+                                rdfs:label "Geometry optimisation rem06f" .
+
+
+###  http://example.org/exp_rem06g
+<http://example.org/exp_rem06g> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem06g_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem06g_dat> ,
+                                                                   <http://example.org/file_rem06g_log> ;
+                                rdfs:label "Geometry optimisation rem06g" .
+
+
+###  http://example.org/exp_rem06h
+<http://example.org/exp_rem06h> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem06h_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem06h_dat> ,
+                                                                   <http://example.org/file_rem06h_log> ;
+                                rdfs:label "Geometry optimisation rem06h" .
+
+
+###  http://example.org/exp_rem06i
+<http://example.org/exp_rem06i> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/GeometryOptimization> ;
+                                <http://example.org/hasInputFile> <http://example.org/file_rem06i_inp> ;
+                                <http://example.org/hasOutputFile> <http://example.org/file_rem06i_dat> ,
+                                                                   <http://example.org/file_rem06i_log> ;
+                                rdfs:label "Geometry optimisation rem06i" .
+
+
+###  http://example.org/exp_rem06iTSa
+<http://example.org/exp_rem06iTSa> rdf:type owl:NamedIndividual ,
+                                            <http://example.org/GeometryOptimization> ;
+                                   <http://example.org/hasInputFile> <http://example.org/file_rem06iTSa_inp> ;
+                                   <http://example.org/hasOutputFile> <http://example.org/file_rem06iTSa_dat> ,
+                                                                      <http://example.org/file_rem06iTSa_log> ;
+                                   rdfs:label "Geometry optimisation rem06iTSa" .
+
+
+###  http://example.org/file_rem01_dat
+<http://example.org/file_rem01_dat> rdf:type owl:NamedIndividual ,
+                                             <http://example.org/DataFile> ;
+                                    <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem01.dat" ;
+                                    rdfs:label "Output data rem01" .
+
+
+###  http://example.org/file_rem01_inp
+<http://example.org/file_rem01_inp> rdf:type owl:NamedIndividual ,
+                                             <http://example.org/InputFile> ;
+                                    <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem01.inp" ;
+                                    rdfs:label "Input file rem01" .
+
+
+###  http://example.org/file_rem01_log
+<http://example.org/file_rem01_log> rdf:type owl:NamedIndividual ,
+                                             <http://example.org/LogFile> ;
+                                    <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem01.log" ;
+                                    rdfs:label "Output log rem01" .
+
+
+###  http://example.org/file_rem01a_dat
+<http://example.org/file_rem01a_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem01a.dat" ;
+                                     rdfs:label "Output data rem01a" .
+
+
+###  http://example.org/file_rem01a_inp
+<http://example.org/file_rem01a_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem01a.inp" ;
+                                     rdfs:label "Input file rem01a" .
+
+
+###  http://example.org/file_rem01a_log
+<http://example.org/file_rem01a_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem01a.log" ;
+                                     rdfs:label "Output log rem01a" .
+
+
+###  http://example.org/file_rem01b_dat
+<http://example.org/file_rem01b_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem01b.dat" ;
+                                     rdfs:label "Output data rem01b" .
+
+
+###  http://example.org/file_rem01b_inp
+<http://example.org/file_rem01b_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem01b.inp" ;
+                                     rdfs:label "Input file rem01b" .
+
+
+###  http://example.org/file_rem01b_log
+<http://example.org/file_rem01b_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem01b.log" ;
+                                     rdfs:label "Output log rem01b" .
+
+
+###  http://example.org/file_rem01c_dat
+<http://example.org/file_rem01c_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem01c.dat" ;
+                                     rdfs:label "Output data rem01c" .
+
+
+###  http://example.org/file_rem01c_inp
+<http://example.org/file_rem01c_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem01c.inp" ;
+                                     rdfs:label "Input file rem01c" .
+
+
+###  http://example.org/file_rem01c_log
+<http://example.org/file_rem01c_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem01c.log" ;
+                                     rdfs:label "Output log rem01c" .
+
+
+###  http://example.org/file_rem01dTSa_dat
+<http://example.org/file_rem01dTSa_dat> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/DataFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem01dTSa.dat" ;
+                                        rdfs:label "Output data rem01dTSa" .
+
+
+###  http://example.org/file_rem01dTSa_inp
+<http://example.org/file_rem01dTSa_inp> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/InputFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem01dTSa.inp" ;
+                                        rdfs:label "Input file rem01dTSa" .
+
+
+###  http://example.org/file_rem01dTSa_log
+<http://example.org/file_rem01dTSa_log> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/LogFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem01dTSa.log" ;
+                                        rdfs:label "Output log rem01dTSa" .
+
+
+###  http://example.org/file_rem01dTSb_dat
+<http://example.org/file_rem01dTSb_dat> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/DataFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem01dTSb.dat" ;
+                                        rdfs:label "Output data rem01dTSb" .
+
+
+###  http://example.org/file_rem01dTSb_inp
+<http://example.org/file_rem01dTSb_inp> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/InputFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem01dTSb.inp" ;
+                                        rdfs:label "Input file rem01dTSb" .
+
+
+###  http://example.org/file_rem01dTSb_log
+<http://example.org/file_rem01dTSb_log> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/LogFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem01dTSb.log" ;
+                                        rdfs:label "Output log rem01dTSb" .
+
+
+###  http://example.org/file_rem01d_dat
+<http://example.org/file_rem01d_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem01d.dat" ;
+                                     rdfs:label "Output data rem01d" .
+
+
+###  http://example.org/file_rem01d_inp
+<http://example.org/file_rem01d_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem01d.inp" ;
+                                     rdfs:label "Input file rem01d" .
+
+
+###  http://example.org/file_rem01d_log
+<http://example.org/file_rem01d_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem01d.log" ;
+                                     rdfs:label "Output log rem01d" .
+
+
+###  http://example.org/file_rem02_dat
+<http://example.org/file_rem02_dat> rdf:type owl:NamedIndividual ,
+                                             <http://example.org/DataFile> ;
+                                    <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem02.dat" ;
+                                    rdfs:label "Output data rem02" .
+
+
+###  http://example.org/file_rem02_inp
+<http://example.org/file_rem02_inp> rdf:type owl:NamedIndividual ,
+                                             <http://example.org/InputFile> ;
+                                    <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem02.inp" ;
+                                    rdfs:label "Input file rem02" .
+
+
+###  http://example.org/file_rem02_log
+<http://example.org/file_rem02_log> rdf:type owl:NamedIndividual ,
+                                             <http://example.org/LogFile> ;
+                                    <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem02.log" ;
+                                    rdfs:label "Output log rem02" .
+
+
+###  http://example.org/file_rem02a_dat
+<http://example.org/file_rem02a_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem02a.dat" ;
+                                     rdfs:label "Output data rem02a" .
+
+
+###  http://example.org/file_rem02a_inp
+<http://example.org/file_rem02a_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem02a.inp" ;
+                                     rdfs:label "Input file rem02a" .
+
+
+###  http://example.org/file_rem02a_log
+<http://example.org/file_rem02a_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem02a.log" ;
+                                     rdfs:label "Output log rem02a" .
+
+
+###  http://example.org/file_rem02b_dat
+<http://example.org/file_rem02b_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem02b.dat" ;
+                                     rdfs:label "Output data rem02b" .
+
+
+###  http://example.org/file_rem02b_inp
+<http://example.org/file_rem02b_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem02b.inp" ;
+                                     rdfs:label "Input file rem02b" .
+
+
+###  http://example.org/file_rem02b_log
+<http://example.org/file_rem02b_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem02b.log" ;
+                                     rdfs:label "Output log rem02b" .
+
+
+###  http://example.org/file_rem02c_dat
+<http://example.org/file_rem02c_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem02c.dat" ;
+                                     rdfs:label "Output data rem02c" .
+
+
+###  http://example.org/file_rem02c_inp
+<http://example.org/file_rem02c_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem02c.inp" ;
+                                     rdfs:label "Input file rem02c" .
+
+
+###  http://example.org/file_rem02c_log
+<http://example.org/file_rem02c_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem02c.log" ;
+                                     rdfs:label "Output log rem02c" .
+
+
+###  http://example.org/file_rem02d_dat
+<http://example.org/file_rem02d_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem02d.dat" ;
+                                     rdfs:label "Output data rem02d" .
+
+
+###  http://example.org/file_rem02d_inp
+<http://example.org/file_rem02d_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem02d.inp" ;
+                                     rdfs:label "Input file rem02d" .
+
+
+###  http://example.org/file_rem02d_log
+<http://example.org/file_rem02d_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem02d.log" ;
+                                     rdfs:label "Output log rem02d" .
+
+
+###  http://example.org/file_rem02e_dat
+<http://example.org/file_rem02e_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem02e.dat" ;
+                                     rdfs:label "Output data rem02e" .
+
+
+###  http://example.org/file_rem02e_inp
+<http://example.org/file_rem02e_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem02e.inp" ;
+                                     rdfs:label "Input file rem02e" .
+
+
+###  http://example.org/file_rem02e_log
+<http://example.org/file_rem02e_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem02e.log" ;
+                                     rdfs:label "Output log rem02e" .
+
+
+###  http://example.org/file_rem02f_dat
+<http://example.org/file_rem02f_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem02f.dat" ;
+                                     rdfs:label "Output data rem02f" .
+
+
+###  http://example.org/file_rem02f_inp
+<http://example.org/file_rem02f_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem02f.inp" ;
+                                     rdfs:label "Input file rem02f" .
+
+
+###  http://example.org/file_rem02f_log
+<http://example.org/file_rem02f_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem02f.log" ;
+                                     rdfs:label "Output log rem02f" .
+
+
+###  http://example.org/file_rem02g_dat
+<http://example.org/file_rem02g_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem02g.dat" ;
+                                     rdfs:label "Output data rem02g" .
+
+
+###  http://example.org/file_rem02g_inp
+<http://example.org/file_rem02g_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem02g.inp" ;
+                                     rdfs:label "Input file rem02g" .
+
+
+###  http://example.org/file_rem02g_log
+<http://example.org/file_rem02g_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem02g.log" ;
+                                     rdfs:label "Output log rem02g" .
+
+
+###  http://example.org/file_rem02hTSa_dat
+<http://example.org/file_rem02hTSa_dat> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/DataFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem02hTSa.dat" ;
+                                        rdfs:label "Output data rem02hTSa" .
+
+
+###  http://example.org/file_rem02hTSa_inp
+<http://example.org/file_rem02hTSa_inp> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/InputFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem02hTSa.inp" ;
+                                        rdfs:label "Input file rem02hTSa" .
+
+
+###  http://example.org/file_rem02hTSa_log
+<http://example.org/file_rem02hTSa_log> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/LogFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem02hTSa.log" ;
+                                        rdfs:label "Output log rem02hTSa" .
+
+
+###  http://example.org/file_rem02h_dat
+<http://example.org/file_rem02h_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem02h.dat" ;
+                                     rdfs:label "Output data rem02h" .
+
+
+###  http://example.org/file_rem02h_inp
+<http://example.org/file_rem02h_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem02h.inp" ;
+                                     rdfs:label "Input file rem02h" .
+
+
+###  http://example.org/file_rem02h_log
+<http://example.org/file_rem02h_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem02h.log" ;
+                                     rdfs:label "Output log rem02h" .
+
+
+###  http://example.org/file_rem03_dat
+<http://example.org/file_rem03_dat> rdf:type owl:NamedIndividual ,
+                                             <http://example.org/DataFile> ;
+                                    <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem03.dat" ;
+                                    rdfs:label "Output data rem03" .
+
+
+###  http://example.org/file_rem03_inp
+<http://example.org/file_rem03_inp> rdf:type owl:NamedIndividual ,
+                                             <http://example.org/InputFile> ;
+                                    <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem03.inp" ;
+                                    rdfs:label "Input file rem03" .
+
+
+###  http://example.org/file_rem03_log
+<http://example.org/file_rem03_log> rdf:type owl:NamedIndividual ,
+                                             <http://example.org/LogFile> ;
+                                    <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem03.log" ;
+                                    rdfs:label "Output log rem03" .
+
+
+###  http://example.org/file_rem03a_dat
+<http://example.org/file_rem03a_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem03a.dat" ;
+                                     rdfs:label "Output data rem03a" .
+
+
+###  http://example.org/file_rem03a_inp
+<http://example.org/file_rem03a_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem03a.inp" ;
+                                     rdfs:label "Input file rem03a" .
+
+
+###  http://example.org/file_rem03a_log
+<http://example.org/file_rem03a_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem03a.log" ;
+                                     rdfs:label "Output log rem03a" .
+
+
+###  http://example.org/file_rem03b_dat
+<http://example.org/file_rem03b_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem03b.dat" ;
+                                     rdfs:label "Output data rem03b" .
+
+
+###  http://example.org/file_rem03b_inp
+<http://example.org/file_rem03b_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem03b.inp" ;
+                                     rdfs:label "Input file rem03b" .
+
+
+###  http://example.org/file_rem03b_log
+<http://example.org/file_rem03b_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem03b.log" ;
+                                     rdfs:label "Output log rem03b" .
+
+
+###  http://example.org/file_rem03c_dat
+<http://example.org/file_rem03c_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem03c.dat" ;
+                                     rdfs:label "Output data rem03c" .
+
+
+###  http://example.org/file_rem03c_inp
+<http://example.org/file_rem03c_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem03c.inp" ;
+                                     rdfs:label "Input file rem03c" .
+
+
+###  http://example.org/file_rem03c_log
+<http://example.org/file_rem03c_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem03c.log" ;
+                                     rdfs:label "Output log rem03c" .
+
+
+###  http://example.org/file_rem03d_dat
+<http://example.org/file_rem03d_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem03d.dat" ;
+                                     rdfs:label "Output data rem03d" .
+
+
+###  http://example.org/file_rem03d_inp
+<http://example.org/file_rem03d_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem03d.inp" ;
+                                     rdfs:label "Input file rem03d" .
+
+
+###  http://example.org/file_rem03d_log
+<http://example.org/file_rem03d_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem03d.log" ;
+                                     rdfs:label "Output log rem03d" .
+
+
+###  http://example.org/file_rem03e_dat
+<http://example.org/file_rem03e_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem03e.dat" ;
+                                     rdfs:label "Output data rem03e" .
+
+
+###  http://example.org/file_rem03e_inp
+<http://example.org/file_rem03e_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem03e.inp" ;
+                                     rdfs:label "Input file rem03e" .
+
+
+###  http://example.org/file_rem03e_log
+<http://example.org/file_rem03e_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem03e.log" ;
+                                     rdfs:label "Output log rem03e" .
+
+
+###  http://example.org/file_rem03f_dat
+<http://example.org/file_rem03f_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem03f.dat" ;
+                                     rdfs:label "Output data rem03f" .
+
+
+###  http://example.org/file_rem03f_inp
+<http://example.org/file_rem03f_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem03f.inp" ;
+                                     rdfs:label "Input file rem03f" .
+
+
+###  http://example.org/file_rem03f_log
+<http://example.org/file_rem03f_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem03f.log" ;
+                                     rdfs:label "Output log rem03f" .
+
+
+###  http://example.org/file_rem03g_dat
+<http://example.org/file_rem03g_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem03g.dat" ;
+                                     rdfs:label "Output data rem03g" .
+
+
+###  http://example.org/file_rem03g_inp
+<http://example.org/file_rem03g_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem03g.inp" ;
+                                     rdfs:label "Input file rem03g" .
+
+
+###  http://example.org/file_rem03g_log
+<http://example.org/file_rem03g_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem03g.log" ;
+                                     rdfs:label "Output log rem03g" .
+
+
+###  http://example.org/file_rem03h_dat
+<http://example.org/file_rem03h_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem03h.dat" ;
+                                     rdfs:label "Output data rem03h" .
+
+
+###  http://example.org/file_rem03h_inp
+<http://example.org/file_rem03h_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem03h.inp" ;
+                                     rdfs:label "Input file rem03h" .
+
+
+###  http://example.org/file_rem03h_log
+<http://example.org/file_rem03h_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem03h.log" ;
+                                     rdfs:label "Output log rem03h" .
+
+
+###  http://example.org/file_rem03i_dat
+<http://example.org/file_rem03i_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem03i.dat" ;
+                                     rdfs:label "Output data rem03i" .
+
+
+###  http://example.org/file_rem03i_inp
+<http://example.org/file_rem03i_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem03i.inp" ;
+                                     rdfs:label "Input file rem03i" .
+
+
+###  http://example.org/file_rem03i_log
+<http://example.org/file_rem03i_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem03i.log" ;
+                                     rdfs:label "Output log rem03i" .
+
+
+###  http://example.org/file_rem04a_dat
+<http://example.org/file_rem04a_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem04a.dat" ;
+                                     rdfs:label "Output data rem04a" .
+
+
+###  http://example.org/file_rem04a_inp
+<http://example.org/file_rem04a_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem04a.inp" ;
+                                     rdfs:label "Input file rem04a" .
+
+
+###  http://example.org/file_rem04a_log
+<http://example.org/file_rem04a_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem04a.log" ;
+                                     rdfs:label "Output log rem04a" .
+
+
+###  http://example.org/file_rem04b_dat
+<http://example.org/file_rem04b_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem04b.dat" ;
+                                     rdfs:label "Output data rem04b" .
+
+
+###  http://example.org/file_rem04b_inp
+<http://example.org/file_rem04b_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem04b.inp" ;
+                                     rdfs:label "Input file rem04b" .
+
+
+###  http://example.org/file_rem04b_log
+<http://example.org/file_rem04b_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem04b.log" ;
+                                     rdfs:label "Output log rem04b" .
+
+
+###  http://example.org/file_rem04c_dat
+<http://example.org/file_rem04c_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem04c.dat" ;
+                                     rdfs:label "Output data rem04c" .
+
+
+###  http://example.org/file_rem04c_inp
+<http://example.org/file_rem04c_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem04c.inp" ;
+                                     rdfs:label "Input file rem04c" .
+
+
+###  http://example.org/file_rem04c_log
+<http://example.org/file_rem04c_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem04c.log" ;
+                                     rdfs:label "Output log rem04c" .
+
+
+###  http://example.org/file_rem04d_dat
+<http://example.org/file_rem04d_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem04d.dat" ;
+                                     rdfs:label "Output data rem04d" .
+
+
+###  http://example.org/file_rem04d_inp
+<http://example.org/file_rem04d_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem04d.inp" ;
+                                     rdfs:label "Input file rem04d" .
+
+
+###  http://example.org/file_rem04d_log
+<http://example.org/file_rem04d_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem04d.log" ;
+                                     rdfs:label "Output log rem04d" .
+
+
+###  http://example.org/file_rem04e_dat
+<http://example.org/file_rem04e_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem04e.dat" ;
+                                     rdfs:label "Output data rem04e" .
+
+
+###  http://example.org/file_rem04e_inp
+<http://example.org/file_rem04e_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem04e.inp" ;
+                                     rdfs:label "Input file rem04e" .
+
+
+###  http://example.org/file_rem04e_log
+<http://example.org/file_rem04e_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem04e.log" ;
+                                     rdfs:label "Output log rem04e" .
+
+
+###  http://example.org/file_rem04fTSa_dat
+<http://example.org/file_rem04fTSa_dat> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/DataFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem04fTSa.dat" ;
+                                        rdfs:label "Output data rem04fTSa" .
+
+
+###  http://example.org/file_rem04fTSa_inp
+<http://example.org/file_rem04fTSa_inp> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/InputFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem04fTSa.inp" ;
+                                        rdfs:label "Input file rem04fTSa" .
+
+
+###  http://example.org/file_rem04fTSa_log
+<http://example.org/file_rem04fTSa_log> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/LogFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem04fTSa.log" ;
+                                        rdfs:label "Output log rem04fTSa" .
+
+
+###  http://example.org/file_rem04fTSb_dat
+<http://example.org/file_rem04fTSb_dat> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/DataFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem04fTSb.dat" ;
+                                        rdfs:label "Output data rem04fTSb" .
+
+
+###  http://example.org/file_rem04fTSb_inp
+<http://example.org/file_rem04fTSb_inp> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/InputFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem04fTSb.inp" ;
+                                        rdfs:label "Input file rem04fTSb" .
+
+
+###  http://example.org/file_rem04fTSb_log
+<http://example.org/file_rem04fTSb_log> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/LogFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem04fTSb.log" ;
+                                        rdfs:label "Output log rem04fTSb" .
+
+
+###  http://example.org/file_rem04fTSc_dat
+<http://example.org/file_rem04fTSc_dat> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/DataFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem04fTSc.dat" ;
+                                        rdfs:label "Output data rem04fTSc" .
+
+
+###  http://example.org/file_rem04fTSc_inp
+<http://example.org/file_rem04fTSc_inp> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/InputFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem04fTSc.inp" ;
+                                        rdfs:label "Input file rem04fTSc" .
+
+
+###  http://example.org/file_rem04fTSc_log
+<http://example.org/file_rem04fTSc_log> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/LogFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem04fTSc.log" ;
+                                        rdfs:label "Output log rem04fTSc" .
+
+
+###  http://example.org/file_rem04fTSdIRCb_dat
+<http://example.org/file_rem04fTSdIRCb_dat> rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/DataFile> ;
+                                            <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem04fTSdIRCb.dat" ;
+                                            rdfs:label "Output data rem04fTSdIRCb" .
+
+
+###  http://example.org/file_rem04fTSdIRCb_inp
+<http://example.org/file_rem04fTSdIRCb_inp> rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/InputFile> ;
+                                            <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem04fTSdIRCb.inp" ;
+                                            rdfs:label "Input file rem04fTSdIRCb" .
+
+
+###  http://example.org/file_rem04fTSdIRCb_log
+<http://example.org/file_rem04fTSdIRCb_log> rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/LogFile> ;
+                                            <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem04fTSdIRCb.log" ;
+                                            rdfs:label "Output log rem04fTSdIRCb" .
+
+
+###  http://example.org/file_rem04fTSdIRCf_dat
+<http://example.org/file_rem04fTSdIRCf_dat> rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/DataFile> ;
+                                            <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem04fTSdIRCf.dat" ;
+                                            rdfs:label "Output data rem04fTSdIRCf" .
+
+
+###  http://example.org/file_rem04fTSdIRCf_inp
+<http://example.org/file_rem04fTSdIRCf_inp> rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/InputFile> ;
+                                            <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem04fTSdIRCf.inp" ;
+                                            rdfs:label "Input file rem04fTSdIRCf" .
+
+
+###  http://example.org/file_rem04fTSdIRCf_log
+<http://example.org/file_rem04fTSdIRCf_log> rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/LogFile> ;
+                                            <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem04fTSdIRCf.log" ;
+                                            rdfs:label "Output log rem04fTSdIRCf" .
+
+
+###  http://example.org/file_rem04fTSd_dat
+<http://example.org/file_rem04fTSd_dat> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/DataFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem04fTSd.dat" ;
+                                        rdfs:label "Output data rem04fTSd" .
+
+
+###  http://example.org/file_rem04fTSd_inp
+<http://example.org/file_rem04fTSd_inp> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/InputFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem04fTSd.inp" ;
+                                        rdfs:label "Input file rem04fTSd" .
+
+
+###  http://example.org/file_rem04fTSd_log
+<http://example.org/file_rem04fTSd_log> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/LogFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem04fTSd.log" ;
+                                        rdfs:label "Output log rem04fTSd" .
+
+
+###  http://example.org/file_rem04f_dat
+<http://example.org/file_rem04f_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem04f.dat" ;
+                                     rdfs:label "Output data rem04f" .
+
+
+###  http://example.org/file_rem04f_inp
+<http://example.org/file_rem04f_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem04f.inp" ;
+                                     rdfs:label "Input file rem04f" .
+
+
+###  http://example.org/file_rem04f_log
+<http://example.org/file_rem04f_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem04f.log" ;
+                                     rdfs:label "Output log rem04f" .
+
+
+###  http://example.org/file_rem05a_dat
+<http://example.org/file_rem05a_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem05a.dat" ;
+                                     rdfs:label "Output data rem05a" .
+
+
+###  http://example.org/file_rem05a_inp
+<http://example.org/file_rem05a_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem05a.inp" ;
+                                     rdfs:label "Input file rem05a" .
+
+
+###  http://example.org/file_rem05a_log
+<http://example.org/file_rem05a_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem05a.log" ;
+                                     rdfs:label "Output log rem05a" .
+
+
+###  http://example.org/file_rem05b_dat
+<http://example.org/file_rem05b_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem05b.dat" ;
+                                     rdfs:label "Output data rem05b" .
+
+
+###  http://example.org/file_rem05b_inp
+<http://example.org/file_rem05b_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem05b.inp" ;
+                                     rdfs:label "Input file rem05b" .
+
+
+###  http://example.org/file_rem05b_log
+<http://example.org/file_rem05b_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem05b.log" ;
+                                     rdfs:label "Output log rem05b" .
+
+
+###  http://example.org/file_rem05c_dat
+<http://example.org/file_rem05c_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem05c.dat" ;
+                                     rdfs:label "Output data rem05c" .
+
+
+###  http://example.org/file_rem05c_inp
+<http://example.org/file_rem05c_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem05c.inp" ;
+                                     rdfs:label "Input file rem05c" .
+
+
+###  http://example.org/file_rem05c_log
+<http://example.org/file_rem05c_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem05c.log" ;
+                                     rdfs:label "Output log rem05c" .
+
+
+###  http://example.org/file_rem05d_dat
+<http://example.org/file_rem05d_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem05d.dat" ;
+                                     rdfs:label "Output data rem05d" .
+
+
+###  http://example.org/file_rem05d_inp
+<http://example.org/file_rem05d_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem05d.inp" ;
+                                     rdfs:label "Input file rem05d" .
+
+
+###  http://example.org/file_rem05d_log
+<http://example.org/file_rem05d_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem05d.log" ;
+                                     rdfs:label "Output log rem05d" .
+
+
+###  http://example.org/file_rem05e_dat
+<http://example.org/file_rem05e_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem05e.dat" ;
+                                     rdfs:label "Output data rem05e" .
+
+
+###  http://example.org/file_rem05e_inp
+<http://example.org/file_rem05e_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem05e.inp" ;
+                                     rdfs:label "Input file rem05e" .
+
+
+###  http://example.org/file_rem05e_log
+<http://example.org/file_rem05e_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem05e.log" ;
+                                     rdfs:label "Output log rem05e" .
+
+
+###  http://example.org/file_rem05f_dat
+<http://example.org/file_rem05f_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem05f.dat" ;
+                                     rdfs:label "Output data rem05f" .
+
+
+###  http://example.org/file_rem05f_inp
+<http://example.org/file_rem05f_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem05f.inp" ;
+                                     rdfs:label "Input file rem05f" .
+
+
+###  http://example.org/file_rem05f_log
+<http://example.org/file_rem05f_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem05f.log" ;
+                                     rdfs:label "Output log rem05f" .
+
+
+###  http://example.org/file_rem05g_dat
+<http://example.org/file_rem05g_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem05g.dat" ;
+                                     rdfs:label "Output data rem05g" .
+
+
+###  http://example.org/file_rem05g_inp
+<http://example.org/file_rem05g_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem05g.inp" ;
+                                     rdfs:label "Input file rem05g" .
+
+
+###  http://example.org/file_rem05g_log
+<http://example.org/file_rem05g_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem05g.log" ;
+                                     rdfs:label "Output log rem05g" .
+
+
+###  http://example.org/file_rem05hTSaIRCb_dat
+<http://example.org/file_rem05hTSaIRCb_dat> rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/DataFile> ;
+                                            <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem05hTSaIRCb.dat" ;
+                                            rdfs:label "Output data rem05hTSaIRCb" .
+
+
+###  http://example.org/file_rem05hTSaIRCb_inp
+<http://example.org/file_rem05hTSaIRCb_inp> rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/InputFile> ;
+                                            <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem05hTSaIRCb.inp" ;
+                                            rdfs:label "Input file rem05hTSaIRCb" .
+
+
+###  http://example.org/file_rem05hTSaIRCb_log
+<http://example.org/file_rem05hTSaIRCb_log> rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/LogFile> ;
+                                            <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem05hTSaIRCb.log" ;
+                                            rdfs:label "Output log rem05hTSaIRCb" .
+
+
+###  http://example.org/file_rem05hTSaIRCf_dat
+<http://example.org/file_rem05hTSaIRCf_dat> rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/DataFile> ;
+                                            <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem05hTSaIRCf.dat" ;
+                                            rdfs:label "Output data rem05hTSaIRCf" .
+
+
+###  http://example.org/file_rem05hTSaIRCf_inp
+<http://example.org/file_rem05hTSaIRCf_inp> rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/InputFile> ;
+                                            <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem05hTSaIRCf.inp" ;
+                                            rdfs:label "Input file rem05hTSaIRCf" .
+
+
+###  http://example.org/file_rem05hTSaIRCf_log
+<http://example.org/file_rem05hTSaIRCf_log> rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/LogFile> ;
+                                            <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem05hTSaIRCf.log" ;
+                                            rdfs:label "Output log rem05hTSaIRCf" .
+
+
+###  http://example.org/file_rem05hTSa_dat
+<http://example.org/file_rem05hTSa_dat> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/DataFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem05hTSa.dat" ;
+                                        rdfs:label "Output data rem05hTSa" .
+
+
+###  http://example.org/file_rem05hTSa_inp
+<http://example.org/file_rem05hTSa_inp> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/InputFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem05hTSa.inp" ;
+                                        rdfs:label "Input file rem05hTSa" .
+
+
+###  http://example.org/file_rem05hTSa_log
+<http://example.org/file_rem05hTSa_log> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/LogFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem05hTSa.log" ;
+                                        rdfs:label "Output log rem05hTSa" .
+
+
+###  http://example.org/file_rem05hTSbD3_dat
+<http://example.org/file_rem05hTSbD3_dat> rdf:type owl:NamedIndividual ,
+                                                   <http://example.org/DataFile> ;
+                                          <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem05hTSbD3.dat" ;
+                                          rdfs:label "Output data rem05hTSbD3" .
+
+
+###  http://example.org/file_rem05hTSbD3_inp
+<http://example.org/file_rem05hTSbD3_inp> rdf:type owl:NamedIndividual ,
+                                                   <http://example.org/InputFile> ;
+                                          <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem05hTSbD3.inp" ;
+                                          rdfs:label "Input file rem05hTSbD3" .
+
+
+###  http://example.org/file_rem05hTSbD3_log
+<http://example.org/file_rem05hTSbD3_log> rdf:type owl:NamedIndividual ,
+                                                   <http://example.org/LogFile> ;
+                                          <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem05hTSbD3.log" ;
+                                          rdfs:label "Output log rem05hTSbD3" .
+
+
+###  http://example.org/file_rem05hTSbIRCb_dat
+<http://example.org/file_rem05hTSbIRCb_dat> rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/DataFile> ;
+                                            <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem05hTSbIRCb.dat" ;
+                                            rdfs:label "Output data rem05hTSbIRCb" .
+
+
+###  http://example.org/file_rem05hTSbIRCb_inp
+<http://example.org/file_rem05hTSbIRCb_inp> rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/InputFile> ;
+                                            <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem05hTSbIRCb.inp" ;
+                                            rdfs:label "Input file rem05hTSbIRCb" .
+
+
+###  http://example.org/file_rem05hTSbIRCb_log
+<http://example.org/file_rem05hTSbIRCb_log> rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/LogFile> ;
+                                            <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem05hTSbIRCb.log" ;
+                                            rdfs:label "Output log rem05hTSbIRCb" .
+
+
+###  http://example.org/file_rem05hTSbIRCf_dat
+<http://example.org/file_rem05hTSbIRCf_dat> rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/DataFile> ;
+                                            <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem05hTSbIRCf.dat" ;
+                                            rdfs:label "Output data rem05hTSbIRCf" .
+
+
+###  http://example.org/file_rem05hTSbIRCf_inp
+<http://example.org/file_rem05hTSbIRCf_inp> rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/InputFile> ;
+                                            <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem05hTSbIRCf.inp" ;
+                                            rdfs:label "Input file rem05hTSbIRCf" .
+
+
+###  http://example.org/file_rem05hTSbIRCf_log
+<http://example.org/file_rem05hTSbIRCf_log> rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/LogFile> ;
+                                            <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem05hTSbIRCf.log" ;
+                                            rdfs:label "Output log rem05hTSbIRCf" .
+
+
+###  http://example.org/file_rem05hTSb_dat
+<http://example.org/file_rem05hTSb_dat> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/DataFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem05hTSb.dat" ;
+                                        rdfs:label "Output data rem05hTSb" .
+
+
+###  http://example.org/file_rem05hTSb_inp
+<http://example.org/file_rem05hTSb_inp> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/InputFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem05hTSb.inp" ;
+                                        rdfs:label "Input file rem05hTSb" .
+
+
+###  http://example.org/file_rem05hTSb_log
+<http://example.org/file_rem05hTSb_log> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/LogFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem05hTSb.log" ;
+                                        rdfs:label "Output log rem05hTSb" .
+
+
+###  http://example.org/file_rem05h_dat
+<http://example.org/file_rem05h_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem05h.dat" ;
+                                     rdfs:label "Output data rem05h" .
+
+
+###  http://example.org/file_rem05h_inp
+<http://example.org/file_rem05h_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem05h.inp" ;
+                                     rdfs:label "Input file rem05h" .
+
+
+###  http://example.org/file_rem05h_log
+<http://example.org/file_rem05h_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem05h.log" ;
+                                     rdfs:label "Output log rem05h" .
+
+
+###  http://example.org/file_rem06a_dat
+<http://example.org/file_rem06a_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem06a.dat" ;
+                                     rdfs:label "Output data rem06a" .
+
+
+###  http://example.org/file_rem06a_inp
+<http://example.org/file_rem06a_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem06a.inp" ;
+                                     rdfs:label "Input file rem06a" .
+
+
+###  http://example.org/file_rem06a_log
+<http://example.org/file_rem06a_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem06a.log" ;
+                                     rdfs:label "Output log rem06a" .
+
+
+###  http://example.org/file_rem06b_dat
+<http://example.org/file_rem06b_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem06b.dat" ;
+                                     rdfs:label "Output data rem06b" .
+
+
+###  http://example.org/file_rem06b_inp
+<http://example.org/file_rem06b_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem06b.inp" ;
+                                     rdfs:label "Input file rem06b" .
+
+
+###  http://example.org/file_rem06b_log
+<http://example.org/file_rem06b_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem06b.log" ;
+                                     rdfs:label "Output log rem06b" .
+
+
+###  http://example.org/file_rem06c_dat
+<http://example.org/file_rem06c_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem06c.dat" ;
+                                     rdfs:label "Output data rem06c" .
+
+
+###  http://example.org/file_rem06c_inp
+<http://example.org/file_rem06c_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem06c.inp" ;
+                                     rdfs:label "Input file rem06c" .
+
+
+###  http://example.org/file_rem06c_log
+<http://example.org/file_rem06c_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem06c.log" ;
+                                     rdfs:label "Output log rem06c" .
+
+
+###  http://example.org/file_rem06d_dat
+<http://example.org/file_rem06d_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem06d.dat" ;
+                                     rdfs:label "Output data rem06d" .
+
+
+###  http://example.org/file_rem06d_inp
+<http://example.org/file_rem06d_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem06d.inp" ;
+                                     rdfs:label "Input file rem06d" .
+
+
+###  http://example.org/file_rem06d_log
+<http://example.org/file_rem06d_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem06d.log" ;
+                                     rdfs:label "Output log rem06d" .
+
+
+###  http://example.org/file_rem06e_dat
+<http://example.org/file_rem06e_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem06e.dat" ;
+                                     rdfs:label "Output data rem06e" .
+
+
+###  http://example.org/file_rem06e_inp
+<http://example.org/file_rem06e_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem06e.inp" ;
+                                     rdfs:label "Input file rem06e" .
+
+
+###  http://example.org/file_rem06e_log
+<http://example.org/file_rem06e_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem06e.log" ;
+                                     rdfs:label "Output log rem06e" .
+
+
+###  http://example.org/file_rem06f_dat
+<http://example.org/file_rem06f_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem06f.dat" ;
+                                     rdfs:label "Output data rem06f" .
+
+
+###  http://example.org/file_rem06f_inp
+<http://example.org/file_rem06f_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem06f.inp" ;
+                                     rdfs:label "Input file rem06f" .
+
+
+###  http://example.org/file_rem06f_log
+<http://example.org/file_rem06f_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem06f.log" ;
+                                     rdfs:label "Output log rem06f" .
+
+
+###  http://example.org/file_rem06g_dat
+<http://example.org/file_rem06g_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem06g.dat" ;
+                                     rdfs:label "Output data rem06g" .
+
+
+###  http://example.org/file_rem06g_inp
+<http://example.org/file_rem06g_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem06g.inp" ;
+                                     rdfs:label "Input file rem06g" .
+
+
+###  http://example.org/file_rem06g_log
+<http://example.org/file_rem06g_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem06g.log" ;
+                                     rdfs:label "Output log rem06g" .
+
+
+###  http://example.org/file_rem06h_dat
+<http://example.org/file_rem06h_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem06h.dat" ;
+                                     rdfs:label "Output data rem06h" .
+
+
+###  http://example.org/file_rem06h_inp
+<http://example.org/file_rem06h_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem06h.inp" ;
+                                     rdfs:label "Input file rem06h" .
+
+
+###  http://example.org/file_rem06h_log
+<http://example.org/file_rem06h_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem06h.log" ;
+                                     rdfs:label "Output log rem06h" .
+
+
+###  http://example.org/file_rem06iTSa_dat
+<http://example.org/file_rem06iTSa_dat> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/DataFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem06iTSa.dat" ;
+                                        rdfs:label "Output data rem06iTSa" .
+
+
+###  http://example.org/file_rem06iTSa_inp
+<http://example.org/file_rem06iTSa_inp> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/InputFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem06iTSa.inp" ;
+                                        rdfs:label "Input file rem06iTSa" .
+
+
+###  http://example.org/file_rem06iTSa_log
+<http://example.org/file_rem06iTSa_log> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/LogFile> ;
+                                        <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem06iTSa.log" ;
+                                        rdfs:label "Output log rem06iTSa" .
+
+
+###  http://example.org/file_rem06i_dat
+<http://example.org/file_rem06i_dat> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/DataFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/data/rem06i.dat" ;
+                                     rdfs:label "Output data rem06i" .
+
+
+###  http://example.org/file_rem06i_inp
+<http://example.org/file_rem06i_inp> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/InputFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/input/rem06i.inp" ;
+                                     rdfs:label "Input file rem06i" .
+
+
+###  http://example.org/file_rem06i_log
+<http://example.org/file_rem06i_log> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/LogFile> ;
+                                     <http://example.org/fileURL> "file:///home/darren/Projects/archive/MolecularModelling/aaa/output/rem06i.log" ;
+                                     rdfs:label "Output log rem06i" .
+
+
+###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi

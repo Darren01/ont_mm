@@ -1,0 +1,2 @@
+ID	Label	Type	hasInputFile	hasOutputFile	fileURL
+ID	LABEL	TYPE	I ex:hasInputFile	I ex:hasOutputFile SPLIT=|	A ex:fileURL

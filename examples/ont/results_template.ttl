@@ -1,0 +1,109 @@
+@prefix : <file:///home/darren/Projects/active/ont_mm/builds/gc_core.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <file:///home/darren/Projects/active/ont_mm/builds/gc_core.ttl> .
+
+<file:///home/darren/Projects/active/ont_mm/builds/gc_core.ttl> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://example.org/hasMeasurementValue
+<http://example.org/hasMeasurementValue> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/generatedByCalculation
+<http://example.org/generatedByCalculation> rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/hasMeasurementUnit
+<http://example.org/hasMeasurementUnit> rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/measuresFeature
+<http://example.org/measuresFeature> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/BondAngleMeasurement
+<http://example.org/BondAngleMeasurement> rdf:type owl:Class .
+
+
+###  http://example.org/BondDistanceMeasurement
+<http://example.org/BondDistanceMeasurement> rdf:type owl:Class .
+
+
+###  http://example.org/DihedralAngleMeasurement
+<http://example.org/DihedralAngleMeasurement> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/angleFeature_H1_C1_O1
+<http://example.org/angleFeature_H1_C1_O1> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/bondFeature_C1_O1
+<http://example.org/bondFeature_C1_O1> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/calc_rem01
+<http://example.org/calc_rem01> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/dihedralFeature_A_B_C_D
+<http://example.org/dihedralFeature_A_B_C_D> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/measurement_rem01_angle1
+<http://example.org/measurement_rem01_angle1> rdf:type owl:NamedIndividual ,
+                                                       <http://example.org/BondAngleMeasurement> ;
+                                              <http://example.org/generatedByCalculation> <http://example.org/calc_rem01> ;
+                                              <http://example.org/hasMeasurementUnit> <http://purl.org/gc/Degree> ;
+                                              <http://example.org/measuresFeature> <http://example.org/angleFeature_H1_C1_O1> ;
+                                              <http://example.org/hasMeasurementValue> "109.45" ;
+                                              rdfs:label "Bond angle H1-C1-O1" .
+
+
+###  http://example.org/measurement_rem01_bd1
+<http://example.org/measurement_rem01_bd1> rdf:type owl:NamedIndividual ,
+                                                    <http://example.org/BondDistanceMeasurement> ;
+                                           <http://example.org/generatedByCalculation> <http://example.org/calc_rem01> ;
+                                           <http://example.org/hasMeasurementUnit> <http://purl.org/gc/Angstrom> ;
+                                           <http://example.org/measuresFeature> <http://example.org/bondFeature_C1_O1> ;
+                                           <http://example.org/hasMeasurementValue> "1.0912" ;
+                                           rdfs:label "Bond distance C1-O1" .
+
+
+###  http://example.org/measurement_rem01_dih1
+<http://example.org/measurement_rem01_dih1> rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/DihedralAngleMeasurement> ;
+                                            <http://example.org/generatedByCalculation> <http://example.org/calc_rem01> ;
+                                            <http://example.org/hasMeasurementUnit> <http://purl.org/gc/Degree> ;
+                                            <http://example.org/measuresFeature> <http://example.org/dihedralFeature_A_B_C_D> ;
+                                            <http://example.org/hasMeasurementValue> "179.8" ;
+                                            rdfs:label "Dihedral A-B-C-D" .
+
+
+###  http://purl.org/gc/Angstrom
+<http://purl.org/gc/Angstrom> rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/gc/Degree
+<http://purl.org/gc/Degree> rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi

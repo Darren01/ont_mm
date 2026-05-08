@@ -1,0 +1,2 @@
+ID	Label	Type	hasValue	unit	feature	calculation
+ID	LABEL	TYPE	A ex:hasMeasurementValue	I ex:hasMeasurementUnit	I ex:measuresFeature	I ex:generatedByCalculation

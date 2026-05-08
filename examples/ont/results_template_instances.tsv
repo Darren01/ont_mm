@@ -1,0 +1,6 @@
+ID	Label	Type	hasValue	unit	feature	calculation
+ID	LABEL	TYPE	A ex:hasMeasurementValue	I ex:hasMeasurementUnit	I ex:measuresFeature	I ex:generatedByCalculation
+
+ex:measurement_rem01_bd1	Bond distance C1-O1	ex:BondDistanceMeasurement	1.0912	gc:Angstrom	ex:bondFeature_C1_O1	ex:calc_rem01
+ex:measurement_rem01_angle1	Bond angle H1-C1-O1	ex:BondAngleMeasurement	109.45	gc:Degree	ex:angleFeature_H1_C1_O1	ex:calc_rem01
+ex:measurement_rem01_dih1	Dihedral A-B-C-D	ex:DihedralAngleMeasurement	179.8	gc:Degree	ex:dihedralFeature_A_B_C_D	ex:calc_rem01

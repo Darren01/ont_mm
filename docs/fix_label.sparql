@@ -2,5 +2,6 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 INSERT {
   <http://purl.org/gc/hasDftFunctional> rdfs:label "has DFT functional"@en .
+  <http://www.w3.org/ns/prov-o#> rdfs:label "PROV-O: The PROV Ontology"@en .
 }
 WHERE {}

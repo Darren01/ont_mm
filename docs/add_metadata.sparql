@@ -1,0 +1,10 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+INSERT DATA {
+  <http://purl.org/gc/> rdf:type owl:Ontology ;
+                        dcterms:title "GC Core Ontology" ;
+                        dcterms:description "A core ontology for quantum chemistry calculations combining the Gainesville Core Ontology and PROV-O provenance terms." ;
+                        dcterms:license <https://creativecommons.org/licenses/by/4.0/> .
+}

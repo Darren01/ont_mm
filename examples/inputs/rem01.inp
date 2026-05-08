@@ -1,0 +1,37 @@
+!   File created by the GAMESS Input Deck Generator Plugin for Avogadro
+! Investigation of a potential dyotropic mechanism
+ $BASIS GBASIS=N21 NGAUSS=3 $END
+ $PCM SOLVNT=WATER $END
+ $CONTRL SCFTYP=RHF RUNTYP=OPTIMIZE ICHARG=1 $END
+ $CONTRL DFTTYP=wB97X-D $END
+ $CONTRL NZVAR=53 $END
+ $STATPT OPTTOL=1e-4 NSTEP=200 IHREP=10 HSSEND=.f. $END
+ $ZMAT DLC=.t. AUTO=.t. NONVDW(1)=9,20, 13,6 $END
+ $ZMAT IFZMAT(1)=1,9,10, 1,13,6 FVALUE(1)=2.5, 2.5 $END
+ $SCF DIIS=.t. DAMP=.t. $END
+ $SYSTEM MWORDS=50 $END
+
+ $DATA 
+Investigation of a potential dyotropic mechanism
+C1
+C     6.0    -1.72217     1.59045    -1.28577
+C     6.0    -0.77609     1.25100    -0.15016
+C     6.0    -3.04009     1.17508    -0.69318
+C     6.0    -1.49864     0.06182     0.46074
+H     1.0    -0.65487     2.02256     0.64092
+C     6.0     0.26431     0.18707    -0.47967
+O     8.0    -2.78796    -0.07514    -0.10623
+H     1.0    -1.49718     0.05004     1.57459
+O     8.0    -0.56893    -0.86678    -0.05117
+C     6.0     1.58310     0.25848     0.33002
+H     1.0     0.48075     0.12756    -1.56963
+H     1.0     2.14410     1.17181     0.03439
+O     8.0     1.42653     0.24571     1.73178
+H     1.0     2.22043    -0.60655     0.04426
+H     1.0     0.88305     1.03238     1.98874
+H     1.0    -1.54898     0.92444    -2.16220
+H     1.0    -1.67188     2.64693    -1.62314
+H     1.0    -3.82231     1.10878    -1.47885
+H     1.0    -3.37392     1.89042     0.09433
+H     1.0     0.89670    -0.55717     1.97155
+ $END
