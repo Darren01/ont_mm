@@ -93,7 +93,7 @@ ont_mm
 |  |--fix_label.sparql
 |  |--gc_terms.txt
 |  |--prov_terms.txt
-|--examples
+|--examples				# a worked example
 |  |--data
 |  |  |--rem01.dat
 |  |  |--rem01a.dat
@@ -123,6 +123,9 @@ ont_mm
 |  |--prov_module.ttl
 |  |--README.md
 |--ReadMe.md
+|--releases				# versioned ontologies
+|  |--2026-05-08
+|  |  |--gc_core.ttl
 |--scripts				# Processing and build scripts
 |--source				# Source ontologies
 |  |--catalog-v001.xml
@@ -164,10 +167,10 @@ To provide a reusable, extensible framework for structuring computational chemis
 
 ## TOOLS
 
+[Gamess (US)](https://www.msg.chem.iastate.edu/gamess/)
 [robot](https://robot.obolibrary.org/)
 [RStudio](https://posit.co/download/rstudio-desktop)
-[Gamess (US)](https://www.msg.chem.iastate.edu/gamess/)
-
+[turtle viewer](https://semantechs.co.uk/turtle-editor-viewer/)
 
 
 

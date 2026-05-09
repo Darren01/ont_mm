@@ -1,7 +1,10 @@
 In this folder the ontology was build using the modules prepared earlier using the following code.
 
 ```
-robot merge --input ~/Projects/active/ont_mm/modules/gc_module.ttl --input ~/Projects/active/ont_mm/modules/prov_module.ttl --output ~/Projects/active/ont_mm/builds/gc_core.ttl
+robot merge \
+  --input ~/Projects/active/ont_mm/modules/gc_module.ttl \
+  --input ~/Projects/active/ont_mm/modules/prov_module.ttl \
+  --output ~/Projects/active/ont_mm/builds/gc_core.ttl
 ```
 
 At this stage the build ontology was checked with the following robot code.
@@ -19,3 +22,14 @@ robot query --input ~/Projects/active/ont_mm/builds/gc_core.ttl --update ~/Proje
  
 This still had two errors with rdfs:label Atom@en and Atoms@en which can be fixed at a later stage.
 
+The ontology was annotated with a version and stored in the /releases folder.
+
+```
+robot annotate \
+  --input builds/gc_core.ttl \
+  --ontology-iri "http://purl.org/gc/core" \
+  --version-iri "http://purl.org/gc/core/2026-05-08/gc_core.ttl" \
+  --prefix "dcterms: http://purl.org/dc/terms/" \
+  --annotation dcterms:title "gc_core ontology" \
+  --output releases/2026-05-08/gc_core.ttl
+  ```

@@ -80,7 +80,7 @@ This example uses ROBOT to convert tabular templates into OWL and then merge the
 ```
 robot template \
   --template examples/ont/experiment_template_instances.tsv \
-  --ontology builds/gc_core.ttl \
+  --ontology file:///home/darren/Projects/active/ont_mm/releases/2026-05-08/gc_core.ttl \
   --ontology-iri "http://purl.org/gc/core" \
   --prefix "ex: http://example.org/" \
   --prefix "prov: http://www.w3.org/ns/prov#" \
@@ -94,7 +94,7 @@ robot template \
 ```
 robot template \
   --template examples/ont/constraint_template_instances.tsv \
-  --ontology builds/gc_core.ttl \
+  --ontology file:///home/darren/Projects/active/ont_mm/releases/2026-05-08/gc_core.ttl \
   --ontology-iri "http://purl.org/gc/core" \
   --prefix "gc: http://purl.org/gc/" \
   --prefix "ex: http://example.org/" \
@@ -108,7 +108,7 @@ robot template \
 ```
 robot template \
   --template examples/ont/results_template_instances.tsv \
-  --ontology builds/gc_core.ttl \
+  --ontology file:///home/darren/Projects/active/ont_mm/releases/2026-05-08/gc_core.ttl \
   --ontology-iri "http://purl.org/gc/core" \
   --prefix "gc: http://purl.org/gc/" \
   --prefix "ex: http://example.org/" \
@@ -124,13 +124,13 @@ robot merge \
   --input examples/ont/constraint_template.ttl \
   --input examples/ont/experiment_template.ttl \
   --input examples/ont/results_template.ttl \
-  --output examples/ont/gc_core_full.ttl
+  --output examples/ont/gc_core_full_2026-05-08.ttl
 ```
 
 This produces the complete instantiated ontology:
 
 ```
-examples/ont/gc_core_full.ttl
+examples/ont/gc_core_full_2026-05-08.ttl
 ```
 
 ---

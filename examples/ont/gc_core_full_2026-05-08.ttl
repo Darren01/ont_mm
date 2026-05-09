@@ -1,12 +1,12 @@
-@prefix : <file:///home/darren/Projects/active/ont_mm/builds/gc_core.ttl#> .
+@prefix : <file:///home/darren/Projects/active/ont_mm/releases/2026-05-08/gc_core.ttl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <file:///home/darren/Projects/active/ont_mm/builds/gc_core.ttl> .
+@base <file:///home/darren/Projects/active/ont_mm/releases/2026-05-08/gc_core.ttl> .
 
-<file:///home/darren/Projects/active/ont_mm/builds/gc_core.ttl> rdf:type owl:Ontology .
+<file:///home/darren/Projects/active/ont_mm/releases/2026-05-08/gc_core.ttl> rdf:type owl:Ontology .
 
 #################################################################
 #    Annotation properties
@@ -273,15 +273,10 @@
                                 <http://example.org/hasInputFile> <http://example.org/file_rem01b_inp> ;
                                 <http://example.org/hasOutputFile> <http://example.org/file_rem01b_dat> ,
                                                                    <http://example.org/file_rem01b_log> ;
-                                rdfs:label "Geometry optimisation rem01b" .
-
-
-###  http://example.org/exp_remo1b
-<http://example.org/exp_remo1b> rdf:type owl:NamedIndividual ,
-                                         <http://example.org/GeometryOptimization> ;
                                 <http://purl.org/gc/hasConstraint> <http://example.org/constraint_rem01b_d1> ,
                                                                    <http://example.org/constraint_rem01b_dih1> ;
-                                rdfs:label "Experiment rem01b" .
+                                rdfs:label "Experiment rem01b" ,
+                                           "Geometry optimisation rem01b" .
 
 
 ###  http://example.org/file_rem01_dat
