@@ -83,6 +83,7 @@ Relevant terms are extracted, modularised, and combined into a coherent domain o
 
 *(To be defined as the project evolves)*
 
+```text
 ont_mm
 |--builds				# Combined ontology outputs
 |  |--gc_core.ttl
@@ -104,7 +105,7 @@ ont_mm
 |  |  |--rem01b.inp
 |  |--ont
 |  |  |--constraint_template_instances.tsv
-|  |  |--constraint__template.ttl
+|  |  |--constraint_template.ttl
 |  |  |--experiment_template_instances.tsv
 |  |  |--experiment_template.ttl
 |  |  |--gc_core_full.ttl
@@ -122,7 +123,7 @@ ont_mm
 |  |--gc_module.ttl
 |  |--prov_module.ttl
 |  |--README.md
-|--ReadMe.md
+|--README.md
 |--releases				# versioned ontologies
 |  |--2026-05-08
 |  |  |--gc_core.ttl
@@ -136,6 +137,7 @@ ont_mm
 |  |--constraint_template.tsv
 |  |--experiment_template.tsv
 |  |--results_template.tsv
+```
 
 ## Current Status
 
