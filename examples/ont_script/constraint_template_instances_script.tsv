@@ -1,0 +1,15 @@
+ID	Label	Type	hasConstraint	involvesAtom1	involvesAtom2	involvesAtom3	involvesAtom4	targetValue	hasUnit	constraintMode	forceConstant
+ID	LABEL	TYPE	I gc:hasConstraint	I gc:involvesAtom1	I gc:involvesAtom2	I gc:involvesAtom3	I gc:involvesAtom4	A gc:targetValue	A gc:hasUnit	A gc:constraintMode	A gc:forceConstant
+											
+ex:rem01_dist_9_10	Distance constraint 9 10	ex:DistanceConstraint		ex:atom_9	ex:atom_10			2.5	angstrom	fixed	
+ex:rem01	Experiment rem01	ex:GeometryOptimization	ex:rem01_dist_9_10					0			
+ex:rem01_dist_13_6	Distance constraint 13 6	ex:DistanceConstraint		ex:atom_13	ex:atom_6			2.5	angstrom	fixed	
+ex:rem01	Experiment rem01	ex:GeometryOptimization	ex:rem01_dist_13_6					0			
+ex:rem01a_dist_9_10	Distance constraint 9 10	ex:DistanceConstraint		ex:atom_9	ex:atom_10			2	angstrom	fixed	
+ex:rem01a	Experiment rem01a	ex:GeometryOptimization	ex:rem01a_dist_9_10					0			
+ex:rem01a_dih_9_6_10_16	Dihedral constraint 9 6 10 16	ex:DihedralConstraint		ex:atom_9	ex:atom_6	ex:atom_10	ex:atom_16	180	degree	fixed	
+ex:rem01a	Experiment rem01a	ex:GeometryOptimization	ex:rem01a_dih_9_6_10_16					0			
+ex:rem01b_dist_9_10	Distance constraint 9 10	ex:DistanceConstraint		ex:atom_9	ex:atom_10			2	angstrom	fixed	
+ex:rem01b	Experiment rem01b	ex:GeometryOptimization	ex:rem01b_dist_9_10					0			
+ex:rem01b_angle_6_10_16	Angle constraint 6 10 16	ex:AngleConstraint		ex:atom_6	ex:atom_10	ex:atom_16		90	degree	fixed	
+ex:rem01b	Experiment rem01b	ex:GeometryOptimization	ex:rem01b_angle_6_10_16					0			

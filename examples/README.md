@@ -197,3 +197,7 @@ This reflects the fact that molecular modelling workflows are iterative, where o
 
 ---
 
+## Scripting
+
+* explain here about the R code and give the working example ... and where it fits into the scheme above ...
+

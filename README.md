@@ -111,6 +111,8 @@ ont_mm
 |  |  |--gc_core_full.ttl
 |  |  |--results_template_instances.tsv
 |  |  |--results_template.ttl
+|  |--ont_script
+|  |  |--constraint_template_instances_script.tsv
 |  |--outputs
 |  |  |--rem01.log
 |  |  |--rem01a.log
@@ -128,6 +130,7 @@ ont_mm
 |  |--2026-05-08
 |  |  |--gc_core.ttl
 |--scripts				# Processing and build scripts
+|  |--process_constraints.R
 |--source				# Source ontologies
 |  |--catalog-v001.xml
 |  |--EMPTY.owl
@@ -169,10 +172,10 @@ To provide a reusable, extensible framework for structuring computational chemis
 
 ## TOOLS
 
-[Gamess (US)](https://www.msg.chem.iastate.edu/gamess/)
-[robot](https://robot.obolibrary.org/)
-[RStudio](https://posit.co/download/rstudio-desktop)
-[turtle viewer](https://semantechs.co.uk/turtle-editor-viewer/)
+- [Gamess (US)](https://www.msg.chem.iastate.edu/gamess/)
+- [robot](https://robot.obolibrary.org/)
+- [RStudio](https://posit.co/download/rstudio-desktop)
+- [turtle viewer](https://semantechs.co.uk/turtle-editor-viewer/)
 
 
 
