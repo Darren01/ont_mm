@@ -14,8 +14,7 @@ process_constraints_fast_ordered <- function(
   )
   
   # 🔒 deterministic file order
-  input_files <- list.files(input_dir, full.names = TRUE)
-  input_files <- sort(input_files)
+  input_files <- sort(list.files(input_dir, full.names = TRUE))
   
   get_experiment_id <- function(file_path) {
     paste0("ex:", sub("\\..*$", "", basename(file_path)))
@@ -43,24 +42,42 @@ process_constraints_fast_ordered <- function(
     df
   }
   
+  # ✅ FIXED: now globally visible
+  extract_zmat_blocks <- function(lines) {
+    start_idx <- grep("\\$ZMAT", lines, ignore.case = TRUE)
+    end_idx   <- grep("\\$END", lines, ignore.case = TRUE)
+    
+    blocks <- list()
+    
+    for (s in start_idx) {
+      e <- end_idx[end_idx > s][1]
+      if (!is.na(e)) {
+        blocks[[length(blocks) + 1]] <- lines[s:e]
+      }
+    }
+    
+    blocks
+  }
+  
   parse_constraints_fast <- function(file_path) {
     
     lines <- readLines(file_path, warn = FALSE)
     exp_id <- get_experiment_id(file_path)
     
-    # 🔒 preserve line order
-    zmat_lines <- lines[grepl("^\\s+\\$ZMAT", lines)]
-    if (length(zmat_lines) == 0) return(NULL)
+    zmat_blocks <- extract_zmat_blocks(lines)
+    if (length(zmat_blocks) == 0) return(NULL)
     
     rows <- list()
     idx <- 1
     
-    for (line in zmat_lines) {
+    for (block_lines in zmat_blocks) {
       
-      if (!grepl("IFZMAT", line)) next
+      block <- paste(block_lines, collapse = " ")
       
-      ifzmat_text <- sub(".*IFZMAT\\(1\\)=([^F]+)FVALUE.*", "\\1", line)
-      fvalue_text <- sub(".*FVALUE\\(1\\)=([^$]+)\\$END.*", "\\1", line)
+      if (!grepl("IFZMAT", block)) next
+      
+      ifzmat_text <- sub(".*IFZMAT\\(1\\)=([^\\$]+?)FVALUE.*", "\\1", block)
+      fvalue_text <- sub(".*FVALUE\\(1\\)=([^\\$]+?)\\$END.*", "\\1", block)
       
       ifzmat_nums <- clean_numbers(ifzmat_text)
       fvalues <- clean_numbers(fvalue_text)
@@ -93,14 +110,12 @@ process_constraints_fast_ordered <- function(
           )
         }
         
-        # ---------- DISTANCE ----------
         if (type == 1) {
           
           atom1 <- ifzmat_nums[i + 1]
           atom2 <- ifzmat_nums[i + 2]
           cid <- paste0(exp_id, "_dist_", atom1, "_", atom2)
           
-          # 🔒 emit in exact same order as original
           rows[[idx]] <- list(
             ID = cid,
             Label = paste("Distance constraint", atom1, atom2),
@@ -121,7 +136,6 @@ process_constraints_fast_ordered <- function(
           idx <- idx + 2
           i <- i + 3
           
-          # ---------- ANGLE ----------
         } else if (type == 2) {
           
           atom1 <- ifzmat_nums[i + 1]
@@ -149,7 +163,6 @@ process_constraints_fast_ordered <- function(
           idx <- idx + 2
           i <- i + 4
           
-          # ---------- DIHEDRAL ----------
         } else if (type == 3) {
           
           atom1 <- ifzmat_nums[i + 1]
@@ -189,23 +202,19 @@ process_constraints_fast_ordered <- function(
     rows_to_df(rows)
   }
   
-  # 🔒 preserve file order in binding
   parsed_list <- lapply(input_files, parse_constraints_fast)
   parsed_list <- parsed_list[!vapply(parsed_list, is.null, logical(1))]
   
   all_constraints <- do.call(rbind, parsed_list)
   
-  # 🔒 column alignment (same as original)
   all_constraints <- all_constraints[, names(constraints), drop = FALSE]
   
-  # 🔒 dedup (order preserved)
   existing_pairs <- paste(constraints$ID, constraints$hasConstraint)
   new_pairs <- paste(all_constraints$ID, all_constraints$hasConstraint)
   
   keep <- !(new_pairs %in% existing_pairs)
   new_rows <- all_constraints[keep, , drop = FALSE]
   
-  # 🔒 final order identical to original logic
   combined <- rbind(constraints, new_rows)
   combined[is.na(combined)] <- ""
   
@@ -219,22 +228,25 @@ process_constraints_fast_ordered <- function(
   
   cat("DONE:", output_file, "\n")
   
-  # =========================
-  # VALIDATION (unchanged logic)
-  # =========================
-  
   if (run_validation) {
     
     validate_constraints_file <- function(file_path) {
       
       lines <- readLines(file_path)
       
-      zmat_all <- grep("\\$ZMAT", lines, value = TRUE)
-      zmat_active <- grep("^\\s+\\$ZMAT", lines, value = TRUE)
-      zmat_ignored <- setdiff(zmat_all, zmat_active)
+      zmat_blocks <- extract_zmat_blocks(lines)
       
-      ifzmat_present <- sum(grepl("IFZMAT", zmat_active))
-      fvalue_present <- sum(grepl("FVALUE", zmat_active))
+      zmat_total <- length(grep("\\$ZMAT", lines, ignore.case = TRUE))
+      zmat_active <- length(zmat_blocks)
+      zmat_ignored <- zmat_total - zmat_active
+      
+      ifzmat_present <- sum(vapply(zmat_blocks, function(b) {
+        any(grepl("IFZMAT", b))
+      }, logical(1)))
+      
+      fvalue_present <- sum(vapply(zmat_blocks, function(b) {
+        any(grepl("FVALUE", b))
+      }, logical(1)))
       
       parsed <- tryCatch(
         parse_constraints_fast(file_path),
@@ -259,9 +271,9 @@ process_constraints_fast_ordered <- function(
       
       data.frame(
         file = basename(file_path),
-        zmat_total = length(zmat_all),
-        zmat_active = length(zmat_active),
-        zmat_ignored = length(zmat_ignored),
+        zmat_total = zmat_total,
+        zmat_active = zmat_active,
+        zmat_ignored = zmat_ignored,
         ifzmat_blocks = ifzmat_present,
         fvalue_blocks = fvalue_present,
         constraints_extracted = n_constraints,
