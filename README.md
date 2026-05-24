@@ -107,8 +107,10 @@ Row 3+	→	Data
 
 Example:
 
+```text
 ID	Label	Type	provWasGeneratedBy	hasInputFile	hasOutputFile	fileURL
 ID	LABEL	TYPE	I prov:wasGeneratedBy	I ex:hasInputFile	I ex:hasOutputFile SPLIT=|	A ex:fileURL
+```
 
 ---
 
