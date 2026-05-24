@@ -30,6 +30,8 @@ The focus is on **pre-publication computational workflows** —the exploratory p
 
 ![ontology map and build path](./images/ont_mm_scheme1.png "Scheme 1 Ontology map and build")
 
+---
+
 ## Motivation
 
 Typical challenges in molecular modelling projects include:
@@ -43,6 +45,9 @@ This ontology addresses these by providing a formal framework linking:
 * Files
 * Computational constraints
 * Generated results
+* Experiment sequences
+
+---
 
 ## Scope
 
@@ -64,11 +69,16 @@ This ontology addresses these by providing a formal framework linking:
 * Links to originating inputs and constraints
 * Metadata for interpretation and validation
 
+---
+
 ## Objectives
 
 * Define a consistent schema for molecular modelling projects
 * Enable full traceability from results back to inputs
 * Support reproducible and reusable computational workflows
+* Bridge raw simulation data and semantic representations
+
+---
 
 ## Approach
 
@@ -78,6 +88,29 @@ Gainesville Core Ontology (GC) for domain concepts
 PROV-O for provenance modelling
 
 Relevant terms are extracted, modularised, and combined into a coherent domain ontology.
+
+Structured data is generated using:
+
+- **ROBOT templates** (TSV → RDF/OWL)  
+- **R scripts** for parsing and transformation
+
+---
+
+## Template System (ROBOT)
+
+All ontology instances are generated using ROBOT templates:
+
+Row 1	→	Human-readable headers
+Row 2	→	ROBOT template script
+Row 3+	→	Data
+
+
+Example:
+
+ID	Label	Type	provWasGeneratedBy	hasInputFile	hasOutputFile	fileURL
+ID	LABEL	TYPE	I prov:wasGeneratedBy	I ex:hasInputFile	I ex:hasOutputFile SPLIT=|	A ex:fileURL
+
+---
 
 ## Repository Structure
 
@@ -144,23 +177,31 @@ ont_mm
 
 ## Current Status
 
-Early-stage development:
+Early-stage but functional:
 
-* Core structure defined
-* Term extraction pipeline in place
+* Core ontology structure defined
+* Term extraction pipeline implemented
 * Initial ontology modules created
-* Templates in place
-* Worked example
+* Templates for experiments, constraints, and results
+* R scripts for generating structured data
+* Working end-to-end example
 
 ## Future Work
 
+* Introduce SHACL validation for template checking
 * Expand ontology coverage
-* Integrate with analysis tools (e.g. R workflows)
-* create sparql queries for testing
+* Improve provenance handling (edge cases)
+* Extend results modelling
+* Add more SPARQL queries for validation and analysis
 
 ## Long-term vision
 
-To provide a reusable, extensible framework for structuring computational chemistry projects, bridging raw simulation data with higher-level analysis and interpretation.
+To provide a reusable framework for structuring computational chemistry workflows as semantic graphs, enabling:
+
+* Reproducibility
+* Provenance tracking
+* Integration with knowledge systems
+* Advanced querying and analysis
 
 ## Author
 
@@ -168,7 +209,7 @@ To provide a reusable, extensible framework for structuring computational chemis
 
 ## License
 
-(To be defined — e.g. MIT recommended)
+This project is licensed under the MIT License – see the [LICENSE](./LICENSE.txt) file for details.
 
 ## TOOLS
 
