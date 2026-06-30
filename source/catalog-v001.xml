@@ -3,7 +3,7 @@
 
     <!-- External ontology local copies -->
     <uri name="http://purl.org/gc/"
-         uri="gc.owl"/>
+         uri="gnvc_improved.owl"/>
 
     <uri name="http://www.w3.org/ns/prov#"
          uri="prov-o.owl"/>
