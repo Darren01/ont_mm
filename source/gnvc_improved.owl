@@ -33,8 +33,11 @@
     Molecular Calculations contain Initial Data and Results
     The Initial Data may have Methods, Basis Sets, Functionals, etc.
     The Results may have Energies, Wave Functions and Spectra, etc.</dc:description>
+    <dcterms:references rdf:resource="https://doi.org/10.26434/chemrxiv-2024-fvzpq"/>
+    <rdfs:comment xml:lang="en">The design and repair decisions in this fork were informed in part by the landscape review of computational chemistry ontologies: ChemRxiv 2024,
+    doi:10.26434/chemrxiv-2024-fvzpq</rdfs:comment>
     <dcterms:creator xml:lang="en">Chemical Semantics, Inc.</dcterms:creator>
-    <dcterms:contributor xml:lang="en">Darren (ont_mm project) - structural repairs v0.8.0</dcterms:contributor>
+    <dcterms:contributor xml:lang="en">Darren Rhodes (ont_mm project) - structural repairs v0.8.0</dcterms:contributor>
     <cc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
     <dcterms:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
     <rdfs:isDefinedBy rdf:resource="http://chemicalsemantics.com/"/>
@@ -195,6 +198,9 @@
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://purl.org/gc/Atom"/>
+        <rdfs:comment xml:lang="en">A property that describes atoms comprised by a molecule or residue.</rdfs:comment>
+        <rdfs:label xml:lang="en">has atom</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://chemicalsemantics.com/"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.org/gc/hasResidue"/>
             <rdf:Description rdf:about="http://purl.org/gc/hasAtom"/>
@@ -1081,7 +1087,7 @@
     <owl:ObjectProperty rdf:about="http://purl.org/gc/hasOutputFile">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/gc/extraGCObjectProperty"/>
         <rdfs:comment xml:lang="en">A property that specifies the Output file.</rdfs:comment>
-        <rdfs:label xml:lang="en">Output File</rdfs:label>
+        <rdfs:label xml:lang="en">has output file</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1782,7 +1788,7 @@
         <rdfs:domain rdf:resource="http://purl.org/gc/ComputationalChemistryPublication"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">A property that specifies input file for calculations.</rdfs:comment>
-        <rdfs:label xml:lang="en">Input File</rdfs:label>
+        <rdfs:label xml:lang="en">has input file</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2399,6 +2405,7 @@
         <rdfs:comment xml:lang="en">A class for atoms, the basic unit of matter.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://chemicalsemantics.com/"/>
         <rdfs:label xml:lang="en">Atom</rdfs:label>
+        <rdfs:label xml:lang="en">Atom</rdfs:label>
         <obo:IAO_0000115 xml:lang="en">Smallest particle still characterizing a chemical element. It consists of a nucleus of a positive charge (Z is the proton number and e the
         elementary charge) carrying almost all its mass (more than 99.9%) and electrons determining its size.</obo:IAO_0000115>
         <dcterms:source xml:lang="en">Red Book, 3rd ed., p. 35</dcterms:source>
@@ -2595,6 +2602,8 @@
 
 <owl:Class rdf:about="http://purl.org/gc/Bond">
     <rdfs:subClassOf rdf:resource="http://purl.org/gc/MolecularStructureObject"/>
+    <rdfs:comment xml:lang="en">A generic chemical bond between two atoms.</rdfs:comment>
+    <rdfs:label xml:lang="en">Bond</rdfs:label>
     <rdfs:subClassOf>
         <owl:Restriction>
             <owl:onProperty rdf:resource="http://purl.org/gc/binds"/>
@@ -3106,6 +3115,11 @@
         <rdfs:comment xml:lang="en">A class for all density functionals in Density Functional Theories.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://chemicalsemantics.com/"/>
         <rdfs:label xml:lang="en">Density Functional</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Density Functional Theory - A quantum mechanical modeling method used to investigate the electronic structure of molecules using functionals
+        that describe the spatially dependent electron density, rather than the wavefunction as in ab initio and semi-empirical quantum chemical methods.</obo:IAO_0000115>
+        <dcterms:source xml:lang="en">PAC, 2016, 88, 239. (Glossary of terms used in computational drug design, part II (IUPAC Recommendations 2015)) on page 245</dcterms:source>
+        <rdfs:seeAlso rdf:resource="https://goldbook.iupac.org/terms/view/11435"/>
+        <rdfs:seeAlso rdf:resource="https://doi.org/10.1351/goldbook.11435"/>
     </owl:Class>
     
 
@@ -4310,6 +4324,16 @@
         <rdfs:isDefinedBy rdf:resource="http://chemicalsemantics.com/"/>
         <rdfs:label xml:lang="en">Orbital</rdfs:label>
         <rdfs:comment xml:lang="en">Orbital (1-electron wavefunction)</rdfs:comment>
+        <obo:IAO_0000115 xml:lang="en">A one-electron wavefunction describing an electron moving in the effective field provided by the nuclei and all other electrons of a molecular
+        entity of more than one atom. Such molecular orbitals can be transformed in prescribed ways into component functions to give 'localized molecular orbitals'. Molecular orbitals
+        can also be described, in terms of the number of nuclei (or 'centres') encompassed, as two-centre, multi-centre, etc. molecular orbitals, and are often expressed as a linear
+        combination of atomic orbitals. An orbital is usually depicted by sketching contours on which the wavefunction has a constant value (contour map) or by indicating
+        schematically the envelope of the region of space in which there is an arbitrarily fixed high (say 96%) probability of finding the electron occupying the orbital, giving also
+        the algebraic sign (+ or −) of the wavefunction in each part of that region.</obo:IAO_0000115>
+        <dcterms:source xml:lang="en">PAC, 1994, 66, 1077. (Glossary of terms used in physical organic chemistry (IUPAC Recommendations 1994)) on page 1142.</dcterms:source>
+        <dcterms:source xml:lang="en">Green Book, 2nd ed., p. 18</dcterms:source>
+        <rdfs:seeAlso rdf:resource="https://goldbook.iupac.org/terms/view/M03996"/>
+        <rdfs:seeAlso rdf:resource="https://doi.org/10.1351/goldbook.M03996"/>
     </owl:Class>
     
 
@@ -5287,6 +5311,11 @@
         <rdfs:comment xml:lang="en">A class for the mathematical description of a quantum particle, in most practical cases of the electron.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://chemicalsemantics.com/"/>
         <rdfs:label xml:lang="en">Wave Function</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The solution of the Schrödinger equation, eigenfunction of the hamiltonian operator. Complex conjugate functions are denoted by an asterisk read
+        as 'star'.</obo:IAO_0000115>
+        <dcterms:source xml:lang="en">Green Book, 2nd ed., p. 16 </dcterms:source>
+        <rdfs:seeAlso rdf:resource="https://goldbook.iupac.org/terms/view/W06657"/>
+        <rdfs:seeAlso rdf:resource="https://doi.org/10.1351/goldbook.W06657"/>
     </owl:Class>
     
 
