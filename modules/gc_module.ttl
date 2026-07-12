@@ -9,6 +9,18 @@
 <http://purl.org/gc/> rdf:type owl:Ontology .
 
 #################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/IAO_0000115
+<http://purl.obolibrary.org/obo/IAO_0000115> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+<http://purl.org/dc/terms/source> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
 #    Object Properties
 #################################################################
 
@@ -23,29 +35,49 @@
 
 ###  http://purl.org/gc/hasAtom
 :hasAtom rdf:type owl:ObjectProperty ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :Molecule
+                                     :Residue
+                                   )
+                     ] ;
          rdfs:range :Atom ;
-         rdfs:comment "A property that describes atoms comprised by a molecule or residue"@en ;
+         rdfs:comment "A property that describes atoms comprised by a molecule or residue"@en ,
+                      "A property that describes atoms comprised by a molecule or residue."@en ;
          rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
          rdfs:label "has atom"@en .
 
 
 ###  http://purl.org/gc/hasBasisSet
-:hasBasisSet rdf:type owl:ObjectProperty ,
-                      owl:FunctionalProperty ;
-             rdfs:domain :Atom ;
+:hasBasisSet rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasFeature ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain :Atom ,
+                         :MolecularMethodology ;
              rdfs:range :BasisSet .
 
 
 ###  http://purl.org/gc/hasDftFunctional
 :hasDftFunctional rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :hasFeature ;
+                  rdfs:domain :MolecularMethodology ;
                   rdfs:comment "A property that describes DFT Functionals for the given methodology."@en ;
-                  rdfs:isDefinedBy <http://chemicalsemantics.com/> .
+                  rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                  rdfs:label "has DFT functional"@en .
+
+
+###  http://purl.org/gc/hasFeature
+:hasFeature rdf:type owl:ObjectProperty ;
+            rdfs:domain :MolecularMethodology ;
+            rdfs:comment "A property that describes a specific feature of given methodology."@en ,
+                         "has feature" ;
+            rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+            rdfs:label "has feature"@en .
 
 
 ###  http://purl.org/gc/hasOutputFile
 :hasOutputFile rdf:type owl:ObjectProperty ;
                rdfs:comment "A property that specifies the Output file."@en ;
-               rdfs:label "Output File"@en .
+               rdfs:label "has output file"@en .
 
 
 #################################################################
@@ -60,6 +92,7 @@
 ###  http://purl.org/gc/hasInChIString
 :hasInChIString rdf:type owl:DatatypeProperty ,
                          owl:FunctionalProperty ;
+                rdfs:domain :Molecule ;
                 rdfs:range xsd:string ;
                 rdfs:comment "A property that describes the InChI String - International Chemical Identifier - a textual identifier for chemical substances."@en ;
                 rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
@@ -76,9 +109,10 @@
 
 ###  http://purl.org/gc/hasInputFile
 :hasInputFile rdf:type owl:DatatypeProperty ;
+              rdfs:domain :ComputationalChemistryPublication ;
               rdfs:range xsd:string ;
               rdfs:comment "A property that specifies input file for calculations."@en ;
-              rdfs:label "Input File"@en .
+              rdfs:label "has input file"@en .
 
 
 #################################################################
@@ -87,66 +121,162 @@
 
 ###  http://purl.org/gc/Atom
 :Atom rdf:type owl:Class ;
+      rdfs:subClassOf :GainesvilleCoreTerm ;
       owl:disjointWith :Bond ;
+      <http://purl.obolibrary.org/obo/IAO_0000115> """Smallest particle still characterizing a chemical element. It consists of a nucleus of a positive charge (Z is the proton number and e the
+        elementary charge) carrying almost all its mass (more than 99.9%) and electrons determining its size."""@en ;
+      <http://purl.org/dc/terms/source> "Red Book, 3rd ed., p. 35"@en ;
       rdfs:comment "A class for Atom."@en ,
                    "A class for atoms, the basic unit of matter."@en ;
       rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
-      rdfs:label "Atom"@en ,
-                 "Atoms"@en .
+      rdfs:label "Atom"@en ;
+      rdfs:seeAlso <https://doi.org/10.1351/goldbook.A00493> ,
+                   <https://goldbook.iupac.org/terms/view/A00493> .
 
 
 ###  http://purl.org/gc/BasisSet
 :BasisSet rdf:type owl:Class ;
-          rdfs:comment "A class for the basis set. In computational chemistry basis set is a set of functions which are combined to create molecular orbitals."@en ;
+          <http://purl.obolibrary.org/obo/IAO_0000115> """A set of basis functions employed for the representation of molecular orbitals. One may distinguish the minimal basis set (includes one basis
+        function for each SCF occupied atomic orbital with distinct principal and angular momentum quantum numbers); split valence basis set (includes two or more sizes of basis 
+        function for each valence orbital); double zeta (DZ) basis set (a split valence basis set that includes exactly twice as many functions as the minimal basis set); extended
+        basis set (the set larger than the double zeta basis set); polarized basis set (incorporates basis functions of higher angular quantum number beyond what is required by the
+        atom in its electronic ground state; allows orbitals to change not only a size, but also a shape); basis set with diffuse functions and others."""@en ;
+          <http://purl.org/dc/terms/source> "PAC, 1999, 71, 1919. Glossary of terms used in theoretical organic chemistry, page 1925"@en ;
+          rdfs:comment """A class for the basis set. In computational chemistry basis set is a set of functions which are combined to create molecular orbitals.
+        """@en ;
           rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
-          rdfs:label "Basis Set"@en .
+          rdfs:label "Basis Set"@en ;
+          rdfs:seeAlso <https://doi.org/10.1351/goldbook.BT06999> ,
+                       <https://goldbook.iupac.org/terms/view/BT06999> .
 
 
 ###  http://purl.org/gc/Bond
-:Bond rdf:type owl:Class .
+:Bond rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :binds ;
+                        owl:cardinality "2"^^xsd:nonNegativeInteger
+                      ] ;
+      rdfs:comment "A class for generic chemical bond."@en ,
+                   "A generic chemical bond between two atoms."@en ;
+      rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+      rdfs:label "Bond"@en .
+
+
+###  http://purl.org/gc/ComputationalChemistryPublication
+:ComputationalChemistryPublication rdf:type owl:Class ;
+                                   rdfs:subClassOf :GainesvilleCoreTerm ;
+                                   rdfs:comment "A class for ComputationalChemistryPublication."@en ,
+                                                "A class for publication of the results of the computional chemistry programs."@en ;
+                                   rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                                   rdfs:label "Computational Chemistry Publication"@en .
 
 
 ###  http://purl.org/gc/DftFunctional
 :DftFunctional rdf:type owl:Class ;
+               rdfs:subClassOf :GainesvilleCoreTerm ;
                rdfs:comment "A class for DFT Functional."@en ;
                rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
                rdfs:label "DFT Functional"@en .
 
 
+###  http://purl.org/gc/ExchangeFunctional
+:ExchangeFunctional rdf:type owl:Class ;
+                    rdfs:comment "A class for exchange functionals in Density Functional Theories."@en ;
+                    rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                    rdfs:label "Exchange Functional"@en .
+
+
+###  http://purl.org/gc/GainesvilleCoreTerm
+:GainesvilleCoreTerm rdf:type owl:Class .
+
+
 ###  http://purl.org/gc/GeometryOptimization
 :GeometryOptimization rdf:type owl:Class ;
+                      rdfs:subClassOf :MolecularComputation ;
                       rdfs:comment "A class for calculations in computational chemistry that aim to find molecular geometry of lowest energy."@en ;
                       rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
                       rdfs:label "Geometry optimization"@en .
 
 
+###  http://purl.org/gc/MolecularComputation
+:MolecularComputation rdf:type owl:Class ;
+                      rdfs:subClassOf :GainesvilleCoreTerm ;
+                      rdfs:comment "A class for MolecularComputation."@en ,
+                                   "A class for the specific type of calculation (like optimization, single point, etc) conducted by a computational chemistry program."@en ;
+                      rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                      rdfs:label "Molecular Computation"@en .
+
+
+###  http://purl.org/gc/MolecularMethodology
+:MolecularMethodology rdf:type owl:Class ;
+                      rdfs:subClassOf :GainesvilleCoreTerm ;
+                      rdfs:comment "A class for MolecularMethodology."@en ,
+                                   "A class for general methodologies of computational chemistry."@en ;
+                      rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                      rdfs:label "Molecular Methodology"@en .
+
+
+###  http://purl.org/gc/Molecule
+:Molecule rdf:type owl:Class ;
+          rdfs:subClassOf :GainesvilleCoreTerm ;
+          <http://purl.obolibrary.org/obo/IAO_0000115> """An electrically neutral entity consisting of more than one atom (n > 1). Rigorously, a molecule, in which (n > 1) must correspond to a
+        depression on the potential energy surface that is deep enough to confine at least one vibrational state."""@en ;
+          <http://purl.org/dc/terms/source> "PAC, 1994, 66, 1077. (Glossary of terms used in physical organic chemistry (IUPAC Recommendations 1994)) on page 1143"@en ;
+          rdfs:comment "A class for Molecule."@en ,
+                       "A class for molecule - electrically neutral group (or polyatomic ion) of two or more atoms held together by chemical bonds."@en ;
+          rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+          rdfs:label "Molecule"@en ;
+          rdfs:seeAlso <https://doi.org/10.1351/goldbook.M04002> ,
+                       <https://goldbook.iupac.org/terms/view/M04002> .
+
+
+###  http://purl.org/gc/QuantumMechanics
+:QuantumMechanics rdf:type owl:Class ;
+                  rdfs:subClassOf :GainesvilleCoreTerm ,
+                                  :MolecularMethodology ;
+                  rdfs:comment "A class for Quantum Mechanical methods."@en ,
+                               "A class for QuantumMechanics."@en ;
+                  rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                  rdfs:label "Quantum Mechanics"@en .
+
+
+###  http://purl.org/gc/Residue
+:Residue rdf:type owl:Class ;
+         rdfs:subClassOf :GainesvilleCoreTerm ;
+         rdfs:comment "A class for Residue."@en ,
+                      "A class for residues - monomers of polysaccharide, protein, nucleic acid or polymer"@en ;
+         rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+         rdfs:label "Residue"@en .
+
+
 ###  http://purl.org/gc/SinglePoint
 :SinglePoint rdf:type owl:Class ;
+             rdfs:subClassOf :MolecularComputation ;
              rdfs:comment "A class for Single Point calculations - computation of the energy of molecular system for given geometry."@en ;
              rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
              rdfs:label "Single Point"@en .
 
 
-#################################################################
-#    Individuals
-#################################################################
+###  http://purl.org/gc/Spectra
+:Spectra rdf:type owl:Class ;
+         rdfs:comment "A class for general spectra."@en ;
+         rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+         rdfs:label "Generic Spectra Class"@en .
 
-###  http://purl.org/gc/Bond
-:Bond rdf:type owl:NamedIndividual ,
-               [ rdf:type owl:Restriction ;
-                 owl:onProperty :binds ;
-                 owl:cardinality "2"^^xsd:nonNegativeInteger
-               ] .
+
+###  http://purl.org/gc/VibrationalAnalysis
+:VibrationalAnalysis rdf:type owl:Class ;
+                     rdfs:subClassOf :GainesvilleCoreTerm ,
+                                     :MolecularComputation ;
+                     rdfs:comment "A class for VibrationalAnalysis."@en ,
+                                  "A class for the computations of vibrational spectrum of molecules."@en ;
+                     rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                     rdfs:label "Vibrational Analysis"@en .
 
 
 #################################################################
 #    Annotations
 #################################################################
-
-:Bond rdfs:comment "A class for generic chemical bond."@en ;
-      rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
-      rdfs:label "Bond"@en .
-
 
 :hasBasisSet rdfs:comment "A property that allows Basis Sets to be assigned to a given quantum methodology"@en ,
                           "A property that allows to define Basis Set -  finite set of functions used to approximately express the Molecular Orbital wavefunction(s) of system, normally atom centered, consisting of AOs differing in local angular momentum for each atom."@en ;

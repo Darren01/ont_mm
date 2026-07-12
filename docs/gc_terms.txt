@@ -13,3 +13,9 @@ http://purl.org/gc/hasDftFunctional
 http://purl.org/gc/hasBasisSet
 http://purl.org/gc/hasAtom
 http://purl.org/gc/hasIndex
+http://purl.org/gc/VibrationalAnalysis
+http://purl.org/gc/MolecularComputation
+http://purl.org/gc/ExchangeFunctional
+http://purl.org/gc/QuantumMechanics
+http://purl.org/gc/GainesvilleCoreTerm
+http://purl.org/gc/Spectra
