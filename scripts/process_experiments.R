@@ -1,5 +1,3 @@
-source("~/Projects/active/gamess_functions/R/classify_gamess_jobs.R")
-
 process_experiments <- function(
     template_file,
     input_dir,
@@ -95,11 +93,10 @@ process_experiments <- function(
     ]
     if (length(prov_source) == 0) prov_source <- ""
     
-
     # classify by RUNTYP/HSSEND rather than assuming every job is
     # a geometry optimisation
     classification <- classify_gamess_job(file)
- 
+
     job_label <- switch(
       classification$job_type,
       "GeometryOptimization" = "Geometry optimisation",
@@ -107,7 +104,7 @@ process_experiments <- function(
       "VibrationalAnalysis"  = "Vibrational analysis",
       "Unclassified job"
     )
- 
+
     job_type_col <- if (is.na(classification$job_type)) {
       warning(
         "Could not classify ", name, " (RUNTYP=", classification$runtyp,
@@ -115,9 +112,13 @@ process_experiments <- function(
       )
       ""
     } else {
-      paste0("ex:", classification$job_type)
+      # gc: now that VibrationalAnalysis (and the hierarchy above it) has
+      # been rebuilt into gc_core.ttl from gnvc_improved.owl - previously
+      # this wrote "ex:X", which created a disconnected shadow class with
+      # no relationship to the real GNVC-derived ontology
+      paste0("gc:", classification$job_type)
     }
- 
+
     # ---------- experiment ----------
     rows[[idx]] <- make_row(
       exp_id,
@@ -129,7 +130,6 @@ process_experiments <- function(
       ""
     )
     idx <- idx + 1
- 
     
     # ---------- input ----------
     rows[[idx]] <- make_row(

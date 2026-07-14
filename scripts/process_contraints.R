@@ -97,7 +97,14 @@ process_constraints_fast_ordered <- function(
           list(
             ID = exp_id,
             Label = paste("Experiment", sub("^ex:", "", exp_id)),
-            Type = "ex:GeometryOptimization",
+            # Type intentionally left blank: the experiment's type is
+            # already asserted once, correctly, in
+            # experiment_template_instances.tsv (via classify_gamess_job()).
+            # This row only needs to attach hasConstraint - redeclaring
+            # Type here duplicated that assertion and, being hardcoded,
+            # silently contradicted it for anything that wasn't a
+            # GeometryOptimization (e.g. rem01b, a VibrationalAnalysis).
+            Type = "",
             hasConstraint = cid,
             involvesAtom1 = "",
             involvesAtom2 = "",
