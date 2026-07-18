@@ -1,0 +1,116 @@
+ID	Label	Type	hasFloatValue	hasUnit
+ID	LABEL	TYPE	I gc:hasFloatValue	I gc:hasUnit
+ex:freqval_rem01b_1	Frequency mode 1 rem01b	gc:FloatValue	139.5	gc:cm-1
+ex:freqval_rem01b_2	Frequency mode 2 rem01b	gc:FloatValue	101.35	gc:cm-1
+ex:freqval_rem01b_3	Frequency mode 3 rem01b	gc:FloatValue	0.22	gc:cm-1
+ex:freqval_rem01b_4	Frequency mode 4 rem01b	gc:FloatValue	0.06	gc:cm-1
+ex:freqval_rem01b_5	Frequency mode 5 rem01b	gc:FloatValue	0.21	gc:cm-1
+ex:freqval_rem01b_6	Frequency mode 6 rem01b	gc:FloatValue	46.08	gc:cm-1
+ex:freqval_rem01b_7	Frequency mode 7 rem01b	gc:FloatValue	78.31	gc:cm-1
+ex:freqval_rem01b_8	Frequency mode 8 rem01b	gc:FloatValue	92.29	gc:cm-1
+ex:freqval_rem01b_9	Frequency mode 9 rem01b	gc:FloatValue	118.76	gc:cm-1
+ex:freqval_rem01b_10	Frequency mode 10 rem01b	gc:FloatValue	248.57	gc:cm-1
+ex:freqval_rem01b_11	Frequency mode 11 rem01b	gc:FloatValue	275.96	gc:cm-1
+ex:freqval_rem01b_12	Frequency mode 12 rem01b	gc:FloatValue	324.91	gc:cm-1
+ex:freqval_rem01b_13	Frequency mode 13 rem01b	gc:FloatValue	381.19	gc:cm-1
+ex:freqval_rem01b_14	Frequency mode 14 rem01b	gc:FloatValue	498.42	gc:cm-1
+ex:freqval_rem01b_15	Frequency mode 15 rem01b	gc:FloatValue	592.94	gc:cm-1
+ex:freqval_rem01b_16	Frequency mode 16 rem01b	gc:FloatValue	655.29	gc:cm-1
+ex:freqval_rem01b_17	Frequency mode 17 rem01b	gc:FloatValue	693.12	gc:cm-1
+ex:freqval_rem01b_18	Frequency mode 18 rem01b	gc:FloatValue	789.35	gc:cm-1
+ex:freqval_rem01b_19	Frequency mode 19 rem01b	gc:FloatValue	830.58	gc:cm-1
+ex:freqval_rem01b_20	Frequency mode 20 rem01b	gc:FloatValue	851.39	gc:cm-1
+ex:freqval_rem01b_21	Frequency mode 21 rem01b	gc:FloatValue	876.1	gc:cm-1
+ex:freqval_rem01b_22	Frequency mode 22 rem01b	gc:FloatValue	907.01	gc:cm-1
+ex:freqval_rem01b_23	Frequency mode 23 rem01b	gc:FloatValue	923.71	gc:cm-1
+ex:freqval_rem01b_24	Frequency mode 24 rem01b	gc:FloatValue	971.17	gc:cm-1
+ex:freqval_rem01b_25	Frequency mode 25 rem01b	gc:FloatValue	984.2	gc:cm-1
+ex:freqval_rem01b_26	Frequency mode 26 rem01b	gc:FloatValue	1023.07	gc:cm-1
+ex:freqval_rem01b_27	Frequency mode 27 rem01b	gc:FloatValue	1058.83	gc:cm-1
+ex:freqval_rem01b_28	Frequency mode 28 rem01b	gc:FloatValue	1100.55	gc:cm-1
+ex:freqval_rem01b_29	Frequency mode 29 rem01b	gc:FloatValue	1117.45	gc:cm-1
+ex:freqval_rem01b_30	Frequency mode 30 rem01b	gc:FloatValue	1137.04	gc:cm-1
+ex:freqval_rem01b_31	Frequency mode 31 rem01b	gc:FloatValue	1157.2	gc:cm-1
+ex:freqval_rem01b_32	Frequency mode 32 rem01b	gc:FloatValue	1202.57	gc:cm-1
+ex:freqval_rem01b_33	Frequency mode 33 rem01b	gc:FloatValue	1219.56	gc:cm-1
+ex:freqval_rem01b_34	Frequency mode 34 rem01b	gc:FloatValue	1233.37	gc:cm-1
+ex:freqval_rem01b_35	Frequency mode 35 rem01b	gc:FloatValue	1258.85	gc:cm-1
+ex:freqval_rem01b_36	Frequency mode 36 rem01b	gc:FloatValue	1273.78	gc:cm-1
+ex:freqval_rem01b_37	Frequency mode 37 rem01b	gc:FloatValue	1287.61	gc:cm-1
+ex:freqval_rem01b_38	Frequency mode 38 rem01b	gc:FloatValue	1321.57	gc:cm-1
+ex:freqval_rem01b_39	Frequency mode 39 rem01b	gc:FloatValue	1327.49	gc:cm-1
+ex:freqval_rem01b_40	Frequency mode 40 rem01b	gc:FloatValue	1389.25	gc:cm-1
+ex:freqval_rem01b_41	Frequency mode 41 rem01b	gc:FloatValue	1391.05	gc:cm-1
+ex:freqval_rem01b_42	Frequency mode 42 rem01b	gc:FloatValue	1402.18	gc:cm-1
+ex:freqval_rem01b_43	Frequency mode 43 rem01b	gc:FloatValue	1430.29	gc:cm-1
+ex:freqval_rem01b_44	Frequency mode 44 rem01b	gc:FloatValue	1477.59	gc:cm-1
+ex:freqval_rem01b_45	Frequency mode 45 rem01b	gc:FloatValue	1542.41	gc:cm-1
+ex:freqval_rem01b_46	Frequency mode 46 rem01b	gc:FloatValue	1558.48	gc:cm-1
+ex:freqval_rem01b_47	Frequency mode 47 rem01b	gc:FloatValue	1582.92	gc:cm-1
+ex:freqval_rem01b_48	Frequency mode 48 rem01b	gc:FloatValue	3102.11	gc:cm-1
+ex:freqval_rem01b_49	Frequency mode 49 rem01b	gc:FloatValue	3121.32	gc:cm-1
+ex:freqval_rem01b_50	Frequency mode 50 rem01b	gc:FloatValue	3137.23	gc:cm-1
+ex:freqval_rem01b_51	Frequency mode 51 rem01b	gc:FloatValue	3151.18	gc:cm-1
+ex:freqval_rem01b_52	Frequency mode 52 rem01b	gc:FloatValue	3166.64	gc:cm-1
+ex:freqval_rem01b_53	Frequency mode 53 rem01b	gc:FloatValue	3182.27	gc:cm-1
+ex:freqval_rem01b_54	Frequency mode 54 rem01b	gc:FloatValue	3208.12	gc:cm-1
+ex:freqval_rem01b_55	Frequency mode 55 rem01b	gc:FloatValue	3211.26	gc:cm-1
+ex:freqval_rem01b_56	Frequency mode 56 rem01b	gc:FloatValue	3225.36	gc:cm-1
+ex:freqval_rem01b_57	Frequency mode 57 rem01b	gc:FloatValue	3566.01	gc:cm-1
+ex:intval_rem01b_1	IR intensity mode 1 rem01b	gc:FloatValue	0.04531	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_2	IR intensity mode 2 rem01b	gc:FloatValue	0.03104	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_3	IR intensity mode 3 rem01b	gc:FloatValue	0	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_4	IR intensity mode 4 rem01b	gc:FloatValue	0	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_5	IR intensity mode 5 rem01b	gc:FloatValue	0	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_6	IR intensity mode 6 rem01b	gc:FloatValue	0.09029	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_7	IR intensity mode 7 rem01b	gc:FloatValue	0.07099	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_8	IR intensity mode 8 rem01b	gc:FloatValue	0.09886	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_9	IR intensity mode 9 rem01b	gc:FloatValue	0.15277	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_10	IR intensity mode 10 rem01b	gc:FloatValue	0.41706	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_11	IR intensity mode 11 rem01b	gc:FloatValue	4.22018	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_12	IR intensity mode 12 rem01b	gc:FloatValue	0.58036	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_13	IR intensity mode 13 rem01b	gc:FloatValue	0.19363	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_14	IR intensity mode 14 rem01b	gc:FloatValue	0.5009	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_15	IR intensity mode 15 rem01b	gc:FloatValue	0.47524	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_16	IR intensity mode 16 rem01b	gc:FloatValue	0.15285	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_17	IR intensity mode 17 rem01b	gc:FloatValue	0.75907	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_18	IR intensity mode 18 rem01b	gc:FloatValue	1.87619	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_19	IR intensity mode 19 rem01b	gc:FloatValue	0.14689	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_20	IR intensity mode 20 rem01b	gc:FloatValue	0.67225	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_21	IR intensity mode 21 rem01b	gc:FloatValue	1.31594	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_22	IR intensity mode 22 rem01b	gc:FloatValue	0.81936	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_23	IR intensity mode 23 rem01b	gc:FloatValue	0.4296	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_24	IR intensity mode 24 rem01b	gc:FloatValue	0.12574	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_25	IR intensity mode 25 rem01b	gc:FloatValue	3.67617	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_26	IR intensity mode 26 rem01b	gc:FloatValue	5.58167	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_27	IR intensity mode 27 rem01b	gc:FloatValue	0.10028	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_28	IR intensity mode 28 rem01b	gc:FloatValue	1.13553	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_29	IR intensity mode 29 rem01b	gc:FloatValue	2.37341	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_30	IR intensity mode 30 rem01b	gc:FloatValue	1.77709	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_31	IR intensity mode 31 rem01b	gc:FloatValue	0.96199	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_32	IR intensity mode 32 rem01b	gc:FloatValue	0.57697	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_33	IR intensity mode 33 rem01b	gc:FloatValue	0.22055	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_34	IR intensity mode 34 rem01b	gc:FloatValue	0.57142	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_35	IR intensity mode 35 rem01b	gc:FloatValue	0.23339	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_36	IR intensity mode 36 rem01b	gc:FloatValue	0.14489	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_37	IR intensity mode 37 rem01b	gc:FloatValue	0.37326	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_38	IR intensity mode 38 rem01b	gc:FloatValue	0.11728	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_39	IR intensity mode 39 rem01b	gc:FloatValue	0.18006	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_40	IR intensity mode 40 rem01b	gc:FloatValue	0.31454	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_41	IR intensity mode 41 rem01b	gc:FloatValue	0.22003	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_42	IR intensity mode 42 rem01b	gc:FloatValue	0.06002	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_43	IR intensity mode 43 rem01b	gc:FloatValue	0.08286	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_44	IR intensity mode 44 rem01b	gc:FloatValue	0.07672	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_45	IR intensity mode 45 rem01b	gc:FloatValue	0.36524	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_46	IR intensity mode 46 rem01b	gc:FloatValue	0.14112	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_47	IR intensity mode 47 rem01b	gc:FloatValue	0.03614	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_48	IR intensity mode 48 rem01b	gc:FloatValue	1.5498	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_49	IR intensity mode 49 rem01b	gc:FloatValue	0.39177	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_50	IR intensity mode 50 rem01b	gc:FloatValue	0.48242	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_51	IR intensity mode 51 rem01b	gc:FloatValue	1.41223	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_52	IR intensity mode 52 rem01b	gc:FloatValue	0.41759	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_53	IR intensity mode 53 rem01b	gc:FloatValue	0.50805	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_54	IR intensity mode 54 rem01b	gc:FloatValue	0.07726	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_55	IR intensity mode 55 rem01b	gc:FloatValue	0.2074	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_56	IR intensity mode 56 rem01b	gc:FloatValue	1.11395	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_rem01b_57	IR intensity mode 57 rem01b	gc:FloatValue	0.03624	gc:debyeSquaredPerAmuAngstromSquared

@@ -80,7 +80,8 @@ This example uses ROBOT to convert tabular templates into OWL and then merge the
 ```
 robot template \
   --template examples/ont/experiment_template_instances.tsv \
-  --ontology file:///home/darren/Projects/active/ont_mm/releases/2026-07-12/gc_core.ttl \
+  --merge-before \
+  --input releases/2026-07-16/gc_core.ttl \
   --ontology-iri "http://purl.org/gc/core" \
   --prefix "gc: http://purl.org/gc/" \
   --prefix "ex: http://example.org/" \
@@ -95,7 +96,8 @@ robot template \
 ```
 robot template \
   --template examples/ont/constraint_template_instances.tsv \
-  --ontology file:///home/darren/Projects/active/ont_mm/releases/2026-07-12/gc_core.ttl \
+  --merge-before \
+  --input releases/2026-07-16/gc_core.ttl \
   --ontology-iri "http://purl.org/gc/core" \
   --prefix "gc: http://purl.org/gc/" \
   --prefix "ex: http://example.org/" \
@@ -104,12 +106,13 @@ robot template \
 
 ---
 
-### Step 3 — Generate Results Ontology
+### Step 3 — Generate Results Ontology (bond distances, angles, dihedrals)
 
 ```
 robot template \
   --template examples/ont/results_template_instances.tsv \
-  --ontology file:///home/darren/Projects/active/ont_mm/releases/2026-07-12/gc_core.ttl \
+  --merge-before \
+  --input releases/2026-07-16/gc_core.ttl \
   --ontology-iri "http://purl.org/gc/core" \
   --prefix "gc: http://purl.org/gc/" \
   --prefix "ex: http://example.org/" \
@@ -118,20 +121,71 @@ robot template \
 
 ---
 
-### Step 4 — Merge into a Single Ontology
+### Step 4 — Generate Frequency/Intensity Results
+
+Four linked templates, reflecting the real gc: reification chain
+(experiment --hasResult--> VibrationalSpectra --hasFrequencyPeak-->
+FrequencyPeak --hasFrequency/hasIntensity--> FloatValue). Run in this
+order - each re-opens or references IDs created by the previous one.
+
+```
+robot template \
+  --template examples/ont/spectra_result_template_instances.tsv \
+  --merge-before \
+  --input releases/2026-07-16/gc_core.ttl \
+  --ontology-iri "http://purl.org/gc/core" \
+  --prefix "gc: http://purl.org/gc/" \
+  --prefix "ex: http://example.org/" \
+  --output examples/ont/spectra_result_template.ttl
+
+robot template \
+  --template examples/ont/spectra_template_instances.tsv \
+  --merge-before \
+  --input releases/2026-07-16/gc_core.ttl \
+  --ontology-iri "http://purl.org/gc/core" \
+  --prefix "gc: http://purl.org/gc/" \
+  --prefix "ex: http://example.org/" \
+  --output examples/ont/spectra_template.ttl
+
+robot template \
+  --template examples/ont/peak_template_instances.tsv \
+  --merge-before \
+  --input releases/2026-07-16/gc_core.ttl \
+  --ontology-iri "http://purl.org/gc/core" \
+  --prefix "gc: http://purl.org/gc/" \
+  --prefix "ex: http://example.org/" \
+  --output examples/ont/peak_template.ttl
+
+robot template \
+  --template examples/ont/float_value_template_instances.tsv \
+  --merge-before \
+  --input releases/2026-07-16/gc_core.ttl \
+  --ontology-iri "http://purl.org/gc/core" \
+  --prefix "gc: http://purl.org/gc/" \
+  --prefix "ex: http://example.org/" \
+  --output examples/ont/float_value_template.ttl
+```
+
+---
+
+### Step 5 — Merge into a Single Ontology
 
 ```
 robot merge \
-  --input examples/ont/constraint_template.ttl \
   --input examples/ont/experiment_template.ttl \
+  --input examples/ont/constraint_template.ttl \
   --input examples/ont/results_template.ttl \
-  --output examples/ont/gc_core_full_2026-07-12.ttl
+  --input examples/ont/spectra_result_template.ttl \
+  --input examples/ont/spectra_template.ttl \
+  --input examples/ont/peak_template.ttl \
+  --input examples/ont/float_value_template.ttl \
+  --output examples/ont/gc_core_full_2026-07-18.ttl
 ```
 
 This produces the complete instantiated ontology:
 
 ```
-examples/ont/gc_core_full_2026-07-12.ttl
+examples/ont/gc_core_full_2026-07-17.ttl
 ```
 
 ---
