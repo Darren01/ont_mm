@@ -1,11 +1,19 @@
 In this folder the ontology was build using the modules prepared earlier using the following code.
 
+**Update (v0.8.2 onwards):** `gc_module.ttl` (the STAR-extracted subset) has
+been retired. `source/gnvc_improved.owl` is now merged directly - see
+`modules/README.md` for why this became possible and preferable. The merge
+command is now:
+
 ```
 robot merge \
-  --input ~/Projects/active/ont_mm/modules/gc_module.ttl \
+  --input ~/Projects/active/ont_mm/source/gnvc_improved.owl \
   --input ~/Projects/active/ont_mm/modules/prov_module.ttl \
   --output ~/Projects/active/ont_mm/builds/gc_core.ttl
 ```
+
+(`prov_module.ttl` is unaffected by this change - it's a separate STAR
+extraction from `prov-o.owl`, unrelated to `gc_terms.txt`/`gnvc_improved.owl`.)
 
 At this stage the build ontology was checked with the following robot code.
 

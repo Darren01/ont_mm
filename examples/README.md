@@ -81,7 +81,7 @@ This example uses ROBOT to convert tabular templates into OWL and then merge the
 robot template \
   --template examples/ont/experiment_template_instances.tsv \
   --merge-before \
-  --input releases/2026-07-16/gc_core.ttl \
+  --input releases/2026-07-19/gc_core.ttl \
   --ontology-iri "http://purl.org/gc/core" \
   --prefix "gc: http://purl.org/gc/" \
   --prefix "ex: http://example.org/" \
@@ -97,7 +97,7 @@ robot template \
 robot template \
   --template examples/ont/constraint_template_instances.tsv \
   --merge-before \
-  --input releases/2026-07-16/gc_core.ttl \
+  --input releases/2026-07-19/gc_core.ttl \
   --ontology-iri "http://purl.org/gc/core" \
   --prefix "gc: http://purl.org/gc/" \
   --prefix "ex: http://example.org/" \
@@ -112,7 +112,7 @@ robot template \
 robot template \
   --template examples/ont/results_template_instances.tsv \
   --merge-before \
-  --input releases/2026-07-16/gc_core.ttl \
+  --input releases/2026-07-19/gc_core.ttl \
   --ontology-iri "http://purl.org/gc/core" \
   --prefix "gc: http://purl.org/gc/" \
   --prefix "ex: http://example.org/" \
@@ -132,7 +132,7 @@ order - each re-opens or references IDs created by the previous one.
 robot template \
   --template examples/ont/spectra_result_template_instances.tsv \
   --merge-before \
-  --input releases/2026-07-16/gc_core.ttl \
+  --input releases/2026-07-19/gc_core.ttl \
   --ontology-iri "http://purl.org/gc/core" \
   --prefix "gc: http://purl.org/gc/" \
   --prefix "ex: http://example.org/" \
@@ -141,7 +141,7 @@ robot template \
 robot template \
   --template examples/ont/spectra_template_instances.tsv \
   --merge-before \
-  --input releases/2026-07-16/gc_core.ttl \
+  --input releases/2026-07-19/gc_core.ttl \
   --ontology-iri "http://purl.org/gc/core" \
   --prefix "gc: http://purl.org/gc/" \
   --prefix "ex: http://example.org/" \
@@ -150,7 +150,7 @@ robot template \
 robot template \
   --template examples/ont/peak_template_instances.tsv \
   --merge-before \
-  --input releases/2026-07-16/gc_core.ttl \
+  --input releases/2026-07-19/gc_core.ttl \
   --ontology-iri "http://purl.org/gc/core" \
   --prefix "gc: http://purl.org/gc/" \
   --prefix "ex: http://example.org/" \
@@ -159,7 +159,7 @@ robot template \
 robot template \
   --template examples/ont/float_value_template_instances.tsv \
   --merge-before \
-  --input releases/2026-07-16/gc_core.ttl \
+  --input releases/2026-07-19/gc_core.ttl \
   --ontology-iri "http://purl.org/gc/core" \
   --prefix "gc: http://purl.org/gc/" \
   --prefix "ex: http://example.org/" \
@@ -179,13 +179,13 @@ robot merge \
   --input examples/ont/spectra_template.ttl \
   --input examples/ont/peak_template.ttl \
   --input examples/ont/float_value_template.ttl \
-  --output examples/ont/gc_core_full_2026-07-18.ttl
+  --output examples/ont/gc_core_full_2026-07-19.ttl
 ```
 
 This produces the complete instantiated ontology:
 
 ```
-examples/ont/gc_core_full_2026-07-17.ttl
+examples/ont/gc_core_full_2026-07-19.ttl
 ```
 
 ---
