@@ -168,6 +168,70 @@ robot template \
 
 ---
 
+### Step 4b — Generate Thermochemistry Results
+
+A separate result chain (experiment --hasResult--> SystemEnergies
+--hasZeroPointEnergy/hasEnthalpy/hasEntropy/hasGibbsFreeEnergy--> FloatValue),
+three levels rather than frequency's four (SystemEnergies holds multiple
+energy properties directly - no intermediate node like FrequencyPeak is
+needed). Only produced for experiments where GAMESS actually completed a
+thermochemistry table (RUNTYP=OPTIMIZE + HSSEND=.t., same jobs that also
+get a frequency spectrum - both results coexist for the same experiment,
+via two separate hasResult rows, since hasResult is not a
+FunctionalProperty).
+
+**Standing rule for any future writer that touches a shared template
+(spectra_result_template_instances.tsv or float_value_template_instances.tsv,
+and likely more as NMR/geometry writers are added): after running that
+writer, re-run the `robot template` command for every shared file it
+touched, not just the new template being introduced.** Treat "regenerate
+every Step 4/4b/4c/... .ttl" as one atomic block that always runs in
+full before Step 5's merge - trying to reason about which specific files
+were "affected" by a given writer run is exactly the kind of manual
+bookkeeping that has caused a silent, no-error staleness bug every time
+it's been relied on so far in this project.
+
+`spectra_result_template_instances.tsv` and `float_value_template_instances.tsv`
+are shared with Step 4 - process_thermo_results() (gamess_functions)
+appends to them rather than regenerating, and dedups against
+`energies_template_instances.tsv` specifically rather than the shared
+files, so re-running process_thermo_results() is always safe.
+
+**Because `spectra_result_template_instances.tsv` is shared and just got
+a new row appended to it, `spectra_result_template.ttl` (built in Step 4)
+is now stale and must be regenerated too - not just the new
+`energies_template.ttl` below. This is easy to miss (found the hard way:
+the merge silently used the old, one-row version and `hasResult` only
+pointed at the spectrum, not the new energies individual, with no error
+at any step). Re-run Step 4's first command before continuing:**
+
+```
+robot template \
+  --template examples/ont/spectra_result_template_instances.tsv \
+  --merge-before \
+  --input releases/2026-07-19/gc_core.ttl \
+  --ontology-iri "http://purl.org/gc/core" \
+  --prefix "gc: http://purl.org/gc/" \
+  --prefix "ex: http://example.org/" \
+  --prefix "prov: http://www.w3.org/ns/prov#" \
+  --output examples/ont/spectra_result_template.ttl
+```
+
+Then generate the energies template itself:
+
+```
+robot template \
+  --template examples/ont/energies_template_instances.tsv \
+  --merge-before \
+  --input releases/2026-07-19/gc_core.ttl \
+  --ontology-iri "http://purl.org/gc/core" \
+  --prefix "gc: http://purl.org/gc/" \
+  --prefix "ex: http://example.org/" \
+  --output examples/ont/energies_template.ttl
+```
+
+---
+
 ### Step 5 — Merge into a Single Ontology
 
 ```
@@ -179,6 +243,7 @@ robot merge \
   --input examples/ont/spectra_template.ttl \
   --input examples/ont/peak_template.ttl \
   --input examples/ont/float_value_template.ttl \
+  --input examples/ont/energies_template.ttl \
   --output examples/ont/gc_core_full_2026-07-19.ttl
 ```
 

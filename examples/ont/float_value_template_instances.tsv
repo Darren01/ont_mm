@@ -114,3 +114,7 @@ ex:intval_rem01b_54	IR intensity mode 54 rem01b	gc:FloatValue	0.07726	gc:debyeSq
 ex:intval_rem01b_55	IR intensity mode 55 rem01b	gc:FloatValue	0.2074	gc:debyeSquaredPerAmuAngstromSquared
 ex:intval_rem01b_56	IR intensity mode 56 rem01b	gc:FloatValue	1.11395	gc:debyeSquaredPerAmuAngstromSquared
 ex:intval_rem01b_57	IR intensity mode 57 rem01b	gc:FloatValue	0.03624	gc:debyeSquaredPerAmuAngstromSquared
+ex:zpe_rem01b	Zero-point energy rem01b	gc:FloatValue	0.163249	gc:hartree
+ex:enthalpy_rem01b	Enthalpy rem01b	gc:FloatValue	452.39	gc:kiloJoules
+ex:entropy_rem01b	Entropy rem01b	gc:FloatValue	373.181	gc:joulePerMoleKelvin
+ex:gibbs_rem01b	Gibbs free energy rem01b	gc:FloatValue	341.127	gc:kiloJoules

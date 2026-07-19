@@ -1,3 +1,4 @@
 ID	Type	hasResult
 ID	TYPE	I gc:hasResult
 ex:exp_rem01b	gc:MolecularComputation	ex:spectrum_rem01b
+ex:exp_rem01b	gc:MolecularComputation	ex:energies_rem01b
