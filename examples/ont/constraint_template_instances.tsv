@@ -1,16 +1,16 @@
 ID	Label	Type	hasConstraint	involvesAtom1	involvesAtom2	involvesAtom3	involvesAtom4	targetValue	hasUnit	constraintMode	forceConstant
-ID	LABEL	TYPE	I gc:hasConstraint	I gc:involvesAtom1	I gc:involvesAtom2	I gc:involvesAtom3	I gc:involvesAtom4	A gc:targetValue	A gc:hasUnit	A gc:constraintMode	A gc:forceConstant
+ID	LABEL	TYPE	I gc:hasConstraint	I gc:involvesAtom1	I gc:involvesAtom2	I gc:involvesAtom3	I gc:involvesAtom4	A gc:targetValue	I gc:hasUnit	A gc:constraintMode	A gc:forceConstant
 											
 ex:exp_rem01	Experiment rem01		ex:constraint_rem01_d1								
-ex:constraint_rem01_d1	Distance constraint rem01	ex:DistanceConstraint		ex:atom_9	ex:atom_10			2.5	angstrom	fixed	
-ex:constraint_rem01_d2	Distance constraint rem01	ex:DistanceConstraint		ex:atom_13	ex:atom_6			2.5	angstrom	fixed	
+ex:constraint_rem01_d1	Distance constraint rem01	ex:DistanceConstraint		ex:atom_9	ex:atom_10			2.5	gc:angstrom	fixed	
+ex:constraint_rem01_d2	Distance constraint rem01	ex:DistanceConstraint		ex:atom_13	ex:atom_6			2.5	gc:angstrom	fixed	
 											
 ex:exp_rem01a	Experiment rem01a		ex:constraint_rem01a_d1								
 ex:exp_rem01a	Experiment rem01a		ex:constraint_rem01a_dih1								
-ex:constraint_rem01a_d1	Distance constraint rem01a	ex:DistanceConstraint		ex:atom_9	ex:atom_10			2	angstrom	fixed	
-ex:constraint_rem01a_dih1	Dihedral constraint rem01a	ex:DihedralConstraint		ex:atom_9	ex:atom_6	ex:atom_10	ex:atom_16	180	degree	scan	
+ex:constraint_rem01a_d1	Distance constraint rem01a	ex:DistanceConstraint		ex:atom_9	ex:atom_10			2	gc:angstrom	fixed	
+ex:constraint_rem01a_dih1	Dihedral constraint rem01a	ex:DihedralConstraint		ex:atom_9	ex:atom_6	ex:atom_10	ex:atom_16	180	gc:degree	scan	
 											
 ex:exp_rem01b	Experiment rem01b		ex:constraint_rem01b_d1								
 ex:exp_rem01b	Experiment rem01b		ex:constraint_rem01b_dih1								
-ex:constraint_rem01b_d1	Distance constraint rem01b	ex:DistanceConstraint		ex:atom_9	ex:atom_10			2	angstrom	fixed	
-ex:constraint_rem01b_dih1	Dihedral constraint rem01b	ex:DihedralConstraint		ex:atom_2	ex:atom_6	ex:atom_10	ex:atom_16	90	degree	scan	
+ex:constraint_rem01b_d1	Distance constraint rem01b	ex:DistanceConstraint		ex:atom_9	ex:atom_10			2	gc:angstrom	fixed	
+ex:constraint_rem01b_dih1	Dihedral constraint rem01b	ex:DihedralConstraint		ex:atom_2	ex:atom_6	ex:atom_10	ex:atom_16	90	gc:degree	scan	

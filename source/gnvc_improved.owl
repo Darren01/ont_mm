@@ -18,8 +18,8 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.org/gc/">
-    <owl:versionIRI rdf:resource="http://purl.org/gc/0.8.2"/>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.8.2</owl:versionInfo>
+    <owl:versionIRI rdf:resource="http://purl.org/gc/0.8.3"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.8.3</owl:versionInfo>
     <dcterms:title xml:lang="en">GNVC: Gainesville Core Ontology - standard for publishing results of computational chemistry.</dcterms:title>
     <rdfs:comment xml:lang="en">An ontology for publishing results of computational chemistry.</rdfs:comment>
     <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This ontology aims at complete description of typical Computational Chemistry experiment.
@@ -5919,6 +5919,19 @@
         <rdfs:label xml:lang="en">angstrom</rdfs:label>
     </owl:NamedIndividual>
     
+
+
+    <!-- http://purl.org/gc/degree -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/gc/degree">
+        <rdf:type rdf:resource="http://qudt.org/schema/qudt/PlaneAngleUnit"/>
+        <rdfs:comment xml:lang="en">A unit of plane angle, used for bond angle and dihedral angle constraint values.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://chemicalsemantics.com/"/>
+        <rdfs:label xml:lang="en">degree</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
 
 
     <!-- http://purl.org/gc/atomicUnit -->

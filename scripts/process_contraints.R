@@ -133,7 +133,7 @@ process_constraints_fast_ordered <- function(
             involvesAtom3 = "",
             involvesAtom4 = "",
             targetValue = value,
-            hasUnit = "angstrom",
+            hasUnit = "gc:angstrom",
             constraintMode = "fixed",
             forceConstant = ""
           )
@@ -160,7 +160,7 @@ process_constraints_fast_ordered <- function(
             involvesAtom3 = paste0("ex:atom_", atom3),
             involvesAtom4 = "",
             targetValue = value,
-            hasUnit = "degree",
+            hasUnit = "gc:degree",
             constraintMode = "fixed",
             forceConstant = ""
           )
@@ -188,7 +188,7 @@ process_constraints_fast_ordered <- function(
             involvesAtom3 = paste0("ex:atom_", atom3),
             involvesAtom4 = paste0("ex:atom_", atom4),
             targetValue = value,
-            hasUnit = "degree",
+            hasUnit = "gc:degree",
             constraintMode = "fixed",
             forceConstant = ""
           )
