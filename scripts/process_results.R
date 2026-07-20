@@ -52,6 +52,22 @@ process_results <- function(experiment_log_pairs, output_dir) {
       }
     }
 
+    # Report geometry quality - does NOT block writing. A "needs_refinement"
+    # result is not invalid data; it's a normal intermediate step in a
+    # longer optimisation chain (see check_vibrational_quality.R). Data
+    # gets written either way; this just flags what the person running
+    # the pipeline should do next.
+    quality <- tryCatch(
+      check_vibrational_quality(log_file),
+      error = function(e) {
+        warning("Could not check vibrational quality for ", exp_id, ": ", conditionMessage(e))
+        NULL
+      }
+    )
+    if (!is.null(quality) && !is.na(quality$status)) {
+      cat(exp_id, ":", quality$message, "\n")
+    }
+
     ir <- tryCatch(
       extract_ir_spectrum(log_file),
       error = function(e) {

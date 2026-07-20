@@ -60,6 +60,22 @@ process_thermo_results <- function(experiment_log_pairs, output_dir) {
       }
     }
 
+    # Report geometry quality - does NOT block writing (same reasoning
+    # as process_results.R: this is a normal intermediate-step flag, not
+    # an invalidation). Thermochemistry is computed from the same
+    # vibrational analysis as the frequency spectrum, so the same check
+    # applies here too.
+    quality <- tryCatch(
+      check_vibrational_quality(log_file),
+      error = function(e) {
+        warning("Could not check vibrational quality for ", exp_id, ": ", conditionMessage(e))
+        NULL
+      }
+    )
+    if (!is.null(quality) && !is.na(quality$status)) {
+      cat(exp_id, ":", quality$message, "\n")
+    }
+
     thermo <- tryCatch(
       extract_thermochemistry(log_file),
       error = function(e) {
