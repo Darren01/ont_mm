@@ -18,8 +18,8 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.org/gc/">
-    <owl:versionIRI rdf:resource="http://purl.org/gc/0.8.3"/>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.8.3</owl:versionInfo>
+    <owl:versionIRI rdf:resource="http://purl.org/gc/0.8.4"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.8.4</owl:versionInfo>
     <dcterms:title xml:lang="en">GNVC: Gainesville Core Ontology - standard for publishing results of computational chemistry.</dcterms:title>
     <rdfs:comment xml:lang="en">An ontology for publishing results of computational chemistry.</rdfs:comment>
     <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This ontology aims at complete description of typical Computational Chemistry experiment.
@@ -759,6 +759,32 @@
         <rdfs:label xml:lang="en">has frequency peak</rdfs:label>
     </owl:ObjectProperty>
     
+
+    <!-- http://purl.org/gc/hasReactionPathPoint -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/gc/hasReactionPathPoint">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/gc/hasResult"/>
+        <rdfs:domain rdf:resource="http://purl.org/gc/ReactionPath"/>
+        <rdfs:range rdf:resource="http://purl.org/gc/ReactionPathPoint"/>
+        <rdfs:comment xml:lang="en">A property linking a reaction path to one of its constituent points.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://chemicalsemantics.com/"/>
+        <rdfs:label xml:lang="en">has reaction path point</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+    <!-- http://purl.org/gc/hasPathEnergy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/gc/hasPathEnergy">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/gc/hasResult"/>
+        <rdfs:domain rdf:resource="http://purl.org/gc/ReactionPathPoint"/>
+        <rdfs:range rdf:resource="http://purl.org/gc/FloatValue"/>
+        <rdfs:comment xml:lang="en">A property that describes the relative energy at a point along a reaction path.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://chemicalsemantics.com/"/>
+        <rdfs:label xml:lang="en">has path energy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
 
 
     <!-- http://purl.org/gc/hasGroupProperty -->
@@ -3070,6 +3096,23 @@
     
 
 
+    <!-- http://purl.org/gc/ReactionPath -->
+
+    <owl:Class rdf:about="http://purl.org/gc/ReactionPath">
+        <rdfs:subClassOf rdf:resource="http://purl.org/gc/CalculationResult"/>
+        <rdfs:comment xml:lang="en">A class for the combined reaction path connecting reactants to products via a transition state, typically assembled from a forward and a backward IRC run sharing the same saddle point.</rdfs:comment>
+        <obo:IAO_0000115 xml:lang="en">A minimum-energy reaction path on a potential energy surface in mass-weighted coordinates, connecting reactants to products via the transition state.</obo:IAO_0000115>
+        <dcterms:source xml:lang="en">PAC, 1999, 71, 1919. (Glossary of terms used in theoretical organic chemistry) on page 1947.</dcterms:source>
+        <rdfs:isDefinedBy rdf:resource="http://chemicalsemantics.com/"/>
+        <rdfs:label xml:lang="en">Reaction Path</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://goldbook.iupac.org/terms/view/IT07057"/>
+        <rdfs:seeAlso rdf:resource="https://doi.org/10.1351/goldbook.IT07057"/>
+    </owl:Class>
+    
+
+
+
+
     <!-- http://purl.org/gc/ChemicalShift -->
 
     <owl:Class rdf:about="http://purl.org/gc/ChemicalShift">
@@ -3519,6 +3562,15 @@
         <rdfs:label xml:lang="en">Frequency Peak</rdfs:label>
     </owl:Class>
     
+    <!-- http://purl.org/gc/ReactionPathPoint -->
+
+    <owl:Class rdf:about="http://purl.org/gc/ReactionPathPoint">
+        <rdfs:subClassOf rdf:resource="http://purl.org/gc/GainesvilleCoreTerm"/>
+        <rdfs:comment xml:lang="en">A class representing a single point along a reaction path, with an index (position along the path) and an energy value relative to the starting point. May originate from an individual forward or backward IRC log, or from a combined reaction-path file assembled from both.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://chemicalsemantics.com/"/>
+        <rdfs:label xml:lang="en">Reaction Path Point</rdfs:label>
+    </owl:Class>
+    
 
 
     <!-- http://purl.org/gc/G1 -->
@@ -3624,6 +3676,32 @@
         <rdfs:label xml:lang="en">Geometry optimization</rdfs:label>
     </owl:Class>
     
+
+
+    <!-- http://purl.org/gc/SaddlePoint -->
+
+    <owl:Class rdf:about="http://purl.org/gc/SaddlePoint">
+        <rdfs:subClassOf rdf:resource="http://purl.org/gc/MolecularComputation"/>
+        <rdfs:comment xml:lang="en">A class for calculations that locate a stationary point on the potential energy surface with exactly one direction of negative curvature (a first-order saddle point), corresponding to a transition state.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://chemicalsemantics.com/"/>
+        <rdfs:label xml:lang="en">Saddle Point</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://goldbook.iupac.org/terms/view/C01145"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/gc/IRC -->
+
+    <owl:Class rdf:about="http://purl.org/gc/IRC">
+        <rdfs:subClassOf rdf:resource="http://purl.org/gc/MolecularComputation"/>
+        <rdfs:comment xml:lang="en">A class for calculations that follow the intrinsic reaction coordinate away from a saddle point, in either the forward or backward direction.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://chemicalsemantics.com/"/>
+        <rdfs:label xml:lang="en">IRC</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://goldbook.iupac.org/terms/view/IT07057"/>
+    </owl:Class>
+    
+
+
 
 
     <!-- http://purl.org/gc/Gill96 -->
