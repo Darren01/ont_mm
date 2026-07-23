@@ -18,8 +18,8 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.org/gc/">
-    <owl:versionIRI rdf:resource="http://purl.org/gc/0.8.4"/>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.8.4</owl:versionInfo>
+    <owl:versionIRI rdf:resource="http://purl.org/gc/0.8.6"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.8.6</owl:versionInfo>
     <dcterms:title xml:lang="en">GNVC: Gainesville Core Ontology - standard for publishing results of computational chemistry.</dcterms:title>
     <rdfs:comment xml:lang="en">An ontology for publishing results of computational chemistry.</rdfs:comment>
     <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This ontology aims at complete description of typical Computational Chemistry experiment.
@@ -1567,7 +1567,7 @@
 
     <owl:ObjectProperty rdf:about="http://purl.org/gc/xAxis">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/gc/extraGCObjectProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/gc/InfraRedSpectrum"/>
+        <rdfs:domain rdf:resource="http://purl.org/gc/InfraRedSpectra"/>
         <rdfs:comment xml:lang="en">A property that describes what is on xAxis</rdfs:comment>
         <rdfs:label xml:lang="en">x Axis</rdfs:label>
     </owl:ObjectProperty>
@@ -1588,7 +1588,7 @@
 
     <owl:ObjectProperty rdf:about="http://purl.org/gc/yAxis">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/gc/extraGCObjectProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/gc/InfraRedSpectrum"/>
+        <rdfs:domain rdf:resource="http://purl.org/gc/InfraRedSpectra"/>
         <rdfs:comment xml:lang="en">A property that describes what is on Axis</rdfs:comment>
         <rdfs:label xml:lang="en">Y Axis</rdfs:label>
     </owl:ObjectProperty>
@@ -1599,7 +1599,7 @@
 
     <owl:ObjectProperty rdf:about="http://purl.org/gc/yAxisUnit">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/gc/extraGCObjectProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/gc/InfraRedSpectrum"/>
+        <rdfs:domain rdf:resource="http://purl.org/gc/InfraRedSpectra"/>
         <rdfs:comment xml:lang="en">A property that describes Units of X Axis</rdfs:comment>
         <rdfs:label xml:lang="en">Y Axis Unit</rdfs:label>
     </owl:ObjectProperty>
@@ -3845,28 +3845,16 @@
     <owl:Class rdf:about="http://purl.org/gc/InfraRedSpectra">
         <rdfs:subClassOf rdf:resource="http://purl.org/gc/VibrationalSpectra"/>
         <rdfs:comment xml:lang="en">A class for vibrational spectra resulting from IR intensities.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://chemicalsemantics.com/"/>
-        <rdfs:label xml:lang="en">InfraRed Spectra</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/gc/InfraRedSpectrum -->
-
-    <owl:Class rdf:about="http://purl.org/gc/InfraRedSpectrum">
-        <rdfs:subClassOf rdf:resource="http://purl.org/gc/GainesvilleCoreTerm"/>
-        <rdfs:comment xml:lang="en">A class for InfraRed Spectrum.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://chemicalsemantics.com/"/>
-        <rdfs:label xml:lang="en">Infra Red Spectrum</rdfs:label>
         <obo:IAO_0000115 xml:lang="en">Infrared Spectrum - the output of infrared spectroscopy.  Infrared Spectroscopy - Measurement principle of vibrational spectroscopy using
         infrared radiation.  Note: Without qualification, 'infrared spectroscopy' usually refers to use of the mid-infrared (wavelength range 2.5 to 25 μm, wavenumber range
         (4000 cm-1 to 400 cm-1 ) region of the electromagnetic spectrum.</obo:IAO_0000115>
         <dcterms:source xml:lang="en">PAC, 2021, 93, 647. (Glossary of methods and terms used in analytical spectroscopy (IUPAC Recommendations 2019)) on page 750.</dcterms:source>
+        <rdfs:isDefinedBy rdf:resource="http://chemicalsemantics.com/"/>
+        <rdfs:label xml:lang="en">InfraRed Spectra</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://goldbook.iupac.org/terms/view/08618"/>
         <rdfs:seeAlso rdf:resource="https://doi.org/10.1351/goldbook.08618"/>
     </owl:Class>
     
-
 
     <!-- http://purl.org/gc/IntegerValue -->
 
@@ -5381,7 +5369,7 @@
     <!-- http://purl.org/gc/UVVisSpectrum -->
 
     <owl:Class rdf:about="http://purl.org/gc/UVVisSpectrum">
-        <rdfs:subClassOf rdf:resource="http://purl.org/gc/GainesvilleCoreTerm"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/gc/ElectronicSpectra"/>
         <rdfs:comment xml:lang="en">A class for UVVis Spectrum.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://chemicalsemantics.com/"/>
         <rdfs:label xml:lang="en">UVVis Spectrum</rdfs:label>

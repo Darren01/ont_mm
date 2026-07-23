@@ -7,7 +7,7 @@
 @base <http://purl.org/gc/> .
 
 <http://purl.org/gc/> rdf:type owl:Ontology ;
-                       owl:versionIRI <http://purl.org/gc/0.8.4> ;
+                       owl:versionIRI <http://purl.org/gc/0.8.6> ;
                        <http://creativecommons.org/ns#license> <http://creativecommons.org/licenses/by/3.0/> ;
                        <http://purl.org/dc/elements/1.1/created> "2015-03-04" ;
                        <http://purl.org/dc/elements/1.1/description> """This ontology aims at complete description of typical Computational Chemistry experiment.
@@ -34,7 +34,7 @@
                                     """The design and repair decisions in this fork were informed in part by the landscape review of computational chemistry ontologies: ChemRxiv 2024,
     doi:10.26434/chemrxiv-2024-fvzpq"""@en ;
                        rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
-                       owl:versionInfo "0.8.4" .
+                       owl:versionInfo "0.8.6" .
 
 #################################################################
 #    Annotation properties
@@ -1312,7 +1312,7 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
 ###  http://purl.org/gc/xAxis
 :xAxis rdf:type owl:ObjectProperty ;
        rdfs:subPropertyOf :extraGCObjectProperty ;
-       rdfs:domain :InfraRedSpectrum ;
+       rdfs:domain :InfraRedSpectra ;
        rdfs:comment "A property that describes what is on xAxis"@en ;
        rdfs:label "x Axis"@en .
 
@@ -1327,7 +1327,7 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
 ###  http://purl.org/gc/yAxis
 :yAxis rdf:type owl:ObjectProperty ;
        rdfs:subPropertyOf :extraGCObjectProperty ;
-       rdfs:domain :InfraRedSpectrum ;
+       rdfs:domain :InfraRedSpectra ;
        rdfs:comment "A property that describes what is on Axis"@en ;
        rdfs:label "Y Axis"@en .
 
@@ -1335,7 +1335,7 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
 ###  http://purl.org/gc/yAxisUnit
 :yAxisUnit rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf :extraGCObjectProperty ;
-           rdfs:domain :InfraRedSpectrum ;
+           rdfs:domain :InfraRedSpectra ;
            rdfs:comment "A property that describes Units of X Axis"@en ;
            rdfs:label "Y Axis Unit"@en .
 
@@ -2994,23 +2994,15 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
 ###  http://purl.org/gc/InfraRedSpectra
 :InfraRedSpectra rdf:type owl:Class ;
                  rdfs:subClassOf :VibrationalSpectra ;
-                 rdfs:comment "A class for vibrational spectra resulting from IR intensities."@en ;
-                 rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
-                 rdfs:label "InfraRed Spectra"@en .
-
-
-###  http://purl.org/gc/InfraRedSpectrum
-:InfraRedSpectrum rdf:type owl:Class ;
-                  rdfs:subClassOf :GainesvilleCoreTerm ;
-                  <http://purl.obolibrary.org/obo/IAO_0000115> """Infrared Spectrum - the output of infrared spectroscopy.  Infrared Spectroscopy - Measurement principle of vibrational spectroscopy using
+                 <http://purl.obolibrary.org/obo/IAO_0000115> """Infrared Spectrum - the output of infrared spectroscopy.  Infrared Spectroscopy - Measurement principle of vibrational spectroscopy using
         infrared radiation.  Note: Without qualification, 'infrared spectroscopy' usually refers to use of the mid-infrared (wavelength range 2.5 to 25 μm, wavenumber range
         (4000 cm-1 to 400 cm-1 ) region of the electromagnetic spectrum."""@en ;
-                  <http://purl.org/dc/terms/source> "PAC, 2021, 93, 647. (Glossary of methods and terms used in analytical spectroscopy (IUPAC Recommendations 2019)) on page 750."@en ;
-                  rdfs:comment "A class for InfraRed Spectrum."@en ;
-                  rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
-                  rdfs:label "Infra Red Spectrum"@en ;
-                  rdfs:seeAlso <https://doi.org/10.1351/goldbook.08618> ,
-                               <https://goldbook.iupac.org/terms/view/08618> .
+                 <http://purl.org/dc/terms/source> "PAC, 2021, 93, 647. (Glossary of methods and terms used in analytical spectroscopy (IUPAC Recommendations 2019)) on page 750."@en ;
+                 rdfs:comment "A class for vibrational spectra resulting from IR intensities."@en ;
+                 rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                 rdfs:label "InfraRed Spectra"@en ;
+                 rdfs:seeAlso <https://doi.org/10.1351/goldbook.08618> ,
+                              <https://goldbook.iupac.org/terms/view/08618> .
 
 
 ###  http://purl.org/gc/IntegerValue
@@ -4160,7 +4152,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
 
 ###  http://purl.org/gc/UVVisSpectrum
 :UVVisSpectrum rdf:type owl:Class ;
-               rdfs:subClassOf :GainesvilleCoreTerm ;
+               rdfs:subClassOf :ElectronicSpectra ;
                rdfs:comment "A class for UVVis Spectrum."@en ;
                rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
                rdfs:label "UVVis Spectrum"@en .
