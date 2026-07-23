@@ -1,26 +1,20 @@
 #' Generate energies/float-value template instance TSVs from GAMESS
-#' log files' thermochemistry data
+#' log files' single-point electronic energies
 #'
-#' Mirrors process_results.R's pattern, with one important difference:
-#' process_results() dedups by checking whether the experiment ID already
-#' has ANY row in spectra_result_template_instances.tsv. That file is
-#' now shared across result types (frequency work already writes to it),
-#' so reusing that same check here would wrongly skip an experiment's
-#' thermochemistry just because its frequency result was already
-#' processed - a real experiment (e.g. rem01b, HSSEND=.t.) legitimately
-#' needs BOTH a VibrationalSpectra result AND a SystemEnergies result,
-#' as two separate hasResult rows (hasResult is not FunctionalProperty -
-#' confirmed against source/gnvc_improved.owl before writing this).
-#'
-#' So dedup here checks energies_template_instances.tsv specifically -
-#' a file that only ever contains SystemEnergies rows - rather than the
-#' shared spectra_result file.
+#' Mirrors process_thermo_results.R's pattern. Dedup here is simpler
+#' than thermochemistry's: SinglePoint (RUNTYP=ENERGY) and
+#' VibrationalAnalysis (RUNTYP=OPTIMIZE+HSSEND) are mutually exclusive
+#' job types, so a given experiment can never need both an electronic-
+#' energy-only SystemEnergies row and a thermochemistry one - checking
+#' whether energies_<stem> already exists at all is sufficient, unlike
+#' process_thermo_results.R which has to be more careful because
+#' spectra_result is shared with the frequency writer.
 #'
 #' @param experiment_log_pairs A named character vector: names are
-#'   experiment IDs (e.g. "ex:exp_rem01b"), values are paths to the
+#'   experiment IDs (e.g. "ex:exp_sp01"), values are paths to the
 #'   corresponding .log file.
 #' @param output_dir Where to write/update the instance TSVs.
-process_thermo_results <- function(experiment_log_pairs, output_dir) {
+process_electronic_energy_results <- function(experiment_log_pairs, output_dir) {
 
   out_files <- list(
     spectra_result = file.path(output_dir, "spectra_result_template_instances.tsv"),
@@ -47,11 +41,9 @@ process_thermo_results <- function(experiment_log_pairs, output_dir) {
 
   for (exp_id in names(experiment_log_pairs)) {
     log_file <- experiment_log_pairs[[exp_id]]
-    label_suffix <- sub("^ex:exp_", "", exp_id)
-    energies_id <- paste0("ex:energies_", label_suffix)
+    stem <- sub("^ex:exp_", "", exp_id)
+    energies_id <- paste0("ex:energies_", stem)
 
-    # dedup against the energies-specific file, NOT spectra_result
-    # (shared across result types - see docstring above)
     if (file.exists(out_files$energies)) {
       existing <- readLines(out_files$energies, warn = FALSE)
       if (any(grepl(paste0("^", energies_id, "\t"), existing))) {
@@ -60,38 +52,23 @@ process_thermo_results <- function(experiment_log_pairs, output_dir) {
       }
     }
 
-    # Report geometry quality - does NOT block writing (same reasoning
-    # as process_results.R: this is a normal intermediate-step flag, not
-    # an invalidation). Thermochemistry is computed from the same
-    # vibrational analysis as the frequency spectrum, so the same check
-    # applies here too.
-    quality <- tryCatch(
-      check_vibrational_quality(log_file),
-      error = function(e) {
-        warning("Could not check vibrational quality for ", exp_id, ": ", conditionMessage(e))
-        NULL
-      }
-    )
-    if (!is.null(quality) && !is.na(quality$status)) {
-      cat(exp_id, ":", quality$message, "\n")
-    }
-
-    thermo <- tryCatch(
-      extract_thermochemistry(log_file),
+    energy_result <- tryCatch(
+      extract_electronic_energy(log_file),
       error = function(e) {
         warning("Skipping ", exp_id, " (", log_file, "): ", conditionMessage(e))
         NULL
       }
     )
-    if (is.null(thermo)) next
+    if (is.null(energy_result)) next
 
-    if (all(is.na(thermo[c("zpe", "enthalpy", "gibbs", "entropy")]))) {
-      warning("Skipping ", exp_id, " - no thermochemistry data found in ", log_file,
-              " (not a frequency/Hessian job, or GAMESS didn't complete that stage)")
-      next
+    if (energy_result$n_scf_convergences > 1) {
+      warning(exp_id, ": ", energy_result$n_scf_convergences,
+              " SCF convergences found - this doesn't look like a genuine ",
+              "single-point job. Writing the last one's energy anyway, but ",
+              "double-check this experiment's classification.")
     }
 
-    rows <- thermochemistry_to_templates(thermo, exp_id, label_suffix)
+    rows <- electronic_energy_to_templates(energy_result, exp_id, stem)
     for (nm in names(rows)) {
       all_rows[[nm]][[exp_id]] <- rows[[nm]]
     }
