@@ -7,7 +7,7 @@
 @base <http://purl.org/gc/core> .
 
 <http://purl.org/gc/core> rdf:type owl:Ontology ;
-                           owl:versionIRI <http://purl.org/gc/core/2026-07-22/gc_core.ttl> ;
+                           owl:versionIRI <http://purl.org/gc/core/2026-07-24/gc_core.ttl> ;
                            <http://creativecommons.org/ns#license> <http://creativecommons.org/licenses/by/3.0/> ;
                            <http://purl.org/dc/elements/1.1/created> "2015-03-04" ;
                            <http://purl.org/dc/elements/1.1/description> """This ontology aims at complete description of typical Computational Chemistry experiment.
@@ -35,7 +35,7 @@
                                         """The design and repair decisions in this fork were informed in part by the landscape review of computational chemistry ontologies: ChemRxiv 2024,
     doi:10.26434/chemrxiv-2024-fvzpq"""@en ;
                            rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
-                           owl:versionInfo "0.8.4" .
+                           owl:versionInfo "0.8.6" .
 
 #################################################################
 #    Annotation properties
@@ -43,6 +43,10 @@
 
 ###  http://creativecommons.org/ns#license
 <http://creativecommons.org/ns#license> rdf:type owl:AnnotationProperty .
+
+
+###  http://example.org/targetValue
+<http://example.org/targetValue> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0000115
@@ -113,10 +117,6 @@
                                 rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
                                 rdfs:label "is abstract"@en ;
                                 rdfs:range xsd:boolean .
-
-
-###  http://purl.org/gc/targetValue
-<http://purl.org/gc/targetValue> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/gc/termStatus
@@ -203,6 +203,26 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
 #################################################################
 #    Object Properties
 #################################################################
+
+###  http://example.org/hasConstraint
+<http://example.org/hasConstraint> rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/involvesAtom1
+<http://example.org/involvesAtom1> rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/involvesAtom2
+<http://example.org/involvesAtom2> rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/involvesAtom3
+<http://example.org/involvesAtom3> rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/involvesAtom4
+<http://example.org/involvesAtom4> rdf:type owl:ObjectProperty .
+
 
 ###  http://purl.obolibrary.org/obo/BFO_0000124
 <http://purl.obolibrary.org/obo/BFO_0000124> rdf:type owl:ObjectProperty .
@@ -1278,22 +1298,6 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
                            rdfs:label "holds"@en .
 
 
-###  http://purl.org/gc/involvesAtom1
-<http://purl.org/gc/involvesAtom1> rdf:type owl:ObjectProperty .
-
-
-###  http://purl.org/gc/involvesAtom2
-<http://purl.org/gc/involvesAtom2> rdf:type owl:ObjectProperty .
-
-
-###  http://purl.org/gc/involvesAtom3
-<http://purl.org/gc/involvesAtom3> rdf:type owl:ObjectProperty .
-
-
-###  http://purl.org/gc/involvesAtom4
-<http://purl.org/gc/involvesAtom4> rdf:type owl:ObjectProperty .
-
-
 ###  http://purl.org/gc/isCalculationOn
 <http://purl.org/gc/isCalculationOn> rdf:type owl:ObjectProperty ;
                                      rdfs:subPropertyOf <http://purl.org/gc/extraGCObjectProperty> ;
@@ -1337,7 +1341,7 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
 ###  http://purl.org/gc/xAxis
 <http://purl.org/gc/xAxis> rdf:type owl:ObjectProperty ;
                            rdfs:subPropertyOf <http://purl.org/gc/extraGCObjectProperty> ;
-                           rdfs:domain <http://purl.org/gc/InfraRedSpectrum> ;
+                           rdfs:domain <http://purl.org/gc/InfraRedSpectra> ;
                            rdfs:comment "A property that describes what is on xAxis"@en ;
                            rdfs:label "x Axis"@en .
 
@@ -1352,7 +1356,7 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
 ###  http://purl.org/gc/yAxis
 <http://purl.org/gc/yAxis> rdf:type owl:ObjectProperty ;
                            rdfs:subPropertyOf <http://purl.org/gc/extraGCObjectProperty> ;
-                           rdfs:domain <http://purl.org/gc/InfraRedSpectrum> ;
+                           rdfs:domain <http://purl.org/gc/InfraRedSpectra> ;
                            rdfs:comment "A property that describes what is on Axis"@en ;
                            rdfs:label "Y Axis"@en .
 
@@ -1360,7 +1364,7 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
 ###  http://purl.org/gc/yAxisUnit
 <http://purl.org/gc/yAxisUnit> rdf:type owl:ObjectProperty ;
                                rdfs:subPropertyOf <http://purl.org/gc/extraGCObjectProperty> ;
-                               rdfs:domain <http://purl.org/gc/InfraRedSpectrum> ;
+                               rdfs:domain <http://purl.org/gc/InfraRedSpectra> ;
                                rdfs:comment "A property that describes Units of X Axis"@en ;
                                rdfs:label "Y Axis Unit"@en .
 
@@ -1982,27 +1986,16 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
 #    Classes
 #################################################################
 
+###  http://example.org/AngleConstraint
+<http://example.org/AngleConstraint> rdf:type owl:Class .
+
+
 ###  http://example.org/DihedralConstraint
 <http://example.org/DihedralConstraint> rdf:type owl:Class .
 
 
 ###  http://example.org/DistanceConstraint
 <http://example.org/DistanceConstraint> rdf:type owl:Class .
-
-
-###  http://example.org/exp_rem01
-<http://example.org/exp_rem01> rdf:type owl:Class ;
-                               rdfs:label "Experiment rem01" .
-
-
-###  http://example.org/exp_rem01a
-<http://example.org/exp_rem01a> rdf:type owl:Class ;
-                                rdfs:label "Experiment rem01a" .
-
-
-###  http://example.org/exp_rem01b
-<http://example.org/exp_rem01b> rdf:type owl:Class ;
-                                rdfs:label "Experiment rem01b" .
 
 
 ###  http://purl.obolibrary.org/obo/BFO_0000027
@@ -3042,23 +3035,15 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
 ###  http://purl.org/gc/InfraRedSpectra
 <http://purl.org/gc/InfraRedSpectra> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://purl.org/gc/VibrationalSpectra> ;
-                                     rdfs:comment "A class for vibrational spectra resulting from IR intensities."@en ;
-                                     rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
-                                     rdfs:label "InfraRed Spectra"@en .
-
-
-###  http://purl.org/gc/InfraRedSpectrum
-<http://purl.org/gc/InfraRedSpectrum> rdf:type owl:Class ;
-                                      rdfs:subClassOf <http://purl.org/gc/GainesvilleCoreTerm> ;
-                                      <http://purl.obolibrary.org/obo/IAO_0000115> """Infrared Spectrum - the output of infrared spectroscopy.  Infrared Spectroscopy - Measurement principle of vibrational spectroscopy using
+                                     <http://purl.obolibrary.org/obo/IAO_0000115> """Infrared Spectrum - the output of infrared spectroscopy.  Infrared Spectroscopy - Measurement principle of vibrational spectroscopy using
         infrared radiation.  Note: Without qualification, 'infrared spectroscopy' usually refers to use of the mid-infrared (wavelength range 2.5 to 25 μm, wavenumber range
         (4000 cm-1 to 400 cm-1 ) region of the electromagnetic spectrum."""@en ;
-                                      <http://purl.org/dc/terms/source> "PAC, 2021, 93, 647. (Glossary of methods and terms used in analytical spectroscopy (IUPAC Recommendations 2019)) on page 750."@en ;
-                                      rdfs:comment "A class for InfraRed Spectrum."@en ;
-                                      rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
-                                      rdfs:label "Infra Red Spectrum"@en ;
-                                      rdfs:seeAlso <https://doi.org/10.1351/goldbook.08618> ,
-                                                   <https://goldbook.iupac.org/terms/view/08618> .
+                                     <http://purl.org/dc/terms/source> "PAC, 2021, 93, 647. (Glossary of methods and terms used in analytical spectroscopy (IUPAC Recommendations 2019)) on page 750."@en ;
+                                     rdfs:comment "A class for vibrational spectra resulting from IR intensities."@en ;
+                                     rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                                     rdfs:label "InfraRed Spectra"@en ;
+                                     rdfs:seeAlso <https://doi.org/10.1351/goldbook.08618> ,
+                                                  <https://goldbook.iupac.org/terms/view/08618> .
 
 
 ###  http://purl.org/gc/IntegerValue
@@ -4208,7 +4193,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
 
 ###  http://purl.org/gc/UVVisSpectrum
 <http://purl.org/gc/UVVisSpectrum> rdf:type owl:Class ;
-                                   rdfs:subClassOf <http://purl.org/gc/GainesvilleCoreTerm> ;
+                                   rdfs:subClassOf <http://purl.org/gc/ElectronicSpectra> ;
                                    rdfs:comment "A class for UVVis Spectrum."@en ;
                                    rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
                                    rdfs:label "UVVis Spectrum"@en .
@@ -4633,10 +4618,6 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/atom_16> rdf:type owl:NamedIndividual .
 
 
-###  http://example.org/atom_2
-<http://example.org/atom_2> rdf:type owl:NamedIndividual .
-
-
 ###  http://example.org/atom_6
 <http://example.org/atom_6> rdf:type owl:NamedIndividual .
 
@@ -4648,71 +4629,97 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/constraint_rem01_d1
 <http://example.org/constraint_rem01_d1> rdf:type owl:NamedIndividual ,
                                                   <http://example.org/DistanceConstraint> ;
+                                         <http://example.org/involvesAtom1> <http://example.org/atom_9> ;
+                                         <http://example.org/involvesAtom2> <http://example.org/atom_10> ;
                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/angstrom> ;
-                                         <http://purl.org/gc/involvesAtom1> <http://example.org/atom_9> ;
-                                         <http://purl.org/gc/involvesAtom2> <http://example.org/atom_10> ;
+                                         <http://example.org/targetValue> "2.5" ;
                                          <http://purl.org/gc/constraintMode> "fixed" ;
-                                         <http://purl.org/gc/targetValue> "2.5" ;
                                          rdfs:label "Distance constraint rem01" .
 
 
 ###  http://example.org/constraint_rem01_d2
 <http://example.org/constraint_rem01_d2> rdf:type owl:NamedIndividual ,
                                                   <http://example.org/DistanceConstraint> ;
+                                         <http://example.org/involvesAtom1> <http://example.org/atom_13> ;
+                                         <http://example.org/involvesAtom2> <http://example.org/atom_6> ;
                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/angstrom> ;
-                                         <http://purl.org/gc/involvesAtom1> <http://example.org/atom_13> ;
-                                         <http://purl.org/gc/involvesAtom2> <http://example.org/atom_6> ;
+                                         <http://example.org/targetValue> "2.5" ;
                                          <http://purl.org/gc/constraintMode> "fixed" ;
-                                         <http://purl.org/gc/targetValue> "2.5" ;
                                          rdfs:label "Distance constraint rem01" .
 
 
 ###  http://example.org/constraint_rem01a_d1
 <http://example.org/constraint_rem01a_d1> rdf:type owl:NamedIndividual ,
                                                    <http://example.org/DistanceConstraint> ;
+                                          <http://example.org/involvesAtom1> <http://example.org/atom_9> ;
+                                          <http://example.org/involvesAtom2> <http://example.org/atom_10> ;
                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/angstrom> ;
-                                          <http://purl.org/gc/involvesAtom1> <http://example.org/atom_9> ;
-                                          <http://purl.org/gc/involvesAtom2> <http://example.org/atom_10> ;
+                                          <http://example.org/targetValue> "2" ;
                                           <http://purl.org/gc/constraintMode> "fixed" ;
-                                          <http://purl.org/gc/targetValue> "2" ;
                                           rdfs:label "Distance constraint rem01a" .
 
 
 ###  http://example.org/constraint_rem01a_dih1
 <http://example.org/constraint_rem01a_dih1> rdf:type owl:NamedIndividual ,
                                                      <http://example.org/DihedralConstraint> ;
+                                            <http://example.org/involvesAtom1> <http://example.org/atom_9> ;
+                                            <http://example.org/involvesAtom2> <http://example.org/atom_6> ;
+                                            <http://example.org/involvesAtom3> <http://example.org/atom_10> ;
+                                            <http://example.org/involvesAtom4> <http://example.org/atom_16> ;
                                             <http://purl.org/gc/hasUnit> <http://purl.org/gc/degree> ;
-                                            <http://purl.org/gc/involvesAtom1> <http://example.org/atom_9> ;
-                                            <http://purl.org/gc/involvesAtom2> <http://example.org/atom_6> ;
-                                            <http://purl.org/gc/involvesAtom3> <http://example.org/atom_10> ;
-                                            <http://purl.org/gc/involvesAtom4> <http://example.org/atom_16> ;
-                                            <http://purl.org/gc/constraintMode> "scan" ;
-                                            <http://purl.org/gc/targetValue> "180" ;
+                                            <http://example.org/targetValue> "180" ;
+                                            <http://purl.org/gc/constraintMode> "fixed" ;
                                             rdfs:label "Dihedral constraint rem01a" .
+
+
+###  http://example.org/constraint_rem01b_a1
+<http://example.org/constraint_rem01b_a1> rdf:type owl:NamedIndividual ,
+                                                   <http://example.org/AngleConstraint> ;
+                                          <http://example.org/involvesAtom1> <http://example.org/atom_6> ;
+                                          <http://example.org/involvesAtom2> <http://example.org/atom_10> ;
+                                          <http://example.org/involvesAtom3> <http://example.org/atom_16> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/degree> ;
+                                          <http://example.org/targetValue> "90" ;
+                                          <http://purl.org/gc/constraintMode> "fixed" ;
+                                          rdfs:label "Angle constraint rem01b" .
 
 
 ###  http://example.org/constraint_rem01b_d1
 <http://example.org/constraint_rem01b_d1> rdf:type owl:NamedIndividual ,
                                                    <http://example.org/DistanceConstraint> ;
+                                          <http://example.org/involvesAtom1> <http://example.org/atom_9> ;
+                                          <http://example.org/involvesAtom2> <http://example.org/atom_10> ;
                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/angstrom> ;
-                                          <http://purl.org/gc/involvesAtom1> <http://example.org/atom_9> ;
-                                          <http://purl.org/gc/involvesAtom2> <http://example.org/atom_10> ;
+                                          <http://example.org/targetValue> "2" ;
                                           <http://purl.org/gc/constraintMode> "fixed" ;
-                                          <http://purl.org/gc/targetValue> "2" ;
                                           rdfs:label "Distance constraint rem01b" .
 
 
-###  http://example.org/constraint_rem01b_dih1
-<http://example.org/constraint_rem01b_dih1> rdf:type owl:NamedIndividual ,
-                                                     <http://example.org/DihedralConstraint> ;
-                                            <http://purl.org/gc/hasUnit> <http://purl.org/gc/degree> ;
-                                            <http://purl.org/gc/involvesAtom1> <http://example.org/atom_2> ;
-                                            <http://purl.org/gc/involvesAtom2> <http://example.org/atom_6> ;
-                                            <http://purl.org/gc/involvesAtom3> <http://example.org/atom_10> ;
-                                            <http://purl.org/gc/involvesAtom4> <http://example.org/atom_16> ;
-                                            <http://purl.org/gc/constraintMode> "scan" ;
-                                            <http://purl.org/gc/targetValue> "90" ;
-                                            rdfs:label "Dihedral constraint rem01b" .
+###  http://example.org/exp_rem01
+<http://example.org/exp_rem01> rdf:type owl:NamedIndividual ,
+                                        <http://purl.org/gc/MolecularComputation> ;
+                               <http://example.org/hasConstraint> <http://example.org/constraint_rem01_d1> ,
+                                                                  <http://example.org/constraint_rem01_d2> ;
+                               <http://example.org/targetValue> "0" ;
+                               rdfs:label "Experiment rem01" .
+
+
+###  http://example.org/exp_rem01a
+<http://example.org/exp_rem01a> rdf:type owl:NamedIndividual ,
+                                         <http://purl.org/gc/MolecularComputation> ;
+                                <http://example.org/hasConstraint> <http://example.org/constraint_rem01a_d1> ,
+                                                                   <http://example.org/constraint_rem01a_dih1> ;
+                                <http://example.org/targetValue> "0" ;
+                                rdfs:label "Experiment rem01a" .
+
+
+###  http://example.org/exp_rem01b
+<http://example.org/exp_rem01b> rdf:type owl:NamedIndividual ,
+                                         <http://purl.org/gc/MolecularComputation> ;
+                                <http://example.org/hasConstraint> <http://example.org/constraint_rem01b_a1> ,
+                                                                   <http://example.org/constraint_rem01b_d1> ;
+                                <http://example.org/targetValue> "0" ;
+                                rdfs:label "Experiment rem01b" .
 
 
 ###  http://purl.org/gc/Amber
