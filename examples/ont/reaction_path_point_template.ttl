@@ -45,10 +45,6 @@
 <http://creativecommons.org/ns#license> rdf:type owl:AnnotationProperty .
 
 
-###  http://example.org/fileURL
-<http://example.org/fileURL> rdf:type owl:AnnotationProperty .
-
-
 ###  http://purl.obolibrary.org/obo/IAO_0000115
 <http://purl.obolibrary.org/obo/IAO_0000115> rdf:type owl:AnnotationProperty .
 
@@ -199,14 +195,6 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
 #################################################################
 #    Object Properties
 #################################################################
-
-###  http://example.org/hasInputFile
-<http://example.org/hasInputFile> rdf:type owl:ObjectProperty .
-
-
-###  http://example.org/hasOutputFile
-<http://example.org/hasOutputFile> rdf:type owl:ObjectProperty .
-
 
 ###  http://purl.obolibrary.org/obo/BFO_0000124
 <http://purl.obolibrary.org/obo/BFO_0000124> rdf:type owl:ObjectProperty .
@@ -1969,18 +1957,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
 #################################################################
 #    Classes
 #################################################################
-
-###  http://example.org/DataFile
-<http://example.org/DataFile> rdf:type owl:Class .
-
-
-###  http://example.org/InputFile
-<http://example.org/InputFile> rdf:type owl:Class .
-
-
-###  http://example.org/LogFile
-<http://example.org/LogFile> rdf:type owl:Class .
-
 
 ###  http://purl.obolibrary.org/obo/BFO_0000027
 <http://purl.obolibrary.org/obo/BFO_0000027> rdf:type owl:Class .
@@ -4598,97 +4574,2644 @@ rdfs:Class rdf:type owl:Class .
 #    Individuals
 #################################################################
 
-###  http://example.org/avogadro_build
-<http://example.org/avogadro_build> rdf:type owl:NamedIndividual ,
-                                             <http://www.w3.org/ns/prov#Activity> ;
-                                    rdfs:label "Structure built in Avogadro" .
+###  http://example.org/pathenergy_09aTSaIRCf_1
+<http://example.org/pathenergy_09aTSaIRCf_1> rdf:type owl:NamedIndividual .
 
 
-###  http://example.org/exp_rem01
-<http://example.org/exp_rem01> rdf:type owl:NamedIndividual ,
-                                        <http://purl.org/gc/GeometryOptimization> ;
-                               <http://example.org/hasOutputFile> <http://example.org/file_rem01_inp> ;
-                               <http://example.org/fileURL> "ex:file_rem01_dat|ex:file_rem01_log" ;
-                               rdfs:label "Geometry optimisation rem01" .
+###  http://example.org/pathenergy_09aTSaIRCf_10
+<http://example.org/pathenergy_09aTSaIRCf_10> rdf:type owl:NamedIndividual .
 
 
-###  http://example.org/exp_rem01a
-<http://example.org/exp_rem01a> rdf:type owl:NamedIndividual ,
-                                         <http://purl.org/gc/GeometryOptimization> ;
-                                <http://example.org/hasOutputFile> <http://example.org/file_rem01a_inp> ;
-                                <http://example.org/fileURL> "ex:file_rem01a_dat|ex:file_rem01a_log" ;
-                                rdfs:label "Geometry optimisation rem01a" .
+###  http://example.org/pathenergy_09aTSaIRCf_100
+<http://example.org/pathenergy_09aTSaIRCf_100> rdf:type owl:NamedIndividual .
 
 
-###  http://example.org/exp_rem01b
-<http://example.org/exp_rem01b> rdf:type owl:NamedIndividual ,
-                                         <http://purl.org/gc/VibrationalAnalysis> ;
-                                <http://example.org/hasOutputFile> <http://example.org/file_rem01b_inp> ;
-                                <http://example.org/fileURL> "ex:file_rem01b_dat|ex:file_rem01b_log" ;
-                                rdfs:label "Vibrational analysis rem01b" .
+###  http://example.org/pathenergy_09aTSaIRCf_101
+<http://example.org/pathenergy_09aTSaIRCf_101> rdf:type owl:NamedIndividual .
 
 
-###  http://example.org/file_rem01_dat
-<http://example.org/file_rem01_dat> rdf:type owl:NamedIndividual ,
-                                             <http://example.org/DataFile> ;
-                                    <http://example.org/hasInputFile> <http://example.org/exp_rem01> ;
-                                    rdfs:label "Output data rem01" .
+###  http://example.org/pathenergy_09aTSaIRCf_102
+<http://example.org/pathenergy_09aTSaIRCf_102> rdf:type owl:NamedIndividual .
 
 
-###  http://example.org/file_rem01_inp
-<http://example.org/file_rem01_inp> rdf:type owl:NamedIndividual ,
-                                             <http://example.org/InputFile> ;
-                                    <http://example.org/hasInputFile> <http://example.org/avogadro_build> ;
-                                    rdfs:label "Input file rem01" .
+###  http://example.org/pathenergy_09aTSaIRCf_103
+<http://example.org/pathenergy_09aTSaIRCf_103> rdf:type owl:NamedIndividual .
 
 
-###  http://example.org/file_rem01_log
-<http://example.org/file_rem01_log> rdf:type owl:NamedIndividual ,
-                                             <http://example.org/LogFile> ;
-                                    <http://example.org/hasInputFile> <http://example.org/exp_rem01> ;
-                                    rdfs:label "Output log rem01" .
+###  http://example.org/pathenergy_09aTSaIRCf_104
+<http://example.org/pathenergy_09aTSaIRCf_104> rdf:type owl:NamedIndividual .
 
 
-###  http://example.org/file_rem01a_dat
-<http://example.org/file_rem01a_dat> rdf:type owl:NamedIndividual ,
-                                              <http://example.org/DataFile> ;
-                                     <http://example.org/hasInputFile> <http://example.org/exp_rem01a> ;
-                                     rdfs:label "Output data rem01a" .
+###  http://example.org/pathenergy_09aTSaIRCf_105
+<http://example.org/pathenergy_09aTSaIRCf_105> rdf:type owl:NamedIndividual .
 
 
-###  http://example.org/file_rem01a_inp
-<http://example.org/file_rem01a_inp> rdf:type owl:NamedIndividual ,
-                                              <http://example.org/InputFile> ;
-                                     <http://example.org/hasInputFile> <http://example.org/exp_rem01> ;
-                                     rdfs:label "Input file rem01a" .
+###  http://example.org/pathenergy_09aTSaIRCf_106
+<http://example.org/pathenergy_09aTSaIRCf_106> rdf:type owl:NamedIndividual .
 
 
-###  http://example.org/file_rem01a_log
-<http://example.org/file_rem01a_log> rdf:type owl:NamedIndividual ,
-                                              <http://example.org/LogFile> ;
-                                     <http://example.org/hasInputFile> <http://example.org/exp_rem01a> ;
-                                     rdfs:label "Output log rem01a" .
+###  http://example.org/pathenergy_09aTSaIRCf_107
+<http://example.org/pathenergy_09aTSaIRCf_107> rdf:type owl:NamedIndividual .
 
 
-###  http://example.org/file_rem01b_dat
-<http://example.org/file_rem01b_dat> rdf:type owl:NamedIndividual ,
-                                              <http://example.org/DataFile> ;
-                                     <http://example.org/hasInputFile> <http://example.org/exp_rem01b> ;
-                                     rdfs:label "Output data rem01b" .
+###  http://example.org/pathenergy_09aTSaIRCf_108
+<http://example.org/pathenergy_09aTSaIRCf_108> rdf:type owl:NamedIndividual .
 
 
-###  http://example.org/file_rem01b_inp
-<http://example.org/file_rem01b_inp> rdf:type owl:NamedIndividual ,
-                                              <http://example.org/InputFile> ;
-                                     <http://example.org/hasInputFile> <http://example.org/exp_rem01a> ;
-                                     rdfs:label "Input file rem01b" .
+###  http://example.org/pathenergy_09aTSaIRCf_109
+<http://example.org/pathenergy_09aTSaIRCf_109> rdf:type owl:NamedIndividual .
 
 
-###  http://example.org/file_rem01b_log
-<http://example.org/file_rem01b_log> rdf:type owl:NamedIndividual ,
-                                              <http://example.org/LogFile> ;
-                                     <http://example.org/hasInputFile> <http://example.org/exp_rem01b> ;
-                                     rdfs:label "Output log rem01b" .
+###  http://example.org/pathenergy_09aTSaIRCf_11
+<http://example.org/pathenergy_09aTSaIRCf_11> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_110
+<http://example.org/pathenergy_09aTSaIRCf_110> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_111
+<http://example.org/pathenergy_09aTSaIRCf_111> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_112
+<http://example.org/pathenergy_09aTSaIRCf_112> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_113
+<http://example.org/pathenergy_09aTSaIRCf_113> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_114
+<http://example.org/pathenergy_09aTSaIRCf_114> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_115
+<http://example.org/pathenergy_09aTSaIRCf_115> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_116
+<http://example.org/pathenergy_09aTSaIRCf_116> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_117
+<http://example.org/pathenergy_09aTSaIRCf_117> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_118
+<http://example.org/pathenergy_09aTSaIRCf_118> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_119
+<http://example.org/pathenergy_09aTSaIRCf_119> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_12
+<http://example.org/pathenergy_09aTSaIRCf_12> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_120
+<http://example.org/pathenergy_09aTSaIRCf_120> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_121
+<http://example.org/pathenergy_09aTSaIRCf_121> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_122
+<http://example.org/pathenergy_09aTSaIRCf_122> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_123
+<http://example.org/pathenergy_09aTSaIRCf_123> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_124
+<http://example.org/pathenergy_09aTSaIRCf_124> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_125
+<http://example.org/pathenergy_09aTSaIRCf_125> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_126
+<http://example.org/pathenergy_09aTSaIRCf_126> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_127
+<http://example.org/pathenergy_09aTSaIRCf_127> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_128
+<http://example.org/pathenergy_09aTSaIRCf_128> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_129
+<http://example.org/pathenergy_09aTSaIRCf_129> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_13
+<http://example.org/pathenergy_09aTSaIRCf_13> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_130
+<http://example.org/pathenergy_09aTSaIRCf_130> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_131
+<http://example.org/pathenergy_09aTSaIRCf_131> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_132
+<http://example.org/pathenergy_09aTSaIRCf_132> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_133
+<http://example.org/pathenergy_09aTSaIRCf_133> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_134
+<http://example.org/pathenergy_09aTSaIRCf_134> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_135
+<http://example.org/pathenergy_09aTSaIRCf_135> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_136
+<http://example.org/pathenergy_09aTSaIRCf_136> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_137
+<http://example.org/pathenergy_09aTSaIRCf_137> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_138
+<http://example.org/pathenergy_09aTSaIRCf_138> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_139
+<http://example.org/pathenergy_09aTSaIRCf_139> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_14
+<http://example.org/pathenergy_09aTSaIRCf_14> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_140
+<http://example.org/pathenergy_09aTSaIRCf_140> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_141
+<http://example.org/pathenergy_09aTSaIRCf_141> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_142
+<http://example.org/pathenergy_09aTSaIRCf_142> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_143
+<http://example.org/pathenergy_09aTSaIRCf_143> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_144
+<http://example.org/pathenergy_09aTSaIRCf_144> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_145
+<http://example.org/pathenergy_09aTSaIRCf_145> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_146
+<http://example.org/pathenergy_09aTSaIRCf_146> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_147
+<http://example.org/pathenergy_09aTSaIRCf_147> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_148
+<http://example.org/pathenergy_09aTSaIRCf_148> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_149
+<http://example.org/pathenergy_09aTSaIRCf_149> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_15
+<http://example.org/pathenergy_09aTSaIRCf_15> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_150
+<http://example.org/pathenergy_09aTSaIRCf_150> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_151
+<http://example.org/pathenergy_09aTSaIRCf_151> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_152
+<http://example.org/pathenergy_09aTSaIRCf_152> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_153
+<http://example.org/pathenergy_09aTSaIRCf_153> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_154
+<http://example.org/pathenergy_09aTSaIRCf_154> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_155
+<http://example.org/pathenergy_09aTSaIRCf_155> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_156
+<http://example.org/pathenergy_09aTSaIRCf_156> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_157
+<http://example.org/pathenergy_09aTSaIRCf_157> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_158
+<http://example.org/pathenergy_09aTSaIRCf_158> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_159
+<http://example.org/pathenergy_09aTSaIRCf_159> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_16
+<http://example.org/pathenergy_09aTSaIRCf_16> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_160
+<http://example.org/pathenergy_09aTSaIRCf_160> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_161
+<http://example.org/pathenergy_09aTSaIRCf_161> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_162
+<http://example.org/pathenergy_09aTSaIRCf_162> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_163
+<http://example.org/pathenergy_09aTSaIRCf_163> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_164
+<http://example.org/pathenergy_09aTSaIRCf_164> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_165
+<http://example.org/pathenergy_09aTSaIRCf_165> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_166
+<http://example.org/pathenergy_09aTSaIRCf_166> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_167
+<http://example.org/pathenergy_09aTSaIRCf_167> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_168
+<http://example.org/pathenergy_09aTSaIRCf_168> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_169
+<http://example.org/pathenergy_09aTSaIRCf_169> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_17
+<http://example.org/pathenergy_09aTSaIRCf_17> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_170
+<http://example.org/pathenergy_09aTSaIRCf_170> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_171
+<http://example.org/pathenergy_09aTSaIRCf_171> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_172
+<http://example.org/pathenergy_09aTSaIRCf_172> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_173
+<http://example.org/pathenergy_09aTSaIRCf_173> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_174
+<http://example.org/pathenergy_09aTSaIRCf_174> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_175
+<http://example.org/pathenergy_09aTSaIRCf_175> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_176
+<http://example.org/pathenergy_09aTSaIRCf_176> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_177
+<http://example.org/pathenergy_09aTSaIRCf_177> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_178
+<http://example.org/pathenergy_09aTSaIRCf_178> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_179
+<http://example.org/pathenergy_09aTSaIRCf_179> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_18
+<http://example.org/pathenergy_09aTSaIRCf_18> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_180
+<http://example.org/pathenergy_09aTSaIRCf_180> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_181
+<http://example.org/pathenergy_09aTSaIRCf_181> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_182
+<http://example.org/pathenergy_09aTSaIRCf_182> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_183
+<http://example.org/pathenergy_09aTSaIRCf_183> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_184
+<http://example.org/pathenergy_09aTSaIRCf_184> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_185
+<http://example.org/pathenergy_09aTSaIRCf_185> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_186
+<http://example.org/pathenergy_09aTSaIRCf_186> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_187
+<http://example.org/pathenergy_09aTSaIRCf_187> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_188
+<http://example.org/pathenergy_09aTSaIRCf_188> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_189
+<http://example.org/pathenergy_09aTSaIRCf_189> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_19
+<http://example.org/pathenergy_09aTSaIRCf_19> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_190
+<http://example.org/pathenergy_09aTSaIRCf_190> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_191
+<http://example.org/pathenergy_09aTSaIRCf_191> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_192
+<http://example.org/pathenergy_09aTSaIRCf_192> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_193
+<http://example.org/pathenergy_09aTSaIRCf_193> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_194
+<http://example.org/pathenergy_09aTSaIRCf_194> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_195
+<http://example.org/pathenergy_09aTSaIRCf_195> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_196
+<http://example.org/pathenergy_09aTSaIRCf_196> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_197
+<http://example.org/pathenergy_09aTSaIRCf_197> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_198
+<http://example.org/pathenergy_09aTSaIRCf_198> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_199
+<http://example.org/pathenergy_09aTSaIRCf_199> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_2
+<http://example.org/pathenergy_09aTSaIRCf_2> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_20
+<http://example.org/pathenergy_09aTSaIRCf_20> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_200
+<http://example.org/pathenergy_09aTSaIRCf_200> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_201
+<http://example.org/pathenergy_09aTSaIRCf_201> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_202
+<http://example.org/pathenergy_09aTSaIRCf_202> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_203
+<http://example.org/pathenergy_09aTSaIRCf_203> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_204
+<http://example.org/pathenergy_09aTSaIRCf_204> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_205
+<http://example.org/pathenergy_09aTSaIRCf_205> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_206
+<http://example.org/pathenergy_09aTSaIRCf_206> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_207
+<http://example.org/pathenergy_09aTSaIRCf_207> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_208
+<http://example.org/pathenergy_09aTSaIRCf_208> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_209
+<http://example.org/pathenergy_09aTSaIRCf_209> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_21
+<http://example.org/pathenergy_09aTSaIRCf_21> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_210
+<http://example.org/pathenergy_09aTSaIRCf_210> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_211
+<http://example.org/pathenergy_09aTSaIRCf_211> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_212
+<http://example.org/pathenergy_09aTSaIRCf_212> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_213
+<http://example.org/pathenergy_09aTSaIRCf_213> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_214
+<http://example.org/pathenergy_09aTSaIRCf_214> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_215
+<http://example.org/pathenergy_09aTSaIRCf_215> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_216
+<http://example.org/pathenergy_09aTSaIRCf_216> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_217
+<http://example.org/pathenergy_09aTSaIRCf_217> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_218
+<http://example.org/pathenergy_09aTSaIRCf_218> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_219
+<http://example.org/pathenergy_09aTSaIRCf_219> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_22
+<http://example.org/pathenergy_09aTSaIRCf_22> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_220
+<http://example.org/pathenergy_09aTSaIRCf_220> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_23
+<http://example.org/pathenergy_09aTSaIRCf_23> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_24
+<http://example.org/pathenergy_09aTSaIRCf_24> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_25
+<http://example.org/pathenergy_09aTSaIRCf_25> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_26
+<http://example.org/pathenergy_09aTSaIRCf_26> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_27
+<http://example.org/pathenergy_09aTSaIRCf_27> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_28
+<http://example.org/pathenergy_09aTSaIRCf_28> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_29
+<http://example.org/pathenergy_09aTSaIRCf_29> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_3
+<http://example.org/pathenergy_09aTSaIRCf_3> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_30
+<http://example.org/pathenergy_09aTSaIRCf_30> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_31
+<http://example.org/pathenergy_09aTSaIRCf_31> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_32
+<http://example.org/pathenergy_09aTSaIRCf_32> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_33
+<http://example.org/pathenergy_09aTSaIRCf_33> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_34
+<http://example.org/pathenergy_09aTSaIRCf_34> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_35
+<http://example.org/pathenergy_09aTSaIRCf_35> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_36
+<http://example.org/pathenergy_09aTSaIRCf_36> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_37
+<http://example.org/pathenergy_09aTSaIRCf_37> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_38
+<http://example.org/pathenergy_09aTSaIRCf_38> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_39
+<http://example.org/pathenergy_09aTSaIRCf_39> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_4
+<http://example.org/pathenergy_09aTSaIRCf_4> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_40
+<http://example.org/pathenergy_09aTSaIRCf_40> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_41
+<http://example.org/pathenergy_09aTSaIRCf_41> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_42
+<http://example.org/pathenergy_09aTSaIRCf_42> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_43
+<http://example.org/pathenergy_09aTSaIRCf_43> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_44
+<http://example.org/pathenergy_09aTSaIRCf_44> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_45
+<http://example.org/pathenergy_09aTSaIRCf_45> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_46
+<http://example.org/pathenergy_09aTSaIRCf_46> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_47
+<http://example.org/pathenergy_09aTSaIRCf_47> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_48
+<http://example.org/pathenergy_09aTSaIRCf_48> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_49
+<http://example.org/pathenergy_09aTSaIRCf_49> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_5
+<http://example.org/pathenergy_09aTSaIRCf_5> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_50
+<http://example.org/pathenergy_09aTSaIRCf_50> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_51
+<http://example.org/pathenergy_09aTSaIRCf_51> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_52
+<http://example.org/pathenergy_09aTSaIRCf_52> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_53
+<http://example.org/pathenergy_09aTSaIRCf_53> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_54
+<http://example.org/pathenergy_09aTSaIRCf_54> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_55
+<http://example.org/pathenergy_09aTSaIRCf_55> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_56
+<http://example.org/pathenergy_09aTSaIRCf_56> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_57
+<http://example.org/pathenergy_09aTSaIRCf_57> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_58
+<http://example.org/pathenergy_09aTSaIRCf_58> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_59
+<http://example.org/pathenergy_09aTSaIRCf_59> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_6
+<http://example.org/pathenergy_09aTSaIRCf_6> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_60
+<http://example.org/pathenergy_09aTSaIRCf_60> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_61
+<http://example.org/pathenergy_09aTSaIRCf_61> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_62
+<http://example.org/pathenergy_09aTSaIRCf_62> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_63
+<http://example.org/pathenergy_09aTSaIRCf_63> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_64
+<http://example.org/pathenergy_09aTSaIRCf_64> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_65
+<http://example.org/pathenergy_09aTSaIRCf_65> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_66
+<http://example.org/pathenergy_09aTSaIRCf_66> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_67
+<http://example.org/pathenergy_09aTSaIRCf_67> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_68
+<http://example.org/pathenergy_09aTSaIRCf_68> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_69
+<http://example.org/pathenergy_09aTSaIRCf_69> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_7
+<http://example.org/pathenergy_09aTSaIRCf_7> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_70
+<http://example.org/pathenergy_09aTSaIRCf_70> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_71
+<http://example.org/pathenergy_09aTSaIRCf_71> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_72
+<http://example.org/pathenergy_09aTSaIRCf_72> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_73
+<http://example.org/pathenergy_09aTSaIRCf_73> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_74
+<http://example.org/pathenergy_09aTSaIRCf_74> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_75
+<http://example.org/pathenergy_09aTSaIRCf_75> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_76
+<http://example.org/pathenergy_09aTSaIRCf_76> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_77
+<http://example.org/pathenergy_09aTSaIRCf_77> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_78
+<http://example.org/pathenergy_09aTSaIRCf_78> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_79
+<http://example.org/pathenergy_09aTSaIRCf_79> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_8
+<http://example.org/pathenergy_09aTSaIRCf_8> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_80
+<http://example.org/pathenergy_09aTSaIRCf_80> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_81
+<http://example.org/pathenergy_09aTSaIRCf_81> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_82
+<http://example.org/pathenergy_09aTSaIRCf_82> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_83
+<http://example.org/pathenergy_09aTSaIRCf_83> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_84
+<http://example.org/pathenergy_09aTSaIRCf_84> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_85
+<http://example.org/pathenergy_09aTSaIRCf_85> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_86
+<http://example.org/pathenergy_09aTSaIRCf_86> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_87
+<http://example.org/pathenergy_09aTSaIRCf_87> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_88
+<http://example.org/pathenergy_09aTSaIRCf_88> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_89
+<http://example.org/pathenergy_09aTSaIRCf_89> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_9
+<http://example.org/pathenergy_09aTSaIRCf_9> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_90
+<http://example.org/pathenergy_09aTSaIRCf_90> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_91
+<http://example.org/pathenergy_09aTSaIRCf_91> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_92
+<http://example.org/pathenergy_09aTSaIRCf_92> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_93
+<http://example.org/pathenergy_09aTSaIRCf_93> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_94
+<http://example.org/pathenergy_09aTSaIRCf_94> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_95
+<http://example.org/pathenergy_09aTSaIRCf_95> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_96
+<http://example.org/pathenergy_09aTSaIRCf_96> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_97
+<http://example.org/pathenergy_09aTSaIRCf_97> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_98
+<http://example.org/pathenergy_09aTSaIRCf_98> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathenergy_09aTSaIRCf_99
+<http://example.org/pathenergy_09aTSaIRCf_99> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_1
+<http://example.org/pathpoint_09aTSaIRCf_1> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/ReactionPathPoint> ;
+                                            <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_1> ;
+                                            <http://purl.org/gc/hasIndex> "1" ;
+                                            rdfs:label "Path point 1 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_10
+<http://example.org/pathpoint_09aTSaIRCf_10> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_10> ;
+                                             <http://purl.org/gc/hasIndex> "10" ;
+                                             rdfs:label "Path point 10 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_100
+<http://example.org/pathpoint_09aTSaIRCf_100> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_100> ;
+                                              <http://purl.org/gc/hasIndex> "100" ;
+                                              rdfs:label "Path point 100 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_101
+<http://example.org/pathpoint_09aTSaIRCf_101> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_101> ;
+                                              <http://purl.org/gc/hasIndex> "101" ;
+                                              rdfs:label "Path point 101 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_102
+<http://example.org/pathpoint_09aTSaIRCf_102> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_102> ;
+                                              <http://purl.org/gc/hasIndex> "102" ;
+                                              rdfs:label "Path point 102 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_103
+<http://example.org/pathpoint_09aTSaIRCf_103> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_103> ;
+                                              <http://purl.org/gc/hasIndex> "103" ;
+                                              rdfs:label "Path point 103 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_104
+<http://example.org/pathpoint_09aTSaIRCf_104> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_104> ;
+                                              <http://purl.org/gc/hasIndex> "104" ;
+                                              rdfs:label "Path point 104 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_105
+<http://example.org/pathpoint_09aTSaIRCf_105> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_105> ;
+                                              <http://purl.org/gc/hasIndex> "105" ;
+                                              rdfs:label "Path point 105 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_106
+<http://example.org/pathpoint_09aTSaIRCf_106> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_106> ;
+                                              <http://purl.org/gc/hasIndex> "106" ;
+                                              rdfs:label "Path point 106 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_107
+<http://example.org/pathpoint_09aTSaIRCf_107> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_107> ;
+                                              <http://purl.org/gc/hasIndex> "107" ;
+                                              rdfs:label "Path point 107 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_108
+<http://example.org/pathpoint_09aTSaIRCf_108> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_108> ;
+                                              <http://purl.org/gc/hasIndex> "108" ;
+                                              rdfs:label "Path point 108 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_109
+<http://example.org/pathpoint_09aTSaIRCf_109> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_109> ;
+                                              <http://purl.org/gc/hasIndex> "109" ;
+                                              rdfs:label "Path point 109 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_11
+<http://example.org/pathpoint_09aTSaIRCf_11> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_11> ;
+                                             <http://purl.org/gc/hasIndex> "11" ;
+                                             rdfs:label "Path point 11 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_110
+<http://example.org/pathpoint_09aTSaIRCf_110> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_110> ;
+                                              <http://purl.org/gc/hasIndex> "110" ;
+                                              rdfs:label "Path point 110 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_111
+<http://example.org/pathpoint_09aTSaIRCf_111> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_111> ;
+                                              <http://purl.org/gc/hasIndex> "111" ;
+                                              rdfs:label "Path point 111 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_112
+<http://example.org/pathpoint_09aTSaIRCf_112> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_112> ;
+                                              <http://purl.org/gc/hasIndex> "112" ;
+                                              rdfs:label "Path point 112 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_113
+<http://example.org/pathpoint_09aTSaIRCf_113> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_113> ;
+                                              <http://purl.org/gc/hasIndex> "113" ;
+                                              rdfs:label "Path point 113 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_114
+<http://example.org/pathpoint_09aTSaIRCf_114> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_114> ;
+                                              <http://purl.org/gc/hasIndex> "114" ;
+                                              rdfs:label "Path point 114 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_115
+<http://example.org/pathpoint_09aTSaIRCf_115> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_115> ;
+                                              <http://purl.org/gc/hasIndex> "115" ;
+                                              rdfs:label "Path point 115 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_116
+<http://example.org/pathpoint_09aTSaIRCf_116> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_116> ;
+                                              <http://purl.org/gc/hasIndex> "116" ;
+                                              rdfs:label "Path point 116 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_117
+<http://example.org/pathpoint_09aTSaIRCf_117> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_117> ;
+                                              <http://purl.org/gc/hasIndex> "117" ;
+                                              rdfs:label "Path point 117 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_118
+<http://example.org/pathpoint_09aTSaIRCf_118> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_118> ;
+                                              <http://purl.org/gc/hasIndex> "118" ;
+                                              rdfs:label "Path point 118 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_119
+<http://example.org/pathpoint_09aTSaIRCf_119> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_119> ;
+                                              <http://purl.org/gc/hasIndex> "119" ;
+                                              rdfs:label "Path point 119 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_12
+<http://example.org/pathpoint_09aTSaIRCf_12> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_12> ;
+                                             <http://purl.org/gc/hasIndex> "12" ;
+                                             rdfs:label "Path point 12 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_120
+<http://example.org/pathpoint_09aTSaIRCf_120> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_120> ;
+                                              <http://purl.org/gc/hasIndex> "120" ;
+                                              rdfs:label "Path point 120 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_121
+<http://example.org/pathpoint_09aTSaIRCf_121> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_121> ;
+                                              <http://purl.org/gc/hasIndex> "121" ;
+                                              rdfs:label "Path point 121 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_122
+<http://example.org/pathpoint_09aTSaIRCf_122> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_122> ;
+                                              <http://purl.org/gc/hasIndex> "122" ;
+                                              rdfs:label "Path point 122 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_123
+<http://example.org/pathpoint_09aTSaIRCf_123> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_123> ;
+                                              <http://purl.org/gc/hasIndex> "123" ;
+                                              rdfs:label "Path point 123 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_124
+<http://example.org/pathpoint_09aTSaIRCf_124> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_124> ;
+                                              <http://purl.org/gc/hasIndex> "124" ;
+                                              rdfs:label "Path point 124 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_125
+<http://example.org/pathpoint_09aTSaIRCf_125> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_125> ;
+                                              <http://purl.org/gc/hasIndex> "125" ;
+                                              rdfs:label "Path point 125 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_126
+<http://example.org/pathpoint_09aTSaIRCf_126> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_126> ;
+                                              <http://purl.org/gc/hasIndex> "126" ;
+                                              rdfs:label "Path point 126 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_127
+<http://example.org/pathpoint_09aTSaIRCf_127> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_127> ;
+                                              <http://purl.org/gc/hasIndex> "127" ;
+                                              rdfs:label "Path point 127 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_128
+<http://example.org/pathpoint_09aTSaIRCf_128> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_128> ;
+                                              <http://purl.org/gc/hasIndex> "128" ;
+                                              rdfs:label "Path point 128 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_129
+<http://example.org/pathpoint_09aTSaIRCf_129> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_129> ;
+                                              <http://purl.org/gc/hasIndex> "129" ;
+                                              rdfs:label "Path point 129 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_13
+<http://example.org/pathpoint_09aTSaIRCf_13> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_13> ;
+                                             <http://purl.org/gc/hasIndex> "13" ;
+                                             rdfs:label "Path point 13 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_130
+<http://example.org/pathpoint_09aTSaIRCf_130> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_130> ;
+                                              <http://purl.org/gc/hasIndex> "130" ;
+                                              rdfs:label "Path point 130 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_131
+<http://example.org/pathpoint_09aTSaIRCf_131> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_131> ;
+                                              <http://purl.org/gc/hasIndex> "131" ;
+                                              rdfs:label "Path point 131 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_132
+<http://example.org/pathpoint_09aTSaIRCf_132> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_132> ;
+                                              <http://purl.org/gc/hasIndex> "132" ;
+                                              rdfs:label "Path point 132 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_133
+<http://example.org/pathpoint_09aTSaIRCf_133> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_133> ;
+                                              <http://purl.org/gc/hasIndex> "133" ;
+                                              rdfs:label "Path point 133 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_134
+<http://example.org/pathpoint_09aTSaIRCf_134> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_134> ;
+                                              <http://purl.org/gc/hasIndex> "134" ;
+                                              rdfs:label "Path point 134 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_135
+<http://example.org/pathpoint_09aTSaIRCf_135> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_135> ;
+                                              <http://purl.org/gc/hasIndex> "135" ;
+                                              rdfs:label "Path point 135 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_136
+<http://example.org/pathpoint_09aTSaIRCf_136> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_136> ;
+                                              <http://purl.org/gc/hasIndex> "136" ;
+                                              rdfs:label "Path point 136 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_137
+<http://example.org/pathpoint_09aTSaIRCf_137> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_137> ;
+                                              <http://purl.org/gc/hasIndex> "137" ;
+                                              rdfs:label "Path point 137 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_138
+<http://example.org/pathpoint_09aTSaIRCf_138> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_138> ;
+                                              <http://purl.org/gc/hasIndex> "138" ;
+                                              rdfs:label "Path point 138 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_139
+<http://example.org/pathpoint_09aTSaIRCf_139> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_139> ;
+                                              <http://purl.org/gc/hasIndex> "139" ;
+                                              rdfs:label "Path point 139 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_14
+<http://example.org/pathpoint_09aTSaIRCf_14> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_14> ;
+                                             <http://purl.org/gc/hasIndex> "14" ;
+                                             rdfs:label "Path point 14 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_140
+<http://example.org/pathpoint_09aTSaIRCf_140> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_140> ;
+                                              <http://purl.org/gc/hasIndex> "140" ;
+                                              rdfs:label "Path point 140 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_141
+<http://example.org/pathpoint_09aTSaIRCf_141> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_141> ;
+                                              <http://purl.org/gc/hasIndex> "141" ;
+                                              rdfs:label "Path point 141 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_142
+<http://example.org/pathpoint_09aTSaIRCf_142> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_142> ;
+                                              <http://purl.org/gc/hasIndex> "142" ;
+                                              rdfs:label "Path point 142 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_143
+<http://example.org/pathpoint_09aTSaIRCf_143> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_143> ;
+                                              <http://purl.org/gc/hasIndex> "143" ;
+                                              rdfs:label "Path point 143 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_144
+<http://example.org/pathpoint_09aTSaIRCf_144> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_144> ;
+                                              <http://purl.org/gc/hasIndex> "144" ;
+                                              rdfs:label "Path point 144 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_145
+<http://example.org/pathpoint_09aTSaIRCf_145> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_145> ;
+                                              <http://purl.org/gc/hasIndex> "145" ;
+                                              rdfs:label "Path point 145 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_146
+<http://example.org/pathpoint_09aTSaIRCf_146> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_146> ;
+                                              <http://purl.org/gc/hasIndex> "146" ;
+                                              rdfs:label "Path point 146 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_147
+<http://example.org/pathpoint_09aTSaIRCf_147> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_147> ;
+                                              <http://purl.org/gc/hasIndex> "147" ;
+                                              rdfs:label "Path point 147 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_148
+<http://example.org/pathpoint_09aTSaIRCf_148> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_148> ;
+                                              <http://purl.org/gc/hasIndex> "148" ;
+                                              rdfs:label "Path point 148 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_149
+<http://example.org/pathpoint_09aTSaIRCf_149> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_149> ;
+                                              <http://purl.org/gc/hasIndex> "149" ;
+                                              rdfs:label "Path point 149 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_15
+<http://example.org/pathpoint_09aTSaIRCf_15> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_15> ;
+                                             <http://purl.org/gc/hasIndex> "15" ;
+                                             rdfs:label "Path point 15 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_150
+<http://example.org/pathpoint_09aTSaIRCf_150> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_150> ;
+                                              <http://purl.org/gc/hasIndex> "150" ;
+                                              rdfs:label "Path point 150 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_151
+<http://example.org/pathpoint_09aTSaIRCf_151> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_151> ;
+                                              <http://purl.org/gc/hasIndex> "151" ;
+                                              rdfs:label "Path point 151 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_152
+<http://example.org/pathpoint_09aTSaIRCf_152> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_152> ;
+                                              <http://purl.org/gc/hasIndex> "152" ;
+                                              rdfs:label "Path point 152 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_153
+<http://example.org/pathpoint_09aTSaIRCf_153> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_153> ;
+                                              <http://purl.org/gc/hasIndex> "153" ;
+                                              rdfs:label "Path point 153 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_154
+<http://example.org/pathpoint_09aTSaIRCf_154> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_154> ;
+                                              <http://purl.org/gc/hasIndex> "154" ;
+                                              rdfs:label "Path point 154 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_155
+<http://example.org/pathpoint_09aTSaIRCf_155> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_155> ;
+                                              <http://purl.org/gc/hasIndex> "155" ;
+                                              rdfs:label "Path point 155 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_156
+<http://example.org/pathpoint_09aTSaIRCf_156> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_156> ;
+                                              <http://purl.org/gc/hasIndex> "156" ;
+                                              rdfs:label "Path point 156 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_157
+<http://example.org/pathpoint_09aTSaIRCf_157> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_157> ;
+                                              <http://purl.org/gc/hasIndex> "157" ;
+                                              rdfs:label "Path point 157 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_158
+<http://example.org/pathpoint_09aTSaIRCf_158> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_158> ;
+                                              <http://purl.org/gc/hasIndex> "158" ;
+                                              rdfs:label "Path point 158 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_159
+<http://example.org/pathpoint_09aTSaIRCf_159> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_159> ;
+                                              <http://purl.org/gc/hasIndex> "159" ;
+                                              rdfs:label "Path point 159 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_16
+<http://example.org/pathpoint_09aTSaIRCf_16> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_16> ;
+                                             <http://purl.org/gc/hasIndex> "16" ;
+                                             rdfs:label "Path point 16 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_160
+<http://example.org/pathpoint_09aTSaIRCf_160> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_160> ;
+                                              <http://purl.org/gc/hasIndex> "160" ;
+                                              rdfs:label "Path point 160 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_161
+<http://example.org/pathpoint_09aTSaIRCf_161> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_161> ;
+                                              <http://purl.org/gc/hasIndex> "161" ;
+                                              rdfs:label "Path point 161 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_162
+<http://example.org/pathpoint_09aTSaIRCf_162> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_162> ;
+                                              <http://purl.org/gc/hasIndex> "162" ;
+                                              rdfs:label "Path point 162 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_163
+<http://example.org/pathpoint_09aTSaIRCf_163> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_163> ;
+                                              <http://purl.org/gc/hasIndex> "163" ;
+                                              rdfs:label "Path point 163 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_164
+<http://example.org/pathpoint_09aTSaIRCf_164> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_164> ;
+                                              <http://purl.org/gc/hasIndex> "164" ;
+                                              rdfs:label "Path point 164 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_165
+<http://example.org/pathpoint_09aTSaIRCf_165> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_165> ;
+                                              <http://purl.org/gc/hasIndex> "165" ;
+                                              rdfs:label "Path point 165 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_166
+<http://example.org/pathpoint_09aTSaIRCf_166> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_166> ;
+                                              <http://purl.org/gc/hasIndex> "166" ;
+                                              rdfs:label "Path point 166 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_167
+<http://example.org/pathpoint_09aTSaIRCf_167> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_167> ;
+                                              <http://purl.org/gc/hasIndex> "167" ;
+                                              rdfs:label "Path point 167 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_168
+<http://example.org/pathpoint_09aTSaIRCf_168> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_168> ;
+                                              <http://purl.org/gc/hasIndex> "168" ;
+                                              rdfs:label "Path point 168 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_169
+<http://example.org/pathpoint_09aTSaIRCf_169> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_169> ;
+                                              <http://purl.org/gc/hasIndex> "169" ;
+                                              rdfs:label "Path point 169 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_17
+<http://example.org/pathpoint_09aTSaIRCf_17> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_17> ;
+                                             <http://purl.org/gc/hasIndex> "17" ;
+                                             rdfs:label "Path point 17 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_170
+<http://example.org/pathpoint_09aTSaIRCf_170> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_170> ;
+                                              <http://purl.org/gc/hasIndex> "170" ;
+                                              rdfs:label "Path point 170 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_171
+<http://example.org/pathpoint_09aTSaIRCf_171> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_171> ;
+                                              <http://purl.org/gc/hasIndex> "171" ;
+                                              rdfs:label "Path point 171 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_172
+<http://example.org/pathpoint_09aTSaIRCf_172> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_172> ;
+                                              <http://purl.org/gc/hasIndex> "172" ;
+                                              rdfs:label "Path point 172 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_173
+<http://example.org/pathpoint_09aTSaIRCf_173> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_173> ;
+                                              <http://purl.org/gc/hasIndex> "173" ;
+                                              rdfs:label "Path point 173 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_174
+<http://example.org/pathpoint_09aTSaIRCf_174> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_174> ;
+                                              <http://purl.org/gc/hasIndex> "174" ;
+                                              rdfs:label "Path point 174 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_175
+<http://example.org/pathpoint_09aTSaIRCf_175> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_175> ;
+                                              <http://purl.org/gc/hasIndex> "175" ;
+                                              rdfs:label "Path point 175 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_176
+<http://example.org/pathpoint_09aTSaIRCf_176> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_176> ;
+                                              <http://purl.org/gc/hasIndex> "176" ;
+                                              rdfs:label "Path point 176 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_177
+<http://example.org/pathpoint_09aTSaIRCf_177> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_177> ;
+                                              <http://purl.org/gc/hasIndex> "177" ;
+                                              rdfs:label "Path point 177 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_178
+<http://example.org/pathpoint_09aTSaIRCf_178> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_178> ;
+                                              <http://purl.org/gc/hasIndex> "178" ;
+                                              rdfs:label "Path point 178 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_179
+<http://example.org/pathpoint_09aTSaIRCf_179> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_179> ;
+                                              <http://purl.org/gc/hasIndex> "179" ;
+                                              rdfs:label "Path point 179 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_18
+<http://example.org/pathpoint_09aTSaIRCf_18> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_18> ;
+                                             <http://purl.org/gc/hasIndex> "18" ;
+                                             rdfs:label "Path point 18 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_180
+<http://example.org/pathpoint_09aTSaIRCf_180> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_180> ;
+                                              <http://purl.org/gc/hasIndex> "180" ;
+                                              rdfs:label "Path point 180 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_181
+<http://example.org/pathpoint_09aTSaIRCf_181> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_181> ;
+                                              <http://purl.org/gc/hasIndex> "181" ;
+                                              rdfs:label "Path point 181 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_182
+<http://example.org/pathpoint_09aTSaIRCf_182> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_182> ;
+                                              <http://purl.org/gc/hasIndex> "182" ;
+                                              rdfs:label "Path point 182 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_183
+<http://example.org/pathpoint_09aTSaIRCf_183> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_183> ;
+                                              <http://purl.org/gc/hasIndex> "183" ;
+                                              rdfs:label "Path point 183 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_184
+<http://example.org/pathpoint_09aTSaIRCf_184> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_184> ;
+                                              <http://purl.org/gc/hasIndex> "184" ;
+                                              rdfs:label "Path point 184 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_185
+<http://example.org/pathpoint_09aTSaIRCf_185> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_185> ;
+                                              <http://purl.org/gc/hasIndex> "185" ;
+                                              rdfs:label "Path point 185 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_186
+<http://example.org/pathpoint_09aTSaIRCf_186> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_186> ;
+                                              <http://purl.org/gc/hasIndex> "186" ;
+                                              rdfs:label "Path point 186 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_187
+<http://example.org/pathpoint_09aTSaIRCf_187> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_187> ;
+                                              <http://purl.org/gc/hasIndex> "187" ;
+                                              rdfs:label "Path point 187 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_188
+<http://example.org/pathpoint_09aTSaIRCf_188> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_188> ;
+                                              <http://purl.org/gc/hasIndex> "188" ;
+                                              rdfs:label "Path point 188 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_189
+<http://example.org/pathpoint_09aTSaIRCf_189> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_189> ;
+                                              <http://purl.org/gc/hasIndex> "189" ;
+                                              rdfs:label "Path point 189 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_19
+<http://example.org/pathpoint_09aTSaIRCf_19> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_19> ;
+                                             <http://purl.org/gc/hasIndex> "19" ;
+                                             rdfs:label "Path point 19 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_190
+<http://example.org/pathpoint_09aTSaIRCf_190> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_190> ;
+                                              <http://purl.org/gc/hasIndex> "190" ;
+                                              rdfs:label "Path point 190 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_191
+<http://example.org/pathpoint_09aTSaIRCf_191> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_191> ;
+                                              <http://purl.org/gc/hasIndex> "191" ;
+                                              rdfs:label "Path point 191 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_192
+<http://example.org/pathpoint_09aTSaIRCf_192> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_192> ;
+                                              <http://purl.org/gc/hasIndex> "192" ;
+                                              rdfs:label "Path point 192 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_193
+<http://example.org/pathpoint_09aTSaIRCf_193> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_193> ;
+                                              <http://purl.org/gc/hasIndex> "193" ;
+                                              rdfs:label "Path point 193 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_194
+<http://example.org/pathpoint_09aTSaIRCf_194> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_194> ;
+                                              <http://purl.org/gc/hasIndex> "194" ;
+                                              rdfs:label "Path point 194 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_195
+<http://example.org/pathpoint_09aTSaIRCf_195> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_195> ;
+                                              <http://purl.org/gc/hasIndex> "195" ;
+                                              rdfs:label "Path point 195 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_196
+<http://example.org/pathpoint_09aTSaIRCf_196> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_196> ;
+                                              <http://purl.org/gc/hasIndex> "196" ;
+                                              rdfs:label "Path point 196 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_197
+<http://example.org/pathpoint_09aTSaIRCf_197> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_197> ;
+                                              <http://purl.org/gc/hasIndex> "197" ;
+                                              rdfs:label "Path point 197 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_198
+<http://example.org/pathpoint_09aTSaIRCf_198> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_198> ;
+                                              <http://purl.org/gc/hasIndex> "198" ;
+                                              rdfs:label "Path point 198 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_199
+<http://example.org/pathpoint_09aTSaIRCf_199> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_199> ;
+                                              <http://purl.org/gc/hasIndex> "199" ;
+                                              rdfs:label "Path point 199 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_2
+<http://example.org/pathpoint_09aTSaIRCf_2> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/ReactionPathPoint> ;
+                                            <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_2> ;
+                                            <http://purl.org/gc/hasIndex> "2" ;
+                                            rdfs:label "Path point 2 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_20
+<http://example.org/pathpoint_09aTSaIRCf_20> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_20> ;
+                                             <http://purl.org/gc/hasIndex> "20" ;
+                                             rdfs:label "Path point 20 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_200
+<http://example.org/pathpoint_09aTSaIRCf_200> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_200> ;
+                                              <http://purl.org/gc/hasIndex> "200" ;
+                                              rdfs:label "Path point 200 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_201
+<http://example.org/pathpoint_09aTSaIRCf_201> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_201> ;
+                                              <http://purl.org/gc/hasIndex> "201" ;
+                                              rdfs:label "Path point 201 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_202
+<http://example.org/pathpoint_09aTSaIRCf_202> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_202> ;
+                                              <http://purl.org/gc/hasIndex> "202" ;
+                                              rdfs:label "Path point 202 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_203
+<http://example.org/pathpoint_09aTSaIRCf_203> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_203> ;
+                                              <http://purl.org/gc/hasIndex> "203" ;
+                                              rdfs:label "Path point 203 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_204
+<http://example.org/pathpoint_09aTSaIRCf_204> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_204> ;
+                                              <http://purl.org/gc/hasIndex> "204" ;
+                                              rdfs:label "Path point 204 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_205
+<http://example.org/pathpoint_09aTSaIRCf_205> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_205> ;
+                                              <http://purl.org/gc/hasIndex> "205" ;
+                                              rdfs:label "Path point 205 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_206
+<http://example.org/pathpoint_09aTSaIRCf_206> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_206> ;
+                                              <http://purl.org/gc/hasIndex> "206" ;
+                                              rdfs:label "Path point 206 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_207
+<http://example.org/pathpoint_09aTSaIRCf_207> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_207> ;
+                                              <http://purl.org/gc/hasIndex> "207" ;
+                                              rdfs:label "Path point 207 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_208
+<http://example.org/pathpoint_09aTSaIRCf_208> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_208> ;
+                                              <http://purl.org/gc/hasIndex> "208" ;
+                                              rdfs:label "Path point 208 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_209
+<http://example.org/pathpoint_09aTSaIRCf_209> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_209> ;
+                                              <http://purl.org/gc/hasIndex> "209" ;
+                                              rdfs:label "Path point 209 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_21
+<http://example.org/pathpoint_09aTSaIRCf_21> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_21> ;
+                                             <http://purl.org/gc/hasIndex> "21" ;
+                                             rdfs:label "Path point 21 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_210
+<http://example.org/pathpoint_09aTSaIRCf_210> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_210> ;
+                                              <http://purl.org/gc/hasIndex> "210" ;
+                                              rdfs:label "Path point 210 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_211
+<http://example.org/pathpoint_09aTSaIRCf_211> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_211> ;
+                                              <http://purl.org/gc/hasIndex> "211" ;
+                                              rdfs:label "Path point 211 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_212
+<http://example.org/pathpoint_09aTSaIRCf_212> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_212> ;
+                                              <http://purl.org/gc/hasIndex> "212" ;
+                                              rdfs:label "Path point 212 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_213
+<http://example.org/pathpoint_09aTSaIRCf_213> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_213> ;
+                                              <http://purl.org/gc/hasIndex> "213" ;
+                                              rdfs:label "Path point 213 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_214
+<http://example.org/pathpoint_09aTSaIRCf_214> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_214> ;
+                                              <http://purl.org/gc/hasIndex> "214" ;
+                                              rdfs:label "Path point 214 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_215
+<http://example.org/pathpoint_09aTSaIRCf_215> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_215> ;
+                                              <http://purl.org/gc/hasIndex> "215" ;
+                                              rdfs:label "Path point 215 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_216
+<http://example.org/pathpoint_09aTSaIRCf_216> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_216> ;
+                                              <http://purl.org/gc/hasIndex> "216" ;
+                                              rdfs:label "Path point 216 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_217
+<http://example.org/pathpoint_09aTSaIRCf_217> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_217> ;
+                                              <http://purl.org/gc/hasIndex> "217" ;
+                                              rdfs:label "Path point 217 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_218
+<http://example.org/pathpoint_09aTSaIRCf_218> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_218> ;
+                                              <http://purl.org/gc/hasIndex> "218" ;
+                                              rdfs:label "Path point 218 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_219
+<http://example.org/pathpoint_09aTSaIRCf_219> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_219> ;
+                                              <http://purl.org/gc/hasIndex> "219" ;
+                                              rdfs:label "Path point 219 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_22
+<http://example.org/pathpoint_09aTSaIRCf_22> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_22> ;
+                                             <http://purl.org/gc/hasIndex> "22" ;
+                                             rdfs:label "Path point 22 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_220
+<http://example.org/pathpoint_09aTSaIRCf_220> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/ReactionPathPoint> ;
+                                              <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_220> ;
+                                              <http://purl.org/gc/hasIndex> "220" ;
+                                              rdfs:label "Path point 220 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_23
+<http://example.org/pathpoint_09aTSaIRCf_23> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_23> ;
+                                             <http://purl.org/gc/hasIndex> "23" ;
+                                             rdfs:label "Path point 23 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_24
+<http://example.org/pathpoint_09aTSaIRCf_24> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_24> ;
+                                             <http://purl.org/gc/hasIndex> "24" ;
+                                             rdfs:label "Path point 24 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_25
+<http://example.org/pathpoint_09aTSaIRCf_25> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_25> ;
+                                             <http://purl.org/gc/hasIndex> "25" ;
+                                             rdfs:label "Path point 25 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_26
+<http://example.org/pathpoint_09aTSaIRCf_26> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_26> ;
+                                             <http://purl.org/gc/hasIndex> "26" ;
+                                             rdfs:label "Path point 26 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_27
+<http://example.org/pathpoint_09aTSaIRCf_27> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_27> ;
+                                             <http://purl.org/gc/hasIndex> "27" ;
+                                             rdfs:label "Path point 27 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_28
+<http://example.org/pathpoint_09aTSaIRCf_28> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_28> ;
+                                             <http://purl.org/gc/hasIndex> "28" ;
+                                             rdfs:label "Path point 28 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_29
+<http://example.org/pathpoint_09aTSaIRCf_29> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_29> ;
+                                             <http://purl.org/gc/hasIndex> "29" ;
+                                             rdfs:label "Path point 29 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_3
+<http://example.org/pathpoint_09aTSaIRCf_3> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/ReactionPathPoint> ;
+                                            <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_3> ;
+                                            <http://purl.org/gc/hasIndex> "3" ;
+                                            rdfs:label "Path point 3 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_30
+<http://example.org/pathpoint_09aTSaIRCf_30> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_30> ;
+                                             <http://purl.org/gc/hasIndex> "30" ;
+                                             rdfs:label "Path point 30 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_31
+<http://example.org/pathpoint_09aTSaIRCf_31> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_31> ;
+                                             <http://purl.org/gc/hasIndex> "31" ;
+                                             rdfs:label "Path point 31 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_32
+<http://example.org/pathpoint_09aTSaIRCf_32> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_32> ;
+                                             <http://purl.org/gc/hasIndex> "32" ;
+                                             rdfs:label "Path point 32 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_33
+<http://example.org/pathpoint_09aTSaIRCf_33> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_33> ;
+                                             <http://purl.org/gc/hasIndex> "33" ;
+                                             rdfs:label "Path point 33 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_34
+<http://example.org/pathpoint_09aTSaIRCf_34> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_34> ;
+                                             <http://purl.org/gc/hasIndex> "34" ;
+                                             rdfs:label "Path point 34 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_35
+<http://example.org/pathpoint_09aTSaIRCf_35> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_35> ;
+                                             <http://purl.org/gc/hasIndex> "35" ;
+                                             rdfs:label "Path point 35 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_36
+<http://example.org/pathpoint_09aTSaIRCf_36> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_36> ;
+                                             <http://purl.org/gc/hasIndex> "36" ;
+                                             rdfs:label "Path point 36 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_37
+<http://example.org/pathpoint_09aTSaIRCf_37> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_37> ;
+                                             <http://purl.org/gc/hasIndex> "37" ;
+                                             rdfs:label "Path point 37 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_38
+<http://example.org/pathpoint_09aTSaIRCf_38> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_38> ;
+                                             <http://purl.org/gc/hasIndex> "38" ;
+                                             rdfs:label "Path point 38 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_39
+<http://example.org/pathpoint_09aTSaIRCf_39> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_39> ;
+                                             <http://purl.org/gc/hasIndex> "39" ;
+                                             rdfs:label "Path point 39 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_4
+<http://example.org/pathpoint_09aTSaIRCf_4> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/ReactionPathPoint> ;
+                                            <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_4> ;
+                                            <http://purl.org/gc/hasIndex> "4" ;
+                                            rdfs:label "Path point 4 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_40
+<http://example.org/pathpoint_09aTSaIRCf_40> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_40> ;
+                                             <http://purl.org/gc/hasIndex> "40" ;
+                                             rdfs:label "Path point 40 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_41
+<http://example.org/pathpoint_09aTSaIRCf_41> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_41> ;
+                                             <http://purl.org/gc/hasIndex> "41" ;
+                                             rdfs:label "Path point 41 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_42
+<http://example.org/pathpoint_09aTSaIRCf_42> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_42> ;
+                                             <http://purl.org/gc/hasIndex> "42" ;
+                                             rdfs:label "Path point 42 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_43
+<http://example.org/pathpoint_09aTSaIRCf_43> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_43> ;
+                                             <http://purl.org/gc/hasIndex> "43" ;
+                                             rdfs:label "Path point 43 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_44
+<http://example.org/pathpoint_09aTSaIRCf_44> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_44> ;
+                                             <http://purl.org/gc/hasIndex> "44" ;
+                                             rdfs:label "Path point 44 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_45
+<http://example.org/pathpoint_09aTSaIRCf_45> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_45> ;
+                                             <http://purl.org/gc/hasIndex> "45" ;
+                                             rdfs:label "Path point 45 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_46
+<http://example.org/pathpoint_09aTSaIRCf_46> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_46> ;
+                                             <http://purl.org/gc/hasIndex> "46" ;
+                                             rdfs:label "Path point 46 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_47
+<http://example.org/pathpoint_09aTSaIRCf_47> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_47> ;
+                                             <http://purl.org/gc/hasIndex> "47" ;
+                                             rdfs:label "Path point 47 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_48
+<http://example.org/pathpoint_09aTSaIRCf_48> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_48> ;
+                                             <http://purl.org/gc/hasIndex> "48" ;
+                                             rdfs:label "Path point 48 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_49
+<http://example.org/pathpoint_09aTSaIRCf_49> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_49> ;
+                                             <http://purl.org/gc/hasIndex> "49" ;
+                                             rdfs:label "Path point 49 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_5
+<http://example.org/pathpoint_09aTSaIRCf_5> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/ReactionPathPoint> ;
+                                            <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_5> ;
+                                            <http://purl.org/gc/hasIndex> "5" ;
+                                            rdfs:label "Path point 5 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_50
+<http://example.org/pathpoint_09aTSaIRCf_50> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_50> ;
+                                             <http://purl.org/gc/hasIndex> "50" ;
+                                             rdfs:label "Path point 50 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_51
+<http://example.org/pathpoint_09aTSaIRCf_51> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_51> ;
+                                             <http://purl.org/gc/hasIndex> "51" ;
+                                             rdfs:label "Path point 51 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_52
+<http://example.org/pathpoint_09aTSaIRCf_52> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_52> ;
+                                             <http://purl.org/gc/hasIndex> "52" ;
+                                             rdfs:label "Path point 52 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_53
+<http://example.org/pathpoint_09aTSaIRCf_53> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_53> ;
+                                             <http://purl.org/gc/hasIndex> "53" ;
+                                             rdfs:label "Path point 53 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_54
+<http://example.org/pathpoint_09aTSaIRCf_54> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_54> ;
+                                             <http://purl.org/gc/hasIndex> "54" ;
+                                             rdfs:label "Path point 54 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_55
+<http://example.org/pathpoint_09aTSaIRCf_55> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_55> ;
+                                             <http://purl.org/gc/hasIndex> "55" ;
+                                             rdfs:label "Path point 55 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_56
+<http://example.org/pathpoint_09aTSaIRCf_56> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_56> ;
+                                             <http://purl.org/gc/hasIndex> "56" ;
+                                             rdfs:label "Path point 56 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_57
+<http://example.org/pathpoint_09aTSaIRCf_57> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_57> ;
+                                             <http://purl.org/gc/hasIndex> "57" ;
+                                             rdfs:label "Path point 57 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_58
+<http://example.org/pathpoint_09aTSaIRCf_58> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_58> ;
+                                             <http://purl.org/gc/hasIndex> "58" ;
+                                             rdfs:label "Path point 58 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_59
+<http://example.org/pathpoint_09aTSaIRCf_59> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_59> ;
+                                             <http://purl.org/gc/hasIndex> "59" ;
+                                             rdfs:label "Path point 59 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_6
+<http://example.org/pathpoint_09aTSaIRCf_6> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/ReactionPathPoint> ;
+                                            <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_6> ;
+                                            <http://purl.org/gc/hasIndex> "6" ;
+                                            rdfs:label "Path point 6 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_60
+<http://example.org/pathpoint_09aTSaIRCf_60> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_60> ;
+                                             <http://purl.org/gc/hasIndex> "60" ;
+                                             rdfs:label "Path point 60 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_61
+<http://example.org/pathpoint_09aTSaIRCf_61> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_61> ;
+                                             <http://purl.org/gc/hasIndex> "61" ;
+                                             rdfs:label "Path point 61 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_62
+<http://example.org/pathpoint_09aTSaIRCf_62> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_62> ;
+                                             <http://purl.org/gc/hasIndex> "62" ;
+                                             rdfs:label "Path point 62 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_63
+<http://example.org/pathpoint_09aTSaIRCf_63> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_63> ;
+                                             <http://purl.org/gc/hasIndex> "63" ;
+                                             rdfs:label "Path point 63 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_64
+<http://example.org/pathpoint_09aTSaIRCf_64> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_64> ;
+                                             <http://purl.org/gc/hasIndex> "64" ;
+                                             rdfs:label "Path point 64 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_65
+<http://example.org/pathpoint_09aTSaIRCf_65> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_65> ;
+                                             <http://purl.org/gc/hasIndex> "65" ;
+                                             rdfs:label "Path point 65 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_66
+<http://example.org/pathpoint_09aTSaIRCf_66> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_66> ;
+                                             <http://purl.org/gc/hasIndex> "66" ;
+                                             rdfs:label "Path point 66 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_67
+<http://example.org/pathpoint_09aTSaIRCf_67> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_67> ;
+                                             <http://purl.org/gc/hasIndex> "67" ;
+                                             rdfs:label "Path point 67 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_68
+<http://example.org/pathpoint_09aTSaIRCf_68> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_68> ;
+                                             <http://purl.org/gc/hasIndex> "68" ;
+                                             rdfs:label "Path point 68 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_69
+<http://example.org/pathpoint_09aTSaIRCf_69> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_69> ;
+                                             <http://purl.org/gc/hasIndex> "69" ;
+                                             rdfs:label "Path point 69 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_7
+<http://example.org/pathpoint_09aTSaIRCf_7> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/ReactionPathPoint> ;
+                                            <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_7> ;
+                                            <http://purl.org/gc/hasIndex> "7" ;
+                                            rdfs:label "Path point 7 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_70
+<http://example.org/pathpoint_09aTSaIRCf_70> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_70> ;
+                                             <http://purl.org/gc/hasIndex> "70" ;
+                                             rdfs:label "Path point 70 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_71
+<http://example.org/pathpoint_09aTSaIRCf_71> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_71> ;
+                                             <http://purl.org/gc/hasIndex> "71" ;
+                                             rdfs:label "Path point 71 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_72
+<http://example.org/pathpoint_09aTSaIRCf_72> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_72> ;
+                                             <http://purl.org/gc/hasIndex> "72" ;
+                                             rdfs:label "Path point 72 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_73
+<http://example.org/pathpoint_09aTSaIRCf_73> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_73> ;
+                                             <http://purl.org/gc/hasIndex> "73" ;
+                                             rdfs:label "Path point 73 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_74
+<http://example.org/pathpoint_09aTSaIRCf_74> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_74> ;
+                                             <http://purl.org/gc/hasIndex> "74" ;
+                                             rdfs:label "Path point 74 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_75
+<http://example.org/pathpoint_09aTSaIRCf_75> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_75> ;
+                                             <http://purl.org/gc/hasIndex> "75" ;
+                                             rdfs:label "Path point 75 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_76
+<http://example.org/pathpoint_09aTSaIRCf_76> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_76> ;
+                                             <http://purl.org/gc/hasIndex> "76" ;
+                                             rdfs:label "Path point 76 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_77
+<http://example.org/pathpoint_09aTSaIRCf_77> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_77> ;
+                                             <http://purl.org/gc/hasIndex> "77" ;
+                                             rdfs:label "Path point 77 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_78
+<http://example.org/pathpoint_09aTSaIRCf_78> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_78> ;
+                                             <http://purl.org/gc/hasIndex> "78" ;
+                                             rdfs:label "Path point 78 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_79
+<http://example.org/pathpoint_09aTSaIRCf_79> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_79> ;
+                                             <http://purl.org/gc/hasIndex> "79" ;
+                                             rdfs:label "Path point 79 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_8
+<http://example.org/pathpoint_09aTSaIRCf_8> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/ReactionPathPoint> ;
+                                            <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_8> ;
+                                            <http://purl.org/gc/hasIndex> "8" ;
+                                            rdfs:label "Path point 8 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_80
+<http://example.org/pathpoint_09aTSaIRCf_80> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_80> ;
+                                             <http://purl.org/gc/hasIndex> "80" ;
+                                             rdfs:label "Path point 80 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_81
+<http://example.org/pathpoint_09aTSaIRCf_81> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_81> ;
+                                             <http://purl.org/gc/hasIndex> "81" ;
+                                             rdfs:label "Path point 81 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_82
+<http://example.org/pathpoint_09aTSaIRCf_82> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_82> ;
+                                             <http://purl.org/gc/hasIndex> "82" ;
+                                             rdfs:label "Path point 82 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_83
+<http://example.org/pathpoint_09aTSaIRCf_83> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_83> ;
+                                             <http://purl.org/gc/hasIndex> "83" ;
+                                             rdfs:label "Path point 83 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_84
+<http://example.org/pathpoint_09aTSaIRCf_84> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_84> ;
+                                             <http://purl.org/gc/hasIndex> "84" ;
+                                             rdfs:label "Path point 84 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_85
+<http://example.org/pathpoint_09aTSaIRCf_85> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_85> ;
+                                             <http://purl.org/gc/hasIndex> "85" ;
+                                             rdfs:label "Path point 85 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_86
+<http://example.org/pathpoint_09aTSaIRCf_86> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_86> ;
+                                             <http://purl.org/gc/hasIndex> "86" ;
+                                             rdfs:label "Path point 86 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_87
+<http://example.org/pathpoint_09aTSaIRCf_87> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_87> ;
+                                             <http://purl.org/gc/hasIndex> "87" ;
+                                             rdfs:label "Path point 87 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_88
+<http://example.org/pathpoint_09aTSaIRCf_88> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_88> ;
+                                             <http://purl.org/gc/hasIndex> "88" ;
+                                             rdfs:label "Path point 88 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_89
+<http://example.org/pathpoint_09aTSaIRCf_89> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_89> ;
+                                             <http://purl.org/gc/hasIndex> "89" ;
+                                             rdfs:label "Path point 89 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_9
+<http://example.org/pathpoint_09aTSaIRCf_9> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/ReactionPathPoint> ;
+                                            <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_9> ;
+                                            <http://purl.org/gc/hasIndex> "9" ;
+                                            rdfs:label "Path point 9 (backward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_90
+<http://example.org/pathpoint_09aTSaIRCf_90> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_90> ;
+                                             <http://purl.org/gc/hasIndex> "90" ;
+                                             rdfs:label "Path point 90 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_91
+<http://example.org/pathpoint_09aTSaIRCf_91> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_91> ;
+                                             <http://purl.org/gc/hasIndex> "91" ;
+                                             rdfs:label "Path point 91 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_92
+<http://example.org/pathpoint_09aTSaIRCf_92> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_92> ;
+                                             <http://purl.org/gc/hasIndex> "92" ;
+                                             rdfs:label "Path point 92 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_93
+<http://example.org/pathpoint_09aTSaIRCf_93> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_93> ;
+                                             <http://purl.org/gc/hasIndex> "93" ;
+                                             rdfs:label "Path point 93 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_94
+<http://example.org/pathpoint_09aTSaIRCf_94> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_94> ;
+                                             <http://purl.org/gc/hasIndex> "94" ;
+                                             rdfs:label "Path point 94 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_95
+<http://example.org/pathpoint_09aTSaIRCf_95> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_95> ;
+                                             <http://purl.org/gc/hasIndex> "95" ;
+                                             rdfs:label "Path point 95 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_96
+<http://example.org/pathpoint_09aTSaIRCf_96> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_96> ;
+                                             <http://purl.org/gc/hasIndex> "96" ;
+                                             rdfs:label "Path point 96 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_97
+<http://example.org/pathpoint_09aTSaIRCf_97> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_97> ;
+                                             <http://purl.org/gc/hasIndex> "97" ;
+                                             rdfs:label "Path point 97 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_98
+<http://example.org/pathpoint_09aTSaIRCf_98> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_98> ;
+                                             <http://purl.org/gc/hasIndex> "98" ;
+                                             rdfs:label "Path point 98 (forward) 09aTSaIRCf" .
+
+
+###  http://example.org/pathpoint_09aTSaIRCf_99
+<http://example.org/pathpoint_09aTSaIRCf_99> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/ReactionPathPoint> ;
+                                             <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_09aTSaIRCf_99> ;
+                                             <http://purl.org/gc/hasIndex> "99" ;
+                                             rdfs:label "Path point 99 (forward) 09aTSaIRCf" .
 
 
 ###  http://purl.org/gc/Amber

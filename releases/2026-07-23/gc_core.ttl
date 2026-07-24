@@ -7,7 +7,7 @@
 @base <http://purl.org/gc/core> .
 
 <http://purl.org/gc/core> rdf:type owl:Ontology ;
-                           owl:versionIRI <http://purl.org/gc/core/2026-07-22/gc_core.ttl> ;
+                           owl:versionIRI <http://purl.org/gc/core/2026-07-23/gc_core.ttl> ;
                            <http://creativecommons.org/ns#license> <http://creativecommons.org/licenses/by/3.0/> ;
                            <http://purl.org/dc/elements/1.1/created> "2015-03-04" ;
                            <http://purl.org/dc/elements/1.1/description> """This ontology aims at complete description of typical Computational Chemistry experiment.
@@ -35,7 +35,7 @@
                                         """The design and repair decisions in this fork were informed in part by the landscape review of computational chemistry ontologies: ChemRxiv 2024,
     doi:10.26434/chemrxiv-2024-fvzpq"""@en ;
                            rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
-                           owl:versionInfo "0.8.4" .
+                           owl:versionInfo "0.8.5" .
 
 #################################################################
 #    Annotation properties
@@ -43,10 +43,6 @@
 
 ###  http://creativecommons.org/ns#license
 <http://creativecommons.org/ns#license> rdf:type owl:AnnotationProperty .
-
-
-###  http://example.org/fileURL
-<http://example.org/fileURL> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0000115
@@ -199,14 +195,6 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
 #################################################################
 #    Object Properties
 #################################################################
-
-###  http://example.org/hasInputFile
-<http://example.org/hasInputFile> rdf:type owl:ObjectProperty .
-
-
-###  http://example.org/hasOutputFile
-<http://example.org/hasOutputFile> rdf:type owl:ObjectProperty .
-
 
 ###  http://purl.obolibrary.org/obo/BFO_0000124
 <http://purl.obolibrary.org/obo/BFO_0000124> rdf:type owl:ObjectProperty .
@@ -1970,18 +1958,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
 #    Classes
 #################################################################
 
-###  http://example.org/DataFile
-<http://example.org/DataFile> rdf:type owl:Class .
-
-
-###  http://example.org/InputFile
-<http://example.org/InputFile> rdf:type owl:Class .
-
-
-###  http://example.org/LogFile
-<http://example.org/LogFile> rdf:type owl:Class .
-
-
 ###  http://purl.obolibrary.org/obo/BFO_0000027
 <http://purl.obolibrary.org/obo/BFO_0000027> rdf:type owl:Class .
 
@@ -3019,23 +2995,19 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
 ###  http://purl.org/gc/InfraRedSpectra
 <http://purl.org/gc/InfraRedSpectra> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://purl.org/gc/VibrationalSpectra> ;
+                                     <http://purl.obolibrary.org/obo/IAO_0000115> """Infrared Spectrum - the output of infrared spectroscopy.  Infrared Spectroscopy - Measurement principle of vibrational spectroscopy using
+        infrared radiation.  Note: Without qualification, 'infrared spectroscopy' usually refers to use of the mid-infrared (wavelength range 2.5 to 25 μm, wavenumber range
+        (4000 cm-1 to 400 cm-1 ) region of the electromagnetic spectrum."""@en ;
+                                     <http://purl.org/dc/terms/source> "PAC, 2021, 93, 647. (Glossary of methods and terms used in analytical spectroscopy (IUPAC Recommendations 2019)) on page 750."@en ;
                                      rdfs:comment "A class for vibrational spectra resulting from IR intensities."@en ;
                                      rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
-                                     rdfs:label "InfraRed Spectra"@en .
+                                     rdfs:label "InfraRed Spectra"@en ;
+                                     rdfs:seeAlso <https://doi.org/10.1351/goldbook.08618> ,
+                                                  <https://goldbook.iupac.org/terms/view/08618> .
 
 
 ###  http://purl.org/gc/InfraRedSpectrum
-<http://purl.org/gc/InfraRedSpectrum> rdf:type owl:Class ;
-                                      rdfs:subClassOf <http://purl.org/gc/GainesvilleCoreTerm> ;
-                                      <http://purl.obolibrary.org/obo/IAO_0000115> """Infrared Spectrum - the output of infrared spectroscopy.  Infrared Spectroscopy - Measurement principle of vibrational spectroscopy using
-        infrared radiation.  Note: Without qualification, 'infrared spectroscopy' usually refers to use of the mid-infrared (wavelength range 2.5 to 25 μm, wavenumber range
-        (4000 cm-1 to 400 cm-1 ) region of the electromagnetic spectrum."""@en ;
-                                      <http://purl.org/dc/terms/source> "PAC, 2021, 93, 647. (Glossary of methods and terms used in analytical spectroscopy (IUPAC Recommendations 2019)) on page 750."@en ;
-                                      rdfs:comment "A class for InfraRed Spectrum."@en ;
-                                      rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
-                                      rdfs:label "Infra Red Spectrum"@en ;
-                                      rdfs:seeAlso <https://doi.org/10.1351/goldbook.08618> ,
-                                                   <https://goldbook.iupac.org/terms/view/08618> .
+<http://purl.org/gc/InfraRedSpectrum> rdf:type owl:Class .
 
 
 ###  http://purl.org/gc/IntegerValue
@@ -4185,7 +4157,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
 
 ###  http://purl.org/gc/UVVisSpectrum
 <http://purl.org/gc/UVVisSpectrum> rdf:type owl:Class ;
-                                   rdfs:subClassOf <http://purl.org/gc/GainesvilleCoreTerm> ;
+                                   rdfs:subClassOf <http://purl.org/gc/ElectronicSpectra> ;
                                    rdfs:comment "A class for UVVis Spectrum."@en ;
                                    rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
                                    rdfs:label "UVVis Spectrum"@en .
@@ -4597,99 +4569,6 @@ rdfs:Class rdf:type owl:Class .
 #################################################################
 #    Individuals
 #################################################################
-
-###  http://example.org/avogadro_build
-<http://example.org/avogadro_build> rdf:type owl:NamedIndividual ,
-                                             <http://www.w3.org/ns/prov#Activity> ;
-                                    rdfs:label "Structure built in Avogadro" .
-
-
-###  http://example.org/exp_rem01
-<http://example.org/exp_rem01> rdf:type owl:NamedIndividual ,
-                                        <http://purl.org/gc/GeometryOptimization> ;
-                               <http://example.org/hasOutputFile> <http://example.org/file_rem01_inp> ;
-                               <http://example.org/fileURL> "ex:file_rem01_dat|ex:file_rem01_log" ;
-                               rdfs:label "Geometry optimisation rem01" .
-
-
-###  http://example.org/exp_rem01a
-<http://example.org/exp_rem01a> rdf:type owl:NamedIndividual ,
-                                         <http://purl.org/gc/GeometryOptimization> ;
-                                <http://example.org/hasOutputFile> <http://example.org/file_rem01a_inp> ;
-                                <http://example.org/fileURL> "ex:file_rem01a_dat|ex:file_rem01a_log" ;
-                                rdfs:label "Geometry optimisation rem01a" .
-
-
-###  http://example.org/exp_rem01b
-<http://example.org/exp_rem01b> rdf:type owl:NamedIndividual ,
-                                         <http://purl.org/gc/VibrationalAnalysis> ;
-                                <http://example.org/hasOutputFile> <http://example.org/file_rem01b_inp> ;
-                                <http://example.org/fileURL> "ex:file_rem01b_dat|ex:file_rem01b_log" ;
-                                rdfs:label "Vibrational analysis rem01b" .
-
-
-###  http://example.org/file_rem01_dat
-<http://example.org/file_rem01_dat> rdf:type owl:NamedIndividual ,
-                                             <http://example.org/DataFile> ;
-                                    <http://example.org/hasInputFile> <http://example.org/exp_rem01> ;
-                                    rdfs:label "Output data rem01" .
-
-
-###  http://example.org/file_rem01_inp
-<http://example.org/file_rem01_inp> rdf:type owl:NamedIndividual ,
-                                             <http://example.org/InputFile> ;
-                                    <http://example.org/hasInputFile> <http://example.org/avogadro_build> ;
-                                    rdfs:label "Input file rem01" .
-
-
-###  http://example.org/file_rem01_log
-<http://example.org/file_rem01_log> rdf:type owl:NamedIndividual ,
-                                             <http://example.org/LogFile> ;
-                                    <http://example.org/hasInputFile> <http://example.org/exp_rem01> ;
-                                    rdfs:label "Output log rem01" .
-
-
-###  http://example.org/file_rem01a_dat
-<http://example.org/file_rem01a_dat> rdf:type owl:NamedIndividual ,
-                                              <http://example.org/DataFile> ;
-                                     <http://example.org/hasInputFile> <http://example.org/exp_rem01a> ;
-                                     rdfs:label "Output data rem01a" .
-
-
-###  http://example.org/file_rem01a_inp
-<http://example.org/file_rem01a_inp> rdf:type owl:NamedIndividual ,
-                                              <http://example.org/InputFile> ;
-                                     <http://example.org/hasInputFile> <http://example.org/exp_rem01> ;
-                                     rdfs:label "Input file rem01a" .
-
-
-###  http://example.org/file_rem01a_log
-<http://example.org/file_rem01a_log> rdf:type owl:NamedIndividual ,
-                                              <http://example.org/LogFile> ;
-                                     <http://example.org/hasInputFile> <http://example.org/exp_rem01a> ;
-                                     rdfs:label "Output log rem01a" .
-
-
-###  http://example.org/file_rem01b_dat
-<http://example.org/file_rem01b_dat> rdf:type owl:NamedIndividual ,
-                                              <http://example.org/DataFile> ;
-                                     <http://example.org/hasInputFile> <http://example.org/exp_rem01b> ;
-                                     rdfs:label "Output data rem01b" .
-
-
-###  http://example.org/file_rem01b_inp
-<http://example.org/file_rem01b_inp> rdf:type owl:NamedIndividual ,
-                                              <http://example.org/InputFile> ;
-                                     <http://example.org/hasInputFile> <http://example.org/exp_rem01a> ;
-                                     rdfs:label "Input file rem01b" .
-
-
-###  http://example.org/file_rem01b_log
-<http://example.org/file_rem01b_log> rdf:type owl:NamedIndividual ,
-                                              <http://example.org/LogFile> ;
-                                     <http://example.org/hasInputFile> <http://example.org/exp_rem01b> ;
-                                     rdfs:label "Output log rem01b" .
-
 
 ###  http://purl.org/gc/Amber
 <http://purl.org/gc/Amber> rdf:type owl:NamedIndividual ,

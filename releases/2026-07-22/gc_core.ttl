@@ -45,10 +45,6 @@
 <http://creativecommons.org/ns#license> rdf:type owl:AnnotationProperty .
 
 
-###  http://example.org/fileURL
-<http://example.org/fileURL> rdf:type owl:AnnotationProperty .
-
-
 ###  http://purl.obolibrary.org/obo/IAO_0000115
 <http://purl.obolibrary.org/obo/IAO_0000115> rdf:type owl:AnnotationProperty .
 
@@ -199,14 +195,6 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
 #################################################################
 #    Object Properties
 #################################################################
-
-###  http://example.org/hasInputFile
-<http://example.org/hasInputFile> rdf:type owl:ObjectProperty .
-
-
-###  http://example.org/hasOutputFile
-<http://example.org/hasOutputFile> rdf:type owl:ObjectProperty .
-
 
 ###  http://purl.obolibrary.org/obo/BFO_0000124
 <http://purl.obolibrary.org/obo/BFO_0000124> rdf:type owl:ObjectProperty .
@@ -1969,18 +1957,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
 #################################################################
 #    Classes
 #################################################################
-
-###  http://example.org/DataFile
-<http://example.org/DataFile> rdf:type owl:Class .
-
-
-###  http://example.org/InputFile
-<http://example.org/InputFile> rdf:type owl:Class .
-
-
-###  http://example.org/LogFile
-<http://example.org/LogFile> rdf:type owl:Class .
-
 
 ###  http://purl.obolibrary.org/obo/BFO_0000027
 <http://purl.obolibrary.org/obo/BFO_0000027> rdf:type owl:Class .
@@ -4597,99 +4573,6 @@ rdfs:Class rdf:type owl:Class .
 #################################################################
 #    Individuals
 #################################################################
-
-###  http://example.org/avogadro_build
-<http://example.org/avogadro_build> rdf:type owl:NamedIndividual ,
-                                             <http://www.w3.org/ns/prov#Activity> ;
-                                    rdfs:label "Structure built in Avogadro" .
-
-
-###  http://example.org/exp_rem01
-<http://example.org/exp_rem01> rdf:type owl:NamedIndividual ,
-                                        <http://purl.org/gc/GeometryOptimization> ;
-                               <http://example.org/hasOutputFile> <http://example.org/file_rem01_inp> ;
-                               <http://example.org/fileURL> "ex:file_rem01_dat|ex:file_rem01_log" ;
-                               rdfs:label "Geometry optimisation rem01" .
-
-
-###  http://example.org/exp_rem01a
-<http://example.org/exp_rem01a> rdf:type owl:NamedIndividual ,
-                                         <http://purl.org/gc/GeometryOptimization> ;
-                                <http://example.org/hasOutputFile> <http://example.org/file_rem01a_inp> ;
-                                <http://example.org/fileURL> "ex:file_rem01a_dat|ex:file_rem01a_log" ;
-                                rdfs:label "Geometry optimisation rem01a" .
-
-
-###  http://example.org/exp_rem01b
-<http://example.org/exp_rem01b> rdf:type owl:NamedIndividual ,
-                                         <http://purl.org/gc/VibrationalAnalysis> ;
-                                <http://example.org/hasOutputFile> <http://example.org/file_rem01b_inp> ;
-                                <http://example.org/fileURL> "ex:file_rem01b_dat|ex:file_rem01b_log" ;
-                                rdfs:label "Vibrational analysis rem01b" .
-
-
-###  http://example.org/file_rem01_dat
-<http://example.org/file_rem01_dat> rdf:type owl:NamedIndividual ,
-                                             <http://example.org/DataFile> ;
-                                    <http://example.org/hasInputFile> <http://example.org/exp_rem01> ;
-                                    rdfs:label "Output data rem01" .
-
-
-###  http://example.org/file_rem01_inp
-<http://example.org/file_rem01_inp> rdf:type owl:NamedIndividual ,
-                                             <http://example.org/InputFile> ;
-                                    <http://example.org/hasInputFile> <http://example.org/avogadro_build> ;
-                                    rdfs:label "Input file rem01" .
-
-
-###  http://example.org/file_rem01_log
-<http://example.org/file_rem01_log> rdf:type owl:NamedIndividual ,
-                                             <http://example.org/LogFile> ;
-                                    <http://example.org/hasInputFile> <http://example.org/exp_rem01> ;
-                                    rdfs:label "Output log rem01" .
-
-
-###  http://example.org/file_rem01a_dat
-<http://example.org/file_rem01a_dat> rdf:type owl:NamedIndividual ,
-                                              <http://example.org/DataFile> ;
-                                     <http://example.org/hasInputFile> <http://example.org/exp_rem01a> ;
-                                     rdfs:label "Output data rem01a" .
-
-
-###  http://example.org/file_rem01a_inp
-<http://example.org/file_rem01a_inp> rdf:type owl:NamedIndividual ,
-                                              <http://example.org/InputFile> ;
-                                     <http://example.org/hasInputFile> <http://example.org/exp_rem01> ;
-                                     rdfs:label "Input file rem01a" .
-
-
-###  http://example.org/file_rem01a_log
-<http://example.org/file_rem01a_log> rdf:type owl:NamedIndividual ,
-                                              <http://example.org/LogFile> ;
-                                     <http://example.org/hasInputFile> <http://example.org/exp_rem01a> ;
-                                     rdfs:label "Output log rem01a" .
-
-
-###  http://example.org/file_rem01b_dat
-<http://example.org/file_rem01b_dat> rdf:type owl:NamedIndividual ,
-                                              <http://example.org/DataFile> ;
-                                     <http://example.org/hasInputFile> <http://example.org/exp_rem01b> ;
-                                     rdfs:label "Output data rem01b" .
-
-
-###  http://example.org/file_rem01b_inp
-<http://example.org/file_rem01b_inp> rdf:type owl:NamedIndividual ,
-                                              <http://example.org/InputFile> ;
-                                     <http://example.org/hasInputFile> <http://example.org/exp_rem01a> ;
-                                     rdfs:label "Input file rem01b" .
-
-
-###  http://example.org/file_rem01b_log
-<http://example.org/file_rem01b_log> rdf:type owl:NamedIndividual ,
-                                              <http://example.org/LogFile> ;
-                                     <http://example.org/hasInputFile> <http://example.org/exp_rem01b> ;
-                                     rdfs:label "Output log rem01b" .
-
 
 ###  http://purl.org/gc/Amber
 <http://purl.org/gc/Amber> rdf:type owl:NamedIndividual ,

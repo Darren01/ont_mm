@@ -19,3 +19,14 @@ http://purl.org/gc/ExchangeFunctional
 http://purl.org/gc/QuantumMechanics
 http://purl.org/gc/GainesvilleCoreTerm
 http://purl.org/gc/Spectra
+http://purl.org/gc/VibrationalSpectra
+http://purl.org/gc/hasResult
+http://purl.org/gc/hasFrequencyPeak
+http://purl.org/gc/FrequencyPeak
+http://purl.org/gc/hasFrequency
+http://purl.org/gc/hasIntensity
+http://purl.org/gc/FloatValue
+http://purl.org/gc/hasFloatValue
+http://purl.org/gc/hasUnit
+http://purl.org/gc/cm-1
+http://purl.org/gc/debyeSquaredPerAmuAngstromSquared

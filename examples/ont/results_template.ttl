@@ -7,7 +7,7 @@
 @base <http://purl.org/gc/core> .
 
 <http://purl.org/gc/core> rdf:type owl:Ontology ;
-                           owl:versionIRI <http://purl.org/gc/core/2026-07-20/gc_core.ttl> ;
+                           owl:versionIRI <http://purl.org/gc/core/2026-07-22/gc_core.ttl> ;
                            <http://creativecommons.org/ns#license> <http://creativecommons.org/licenses/by/3.0/> ;
                            <http://purl.org/dc/elements/1.1/created> "2015-03-04" ;
                            <http://purl.org/dc/elements/1.1/description> """This ontology aims at complete description of typical Computational Chemistry experiment.
@@ -35,7 +35,7 @@
                                         """The design and repair decisions in this fork were informed in part by the landscape review of computational chemistry ontologies: ChemRxiv 2024,
     doi:10.26434/chemrxiv-2024-fvzpq"""@en ;
                            rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
-                           owl:versionInfo "0.8.3" .
+                           owl:versionInfo "0.8.4" .
 
 #################################################################
 #    Annotation properties
@@ -987,6 +987,16 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
                                      rdfs:range <http://purl.org/gc/ParameterSet> .
 
 
+###  http://purl.org/gc/hasPathEnergy
+<http://purl.org/gc/hasPathEnergy> rdf:type owl:ObjectProperty ;
+                                   rdfs:subPropertyOf <http://purl.org/gc/hasResult> ;
+                                   rdfs:domain <http://purl.org/gc/ReactionPathPoint> ;
+                                   rdfs:range <http://purl.org/gc/FloatValue> ;
+                                   rdfs:comment "A property that describes the relative energy at a point along a reaction path."@en ;
+                                   rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                                   rdfs:label "has path energy"@en .
+
+
 ###  http://purl.org/gc/hasPeakCount
 <http://purl.org/gc/hasPeakCount> rdf:type owl:ObjectProperty ;
                                   rdfs:subPropertyOf <http://purl.org/gc/extraGCDataProperty> ;
@@ -1040,6 +1050,16 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
                                     rdfs:comment "A property that describes RMS gradient of the computations."@en ;
                                     rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
                                     rdfs:label "has RMS Gradient"@en .
+
+
+###  http://purl.org/gc/hasReactionPathPoint
+<http://purl.org/gc/hasReactionPathPoint> rdf:type owl:ObjectProperty ;
+                                          rdfs:subPropertyOf <http://purl.org/gc/hasResult> ;
+                                          rdfs:domain <http://purl.org/gc/ReactionPath> ;
+                                          rdfs:range <http://purl.org/gc/ReactionPathPoint> ;
+                                          rdfs:comment "A property linking a reaction path to one of its constituent points."@en ;
+                                          rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                                          rdfs:label "has reaction path point"@en .
 
 
 ###  http://purl.org/gc/hasResidue
@@ -2983,6 +3003,15 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                                   rdfs:label "Hydrogen Bond"@en .
 
 
+###  http://purl.org/gc/IRC
+<http://purl.org/gc/IRC> rdf:type owl:Class ;
+                         rdfs:subClassOf <http://purl.org/gc/MolecularComputation> ;
+                         rdfs:comment "A class for calculations that follow the intrinsic reaction coordinate away from a saddle point, in either the forward or backward direction."@en ;
+                         rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                         rdfs:label "IRC"@en ;
+                         rdfs:seeAlso <https://goldbook.iupac.org/terms/view/IT07057> .
+
+
 ###  http://purl.org/gc/IRDataPoint
 <http://purl.org/gc/IRDataPoint> rdf:type owl:Class ;
                                  rdfs:subClassOf <http://purl.org/gc/GainesvilleCoreTerm> ;
@@ -3766,6 +3795,26 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                                           rdfs:label "RayleighSchroedinger"@en .
 
 
+###  http://purl.org/gc/ReactionPath
+<http://purl.org/gc/ReactionPath> rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://purl.org/gc/CalculationResult> ;
+                                  <http://purl.obolibrary.org/obo/IAO_0000115> "A minimum-energy reaction path on a potential energy surface in mass-weighted coordinates, connecting reactants to products via the transition state."@en ;
+                                  <http://purl.org/dc/terms/source> "PAC, 1999, 71, 1919. (Glossary of terms used in theoretical organic chemistry) on page 1947."@en ;
+                                  rdfs:comment "A class for the combined reaction path connecting reactants to products via a transition state, typically assembled from a forward and a backward IRC run sharing the same saddle point."@en ;
+                                  rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                                  rdfs:label "Reaction Path"@en ;
+                                  rdfs:seeAlso <https://doi.org/10.1351/goldbook.IT07057> ,
+                                               <https://goldbook.iupac.org/terms/view/IT07057> .
+
+
+###  http://purl.org/gc/ReactionPathPoint
+<http://purl.org/gc/ReactionPathPoint> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://purl.org/gc/GainesvilleCoreTerm> ;
+                                       rdfs:comment "A class representing a single point along a reaction path, with an index (position along the path) and an energy value relative to the starting point. May originate from an individual forward or backward IRC log, or from a combined reaction-path file assembled from both."@en ;
+                                       rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                                       rdfs:label "Reaction Path Point"@en .
+
+
 ###  http://purl.org/gc/Reference
 <http://purl.org/gc/Reference> rdf:type owl:Class ;
                                rdfs:subClassOf <http://purl.org/gc/GainesvilleCoreTerm> ;
@@ -3895,6 +3944,15 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                             rdfs:comment "A class for the Pople minimal STO-6G basis set."@en ;
                             rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
                             rdfs:label "STO-6G Basis Set"@en .
+
+
+###  http://purl.org/gc/SaddlePoint
+<http://purl.org/gc/SaddlePoint> rdf:type owl:Class ;
+                                 rdfs:subClassOf <http://purl.org/gc/MolecularComputation> ;
+                                 rdfs:comment "A class for calculations that locate a stationary point on the potential energy surface with exactly one direction of negative curvature (a first-order saddle point), corresponding to a transition state."@en ;
+                                 rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                                 rdfs:label "Saddle Point"@en ;
+                                 rdfs:seeAlso <https://goldbook.iupac.org/terms/view/C01145> .
 
 
 ###  http://purl.org/gc/SemiEmpiricalScf

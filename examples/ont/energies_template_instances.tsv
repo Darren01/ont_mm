@@ -1,3 +1,3 @@
-ID	Label	Type	hasZeroPointEnergy	hasEnthalpy	hasEntropy	hasGibbsFreeEnergy
-ID	LABEL	TYPE	I gc:hasZeroPointEnergy	I gc:hasEnthalpy	I gc:hasEntropy	I gc:hasGibbsFreeEnergy
-ex:energies_rem01b	System energies rem01b	gc:SystemEnergies	ex:zpe_rem01b	ex:enthalpy_rem01b	ex:entropy_rem01b	ex:gibbs_rem01b
+ID	Label	Type	hasZeroPointEnergy	hasEnthalpy	hasEntropy	hasGibbsFreeEnergy	hasElectronicEnergy
+ID	LABEL	TYPE	I gc:hasZeroPointEnergy	I gc:hasEnthalpy	I gc:hasEntropy	I gc:hasGibbsFreeEnergy	I gc:hasElectronicEnergy
+ex:energies_rem01b	System energies rem01b	gc:SystemEnergies	ex:zpe_rem01b	ex:enthalpy_rem01b	ex:entropy_rem01b	ex:gibbs_rem01b	
