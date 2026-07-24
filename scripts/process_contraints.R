@@ -28,9 +28,9 @@ process_contraints <- function(experiment_files, output_file) {
   header   <- c("ID", "Label", "Type", "hasConstraint", "involvesAtom1",
                 "involvesAtom2", "involvesAtom3", "involvesAtom4",
                 "targetValue", "hasUnit", "constraintMode", "forceConstant")
-  type_row <- c("ID", "LABEL", "TYPE", "I gc:hasConstraint", "I gc:involvesAtom1",
-                "I gc:involvesAtom2", "I gc:involvesAtom3", "I gc:involvesAtom4",
-                "A gc:targetValue", "I gc:hasUnit", "A gc:constraintMode", "A gc:forceConstant")
+  type_row <- c("ID", "LABEL", "TYPE", "I ex:hasConstraint", "I ex:involvesAtom1",
+                "I ex:involvesAtom2", "I ex:involvesAtom3", "I ex:involvesAtom4",
+                "A ex:targetValue", "I gc:hasUnit", "A gc:constraintMode", "A ex:forceConstant")
 
   existing_ids <- character(0)
   if (file.exists(output_file)) {

@@ -1,5 +1,5 @@
 ID	Label	Type	hasConstraint	involvesAtom1	involvesAtom2	involvesAtom3	involvesAtom4	targetValue	hasUnit	constraintMode	forceConstant
-ID	LABEL	TYPE	I gc:hasConstraint	I gc:involvesAtom1	I gc:involvesAtom2	I gc:involvesAtom3	I gc:involvesAtom4	A gc:targetValue	I gc:hasUnit	A gc:constraintMode	A gc:forceConstant
+ID	LABEL	TYPE	I ex:hasConstraint	I ex:involvesAtom1	I ex:involvesAtom2	I ex:involvesAtom3	I ex:involvesAtom4	A ex:targetValue	I gc:hasUnit	A gc:constraintMode	A ex:forceConstant
 ex:constraint_rem01_d1	Distance constraint rem01	ex:DistanceConstraint		ex:atom_9	ex:atom_10			2.5	gc:angstrom	fixed	
 ex:exp_rem01	Experiment rem01		ex:constraint_rem01_d1					0			
 ex:constraint_rem01_d2	Distance constraint rem01	ex:DistanceConstraint		ex:atom_13	ex:atom_6			2.5	gc:angstrom	fixed	
