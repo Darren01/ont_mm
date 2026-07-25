@@ -1,2 +1,2 @@
-ID	Label	Type	hasInputFile	hasOutputFile	fileURL
-ID	LABEL	TYPE	I ex:hasInputFile	I ex:hasOutputFile SPLIT=|	A ex:fileURL
+ID	Label	Type	hasInputFile	hasOutputFile	wasGeneratedBy	fileURL
+ID	LABEL	TYPE	I ex:hasInputFile	I ex:hasOutputFile SPLIT=|	I prov:wasGeneratedBy	A ex:fileURL

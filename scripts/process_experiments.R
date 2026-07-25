@@ -122,25 +122,31 @@ process_experiments <- function(
     }
 
     # ---------- experiment ----------
+    # hasInputFile: this experiment's own input file (correctly forward-
+    # pointing now - previously always blank due to a column mismatch).
+    # hasOutputFile: the files THIS experiment produced (data|log).
     rows[[idx]] <- make_row(
       exp_id,
       paste(job_label, name),
       job_type_col,
-      "",
       input_id,
       paste(data_id, log_id, sep = "|"),
+      "",
       ""
     )
     idx <- idx + 1
     
     # ---------- input ----------
+    # wasGeneratedBy: the earlier activity/experiment that produced this
+    # file (a real prov-o property, not a reuse of hasInputFile for the
+    # opposite direction - that was the previous, confusing design).
     rows[[idx]] <- make_row(
       input_id,
       paste("Input file", name),
       "ex:InputFile",
+      "",
+      "",
       prov_source,
-      "",
-      "",
       input_url
     )
     idx <- idx + 1
@@ -150,9 +156,9 @@ process_experiments <- function(
       data_id,
       paste("Output data", name),
       "ex:DataFile",
+      "",
+      "",
       exp_id,
-      "",
-      "",
       data_url
     )
     idx <- idx + 1
@@ -162,9 +168,9 @@ process_experiments <- function(
       log_id,
       paste("Output log", name),
       "ex:LogFile",
+      "",
+      "",
       exp_id,
-      "",
-      "",
       log_url
     )
     idx <- idx + 1

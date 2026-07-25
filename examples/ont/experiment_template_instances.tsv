@@ -1,17 +1,18 @@
-ID	Label	Type	hasInputFile	hasOutputFile	fileURL
-ID	LABEL	TYPE	I ex:hasInputFile	I ex:hasOutputFile SPLIT=|	A ex:fileURL
-ex:avogadro_build	Structure built in Avogadro	prov:Activity			
-ex:exp_rem01	Geometry optimisation rem01	gc:GeometryOptimization		ex:file_rem01_inp	ex:file_rem01_dat|ex:file_rem01_log
-ex:file_rem01_inp	Input file rem01	ex:InputFile	ex:avogadro_build		
-ex:file_rem01_dat	Output data rem01	ex:DataFile	ex:exp_rem01		
-ex:file_rem01_log	Output log rem01	ex:LogFile	ex:exp_rem01		
-					
-ex:exp_rem01a	Geometry optimisation rem01a	gc:GeometryOptimization		ex:file_rem01a_inp	ex:file_rem01a_dat|ex:file_rem01a_log
-ex:file_rem01a_inp	Input file rem01a	ex:InputFile	ex:exp_rem01		
-ex:file_rem01a_dat	Output data rem01a	ex:DataFile	ex:exp_rem01a		
-ex:file_rem01a_log	Output log rem01a	ex:LogFile	ex:exp_rem01a		
-					
-ex:exp_rem01b	Vibrational analysis rem01b	gc:VibrationalAnalysis		ex:file_rem01b_inp	ex:file_rem01b_dat|ex:file_rem01b_log
-ex:file_rem01b_inp	Input file rem01b	ex:InputFile	ex:exp_rem01a		
-ex:file_rem01b_dat	Output data rem01b	ex:DataFile	ex:exp_rem01b		
-ex:file_rem01b_log	Output log rem01b	ex:LogFile	ex:exp_rem01b
+ID	Label	Type	hasInputFile	hasOutputFile	wasGeneratedBy	fileURL
+ID	LABEL	TYPE	I ex:hasInputFile	I ex:hasOutputFile SPLIT=|	I prov:wasGeneratedBy	A ex:fileURL
+ex:avogadro_build	Structure built in Avogadro	prov:Activity				
+ex:exp_rem01	Geometry optimisation rem01	gc:GeometryOptimization	ex:file_rem01_inp	ex:file_rem01_dat|ex:file_rem01_log		
+ex:file_rem01_inp	Input file rem01	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/inputs/rem01.inp
+ex:file_rem01_dat	Output data rem01	ex:DataFile			ex:exp_rem01	
+ex:file_rem01_log	Output log rem01	ex:LogFile			ex:exp_rem01	file:////home/darren/Projects/active/ont_mm/examples/outputs/rem01.log
+						
+ex:exp_rem01a	Geometry optimisation rem01a	gc:GeometryOptimization	ex:file_rem01a_inp	ex:file_rem01a_dat|ex:file_rem01a_log		
+ex:file_rem01a_inp	Input file rem01a	ex:InputFile			ex:exp_rem01	file:////home/darren/Projects/active/ont_mm/examples/inputs/rem01a.inp
+ex:file_rem01a_dat	Output data rem01a	ex:DataFile			ex:exp_rem01a	
+ex:file_rem01a_log	Output log rem01a	ex:LogFile			ex:exp_rem01a	file:////home/darren/Projects/active/ont_mm/examples/outputs/rem01a.log
+						
+ex:exp_rem01b	Vibrational analysis rem01b	gc:VibrationalAnalysis	ex:file_rem01b_inp	ex:file_rem01b_dat|ex:file_rem01b_log		
+ex:file_rem01b_inp	Input file rem01b	ex:InputFile			ex:exp_rem01a	file:////home/darren/Projects/active/ont_mm/examples/inputs/rem01b.inp
+ex:file_rem01b_dat	Output data rem01b	ex:DataFile			ex:exp_rem01b	
+ex:file_rem01b_log	Output log rem01b	ex:LogFile			ex:exp_rem01b	file:////home/darren/Projects/active/ont_mm/examples/outputs/rem01b.log
+						
