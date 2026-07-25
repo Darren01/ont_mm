@@ -102,6 +102,8 @@ process_experiments <- function(
       "GeometryOptimization" = "Geometry optimisation",
       "SinglePoint"          = "Single point",
       "VibrationalAnalysis"  = "Vibrational analysis",
+      "SaddlePoint"          = "Saddle point",
+      "IRC"                  = paste0("IRC (", classification$irc_direction, ")"),
       "Unclassified job"
     )
 
