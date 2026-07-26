@@ -42,6 +42,28 @@ below with `source_github("gamess_functions", "R/X.R")`, and every
 `source("ont_mm/scripts/X.R")` with `source_github("ont_mm", "scripts/X.R")`.
 Needs nothing beyond base R.
 
+Doing that by hand for Step 3's full list below is tedious - this batch
+version does it in one call instead:
+
+```r
+source_all_github <- function(paths, branch = "master") {
+  for (p in paths) {
+    parts <- strsplit(p, "/", fixed = TRUE)[[1]]
+    repo <- parts[1]
+    rest <- paste(parts[-1], collapse = "/")
+    source_github(repo, rest, branch = branch)
+  }
+}
+
+# paste the exact same paths as Step 3's source() list below, as a
+# character vector instead:
+source_all_github(c(
+  "gamess_functions/R/gamess_input_utils.R",
+  "gamess_functions/R/classify_gamess_jobs.R"
+  # ... etc, same files as Step 3
+))
+```
+
 (You may see `devtools::source_url()` suggested elsewhere for this same
 task - it works, but pulls in a large dependency chain that can fail for
 reasons unrelated to this project, e.g. version conflicts between
