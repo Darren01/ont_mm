@@ -12,23 +12,37 @@ usage guide, which is why this section exists separately.)
 
 ### 1. Get the code
 
-Either clone both repos:
+Clone both repos:
 
 ```bash
 git clone https://github.com/Darren01/gamess_functions.git
 git clone https://github.com/Darren01/ont_mm.git
 ```
 
-or source individual files directly from GitHub without cloning anything,
-using `devtools::source_url()` (plain `source()` on a URL is unreliable -
-this is the well-established alternative):
+This is the simplest, most reliable option and needs nothing beyond `git`
+itself - use it if you're not sure which option to pick.
+
+**Alternative, if you'd rather not clone**: base R can fetch and source a
+file straight from GitHub without installing anything extra:
 
 ```r
-devtools::source_url("https://raw.githubusercontent.com/Darren01/gamess_functions/main/R/gamess_input_utils.R")
+lines <- readLines("https://raw.githubusercontent.com/Darren01/gamess_functions/master/R/gamess_input_utils.R", warn = FALSE)
+source(textConnection(lines))
 ```
 
-Pin to a specific commit SHA instead of `main` if you want a result that
-won't change later as this project keeps being developed.
+Note the branch name in the URL is `master`, not `main`.
+
+(You may see `devtools::source_url()` suggested elsewhere for this same
+task - it works, but pulls in a large dependency chain that can fail for
+reasons unrelated to this project, e.g. version conflicts between
+`devtools` and packages you already have installed. The plain
+`readLines()` + `source(textConnection(...))` approach above needs
+nothing beyond base R and is the one actually confirmed working here.)
+
+Optional: if you want a snapshot that won't change even as this project
+keeps being developed, replace `master` in any URL above with a specific
+commit's ID instead - the short code (e.g. `a1b2c3d`) shown next to each
+entry on the repo's "commits" page on GitHub.
 
 ### 2. Classify your files first - just to see what's there
 
