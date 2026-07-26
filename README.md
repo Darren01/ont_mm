@@ -173,22 +173,40 @@ source_github("ont_mm", "scripts/build_ontology_graph.R")   # defined in Step 1
 passed to `robot`, a separate external program, not read by R itself,
 so R's URL-reading convenience (which worked for
 `experiment_template_file` above) doesn't apply here. If you didn't
-clone, download it first:
+clone, download it first - into the *same* folder you're using for
+everything else in this dataset, not the working directory:
 
 ```r
+# make sure this folder exists first - R's writing functions don't
+# create missing parent directories automatically
+dir.create("/path/to/your/ontology_dir", recursive = TRUE, showWarnings = FALSE)
+
 download.file(
   "https://raw.githubusercontent.com/Darren01/ont_mm/master/releases/2026-07-24/gc_core.ttl",
-  destfile = "gc_core.ttl"
+  destfile = "/path/to/your/ontology_dir/gc_core.ttl"
 )
 ```
+
+Then, a worked example - note `ontology_dir` is the *same* folder
+`process_gamess_directory()` wrote the instance data into in Step 3,
+`release_file` is the exact file just downloaded above (not the
+`ont_mm/releases/...` local-clone path - that one's only valid for
+Option A), and `output_file` is conventionally kept in that same folder
+too, particularly if this is confidential data you're keeping outside
+any git repo:
 
 ```r
 build_ontology_graph(
-  ontology_dir = "/path/to/where/you/wrote/the/instance/data",
-  release_file = "ont_mm/releases/2026-07-24/gc_core.ttl",  # or "gc_core.ttl" if you downloaded it above
-  output_file  = "/path/to/your_graph.ttl"
+  ontology_dir = "/path/to/your/ontology_dir",
+  release_file = "/path/to/your/ontology_dir/gc_core.ttl",
+  output_file  = "/path/to/your/ontology_dir/your_graph.ttl"
 )
 ```
+
+(The commented-out `release_file = "ont_mm/releases/.../gc_core.ttl"`
+you'll see in some copy-pasted examples is the Option A path - delete
+it entirely for Option B rather than leaving both lines in, to avoid
+confusing which one's actually being used.)
 
 Requires `robot` on your PATH. This automates the `robot template` +
 `robot merge` sequence - it skips any template with no corresponding
@@ -208,9 +226,13 @@ source_github("gamess_functions", "R/sparql_to_file.R")   # defined in Step 1
 ```
 
 ```r
-# adjust the query - see gamess_functions/query_your_ontology.R for a
-# fuller set of starting-point queries (experiments by type, imaginary
-# frequencies, system energies, constraints, provenance chains)
+# This is a deliberately minimal placeholder to confirm the connection
+# works - it has no filter, so it matches EVERY typed subject in the
+# whole graph: your actual experiments and results, but also every
+# class/property in the merged ontology schema itself (they're all one
+# graph). That's expected, not a bug - it's just not the useful
+# starting query. For that, see gamess_functions/query_your_ontology.R,
+# whose first example filters down to just your own experiments by type.
 sparql_query(
   graph_file = "/path/to/your_graph.ttl",
   query = "SELECT ?exp ?type WHERE { ?exp a ?type . }"
