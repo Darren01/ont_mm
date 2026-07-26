@@ -65,10 +65,20 @@ shown next to each entry on the repo's "commits" page on GitHub.
 ### 2. Classify your files first - just to see what's there
 
 Before running anything else, get a quick inventory of what job types
-you actually have:
+you actually have.
 
+**Option A (cloned):**
 ```r
 source("gamess_functions/R/classify_gamess_jobs.R")
+```
+
+**Option B (no clone):**
+```r
+source_github("gamess_functions", "R/classify_gamess_jobs.R")   # defined in Step 1
+```
+
+Either way:
+```r
 classify_gamess_jobs("/path/to/your/output/folder")
 ```
 
@@ -127,7 +137,14 @@ result <- process_gamess_directory(
   input_dir  = "/path/to/your/input/folder",   # .inp files
   output_dir = "/path/to/your/output/folder",  # .log files
   ontology_dir = "/path/to/where/you/want/the/instance/data",
+
+  # Option A (cloned):
   experiment_template_file = "ont_mm/templates/experiment_template.tsv"
+
+  # Option B (no clone) - read.delim() can read a URL directly, no
+  # download needed (confirmed - unlike Step 4's release_file below,
+  # which does need a real local file):
+  # experiment_template_file = "https://raw.githubusercontent.com/Darren01/ont_mm/master/templates/experiment_template.tsv"
 )
 ```
 
@@ -142,12 +159,33 @@ graph. That's the next step.
 
 ### 4. Build the queryable graph
 
+**Option A (cloned):**
 ```r
 source("ont_mm/scripts/build_ontology_graph.R")
+```
 
+**Option B (no clone):**
+```r
+source_github("ont_mm", "scripts/build_ontology_graph.R")   # defined in Step 1
+```
+
+`release_file` below needs to be a genuine local file either way - it's
+passed to `robot`, a separate external program, not read by R itself,
+so R's URL-reading convenience (which worked for
+`experiment_template_file` above) doesn't apply here. If you didn't
+clone, download it first:
+
+```r
+download.file(
+  "https://raw.githubusercontent.com/Darren01/ont_mm/master/releases/2026-07-24/gc_core.ttl",
+  destfile = "gc_core.ttl"
+)
+```
+
+```r
 build_ontology_graph(
   ontology_dir = "/path/to/where/you/wrote/the/instance/data",
-  release_file = "ont_mm/releases/2026-07-24/gc_core.ttl",  # latest release
+  release_file = "ont_mm/releases/2026-07-24/gc_core.ttl",  # or "gc_core.ttl" if you downloaded it above
   output_file  = "/path/to/your_graph.ttl"
 )
 ```
@@ -159,9 +197,17 @@ doesn't have every result type (e.g. no IRC data at all).
 
 ### 5. Query it
 
+**Option A (cloned):**
 ```r
 source("gamess_functions/R/sparql_to_file.R")
+```
 
+**Option B (no clone):**
+```r
+source_github("gamess_functions", "R/sparql_to_file.R")   # defined in Step 1
+```
+
+```r
 # adjust the query - see gamess_functions/query_your_ontology.R for a
 # fuller set of starting-point queries (experiments by type, imaginary
 # frequencies, system energies, constraints, provenance chains)
