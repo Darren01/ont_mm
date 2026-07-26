@@ -12,37 +12,46 @@ usage guide, which is why this section exists separately.)
 
 ### 1. Get the code
 
-Clone both repos:
+Two genuinely separate options - pick one and use it consistently for
+every file below. Mixing them (sourcing one file by URL, then trying to
+`source("gamess_functions/...")` as a local path without having cloned)
+is the single most common mistake here - that local path only exists if
+you actually cloned.
+
+**Option A - clone (simplest, recommended if unsure):**
 
 ```bash
 git clone https://github.com/Darren01/gamess_functions.git
 git clone https://github.com/Darren01/ont_mm.git
 ```
 
-This is the simplest, most reliable option and needs nothing beyond `git`
-itself - use it if you're not sure which option to pick.
+Then every `source(...)` below uses a local path, exactly as written.
 
-**Alternative, if you'd rather not clone**: base R can fetch and source a
-file straight from GitHub without installing anything extra:
+**Option B - no cloning, fetch each file from GitHub directly:**
 
 ```r
-lines <- readLines("https://raw.githubusercontent.com/Darren01/gamess_functions/master/R/gamess_input_utils.R", warn = FALSE)
-source(textConnection(lines))
+source_github <- function(repo, path, branch = "master") {
+  url <- paste0("https://raw.githubusercontent.com/Darren01/", repo, "/", branch, "/", path)
+  lines <- readLines(url, warn = FALSE)
+  source(textConnection(lines))
+}
 ```
 
-Note the branch name in the URL is `master`, not `main`.
+Define that once, then replace every `source("gamess_functions/R/X.R")`
+below with `source_github("gamess_functions", "R/X.R")`, and every
+`source("ont_mm/scripts/X.R")` with `source_github("ont_mm", "scripts/X.R")`.
+Needs nothing beyond base R.
 
 (You may see `devtools::source_url()` suggested elsewhere for this same
 task - it works, but pulls in a large dependency chain that can fail for
 reasons unrelated to this project, e.g. version conflicts between
-`devtools` and packages you already have installed. The plain
-`readLines()` + `source(textConnection(...))` approach above needs
-nothing beyond base R and is the one actually confirmed working here.)
+`devtools` and packages you already have installed. `source_github()`
+above needs nothing beyond base R.)
 
 Optional: if you want a snapshot that won't change even as this project
-keeps being developed, replace `master` in any URL above with a specific
-commit's ID instead - the short code (e.g. `a1b2c3d`) shown next to each
-entry on the repo's "commits" page on GitHub.
+keeps being developed, pass a specific commit's ID as `branch` instead
+of relying on the default `"master"` - the short code (e.g. `a1b2c3d`)
+shown next to each entry on the repo's "commits" page on GitHub.
 
 ### 2. Classify your files first - just to see what's there
 
