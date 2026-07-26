@@ -2,7 +2,129 @@
 
 A domain ontology for representing and structuring molecular modelling workflows, with a focus on **traceability**, **reproducibility**, and **data integration**.
 
-## 🚀 Quick Start
+## 🧪 Using This With Your Own Data
+
+This is the part you actually want if you have your own GAMESS input/output
+files and want to build and query your own instantiated ontology from them.
+(If you just want to see how the bundled example was built, see
+`examples/README.md` instead - that's a construction history, not a
+usage guide, which is why this section exists separately.)
+
+### 1. Get the code
+
+Either clone both repos:
+
+```bash
+git clone https://github.com/Darren01/gamess_functions.git
+git clone https://github.com/Darren01/ont_mm.git
+```
+
+or source individual files directly from GitHub without cloning anything,
+using `devtools::source_url()` (plain `source()` on a URL is unreliable -
+this is the well-established alternative):
+
+```r
+devtools::source_url("https://raw.githubusercontent.com/Darren01/gamess_functions/main/R/gamess_input_utils.R")
+```
+
+Pin to a specific commit SHA instead of `main` if you want a result that
+won't change later as this project keeps being developed.
+
+### 2. Classify your files first - just to see what's there
+
+Before running anything else, get a quick inventory of what job types
+you actually have:
+
+```r
+source("gamess_functions/R/classify_gamess_jobs.R")
+classify_gamess_jobs("/path/to/your/output/folder")
+```
+
+This alone is a useful sanity check - confirms the code recognises your
+files before you commit to a full build.
+
+### 3. Build the instance data
+
+Source everything `process_gamess_directory()` depends on:
+
+```r
+source("gamess_functions/R/gamess_input_utils.R")
+source("gamess_functions/R/classify_gamess_jobs.R")
+source("gamess_functions/R/extract_ir_spectrum.R")
+source("gamess_functions/R/extract_ir_diagnostics.R")
+source("gamess_functions/R/extract_thermochemistry.R")
+source("gamess_functions/R/extract_electronic_energy.R")
+source("gamess_functions/R/extract_irc_trajectory.R")
+source("gamess_functions/R/combine_irc_trajectories.R")
+source("gamess_functions/R/extract_constraints.R")
+source("gamess_functions/R/check_vibrational_quality.R")
+source("gamess_functions/R/ir_spectrum_to_templates.R")
+source("gamess_functions/R/thermochemistry_to_templates.R")
+source("gamess_functions/R/electronic_energy_to_templates.R")
+source("gamess_functions/R/reaction_path_to_templates.R")
+source("gamess_functions/R/constraints_to_templates.R")
+source("ont_mm/scripts/build_provenance.R")
+source("ont_mm/scripts/process_experiments.R")
+source("ont_mm/scripts/process_results.R")
+source("ont_mm/scripts/process_thermo_results.R")
+source("ont_mm/scripts/process_electronic_energy_results.R")
+source("ont_mm/scripts/process_reaction_path_results.R")
+source("ont_mm/scripts/process_contraints.R")
+source("ont_mm/scripts/process_gamess_directory.R")
+```
+
+then run it against your own folders:
+
+```r
+result <- process_gamess_directory(
+  input_dir  = "/path/to/your/input/folder",   # .inp files
+  output_dir = "/path/to/your/output/folder",  # .log files
+  ontology_dir = "/path/to/where/you/want/the/instance/data",
+  experiment_template_file = "ont_mm/templates/experiment_template.tsv"
+)
+```
+
+**If your data is confidential**, point `ontology_dir` at a folder
+*outside* any git repository entirely - not a subfolder of `ont_mm`,
+even one you plan to `.gitignore`. A folder with no repo at all is a
+structural guarantee nothing can accidentally end up on GitHub; a
+gitignore rule is just a reminder you have to get right every time.
+
+This writes instance TSV files - it does not yet produce a queryable
+graph. That's the next step.
+
+### 4. Build the queryable graph
+
+```r
+source("ont_mm/scripts/build_ontology_graph.R")
+
+build_ontology_graph(
+  ontology_dir = "/path/to/where/you/wrote/the/instance/data",
+  release_file = "ont_mm/releases/2026-07-24/gc_core.ttl",  # latest release
+  output_file  = "/path/to/your_graph.ttl"
+)
+```
+
+Requires `robot` on your PATH. This automates the `robot template` +
+`robot merge` sequence - it skips any template with no corresponding
+instance data found, rather than erroring, so it's fine if your dataset
+doesn't have every result type (e.g. no IRC data at all).
+
+### 5. Query it
+
+```r
+source("gamess_functions/R/sparql_to_file.R")
+
+# adjust the query - see gamess_functions/query_your_ontology.R for a
+# fuller set of starting-point queries (experiments by type, imaginary
+# frequencies, system energies, constraints, provenance chains)
+sparql_query(
+  graph_file = "/path/to/your_graph.ttl",
+  query = "SELECT ?exp ?type WHERE { ?exp a ?type . }"
+)
+```
+
+## 🚀 Quick Start (the bundled example)
 
 👉 **New here? Start with the working example:**
 
