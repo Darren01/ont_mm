@@ -35,17 +35,7 @@ source_github <- function(repo, path, branch = "master") {
   lines <- readLines(url, warn = FALSE)
   source(textConnection(lines))
 }
-```
 
-Define that once, then replace every `source("gamess_functions/R/X.R")`
-below with `source_github("gamess_functions", "R/X.R")`, and every
-`source("ont_mm/scripts/X.R")` with `source_github("ont_mm", "scripts/X.R")`.
-Needs nothing beyond base R.
-
-Doing that by hand for Step 3's full list below is tedious - this batch
-version does it in one call instead:
-
-```r
 source_all_github <- function(paths, branch = "master") {
   for (p in paths) {
     parts <- strsplit(p, "/", fixed = TRUE)[[1]]
@@ -54,15 +44,12 @@ source_all_github <- function(paths, branch = "master") {
     source_github(repo, rest, branch = branch)
   }
 }
-
-# paste the exact same paths as Step 3's source() list below, as a
-# character vector instead:
-source_all_github(c(
-  "gamess_functions/R/gamess_input_utils.R",
-  "gamess_functions/R/classify_gamess_jobs.R"
-  # ... etc, same files as Step 3
-))
 ```
+
+Define both once here. Step 3 below gives the actual list of files as a
+single `paths` vector, used either with a plain loop (if you cloned) or
+with `source_all_github(paths)` (if you didn't) - same list either way,
+nothing to duplicate or hand-edit.
 
 (You may see `devtools::source_url()` suggested elsewhere for this same
 task - it works, but pulls in a large dependency chain that can fail for
@@ -90,35 +77,50 @@ files before you commit to a full build.
 
 ### 3. Build the instance data
 
-Source everything `process_gamess_directory()` depends on:
+One list of files, defined once - loop over it however matches how you
+got the code in Step 1.
 
 ```r
-source("gamess_functions/R/gamess_input_utils.R")
-source("gamess_functions/R/classify_gamess_jobs.R")
-source("gamess_functions/R/extract_ir_spectrum.R")
-source("gamess_functions/R/extract_ir_diagnostics.R")
-source("gamess_functions/R/extract_thermochemistry.R")
-source("gamess_functions/R/extract_electronic_energy.R")
-source("gamess_functions/R/extract_irc_trajectory.R")
-source("gamess_functions/R/combine_irc_trajectories.R")
-source("gamess_functions/R/extract_constraints.R")
-source("gamess_functions/R/check_vibrational_quality.R")
-source("gamess_functions/R/ir_spectrum_to_templates.R")
-source("gamess_functions/R/thermochemistry_to_templates.R")
-source("gamess_functions/R/electronic_energy_to_templates.R")
-source("gamess_functions/R/reaction_path_to_templates.R")
-source("gamess_functions/R/constraints_to_templates.R")
-source("ont_mm/scripts/build_provenance.R")
-source("ont_mm/scripts/process_experiments.R")
-source("ont_mm/scripts/process_results.R")
-source("ont_mm/scripts/process_thermo_results.R")
-source("ont_mm/scripts/process_electronic_energy_results.R")
-source("ont_mm/scripts/process_reaction_path_results.R")
-source("ont_mm/scripts/process_contraints.R")
-source("ont_mm/scripts/process_gamess_directory.R")
+paths <- c(
+  "gamess_functions/R/gamess_input_utils.R",
+  "gamess_functions/R/classify_gamess_jobs.R",
+  "gamess_functions/R/extract_ir_spectrum.R",
+  "gamess_functions/R/extract_ir_diagnostics.R",
+  "gamess_functions/R/extract_thermochemistry.R",
+  "gamess_functions/R/extract_electronic_energy.R",
+  "gamess_functions/R/extract_irc_trajectory.R",
+  "gamess_functions/R/combine_irc_trajectories.R",
+  "gamess_functions/R/extract_constraints.R",
+  "gamess_functions/R/check_vibrational_quality.R",
+  "gamess_functions/R/ir_spectrum_to_templates.R",
+  "gamess_functions/R/thermochemistry_to_templates.R",
+  "gamess_functions/R/electronic_energy_to_templates.R",
+  "gamess_functions/R/reaction_path_to_templates.R",
+  "gamess_functions/R/constraints_to_templates.R",
+  "ont_mm/scripts/build_provenance.R",
+  "ont_mm/scripts/process_experiments.R",
+  "ont_mm/scripts/process_results.R",
+  "ont_mm/scripts/process_thermo_results.R",
+  "ont_mm/scripts/process_electronic_energy_results.R",
+  "ont_mm/scripts/process_reaction_path_results.R",
+  "ont_mm/scripts/process_contraints.R",
+  "ont_mm/scripts/process_gamess_directory.R"
+)
 ```
 
-then run it against your own folders:
+**Option A (cloned):**
+
+```r
+for (p in paths) source(p)
+```
+
+**Option B (no clone):**
+
+```r
+source_all_github(paths)   # defined in Step 1
+```
+
+Either way, run it against your own folders:
 
 ```r
 result <- process_gamess_directory(
