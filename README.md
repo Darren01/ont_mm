@@ -265,7 +265,9 @@ This project develops an ontology to represent those relationships as a graph, e
 
 The focus is on **pre-publication computational workflows** —the exploratory phase where models are built, tested, and refined.
 
-![ontology map and build path](./images/ont_mm_scheme1.png "Scheme 1 Ontology map and build")
+![building the versioned schema](./images/ont_mm_schema_build.svg "Building the gc: core schema, from source ontologies to a dated release")
+
+![instantiating the ontology](./images/ont_mm_instantiation.svg "Turning a release into a queryable, instantiated ontology from real experiment data")
 
 ---
 
@@ -551,8 +553,10 @@ ont_mm
 |  |  |--rem01b.log
 |  |--README.md
 |--images
-|  |--ont_mm_scheme1.excalidraw
-|  |--ont_mm_scheme1.png
+|  |--ont_mm_schema_build.excalidraw
+|  |--ont_mm_schema_build.svg
+|  |--ont_mm_instantiation.excalidraw
+|  |--ont_mm_instantiation.svg
 |--modules				# Extracted ontology modules
 |  |--gc_module.ttl
 |  |--prov_module.ttl
