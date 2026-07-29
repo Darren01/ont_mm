@@ -1,0 +1,2 @@
+ID	Label	Type	hasMolecule	hasAtom	hasAtomCoordinateX	hasAtomCoordinateY	hasAtomCoordinateZ
+ID	LABEL	TYPE	I gc:hasMolecule	I gc:hasAtom SPLIT=|	I gc:hasAtomCoordinateX	I gc:hasAtomCoordinateY	I gc:hasAtomCoordinateZ
