@@ -36,7 +36,8 @@ build_ontology_graph <- function(ontology_dir, release_file, output_file, robot_
   # independently against the same release before the final merge).
   templates <- c(
     "experiment", "constraint", "results", "spectra_result", "spectra",
-    "peak", "float_value", "energies", "reaction_path", "reaction_path_point"
+    "peak", "float_value", "energies", "reaction_path", "reaction_path_point",
+    "molecule"
   )
 
   built <- character(0)
