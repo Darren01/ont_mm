@@ -20,6 +20,11 @@ you actually cloned.
 
 **Option A - clone (simplest, recommended if unsure):**
 
+**Important: this is a shell/terminal command, not R code.** Run it in
+a terminal (Command Prompt, PowerShell, Git Bash, or similar) - pasting
+it into an R console will fail, since R doesn't understand `git` as a
+command by itself.
+
 ```bash
 git clone https://github.com/Darren01/gamess_functions.git
 git clone https://github.com/Darren01/ont_mm.git
@@ -28,6 +33,8 @@ git clone https://github.com/Darren01/ont_mm.git
 Then every `source(...)` below uses a local path, exactly as written.
 
 **Option B - no cloning, fetch each file from GitHub directly:**
+
+This part *is* R code - run it in your R console, not a terminal.
 
 ```r
 source_github <- function(repo, path, branch = "master") {
@@ -62,6 +69,41 @@ keeps being developed, pass a specific commit's ID as `branch` instead
 of relying on the default `"master"` - the short code (e.g. `a1b2c3d`)
 shown next to each entry on the repo's "commits" page on GitHub.
 
+**On a corporate network and `download.file()` fails with an SSL error?**
+See the note in Step 4 - it's a known, fixable issue, not something
+wrong with your setup specifically.
+
+### 1b. Set your paths once
+
+Every step below uses these same variables - set them here, once, and
+nothing further down needs a path retyped or re-pasted.
+
+```r
+my_input_dir     <- "/path/to/your/input/folder"    # .inp files
+my_output_dir    <- "/path/to/your/output/folder"   # .log files
+my_ontology_dir  <- "/path/to/where/you/want/the/instance/data"
+my_graph_file    <- file.path(my_ontology_dir, "your_graph.ttl")
+my_release_file  <- file.path(my_ontology_dir, "gc_core.ttl")
+
+# Option A (cloned):
+my_experiment_template <- "ont_mm/templates/experiment_template.tsv"
+# Option B (no clone) - read.delim() can read a URL directly, no
+# download needed (confirmed - unlike release_file below, which does
+# need a real local file):
+# my_experiment_template <- "https://raw.githubusercontent.com/Darren01/ont_mm/master/templates/experiment_template.tsv"
+```
+
+**If your data is confidential**, make sure `my_ontology_dir` points at
+a folder *outside* any git repository entirely - not a subfolder of
+`ont_mm`, even one you plan to `.gitignore`. A folder with no repo at
+all is a structural guarantee nothing can accidentally end up on
+GitHub; a gitignore rule is just a reminder you have to get right every
+time.
+
+```r
+dir.create(my_ontology_dir, recursive = TRUE, showWarnings = FALSE)
+```
+
 ### 2. Classify your files first - just to see what's there
 
 Before running anything else, get a quick inventory of what job types
@@ -79,7 +121,7 @@ source_github("gamess_functions", "R/classify_gamess_jobs.R")   # defined in Ste
 
 Either way:
 ```r
-classify_gamess_jobs("/path/to/your/output/folder")
+classify_gamess_jobs(my_output_dir)
 ```
 
 This alone is a useful sanity check - confirms the code recognises your
@@ -102,6 +144,7 @@ paths <- c(
   "gamess_functions/R/combine_irc_trajectories.R",
   "gamess_functions/R/extract_constraints.R",
   "gamess_functions/R/check_vibrational_quality.R",
+  "gamess_functions/R/geometry_to_atoms.R",
   "gamess_functions/R/ir_spectrum_to_templates.R",
   "gamess_functions/R/thermochemistry_to_templates.R",
   "gamess_functions/R/electronic_energy_to_templates.R",
@@ -134,25 +177,12 @@ Either way, run it against your own folders:
 
 ```r
 result <- process_gamess_directory(
-  input_dir  = "/path/to/your/input/folder",   # .inp files
-  output_dir = "/path/to/your/output/folder",  # .log files
-  ontology_dir = "/path/to/where/you/want/the/instance/data",
-
-  # Option A (cloned):
-  experiment_template_file = "ont_mm/templates/experiment_template.tsv"
-
-  # Option B (no clone) - read.delim() can read a URL directly, no
-  # download needed (confirmed - unlike Step 4's release_file below,
-  # which does need a real local file):
-  # experiment_template_file = "https://raw.githubusercontent.com/Darren01/ont_mm/master/templates/experiment_template.tsv"
+  input_dir  = my_input_dir,
+  output_dir = my_output_dir,
+  ontology_dir = my_ontology_dir,
+  experiment_template_file = my_experiment_template
 )
 ```
-
-**If your data is confidential**, point `ontology_dir` at a folder
-*outside* any git repository entirely - not a subfolder of `ont_mm`,
-even one you plan to `.gitignore`. A folder with no repo at all is a
-structural guarantee nothing can accidentally end up on GitHub; a
-gitignore rule is just a reminder you have to get right every time.
 
 This writes instance TSV files - it does not yet produce a queryable
 graph. That's the next step.
@@ -162,56 +192,85 @@ graph. That's the next step.
 **Option A (cloned):**
 ```r
 source("ont_mm/scripts/build_ontology_graph.R")
+source("ont_mm/scripts/check_robot_setup.R")
 ```
 
 **Option B (no clone):**
 ```r
 source_github("ont_mm", "scripts/build_ontology_graph.R")   # defined in Step 1
+source_github("ont_mm", "scripts/check_robot_setup.R")
 ```
 
-`release_file` below needs to be a genuine local file either way - it's
+**Check `robot` is actually usable before trying a real build** - this
+catches two real issues found testing on a locked-down Windows machine:
+Java 11+ is required (an older default Java on PATH, even with a newer
+one also installed, gives a confusing, unrelated-looking failure deep
+inside a build rather than a clear version error), and confirms `robot`
+itself is actually callable.
+
+```r
+check_robot_setup()
+# If it reports the wrong Java version and you have a compatible one
+# installed elsewhere, point at it directly rather than fighting PATH:
+# check_robot_setup(java_path = "C:/path/to/java11/bin/java.exe")
+```
+
+`release_file` needs to be a genuine local file either way - it's
 passed to `robot`, a separate external program, not read by R itself,
 so R's URL-reading convenience (which worked for
 `experiment_template_file` above) doesn't apply here. If you didn't
-clone, download it first - into the *same* folder you're using for
-everything else in this dataset, not the working directory:
+clone, download it first, into `my_ontology_dir` (already set up above):
 
 ```r
-# make sure this folder exists first - R's writing functions don't
-# create missing parent directories automatically
-dir.create("/path/to/your/ontology_dir", recursive = TRUE, showWarnings = FALSE)
-
 download.file(
   "https://raw.githubusercontent.com/Darren01/ont_mm/master/releases/2026-07-24/gc_core.ttl",
-  destfile = "/path/to/your/ontology_dir/gc_core.ttl"
+  destfile = my_release_file
 )
 ```
 
-Then, a worked example - note `ontology_dir` is the *same* folder
-`process_gamess_directory()` wrote the instance data into in Step 3,
-`release_file` is the exact file just downloaded above (not the
-`ont_mm/releases/...` local-clone path - that one's only valid for
-Option A), and `output_file` is conventionally kept in that same folder
-too, particularly if this is confidential data you're keeping outside
-any git repo:
+**On a corporate network, this may fail with an SSL error** (e.g.
+`SSL connect error` from a TLS-inspecting proxy such as Fortinet,
+Zscaler, or similar - these decrypt and re-sign HTTPS traffic with
+their own internal certificate, which R's bundled certificate store
+doesn't trust, even though Windows' own certificate store usually
+does). Try this first, since it uses Windows' own trust store rather
+than disabling certificate checking:
+
+```r
+download.file(
+  "https://raw.githubusercontent.com/Darren01/ont_mm/master/releases/2026-07-24/gc_core.ttl",
+  destfile = my_release_file,
+  method = "wininet"
+)
+```
+
+If that still fails and you have WSL available, this is a confirmed
+working fallback - note it does disable certificate verification
+(`--no-check-certificate`), which is reasonable for this specific,
+known-safe file but shouldn't become a habit for downloading things in
+general:
+
+```r
+system(paste0(
+  "wsl wget --no-check-certificate -O ", my_release_file,
+  " https://raw.githubusercontent.com/Darren01/ont_mm/master/releases/2026-07-24/gc_core.ttl"
+))
+```
+
+Then:
 
 ```r
 build_ontology_graph(
-  ontology_dir = "/path/to/your/ontology_dir",
-  release_file = "/path/to/your/ontology_dir/gc_core.ttl",
-  output_file  = "/path/to/your/ontology_dir/your_graph.ttl"
+  ontology_dir = my_ontology_dir,
+  release_file = my_release_file,
+  output_file  = my_graph_file
 )
 ```
 
-(The commented-out `release_file = "ont_mm/releases/.../gc_core.ttl"`
-you'll see in some copy-pasted examples is the Option A path - delete
-it entirely for Option B rather than leaving both lines in, to avoid
-confusing which one's actually being used.)
-
-Requires `robot` on your PATH. This automates the `robot template` +
-`robot merge` sequence - it skips any template with no corresponding
-instance data found, rather than erroring, so it's fine if your dataset
-doesn't have every result type (e.g. no IRC data at all).
+This automates the `robot template` + `robot merge` sequence - it skips
+any template with no corresponding instance data found, rather than
+erroring, so it's fine if your dataset doesn't have every result type
+(e.g. no IRC data at all).
 
 ### 5. Query it
 
@@ -234,7 +293,7 @@ source_github("gamess_functions", "R/sparql_to_file.R")   # defined in Step 1
 # starting query. For that, see gamess_functions/query_your_ontology.R,
 # whose first example filters down to just your own experiments by type.
 sparql_query(
-  graph_file = "/path/to/your_graph.ttl",
+  graph_file = my_graph_file,
   query = "SELECT ?exp ?type WHERE { ?exp a ?type . }"
 )
 ```
