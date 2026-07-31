@@ -23,14 +23,13 @@ you actually cloned.
 **Important: this is a shell/terminal command, not R code.** Run it in
 a terminal (Command Prompt, PowerShell, Git Bash, or similar) - pasting
 it into an R console will fail, since R doesn't understand `git` as a
-command by itself.
+command by itself. Note *where* you run this from - that folder is
+`my_code_dir` below.
 
 ```bash
 git clone https://github.com/Darren01/gamess_functions.git
 git clone https://github.com/Darren01/ont_mm.git
 ```
-
-Then every `source(...)` below uses a local path, exactly as written.
 
 **Option B - no cloning, fetch each file from GitHub directly:**
 
@@ -69,27 +68,41 @@ keeps being developed, pass a specific commit's ID as `branch` instead
 of relying on the default `"master"` - the short code (e.g. `a1b2c3d`)
 shown next to each entry on the repo's "commits" page on GitHub.
 
-**On a corporate network and `download.file()` fails with an SSL error?**
-See the note in Step 4 - it's a known, fixable issue, not something
-wrong with your setup specifically.
-
 ### 1b. Set your paths once
 
 Every step below uses these same variables - set them here, once, and
-nothing further down needs a path retyped or re-pasted.
+nothing further down needs a path retyped or re-pasted. This is also
+where a very common, confusing failure gets prevented up front: every
+`source("gamess_functions/...")` example elsewhere assumes R's current
+working directory *is* the folder you cloned into - if it isn't (e.g.
+you're running R from a different project folder), those relative
+paths silently fail with a "file not found" error that gives no hint
+why. `my_code_dir` below fixes that regardless of where you're
+actually running R from.
 
 ```r
-my_input_dir     <- "/path/to/your/input/folder"    # .inp files
-my_output_dir    <- "/path/to/your/output/folder"   # .log files
-my_ontology_dir  <- "/path/to/where/you/want/the/instance/data"
+# strip_trailing_slash: R's file.path() doesn't collapse a trailing
+# slash you've already included, producing a literal, confusing
+# double-slash ("./ontology//gc_core.ttl") if you happen to type one.
+# Applying this once here means it doesn't matter either way.
+strip_trailing_slash <- function(x) sub("/+$", "", x)
+
+# Option A (cloned): the folder containing both gamess_functions/ and
+# ont_mm/ as subfolders - wherever you ran `git clone` from in Step 1.
+my_code_dir <- strip_trailing_slash("/path/to/wherever/you/cloned/both/repos")
+
+my_input_dir     <- strip_trailing_slash("/path/to/your/input/folder")    # .inp files
+my_output_dir    <- strip_trailing_slash("/path/to/your/output/folder")   # .log files
+my_ontology_dir  <- strip_trailing_slash("/path/to/where/you/want/the/instance/data")
 my_graph_file    <- file.path(my_ontology_dir, "your_graph.ttl")
 my_release_file  <- file.path(my_ontology_dir, "gc_core.ttl")
 
 # Option A (cloned):
-my_experiment_template <- "ont_mm/templates/experiment_template.tsv"
+my_experiment_template <- file.path(my_code_dir, "ont_mm/templates/experiment_template.tsv")
 # Option B (no clone) - read.delim() can read a URL directly, no
 # download needed (confirmed - unlike release_file below, which does
-# need a real local file):
+# need a real local file). Comment out the Option A line above if
+# using this instead:
 # my_experiment_template <- "https://raw.githubusercontent.com/Darren01/ont_mm/master/templates/experiment_template.tsv"
 ```
 
@@ -104,6 +117,35 @@ time.
 dir.create(my_ontology_dir, recursive = TRUE, showWarnings = FALSE)
 ```
 
+### 1c. Check `robot` works before doing anything else
+
+Worth doing now, before Steps 2-3, not after - there's no point
+spending time classifying files and building instance data only to
+discover at Step 4 that `robot` itself doesn't work.
+
+**Option A (cloned):**
+```r
+source(file.path(my_code_dir, "ont_mm/scripts/check_robot_setup.R"))
+```
+
+**Option B (no clone):**
+```r
+source_github("ont_mm", "scripts/check_robot_setup.R")   # source_github defined above
+```
+
+This catches two real issues found testing on a locked-down Windows
+machine: Java 11+ is required (an older default Java on PATH, even
+with a newer one also installed, gives a confusing, unrelated-looking
+failure deep inside a build rather than a clear version error), and
+confirms `robot` itself is actually callable.
+
+```r
+check_robot_setup()
+# If it reports the wrong Java version and you have a compatible one
+# installed elsewhere, point at it directly rather than fighting PATH:
+# check_robot_setup(java_path = "C:/path/to/java11/bin/java.exe")
+```
+
 ### 2. Classify your files first - just to see what's there
 
 Before running anything else, get a quick inventory of what job types
@@ -111,7 +153,7 @@ you actually have.
 
 **Option A (cloned):**
 ```r
-source("gamess_functions/R/classify_gamess_jobs.R")
+source(file.path(my_code_dir, "gamess_functions/R/classify_gamess_jobs.R"))
 ```
 
 **Option B (no clone):**
@@ -164,7 +206,7 @@ paths <- c(
 **Option A (cloned):**
 
 ```r
-for (p in paths) source(p)
+for (p in file.path(my_code_dir, paths)) source(p)
 ```
 
 **Option B (no clone):**
@@ -191,29 +233,16 @@ graph. That's the next step.
 
 **Option A (cloned):**
 ```r
-source("ont_mm/scripts/build_ontology_graph.R")
-source("ont_mm/scripts/check_robot_setup.R")
+source(file.path(my_code_dir, "ont_mm/scripts/build_ontology_graph.R"))
 ```
 
 **Option B (no clone):**
 ```r
 source_github("ont_mm", "scripts/build_ontology_graph.R")   # defined in Step 1
-source_github("ont_mm", "scripts/check_robot_setup.R")
 ```
 
-**Check `robot` is actually usable before trying a real build** - this
-catches two real issues found testing on a locked-down Windows machine:
-Java 11+ is required (an older default Java on PATH, even with a newer
-one also installed, gives a confusing, unrelated-looking failure deep
-inside a build rather than a clear version error), and confirms `robot`
-itself is actually callable.
-
-```r
-check_robot_setup()
-# If it reports the wrong Java version and you have a compatible one
-# installed elsewhere, point at it directly rather than fighting PATH:
-# check_robot_setup(java_path = "C:/path/to/java11/bin/java.exe")
-```
+(`robot` was already checked back in Step 1c - if that passed, you're
+good to continue here without re-checking.)
 
 `release_file` needs to be a genuine local file either way - it's
 passed to `robot`, a separate external program, not read by R itself,
@@ -272,11 +301,16 @@ any template with no corresponding instance data found, rather than
 erroring, so it's fine if your dataset doesn't have every result type
 (e.g. no IRC data at all).
 
+**If this reports "No templates were successfully built"**, it means
+Step 3 never actually produced any `*_template_instances.tsv` files in
+`my_ontology_dir` - check Step 3 completed without an error before
+troubleshooting this step, rather than the other way round.
+
 ### 5. Query it
 
 **Option A (cloned):**
 ```r
-source("gamess_functions/R/sparql_to_file.R")
+source(file.path(my_code_dir, "gamess_functions/R/sparql_to_file.R"))
 ```
 
 **Option B (no clone):**
