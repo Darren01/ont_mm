@@ -118,7 +118,7 @@ my_code_dir <- strip_trailing_slash("/path/to/wherever/you/cloned/both/repos")
 my_input_dir     <- strip_trailing_slash("/path/to/your/input/folder")    # .inp files
 my_output_dir    <- strip_trailing_slash("/path/to/your/output/folder")   # .log files
 my_ontology_dir  <- strip_trailing_slash("/path/to/where/you/want/the/instance/data")
-my_graph_file    <- file.path(my_ontology_dir, "your_graph.ttl")
+my_graph_file    <- file.path(my_ontology_dir, "your_graph_YYYYMMDD.ttl")   # dated, same convention as releases/
 my_release_file  <- file.path(my_ontology_dir, "gc_core.ttl")
 
 # Option A (cloned):
@@ -252,6 +252,45 @@ result <- process_gamess_directory(
 
 This writes instance TSV files - it does not yet produce a queryable
 graph. That's the next step.
+
+### 3b. Optional: add your own review notes
+
+Once you've actually looked at some results and formed an opinion -
+"this run's constraints broke the geometry," "started from the hydrate
+with a view to stretching a bond" - that's exactly the kind of thing
+worth recording *in* the ontology, not just in your own head or a
+separate notes file. This is a real, existing part of the pipeline,
+not a suggestion for later.
+
+Keep a plain `run_notes.tsv` file (tab-separated, `filename<TAB>your
+comment`) somewhere in your project - e.g. alongside your other `ont/`
+files:
+
+```
+caa002b.log	initial runs where 8,3 distance at 2A was too quick and broke up the molecule
+caa004a.log	starting from the hydrate with a view to stretching one of the CO bonds
+```
+
+**Option A (cloned):**
+```r
+source(file.path(my_code_dir, "gamess_functions/R/notes_to_annotations.R"))
+```
+
+**Option B (no clone):**
+```r
+source_github("gamess_functions", "R/notes_to_annotations.R")
+```
+
+```r
+rows <- notes_to_annotations(file.path(my_ontology_dir, "run_notes.tsv"))
+write_annotations(rows, file.path(my_ontology_dir, "annotation_template_instances.tsv"))
+```
+
+Each note attaches as a real `rdfs:comment` on the corresponding
+experiment - a standard, well-understood RDFS annotation property, not
+something invented for this project. `build_ontology_graph()` in the
+next step picks this file up automatically alongside everything else,
+as long as it's sitting in `my_ontology_dir` under this exact filename.
 
 ### 4. Build the queryable graph
 

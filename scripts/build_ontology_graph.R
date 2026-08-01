@@ -37,7 +37,7 @@ build_ontology_graph <- function(ontology_dir, release_file, output_file, robot_
   templates <- c(
     "experiment", "constraint", "results", "spectra_result", "spectra",
     "peak", "float_value", "energies", "reaction_path", "reaction_path_point",
-    "molecule"
+    "molecule", "nmr", "annotation"
   )
 
   built <- character(0)
