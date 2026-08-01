@@ -5998,6 +5998,18 @@
     
 
 
+    <!-- http://purl.org/gc/ppm -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/gc/ppm">
+        <rdf:type rdf:resource="http://qudt.org/schema/qudt/Unit"/>
+        <owl:sameAs rdf:resource="http://qudt.org/vocab/unit/PPM"/>
+        <rdfs:comment xml:lang="en">Parts per million - a dimensionless ratio unit, used here for NMR shielding and chemical shift values. Corresponds to the real QUDT unit http://qudt.org/vocab/unit/PPM (typed qudt:Unit under quantitykind:DimensionlessRatio, alongside PERCENT/PPB/PPT).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://chemicalsemantics.com/"/>
+        <rdfs:label xml:lang="en">ppm</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
 
 
     <!-- http://purl.org/gc/atomicUnit -->
