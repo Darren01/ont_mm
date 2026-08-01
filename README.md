@@ -87,6 +87,30 @@ actually running R from.
 # Applying this once here means it doesn't matter either way.
 strip_trailing_slash <- function(x) sub("/+$", "", x)
 
+# Option B (no clone) only: source_github()/source_all_github() were
+# defined back in Step 1 - but if you're resuming a session, or jumped
+# straight here, they may not actually exist yet in THIS session. This
+# defines them only if they're missing, so it doesn't matter whether
+# Step 1's own block actually ran first - found necessary in practice,
+# not just a theoretical edge case.
+if (!exists("source_github")) {
+  source_github <- function(repo, path, branch = "master") {
+    url <- paste0("https://raw.githubusercontent.com/Darren01/", repo, "/", branch, "/", path)
+    lines <- readLines(url, warn = FALSE)
+    source(textConnection(lines))
+  }
+}
+if (!exists("source_all_github")) {
+  source_all_github <- function(paths, branch = "master") {
+    for (p in paths) {
+      parts <- strsplit(p, "/", fixed = TRUE)[[1]]
+      repo <- parts[1]
+      rest <- paste(parts[-1], collapse = "/")
+      source_github(repo, rest, branch = branch)
+    }
+  }
+}
+
 # Option A (cloned): the folder containing both gamess_functions/ and
 # ont_mm/ as subfolders - wherever you ran `git clone` from in Step 1.
 my_code_dir <- strip_trailing_slash("/path/to/wherever/you/cloned/both/repos")
