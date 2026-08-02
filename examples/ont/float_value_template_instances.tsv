@@ -1,5 +1,5 @@
 ID	Label	Type	hasFloatValue	hasUnit
-ID	LABEL	TYPE	I gc:hasFloatValue	I gc:hasUnit
+ID	LABEL	TYPE	AT gc:hasFloatValue^^xsd:float	I gc:hasUnit
 ex:freqval_rem01b_1	Frequency mode 1 rem01b	gc:FloatValue	139.5	gc:cm-1
 ex:freqval_rem01b_2	Frequency mode 2 rem01b	gc:FloatValue	101.35	gc:cm-1
 ex:freqval_rem01b_3	Frequency mode 3 rem01b	gc:FloatValue	0.22	gc:cm-1
