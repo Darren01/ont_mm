@@ -286,6 +286,21 @@ rows <- notes_to_annotations(file.path(my_ontology_dir, "run_notes.tsv"))
 write_annotations(rows, file.path(my_ontology_dir, "annotation_template_instances.tsv"))
 ```
 
+**This only writes a TSV file - it does not touch your queryable graph.**
+Your notes won't show up in any query until you go back and re-run
+Step 4's `build_ontology_graph()` afterward, same as any other change
+to your instance data.
+
+**You'll likely come back to this step more than once, and that's the
+intended workflow, not a workaround** - reviewing your results as a
+whole (e.g. via `summarize_graph()`) often surfaces things worth
+recording that weren't obvious when a run first finished. Editing
+`run_notes.tsv` and re-running the two commands above at any later
+time is completely safe: `write_annotations()` always regenerates the
+file fresh from your notes' *current* full content, rather than
+appending - so revisiting old notes, adding new ones, or both, never
+duplicates anything already recorded.
+
 Each note attaches as a real `rdfs:comment` on the corresponding
 experiment - a standard, well-understood RDFS annotation property, not
 something invented for this project. `build_ontology_graph()` in the
