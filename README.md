@@ -395,6 +395,48 @@ sparql_query(
 )
 ```
 
+### 5b. Building additional projects
+
+Everything above is a one-time setup - `my_code_dir` and `release_file`
+don't change per project, only your actual data does. Once Steps 1-1c
+are done, building (or rebuilding) a *different* project doesn't need
+the full walkthrough again - just fresh data paths and one call:
+
+```r
+my_input_dir    <- "/path/to/a/different/project/inputs"
+my_output_dir   <- "/path/to/a/different/project/outputs"
+my_ontology_dir <- "/path/to/a/different/project/ont"
+my_graph_file   <- file.path(my_ontology_dir, "your_graph_YYYYMMDD.ttl")
+
+# Option A (cloned):
+source(file.path(my_code_dir, "ont_mm/scripts/build_provenance.R"))
+source(file.path(my_code_dir, "ont_mm/scripts/process_experiments.R"))
+# ...(the rest of Step 3's paths list, all sourced the same way)
+
+# Option B (no clone):
+# source_all_github(paths)   # the same paths vector from Step 3
+
+result <- process_gamess_directory(
+  input_dir  = my_input_dir,
+  output_dir = my_output_dir,
+  ontology_dir = my_ontology_dir,
+  experiment_template_file = my_experiment_template
+)
+
+source(file.path(my_code_dir, "ont_mm/scripts/build_ontology_graph.R"))
+build_ontology_graph(
+  ontology_dir = my_ontology_dir,
+  release_file = release_file,
+  output_file  = my_graph_file
+)
+```
+
+Worth keeping a short project-specific script like this saved
+somewhere for each real project you work on (outside any git repo if
+the data is confidential, same as always) - it becomes your quick
+"rebuild this project" command whenever new runs are added, without
+re-deriving the sequence from scratch each time.
+
 ## 🚀 Quick Start (the bundled example)
 
 👉 **New here? Start with the working example:**
