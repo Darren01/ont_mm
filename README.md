@@ -2,6 +2,43 @@
 
 A domain ontology for representing and structuring molecular modelling workflows, with a focus on **traceability**, **reproducibility**, and **data integration**.
 
+## 🔍 What you actually get
+
+Once your GAMESS runs are built into a queryable graph, this is the
+payoff - no SPARQL required, one function call:
+
+```r
+source("gamess_functions/R/summarize_graph.R")
+summarize_graph("examples/ont/gc_core_full_20260802.ttl")
+```
+
+```
+=== Summary of gc_core_full_20260802.ttl ===
+
+Experiments: 3
+GeometryOptimization  VibrationalAnalysis
+                   2                    1
+
+Your own review notes: 0
+
+Imaginary (negative) frequencies found: 0
+
+Constraints: 6
+```
+
+This bundled example is a small, 3-experiment demo - genuinely 0
+annotations and 0 imaginary frequencies here, honestly reported rather
+than dressed up, since nobody's added review notes to it and nothing
+in it happens to be a non-minimum geometry. On a real, actively-used
+project, these same two lines are usually where the useful signal
+shows up: your own notes on what actually happened surfaced directly
+from the graph, and a flag for any geometry worth double-checking -
+both without writing a single SPARQL query. If you want more specific
+answers than that, `gamess_functions/examples/query_your_ontology.R`
+has a tiered path from copy-paste templates through to writing your
+own SPARQL, with a short primer built entirely from real lessons this
+project actually hit along the way.
+
 ## 🧪 Using This With Your Own Data
 
 This is the part you actually want if you have your own GAMESS input/output
