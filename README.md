@@ -124,12 +124,13 @@ actually running R from.
 # Applying this once here means it doesn't matter either way.
 strip_trailing_slash <- function(x) sub("/+$", "", x)
 
-# Option B (no clone) only: source_github()/source_all_github() were
-# defined back in Step 1 - but if you're resuming a session, or jumped
-# straight here, they may not actually exist yet in THIS session. This
-# defines them only if they're missing, so it doesn't matter whether
-# Step 1's own block actually ran first - found necessary in practice,
-# not just a theoretical edge case.
+# Defines source_github()/source_all_github() if they're not already
+# present in this session - relevant whichever option you're using.
+# Option A (cloned) doesn't strictly need these, but defining them costs
+# nothing and does no harm; Option B genuinely needs them, and may not
+# have them yet even if Step 1's own block already ran once - e.g. if
+# you're resuming a session, or jumped straight here. Found necessary
+# in practice for both options, not just a theoretical edge case.
 if (!exists("source_github")) {
   source_github <- function(repo, path, branch = "master") {
     url <- paste0("https://raw.githubusercontent.com/Darren01/", repo, "/", branch, "/", path)
@@ -367,7 +368,7 @@ clone, download it first, into `my_ontology_dir` (already set up above):
 
 ```r
 download.file(
-  "https://raw.githubusercontent.com/Darren01/ont_mm/master/releases/2026-07-24/gc_core.ttl",
+  "https://raw.githubusercontent.com/Darren01/ont_mm/master/releases/2026-08-08/gc_core.ttl",
   destfile = my_release_file
 )
 ```
@@ -382,7 +383,7 @@ than disabling certificate checking:
 
 ```r
 download.file(
-  "https://raw.githubusercontent.com/Darren01/ont_mm/master/releases/2026-07-24/gc_core.ttl",
+  "https://raw.githubusercontent.com/Darren01/ont_mm/master/releases/2026-08-08/gc_core.ttl",
   destfile = my_release_file,
   method = "wininet"
 )
@@ -397,7 +398,7 @@ general:
 ```r
 system(paste0(
   "wsl wget --no-check-certificate -O ", my_release_file,
-  " https://raw.githubusercontent.com/Darren01/ont_mm/master/releases/2026-07-24/gc_core.ttl"
+  " https://raw.githubusercontent.com/Darren01/ont_mm/master/releases/2026-08-08/gc_core.ttl"
 ))
 ```
 
