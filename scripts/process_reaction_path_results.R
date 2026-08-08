@@ -31,7 +31,7 @@ process_reaction_path_results <- function(reactions, output_dir) {
     spectra_result       = c("ID", "TYPE", "I gc:hasResult"),
     reaction_path         = c("ID", "LABEL", "TYPE", "I gc:hasReactionPathPoint SPLIT=|"),
     reaction_path_points  = c("ID", "LABEL", "TYPE", "I gc:hasIndex", "I gc:hasPathEnergy"),
-    float_values          = c("ID", "LABEL", "TYPE", "I gc:hasFloatValue", "I gc:hasUnit")
+    float_values          = c("ID", "LABEL", "TYPE", "AT gc:hasFloatValue^^xsd:float", "I gc:hasUnit")
   )
 
   all_rows <- list(spectra_result = list(), reaction_path = list(),

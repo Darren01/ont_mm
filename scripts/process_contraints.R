@@ -30,7 +30,7 @@ process_contraints <- function(experiment_files, output_file) {
                 "targetValue", "hasUnit", "constraintMode", "forceConstant")
   type_row <- c("ID", "LABEL", "TYPE", "I ex:hasConstraint", "I ex:involvesAtom1",
                 "I ex:involvesAtom2", "I ex:involvesAtom3", "I ex:involvesAtom4",
-                "A ex:targetValue", "I gc:hasUnit", "A gc:constraintMode", "A ex:forceConstant")
+                "AT ex:targetValue^^xsd:float", "I gc:hasUnit", "A gc:constraintMode", "AT ex:forceConstant^^xsd:float")
 
   existing_ids <- character(0)
   if (file.exists(output_file)) {

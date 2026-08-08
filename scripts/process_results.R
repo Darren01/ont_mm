@@ -30,7 +30,7 @@ process_results <- function(experiment_log_pairs, output_dir) {
     spectra_result = c("ID", "TYPE", "I gc:hasResult"),
     spectra        = c("ID", "LABEL", "TYPE", "I gc:hasFrequencyPeak SPLIT=|"),
     peaks          = c("ID", "LABEL", "TYPE", "I gc:hasFrequency", "I gc:hasIntensity"),
-    float_values   = c("ID", "LABEL", "TYPE", "I gc:hasFloatValue", "I gc:hasUnit")
+    float_values   = c("ID", "LABEL", "TYPE", "AT gc:hasFloatValue^^xsd:float", "I gc:hasUnit")
   )
 
   # accumulate rows across all experiments processed in this call

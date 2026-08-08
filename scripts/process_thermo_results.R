@@ -37,7 +37,7 @@ process_thermo_results <- function(experiment_log_pairs, output_dir) {
   type_rows <- list(
     spectra_result = c("ID", "TYPE", "I gc:hasResult"),
     energies       = c("ID", "LABEL", "TYPE", "I gc:hasZeroPointEnergy", "I gc:hasEnthalpy", "I gc:hasEntropy", "I gc:hasGibbsFreeEnergy", "I gc:hasElectronicEnergy"),
-    float_values   = c("ID", "LABEL", "TYPE", "I gc:hasFloatValue", "I gc:hasUnit")
+    float_values   = c("ID", "LABEL", "TYPE", "AT gc:hasFloatValue^^xsd:float", "I gc:hasUnit")
   )
 
   all_rows <- list(spectra_result = list(), energies = list(), float_values = list())
