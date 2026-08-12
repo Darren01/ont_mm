@@ -1,0 +1,94 @@
+@prefix pesscan: <http://www.theworldavatar.com/ontology/ontopesscan/OntoPESScan.owl#> .
+@prefix gc: <http://purl.org/gc/> .
+@prefix ex: <http://example.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Real OntoPESScan terms, reused directly rather than reinvented.
+# Menon, A.; Pascazio, L.; Nurkowski, D.; Farazi, F.; Mosbach, S.;
+# Akroyd, J.; Kraft, M. "OntoPESScan: An Ontology for Potential Energy
+# Surface Scans." ACS Omega 2023, 8(2), 2462-2475.
+# DOI: 10.1021/acsomega.2c06948
+#
+# Deliberately NOT importing OntoPESScan's own hasUnit restriction
+# (conflicts with our already-established gc:angstrom/gc:degree, typed
+# under the current qudt.org namespace rather than OntoPESScan's stale
+# NASA one - see the issue raised upstream about this) or its
+# hasCalculation (range restricted to ontocompchem:GaussianCalculation
+# specifically, which would incorrectly exclude GAMESS - see
+# ex:hasCalculation below, our own redeclaration).
+
+pesscan:PotentialEnergySurfaceScan a owl:Class ;
+    rdfs:label "Potential Energy Surface Scan"@en ;
+    rdfs:comment "A scan of the potential energy surface along one or more coordinates. Not itself a computation - a container grouping one or more real gc:MolecularComputation individuals that together trace out the scan."@en ;
+    dcterms:source "Menon et al. 2023, ACS Omega 8(2), 2462-2475, DOI: 10.1021/acsomega.2c06948"@en .
+
+pesscan:ScanCoordinate a owl:Class ;
+    rdfs:label "Scan Coordinate"@en ;
+    rdfs:comment "The coordinate being varied across a potential energy surface scan - which atoms define it, and what kind of coordinate it is (distance, angle, dihedral)."@en ;
+    dcterms:source "Menon et al. 2023, ACS Omega 8(2), 2462-2475, DOI: 10.1021/acsomega.2c06948"@en .
+
+pesscan:DistanceCoordinate a owl:Class ;
+    rdfs:subClassOf pesscan:ScanCoordinate ;
+    rdfs:label "Distance Coordinate"@en ;
+    dcterms:source "Menon et al. 2023, ACS Omega 8(2), 2462-2475, DOI: 10.1021/acsomega.2c06948"@en .
+
+pesscan:AngleCoordinate a owl:Class ;
+    rdfs:subClassOf pesscan:ScanCoordinate ;
+    rdfs:label "Angle Coordinate"@en ;
+    dcterms:source "Menon et al. 2023, ACS Omega 8(2), 2462-2475, DOI: 10.1021/acsomega.2c06948"@en .
+
+pesscan:DihedralAngleCoordinate a owl:Class ;
+    rdfs:subClassOf pesscan:ScanCoordinate ;
+    rdfs:label "Dihedral Angle Coordinate"@en ;
+    dcterms:source "Menon et al. 2023, ACS Omega 8(2), 2462-2475, DOI: 10.1021/acsomega.2c06948"@en .
+
+pesscan:ScanPoint a owl:Class ;
+    rdfs:label "Scan Point"@en ;
+    rdfs:comment "A single point along a potential energy surface scan - one real experiment's worth of geometry and coordinate value."@en ;
+    dcterms:source "Menon et al. 2023, ACS Omega 8(2), 2462-2475, DOI: 10.1021/acsomega.2c06948"@en .
+
+pesscan:ScanCoordinateValue a owl:Class ;
+    rdfs:label "Scan Coordinate Value"@en ;
+    rdfs:comment "The value of the scan coordinate at a specific scan point, with its unit - reuses gc:hasValue and gc:hasUnit directly, not redeclared here."@en ;
+    dcterms:source "Menon et al. 2023, ACS Omega 8(2), 2462-2475, DOI: 10.1021/acsomega.2c06948"@en .
+
+pesscan:hasScanCoordinate a owl:ObjectProperty ;
+    rdfs:domain pesscan:PotentialEnergySurfaceScan ;
+    rdfs:range pesscan:ScanCoordinate ;
+    rdfs:label "has scan coordinate"@en ;
+    dcterms:source "Menon et al. 2023, ACS Omega 8(2), 2462-2475, DOI: 10.1021/acsomega.2c06948"@en .
+
+pesscan:hasScanPoint a owl:ObjectProperty ;
+    rdfs:domain pesscan:PotentialEnergySurfaceScan ;
+    rdfs:range pesscan:ScanPoint ;
+    rdfs:label "has scan point"@en ;
+    dcterms:source "Menon et al. 2023, ACS Omega 8(2), 2462-2475, DOI: 10.1021/acsomega.2c06948"@en .
+
+pesscan:hasScanAtom a owl:ObjectProperty ;
+    rdfs:domain pesscan:ScanCoordinate ;
+    rdfs:range gc:Atom ;
+    rdfs:label "has scan atom"@en ;
+    rdfs:comment "Links a scan coordinate to the real gc:Atom individuals that define it - reuses gc:Atom directly, confirmed already real and well-formed in our own gc: source (see Stage A)."@en ;
+    dcterms:source "Menon et al. 2023, ACS Omega 8(2), 2462-2475, DOI: 10.1021/acsomega.2c06948"@en .
+
+pesscan:hasScanCoordinateValue a owl:ObjectProperty ;
+    rdfs:domain pesscan:ScanPoint ;
+    rdfs:range pesscan:ScanCoordinateValue ;
+    rdfs:label "has scan coordinate value"@en ;
+    dcterms:source "Menon et al. 2023, ACS Omega 8(2), 2462-2475, DOI: 10.1021/acsomega.2c06948"@en .
+
+pesscan:hasInputAtomIds a owl:DatatypeProperty ;
+    rdfs:domain pesscan:ScanPoint ;
+    rdfs:range xsd:string ;
+    rdfs:label "has input atom ids"@en ;
+    rdfs:comment "The raw atom index numbers as actually used in this specific scan point's own input file - deliberately not treated as a canonical, cross-geometry atom identity, since numbering can genuinely vary from point to point (the same real-world caveat raised during Stage A about atom indices not matching IUPAC numbering)."@en ;
+    dcterms:source "Menon et al. 2023, ACS Omega 8(2), 2462-2475, DOI: 10.1021/acsomega.2c06948"@en .
+
+ex:hasCalculation a owl:ObjectProperty ;
+    rdfs:domain pesscan:ScanPoint ;
+    rdfs:range gc:MolecularComputation ;
+    rdfs:label "has calculation"@en ;
+    rdfs:comment "Our own property, not OntoPESScan's - the real pesscan:hasCalculation restricts its range to ontocompchem:GaussianCalculation specifically, which would incorrectly exclude GAMESS-based computations. Same relationship, deliberately broader range, kept as a distinct IRI rather than silently overriding a term we don't own."@en .
