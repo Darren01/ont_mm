@@ -61,6 +61,8 @@ build_ontology_graph <- function(ontology_dir, release_file, output_file, robot_
       "--ontology-iri", "http://purl.org/gc/core",
       "--prefix", shQuote("gc: http://purl.org/gc/"),
       "--prefix", shQuote("ex: http://example.org/"),
+      "--prefix", shQuote("dcterms: http://purl.org/dc/terms/"),
+      "--prefix", shQuote("skos: http://www.w3.org/2004/02/skos/core#"),
       "--output", ttl_file
     )
     if (t == "experiment") {
