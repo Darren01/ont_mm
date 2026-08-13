@@ -309,6 +309,29 @@ caa002b.log	initial runs where 8,3 distance at 2A was too quick and broke up the
 caa004a.log	starting from the hydrate with a view to stretching one of the CO bonds
 ```
 
+**Optional third field**: if a run was based on, or is being compared
+against, a specific paper, add its DOI (pipe-separated for more than
+one) as a third tab-separated field:
+
+```
+caa004a.log	starting from the hydrate with a view to stretching one of the CO bonds	10.1021/ja00249a034
+```
+
+This gets written as a real `dcterms:relation` to the paper's own
+resolvable `https://doi.org/...` URL - see
+[papers_ontology](https://github.com/Darren01/papers_ontology) for the
+other side of this link. The two directions are genuinely independent,
+not automatically bidirectional: this links *from* the experiment
+*to* the paper; linking the paper back to the experiment is a separate
+step, done in `papers_ontology`'s own `doi_notes.tsv`.
+
+A line must have exactly 2 or exactly 3 tab-separated fields - not "2
+or more, treat everything after the first tab as the comment," which
+is how earlier versions of this worked. A comment containing a literal
+tab character would now be (correctly) flagged as ambiguous rather
+than silently absorbed - unlikely in practice for hand-typed free
+text.
+
 **Option A (cloned):**
 ```r
 source(file.path(my_code_dir, "gamess_functions/R/notes_to_annotations.R"))
@@ -319,6 +342,7 @@ source(file.path(my_code_dir, "gamess_functions/R/notes_to_annotations.R"))
 source_github("gamess_functions", "R/notes_to_annotations.R")
 ```
 
+Either way:
 ```r
 rows <- notes_to_annotations(file.path(my_ontology_dir, "run_notes.tsv"))
 write_annotations(rows, file.path(my_ontology_dir, "annotation_template_instances.tsv"))
