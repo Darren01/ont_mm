@@ -514,6 +514,57 @@ the data is confidential, same as always) - it becomes your quick
 "rebuild this project" command whenever new runs are added, without
 re-deriving the sequence from scratch each time.
 
+### Step 5 (optional, recommended): validate the graph
+
+`robot report` checks the *schema*'s own structural soundness -
+missing labels, dangling references, and so on. It doesn't check
+whether the *data* in a built graph actually makes sense - a
+`gc:hasFloatValue` silently typed as `xsd:string` instead of
+`xsd:float` passes a schema check cleanly, while quietly breaking
+every numeric comparison query built against it. This project hit
+exactly that bug, and a second one just like it, before
+[SHACL](https://www.w3.org/TR/shacl/) validation existed to catch it
+automatically.
+
+[`shapes/gc_core_shapes.ttl`](./shapes/gc_core_shapes.ttl) holds real
+shapes, each tied to a specific bug actually found in this project's
+own development - not textbook examples. Run via
+[`validate_graph_shacl()`](https://github.com/Darren01/gamess_functions/blob/master/R/validate_graph_shacl.R)
+(in `gamess_functions`):
+
+```r
+source(file.path(my_code_dir, "gamess_functions/R/validate_graph_shacl.R"))
+
+result <- validate_graph_shacl(
+  graph_file  = my_graph_file,
+  shapes_file = file.path(my_code_dir, "ont_mm/shapes/gc_core_shapes.ttl")
+)
+```
+
+Requires `shacl` on your PATH (part of the [Apache
+Jena](https://jena.apache.org/download/) command-line tools - a
+separate download from `robot`, though both are Java-based, so no new
+language runtime is needed). If `shacl` isn't reachable the same way
+`robot` already is (e.g. it was only added to `PATH` via `.bashrc`,
+which a GUI-launched RStudio session may never read), either symlink
+it into the same location `robot` already lives in, or pass its full
+path via `validate_graph_shacl()`'s own `shacl_cmd` argument.
+
+One real, confirmed Jena quirk worth knowing about, already handled
+for you inside `validate_graph_shacl()`: Jena's `shacl` script blindly
+trusts a `JAVA_HOME` environment variable if one is set at all, with
+no check that it actually points at a working Java install - unlike
+`robot`, which doesn't reference `JAVA_HOME` anywhere in its own
+script. A stale `JAVA_HOME` (pointing at a long-gone old Java version,
+inherited from some part of your environment that may be hard to
+track down) can make `shacl` fail outright even when a perfectly good,
+current Java is available and `robot` itself works fine.
+`validate_graph_shacl()` clears `JAVA_HOME` for the duration of the
+`shacl` call only, and restores your original value afterwards - you
+shouldn't need to do anything about this yourself, but if you ever
+call `shacl` directly rather than through this wrapper and it fails
+mysteriously, this is worth checking first.
+
 ## 🚀 Quick Start (the bundled example)
 
 👉 **New here? Start with the working example:**
@@ -897,6 +948,7 @@ This project is licensed under the MIT License – see the [LICENSE](./LICENSE.t
 
 - [Gamess (US)](https://www.msg.chem.iastate.edu/gamess/)
 - [robot](https://robot.obolibrary.org/)
+- [Apache Jena](https://jena.apache.org/download/) (for `shacl` - SHACL validation)
 - [RStudio](https://posit.co/download/rstudio-desktop)
 - [turtle viewer](https://semantechs.co.uk/turtle-editor-viewer/)
 
