@@ -1,0 +1,80 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix gc: <http://purl.org/gc/> .
+@prefix ex: <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Real shapes, each directly codifying a bug actually found and fixed
+# (or, in one case, still unfixed) during this project's own
+# development - not synthetic examples. Run with:
+#   shacl validate --data your_graph.ttl --shapes gc_core_shapes.ttl
+
+# ---------------------------------------------------------------------
+# gc:hasFloatValue must be typed xsd:float.
+#
+# The real bug: for a long time, the writer scripts declared this
+# column as bare "I gc:hasFloatValue" in robot's template syntax,
+# which produces an untyped xsd:string literal regardless of the
+# property's own real declared range - silently breaking every
+# numeric comparison query (FILTER(?val < 0), etc.) across the whole
+# pipeline, for every dataset, until real data with a genuine negative
+# value finally exposed it.
+# ---------------------------------------------------------------------
+ex:FloatValueDatatypeShape
+    a sh:NodeShape ;
+    sh:targetClass gc:FloatValue ;
+    sh:property [
+        sh:path gc:hasFloatValue ;
+        sh:datatype xsd:float ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "gc:hasFloatValue must be xsd:float. Found as a different datatype - almost certainly the same untyped-literal bug found and fixed earlier this project (bare 'I' or 'A' template columns default to xsd:string regardless of the property's real range)." ;
+    ] .
+
+# ---------------------------------------------------------------------
+# An experiment (gc:MolecularComputation) should never have its own
+# ex:targetValue or ex:forceConstant - these belong only on constraint
+# individuals (DistanceConstraint/AngleConstraint/DihedralConstraint).
+#
+# The real bug, STILL UNFIXED as of writing this shape: fixing
+# targetValue's/forceConstant's datatype (bare "A" -> "AT ...^^xsd:float")
+# in constraint_template.tsv caused blank cells on experiment-reopening
+# rows (which legitimately have no target value of their own) to be
+# coerced to a spurious 0.0, rather than correctly producing no triple
+# at all. This shape exists specifically to make that pollution visible
+# and trackable until it's properly fixed, not just a hypothetical
+# safeguard.
+# ---------------------------------------------------------------------
+ex:NoConstraintValuesOnExperimentShape
+    a sh:NodeShape ;
+    sh:targetClass gc:MolecularComputation ;
+    sh:property [
+        sh:path ex:targetValue ;
+        sh:maxCount 0 ;
+        sh:message "An experiment should never have its own ex:targetValue - this belongs only on a constraint individual. A spurious 0.0 here is a known, previously-found, still-unfixed bug (blank-cell coercion in the constraint template writer)." ;
+    ] ;
+    sh:property [
+        sh:path ex:forceConstant ;
+        sh:maxCount 0 ;
+        sh:message "An experiment should never have its own ex:forceConstant - this belongs only on a constraint individual. Same known, still-unfixed blank-cell coercion bug as ex:targetValue." ;
+    ] .
+
+# ---------------------------------------------------------------------
+# When present on a real constraint, targetValue/forceConstant must
+# themselves be correctly typed - the same class of bug as
+# hasFloatValue above, found independently in constraint_template.tsv.
+# ---------------------------------------------------------------------
+ex:ConstraintValueDatatypeShape
+    a sh:NodeShape ;
+    sh:targetClass ex:DistanceConstraint ;
+    sh:targetClass ex:AngleConstraint ;
+    sh:targetClass ex:DihedralConstraint ;
+    sh:property [
+        sh:path ex:targetValue ;
+        sh:datatype xsd:float ;
+        sh:message "ex:targetValue must be xsd:float when present on a real constraint." ;
+    ] ;
+    sh:property [
+        sh:path ex:forceConstant ;
+        sh:datatype xsd:float ;
+        sh:message "ex:forceConstant must be xsd:float when present on a real constraint." ;
+    ] .
