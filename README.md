@@ -68,6 +68,37 @@ git clone https://github.com/Darren01/gamess_functions.git
 git clone https://github.com/Darren01/ont_mm.git
 ```
 
+**Already cloned these before?** Running `git clone` again gives an error
+like `fatal: destination path 'gamess_functions' already exists and is
+not an empty directory` - a real error message, but not one to fix by
+re-cloning. It means exactly what it says: you already have this repo,
+and `git clone` is only for getting a copy for the first time. What you
+actually want is to update your existing copy - `cd` into the folder
+itself and pull the latest changes instead:
+
+```bash
+cd gamess_functions
+git pull
+cd ../ont_mm
+git pull
+```
+
+This applies every time you come back to work with these tools, not
+just the first time you hit the error - `git pull` is the everyday
+command, `git clone` is a one-time-only step.
+
+One more real trap worth knowing about: `git pull` needs to be run
+*from inside* the actual repo folder (`gamess_functions/` or
+`ont_mm/` itself), not from their parent folder. Run from the wrong
+place, `git` doesn't necessarily fail loudly - it may find a
+different, unrelated `.git` folder further up your directory tree
+(e.g. one you set up yourself to track your own project) and try to
+operate on that instead, producing confusing, unrelated errors that
+have nothing to do with `gamess_functions` or `ont_mm` at all. If a
+`git pull` or `git clone` error looks strange or unrelated to what
+you expected, `pwd` first to confirm you're actually inside the right
+folder before troubleshooting anything else.
+
 **Option B - no cloning, fetch each file from GitHub directly:**
 
 This part *is* R code - run it in your R console, not a terminal.
