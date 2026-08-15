@@ -15,7 +15,9 @@ The example demonstrates how:
 1. Input, intermediate, and output files are organised
 2. Experimental constraints are defined
 3. Results are generated and linked
-4. Everything is combined into a **single, queryable ontology**
+4. Your own review notes and literature references become part of the graph
+5. Everything is combined into a **single, queryable ontology**
+6. The graph is validated against real data-quality rules
 
 The workflow corresponds to the left-hand side of *Scheme 1* in the main project documentation.
 
@@ -25,10 +27,12 @@ The workflow corresponds to the left-hand side of *Scheme 1* in the main project
 
 ```
 examples/
-├── data/        # Intermediate data files (.dat)
-├── inputs/      # Input files (.inp)
-├── outputs/     # Output log files (.log)
-├── ont/         # Ontology templates, instances, and outputs
+├── data/            # Intermediate data files (.dat)
+├── inputs/          # Input files (.inp)
+├── outputs/         # Output log files (.log)
+├── ont/             # Ontology templates, instances, and outputs
+├── run_notes.tsv    # Your own review comments, optionally linked to a DOI
+├── doi_notes.tsv    # Literature references, optionally linked back to an experiment
 └── README.md
 ```
 
@@ -54,204 +58,124 @@ Each includes:
 
 ### Ontology Components (`ont/`)
 
-The ontology is built from three components:
+The ontology is built from several components, each written as a `robot template` TSV and turned into `.ttl` automatically:
 
 | Component   | Description                                      |
-| ----------- | ------------------------------------------------ |
-| Constraints | Modelling conditions (e.g. distances, dihedrals) |
+| ----------- | ------------------------------------------------- |
 | Experiments | Links inputs → outputs                           |
+| Constraints | Modelling conditions (e.g. distances, dihedrals) |
 | Results     | Measured properties from calculations            |
-
-Each component has:
-
-* A **template** (`*.ttl`)
-* An **instance file** (`*.tsv`)
+| Annotations | Your own review notes, optionally linked to a literature DOI |
 
 ---
 
 ## How the Ontology is Built
 
-This example uses ROBOT to convert tabular templates into OWL and then merge them.
+**A real, honest note first:** this section used to walk through five
+separate, hand-typed `robot template`/`robot merge` commands. That
+approach had a real, documented failure mode - a shared template file
+(e.g. `spectra_result_template_instances.tsv`) picking up a new row
+from a later step, but the `.ttl` built from it *earlier* never being
+regenerated, silently leaving the final merge using stale data with no
+error at any point. `build_ontology_graph()` (in `ont_mm`) exists
+specifically to eliminate this - it rebuilds every template type fresh,
+every time, so there's no "did I remember to regenerate the shared
+one?" bookkeeping left for you to get wrong. This is the real,
+recommended way to build the graph now - not an alternative to the
+manual steps, a replacement for them.
 
----
+**Step 0 - check your setup** (only needs doing once per machine):
 
-### Step 1 — Generate Experiment Ontology
-
-```
-robot template \
-  --template examples/ont/experiment_template_instances.tsv \
-  --merge-before \
-  --input releases/2026-07-19/gc_core.ttl \
-  --ontology-iri "http://purl.org/gc/core" \
-  --prefix "gc: http://purl.org/gc/" \
-  --prefix "ex: http://example.org/" \
-  --prefix "prov: http://www.w3.org/ns/prov#" \
-  --output examples/ont/experiment_template.ttl
-```
-
----
-
-### Step 2 — Generate Constraint Ontology
-
-```
-robot template \
-  --template examples/ont/constraint_template_instances.tsv \
-  --merge-before \
-  --input releases/2026-07-19/gc_core.ttl \
-  --ontology-iri "http://purl.org/gc/core" \
-  --prefix "gc: http://purl.org/gc/" \
-  --prefix "ex: http://example.org/" \
-  --output examples/ont/constraint_template.ttl
+```r
+source("ont_mm/scripts/check_robot_setup.R")
+check_robot_setup()
 ```
 
----
+Confirms `robot` is on your PATH and a compatible Java (11+) is being
+used. If it reports the wrong Java version, see the function's own
+documentation for how to point at a compatible one directly rather
+than fighting your system `PATH`.
 
-### Step 3 — Generate Results Ontology (bond distances, angles, dihedrals)
+**Step 1 - extract and write instance data:**
 
-```
-robot template \
-  --template examples/ont/results_template_instances.tsv \
-  --merge-before \
-  --input releases/2026-07-19/gc_core.ttl \
-  --ontology-iri "http://purl.org/gc/core" \
-  --prefix "gc: http://purl.org/gc/" \
-  --prefix "ex: http://example.org/" \
-  --output examples/ont/results_template.ttl
-```
+```r
+my_code_dir     <- "."   # wherever gamess_functions/ and ont_mm/ both live
+my_input_dir    <- "examples/inputs/"
+my_output_dir   <- "examples/outputs/"
+my_ontology_dir <- "examples/ont/"
 
----
+source(file.path(my_code_dir, "ont_mm/scripts/process_gamess_directory.R"))
+# ... plus every writer/extractor process_gamess_directory() depends on -
+# see the main README's own "Using This With Your Own Data" section for
+# the complete list of files to source first.
 
-### Step 4 — Generate Frequency/Intensity Results
-
-Four linked templates, reflecting the real gc: reification chain
-(experiment --hasResult--> VibrationalSpectra --hasFrequencyPeak-->
-FrequencyPeak --hasFrequency/hasIntensity--> FloatValue). Run in this
-order - each re-opens or references IDs created by the previous one.
-
-```
-robot template \
-  --template examples/ont/spectra_result_template_instances.tsv \
-  --merge-before \
-  --input releases/2026-07-19/gc_core.ttl \
-  --ontology-iri "http://purl.org/gc/core" \
-  --prefix "gc: http://purl.org/gc/" \
-  --prefix "ex: http://example.org/" \
-  --output examples/ont/spectra_result_template.ttl
-
-robot template \
-  --template examples/ont/spectra_template_instances.tsv \
-  --merge-before \
-  --input releases/2026-07-19/gc_core.ttl \
-  --ontology-iri "http://purl.org/gc/core" \
-  --prefix "gc: http://purl.org/gc/" \
-  --prefix "ex: http://example.org/" \
-  --output examples/ont/spectra_template.ttl
-
-robot template \
-  --template examples/ont/peak_template_instances.tsv \
-  --merge-before \
-  --input releases/2026-07-19/gc_core.ttl \
-  --ontology-iri "http://purl.org/gc/core" \
-  --prefix "gc: http://purl.org/gc/" \
-  --prefix "ex: http://example.org/" \
-  --output examples/ont/peak_template.ttl
-
-robot template \
-  --template examples/ont/float_value_template_instances.tsv \
-  --merge-before \
-  --input releases/2026-07-19/gc_core.ttl \
-  --ontology-iri "http://purl.org/gc/core" \
-  --prefix "gc: http://purl.org/gc/" \
-  --prefix "ex: http://example.org/" \
-  --output examples/ont/float_value_template.ttl
+process_gamess_directory(
+  input_dir  = my_input_dir,
+  output_dir = my_output_dir,
+  ontology_dir = my_ontology_dir,
+  experiment_template_file = file.path(my_code_dir, "ont_mm/templates/experiment_template.tsv")
+)
 ```
 
----
+This is what actually reads `rem01.log` etc. and writes the
+`*_template_instances.tsv` files in `examples/ont/` - the raw
+ingredients `build_ontology_graph()` turns into a real graph next.
 
-### Step 4b — Generate Thermochemistry Results
+**Step 1b (optional) - your own notes and literature:**
 
-A separate result chain (experiment --hasResult--> SystemEnergies
---hasZeroPointEnergy/hasEnthalpy/hasEntropy/hasGibbsFreeEnergy--> FloatValue),
-three levels rather than frequency's four (SystemEnergies holds multiple
-energy properties directly - no intermediate node like FrequencyPeak is
-needed). Only produced for experiments where GAMESS actually completed a
-thermochemistry table (RUNTYP=OPTIMIZE + HSSEND=.t., same jobs that also
-get a frequency spectrum - both results coexist for the same experiment,
-via two separate hasResult rows, since hasResult is not a
-FunctionalProperty).
-
-**Standing rule for any future writer that touches a shared template
-(spectra_result_template_instances.tsv or float_value_template_instances.tsv,
-and likely more as NMR/geometry writers are added): after running that
-writer, re-run the `robot template` command for every shared file it
-touched, not just the new template being introduced.** Treat "regenerate
-every Step 4/4b/4c/... .ttl" as one atomic block that always runs in
-full before Step 5's merge - trying to reason about which specific files
-were "affected" by a given writer run is exactly the kind of manual
-bookkeeping that has caused a silent, no-error staleness bug every time
-it's been relied on so far in this project.
-
-`spectra_result_template_instances.tsv` and `float_value_template_instances.tsv`
-are shared with Step 4 - process_thermo_results() (gamess_functions)
-appends to them rather than regenerating, and dedups against
-`energies_template_instances.tsv` specifically rather than the shared
-files, so re-running process_thermo_results() is always safe.
-
-**Because `spectra_result_template_instances.tsv` is shared and just got
-a new row appended to it, `spectra_result_template.ttl` (built in Step 4)
-is now stale and must be regenerated too - not just the new
-`energies_template.ttl` below. This is easy to miss (found the hard way:
-the merge silently used the old, one-row version and `hasResult` only
-pointed at the spectrum, not the new energies individual, with no error
-at any step). Re-run Step 4's first command before continuing:**
-
-```
-robot template \
-  --template examples/ont/spectra_result_template_instances.tsv \
-  --merge-before \
-  --input releases/2026-07-19/gc_core.ttl \
-  --ontology-iri "http://purl.org/gc/core" \
-  --prefix "gc: http://purl.org/gc/" \
-  --prefix "ex: http://example.org/" \
-  --prefix "prov: http://www.w3.org/ns/prov#" \
-  --output examples/ont/spectra_result_template.ttl
+```r
+source(file.path(my_code_dir, "gamess_functions/R/notes_to_annotations.R"))
+rows <- notes_to_annotations(file.path(my_ontology_dir, "run_notes.tsv"))
+write_annotations(rows, file.path(my_ontology_dir, "annotation_template_instances.tsv"))
 ```
 
-Then generate the energies template itself:
+`run_notes.tsv` in this folder is a real, working example - including
+one row with the optional third column, linking `rem01b` to a real DOI
+(the Gainesville Core ontology's own founding paper). `doi_notes.tsv`
+shows the same link the other way round - see the main README's
+`run_notes.tsv` section for the full explanation of this feature.
 
-```
-robot template \
-  --template examples/ont/energies_template_instances.tsv \
-  --merge-before \
-  --input releases/2026-07-19/gc_core.ttl \
-  --ontology-iri "http://purl.org/gc/core" \
-  --prefix "gc: http://purl.org/gc/" \
-  --prefix "ex: http://example.org/" \
-  --output examples/ont/energies_template.ttl
-```
+**Step 2 - build the graph:**
 
----
+```r
+source(file.path(my_code_dir, "ont_mm/scripts/build_ontology_graph.R"))
 
-### Step 5 — Merge into a Single Ontology
-
-```
-robot merge \
-  --input examples/ont/experiment_template.ttl \
-  --input examples/ont/constraint_template.ttl \
-  --input examples/ont/results_template.ttl \
-  --input examples/ont/spectra_result_template.ttl \
-  --input examples/ont/spectra_template.ttl \
-  --input examples/ont/peak_template.ttl \
-  --input examples/ont/float_value_template.ttl \
-  --input examples/ont/energies_template.ttl \
-  --output examples/ont/gc_core_full_2026-07-19.ttl
+build_ontology_graph(
+  ontology_dir = my_ontology_dir,
+  release_file = file.path(my_code_dir, "ont_mm/releases/2026-08-08/gc_core.ttl"),
+  output_file  = file.path(my_ontology_dir, "gc_core_full.ttl")
+)
 ```
 
-This produces the complete instantiated ontology:
+One function call replaces every `robot template`/`robot merge`
+command this section used to walk through by hand - and every template
+type is rebuilt fresh each time, so the staleness bug described above
+simply can't happen. Watch the console output: it tells you which
+template types were actually built vs. skipped (no instance data
+found for that type) - this is normal, not every dataset has every
+result type.
 
+**Step 3 (recommended) - validate the graph:**
+
+```r
+source(file.path(my_code_dir, "gamess_functions/R/validate_graph_shacl.R"))
+
+result <- validate_graph_shacl(
+  graph_file  = file.path(my_ontology_dir, "gc_core_full.ttl"),
+  shapes_file = file.path(my_code_dir, "ont_mm/shapes/gc_core_shapes.ttl")
+)
 ```
-examples/ont/gc_core_full_2026-07-19.ttl
-```
+
+Checks the graph against real data-quality rules - not just "is this
+valid OWL," but "does the data actually make sense" (e.g. a
+`gc:hasFloatValue` that's silently a string instead of a number would
+still be valid OWL, but is wrong data - `robot report` wouldn't catch
+this, SHACL does). Each shape in `gc_core_shapes.ttl` is tied to a real
+bug found during this project's own development, not a theoretical
+example. Requires `shacl` (part of [Apache
+Jena](https://jena.apache.org/download/)) on your PATH - see the main
+README's own SHACL section for setup details and a real, confirmed
+Java-detection quirk worth knowing about if this fails unexpectedly.
 
 ---
 
@@ -263,14 +187,36 @@ The final ontology links:
 * Experiments → constraints
 * Experiments → outputs
 * Calculations → measured results
+* Experiments → your own review notes, and optionally the literature they're based on
 
 This creates a **fully traceable workflow graph**.
 
 ---
 
-## Example Query
+## Querying the Graph
 
-Retrieve all output files generated from a given input file:
+**No SPARQL needed** - a full overview in one call:
+
+```r
+source(file.path(my_code_dir, "gamess_functions/R/summarize_graph.R"))
+summarize_graph(file.path(my_ontology_dir, "gc_core_full.ttl"))
+```
+
+**A specific question**, e.g. every output file generated from a given input:
+
+```r
+source(file.path(my_code_dir, "gamess_functions/R/sparql_to_file.R"))
+
+sparql_query(
+  graph_file = file.path(my_ontology_dir, "gc_core_full.ttl"),
+  query = "SELECT ?output WHERE {
+             ?exp ex:hasInputFile ex:file_rem01_inp .
+             ?output prov:wasGeneratedBy ?exp .
+           }"
+)
+```
+
+The equivalent raw SPARQL, if you want to run it directly via `robot query`:
 
 ```sparql
 PREFIX ex: <http://example.org/>
@@ -282,14 +228,17 @@ WHERE {
   ?output prov:wasGeneratedBy ?exp .
 }
 ```
+
 returns
 
+```
 output
 http://example.org/file_rem01_dat
 http://example.org/file_rem01_log
 http://example.org/file_rem01a_inp
+```
 
-## Why does this query return multiple types of files?
+### Why does this query return multiple types of files?
 
 This query retrieves all entities generated by experiments that used a given input file.
 
@@ -299,6 +248,7 @@ Because the ontology models full workflow provenance, outputs are not limited to
 - Intermediate artefacts that become inputs for subsequent steps (e.g. `.inp` files)
 
 This reflects the fact that molecular modelling workflows are iterative, where outputs from one stage often become inputs to the next.
+
 ---
 
 ## Notes
@@ -311,12 +261,7 @@ This reflects the fact that molecular modelling workflows are iterative, where o
 
 ## Next Steps
 
-* Modify the `.tsv` instance files to represent your own workflow
-* Regenerate the ontology using the same commands
+* Modify the `.tsv` instance files (or, better, your own real `.log`/`.inp` files and `process_gamess_directory()`) to represent your own workflow
+* Add your own `run_notes.tsv`/`doi_notes.tsv` entries as you review real results
+* Rebuild with `build_ontology_graph()` and re-validate with `validate_graph_shacl()` as your project grows
 * Extend templates to include additional concepts (e.g. new constraints or result types)
-
----
-
-## Scripting
-
-* explain here about the R code and give the working example ... and where it fits into the scheme above ...
