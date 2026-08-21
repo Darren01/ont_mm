@@ -47,6 +47,40 @@ files and want to build and query your own instantiated ontology from them.
 `examples/README.md` instead - that's a construction history, not a
 usage guide, which is why this section exists separately.)
 
+### Recommended folder structure, for more than one project
+
+If you're only ever going to have one project, don't worry about this -
+just follow the steps below. But if you have (or expect to have) more
+than one project sharing the same `gamess_functions`/`ont_mm` code, this
+structure has been used in practice and works well:
+
+```
+MolecularModelling/
+|-- ont/                    <- gamess_functions/ and ont_mm/ cloned once, here
+|   |-- gamess_functions/
+|   `-- ont_mm/
+|-- Project_A/
+|   |-- input/
+|   |-- output/
+|   |-- data/
+|   |-- ont/                <- Project_A's own instance TSVs, built graph, run_notes.tsv
+|   `-- README.txt
+|-- Project_B/
+|   |-- input/
+|   |-- output/
+|   |-- data/
+|   |-- ont/                <- completely separate from Project_A's
+|   `-- README.txt
+```
+
+The key idea: one shared `ont/` for the code (cloned once, `git pull`-ed
+as it updates), and a *separate* `ont/` folder inside each individual
+project for that project's own instance data, built graph, and
+`run_notes.tsv`. This mirrors the same shared-code-vs-project-data
+split `gamess_functions` and `ont_mm` themselves already follow -
+`my_code_dir` points at the shared folder once; `my_ontology_dir`
+changes per project.
+
 ### 1. Get the code
 
 Two genuinely separate options - pick one and use it consistently for
@@ -495,12 +529,23 @@ source_github("gamess_functions", "R/sparql_to_file.R")   # defined in Step 1
 # whole graph: your actual experiments and results, but also every
 # class/property in the merged ontology schema itself (they're all one
 # graph). That's expected, not a bug - it's just not the useful
-# starting query. For that, see gamess_functions/query_your_ontology.R,
-# whose first example filters down to just your own experiments by type.
+# starting query. For that, see
+# gamess_functions/examples/query_your_ontology.R, whose first example
+# filters down to just your own experiments by type.
 sparql_query(
   graph_file = my_graph_file,
   query = "SELECT ?exp ?type WHERE { ?exp a ?type . }"
 )
+```
+
+Raw results show full URIs (e.g. `http://example.org/exp_rem01b`) -
+wrap any result in `shorten_uris()` for short, readable names instead
+(`exp_rem01b`); numbers and free text pass through untouched, only
+URIs get shortened:
+
+```r
+source_github("gamess_functions", "R/shorten_uris.R")
+print(shorten_uris(res))
 ```
 
 ### 5b. Building additional projects
@@ -941,22 +986,53 @@ ont_mm
 
 ## Current Status
 
-Early-stage but functional:
+**Stable and in active real-world use.** This has moved past "early
+prototype" - it's the working pipeline behind a real, ongoing
+computational chemistry project, not just a demonstration of the idea:
 
-* Core ontology structure defined
-* Term extraction pipeline implemented
-* Initial ontology modules created
-* Templates for experiments, constraints, and results
-* R scripts for generating structured data
-* Working end-to-end example
+* A complete, automated pipeline: `process_gamess_directory()` ->
+  `build_ontology_graph()` -> `validate_graph_shacl()`, each a single
+  function call
+* Real SHACL validation, with shapes tied to actual bugs found during
+  this project's own development, not theoretical examples
+* Your own review notes and literature references become part of the
+  graph itself (`run_notes.tsv`/`doi_notes.tsv`), linked in both
+  directions
+* Querying that scales to how comfortable you are with SPARQL - zero
+  SPARQL (`summarize_graph()`) through to a full tiered primer
+  (`gamess_functions/examples/query_your_ontology.R`)
+* Setup diagnostics (`check_robot_setup()`) that catch real, previously-hit
+  problems (wrong Java version, PATH issues) with a clear fix, not a
+  cryptic failure deep inside a build
+* Proven on more than the bundled demo - a real, independent project's
+  data, not just the 3-experiment example
+
+Now genuinely in **periodic review mode**: real bugs found through
+actual use get fixed as they surface, not on a schedule. If something
+looks wrong or unclear, it's worth raising - this isn't considered
+"finished and untouchable," just no longer under active, ground-up
+development.
 
 ## Future Work
 
-* Introduce SHACL validation for template checking
-* Expand ontology coverage
-* Improve provenance handling (edge cases)
-* Extend results modelling
-* Add more SPARQL queries for validation and analysis
+Deliberately short - most of what would once have been listed here is
+already built and proven (SHACL validation, in particular, used to be
+listed here as aspirational; it's real now).
+
+Genuinely still open:
+
+* `extract_electronic_energy()`'s `VibrationalAnalysis` extension (a
+  real, scoped gap, not yet needed by any project using this so far)
+* Temperature capture in the graph (needs a deliberate design decision
+  about `gc:MolecularSystem`, not a quick patch)
+* Improve support for Dunning and ECP basis sets
+
+**Anything larger belongs in its own project, not bolted onto this
+one.** A Shiny front end, or LinkML as a genuine alternative to
+`robot template` (worth comparing honestly, including where it falls
+short) - both real, worth doing eventually, and both big enough to
+deserve their own repo and their own attention, rather than becoming
+a permanent, half-finished feature branch of `ont_mm` itself.
 
 ## Long-term vision
 
