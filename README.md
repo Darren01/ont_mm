@@ -641,6 +641,52 @@ shouldn't need to do anything about this yourself, but if you ever
 call `shacl` directly rather than through this wrapper and it fails
 mysteriously, this is worth checking first.
 
+### If the default Java itself is too old, not just JAVA_HOME
+
+A different, separate problem from the one above - confirmed on a real
+Windows machine with multiple Java versions installed, where the
+system default was still Java 8: `shacl` will fail with something like
+
+```
+Exception in thread "main" java.lang.UnsupportedClassVersionError:
+shacl/shacl has been compiled by a more recent version of the Java
+Runtime (class file version 65.0), this version of the Java Runtime
+only recognizes class file versions up to 52.0
+```
+
+Clearing `JAVA_HOME` doesn't help here, because the *fallback* Java is
+also too old - there's no good Java for the fallback to find. Two
+things needed: a genuinely compatible Java has to actually exist on
+the machine (`check_robot_setup()`'s own scan finds these - it needs
+one too, for `robot` to work), and `validate_graph_shacl()` needs to
+be pointed at it directly via its `java_home` argument:
+
+```r
+check_robot_setup()   # if it reports Java 8 with no [OK] alternative,
+                       # you'll need to install a compatible one first
+
+result <- validate_graph_shacl(
+  graph_file  = my_graph_file,
+  shapes_file = file.path(my_code_dir, "ont_mm/shapes/gc_core_shapes.ttl"),
+  java_home   = "C:/Program Files/Eclipse Adoptium/jdk-21.0.12.8-hotspot"  # your own path
+)
+```
+
+Match the version to what the error actually asks for - the class file
+version number in the error tells you exactly which Java is needed
+(65 = Java 21, 61 = Java 17, 55 = Java 11); pointing at a *different*
+compatible-sounding version can still produce the same error again.
+
+**A genuinely Windows-specific finding, confirmed directly against
+Jena's own real source code, not assumed:** on Linux/Mac, setting
+`JAVA_HOME` is enough on its own, because the `shacl` script explicitly
+checks it. Windows' `shacl.bat` does **not** read `JAVA_HOME` at all -
+it calls bare `java`, relying entirely on `PATH`. Because of this,
+`java_home` above sets `PATH` as well as `JAVA_HOME`, so it works
+correctly either way - but if you ever set `JAVA_HOME` manually
+yourself outside this function on Windows, know that it won't do
+anything for `shacl.bat` specifically.
+
 ## 🚀 Quick Start (the bundled example)
 
 👉 **New here? Start with the working example:**
