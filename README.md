@@ -8,6 +8,7 @@ Once your GAMESS runs are built into a queryable graph, this is the
 payoff - no SPARQL required, one function call:
 
 ```r
+source("gamess_functions/R/sparql_to_file.R")   # summarize_graph() needs this internally
 source("gamess_functions/R/summarize_graph.R")
 summarize_graph("examples/ont/gc_core_full_20260802.ttl")
 ```
