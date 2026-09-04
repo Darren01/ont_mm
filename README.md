@@ -29,15 +29,28 @@ Constraints: 6
 This bundled example is a small, 3-experiment demo - genuinely 0
 annotations and 0 imaginary frequencies here, honestly reported rather
 than dressed up, since nobody's added review notes to it and nothing
-in it happens to be a non-minimum geometry. On a real, actively-used
-project, these same two lines are usually where the useful signal
-shows up: your own notes on what actually happened surfaced directly
-from the graph, and a flag for any geometry worth double-checking -
-both without writing a single SPARQL query. If you want more specific
-answers than that, `gamess_functions/examples/query_your_ontology.R`
-has a tiered path from copy-paste templates through to writing your
-own SPARQL, with a short primer built entirely from real lessons this
-project actually hit along the way.
+in it happens to be a non-minimum geometry.
+
+On a real, actively-used project, these same two lines carry real
+weight. The annotations aren't just labels - they're your own record
+of the actual scientific reasoning as a project develops: why a run
+failed and what fixed it, a control calculation that ruled out one
+explanation in favour of another, confirmation that a stationary point
+really is the transition state it was meant to be. All of that,
+surfaced directly from the graph itself alongside the calculations it
+describes, with no separate lab notebook to keep in sync and no SPARQL
+required. The imaginary-frequency count does its own quieter but
+equally real job - a one-line sanity check across every result you
+have, flagging anything that isn't the minimum (or, for a transition
+state search, the single expected saddle point) it's supposed to be,
+before you build an entire analysis on top of a geometry that never
+actually converged the way you assumed.
+
+If you want more specific answers than that,
+`gamess_functions/examples/query_your_ontology.R` has a tiered path
+from copy-paste templates through to writing your own SPARQL, with a
+short primer built entirely from real lessons this project actually
+hit along the way.
 
 ## 🧪 Using This With Your Own Data
 
@@ -359,19 +372,19 @@ graph. That's the next step.
 ### 3b. Optional: add your own review notes
 
 Once you've actually looked at some results and formed an opinion -
-"this run's constraints broke the geometry," "started from the hydrate
-with a view to stretching a bond" - that's exactly the kind of thing
-worth recording *in* the ontology, not just in your own head or a
-separate notes file. This is a real, existing part of the pipeline,
-not a suggestion for later.
+"this run's constraints broke the geometry," "converged to a
+saddle point instead of the intended minimum" - that's exactly the
+kind of thing worth recording *in* the ontology, not just in your own
+head or a separate notes file. This is a real, existing part of the
+pipeline, not a suggestion for later.
 
 Keep a plain `run_notes.tsv` file (tab-separated, `filename<TAB>your
 comment`) somewhere in your project - e.g. alongside your other `ont/`
 files:
 
 ```
-caa002b.log	initial runs where 8,3 distance at 2A was too quick and broke up the molecule
-caa004a.log	starting from the hydrate with a view to stretching one of the CO bonds
+run003b.log	constraint distance was too aggressive, geometry distorted
+run004a.log	starting geometry for the next scan in this series
 ```
 
 **Optional third field**: if a run was based on, or is being compared
@@ -379,7 +392,7 @@ against, a specific paper, add its DOI (pipe-separated for more than
 one) as a third tab-separated field:
 
 ```
-caa004a.log	starting from the hydrate with a view to stretching one of the CO bonds	10.1021/ja00249a034
+run004a.log	starting geometry for the next scan in this series	10.1021/ja00249a034
 ```
 
 This gets written as a real `dcterms:relation` to the paper's own
