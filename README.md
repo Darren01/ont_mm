@@ -2,6 +2,15 @@
 
 A domain ontology for representing and structuring molecular modelling workflows, with a focus on **traceability**, **reproducibility**, and **data integration**.
 
+**This project is one half of a pair.** [gamess_functions](https://github.com/Darren01/gamess_functions)
+does the actual work of reading GAMESS (US) output and turning it into
+the structured data this ontology represents - extraction, SHACL
+validation, and every querying tool from zero-SPARQL through to
+writing your own, all live there. `ont_mm` is the schema and the
+build/query orchestration around it; `gamess_functions` is what you'll
+actually be sourcing constantly to make any of this work. Nothing
+below (starting with the very first code example) runs without it.
+
 ## 🔍 What you actually get
 
 Once your GAMESS runs are built into a queryable graph, this is the
