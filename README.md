@@ -370,6 +370,40 @@ result <- process_gamess_directory(
 This writes instance TSV files - it does not yet produce a queryable
 graph. That's the next step.
 
+**A real, twice-confirmed gotcha, worth knowing before it costs you an
+afternoon of confused debugging:** `process_gamess_directory()`
+deliberately skips any experiment it finds already present in the
+relevant `*_template_instances.tsv` file, rather than reprocessing it
+- this is what makes it safe and fast to re-run as you add new data
+over time, without endlessly reprocessing everything from scratch.
+
+The real cost of that convenience: if you `git pull` a `gamess_functions`
+update containing a genuine bug fix (e.g. a writer function that used
+to write bad data for some experiments), re-running this step will
+**not** automatically fix those already-processed experiments - the
+old, wrong rows are already "present," so they're silently kept as-is,
+not regenerated with the corrected code. This has genuinely happened
+more than once, surfacing later as a confusing SHACL validation
+failure on data that was built before a fix existed, with no obvious
+connection between the two events by the time it's noticed.
+
+If you've just pulled a `gamess_functions` update and aren't sure
+whether it affects your already-built instance data, the safe fix is
+to delete the specific `*_template_instances.tsv` file the fix relates
+to (check the fix's own commit message/changelog for which writer it
+touched) and re-run this step - it will regenerate every experiment
+fresh, not just new ones, since none of them are "already present"
+anymore:
+
+```r
+file.remove(file.path(my_ontology_dir, "constraint_template_instances.tsv"))
+# then re-run process_gamess_directory() as above
+```
+
+When genuinely unsure which file(s) a given update might affect,
+deleting all of them and doing a full, fresh rebuild is always safe -
+just slower, not wrong.
+
 ### 3b. Optional: add your own review notes
 
 Once you've actually looked at some results and formed an opinion -
