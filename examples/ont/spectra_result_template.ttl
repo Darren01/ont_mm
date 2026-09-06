@@ -7,7 +7,7 @@
 @base <http://purl.org/gc/core> .
 
 <http://purl.org/gc/core> rdf:type owl:Ontology ;
-                           owl:versionIRI <http://purl.org/gc/core/2026-07-24/gc_core.ttl> ;
+                           owl:versionIRI <http://purl.org/gc/core/2026-08-01b/gc_core.ttl> ;
                            <http://creativecommons.org/ns#license> <http://creativecommons.org/licenses/by/3.0/> ;
                            <http://purl.org/dc/elements/1.1/created> "2015-03-04" ;
                            <http://purl.org/dc/elements/1.1/description> """This ontology aims at complete description of typical Computational Chemistry experiment.
@@ -4510,6 +4510,10 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                                               rdfs:label "Temperature Unit"@en .
 
 
+###  http://qudt.org/schema/qudt/Unit
+<http://qudt.org/schema/qudt/Unit> rdf:type owl:Class .
+
+
 ###  http://www.w3.org/2000/01/rdf-schema#Class
 rdfs:Class rdf:type owl:Class .
 
@@ -4774,6 +4778,17 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://qudt.org/vocab/unit/KilogramPerMole
 
+###  http://purl.org/gc/ppm
+<http://purl.org/gc/ppm> rdf:type owl:NamedIndividual ,
+                                  <http://qudt.org/schema/qudt/Unit> ;
+                         owl:sameAs <http://qudt.org/vocab/unit/PPM> ;
+                         rdfs:comment "Parts per million - a dimensionless ratio unit, used here for NMR shielding and chemical shift values. Corresponds to the real QUDT unit http://qudt.org/vocab/unit/PPM (typed qudt:Unit under quantitykind:DimensionlessRatio, alongside PERCENT/PPB/PPT)."@en ;
+                         rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                         rdfs:label "ppm"@en .
+
+
+###  http://qudt.org/vocab/unit/PPM
+
 ###  http://purl.org/gc/Mm+
 <http://purl.org/gc/Mm+> rdf:type owl:NamedIndividual ,
                                   <http://purl.org/gc/ForceField> ;
@@ -4806,6 +4821,10 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://qudt.org/vocab/unit/KilogramPerMole
 <http://qudt.org/vocab/unit/KilogramPerMole> rdf:type owl:NamedIndividual .
+
+
+###  http://qudt.org/vocab/unit/PPM
+<http://qudt.org/vocab/unit/PPM> rdf:type owl:NamedIndividual .
 
 
 ###  http://qudt.org/vocab/unit/kelvin
