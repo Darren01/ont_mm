@@ -1,0 +1,63 @@
+! C2H7O3Cl | caa005bTSb-hess: HESSIAN-ONLY precursor at wB97X-D/6-31G(d,p)/PCM(water)
+!
+! Step 1 of 2 for the TS refinement (caa005bTSb). Attempts to run
+! RUNTYP=SADPOINT directly failed repeatedly: GAMESS's default HESS
+! source for SADPOINT is READ (requiring an explicit $HESS group we don't
+! have), and an explicit HESS=GUESS override, despite being confirmed
+! valid syntax in docs-input.txt, did not take effect for reasons not
+! fully understood (possibly a parser quirk specific to this keyword at a
+! line-continuation boundary). Rather than keep guessing at $STATPT
+! syntax, this switches strategy entirely: compute a genuine Hessian
+! FIRST via a standalone RUNTYP=HESSIAN calculation (this file), then feed
+! the result into the actual saddle-point search as a real $HESS block
+! (matching exactly what the original, successful caa005bTSa.log did).
+!
+! RUNTYP=HESSIAN does not use $STATPT or $ZMAT at all (those groups are
+! documented as only applying to RUNTYP=OPTIMIZE/SADPOINT) -- both removed
+! here. $FORCE alone controls the Hessian computation (METHOD=SEMINUM,
+! since wB97X-D has no analytic Hessian) and automatically punches the
+! result to the .dat file in $HESS format at the end.
+!
+! Starting geometry: the same converged saddle point from caa005bTSa.log
+! used in caa005bTSb.inp. Settings otherwise identical: wB97X-D,
+! PCM(water), native GBASIS=N31 NGAUSS=6 NDFUNC=1 NPFUNC=1 (6-31G(d,p)).
+!
+! Next step once this completes: extract the punched $HESS block from
+! caa005bTSb-hess.dat and insert it into a corrected caa005bTSb.inp with
+! $STATPT HESS=READ (GAMESS's own default for SADPOINT), then run the
+! actual saddle-point search.
+
+ $CONTRL SCFTYP=RHF RUNTYP=HESSIAN DFTTYP=wB97X-D
+         COORD=UNIQUE MAXIT=200 NOSYM=1
+ $END
+ $GUESS GUESS=HUCKEL $END
+ $BASIS GBASIS=N31 NGAUSS=6 NDFUNC=1 NPFUNC=1 $END
+ $SCF CONV=1.0D-6
+     SOSCF=.T.
+     DAMP=.F.
+     SHIFT=.T.
+     DIRSCF=.TRUE.
+ $END
+ $FORCE METHOD=SEMINUM PROJCT=.t. $END
+ $PCM SOLVNT=WATER $END
+ $SYSTEM MWORDS=100 MEMDDI=200 $END
+
+ $DATA
+Chloroacetaldehyde hydrate and water -- TS, re-search at 6-31G(d,p)
+C1
+Cl   17.0   3.0485156339   0.6359914336   0.4479334623
+C     6.0   2.7283930670   0.1844170530  -1.3578262932
+C     6.0   3.4305941052   1.2133686906  -2.2310146927
+O     8.0   2.8759984084   2.4386443888  -2.2890745617
+H     1.0   1.6476581233   0.2160777473  -1.4770758486
+H     1.0   3.1393555761  -0.8142564019  -1.4772491343
+O     8.0   3.3273616097   0.5061546913  -3.7498664785
+O     8.0   3.5488300467   2.7040686634  -4.5971311390
+H     1.0   3.0892307132   3.1473730080  -5.3176484842
+H     1.0   3.4508591533   1.5266457457  -4.4436385478
+H     1.0   2.4715762551   0.0765839813  -3.8933619493
+H     1.0   4.5184475016   1.1661162744  -2.1473717206
+H     1.0   3.2232923936   2.9247162047  -3.6003337000
+ $END
+
+

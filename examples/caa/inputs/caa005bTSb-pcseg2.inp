@@ -1,0 +1,47 @@
+! C2H7O3Cl | caa005bTSb-pcseg2: SINGLE POINT at wB97X-D/PCseg-2/PCM(water)
+!
+! Final step of the 3-point IRC refinement (caa007a/caa007b/caa005bTSb).
+! Single-point energy (RUNTYP=ENERGY, no optimization) at the confirmed
+! wB97X-D/6-31G(d,p)/PCM(water) transition state, geometry taken from
+! caa005bTSb.log ("***** SADDLE POINT LOCATED *****", EXECUTION
+! TERMINATED NORMALLY, exactly one imaginary frequency (1195.01i) --
+! confirmed genuine first-order saddle point).
+!
+! Native GBASIS=PCSEG-2 (Jensen's Polarization Consistent family, ~TZ2P,
+! roughly cc-pVTZ-equivalent) -- confirmed to sidestep entirely the
+! DGEMM crash affecting custom BASNAM/EXTFIL bases on this ARCHER2 build
+! (see gamess-dgemm-bug-report.md), and confirmed to give a chemically
+! sensible energy where custom def2-TZVPP did not (caa005bIRC-pcseg2-test).
+! ISPHER=1 is mandatory for this basis family (confirmed in docs-input.txt).
+
+ $CONTRL SCFTYP=RHF RUNTYP=ENERGY DFTTYP=wB97X-D
+         COORD=UNIQUE MAXIT=200 NOSYM=1 ISPHER=1
+ $END
+ $GUESS GUESS=HUCKEL $END
+ $BASIS GBASIS=PCSEG-2 $END
+ $SCF CONV=1.0D-6
+     SOSCF=.T.
+     DAMP=.F.
+     SHIFT=.T.
+     DIRSCF=.TRUE.
+ $END
+ $PCM SOLVNT=WATER $END
+ $SYSTEM MWORDS=100 MEMDDI=200 $END
+
+ $DATA
+Chloroacetaldehyde hydrate and water -- TS, single point at PCseg-2
+C1
+Cl   17.0   3.0032695820   0.6528173151   0.3662518282
+C     6.0   2.7458705161   0.2067502762  -1.3595724241
+C     6.0   3.4183757883   1.2370511418  -2.2598194506
+O     8.0   2.8674925288   2.4084763237  -2.3215671814
+H     1.0   1.6684070900   0.2035644324  -1.5301077997
+H     1.0   3.1645366356  -0.7885656751  -1.5006989093
+O     8.0   3.3366102546   0.5051469784  -3.7291980958
+O     8.0   3.6237992544   2.6965349688  -4.5947108697
+H     1.0   2.9463518337   3.0255919018  -5.1978476573
+H     1.0   3.4999246932   1.4970656118  -4.3798292955
+H     1.0   2.4191175375   0.2317335186  -3.8770777831
+H     1.0   4.5170400337   1.1886028050  -2.1675936810
+H     1.0   3.2893168391   2.8611318817  -3.5818877683
+ $END

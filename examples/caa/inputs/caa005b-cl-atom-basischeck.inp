@@ -1,0 +1,134 @@
+! Cl ATOM | ISOLATED BASIS SANITY CHECK
+!
+! ============================================================
+! Why this file exists
+! ============================================================
+! A forum reply questioned the ~274 Hartree energy difference we found
+! between our wB97X-D/def2-TZVPP/PCM(water) molecular energy (-491.67) and
+! the energy reported in the original (lower-level) IRC source file
+! (-765.88) at the same geometry. Re-checking this:
+! - The arithmetic is correct (-765.8776395 - (-491.6712565) = -274.2).
+! - The CML file's molecule was confirmed identical: 13 atoms, Cl/C/C/O/H/H/
+!   O/O/H/H/H/H/H, same composition, same electron count (60).
+! - A back-of-envelope sum of literature non-relativistic atomic HF energies
+!   for this composition (Cl approx -459.5, C approx -37.7 x2, O approx
+!   -74.8 x3, H approx -0.5 x7) gives approximately -763 Hartree for the
+!   separated atoms -- very close to the CML's -765.88, and NOT close to
+!   our own -491.67.
+! - This is NOT explained by an accidental ECP: GAMESS explicitly reports
+!   NUMBER OF ELECTRONS = 60 in every one of our runs (an ECP replacing
+!   Cl's Ne core would show a reduced count, e.g. 50), and our own $clbas
+!   block has an appropriately tight core exponent (69507.99) for Cl's 1s
+!   shell, consistent with genuine all-electron treatment.
+! - Also confirmed NOT a "forgot to add nuclear repulsion" bookkeeping
+!   error: THE NUCLEAR REPULSION ENERGY IS 292.6267568387 is a SEPARATELY
+!   printed quantity, and GAMESS's "FINAL ... ENERGY IS" line already
+!   includes it by standard convention (self-consistent: a very negative
+!   electronic energy plus positive nuclear repulsion gives the reported
+!   total, as expected).
+!
+! This points at something specific to how our own basis/setup describes
+! chlorine, since Cl's atomic energy alone (~-459.5) is close in magnitude
+! to a large fraction of the unexplained gap. Rather than keep reasoning
+! from recalled reference numbers, this file tests it directly and
+! empirically: an isolated Cl atom, gas phase, no PCM, no molecule, no
+! optimizer -- using our EXACT $clbas block (copied verbatim from
+! caa005bIRCCML1stdef2TZVPPe.inp, not retyped, to rule out a new
+! transcription error). If our basis/setup is fine, the reported energy
+! should land close to the literature non-relativistic reference
+! (approximately -459.5 Hartree for HF; DFT should be in a similar overall
+! ballpark, not off by hundreds of Hartree). If it comes out dramatically
+! different, that pinpoints the problem directly and unambiguously.
+!
+! Cl ground state is 2P (one unpaired electron in the 3p shell), so this
+! uses SCFTYP=UHF (doublet, MULT=2). Note: ROHF was tried first but requires
+! explicit NSETO/NPAIR orbital-coupling input for chlorine's genuinely
+! degenerate 3p5 open shell (5 electrons across 3 degenerate p-orbitals) --
+! plain MULT=2 alone isn't enough information for ROHF's coupling scheme,
+! and GAMESS aborted with "DIMENSIONS EXCEEDED". UHF sidesteps this (fills
+! alpha/beta orbitals independently, no coupling setup needed) and is fine
+! for this purpose -- a rough energy-magnitude sanity check, not a
+! symmetry-pure atomic term energy.
+
+ $CONTRL SCFTYP=UHF RUNTYP=ENERGY DFTTYP=wB97X-D
+         MULT=2 ICHARG=0 NOSYM=1 MAXIT=200
+ $END
+ $GUESS GUESS=HUCKEL $END
+ $BASIS BASNAM(1)=clbas $END
+ $SCF CONV=1.0D-6
+     SOSCF=.T.
+     DAMP=.F.
+     SHIFT=.T.
+     DIRSCF=.TRUE.
+ $END
+ $SYSTEM MWORDS=20 MEMDDI=20 $END
+
+ $DATA
+Isolated chlorine atom -- def2-TZVPP basis sanity check
+C1
+Cl   17.0   0.0   0.0   0.0
+ $END
+
+
+! ============================================================
+! def2-TZVPP CHLORINE BASIS (copied verbatim from
+! caa005bIRCCML1stdef2TZVPPe.inp -- byte-identical, not retyped)
+! ============================================================
+
+ $clbas
+S   7
+1     69507.9909450              0.54314897497E-03
+2     10426.1568800              0.41990463961E-02
+3      2373.2334061              0.21592141679E-01
+4       671.56420071              0.84598850094E-01
+5       218.41999790              0.24757249724
+6        77.572249714              0.47016930228
+7        28.888815277              0.37436370716
+
+S   3
+1       127.10527185              0.25182166603E-01
+2        39.339582961              0.10786112456
+3         7.6740679989            -0.27408821574
+
+S   2
+1         3.8745627630              1.3213875014
+2         1.8385832573              0.68636955368
+
+S   1
+1         0.50229057542             1.0000000
+
+S   1
+1         0.17962723420             1.0000000
+
+P   5
+1       666.50423284               0.23632663836E-02
+2       157.64241690               0.18879300374E-01
+3        50.262520978              0.87206341273E-01
+4        18.536078105              0.25285612970
+5         7.2940532777              0.43507154820
+
+P   1
+1         2.9433248995               0.35026513165
+
+P   1
+1         1.0404970818               1.0000000
+
+P   1
+1         0.38456415080               1.0000000
+
+P   1
+1         0.13069642732               1.0000000
+
+D   1
+1         4.61000000                  1.0000000
+
+D   1
+1         1.01100000                  1.0000000
+
+D   1
+1         0.339000000                 1.0000000
+
+F   1
+1         0.706000000                 1.0000000
+
+ $end

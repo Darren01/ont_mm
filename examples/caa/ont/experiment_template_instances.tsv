@@ -1,0 +1,308 @@
+ID	Label	Type	hasInputFile	hasOutputFile	wasGeneratedBy	fileURL
+ID	LABEL	TYPE	I ex:hasInputFile	I ex:hasOutputFile SPLIT=|	I prov:wasGeneratedBy	A ex:fileURL
+ex:avogadro_build	Structure built in Avogadro	prov:Activity				
+ex:exp_caa001	Geometry optimisation caa001	gc:GeometryOptimization	ex:file_caa001_inp	ex:file_caa001_dat|ex:file_caa001_log		
+ex:file_caa001_inp	Input file caa001	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa001.inp
+ex:file_caa001_dat	Output data caa001	ex:DataFile			ex:exp_caa001	
+ex:file_caa001_log	Output log caa001	ex:LogFile			ex:exp_caa001	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa001.log
+						
+ex:exp_caa001a	Vibrational analysis caa001a	gc:VibrationalAnalysis	ex:file_caa001a_inp	ex:file_caa001a_dat|ex:file_caa001a_log		
+ex:file_caa001a_inp	Input file caa001a	ex:InputFile			ex:exp_caa001	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa001a.inp
+ex:file_caa001a_dat	Output data caa001a	ex:DataFile			ex:exp_caa001a	
+ex:file_caa001a_log	Output log caa001a	ex:LogFile			ex:exp_caa001a	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa001a.log
+						
+ex:exp_caa001b	Vibrational analysis caa001b	gc:VibrationalAnalysis	ex:file_caa001b_inp	ex:file_caa001b_dat|ex:file_caa001b_log		
+ex:file_caa001b_inp	Input file caa001b	ex:InputFile			ex:exp_caa001a	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa001b.inp
+ex:file_caa001b_dat	Output data caa001b	ex:DataFile			ex:exp_caa001b	
+ex:file_caa001b_log	Output log caa001b	ex:LogFile			ex:exp_caa001b	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa001b.log
+						
+ex:exp_caa002	Vibrational analysis caa002	gc:VibrationalAnalysis	ex:file_caa002_inp	ex:file_caa002_dat|ex:file_caa002_log		
+ex:file_caa002_inp	Input file caa002	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa002.inp
+ex:file_caa002_dat	Output data caa002	ex:DataFile			ex:exp_caa002	
+ex:file_caa002_log	Output log caa002	ex:LogFile			ex:exp_caa002	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa002.log
+						
+ex:exp_caa002a	Vibrational analysis caa002a	gc:VibrationalAnalysis	ex:file_caa002a_inp	ex:file_caa002a_dat|ex:file_caa002a_log		
+ex:file_caa002a_inp	Input file caa002a	ex:InputFile			ex:exp_caa002	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa002a.inp
+ex:file_caa002a_dat	Output data caa002a	ex:DataFile			ex:exp_caa002a	
+ex:file_caa002a_log	Output log caa002a	ex:LogFile			ex:exp_caa002a	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa002a.log
+						
+ex:exp_caa002b	Vibrational analysis caa002b	gc:VibrationalAnalysis	ex:file_caa002b_inp	ex:file_caa002b_dat|ex:file_caa002b_log		
+ex:file_caa002b_inp	Input file caa002b	ex:InputFile			ex:exp_caa002a	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa002b.inp
+ex:file_caa002b_dat	Output data caa002b	ex:DataFile			ex:exp_caa002b	
+ex:file_caa002b_log	Output log caa002b	ex:LogFile			ex:exp_caa002b	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa002b.log
+						
+ex:exp_caa002c	Vibrational analysis caa002c	gc:VibrationalAnalysis	ex:file_caa002c_inp	ex:file_caa002c_dat|ex:file_caa002c_log		
+ex:file_caa002c_inp	Input file caa002c	ex:InputFile			ex:exp_caa002b	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa002c.inp
+ex:file_caa002c_dat	Output data caa002c	ex:DataFile			ex:exp_caa002c	
+ex:file_caa002c_log	Output log caa002c	ex:LogFile			ex:exp_caa002c	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa002c.log
+						
+ex:exp_caa002d	Vibrational analysis caa002d	gc:VibrationalAnalysis	ex:file_caa002d_inp	ex:file_caa002d_dat|ex:file_caa002d_log		
+ex:file_caa002d_inp	Input file caa002d	ex:InputFile			ex:exp_caa002c	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa002d.inp
+ex:file_caa002d_dat	Output data caa002d	ex:DataFile			ex:exp_caa002d	
+ex:file_caa002d_log	Output log caa002d	ex:LogFile			ex:exp_caa002d	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa002d.log
+						
+ex:exp_caa002e	Vibrational analysis caa002e	gc:VibrationalAnalysis	ex:file_caa002e_inp	ex:file_caa002e_dat|ex:file_caa002e_log		
+ex:file_caa002e_inp	Input file caa002e	ex:InputFile			ex:exp_caa002d	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa002e.inp
+ex:file_caa002e_dat	Output data caa002e	ex:DataFile			ex:exp_caa002e	
+ex:file_caa002e_log	Output log caa002e	ex:LogFile			ex:exp_caa002e	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa002e.log
+						
+ex:exp_caa003a	Vibrational analysis caa003a	gc:VibrationalAnalysis	ex:file_caa003a_inp	ex:file_caa003a_dat|ex:file_caa003a_log		
+ex:file_caa003a_inp	Input file caa003a	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa003a.inp
+ex:file_caa003a_dat	Output data caa003a	ex:DataFile			ex:exp_caa003a	
+ex:file_caa003a_log	Output log caa003a	ex:LogFile			ex:exp_caa003a	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa003a.log
+						
+ex:exp_caa003b	Vibrational analysis caa003b	gc:VibrationalAnalysis	ex:file_caa003b_inp	ex:file_caa003b_dat|ex:file_caa003b_log		
+ex:file_caa003b_inp	Input file caa003b	ex:InputFile			ex:exp_caa003a	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa003b.inp
+ex:file_caa003b_dat	Output data caa003b	ex:DataFile			ex:exp_caa003b	
+ex:file_caa003b_log	Output log caa003b	ex:LogFile			ex:exp_caa003b	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa003b.log
+						
+ex:exp_caa003c	Vibrational analysis caa003c	gc:VibrationalAnalysis	ex:file_caa003c_inp	ex:file_caa003c_dat|ex:file_caa003c_log		
+ex:file_caa003c_inp	Input file caa003c	ex:InputFile			ex:exp_caa003b	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa003c.inp
+ex:file_caa003c_dat	Output data caa003c	ex:DataFile			ex:exp_caa003c	
+ex:file_caa003c_log	Output log caa003c	ex:LogFile			ex:exp_caa003c	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa003c.log
+						
+ex:exp_caa003d	Vibrational analysis caa003d	gc:VibrationalAnalysis	ex:file_caa003d_inp	ex:file_caa003d_dat|ex:file_caa003d_log		
+ex:file_caa003d_inp	Input file caa003d	ex:InputFile			ex:exp_caa003c	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa003d.inp
+ex:file_caa003d_dat	Output data caa003d	ex:DataFile			ex:exp_caa003d	
+ex:file_caa003d_log	Output log caa003d	ex:LogFile			ex:exp_caa003d	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa003d.log
+						
+ex:exp_caa004a	Vibrational analysis caa004a	gc:VibrationalAnalysis	ex:file_caa004a_inp	ex:file_caa004a_dat|ex:file_caa004a_log		
+ex:file_caa004a_inp	Input file caa004a	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa004a.inp
+ex:file_caa004a_dat	Output data caa004a	ex:DataFile			ex:exp_caa004a	
+ex:file_caa004a_log	Output log caa004a	ex:LogFile			ex:exp_caa004a	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004a.log
+						
+ex:exp_caa004b	Vibrational analysis caa004b	gc:VibrationalAnalysis	ex:file_caa004b_inp	ex:file_caa004b_dat|ex:file_caa004b_log		
+ex:file_caa004b_inp	Input file caa004b	ex:InputFile			ex:exp_caa004a	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa004b.inp
+ex:file_caa004b_dat	Output data caa004b	ex:DataFile			ex:exp_caa004b	
+ex:file_caa004b_log	Output log caa004b	ex:LogFile			ex:exp_caa004b	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004b.log
+						
+ex:exp_caa004c	Vibrational analysis caa004c	gc:VibrationalAnalysis	ex:file_caa004c_inp	ex:file_caa004c_dat|ex:file_caa004c_log		
+ex:file_caa004c_inp	Input file caa004c	ex:InputFile			ex:exp_caa004b	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa004c.inp
+ex:file_caa004c_dat	Output data caa004c	ex:DataFile			ex:exp_caa004c	
+ex:file_caa004c_log	Output log caa004c	ex:LogFile			ex:exp_caa004c	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004c.log
+						
+ex:exp_caa004d	Vibrational analysis caa004d	gc:VibrationalAnalysis	ex:file_caa004d_inp	ex:file_caa004d_dat|ex:file_caa004d_log		
+ex:file_caa004d_inp	Input file caa004d	ex:InputFile			ex:exp_caa004c	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa004d.inp
+ex:file_caa004d_dat	Output data caa004d	ex:DataFile			ex:exp_caa004d	
+ex:file_caa004d_log	Output log caa004d	ex:LogFile			ex:exp_caa004d	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004d.log
+						
+ex:exp_caa004e	Vibrational analysis caa004e	gc:VibrationalAnalysis	ex:file_caa004e_inp	ex:file_caa004e_dat|ex:file_caa004e_log		
+ex:file_caa004e_inp	Input file caa004e	ex:InputFile			ex:exp_caa004d	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa004e.inp
+ex:file_caa004e_dat	Output data caa004e	ex:DataFile			ex:exp_caa004e	
+ex:file_caa004e_log	Output log caa004e	ex:LogFile			ex:exp_caa004e	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004e.log
+						
+ex:exp_caa004f	Vibrational analysis caa004f	gc:VibrationalAnalysis	ex:file_caa004f_inp	ex:file_caa004f_dat|ex:file_caa004f_log		
+ex:file_caa004f_inp	Input file caa004f	ex:InputFile			ex:exp_caa004e	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa004f.inp
+ex:file_caa004f_dat	Output data caa004f	ex:DataFile			ex:exp_caa004f	
+ex:file_caa004f_log	Output log caa004f	ex:LogFile			ex:exp_caa004f	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004f.log
+						
+ex:exp_caa004g	Vibrational analysis caa004g	gc:VibrationalAnalysis	ex:file_caa004g_inp	ex:file_caa004g_dat|ex:file_caa004g_log		
+ex:file_caa004g_inp	Input file caa004g	ex:InputFile			ex:exp_caa004f	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa004g.inp
+ex:file_caa004g_dat	Output data caa004g	ex:DataFile			ex:exp_caa004g	
+ex:file_caa004g_log	Output log caa004g	ex:LogFile			ex:exp_caa004g	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004g.log
+						
+ex:exp_caa004h	Vibrational analysis caa004h	gc:VibrationalAnalysis	ex:file_caa004h_inp	ex:file_caa004h_dat|ex:file_caa004h_log		
+ex:file_caa004h_inp	Input file caa004h	ex:InputFile			ex:exp_caa004g	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa004h.inp
+ex:file_caa004h_dat	Output data caa004h	ex:DataFile			ex:exp_caa004h	
+ex:file_caa004h_log	Output log caa004h	ex:LogFile			ex:exp_caa004h	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004h.log
+						
+ex:exp_caa004j	Vibrational analysis caa004j	gc:VibrationalAnalysis	ex:file_caa004j_inp	ex:file_caa004j_dat|ex:file_caa004j_log		
+ex:file_caa004j_inp	Input file caa004j	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa004j.inp
+ex:file_caa004j_dat	Output data caa004j	ex:DataFile			ex:exp_caa004j	
+ex:file_caa004j_log	Output log caa004j	ex:LogFile			ex:exp_caa004j	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004j.log
+						
+ex:exp_caa004k	Vibrational analysis caa004k	gc:VibrationalAnalysis	ex:file_caa004k_inp	ex:file_caa004k_dat|ex:file_caa004k_log		
+ex:file_caa004k_inp	Input file caa004k	ex:InputFile			ex:exp_caa004j	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa004k.inp
+ex:file_caa004k_dat	Output data caa004k	ex:DataFile			ex:exp_caa004k	
+ex:file_caa004k_log	Output log caa004k	ex:LogFile			ex:exp_caa004k	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004k.log
+						
+ex:exp_caa004l	Vibrational analysis caa004l	gc:VibrationalAnalysis	ex:file_caa004l_inp	ex:file_caa004l_dat|ex:file_caa004l_log		
+ex:file_caa004l_inp	Input file caa004l	ex:InputFile			ex:exp_caa004k	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa004l.inp
+ex:file_caa004l_dat	Output data caa004l	ex:DataFile			ex:exp_caa004l	
+ex:file_caa004l_log	Output log caa004l	ex:LogFile			ex:exp_caa004l	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004l.log
+						
+ex:exp_caa004m	Vibrational analysis caa004m	gc:VibrationalAnalysis	ex:file_caa004m_inp	ex:file_caa004m_dat|ex:file_caa004m_log		
+ex:file_caa004m_inp	Input file caa004m	ex:InputFile			ex:exp_caa004l	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa004m.inp
+ex:file_caa004m_dat	Output data caa004m	ex:DataFile			ex:exp_caa004m	
+ex:file_caa004m_log	Output log caa004m	ex:LogFile			ex:exp_caa004m	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004m.log
+						
+ex:exp_caa005a	Vibrational analysis caa005a	gc:VibrationalAnalysis	ex:file_caa005a_inp	ex:file_caa005a_dat|ex:file_caa005a_log		
+ex:file_caa005a_inp	Input file caa005a	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005a.inp
+ex:file_caa005a_dat	Output data caa005a	ex:DataFile			ex:exp_caa005a	
+ex:file_caa005a_log	Output log caa005a	ex:LogFile			ex:exp_caa005a	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005a.log
+						
+ex:exp_caa005b-cl-atom-basischeck	Single point caa005b-cl-atom-basischeck	gc:SinglePoint	ex:file_caa005b-cl-atom-basischeck_inp	ex:file_caa005b-cl-atom-basischeck_dat|ex:file_caa005b-cl-atom-basischeck_log		
+ex:file_caa005b-cl-atom-basischeck_inp	Input file caa005b-cl-atom-basischeck	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005b-cl-atom-basischeck.inp
+ex:file_caa005b-cl-atom-basischeck_dat	Output data caa005b-cl-atom-basischeck	ex:DataFile			ex:exp_caa005b-cl-atom-basischeck	
+ex:file_caa005b-cl-atom-basischeck_log	Output log caa005b-cl-atom-basischeck	ex:LogFile			ex:exp_caa005b-cl-atom-basischeck	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005b-cl-atom-basischeck.log
+						
+ex:exp_caa005b-cl-atom-extfil-test	Single point caa005b-cl-atom-extfil-test	gc:SinglePoint	ex:file_caa005b-cl-atom-extfil-test_inp	ex:file_caa005b-cl-atom-extfil-test_dat|ex:file_caa005b-cl-atom-extfil-test_log		
+ex:file_caa005b-cl-atom-extfil-test_inp	Input file caa005b-cl-atom-extfil-test	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005b-cl-atom-extfil-test.inp
+ex:file_caa005b-cl-atom-extfil-test_dat	Output data caa005b-cl-atom-extfil-test	ex:DataFile			ex:exp_caa005b-cl-atom-extfil-test	
+ex:file_caa005b-cl-atom-extfil-test_log	Output log caa005b-cl-atom-extfil-test	ex:LogFile			ex:exp_caa005b-cl-atom-extfil-test	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005b-cl-atom-extfil-test.log
+						
+ex:exp_caa005b	Vibrational analysis caa005b	gc:VibrationalAnalysis	ex:file_caa005b_inp	ex:file_caa005b_dat|ex:file_caa005b_log		
+ex:file_caa005b_inp	Input file caa005b	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005b.inp
+ex:file_caa005b_dat	Output data caa005b	ex:DataFile			ex:exp_caa005b	
+ex:file_caa005b_log	Output log caa005b	ex:LogFile			ex:exp_caa005b	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005b.log
+						
+ex:exp_caa005bIRC-def2svp-test	Vibrational analysis caa005bIRC-def2svp-test	gc:VibrationalAnalysis	ex:file_caa005bIRC-def2svp-test_inp	ex:file_caa005bIRC-def2svp-test_dat|ex:file_caa005bIRC-def2svp-test_log		
+ex:file_caa005bIRC-def2svp-test_inp	Input file caa005bIRC-def2svp-test	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRC-def2svp-test.inp
+ex:file_caa005bIRC-def2svp-test_dat	Output data caa005bIRC-def2svp-test	ex:DataFile			ex:exp_caa005bIRC-def2svp-test	
+ex:file_caa005bIRC-def2svp-test_log	Output log caa005bIRC-def2svp-test	ex:LogFile			ex:exp_caa005bIRC-def2svp-test	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRC-def2svp-test.log
+						
+ex:exp_caa005bIRC-pcseg2-test	Vibrational analysis caa005bIRC-pcseg2-test	gc:VibrationalAnalysis	ex:file_caa005bIRC-pcseg2-test_inp	ex:file_caa005bIRC-pcseg2-test_dat|ex:file_caa005bIRC-pcseg2-test_log		
+ex:file_caa005bIRC-pcseg2-test_inp	Input file caa005bIRC-pcseg2-test	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRC-pcseg2-test.inp
+ex:file_caa005bIRC-pcseg2-test_dat	Output data caa005bIRC-pcseg2-test	ex:DataFile			ex:exp_caa005bIRC-pcseg2-test	
+ex:file_caa005bIRC-pcseg2-test_log	Output log caa005bIRC-pcseg2-test	ex:LogFile			ex:exp_caa005bIRC-pcseg2-test	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRC-pcseg2-test.log
+						
+ex:exp_caa005bIRC-trimmedTZVPP-test	Vibrational analysis caa005bIRC-trimmedTZVPP-test	gc:VibrationalAnalysis	ex:file_caa005bIRC-trimmedTZVPP-test_inp	ex:file_caa005bIRC-trimmedTZVPP-test_dat|ex:file_caa005bIRC-trimmedTZVPP-test_log		
+ex:file_caa005bIRC-trimmedTZVPP-test_inp	Input file caa005bIRC-trimmedTZVPP-test	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRC-trimmedTZVPP-test.inp
+ex:file_caa005bIRC-trimmedTZVPP-test_dat	Output data caa005bIRC-trimmedTZVPP-test	ex:DataFile			ex:exp_caa005bIRC-trimmedTZVPP-test	
+ex:file_caa005bIRC-trimmedTZVPP-test_log	Output log caa005bIRC-trimmedTZVPP-test	ex:LogFile			ex:exp_caa005bIRC-trimmedTZVPP-test	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRC-trimmedTZVPP-test.log
+						
+ex:exp_caa005bIRCCML_last	Vibrational analysis caa005bIRCCML_last	gc:VibrationalAnalysis	ex:file_caa005bIRCCML_last_inp	ex:file_caa005bIRCCML_last_dat|ex:file_caa005bIRCCML_last_log		
+ex:file_caa005bIRCCML_last_inp	Input file caa005bIRCCML_last	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRCCML_last.inp
+ex:file_caa005bIRCCML_last_dat	Output data caa005bIRCCML_last	ex:DataFile			ex:exp_caa005bIRCCML_last	
+ex:file_caa005bIRCCML_last_log	Output log caa005bIRCCML_last	ex:LogFile			ex:exp_caa005bIRCCML_last	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML_last.log
+						
+ex:exp_caa005bIRCCML1st-prerelax-631Gdp	Vibrational analysis caa005bIRCCML1st-prerelax-631Gdp	gc:VibrationalAnalysis	ex:file_caa005bIRCCML1st-prerelax-631Gdp_inp	ex:file_caa005bIRCCML1st-prerelax-631Gdp_dat|ex:file_caa005bIRCCML1st-prerelax-631Gdp_log		
+ex:file_caa005bIRCCML1st-prerelax-631Gdp_inp	Input file caa005bIRCCML1st-prerelax-631Gdp	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRCCML1st-prerelax-631Gdp.inp
+ex:file_caa005bIRCCML1st-prerelax-631Gdp_dat	Output data caa005bIRCCML1st-prerelax-631Gdp	ex:DataFile			ex:exp_caa005bIRCCML1st-prerelax-631Gdp	
+ex:file_caa005bIRCCML1st-prerelax-631Gdp_log	Output log caa005bIRCCML1st-prerelax-631Gdp	ex:LogFile			ex:exp_caa005bIRCCML1st-prerelax-631Gdp	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML1st-prerelax-631Gdp.log
+						
+ex:exp_caa005bIRCCML1st	Vibrational analysis caa005bIRCCML1st	gc:VibrationalAnalysis	ex:file_caa005bIRCCML1st_inp	ex:file_caa005bIRCCML1st_dat|ex:file_caa005bIRCCML1st_log		
+ex:file_caa005bIRCCML1st_inp	Input file caa005bIRCCML1st	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRCCML1st.inp
+ex:file_caa005bIRCCML1st_dat	Output data caa005bIRCCML1st	ex:DataFile			ex:exp_caa005bIRCCML1st	
+ex:file_caa005bIRCCML1st_log	Output log caa005bIRCCML1st	ex:LogFile			ex:exp_caa005bIRCCML1st	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML1st.log
+						
+ex:exp_caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix	Single point caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix	gc:SinglePoint	ex:file_caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix_inp	ex:file_caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix_dat|ex:file_caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix_log		
+ex:file_caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix_inp	Input file caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix.inp
+ex:file_caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix_dat	Output data caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix	ex:DataFile			ex:exp_caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix	
+ex:file_caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix_log	Output log caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix	ex:LogFile			ex:exp_caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix.log
+						
+ex:exp_caa005bIRCCML1stdef2TZVPP-uhfcheck	Single point caa005bIRCCML1stdef2TZVPP-uhfcheck	gc:SinglePoint	ex:file_caa005bIRCCML1stdef2TZVPP-uhfcheck_inp	ex:file_caa005bIRCCML1stdef2TZVPP-uhfcheck_dat|ex:file_caa005bIRCCML1stdef2TZVPP-uhfcheck_log		
+ex:file_caa005bIRCCML1stdef2TZVPP-uhfcheck_inp	Input file caa005bIRCCML1stdef2TZVPP-uhfcheck	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRCCML1stdef2TZVPP-uhfcheck.inp
+ex:file_caa005bIRCCML1stdef2TZVPP-uhfcheck_dat	Output data caa005bIRCCML1stdef2TZVPP-uhfcheck	ex:DataFile			ex:exp_caa005bIRCCML1stdef2TZVPP-uhfcheck	
+ex:file_caa005bIRCCML1stdef2TZVPP-uhfcheck_log	Output log caa005bIRCCML1stdef2TZVPP-uhfcheck	ex:LogFile			ex:exp_caa005bIRCCML1stdef2TZVPP-uhfcheck	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML1stdef2TZVPP-uhfcheck.log
+						
+ex:exp_caa005bIRCCML1stdef2TZVPP	Vibrational analysis caa005bIRCCML1stdef2TZVPP	gc:VibrationalAnalysis	ex:file_caa005bIRCCML1stdef2TZVPP_inp	ex:file_caa005bIRCCML1stdef2TZVPP_dat|ex:file_caa005bIRCCML1stdef2TZVPP_log		
+ex:file_caa005bIRCCML1stdef2TZVPP_inp	Input file caa005bIRCCML1stdef2TZVPP	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRCCML1stdef2TZVPP.inp
+ex:file_caa005bIRCCML1stdef2TZVPP_dat	Output data caa005bIRCCML1stdef2TZVPP	ex:DataFile			ex:exp_caa005bIRCCML1stdef2TZVPP	
+ex:file_caa005bIRCCML1stdef2TZVPP_log	Output log caa005bIRCCML1stdef2TZVPP	ex:LogFile			ex:exp_caa005bIRCCML1stdef2TZVPP	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML1stdef2TZVPP.log
+						
+ex:exp_caa005bIRCCML1stdef2TZVPPa	Vibrational analysis caa005bIRCCML1stdef2TZVPPa	gc:VibrationalAnalysis	ex:file_caa005bIRCCML1stdef2TZVPPa_inp	ex:file_caa005bIRCCML1stdef2TZVPPa_dat|ex:file_caa005bIRCCML1stdef2TZVPPa_log		
+ex:file_caa005bIRCCML1stdef2TZVPPa_inp	Input file caa005bIRCCML1stdef2TZVPPa	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRCCML1stdef2TZVPPa.inp
+ex:file_caa005bIRCCML1stdef2TZVPPa_dat	Output data caa005bIRCCML1stdef2TZVPPa	ex:DataFile			ex:exp_caa005bIRCCML1stdef2TZVPPa	
+ex:file_caa005bIRCCML1stdef2TZVPPa_log	Output log caa005bIRCCML1stdef2TZVPPa	ex:LogFile			ex:exp_caa005bIRCCML1stdef2TZVPPa	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML1stdef2TZVPPa.log
+						
+ex:exp_caa005bIRCCML1stdef2TZVPPb	Vibrational analysis caa005bIRCCML1stdef2TZVPPb	gc:VibrationalAnalysis	ex:file_caa005bIRCCML1stdef2TZVPPb_inp	ex:file_caa005bIRCCML1stdef2TZVPPb_dat|ex:file_caa005bIRCCML1stdef2TZVPPb_log		
+ex:file_caa005bIRCCML1stdef2TZVPPb_inp	Input file caa005bIRCCML1stdef2TZVPPb	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRCCML1stdef2TZVPPb.inp
+ex:file_caa005bIRCCML1stdef2TZVPPb_dat	Output data caa005bIRCCML1stdef2TZVPPb	ex:DataFile			ex:exp_caa005bIRCCML1stdef2TZVPPb	
+ex:file_caa005bIRCCML1stdef2TZVPPb_log	Output log caa005bIRCCML1stdef2TZVPPb	ex:LogFile			ex:exp_caa005bIRCCML1stdef2TZVPPb	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML1stdef2TZVPPb.log
+						
+ex:exp_caa005bIRCCML1stdef2TZVPPc	Vibrational analysis caa005bIRCCML1stdef2TZVPPc	gc:VibrationalAnalysis	ex:file_caa005bIRCCML1stdef2TZVPPc_inp	ex:file_caa005bIRCCML1stdef2TZVPPc_dat|ex:file_caa005bIRCCML1stdef2TZVPPc_log		
+ex:file_caa005bIRCCML1stdef2TZVPPc_inp	Input file caa005bIRCCML1stdef2TZVPPc	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRCCML1stdef2TZVPPc.inp
+ex:file_caa005bIRCCML1stdef2TZVPPc_dat	Output data caa005bIRCCML1stdef2TZVPPc	ex:DataFile			ex:exp_caa005bIRCCML1stdef2TZVPPc	
+ex:file_caa005bIRCCML1stdef2TZVPPc_log	Output log caa005bIRCCML1stdef2TZVPPc	ex:LogFile			ex:exp_caa005bIRCCML1stdef2TZVPPc	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML1stdef2TZVPPc.log
+						
+ex:exp_caa005bIRCCML1stdef2TZVPPd	Vibrational analysis caa005bIRCCML1stdef2TZVPPd	gc:VibrationalAnalysis	ex:file_caa005bIRCCML1stdef2TZVPPd_inp	ex:file_caa005bIRCCML1stdef2TZVPPd_dat|ex:file_caa005bIRCCML1stdef2TZVPPd_log		
+ex:file_caa005bIRCCML1stdef2TZVPPd_inp	Input file caa005bIRCCML1stdef2TZVPPd	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRCCML1stdef2TZVPPd.inp
+ex:file_caa005bIRCCML1stdef2TZVPPd_dat	Output data caa005bIRCCML1stdef2TZVPPd	ex:DataFile			ex:exp_caa005bIRCCML1stdef2TZVPPd	
+ex:file_caa005bIRCCML1stdef2TZVPPd_log	Output log caa005bIRCCML1stdef2TZVPPd	ex:LogFile			ex:exp_caa005bIRCCML1stdef2TZVPPd	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML1stdef2TZVPPd.log
+						
+ex:exp_caa005bIRCCML1stdef2TZVPPe	Vibrational analysis caa005bIRCCML1stdef2TZVPPe	gc:VibrationalAnalysis	ex:file_caa005bIRCCML1stdef2TZVPPe_inp	ex:file_caa005bIRCCML1stdef2TZVPPe_dat|ex:file_caa005bIRCCML1stdef2TZVPPe_log		
+ex:file_caa005bIRCCML1stdef2TZVPPe_inp	Input file caa005bIRCCML1stdef2TZVPPe	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRCCML1stdef2TZVPPe.inp
+ex:file_caa005bIRCCML1stdef2TZVPPe_dat	Output data caa005bIRCCML1stdef2TZVPPe	ex:DataFile			ex:exp_caa005bIRCCML1stdef2TZVPPe	
+ex:file_caa005bIRCCML1stdef2TZVPPe_log	Output log caa005bIRCCML1stdef2TZVPPe	ex:LogFile			ex:exp_caa005bIRCCML1stdef2TZVPPe	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML1stdef2TZVPPe.log
+						
+ex:exp_caa005bTSa	Saddle point caa005bTSa	gc:SaddlePoint	ex:file_caa005bTSa_inp	ex:file_caa005bTSa_dat|ex:file_caa005bTSa_log		
+ex:file_caa005bTSa_inp	Input file caa005bTSa	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bTSa.inp
+ex:file_caa005bTSa_dat	Output data caa005bTSa	ex:DataFile			ex:exp_caa005bTSa	
+ex:file_caa005bTSa_log	Output log caa005bTSa	ex:LogFile			ex:exp_caa005bTSa	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bTSa.log
+						
+ex:exp_caa005bTSaIRCb	IRC (backward) caa005bTSaIRCb	gc:IRC	ex:file_caa005bTSaIRCb_inp	ex:file_caa005bTSaIRCb_dat|ex:file_caa005bTSaIRCb_log		
+ex:file_caa005bTSaIRCb_inp	Input file caa005bTSaIRCb	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bTSaIRCb.inp
+ex:file_caa005bTSaIRCb_dat	Output data caa005bTSaIRCb	ex:DataFile			ex:exp_caa005bTSaIRCb	
+ex:file_caa005bTSaIRCb_log	Output log caa005bTSaIRCb	ex:LogFile			ex:exp_caa005bTSaIRCb	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bTSaIRCb.log
+						
+ex:exp_caa005bTSaIRCf	IRC (forward) caa005bTSaIRCf	gc:IRC	ex:file_caa005bTSaIRCf_inp	ex:file_caa005bTSaIRCf_dat|ex:file_caa005bTSaIRCf_log		
+ex:file_caa005bTSaIRCf_inp	Input file caa005bTSaIRCf	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bTSaIRCf.inp
+ex:file_caa005bTSaIRCf_dat	Output data caa005bTSaIRCf	ex:DataFile			ex:exp_caa005bTSaIRCf	
+ex:file_caa005bTSaIRCf_log	Output log caa005bTSaIRCf	ex:LogFile			ex:exp_caa005bTSaIRCf	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bTSaIRCf.log
+						
+ex:exp_caa005bTSb-hess	Saddle point caa005bTSb-hess	gc:SaddlePoint	ex:file_caa005bTSb-hess_inp	ex:file_caa005bTSb-hess_dat|ex:file_caa005bTSb-hess_log		
+ex:file_caa005bTSb-hess_inp	Input file caa005bTSb-hess	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bTSb-hess.inp
+ex:file_caa005bTSb-hess_dat	Output data caa005bTSb-hess	ex:DataFile			ex:exp_caa005bTSb-hess	
+ex:file_caa005bTSb-hess_log	Output log caa005bTSb-hess	ex:LogFile			ex:exp_caa005bTSb-hess	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bTSb-hess.log
+						
+ex:exp_caa005bTSb-pcseg2	Single point caa005bTSb-pcseg2	gc:SinglePoint	ex:file_caa005bTSb-pcseg2_inp	ex:file_caa005bTSb-pcseg2_dat|ex:file_caa005bTSb-pcseg2_log		
+ex:file_caa005bTSb-pcseg2_inp	Input file caa005bTSb-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bTSb-pcseg2.inp
+ex:file_caa005bTSb-pcseg2_dat	Output data caa005bTSb-pcseg2	ex:DataFile			ex:exp_caa005bTSb-pcseg2	
+ex:file_caa005bTSb-pcseg2_log	Output log caa005bTSb-pcseg2	ex:LogFile			ex:exp_caa005bTSb-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bTSb-pcseg2.log
+						
+ex:exp_caa005bTSb	Saddle point caa005bTSb	gc:SaddlePoint	ex:file_caa005bTSb_inp	ex:file_caa005bTSb_dat|ex:file_caa005bTSb_log		
+ex:file_caa005bTSb_inp	Input file caa005bTSb	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bTSb.inp
+ex:file_caa005bTSb_dat	Output data caa005bTSb	ex:DataFile			ex:exp_caa005bTSb	
+ex:file_caa005bTSb_log	Output log caa005bTSb	ex:LogFile			ex:exp_caa005bTSb	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bTSb.log
+						
+ex:exp_caa006a	Single point caa006a	gc:SinglePoint	ex:file_caa006a_inp	ex:file_caa006a_dat|ex:file_caa006a_log		
+ex:file_caa006a_inp	Input file caa006a	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa006a.inp
+ex:file_caa006a_dat	Output data caa006a	ex:DataFile			ex:exp_caa006a	
+ex:file_caa006a_log	Output log caa006a	ex:LogFile			ex:exp_caa006a	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa006a.log
+						
+ex:exp_caa006b	Single point caa006b	gc:SinglePoint	ex:file_caa006b_inp	ex:file_caa006b_dat|ex:file_caa006b_log		
+ex:file_caa006b_inp	Input file caa006b	ex:InputFile			ex:exp_caa006a	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa006b.inp
+ex:file_caa006b_dat	Output data caa006b	ex:DataFile			ex:exp_caa006b	
+ex:file_caa006b_log	Output log caa006b	ex:LogFile			ex:exp_caa006b	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa006b.log
+						
+ex:exp_caa006c	Single point caa006c	gc:SinglePoint	ex:file_caa006c_inp	ex:file_caa006c_dat|ex:file_caa006c_log		
+ex:file_caa006c_inp	Input file caa006c	ex:InputFile			ex:exp_caa006b	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa006c.inp
+ex:file_caa006c_dat	Output data caa006c	ex:DataFile			ex:exp_caa006c	
+ex:file_caa006c_log	Output log caa006c	ex:LogFile			ex:exp_caa006c	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa006c.log
+						
+ex:exp_caa007a-pcseg2	Single point caa007a-pcseg2	gc:SinglePoint	ex:file_caa007a-pcseg2_inp	ex:file_caa007a-pcseg2_dat|ex:file_caa007a-pcseg2_log		
+ex:file_caa007a-pcseg2_inp	Input file caa007a-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa007a-pcseg2.inp
+ex:file_caa007a-pcseg2_dat	Output data caa007a-pcseg2	ex:DataFile			ex:exp_caa007a-pcseg2	
+ex:file_caa007a-pcseg2_log	Output log caa007a-pcseg2	ex:LogFile			ex:exp_caa007a-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa007a-pcseg2.log
+						
+ex:exp_caa007b-pcseg2	Single point caa007b-pcseg2	gc:SinglePoint	ex:file_caa007b-pcseg2_inp	ex:file_caa007b-pcseg2_dat|ex:file_caa007b-pcseg2_log		
+ex:file_caa007b-pcseg2_inp	Input file caa007b-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa007b-pcseg2.inp
+ex:file_caa007b-pcseg2_dat	Output data caa007b-pcseg2	ex:DataFile			ex:exp_caa007b-pcseg2	
+ex:file_caa007b-pcseg2_log	Output log caa007b-pcseg2	ex:LogFile			ex:exp_caa007b-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa007b-pcseg2.log
+						
+ex:exp_caa007b	Vibrational analysis caa007b	gc:VibrationalAnalysis	ex:file_caa007b_inp	ex:file_caa007b_dat|ex:file_caa007b_log		
+ex:file_caa007b_inp	Input file caa007b	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa007b.inp
+ex:file_caa007b_dat	Output data caa007b	ex:DataFile			ex:exp_caa007b	
+ex:file_caa007b_log	Output log caa007b	ex:LogFile			ex:exp_caa007b	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa007b.log
+						
+ex:exp_caa008-aldehyde-bare	Vibrational analysis caa008-aldehyde-bare	gc:VibrationalAnalysis	ex:file_caa008-aldehyde-bare_inp	ex:file_caa008-aldehyde-bare_dat|ex:file_caa008-aldehyde-bare_log		
+ex:file_caa008-aldehyde-bare_inp	Input file caa008-aldehyde-bare	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa008-aldehyde-bare.inp
+ex:file_caa008-aldehyde-bare_dat	Output data caa008-aldehyde-bare	ex:DataFile			ex:exp_caa008-aldehyde-bare	
+ex:file_caa008-aldehyde-bare_log	Output log caa008-aldehyde-bare	ex:LogFile			ex:exp_caa008-aldehyde-bare	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa008-aldehyde-bare.log
+						
+ex:exp_caa008-aldehyde-pcseg2	Single point caa008-aldehyde-pcseg2	gc:SinglePoint	ex:file_caa008-aldehyde-pcseg2_inp	ex:file_caa008-aldehyde-pcseg2_dat|ex:file_caa008-aldehyde-pcseg2_log		
+ex:file_caa008-aldehyde-pcseg2_inp	Input file caa008-aldehyde-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa008-aldehyde-pcseg2.inp
+ex:file_caa008-aldehyde-pcseg2_dat	Output data caa008-aldehyde-pcseg2	ex:DataFile			ex:exp_caa008-aldehyde-pcseg2	
+ex:file_caa008-aldehyde-pcseg2_log	Output log caa008-aldehyde-pcseg2	ex:LogFile			ex:exp_caa008-aldehyde-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa008-aldehyde-pcseg2.log
+						
+ex:exp_caa008-hydrate-bare	Vibrational analysis caa008-hydrate-bare	gc:VibrationalAnalysis	ex:file_caa008-hydrate-bare_inp	ex:file_caa008-hydrate-bare_dat|ex:file_caa008-hydrate-bare_log		
+ex:file_caa008-hydrate-bare_inp	Input file caa008-hydrate-bare	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa008-hydrate-bare.inp
+ex:file_caa008-hydrate-bare_dat	Output data caa008-hydrate-bare	ex:DataFile			ex:exp_caa008-hydrate-bare	
+ex:file_caa008-hydrate-bare_log	Output log caa008-hydrate-bare	ex:LogFile			ex:exp_caa008-hydrate-bare	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa008-hydrate-bare.log
+						
+ex:exp_caa008-hydrate-pcseg2	Single point caa008-hydrate-pcseg2	gc:SinglePoint	ex:file_caa008-hydrate-pcseg2_inp	ex:file_caa008-hydrate-pcseg2_dat|ex:file_caa008-hydrate-pcseg2_log		
+ex:file_caa008-hydrate-pcseg2_inp	Input file caa008-hydrate-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa008-hydrate-pcseg2.inp
+ex:file_caa008-hydrate-pcseg2_dat	Output data caa008-hydrate-pcseg2	ex:DataFile			ex:exp_caa008-hydrate-pcseg2	
+ex:file_caa008-hydrate-pcseg2_log	Output log caa008-hydrate-pcseg2	ex:LogFile			ex:exp_caa008-hydrate-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa008-hydrate-pcseg2.log
+						
+ex:exp_caa008-water-bare	Vibrational analysis caa008-water-bare	gc:VibrationalAnalysis	ex:file_caa008-water-bare_inp	ex:file_caa008-water-bare_dat|ex:file_caa008-water-bare_log		
+ex:file_caa008-water-bare_inp	Input file caa008-water-bare	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa008-water-bare.inp
+ex:file_caa008-water-bare_dat	Output data caa008-water-bare	ex:DataFile			ex:exp_caa008-water-bare	
+ex:file_caa008-water-bare_log	Output log caa008-water-bare	ex:LogFile			ex:exp_caa008-water-bare	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa008-water-bare.log
+						
+ex:exp_caa008-water-pcseg2	Single point caa008-water-pcseg2	gc:SinglePoint	ex:file_caa008-water-pcseg2_inp	ex:file_caa008-water-pcseg2_dat|ex:file_caa008-water-pcseg2_log		
+ex:file_caa008-water-pcseg2_inp	Input file caa008-water-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa008-water-pcseg2.inp
+ex:file_caa008-water-pcseg2_dat	Output data caa008-water-pcseg2	ex:DataFile			ex:exp_caa008-water-pcseg2	
+ex:file_caa008-water-pcseg2_log	Output log caa008-water-pcseg2	ex:LogFile			ex:exp_caa008-water-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa008-water-pcseg2.log
+						

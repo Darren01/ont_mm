@@ -1,0 +1,82 @@
+! C2H7O3Cl | wB97X-D/PCseg-2/PCM(water) -- native basis, sidesteps DGEMM bug
+!
+! ============================================================
+! Why this file exists
+! ============================================================
+! caa005bIRCCML1stdef2TZVPPe.inp (wB97X-D/def2-TZVPP/PCM(water), starting
+! from the confirmed 6-31G(d,p) minimum) showed 16 simultaneous negative
+! Hessian eigenvalues purely from enlarging the basis -- reproducing
+! closely across two independently computed Hessians. Separately, we spent
+! considerable effort chasing a "DGEMM parameter 13 illegal value" crash
+! affecting ANY custom-supplied basis (both BASNAM and EXTFIL mechanisms)
+! below a certain size on this specific ARCHER2 GAMESS build -- confirmed
+! NOT to affect GAMESS's own built-in GBASIS-driven basis construction
+! (validated via the full 49-test bundled example suite).
+!
+! A GAMESS Google Group response (from a related but different thread)
+! suggested trying the PCseg family (Jensen's Polarization Consistent
+! segmented basis sets) as an alternative to cc-pVTZ/def2-TZVPP-style
+! bases, specifically raising the possibility that the CONSTRUCTION of
+! those basis families could itself be contributing to linear-dependence-
+! type problems, and that a newer basis family might behave better.
+! PCseg-2 is roughly equivalent in quality to cc-pVTZ (~TZ2P).
+!
+! This is a genuinely attractive test for two independent reasons:
+! 1. It directly tests the forum's scientific hypothesis (does a
+!    differently-constructed triple-zeta-quality basis show the same
+!    instability at this geometry?).
+! 2. PCseg-2 is NATIVELY supported by GAMESS via plain GBASIS=PCSEG-2 --
+!    no BASNAM, no EXTFIL, no custom basis blocks at all. This completely
+!    sidesteps the DGEMM crash rather than working around it, since we
+!    have direct evidence (the 49-test suite) that built-in GBASIS
+!    construction is unaffected by that bug.
+!
+! IMPORTANT, confirmed directly from this GAMESS version's own docs-input.txt:
+! the PCseg family REQUIRES spherical harmonics (ISPHER=1 in $CONTRL) --
+! "The calculations will refuse to run without ISPHER being set." This is
+! mandatory, not a style choice.
+!
+! Starting geometry: the confirmed genuine minimum from
+! caa005bIRCCML1st-prerelax-631Gdp.inp (wB97X-D/6-31G(d,p)/PCM(water),
+! EXECUTION OF GAMESS TERMINATED NORMALLY, zero imaginary frequencies).
+!
+! Optimizer settings otherwise identical to caa005bIRCCML1stdef2TZVPPd/e.inp
+! (conservative DXMAX=0.01, IHREP=2, METHOD=SEMINUM since wB97X-D has no
+! analytic Hessian regardless of basis, Cartesian coordinates, SOSCF,
+! DIRSCF) so that basis choice is the only variable changed relative to
+! those runs.
+
+ $CONTRL SCFTYP=RHF RUNTYP=OPTIMIZE DFTTYP=wB97X-D
+         COORD=UNIQUE MAXIT=200 NOSYM=1 ISPHER=1
+ $END
+ $GUESS GUESS=HUCKEL $END
+ $BASIS GBASIS=PCSEG-2 $END
+ $SCF CONV=1.0D-6
+     SOSCF=.T.
+     DAMP=.F.
+     SHIFT=.T.
+     DIRSCF=.TRUE.
+ $END
+ $STATPT OPTTOL=0.0001 NSTEP=300 IHREP=2 HSSEND=.T. DXMAX=0.01 NPRT=1 $END
+ $ZMAT DLC=.F. AUTO=.F. $END
+ $FORCE METHOD=SEMINUM PROJCT=.T. $END
+ $PCM SOLVNT=WATER $END
+ $SYSTEM MWORDS=100 MEMDDI=200 $END
+
+ $DATA
+Chloroacetaldehyde hydrate and water -- wB97X-D/PCseg-2/PCM(water)
+C1
+Cl   17.0   3.4062263771   0.2091279057   0.2533561081
+C     6.0   2.2845933847   0.8634093872  -0.9829615815
+C     6.0   2.9679220138   1.8831295208  -1.8632833921
+O     8.0   2.3265477065   2.6992356036  -2.4903771140
+H     1.0   1.4219922861   1.3024323058  -0.4827108444
+H     1.0   1.9669509886   0.0324484665  -1.6146227258
+O     8.0   3.5738284953   0.0679565750  -3.8462810595
+O     8.0   3.9842881842   2.6765444468  -4.8076254061
+H     1.0   3.5078817045   2.7937321447  -5.6358114425
+H     1.0   3.7893562925   0.9104597543  -4.2899067776
+H     1.0   2.7388546345  -0.1945985132  -4.2445882765
+H     1.0   4.0681996666   1.8390865178  -1.9080252718
+H     1.0   3.3874282656   3.0329158850  -4.1299822164
+ $END

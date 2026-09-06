@@ -1,0 +1,94 @@
+! C2H7O3Cl | caa005bTSb: TRANSITION STATE at wB97X-D/6-31G(d,p)/PCM(water)
+!
+! Part of the same 3-point refinement as caa007a/caa007b (first/last IRC
+! points), this one for the TS. Starting geometry is the converged saddle
+! point from caa005bTSa.log ("***** SADDLE POINT LOCATED *****"), which
+! was itself confirmed genuine at the original level (wB97X-D, GBASIS=N21
+! NGAUSS=6 NPFUNC=1 DIFFSP=.T., i.e. a 3-21G-family basis with diffuse and
+! polarization functions, not the same as the IRC path's 6-31G(d)-style
+! basis, but same functional): EXACTLY ONE imaginary frequency (1156.17i),
+! all other modes real. That original search used an explicitly supplied
+! starting Hessian ($HESS ... READ). We do not have an equivalent Hessian
+! for this new basis, so this run instead relies on IHREP=1 (a genuinely
+! fresh Hessian recomputed every step) plus GAMESS's default mode-following
+! (IFOLOW=1) to track the correct transition mode -- the same approach that
+! has already worked reliably for caa007a/caa007b's minimizations.
+!
+! RUNTYP=SADPOINT (NOT OPTIMIZE) -- this searches for a first-order saddle
+! point rather than a minimum, essential for a TS. Using OPTIMIZE here
+! would simply relax the structure down into a nearby minimum, losing the
+! transition state entirely.
+!
+! NOTE: first submission attempt omitted an explicit HESS= setting in
+! $STATPT. Unlike RUNTYP=OPTIMIZE (which defaults to HESS=GUESS),
+! RUNTYP=SADPOINT defaults to HESS=READ, expecting an explicit $HESS group
+! -- which we don't have for this basis. GAMESS aborted immediately with
+! "YOU DID NOT SUPPLY A $HESS GROUP." Fixed by explicitly setting
+! HESS=GUESS, overriding that default; IHREP=1 (fresh Hessian every step)
+! should correct for the guess's lower quality quickly, the same way it
+! did for caa007a/caa007b's minimizations.
+!
+! NOTE (final): switched strategy entirely rather than keep fighting the
+! HESS=GUESS override (see caa005bTSb-hess.inp). Computed a genuine Hessian
+! via a standalone RUNTYP=HESSIAN run at this exact geometry/level, then
+! extracted the PROJECTED Hessian block (translation/rotation removed,
+! matching PROJCT=.T.) from caa005bTSb-hess.dat -- confirmed by the
+! "----- HESSIAN MATRIX AFTER PROJECTION -----" label immediately preceding
+! it in the punch file, distinguishing it from the earlier raw/unprojected
+! $HESS block. That block is appended below and HESS is set to READ
+! (GAMESS's own default for SADPOINT), working with the program rather
+! than against it.
+!
+! NOTE (correction): using the pre-projected Hessian caused a NEW error --
+! "NOT 5 OR 6 TRANS/ROT MODES, NUM T/R=7" -- one spurious extra near-zero
+! eigenvalue beyond the expected 6, most likely from this run's own
+! PROJCT=.T. re-projecting an already-projected Hessian (double
+! projection). Checked directly in GAMESS's source (statpt.src): the
+! trans/rot count comes from counting eigenvalues below a small tolerance
+! (TRTOL), and the check (hardcoded N5OR6=5, tolerating up to N5OR6+1=6
+! total) rejected our 7. Fixed by using the RAW (unprojected) $HESS block
+! instead, letting THIS run's own PROJCT=.T. do the projection exactly
+! once, consistently -- the standard way HESS=READ is normally used.
+!
+! Everything else identical to caa007a/caa007b: wB97X-D, PCM(water), native
+! GBASIS=N31 NGAUSS=6 NDFUNC=1 NPFUNC=1 (6-31G(d,p)), DXMAX=0.02, Cartesian
+! coordinates, METHOD=SEMINUM (wB97X-D has no analytic Hessian regardless
+! of basis).
+
+ $CONTRL SCFTYP=RHF RUNTYP=SADPOINT DFTTYP=wB97X-D
+         COORD=UNIQUE MAXIT=200 NOSYM=1
+ $END
+ $GUESS GUESS=HUCKEL $END
+ $BASIS GBASIS=N31 NGAUSS=6 NDFUNC=1 NPFUNC=1 $END
+ $SCF CONV=1.0D-6
+     SOSCF=.T.
+     DAMP=.F.
+     SHIFT=.T.
+     DIRSCF=.TRUE.
+ $END
+ $STATPT OPTTOL=0.0001 NSTEP=300 IHREP=1 HESS=READ
+         HSSEND=.T. DXMAX=0.02 NPRT=1 $END
+ $ZMAT DLC=.F. AUTO=.F. $END
+ $FORCE METHOD=SEMINUM PROJCT=.T. $END
+ $PCM SOLVNT=WATER $END
+ $SYSTEM MWORDS=100 MEMDDI=200 $END
+
+ $DATA
+Chloroacetaldehyde hydrate and water -- TS, re-search at 6-31G(d,p)
+C1
+Cl   17.0   3.0485156339   0.6359914336   0.4479334623
+C     6.0   2.7283930670   0.1844170530  -1.3578262932
+C     6.0   3.4305941052   1.2133686906  -2.2310146927
+O     8.0   2.8759984084   2.4386443888  -2.2890745617
+H     1.0   1.6476581233   0.2160777473  -1.4770758486
+H     1.0   3.1393555761  -0.8142564019  -1.4772491343
+O     8.0   3.3273616097   0.5061546913  -3.7498664785
+O     8.0   3.5488300467   2.7040686634  -4.5971311390
+H     1.0   3.0892307132   3.1473730080  -5.3176484842
+H     1.0   3.4508591533   1.5266457457  -4.4436385478
+H     1.0   2.4715762551   0.0765839813  -3.8933619493
+H     1.0   4.5184475016   1.1661162744  -2.1473717206
+H     1.0   3.2232923936   2.9247162047  -3.6003337000
+ $END
+
+

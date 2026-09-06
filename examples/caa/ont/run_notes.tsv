@@ -1,0 +1,37 @@
+caa001b.inp	AM1 code didn't adjust the internal constraints
+caa002b.log	initial runs where 8,3 distance at 2A was too quick and broke up the molecule
+caa002d.log	the run showed that the constraints applied destroyed the molecular geometry.
+caa002e.log	the run showed that the constraints applied destroyed the molecular geometry.
+caa004a.log	starting from the hydrate with a view to stretching one of the CO bonds.
+caa004m.log	this structure appears to be very close to the transitions state within the bounds of the level of theory.
+caa005b.log	using PROJCT=.t. in $FORCE took the\n rotations/translations to 0cm-1
+caa005bTSa.log	interesting that the ClC bond is antiperiplanar to the leaving oxygen\n is this exclusive to the mechanism or will it work with anti-planarity to the incipient carbonyl oxygen?
+caa005bTSaIRCb.log	the same geometry (from caa005bTSa.log) was used in each backward / forward scans
+caa006a.log	geometry from caa005bTSa.log so at top of IRC
+caa006b.log	geometry from caa005bTSa.log so at start (1st frame) of IRC
+caa005bIRCCML1stdef2TZVPP.log	an attempt to run the 1st IRC geometry at a high level of theory
+caa005bIRCCML1stdef2TZVPPa.log	another failed attempt to run the 1st IRC geometry at a high level of theory
+caa005bIRCCML1stdef2TZVPPb.log	fixed SOSCF/DIIS conflict and $FORCE method; still showed runaway negative Hessian curvature from the first optimization step
+caa005bIRCCML1stdef2TZVPPc.log	tried an upfront analytic Hessian (HESS=CALC); aborted, wB97X-D not supported for the TD-DFT/analytic-Hessian machinery this needs
+caa005bIRCCML1stdef2TZVPPd.log	semi-numerical Hessian, IHREP=2; two independently computed Hessians both showed 16 simultaneous negative eigenvalues -- real feature of the surface, not numerical noise
+caa005bIRCCML1st-prerelax-631Gdp.log	relaxed the 1st IRC geometry at wB97X-D/6-31G(d,p)/PCM(water) as a bridging step; converged, zero imaginary frequencies -- genuine minimum
+caa005bIRCCML1stdef2TZVPPe.log	re-ran def2-TZVPP starting from the confirmed 6-31G(d,p) minimum; the same 16 negative eigenvalues recurred, ruling out a bad starting geometry
+caa005bIRCCML1stdef2TZVPP-uhfcheck.log	UHF with MIX=.true. at the same geometry found a lower, spin-contaminated solution (S**2=1.487)
+caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix.log	control run: plain UHF (no MIX) reconverged straight to the RHF energy, S**2~0 -- ruled out a genuine RHF/electronic instability
+caa005bIRC-def2svp-test.log	fresh def2-SVP basis (verified byte-for-byte vs Basis Set Exchange); crashed "DGEMM parameter 13 illegal value" before the first SCF cycle
+caa005bIRC-trimmedTZVPP-test.log	def2-TZVPP with shells removed, using already-proven basis text (not retyped); same DGEMM crash -- ruled out bad/mistyped basis data specifically
+caa005b-cl-atom-basischeck.log	isolated Cl atom, the smallest possible case; ROHF failed (needs explicit NSETO/NPAIR for the degenerate 3p5 open shell), switched to UHF
+caa005b-cl-atom-extfil-test.log	same isolated Cl atom via EXTFIL (external basis file) instead of BASNAM; got further (basis read correctly) but hit the identical DGEMM crash -- ruled out BASNAM specifically as the cause, and ruled out core count (crashed the same at 8 and 1 cores)
+caa005bIRC-pcseg2-test.log	native GBASIS=PCSEG-2 instead of custom def2-TZVPP; converged cleanly to the chemically correct energy (-766.37 vs def2-TZVPP's wrong -491.67 at the same geometry), zero imaginary frequencies -- resolved the whole saga: custom BASNAM/EXTFIL basis construction was broken on this ARCHER2 build, never a real chemical instability. Note RUNTYP was accidentally OPTIMIZE, not a strict single point
+caa007b.log	last IRC point (Reaction Coordinate +89 of caa005bIRC.cml) re-optimized at wB97X-D/6-31G(d,p)/PCM(water); converged, zero imaginary frequencies -- genuine minimum
+caa005bTSb.log	RUNTYP=SADPOINT re-search of the TS at 6-31G(d,p), using a genuine RUNTYP=HESSIAN-computed raw (unprojected) Hessian via HESS=READ after HESS=GUESS overrides failed to take effect; converged cleanly, SADDLE POINT LOCATED at NSERCH=7, exactly one imaginary frequency (1195.01i) -- confirmed genuine TS
+caa005bTSb-hess.log	RUNTYP=HESSIAN precursor at the TS geometry, 6-31G(d,p)/PCM(water), to supply the real $HESS block caa005bTSb's saddle-point search needs
+caa007a-pcseg2.log	single-point energy at wB97X-D/PCseg-2/PCM(water) for the 1st IRC point (from caa005bIRCCML1st-prerelax-631Gdp confirmed minimum); -766.3719959497 Hartree
+caa007b-pcseg2.log	single-point energy at wB97X-D/PCseg-2/PCM(water) for the last IRC point (from caa007b confirmed minimum); -766.3839610278 Hartree
+caa005bTSb-pcseg2.log	single-point energy at wB97X-D/PCseg-2/PCM(water) for the TS (from caa005bTSb confirmed saddle point); -766.3338684973 Hartree. Forward barrier ~23.9 kcal/mol, reverse barrier ~31.4 kcal/mol, reaction energy ~-7.5 kcal/mol (product side lower)
+caa008-aldehyde-bare.log	geometry+frequency optimization of bare chloroacetaldehyde at wB97X-D/6-31G(d,p)/PCM(water); extracted from the 1st IRC point converged cluster (bond-length analysis: C3=O4 1.213 A confirms intact carbonyl), part of the standalone hydration thermodynamic cycle dG_hyd = G(hydrate) - [G(aldehyde) + G(water)]
+caa008-hydrate-bare.log	geometry+frequency optimization of bare chloroacetaldehyde hydrate at wB97X-D/6-31G(d,p)/PCM(water); extracted from the last IRC point converged cluster -- bond-length analysis (C3-O4 1.387 A, C3-O7 1.418 A, C3-O8 3.022 A) confirmed which of the two original spectator waters was incorporated into the gem-diol via a proton relay
+caa008-water-bare.log	geometry+frequency optimization of a standalone water molecule at wB97X-D/6-31G(d,p)/PCM(water), for the hydration thermodynamic cycle
+caa008-aldehyde-pcseg2.log	single-point energy at wB97X-D/PCseg-2/PCM(water) for bare chloroacetaldehyde; -613.4620192589 Hartree
+caa008-hydrate-pcseg2.log	single-point energy at wB97X-D/PCseg-2/PCM(water) for bare hydrate; -689.9272336982 Hartree
+caa008-water-pcseg2.log	single-point energy at wB97X-D/PCseg-2/PCM(water) for standalone water; -76.4502962836 Hartree. Combined with 6-31G(d,p) thermal data: dG_hyd = -4.44 kcal/mol (0K, elec+ZPE), -5.99 kcal/mol (dH, 298K), but +5.88 kcal/mol (dG, 298K) -- the sign flip traced to -TdS ~ +11.9 kcal/mol, almost certainly an artifact of treating standalone water as an ideal gas (overestimated translational/rotational entropy relative to true liquid-phase water). Enthalpy trusted over raw Gibbs free energy pending a proper solution-phase entropy correction; acetaldehyde calibration (planned) will test this directly

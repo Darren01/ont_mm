@@ -1,0 +1,47 @@
+! C2H7O3Cl | caa007a-pcseg2: SINGLE POINT at wB97X-D/PCseg-2/PCM(water)
+!
+! Final step of the 3-point IRC refinement (caa007a/caa007b/caa005bTSb).
+! Single-point energy (RUNTYP=ENERGY, no optimization) at the confirmed
+! wB97X-D/6-31G(d,p)/PCM(water) minimum for the FIRST IRC point (Reaction
+! Coordinate -200 of caa005bIRC.cml), geometry taken from
+! caa005bIRCCML1st-prerelax-631Gdp.log (EXECUTION TERMINATED NORMALLY,
+! zero imaginary frequencies -- confirmed genuine minimum).
+!
+! Native GBASIS=PCSEG-2 (Jensen's Polarization Consistent family, ~TZ2P,
+! roughly cc-pVTZ-equivalent) -- confirmed to sidestep entirely the
+! DGEMM crash affecting custom BASNAM/EXTFIL bases on this ARCHER2 build
+! (see gamess-dgemm-bug-report.md), and confirmed to give a chemically
+! sensible energy where custom def2-TZVPP did not (caa005bIRC-pcseg2-test).
+! ISPHER=1 is mandatory for this basis family (confirmed in docs-input.txt).
+
+ $CONTRL SCFTYP=RHF RUNTYP=ENERGY DFTTYP=wB97X-D
+         COORD=UNIQUE MAXIT=200 NOSYM=1 ISPHER=1
+ $END
+ $GUESS GUESS=HUCKEL $END
+ $BASIS GBASIS=PCSEG-2 $END
+ $SCF CONV=1.0D-6
+     SOSCF=.T.
+     DAMP=.F.
+     SHIFT=.T.
+     DIRSCF=.TRUE.
+ $END
+ $PCM SOLVNT=WATER $END
+ $SYSTEM MWORDS=100 MEMDDI=200 $END
+
+ $DATA
+Chloroacetaldehyde hydrate and water -- 1st IRC point, single point at PCseg-2
+C1
+Cl   17.0   3.4062263771   0.2091279057   0.2533561081
+C     6.0   2.2845933847   0.8634093872  -0.9829615815
+C     6.0   2.9679220138   1.8831295208  -1.8632833921
+O     8.0   2.3265477065   2.6992356036  -2.4903771140
+H     1.0   1.4219922861   1.3024323058  -0.4827108444
+H     1.0   1.9669509886   0.0324484665  -1.6146227258
+O     8.0   3.5738284953   0.0679565750  -3.8462810595
+O     8.0   3.9842881842   2.6765444468  -4.8076254061
+H     1.0   3.5078817045   2.7937321447  -5.6358114425
+H     1.0   3.7893562925   0.9104597543  -4.2899067776
+H     1.0   2.7388546345  -0.1945985132  -4.2445882765
+H     1.0   4.0681996666   1.8390865178  -1.9080252718
+H     1.0   3.3874282656   3.0329158850  -4.1299822164
+ $END

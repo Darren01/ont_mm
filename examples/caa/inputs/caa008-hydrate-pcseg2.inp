@@ -1,0 +1,41 @@
+! ClCH2CH(OH)2 | caa008-hydrate-pcseg2: SINGLE POINT at wB97X-D/PCseg-2/PCM(water)
+!
+! Part of the standalone hydration thermodynamic cycle:
+!   dG_hydration = G(hydrate) - [G(aldehyde) + G(water)]
+!
+! Single-point energy (RUNTYP=ENERGY, no optimization) at the confirmed
+! wB97X-D/6-31G(d,p)/PCM(water) minimum for bare chloroacetaldehyde
+! hydrate, geometry taken from caa008-hydrate-bare.log (EXECUTION
+! TERMINATED NORMALLY).
+!
+! Native GBASIS=PCSEG-2, ISPHER=1 mandatory -- same recipe validated
+! throughout this project.
+
+ $CONTRL SCFTYP=RHF RUNTYP=ENERGY DFTTYP=wB97X-D
+         COORD=UNIQUE MAXIT=200 NOSYM=1 ISPHER=1
+ $END
+ $GUESS GUESS=HUCKEL $END
+ $BASIS GBASIS=PCSEG-2 $END
+ $SCF CONV=1.0D-6
+     SOSCF=.T.
+     DAMP=.F.
+     SHIFT=.T.
+     DIRSCF=.TRUE.
+ $END
+ $PCM SOLVNT=WATER $END
+ $SYSTEM MWORDS=100 MEMDDI=200 $END
+
+ $DATA
+Chloroacetaldehyde hydrate, bare, single point at PCseg-2
+C1
+Cl    17.0     3.1000308804     0.7675535134     0.3560201610
+C     6.0      2.7548108977     0.1215492634    -1.2902180047
+C     6.0      3.2961186633     1.0246090329    -2.3917831846
+O     8.0      2.5603087480     2.2106662808    -2.3754643346
+H     1.0      1.6709693090     0.0283936781    -1.3770177644
+H     1.0      3.2228298935    -0.8588459724    -1.3540717760
+O     8.0      3.2040687673     0.3605049482    -3.6242011489
+H     1.0      2.2669603475     0.2417432648    -3.8244088890
+H     1.0      4.3664826713     1.2059384076    -2.2399188577
+H     1.0      2.9761761111     2.8251380864    -2.9906785419
+ $END

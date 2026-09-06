@@ -1,0 +1,86 @@
+! C2H7O3Cl | PRE-OPTIMIZATION at wB97X-D/6-31G(d,p)/PCM(water)
+!
+! ============================================================
+! Why this file exists
+! ============================================================
+! caa005bIRCCML1stdef2TZVPPb/c/d all showed the same pathology: energy
+! dropping far faster than the geometry was moving, and a growing negative
+! Hessian curvature from the very first optimization step. TZVPPd (IHREP=2,
+! forcing a genuinely fresh Hessian every 2 steps rather than one slowly
+! propagated by BFGS) gave the decisive evidence: at NSERCH=2 and NSERCH=3,
+! TWO INDEPENDENTLY COMPUTED Hessians each showed 15 SIMULTANEOUS NEGATIVE
+! EIGENVALUES, closely matching each other in value. That rules out numerical
+! noise (noise does not reproduce like that) and confirms this is a real
+! feature of the wB97X-D/def2-TZVPP/PCM(water) surface at this geometry: it
+! is not a stationary point of any kind, let alone a minimum.
+!
+! The source of the mismatch was then found directly: caa005bIRC.cml (the
+! 290-point IRC this starting geometry was extracted from, at Reaction
+! Coordinate step 1) was NOT computed at wB97X-D/def2-TZVPP. Its embedded
+! basis set exponents (e.g. carbon 1S: 3047.52, 456.424, 103.653, 29.2258,
+! 9.34863, 3.18904) match the classic Pople 6-31G(d) contraction, not
+! def2-TZVPP -- and its reported energies (~-765.89) differ from ours
+! (~-491.67) by ~274 Hartree, far too large to be a basis-quality effect
+! alone, strongly suggesting a different method entirely generated this path.
+! A geometry that is a good minimum on one PES has no reason to be anywhere
+! near a stationary point on a different one -- 15 negative eigenvalues is
+! entirely consistent with that, not evidence of a technical mistake.
+!
+! ============================================================
+! What this file does
+! ============================================================
+! Standard practice for exactly this situation: relax the borrowed geometry
+! at a CHEAPER level first, using the SAME functional and solvent treatment
+! as the final target (wB97X-D, PCM water) but a smaller, GAMESS-NATIVE basis
+! (6-31G(d,p) via GBASIS=N31 NGAUSS=6 NDFUNC=1 NPFUNC=1 -- no custom BASNAM
+! needed, so no risk of a transcription error in this bridging step). This
+! should land within (or much closer to) the actual basin of attraction of a
+! genuine minimum on the wB97X-D surface, before spending the much larger
+! cost of the full def2-TZVPP basis.
+!
+! Optimizer settings carried over from the TZVPPd diagnosis (conservative
+! DXMAX, frequent Hessian recomputation) since the SAME functional's lack of
+! an analytic Hessian applies regardless of basis size. IHREP tightened to 1
+! (recompute every step) since the smaller basis makes this much cheaper than
+! it was for def2-TZVPP.
+!
+! Next step once this converges cleanly (Hessian free of large/multiple
+! negative eigenvalues, i.e. an actual minimum): take the resulting relaxed
+! geometry and re-run the full wB97X-D/def2-TZVPP/PCM(water) optimization
+! (caa005bIRCCML1stdef2TZVPPd's settings) starting from there instead of the
+! raw IRC-extracted structure.
+
+ $CONTRL SCFTYP=RHF RUNTYP=OPTIMIZE DFTTYP=wB97X-D
+         COORD=UNIQUE MAXIT=200 NOSYM=1
+ $END
+ $GUESS GUESS=HUCKEL $END
+ $BASIS GBASIS=N31 NGAUSS=6 NDFUNC=1 NPFUNC=1 $END
+ $SCF CONV=1.0D-6
+     SOSCF=.T.
+     DAMP=.F.
+     SHIFT=.T.
+     DIRSCF=.TRUE.
+ $END
+ $STATPT OPTTOL=0.0001 NSTEP=300 IHREP=1 HSSEND=.T. DXMAX=0.02 NPRT=1 $END
+ $ZMAT DLC=.F. AUTO=.F. $END
+ $FORCE METHOD=SEMINUM PROJCT=.T. $END
+ $PCM SOLVNT=WATER $END
+ $SYSTEM MWORDS=100 MEMDDI=200 $END
+
+ $DATA
+Chloroacetaldehyde hydrate and water -- pre-relaxation at 6-31G(d,p)
+C1
+Cl   17.0   3.31777   0.19618   0.40668
+C     6.0   2.24118   0.90662  -0.95961
+C     6.0   3.04189   1.88482  -1.77661
+O     8.0   2.47874   2.79975  -2.40567
+H     1.0   1.37854   1.36717  -0.48364
+H     1.0   1.95549   0.05691  -1.58084
+O     8.0   3.58112   0.05498  -3.89961
+O     8.0   3.79699   2.62132  -4.86879
+H     1.0   3.58756   3.03704  -5.71005
+H     1.0   3.65634   0.88740  -4.40943
+H     1.0   2.96923  -0.51508  -4.37329
+H     1.0   4.12539   1.74751  -1.81197
+H     1.0   3.29383   3.07126  -4.16999
+ $END

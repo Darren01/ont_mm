@@ -1,0 +1,45 @@
+! Cl ATOM | EXTERNAL BASIS FILE TEST (EXTFIL, not BASNAM)
+!
+! ============================================================
+! Why this file exists
+! ============================================================
+! caa005b-cl-atom-basischeck.inp (same molecule/geometry/basis DATA, but
+! using inline $BASIS BASNAM(1)=clbas $END with the basis defined directly
+! in the .inp after $DATA) crashed with:
+!   ** On entry to DGEMM  parameter number 13 had an illegal value
+! immediately after ONE-ELECTRON INTEGRALS, before any SCF iteration.
+!
+! This tests whether GAMESS's OTHER custom-basis mechanism -- EXTFIL,
+! reading basis sets from a separate external file via the EXTBAS
+! environment variable, keyed by chemical symbol rather than atom position
+! -- exercises a different internal code path that avoids the crash.
+!
+! Everything else (molecule: isolated Cl atom, UHF, MULT=2, geometry, SCF
+! settings) is unchanged from caa005b-cl-atom-basischeck.inp. The basis
+! DATA itself is byte-for-byte identical (verified by diff against the
+! working def2-TZVPP source) -- only the MECHANISM by which GAMESS reads it
+! has changed, from inline BASNAM to external EXTFIL.
+!
+! Requires: environment variable EXTBAS set to point to def2tzvp_ext.bas
+! before rungms is called (confirmed rungms itself does not set/reset
+! EXTBAS at all, so exporting it beforehand should reach the GAMESS binary
+! unmodified).
+
+ $CONTRL SCFTYP=UHF RUNTYP=ENERGY DFTTYP=wB97X-D
+         MULT=2 ICHARG=0 NOSYM=1 MAXIT=200
+ $END
+ $GUESS GUESS=HUCKEL $END
+ $BASIS GBASIS=DEF2TZVP EXTFIL=.TRUE. $END
+ $SCF CONV=1.0D-6
+     SOSCF=.T.
+     DAMP=.F.
+     SHIFT=.T.
+     DIRSCF=.TRUE.
+ $END
+ $SYSTEM MWORDS=20 MEMDDI=20 $END
+
+ $DATA
+Isolated chlorine atom -- EXTFIL external basis test
+C1
+Cl   17.0   0.0   0.0   0.0
+ $END

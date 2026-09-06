@@ -1,0 +1,34 @@
+! H2O | caa008-water-pcseg2: SINGLE POINT at wB97X-D/PCseg-2/PCM(water)
+!
+! Part of the standalone hydration thermodynamic cycle:
+!   dG_hydration = G(hydrate) - [G(aldehyde) + G(water)]
+!
+! Single-point energy (RUNTYP=ENERGY, no optimization) at the confirmed
+! wB97X-D/6-31G(d,p)/PCM(water) minimum for a standalone water molecule,
+! geometry taken from caa008-water-bare.log (EXECUTION TERMINATED
+! NORMALLY).
+!
+! Native GBASIS=PCSEG-2, ISPHER=1 mandatory -- same recipe validated
+! throughout this project.
+
+ $CONTRL SCFTYP=RHF RUNTYP=ENERGY DFTTYP=wB97X-D
+         COORD=UNIQUE MAXIT=200 NOSYM=1 ISPHER=1
+ $END
+ $GUESS GUESS=HUCKEL $END
+ $BASIS GBASIS=PCSEG-2 $END
+ $SCF CONV=1.0D-6
+     SOSCF=.T.
+     DAMP=.F.
+     SHIFT=.T.
+     DIRSCF=.TRUE.
+ $END
+ $PCM SOLVNT=WATER $END
+ $SYSTEM MWORDS=100 MEMDDI=200 $END
+
+ $DATA
+Water, standalone, single point at PCseg-2
+C1
+O     8.0      3.9868948094     2.6757392467    -4.8044365304
+H     1.0      3.5048229694     2.7961085969    -5.6278356655
+H     1.0      3.3878803755     3.0313446329    -4.1411468691
+ $END

@@ -1,0 +1,44 @@
+ID	Label	Type	hasZeroPointEnergy	hasEnthalpy	hasEntropy	hasGibbsFreeEnergy	hasElectronicEnergy
+ID	LABEL	TYPE	I gc:hasZeroPointEnergy	I gc:hasEnthalpy	I gc:hasEntropy	I gc:hasGibbsFreeEnergy	I gc:hasElectronicEnergy
+ex:energies_caa001a	System energies caa001a	gc:SystemEnergies	ex:zpe_caa001a	ex:enthalpy_caa001a	ex:entropy_caa001a	ex:gibbs_caa001a	
+ex:energies_caa001b	System energies caa001b	gc:SystemEnergies	ex:zpe_caa001b	ex:enthalpy_caa001b	ex:entropy_caa001b	ex:gibbs_caa001b	
+ex:energies_caa002	System energies caa002	gc:SystemEnergies	ex:zpe_caa002	ex:enthalpy_caa002	ex:entropy_caa002	ex:gibbs_caa002	
+ex:energies_caa002a	System energies caa002a	gc:SystemEnergies	ex:zpe_caa002a	ex:enthalpy_caa002a	ex:entropy_caa002a	ex:gibbs_caa002a	
+ex:energies_caa002b	System energies caa002b	gc:SystemEnergies	ex:zpe_caa002b	ex:enthalpy_caa002b	ex:entropy_caa002b	ex:gibbs_caa002b	
+ex:energies_caa003a	System energies caa003a	gc:SystemEnergies	ex:zpe_caa003a	ex:enthalpy_caa003a	ex:entropy_caa003a	ex:gibbs_caa003a	
+ex:energies_caa003b	System energies caa003b	gc:SystemEnergies	ex:zpe_caa003b	ex:enthalpy_caa003b	ex:entropy_caa003b	ex:gibbs_caa003b	
+ex:energies_caa003c	System energies caa003c	gc:SystemEnergies	ex:zpe_caa003c	ex:enthalpy_caa003c	ex:entropy_caa003c	ex:gibbs_caa003c	
+ex:energies_caa003d	System energies caa003d	gc:SystemEnergies	ex:zpe_caa003d	ex:enthalpy_caa003d	ex:entropy_caa003d	ex:gibbs_caa003d	
+ex:energies_caa004a	System energies caa004a	gc:SystemEnergies	ex:zpe_caa004a	ex:enthalpy_caa004a	ex:entropy_caa004a	ex:gibbs_caa004a	
+ex:energies_caa004b	System energies caa004b	gc:SystemEnergies	ex:zpe_caa004b	ex:enthalpy_caa004b	ex:entropy_caa004b	ex:gibbs_caa004b	
+ex:energies_caa004c	System energies caa004c	gc:SystemEnergies	ex:zpe_caa004c	ex:enthalpy_caa004c	ex:entropy_caa004c	ex:gibbs_caa004c	
+ex:energies_caa004d	System energies caa004d	gc:SystemEnergies	ex:zpe_caa004d	ex:enthalpy_caa004d	ex:entropy_caa004d	ex:gibbs_caa004d	
+ex:energies_caa004e	System energies caa004e	gc:SystemEnergies	ex:zpe_caa004e	ex:enthalpy_caa004e	ex:entropy_caa004e	ex:gibbs_caa004e	
+ex:energies_caa004f	System energies caa004f	gc:SystemEnergies	ex:zpe_caa004f	ex:enthalpy_caa004f	ex:entropy_caa004f	ex:gibbs_caa004f	
+ex:energies_caa004g	System energies caa004g	gc:SystemEnergies	ex:zpe_caa004g	ex:enthalpy_caa004g	ex:entropy_caa004g	ex:gibbs_caa004g	
+ex:energies_caa004h	System energies caa004h	gc:SystemEnergies	ex:zpe_caa004h	ex:enthalpy_caa004h	ex:entropy_caa004h	ex:gibbs_caa004h	
+ex:energies_caa004j	System energies caa004j	gc:SystemEnergies	ex:zpe_caa004j	ex:enthalpy_caa004j	ex:entropy_caa004j	ex:gibbs_caa004j	
+ex:energies_caa004k	System energies caa004k	gc:SystemEnergies	ex:zpe_caa004k	ex:enthalpy_caa004k	ex:entropy_caa004k	ex:gibbs_caa004k	
+ex:energies_caa004l	System energies caa004l	gc:SystemEnergies	ex:zpe_caa004l	ex:enthalpy_caa004l	ex:entropy_caa004l	ex:gibbs_caa004l	
+ex:energies_caa004m	System energies caa004m	gc:SystemEnergies	ex:zpe_caa004m	ex:enthalpy_caa004m	ex:entropy_caa004m	ex:gibbs_caa004m	
+ex:energies_caa005a	System energies caa005a	gc:SystemEnergies	ex:zpe_caa005a	ex:enthalpy_caa005a	ex:entropy_caa005a	ex:gibbs_caa005a	
+ex:energies_caa005b	System energies caa005b	gc:SystemEnergies	ex:zpe_caa005b	ex:enthalpy_caa005b	ex:entropy_caa005b	ex:gibbs_caa005b	
+ex:energies_caa005bIRCCML_last	System energies caa005bIRCCML_last	gc:SystemEnergies	ex:zpe_caa005bIRCCML_last	ex:enthalpy_caa005bIRCCML_last	ex:entropy_caa005bIRCCML_last	ex:gibbs_caa005bIRCCML_last	
+ex:energies_caa005bIRCCML1st	System energies caa005bIRCCML1st	gc:SystemEnergies	ex:zpe_caa005bIRCCML1st	ex:enthalpy_caa005bIRCCML1st	ex:entropy_caa005bIRCCML1st	ex:gibbs_caa005bIRCCML1st	
+ex:energies_caa005bIRCCML1stdef2TZVPP	System energies caa005bIRCCML1stdef2TZVPP	gc:SystemEnergies	ex:zpe_caa005bIRCCML1stdef2TZVPP	ex:enthalpy_caa005bIRCCML1stdef2TZVPP	ex:entropy_caa005bIRCCML1stdef2TZVPP	ex:gibbs_caa005bIRCCML1stdef2TZVPP	
+ex:energies_caa005bTSa	System energies caa005bTSa	gc:SystemEnergies	ex:zpe_caa005bTSa	ex:enthalpy_caa005bTSa	ex:entropy_caa005bTSa	ex:gibbs_caa005bTSa	
+ex:energies_caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix	System energies caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix	gc:SystemEnergies					ex:electronic_energy_caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix
+ex:energies_caa005bIRCCML1stdef2TZVPP-uhfcheck	System energies caa005bIRCCML1stdef2TZVPP-uhfcheck	gc:SystemEnergies					ex:electronic_energy_caa005bIRCCML1stdef2TZVPP-uhfcheck
+ex:energies_caa006a	System energies caa006a	gc:SystemEnergies					ex:electronic_energy_caa006a
+ex:energies_caa006b	System energies caa006b	gc:SystemEnergies					ex:electronic_energy_caa006b
+ex:energies_caa006c	System energies caa006c	gc:SystemEnergies					ex:electronic_energy_caa006c
+ex:energies_caa007b	System energies caa007b	gc:SystemEnergies	ex:zpe_caa007b	ex:enthalpy_caa007b	ex:entropy_caa007b	ex:gibbs_caa007b	
+ex:energies_caa008-aldehyde-bare	System energies caa008-aldehyde-bare	gc:SystemEnergies	ex:zpe_caa008-aldehyde-bare	ex:enthalpy_caa008-aldehyde-bare	ex:entropy_caa008-aldehyde-bare	ex:gibbs_caa008-aldehyde-bare	
+ex:energies_caa008-hydrate-bare	System energies caa008-hydrate-bare	gc:SystemEnergies	ex:zpe_caa008-hydrate-bare	ex:enthalpy_caa008-hydrate-bare	ex:entropy_caa008-hydrate-bare	ex:gibbs_caa008-hydrate-bare	
+ex:energies_caa008-water-bare	System energies caa008-water-bare	gc:SystemEnergies	ex:zpe_caa008-water-bare	ex:enthalpy_caa008-water-bare	ex:entropy_caa008-water-bare	ex:gibbs_caa008-water-bare	
+ex:energies_caa005bTSb-pcseg2	System energies caa005bTSb-pcseg2	gc:SystemEnergies					ex:electronic_energy_caa005bTSb-pcseg2
+ex:energies_caa007a-pcseg2	System energies caa007a-pcseg2	gc:SystemEnergies					ex:electronic_energy_caa007a-pcseg2
+ex:energies_caa007b-pcseg2	System energies caa007b-pcseg2	gc:SystemEnergies					ex:electronic_energy_caa007b-pcseg2
+ex:energies_caa008-aldehyde-pcseg2	System energies caa008-aldehyde-pcseg2	gc:SystemEnergies					ex:electronic_energy_caa008-aldehyde-pcseg2
+ex:energies_caa008-hydrate-pcseg2	System energies caa008-hydrate-pcseg2	gc:SystemEnergies					ex:electronic_energy_caa008-hydrate-pcseg2
+ex:energies_caa008-water-pcseg2	System energies caa008-water-pcseg2	gc:SystemEnergies					ex:electronic_energy_caa008-water-pcseg2

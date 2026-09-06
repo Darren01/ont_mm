@@ -1,0 +1,37 @@
+! C2H7O3Cl | Single Point | CCSD(T)/aug-cc-pVTZ
+! Last geometry from IRC caa005bIRC.cml
+! PES taken from IRC and geom optimised
+ $BASIS GBASIS=acct $END
+ $PCM SOLVNT=WATER $END
+ $CONTRL SCFTYP=RHF RUNTYP=ENERGY
+         CCTYP=CCSD(T)
+         ICHARG=0 MULT=1
+         ICUT=11
+         ISPHER=1
+         MAXIT=50 
+ $END
+ $SCF DIRSCF=.T.
+      CONV=2.5D-07
+      FDIFF=.F.
+ $END
+ $TRANS CUTTRF=1D-11 $END
+ $SYSTEM MWORDS=500 MEMDDI=1732 $END
+!$CONTRL EXETYP=CHECK $END
+
+ $DATA
+Chloroacetaldehyde hydrate and water TS
+C1
+Cl   17.0   3.16550   0.74102   0.42648
+C     6.0   2.75479   0.08839  -1.29429
+C     6.0   3.28791   1.03656  -2.35314
+O     8.0   2.51333   2.24947  -2.31989
+H     1.0   1.67040   0.00953  -1.32806
+H     1.0   3.24087  -0.88084  -1.35678
+O     8.0   3.18037   0.38450  -3.66704
+O     8.0   3.86196   2.95198  -4.58185
+H     1.0   3.82414   3.47281  -5.38870
+H     1.0   3.75851   2.01460  -4.81032
+H     1.0   2.25794   0.15822  -3.85027
+H     1.0   4.35305   1.23112  -2.23976
+H     1.0   2.88030   2.84059  -3.00886
+ $END

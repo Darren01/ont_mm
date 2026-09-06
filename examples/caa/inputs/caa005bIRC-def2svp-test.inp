@@ -1,0 +1,203 @@
+! C2H7O3Cl | INTERMEDIATE BASIS TEST -- def2-SVP
+!
+! ============================================================
+! Why this file exists
+! ============================================================
+! caa005bIRCCML1st-prerelax-631Gdp.inp confirmed a genuine minimum at
+! wB97X-D/6-31G(d,p)/PCM(water): EXECUTION TERMINATED NORMALLY, and the
+! final Hessian's vibrational analysis showed ZERO IMAGINARY FREQUENCIES.
+!
+! caa005bIRCCML1stdef2TZVPPe.inp then took that CONFIRMED-GOOD geometry and
+! simply switched the basis to def2-TZVPP (same functional, same PCM
+! treatment, same geometry) -- and immediately showed 16 SIMULTANEOUS
+! NEGATIVE EIGENVALUES, reproducing closely across two independently
+! computed Hessians at NSERCH=2 and NSERCH=3. This ruled out the
+! "wrong level of theory generated this geometry" explanation: the geometry
+! is now confirmed correct for this functional/solvent combination, and the
+! instability appeared purely from enlarging the basis set.
+!
+! Leading hypothesis: basis-set superposition / basis-flexibility effects.
+! def2-TZVPP is a much larger, more diffuse, more polarized basis than
+! 6-31G(d,p), and larger/more diffuse basis sets are well known to cause
+! exactly this kind of problem specifically for WEAKLY-BOUND, MULTI-FRAGMENT
+! complexes (this is 3 separate molecules held together only by H-bonds):
+! basis functions centred on one fragment can "borrow" density from a
+! neighbouring fragment once the basis is flexible/diffuse enough, creating
+! spurious extra soft/unstable directions that are an artefact of basis
+! completeness rather than real chemistry.
+!
+! ============================================================
+! What this file does
+! ============================================================
+! Tests the middle ground: def2-SVP (same Karlsruhe/def2 family as the
+! final target def2-TZVPP, but much smaller/less diffuse -- roughly
+! comparable in size to 6-31G(d,p)) at the SAME confirmed-good geometry.
+!
+! If def2-SVP behaves cleanly (few/no negative eigenvalues, similar to
+! 6-31G(d,p)): supports the basis-completeness/diffuseness hypothesis, and
+! the practical path forward is a staged basis escalation (SVP -> TZVPP)
+! rather than jumping straight to the largest basis.
+!
+! If def2-SVP ALSO shows many negative eigenvalues despite being a small
+! basis: the instability is tied to the def2 family's specific functions
+! (contraction/polarization scheme) rather than sheer size/diffuseness --
+! a different and more surprising finding, worth stopping to think about
+! (and a good candidate to post to the GAMESS Google Group either way).
+!
+! Optimizer settings unchanged from TZVPPd/e (conservative DXMAX=0.01,
+! IHREP=2, METHOD=SEMINUM, Cartesian coordinates, NOSYM=1, DIRSCF=.TRUE.)
+! since these reflect facts about wB97X-D itself (no analytic Hessian),
+! not about basis size.
+!
+! ------------------------------------------------------------
+! def2-SVP basis (Basis Set Exchange, GAMESS-US format) included below,
+! converted into the BASNAM block style used throughout this project
+! (matching caa005bIRCCML1stdef2TZVPPe.inp's $hbas/$cbas/$obas/$clbas).
+! ------------------------------------------------------------
+
+ $CONTRL SCFTYP=RHF RUNTYP=OPTIMIZE DFTTYP=wB97X-D
+         COORD=UNIQUE MAXIT=200 NOSYM=1
+ $END
+ $GUESS GUESS=HUCKEL $END
+ $BASIS BASNAM(1)=svpclbas,svpcbas,svpcbas,svpobas,svphbas,svphbas,
+          svpobas,svpobas,svphbas,svphbas,svphbas,svphbas,svphbas $END
+ $SCF CONV=1.0D-6
+     SOSCF=.T.
+     DAMP=.F.
+     SHIFT=.T.
+     DIRSCF=.TRUE.
+ $END
+ $STATPT OPTTOL=0.0001 NSTEP=300 IHREP=2 HSSEND=.T. DXMAX=0.01 NPRT=1 $END
+ $ZMAT DLC=.F. AUTO=.F. $END
+ $FORCE METHOD=SEMINUM PROJCT=.T. $END
+ $PCM SOLVNT=WATER $END
+ $SYSTEM MWORDS=100 MEMDDI=200 $END
+
+ $DATA
+Chloroacetaldehyde hydrate and water -- def2-SVP intermediate basis test
+C1
+Cl   17.0   3.4062263771   0.2091279057   0.2533561081
+C     6.0   2.2845933847   0.8634093872  -0.9829615815
+C     6.0   2.9679220138   1.8831295208  -1.8632833921
+O     8.0   2.3265477065   2.6992356036  -2.4903771140
+H     1.0   1.4219922861   1.3024323058  -0.4827108444
+H     1.0   1.9669509886   0.0324484665  -1.6146227258
+O     8.0   3.5738284953   0.0679565750  -3.8462810595
+O     8.0   3.9842881842   2.6765444468  -4.8076254061
+H     1.0   3.5078817045   2.7937321447  -5.6358114425
+H     1.0   3.7893562925   0.9104597543  -4.2899067776
+H     1.0   2.7388546345  -0.1945985132  -4.2445882765
+H     1.0   4.0681996666   1.8390865178  -1.9080252718
+H     1.0   3.3874282656   3.0329158850  -4.1299822164
+ $END
+
+
+! ============================================================
+! def2-SVP BASIS SETS (Basis Set Exchange, GAMESS-US format,
+! elements H/C/O/Cl -- Data from Turbomole 7.3)
+! ============================================================
+
+ $svphbas
+S   3
+1        13.0107010              0.19682158E-01
+2         1.9622572              0.13796524
+3         0.44453796             0.47831935
+
+S   1
+1         0.12194962             1.0000000
+
+P   1
+1         0.8000000              1.0000000
+
+ $end
+
+ $svpcbas
+S   5
+1      1238.4016938              0.54568832082E-02
+2       186.29004992             0.40638409211E-01
+3        42.251176346            0.18025593888
+4        11.676557932            0.46315121755
+5         3.5930506482           0.44087173314
+
+S   1
+1         0.40245147363          1.0000000
+
+S   1
+1         0.13090182668          1.0000000
+
+P   3
+1         9.4680970621           0.38387871728E-01
+2         2.0103545142           0.21117025112
+3         0.54771004707          0.51328172114
+
+P   1
+1         0.15268613795          1.0000000
+
+D   1
+1         0.8000000              1.0000000
+
+ $end
+
+ $svpobas
+S   5
+1      2266.1767785             -0.53431809926E-02
+2       340.87010191            -0.39890039230E-01
+3        77.363135167           -0.17853911985
+4        21.479644940           -0.46427684959
+5         6.6589433124          -0.44309745172
+
+S   1
+1         0.80975975668          1.0000000
+
+S   1
+1         0.25530772234          1.0000000
+
+P   3
+1        17.721504317            0.43394573193E-01
+2         3.8635505440           0.23094120765
+3         1.0480920883           0.51375311064
+
+P   1
+1         0.27641544411          1.0000000
+
+D   1
+1         1.2000000              1.0000000
+
+ $end
+
+ $svpclbas
+S   5
+1     10449.8275660              0.19708362484E-02
+2      1571.7365221              0.14754727977E-01
+3       357.12065523             0.66679112875E-01
+4       100.25185935             0.17228924084
+5        30.812727554            0.15883786100
+
+S   3
+1        51.923789434           -0.10009298909
+2         5.7045760975           0.60841752753
+3         2.3508376809           0.54352153355
+
+S   1
+1         0.44605124672          1.0000000
+
+S   1
+1         0.16848856190          1.0000000
+
+P   5
+1       307.66790569            -0.87801484118E-02
+2        72.102015515           -0.63563355471E-01
+3        22.532680262           -0.24016428276
+4         7.8991765444          -0.47798866557
+5         2.8767268321          -0.38515850005
+
+P   1
+1         0.77459363955          1.0000000
+
+P   1
+1         0.21037699698          1.0000000
+
+D   1
+1         0.6500000              1.0000000
+
+ $end

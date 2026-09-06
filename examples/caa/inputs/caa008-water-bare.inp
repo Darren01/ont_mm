@@ -1,0 +1,45 @@
+! H2O | Standalone water at wB97X-D/6-31G(d,p)/PCM(water)
+!
+! Part of the standalone hydration thermodynamic cycle:
+!   dG_hydration = G(hydrate) - [G(aldehyde) + G(water)]
+! This supplies G(water), needed to balance the reactant side of the
+! equation (the hydrate has one more O and two more H than the bare
+! aldehyde). A single water molecule embedded in a PCM continuum is a
+! standard, if approximate, way to estimate water's chemical potential --
+! it does not fully capture bulk liquid water's extensive hydrogen-bonded
+! structure, but is a reasonable and widely-used approximation, and will be
+! applied consistently across both the acetaldehyde calibration and the
+! chloroacetaldehyde case.
+!
+! Starting geometry: one of the two spectator water molecules extracted
+! from the converged "first" IRC-point cluster geometry, purely as a
+! reasonable starting guess (a lone water molecule's own geometry is not
+! sensitive to which cluster it happened to come from; it will fully relax
+! on optimization regardless).
+!
+! Settings identical to caa008-aldehyde-bare.inp/caa008-hydrate-bare.inp.
+
+ $CONTRL SCFTYP=RHF RUNTYP=OPTIMIZE DFTTYP=wB97X-D
+         COORD=UNIQUE MAXIT=200 NOSYM=1
+ $END
+ $GUESS GUESS=HUCKEL $END
+ $BASIS GBASIS=N31 NGAUSS=6 NDFUNC=1 NPFUNC=1 $END
+ $SCF CONV=1.0D-6
+     SOSCF=.T.
+     DAMP=.F.
+     SHIFT=.T.
+     DIRSCF=.TRUE.
+ $END
+ $STATPT OPTTOL=0.0001 NSTEP=300 IHREP=1 HSSEND=.T. DXMAX=0.02 NPRT=1 $END
+ $ZMAT DLC=.F. AUTO=.F. $END
+ $FORCE METHOD=SEMINUM PROJCT=.T. $END
+ $PCM SOLVNT=WATER $END
+ $SYSTEM MWORDS=20 MEMDDI=50 $END
+
+ $DATA
+Water, standalone, for hydration thermodynamic cycle
+C1
+O     8.0      3.9842881842     2.6765444468    -4.8076254061
+H     1.0      3.5078817045     2.7937321447    -5.6358114425
+H     1.0      3.3874282656     3.0329158850    -4.1299822164
+ $END

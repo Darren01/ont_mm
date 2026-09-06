@@ -1,0 +1,47 @@
+! C2H7O3Cl | caa007b-pcseg2: SINGLE POINT at wB97X-D/PCseg-2/PCM(water)
+!
+! Final step of the 3-point IRC refinement (caa007a/caa007b/caa005bTSb).
+! Single-point energy (RUNTYP=ENERGY, no optimization) at the confirmed
+! wB97X-D/6-31G(d,p)/PCM(water) minimum for the LAST IRC point (Reaction
+! Coordinate +89 of caa005bIRC.cml), geometry taken from caa007b.log
+! (EXECUTION TERMINATED NORMALLY, zero imaginary frequencies -- confirmed
+! genuine minimum).
+!
+! Native GBASIS=PCSEG-2 (Jensen's Polarization Consistent family, ~TZ2P,
+! roughly cc-pVTZ-equivalent) -- confirmed to sidestep entirely the
+! DGEMM crash affecting custom BASNAM/EXTFIL bases on this ARCHER2 build
+! (see gamess-dgemm-bug-report.md), and confirmed to give a chemically
+! sensible energy where custom def2-TZVPP did not (caa005bIRC-pcseg2-test).
+! ISPHER=1 is mandatory for this basis family (confirmed in docs-input.txt).
+
+ $CONTRL SCFTYP=RHF RUNTYP=ENERGY DFTTYP=wB97X-D
+         COORD=UNIQUE MAXIT=200 NOSYM=1 ISPHER=1
+ $END
+ $GUESS GUESS=HUCKEL $END
+ $BASIS GBASIS=PCSEG-2 $END
+ $SCF CONV=1.0D-6
+     SOSCF=.T.
+     DAMP=.F.
+     SHIFT=.T.
+     DIRSCF=.TRUE.
+ $END
+ $PCM SOLVNT=WATER $END
+ $SYSTEM MWORDS=100 MEMDDI=200 $END
+
+ $DATA
+Chloroacetaldehyde hydrate and water -- last IRC point, single point at PCseg-2
+C1
+Cl   17.0   3.0958172962   0.7465029267   0.3674434999
+C     6.0   2.7553559514   0.1183228668  -1.2862720924
+C     6.0   3.2911135331   1.0415526645  -2.3721380087
+O     8.0   2.5679466453   2.2248215912  -2.3632141960
+H     1.0   1.6722911463   0.0200636742  -1.3746856657
+H     1.0   3.2303121487  -0.8580351221  -1.3612906679
+O     8.0   3.1992735547   0.3777262621  -3.6212394743
+O     8.0   3.9981046355   2.9468958796  -4.6090746327
+H     1.0   3.5103968287   3.4174477402  -5.2922819591
+H     1.0   3.8235792467   2.0081488770  -4.7773830673
+H     1.0   2.2612260824   0.2597422556  -3.8205202764
+H     1.0   4.3655072317   1.2114455536  -2.2298812563
+H     1.0   2.9799126993   2.7851078306  -3.0499442030
+ $END

@@ -1,0 +1,51 @@
+! ClCH2CH(OH)2 | Bare chloroacetaldehyde hydrate at wB97X-D/6-31G(d,p)/PCM(water)
+!
+! Part of the standalone hydration thermodynamic cycle:
+!   dG_hydration = G(hydrate) - [G(aldehyde) + G(water)]
+!
+! Starting geometry: extracted from the converged, confirmed-genuine-minimum
+! "last" IRC-point cluster (caa007b.log), taking the 10 atoms belonging to
+! the hydrate itself and discarding the one remaining spectator water.
+! Fragment assignment confirmed by direct bond-length analysis of the
+! converged cluster: C3-O4 = 1.387 A and C3-O7 = 1.418 A (both genuine
+! single C-OH bonds -- O7 is one of the ORIGINAL spectator waters from the
+! reactant side, which the reaction mechanism incorporated into the gem-diol
+! via a proton relay), while C3-O8 = 3.022 A (far too long to be bonded,
+! confirming O8/H9/H10 is the genuine spectator water, correctly excluded
+! here). Since the spectator water is no longer present to hydrogen-bond to,
+! this geometry will relax somewhat on re-optimization -- expected/correct.
+!
+! Settings identical to caa008-aldehyde-bare.inp and the rest of this
+! project's 6-31G(d,p) work.
+
+ $CONTRL SCFTYP=RHF RUNTYP=OPTIMIZE DFTTYP=wB97X-D
+         COORD=UNIQUE MAXIT=200 NOSYM=1
+ $END
+ $GUESS GUESS=HUCKEL $END
+ $BASIS GBASIS=N31 NGAUSS=6 NDFUNC=1 NPFUNC=1 $END
+ $SCF CONV=1.0D-6
+     SOSCF=.T.
+     DAMP=.F.
+     SHIFT=.T.
+     DIRSCF=.TRUE.
+ $END
+ $STATPT OPTTOL=0.0001 NSTEP=300 IHREP=1 HSSEND=.T. DXMAX=0.02 NPRT=1 $END
+ $ZMAT DLC=.F. AUTO=.F. $END
+ $FORCE METHOD=SEMINUM PROJCT=.T. $END
+ $PCM SOLVNT=WATER $END
+ $SYSTEM MWORDS=50 MEMDDI=100 $END
+
+ $DATA
+Chloroacetaldehyde hydrate, bare, for hydration thermodynamic cycle
+C1
+Cl    17.0     3.0958172962     0.7465029267     0.3674434999
+C     6.0      2.7553559514     0.1183228668    -1.2862720924
+C     6.0      3.2911135331     1.0415526645    -2.3721380087
+O     8.0      2.5679466453     2.2248215912    -2.3632141960
+H     1.0      1.6722911463     0.0200636742    -1.3746856657
+H     1.0      3.2303121487    -0.8580351221    -1.3612906679
+O     8.0      3.1992735547     0.3777262621    -3.6212394743
+H     1.0      2.2612260824     0.2597422556    -3.8205202764
+H     1.0      4.3655072317     1.2114455536    -2.2298812563
+H     1.0      2.9799126993     2.7851078306    -3.0499442030
+ $END

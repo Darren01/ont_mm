@@ -1,0 +1,56 @@
+! C2H7O3Cl | caa007b: LAST IRC POINT at wB97X-D/6-31G(d,p)/PCM(water)
+!
+! Part of a 3-point refinement (caa007a/b/c) of the existing lower-level
+! (6-31G(d)-ish) IRC's first, last, and TS geometries, prior to final
+! single-point energies at wB97X-D/PCseg-2/PCM(water).
+!
+! This is the LAST point (Reaction Coordinate 89 of 89 in caa005bIRC.cml,
+! energy -765.8919790 at the original lower level). Same rationale as
+! caa007a (=caa005bIRCCML1st-prerelax-631Gdp.inp, the equivalent run for
+! the FIRST point): the geometry was extracted from an IRC computed at a
+! different level of theory, so it is not expected to be a stationary
+! point at our target functional -- re-optimizing at a modest, native
+! 6-31G(d,p) basis first (same functional/solvent as the eventual target)
+! is the standard, well-tested bridging step, before moving to the larger
+! PCseg-2 basis.
+!
+! Settings identical to caa007a: wB97X-D, PCM(water), native GBASIS=N31
+! NGAUSS=6 NDFUNC=1 NPFUNC=1 (6-31G(d,p)), IHREP=1 (fresh Hessian every
+! step, affordable at this basis size), DXMAX=0.02, Cartesian coordinates,
+! METHOD=SEMINUM (wB97X-D has no analytic Hessian regardless of basis).
+
+ $CONTRL SCFTYP=RHF RUNTYP=OPTIMIZE DFTTYP=wB97X-D
+         COORD=UNIQUE MAXIT=200 NOSYM=1
+ $END
+ $GUESS GUESS=HUCKEL $END
+ $BASIS GBASIS=N31 NGAUSS=6 NDFUNC=1 NPFUNC=1 $END
+ $SCF CONV=1.0D-6
+     SOSCF=.T.
+     DAMP=.F.
+     SHIFT=.T.
+     DIRSCF=.TRUE.
+ $END
+ $STATPT OPTTOL=0.0001 NSTEP=300 IHREP=1 HSSEND=.T. DXMAX=0.02 NPRT=1 $END
+ $ZMAT DLC=.F. AUTO=.F. $END
+ $FORCE METHOD=SEMINUM PROJCT=.T. $END
+ $PCM SOLVNT=WATER $END
+ $SYSTEM MWORDS=100 MEMDDI=200 $END
+
+ $DATA
+Chloroacetaldehyde hydrate and water -- last IRC point, pre-relax at 6-31G(d,p)
+C1
+Cl   17.0   3.161147   0.737334   0.428993
+C     6.0   2.754812   0.090038  -1.294459
+C     6.0   3.293443   1.037766  -2.351014
+O     8.0   2.523905   2.253921  -2.317175
+H     1.0   1.670279   0.014534  -1.331701
+H     1.0   3.238174  -0.880522  -1.356882
+O     8.0   3.184134   0.387162  -3.665546
+O     8.0   3.853288   2.951010  -4.591976
+H     1.0   3.811574   3.469259  -5.400314
+H     1.0   3.750463   2.012598  -4.816828
+H     1.0   2.262050   0.157490  -3.846185
+H     1.0   4.359320   1.227805  -2.236573
+H     1.0   2.888248   2.841348  -3.010822
+ $END
+

@@ -1,0 +1,110 @@
+ID	Label	Type	hasConstraint	involvesAtom1	involvesAtom2	involvesAtom3	involvesAtom4	targetValue	hasUnit	constraintMode	forceConstant
+ID	LABEL	TYPE	I ex:hasConstraint	I ex:involvesAtom1	I ex:involvesAtom2	I ex:involvesAtom3	I ex:involvesAtom4	AT ex:targetValue^^xsd:float	I gc:hasUnit	A gc:constraintMode	AT ex:forceConstant^^xsd:float
+ex:constraint_caa001a_d1	Distance constraint caa001a	ex:DistanceConstraint		ex:atom_4	ex:atom_13			2	gc:angstrom	fixed	
+ex:exp_caa001a	Experiment caa001a	gc:MolecularComputation	ex:constraint_caa001a_d1								
+ex:constraint_caa001a_d2	Distance constraint caa001a	ex:DistanceConstraint		ex:atom_11	ex:atom_10			2	gc:angstrom	fixed	
+ex:exp_caa001a	Experiment caa001a	gc:MolecularComputation	ex:constraint_caa001a_d2								
+ex:constraint_caa001a_d3	Distance constraint caa001a	ex:DistanceConstraint		ex:atom_8	ex:atom_3			4	gc:angstrom	fixed	
+ex:exp_caa001a	Experiment caa001a	gc:MolecularComputation	ex:constraint_caa001a_d3								
+ex:constraint_caa001b_d1	Distance constraint caa001b	ex:DistanceConstraint		ex:atom_4	ex:atom_13			2	gc:angstrom	fixed	
+ex:exp_caa001b	Experiment caa001b	gc:MolecularComputation	ex:constraint_caa001b_d1								
+ex:constraint_caa001b_d2	Distance constraint caa001b	ex:DistanceConstraint		ex:atom_11	ex:atom_10			2	gc:angstrom	fixed	
+ex:exp_caa001b	Experiment caa001b	gc:MolecularComputation	ex:constraint_caa001b_d2								
+ex:constraint_caa001b_d3	Distance constraint caa001b	ex:DistanceConstraint		ex:atom_8	ex:atom_3			3	gc:angstrom	fixed	
+ex:exp_caa001b	Experiment caa001b	gc:MolecularComputation	ex:constraint_caa001b_d3								
+ex:constraint_caa002_d1	Distance constraint caa002	ex:DistanceConstraint		ex:atom_4	ex:atom_13			2	gc:angstrom	fixed	
+ex:exp_caa002	Experiment caa002	gc:MolecularComputation	ex:constraint_caa002_d1								
+ex:constraint_caa002_d2	Distance constraint caa002	ex:DistanceConstraint		ex:atom_11	ex:atom_10			2	gc:angstrom	fixed	
+ex:exp_caa002	Experiment caa002	gc:MolecularComputation	ex:constraint_caa002_d2								
+ex:constraint_caa002a_d1	Distance constraint caa002a	ex:DistanceConstraint		ex:atom_4	ex:atom_13			2	gc:angstrom	fixed	
+ex:exp_caa002a	Experiment caa002a	gc:MolecularComputation	ex:constraint_caa002a_d1								
+ex:constraint_caa002a_d2	Distance constraint caa002a	ex:DistanceConstraint		ex:atom_11	ex:atom_10			2	gc:angstrom	fixed	
+ex:exp_caa002a	Experiment caa002a	gc:MolecularComputation	ex:constraint_caa002a_d2								
+ex:constraint_caa002a_d3	Distance constraint caa002a	ex:DistanceConstraint		ex:atom_8	ex:atom_3			3.8	gc:angstrom	fixed	
+ex:exp_caa002a	Experiment caa002a	gc:MolecularComputation	ex:constraint_caa002a_d3								
+ex:constraint_caa002b_d1	Distance constraint caa002b	ex:DistanceConstraint		ex:atom_4	ex:atom_13			2	gc:angstrom	fixed	
+ex:exp_caa002b	Experiment caa002b	gc:MolecularComputation	ex:constraint_caa002b_d1								
+ex:constraint_caa002b_d2	Distance constraint caa002b	ex:DistanceConstraint		ex:atom_11	ex:atom_10			2	gc:angstrom	fixed	
+ex:exp_caa002b	Experiment caa002b	gc:MolecularComputation	ex:constraint_caa002b_d2								
+ex:constraint_caa002b_d3	Distance constraint caa002b	ex:DistanceConstraint		ex:atom_8	ex:atom_3			3.6	gc:angstrom	fixed	
+ex:exp_caa002b	Experiment caa002b	gc:MolecularComputation	ex:constraint_caa002b_d3								
+ex:constraint_caa002c_d1	Distance constraint caa002c	ex:DistanceConstraint		ex:atom_4	ex:atom_13			2	gc:angstrom	fixed	
+ex:exp_caa002c	Experiment caa002c	gc:MolecularComputation	ex:constraint_caa002c_d1								
+ex:constraint_caa002c_d2	Distance constraint caa002c	ex:DistanceConstraint		ex:atom_11	ex:atom_10			2	gc:angstrom	fixed	
+ex:exp_caa002c	Experiment caa002c	gc:MolecularComputation	ex:constraint_caa002c_d2								
+ex:constraint_caa002c_d3	Distance constraint caa002c	ex:DistanceConstraint		ex:atom_8	ex:atom_3			3.4	gc:angstrom	fixed	
+ex:exp_caa002c	Experiment caa002c	gc:MolecularComputation	ex:constraint_caa002c_d3								
+ex:constraint_caa002d_d1	Distance constraint caa002d	ex:DistanceConstraint		ex:atom_4	ex:atom_13			2	gc:angstrom	fixed	
+ex:exp_caa002d	Experiment caa002d	gc:MolecularComputation	ex:constraint_caa002d_d1								
+ex:constraint_caa002d_d2	Distance constraint caa002d	ex:DistanceConstraint		ex:atom_11	ex:atom_10			2	gc:angstrom	fixed	
+ex:exp_caa002d	Experiment caa002d	gc:MolecularComputation	ex:constraint_caa002d_d2								
+ex:constraint_caa002d_d3	Distance constraint caa002d	ex:DistanceConstraint		ex:atom_8	ex:atom_3			3	gc:angstrom	fixed	
+ex:exp_caa002d	Experiment caa002d	gc:MolecularComputation	ex:constraint_caa002d_d3								
+ex:constraint_caa002e_d1	Distance constraint caa002e	ex:DistanceConstraint		ex:atom_8	ex:atom_3			3	gc:angstrom	fixed	
+ex:exp_caa002e	Experiment caa002e	gc:MolecularComputation	ex:constraint_caa002e_d1								
+ex:constraint_caa003a_d1	Distance constraint caa003a	ex:DistanceConstraint		ex:atom_8	ex:atom_3			3.8	gc:angstrom	fixed	
+ex:exp_caa003a	Experiment caa003a	gc:MolecularComputation	ex:constraint_caa003a_d1								
+ex:constraint_caa003b_d1	Distance constraint caa003b	ex:DistanceConstraint		ex:atom_8	ex:atom_3			3.4	gc:angstrom	fixed	
+ex:exp_caa003b	Experiment caa003b	gc:MolecularComputation	ex:constraint_caa003b_d1								
+ex:constraint_caa003c_d1	Distance constraint caa003c	ex:DistanceConstraint		ex:atom_8	ex:atom_3			3.2	gc:angstrom	fixed	
+ex:exp_caa003c	Experiment caa003c	gc:MolecularComputation	ex:constraint_caa003c_d1								
+ex:constraint_caa003d_d1	Distance constraint caa003d	ex:DistanceConstraint		ex:atom_8	ex:atom_3			2.8	gc:angstrom	fixed	
+ex:exp_caa003d	Experiment caa003d	gc:MolecularComputation	ex:constraint_caa003d_d1								
+ex:constraint_caa004b_d1	Distance constraint caa004b	ex:DistanceConstraint		ex:atom_7	ex:atom_3			1.6	gc:angstrom	fixed	
+ex:exp_caa004b	Experiment caa004b	gc:MolecularComputation	ex:constraint_caa004b_d1								
+ex:constraint_caa004c_d1	Distance constraint caa004c	ex:DistanceConstraint		ex:atom_7	ex:atom_3			1.6	gc:angstrom	fixed	
+ex:exp_caa004c	Experiment caa004c	gc:MolecularComputation	ex:constraint_caa004c_d1								
+ex:constraint_caa004c_d2	Distance constraint caa004c	ex:DistanceConstraint		ex:atom_10	ex:atom_7			4	gc:angstrom	fixed	
+ex:exp_caa004c	Experiment caa004c	gc:MolecularComputation	ex:constraint_caa004c_d2								
+ex:constraint_caa004d_d1	Distance constraint caa004d	ex:DistanceConstraint		ex:atom_7	ex:atom_3			1.6	gc:angstrom	fixed	
+ex:exp_caa004d	Experiment caa004d	gc:MolecularComputation	ex:constraint_caa004d_d1								
+ex:constraint_caa004d_d2	Distance constraint caa004d	ex:DistanceConstraint		ex:atom_10	ex:atom_7			3	gc:angstrom	fixed	
+ex:exp_caa004d	Experiment caa004d	gc:MolecularComputation	ex:constraint_caa004d_d2								
+ex:constraint_caa004e_d1	Distance constraint caa004e	ex:DistanceConstraint		ex:atom_7	ex:atom_3			1.6	gc:angstrom	fixed	
+ex:exp_caa004e	Experiment caa004e	gc:MolecularComputation	ex:constraint_caa004e_d1								
+ex:constraint_caa004e_d2	Distance constraint caa004e	ex:DistanceConstraint		ex:atom_10	ex:atom_7			2	gc:angstrom	fixed	
+ex:exp_caa004e	Experiment caa004e	gc:MolecularComputation	ex:constraint_caa004e_d2								
+ex:constraint_caa004e_d3	Distance constraint caa004e	ex:DistanceConstraint		ex:atom_8	ex:atom_13			4	gc:angstrom	fixed	
+ex:exp_caa004e	Experiment caa004e	gc:MolecularComputation	ex:constraint_caa004e_d3								
+ex:constraint_caa004f_d1	Distance constraint caa004f	ex:DistanceConstraint		ex:atom_7	ex:atom_3			1.6	gc:angstrom	fixed	
+ex:exp_caa004f	Experiment caa004f	gc:MolecularComputation	ex:constraint_caa004f_d1								
+ex:constraint_caa004f_d2	Distance constraint caa004f	ex:DistanceConstraint		ex:atom_10	ex:atom_7			2	gc:angstrom	fixed	
+ex:exp_caa004f	Experiment caa004f	gc:MolecularComputation	ex:constraint_caa004f_d2								
+ex:constraint_caa004f_d3	Distance constraint caa004f	ex:DistanceConstraint		ex:atom_8	ex:atom_13			3	gc:angstrom	fixed	
+ex:exp_caa004f	Experiment caa004f	gc:MolecularComputation	ex:constraint_caa004f_d3								
+ex:constraint_caa004g_d1	Distance constraint caa004g	ex:DistanceConstraint		ex:atom_7	ex:atom_3			1.6	gc:angstrom	fixed	
+ex:exp_caa004g	Experiment caa004g	gc:MolecularComputation	ex:constraint_caa004g_d1								
+ex:constraint_caa004g_d2	Distance constraint caa004g	ex:DistanceConstraint		ex:atom_10	ex:atom_7			2	gc:angstrom	fixed	
+ex:exp_caa004g	Experiment caa004g	gc:MolecularComputation	ex:constraint_caa004g_d2								
+ex:constraint_caa004g_d3	Distance constraint caa004g	ex:DistanceConstraint		ex:atom_8	ex:atom_13			2	gc:angstrom	fixed	
+ex:exp_caa004g	Experiment caa004g	gc:MolecularComputation	ex:constraint_caa004g_d3								
+ex:constraint_caa004h_d1	Distance constraint caa004h	ex:DistanceConstraint		ex:atom_7	ex:atom_3			1.8	gc:angstrom	fixed	
+ex:exp_caa004h	Experiment caa004h	gc:MolecularComputation	ex:constraint_caa004h_d1								
+ex:constraint_caa004h_d2	Distance constraint caa004h	ex:DistanceConstraint		ex:atom_10	ex:atom_7			1.8	gc:angstrom	fixed	
+ex:exp_caa004h	Experiment caa004h	gc:MolecularComputation	ex:constraint_caa004h_d2								
+ex:constraint_caa004h_d3	Distance constraint caa004h	ex:DistanceConstraint		ex:atom_8	ex:atom_13			1.8	gc:angstrom	fixed	
+ex:exp_caa004h	Experiment caa004h	gc:MolecularComputation	ex:constraint_caa004h_d3								
+ex:constraint_caa004j_d1	Distance constraint caa004j	ex:DistanceConstraint		ex:atom_10	ex:atom_7			1.6	gc:angstrom	fixed	
+ex:exp_caa004j	Experiment caa004j	gc:MolecularComputation	ex:constraint_caa004j_d1								
+ex:constraint_caa004j_d2	Distance constraint caa004j	ex:DistanceConstraint		ex:atom_8	ex:atom_13			1.6	gc:angstrom	fixed	
+ex:exp_caa004j	Experiment caa004j	gc:MolecularComputation	ex:constraint_caa004j_d2								
+ex:constraint_caa004k_d1	Distance constraint caa004k	ex:DistanceConstraint		ex:atom_10	ex:atom_7			1.6	gc:angstrom	fixed	
+ex:exp_caa004k	Experiment caa004k	gc:MolecularComputation	ex:constraint_caa004k_d1								
+ex:constraint_caa004k_d2	Distance constraint caa004k	ex:DistanceConstraint		ex:atom_8	ex:atom_13			1.6	gc:angstrom	fixed	
+ex:exp_caa004k	Experiment caa004k	gc:MolecularComputation	ex:constraint_caa004k_d2								
+ex:constraint_caa004l_d1	Distance constraint caa004l	ex:DistanceConstraint		ex:atom_10	ex:atom_7			1.4	gc:angstrom	fixed	
+ex:exp_caa004l	Experiment caa004l	gc:MolecularComputation	ex:constraint_caa004l_d1								
+ex:constraint_caa004l_d2	Distance constraint caa004l	ex:DistanceConstraint		ex:atom_8	ex:atom_13			1.4	gc:angstrom	fixed	
+ex:exp_caa004l	Experiment caa004l	gc:MolecularComputation	ex:constraint_caa004l_d2								
+ex:constraint_caa004m_d1	Distance constraint caa004m	ex:DistanceConstraint		ex:atom_10	ex:atom_7			1.2	gc:angstrom	fixed	
+ex:exp_caa004m	Experiment caa004m	gc:MolecularComputation	ex:constraint_caa004m_d1								
+ex:constraint_caa004m_d2	Distance constraint caa004m	ex:DistanceConstraint		ex:atom_8	ex:atom_13			1.2	gc:angstrom	fixed	
+ex:exp_caa004m	Experiment caa004m	gc:MolecularComputation	ex:constraint_caa004m_d2								
+ex:constraint_caa005a_d1	Distance constraint caa005a	ex:DistanceConstraint		ex:atom_10	ex:atom_7			1.2	gc:angstrom	fixed	
+ex:exp_caa005a	Experiment caa005a	gc:MolecularComputation	ex:constraint_caa005a_d1								
+ex:constraint_caa005a_d2	Distance constraint caa005a	ex:DistanceConstraint		ex:atom_8	ex:atom_13			1.2	gc:angstrom	fixed	
+ex:exp_caa005a	Experiment caa005a	gc:MolecularComputation	ex:constraint_caa005a_d2								
+ex:constraint_caa005b_d1	Distance constraint caa005b	ex:DistanceConstraint		ex:atom_10	ex:atom_7			1.2	gc:angstrom	fixed	
+ex:exp_caa005b	Experiment caa005b	gc:MolecularComputation	ex:constraint_caa005b_d1								
+ex:constraint_caa005b_d2	Distance constraint caa005b	ex:DistanceConstraint		ex:atom_8	ex:atom_13			1.2	gc:angstrom	fixed	
+ex:exp_caa005b	Experiment caa005b	gc:MolecularComputation	ex:constraint_caa005b_d2								
