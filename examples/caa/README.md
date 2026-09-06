@@ -139,6 +139,17 @@ expected energy cleanly, with no trace of the fault:
 | *(custom `def2-TZVPP` attempt)* | 1st IRC point | `def2-TZVPP` (custom `BASNAM`/`EXTFIL`) | off by ~270 Hartree | **Wrong** - broken custom basis construction, see above |
 | `caa005bIRC-pcseg2-test.log` | Same geometry | `PCseg-2` (native) | chemically correct | Confirmed correct - resolved the whole saga |
 
+`inputs/def2tzvp_ext.bas` is the actual custom basis data behind the
+`EXTFIL` attempts above - kept as real supporting material for this
+investigation, even though it isn't itself a GAMESS input or output
+file. **It isn't tracked by the graph** - `process_gamess_directory()`
+records each experiment's own `.inp`/`.log`/`.dat` files, but nothing
+in this project's pipeline was built to follow an *auxiliary* file an
+`.inp` merely references at runtime, rather than being itself. So
+querying the graph for it (via SPARQL or `summarize_graph()`) won't
+find anything - not a bug, just outside what the extraction was ever
+designed to capture.
+
 ## Phase 3: A consistent, corrected answer
 
 The first and last IRC geometries and the transition-state geometry
