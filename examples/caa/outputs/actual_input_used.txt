@@ -1,0 +1,50 @@
+ INPUT CARD>! C2H7O3Cl | Equilibrium Geometry                                               
+ INPUT CARD>! wB97X-D/def2-TZVPP/PCM(water)                                                 
+ INPUT CARD>! Custom def2-TZVPP basis via BASNAM                                            
+ INPUT CARD>! No constraints                                                                
+ INPUT CARD>                                                                                
+ INPUT CARD> $CONTRL SCFTYP=RHF RUNTYP=OPTIMIZE DFTTYP=wB97X-D                              
+ INPUT CARD>         COORD=UNIQUE MAXIT=200                                                 
+ INPUT CARD> $END                                                                           
+ INPUT CARD> $HESS HESS=READ $END                                                           
+ INPUT CARD> $BASIS BASNAM(1)=clbas,cbas,cbas,obas,hbas,hbas,                               
+ INPUT CARD>          obas,obas,hbas,hbas,hbas,hbas,hbas $END                               
+ INPUT CARD>!$SCF DIIS=.T. DAMP=.T. $END                                                    
+ INPUT CARD> $SCF CONV=1.0D-4                                                               
+ INPUT CARD>     SOSCF=.T.                                                                  
+ INPUT CARD>     DAMP=.F.                                                                   
+ INPUT CARD>     SHIFT=.T.                                                                  
+ INPUT CARD> $END                                                                           
+ INPUT CARD> $STATPT OPTTOL=0.0001 NSTEP=300 IHREP=20 HSSEND=.T. DXMAX=0.10 $END            
+ INPUT CARD> $ZMAT DLC=.T. AUTO=.T.                                                         
+ INPUT CARD>      NONVDW(1)=8,13,10,7,7,3,8,10                                              
+ INPUT CARD> $END                                                                           
+ INPUT CARD> $FORCE METHOD=SEMINUM PROJCT=.T. $END                                          
+ INPUT CARD> $PCM SOLVNT=WATER $END                                                         
+ INPUT CARD> $SYSTEM MWORDS=100 MEMDDI=200 $END                                             
+ INPUT CARD>!$CONTRL EXETYP=CHECK $END                                                      
+ INPUT CARD>                                                                                
+ INPUT CARD> $DATA                                                                          
+ INPUT CARD>Chloroacetaldehyde hydrate and water                                            
+ INPUT CARD>C1                                                                              
+ INPUT CARD>Cl   17.0   3.31777   0.19618   0.40668                                         
+ INPUT CARD>C     6.0   2.24118   0.90662  -0.95961                                         
+ INPUT CARD>C     6.0   3.04189   1.88482  -1.77661                                         
+ INPUT CARD>O     8.0   2.47874   2.79975  -2.40567                                         
+ INPUT CARD>H     1.0   1.37854   1.36717  -0.48364                                         
+ INPUT CARD>H     1.0   1.95549   0.05691  -1.58084                                         
+ INPUT CARD>O     8.0   3.58112   0.05498  -3.89961                                         
+ INPUT CARD>O     8.0   3.79699   2.62132  -4.86879                                         
+ INPUT CARD>H     1.0   3.58756   3.03704  -5.71005                                         
+ INPUT CARD>H     1.0   3.65634   0.88740  -4.40943                                         
+ INPUT CARD>H     1.0   2.96923  -0.51508  -4.37329                                         
+ INPUT CARD>H     1.0   4.12539   1.74751  -1.81197                                         
+ INPUT CARD>H     1.0   3.29383   3.07126  -4.16999                                         
+ INPUT CARD> $END                                                                           
+ INPUT CARD>                                                                                
+ INPUT CARD>                                                                                
+ INPUT CARD>! ============================================================                  
+ INPUT CARD>! CUSTOM def2-TZVPP BASIS SETS                                                  
+ INPUT CARD>! ============================================================                  
+ INPUT CARD>                                                                                
+ INPUT CARD> $hbas                                                                          

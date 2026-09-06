@@ -1,0 +1,365 @@
+1 : caa005b-cl-atom-extfil-test
+2 : 00
+3 : 1
+----- GAMESS execution script 'rungms' -----
+This job is running on host nid006023
+under operating system Linux at Mon 31 Aug 2026 11:20:08 AM BST
+Available scratch disk space (Kbyte units) at beginning of the job is
+Filesystem                                         1K-blocks         Used  Available Use% Mounted on
+10.253.101.2@o2ib1:10.253.101.3@o2ib1:/cls01096 125829120000 123030640564 2798479436  98% /mnt/lustre/a2fs-work3
+GAMESS temporary binary files will be written to /work/e283/e283/darren01/gamess/restart
+GAMESS supplementary output files will be written to /work/e283/e283/darren01/gamess/restart
+Copying input file /mnt/lustre/a2fs-work3/work/e283/e283/darren01/jobs/caa005b-cl-atom-extfil-test/caa005b-cl-atom-extfil-test.inp to your run's scratch directory...
+cp /mnt/lustre/a2fs-work3/work/e283/e283/darren01/jobs/caa005b-cl-atom-extfil-test/caa005b-cl-atom-extfil-test.inp /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F05
+unset echo
+setenv NO_STOP_MESSAGE 1
+setenv AUXDATA /work/e283/e283/darren01/gamess/auxdata
+setenv EXTBAS /dev/null
+setenv NUCBAS /mnt/lustre/a2fs-work3/work/e283/e283/darren01/jobs/caa005b-cl-atom-extfil-test/caa005b-cl-atom-extfil-test.nucbas
+setenv EXTCAB /work/e283/e283/darren01/gamess/auxdata/AUXBAS/auxdef21
+setenv POSBAS /mnt/lustre/a2fs-work3/work/e283/e283/darren01/jobs/caa005b-cl-atom-extfil-test/caa005b-cl-atom-extfil-test.posbas
+setenv DFTBPAR /work/e283/e283/darren01/gamess/auxdata/DFTB
+setenv ERICFMT /work/e283/e283/darren01/gamess/auxdata/ericfmt.dat
+setenv MCPPATH /work/e283/e283/darren01/gamess/auxdata/MCP
+setenv BASPATH /work/e283/e283/darren01/gamess/auxdata/BASES
+setenv QUANPOL /work/e283/e283/darren01/gamess/auxdata/QUANPOL
+setenv MAKEFP /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.efp
+setenv GAMMA /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.gamma
+setenv TRAJECT /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.trj
+setenv RESTART /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.rst
+setenv QMWAVE /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.qmw
+setenv MDDIP /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.dip
+setenv OPTHES1 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.hs1
+setenv OPTHES2 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.hs2
+setenv FCIDUMP /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.FCIDUMP
+setenv XYZ /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.xyz
+setenv IRCDATA /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F04
+setenv INPUT /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F05
+setenv PUNCH /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.dat
+setenv NAMDRST /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.namdrst
+setenv AOINTS /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F08
+setenv MOINTS /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F09
+setenv DICTNRY /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F10
+setenv DRTFILE /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F11
+setenv CIVECTR /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F12
+setenv CASINTS /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F13
+setenv CIINTS /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F14
+setenv WORK15 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F15
+setenv WORK16 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F16
+setenv CSFSAVE /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F17
+setenv FOCKDER /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F18
+setenv WORK19 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F19
+setenv DASORT /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F20
+setenv DIABDAT /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F21
+setenv DFTINTS /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F21
+setenv DFTGRID /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F22
+setenv JKFILE /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F23
+setenv ORDINT /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F24
+setenv EFPIND /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F25
+setenv PCMDATA /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F26
+setenv PCMINTS /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F27
+setenv SVPWRK1 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F26
+setenv SVPWRK2 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F27
+setenv COSCAV /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F26
+setenv COSDATA /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.cosmo
+setenv COSPOT /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.pot
+setenv MLTPL /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F28
+setenv MLTPLT /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F29
+setenv DAFL30 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F30
+setenv SOINTX /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F31
+setenv SOINTY /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F32
+setenv SOINTZ /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F33
+setenv SORESC /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F34
+setenv RISM01 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F26R
+setenv RISM02 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F27R
+setenv QOPWRF /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.wrf
+setenv GCILIST /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F37
+setenv HESSIAN /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F38
+setenv QMMMTEI /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F39
+setenv SOCCDAT /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F40
+setenv AABB41 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F41
+setenv BBAA42 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F42
+setenv BBBB43 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F43
+setenv REMD /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F44
+setenv UNV /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F45
+setenv UNPV /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F46
+setenv MCQD50 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F50
+setenv MCQD51 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F51
+setenv MCQD52 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F52
+setenv MCQD53 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F53
+setenv MCQD54 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F54
+setenv MCQD55 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F55
+setenv MCQD56 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F56
+setenv MCQD57 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F57
+setenv MCQD58 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F58
+setenv MCQD59 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F59
+setenv MCQD60 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F60
+setenv MCQD61 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F61
+setenv MCQD62 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F62
+setenv MCQD63 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F63
+setenv MCQD64 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F64
+setenv NMRINT1 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F61
+setenv NMRINT2 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F62
+setenv NMRINT3 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F63
+setenv NMRINT4 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F64
+setenv NMRINT5 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F65
+setenv NMRINT6 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F66
+setenv DCPHFH2 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F67
+setenv DCPHF21 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F68
+setenv ELNUINT /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F67
+setenv NUNUINT /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F68
+setenv GVVPT /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F69
+setenv NUMOIN /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F69
+setenv NUMOCAS /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F70
+setenv NUELMO /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F71
+setenv NUELCAS /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F72
+setenv EPOVRLP /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F73
+setenv RIVMAT /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F51
+setenv RIT2A /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F52
+setenv RIT3A /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F53
+setenv RIT2B /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F54
+setenv RIT3B /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F55
+setenv KI /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F47
+setenv BI /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F48
+setenv PRMERI /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F49
+setenv TRSERI /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F50
+setenv PVP /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F51
+setenv TPVPI /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F52
+setenv TPVPJ /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F53
+setenv PPVPP /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F54
+setenv TPPVPP /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F55
+setenv DEN2P1 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F70
+setenv DEN2P2 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F71
+setenv DEN2P3 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F72
+setenv DEN2P4 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F73
+setenv DEN2NM /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F74
+setenv DEN2OPT /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F75
+setenv GMCREF /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F70
+setenv GMCO2R /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F71
+setenv GMCROC /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F72
+setenv GMCOOC /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F73
+setenv GMCCC0 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F74
+setenv GMCHMA /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F75
+setenv GMCEI1 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F76
+setenv GMCEI2 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F77
+setenv GMCEOB /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F78
+setenv GMCEDT /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F79
+setenv GMCERF /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F80
+setenv GMCHCR /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F81
+setenv GMCGJK /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F82
+setenv GMCGAI /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F83
+setenv GMCGEO /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F84
+setenv GMCTE1 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F85
+setenv GMCTE2 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F86
+setenv GMCHEF /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F87
+setenv GMCMOL /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F88
+setenv GMCMOS /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F89
+setenv GMCWGT /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F90
+setenv GMCRM2 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F91
+setenv GMCRM1 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F92
+setenv GMCR00 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F93
+setenv GMCRP1 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F94
+setenv GMCRP2 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F95
+setenv GMCVEF /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F96
+setenv GMCDIN /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F97
+setenv GMC2SZ /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F98
+setenv GMCCCS /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F99
+unset echo
+/work/e283/e283/darren01/gamess/ddikick.x /work/e283/e283/darren01/gamess/gamess.00.x caa005b-cl-atom-extfil-test -ddi 1 1 nid006023 -scr /work/e283/e283/darren01/gamess/restart
+
+ Distributed Data Interface kickoff program.
+ Initiating 1 compute processes on 1 nodes to run the following command:
+ /work/e283/e283/darren01/gamess/gamess.00.x caa005b-cl-atom-extfil-test 
+
+          *******************************************************
+          *                                                     *
+          *      GAMESS VERSION = 15 JUL 2024 (R2 Patch 1)          *
+          *                                                     *
+          *              doi.org/10.1063/5.0005188              *
+          *                                                     *
+          **************** 64 BIT LINUX VERSION *****************
+
+  GAMESS HAS BEEN MADE POSSIBLE WITH IMPORTANT CONTRIBUTIONS FROM
+  THE FOLLOWING INDIVIDUALS (IN ALPHABETICAL ORDER):
+
+     IVANA ADAMOVIC, CHRISTINE AIKENS, TOMOKO AKAMA,
+     MELISA ALKAN, YURI ALEXEEV, YURIKO AOKI, POOJA ARORA,
+     TOSHIO ASADA, ANDREY ASADCHEV, KIM K. BALDRIDGE,
+     PRADIPTA BANDYOPADHYAY, TAYLOR A. BARNES, MARIA BARYSZ,
+     ROB BELL, JONATHAN BENTZ, COLLEEN BERTONI,
+     JERRY A. BOATZ, BRETT BODE, KURT BRORSEN, KURT R. BRORSEN,
+     LAIMUTIS BYTAUTAS, CALEB CARLIN, LAURA CARRINGTON,
+     GALINA CHABAN, BENOIT CHAMPAGNE, WEI CHEN, MAHITO CHIBA,
+     DAN CHIPMAN, CHEOL HO CHOI, TANNER CULPITT,
+     DIPAYAN DATTA, PAUL DAY, ALBERT DEFUSCO,
+     NUWAN DESILVA, J. EMILIANO DEUSTUA,
+     TIM DUDLEY, MICHEL DUPUIS, STEVEN T. ELBERT,
+     DMITRI FEDOROV, KATHERINE FERRERAS, MICHAEL FILATOV,
+     ALEX FINDLATER,GRAHAM FLETCHER, MARK FREITAG,
+     CHRISTIAN FRIEDL, DAVID GARMER, 
+     IGOR S. GERASIMOV, KURT GLAESEMANN,
+     MARK S. GORDON, JEFFREY R. GOUR, FENG LONG GU,
+     EMILIE B. GUIDEZ, ANASTASIA GUNINA, SHARON HAMMES-SCHIFFER,
+     MASATAKE HARUTA, KIMIHIKO HIRAO, YASUHIRO IKABATA,
+     TZVETELIN IORDANOV, STEPHAN IRLE, KAZUYA ISHIMURA,
+     JOE IVANIC, FRANK JENSEN, JAN H. JENSEN, VISVALDAS KAIRYS,
+     MUNEAKI KAMIYA, MICHIO KATOUDA, NAOAKI KAWAKAMI, DAN KEMP,
+     BERNARD KIRTMAN, KAZUO KITAURA, MARIUSZ KLOBUKOWSKI,
+     MASATO KOBAYASHI, KONSTANTIN KOMAROV, PRAKASHAN KORAMBATH,
+     JACEK KORCHOWIEC, SHIRO KOSEKI, KAROL KOWALSKI,
+     JIMMY KROMANN, STANISLAW A. KUCHARSKI, HENRY KURTZ,
+     SAROM SOK LEANG, SEUNGHOON LEE, HUI LI, SHUHUA LI, WEI LI,
+     JESSE J. LUTZ, ALEKSANDR O. LYKHIN,
+     ILIAS MAGOULAS, MARCIN MAKOWSKI,
+     JOANI MATO, NIKITA MATSUNAGA, BENEDETTA MENNUCCI,
+     GRANT MERRILL, NORIYUKI MINEZAWA, VLADIMIR MIRONOV,
+     EISAKU MIYOSHI, JOHN A. MONTGOMERY JR., HIROTOSHI MORI,
+     JONATHAN MULLIN, MONIKA MUSIAL, SHIGERU NAGASE,
+     TAKESHI NAGATA, HIROMI NAKAI, TAKAHITO NAKAJIMA,
+     YUYA NAKAJIMA, HARUYUKI NAKANO, HIROYA NAKATA, SEAN NEDD,
+     HEATHER NETZLOFF, KIET A. NGUYEN, YOSHIO NISHIMOTO,
+     BOSILJKA NJEGIC, RYAN OLSON, MIKE PAK, ROBERTO PEVERATI,
+     BUU PHAM, PIOTR PIECUCH, ANNA POMOGAEVA, DAVID POOLE,
+     SPENCER PRUITT, OLIVIER QUINET, LUKE ROSKOP,
+     KLAUS RUEDENBERG, ANDREW SAND, TOSAPORN SATTASATHUCHANA,
+     NOZOMI SAWADA, MICHAEL W. SCHMIDT, PATRICK E. SCHNEIDER,
+     JUNJI SEINO, PRACHI SHARMA, JUN SHEN, JIM SHOEMAKER,
+     GEORGE SCHOENDORFF, YINAN SHU, DEJUN SI, JONATHAN SKONE,
+     LYUDMILA SLIPCHENKO, TONY SMITH, JIE SONG, MARK SPACKMAN,
+     CASPER STEINMANN, WALT STEVENS, PEIFENG SU, SHUJUN SU,
+     CHET SWALINA, CHINAMI TAKASHIMA, TETSUYA TAKETSUGU,
+     ZHEN TAO, NANDUN THELLAMUREGE, ANANTA TIWARI,
+     SEIKEN TOKURA, JACOPO TOMASI,
+     TSUGUKI TOUMA, TAKAO TSUNEDA, HIROAKI UMEDA,
+     JORGE LUIS GALVEZ VALLEJO, YALI WANG, SIMON WEBB,
+     AARON WEST, THERESA L. WINDUS, MARTA WLOCH,
+     PENG XU, KIYOSHI YAGI, SUSUMU YANAGISAWA, YANG YANG,
+     SOOHAENG YOO, TAKESHI YOSHIKAWA, FEDERICO ZAHARIEV,
+     TOBY ZENG
+
+  WHO ARE SUPPORTED BY THEIR INSTITUTION/UNIVERSITY/COMPANY/GROUP
+  (IN ALPHABETICAL ORDER):
+
+     EP ANALYTICS,
+     FACULTES UNIVERSITAIRES NOTRE-DAME DE LA PAIX,
+     INSTITUTE FOR MOLECULAR SCIENCE, IOWA STATE UNIVERSITY,
+     JACKSON STATE UNIVERSITY, JOHANNES KEPLER UNIVERSITY LINZ,
+     KYUNGPOOK NATIONAL UNIVERSITY
+     KYUSHU UNIVERSITY, MICHIGAN STATE UNIVERSITY,
+     MIE UNIVERSITY, THE MOLECULAR SCIENCES SOFTWARE INSTITUTE,
+     MOSCOW STATE UNIVERSITY,
+     N. COPERNICUS UNIVERSITY, NAGOYA UNIVERSITY,
+     NANJING UNIVERSITY, NAT. INST. OF ADVANCED INDUSTRIAL
+     SCIENCE AND TECHNOLOGY, NATIONAL INST. OF STANDARDS AND
+     TECHNOLOGY, NESMEYANOV INSTITUTE OF ORGANOELEMENT COMPOUNDS
+     OF RUSSIAN ACADEMY OF SCIENCES, OSAKA PREFECTURE UNIVERSITY,
+     PENNSYLVANIA STATE UNIVERSITY, TOKYO INSTITUTE OF TECHNOLOGY,
+     UNIVERSITY OF AARHUS, UNIVERSITY OF ALBERTA,
+     UNIVERSITY OF CALIFORNIA AT SANTA BARBARA,
+     UNIVERSITY OF COPENHAGEN, UNIVERSITY OF IOWA,
+     UNIVERSITY OF MEMPHIS, UNIVERSITY OF MINNESOTA,
+     UNIVERSITY OF NEBRASKA, UNIVERSITY OF NEW ENGLAND,
+     UNIVERSITY OF NOTRE DAME, UNIVERSITY OF PISA,
+     UNIVERSITY OF SILESIA, UNIVERSITY OF TOKYO,
+     UNIVERSITY OF ZURICH, WASEDA UNIVERSITY,
+     YALE UNIVERSITY
+
+  GAMESS SOFTWARE MANAGEMENT TEAM FOR THIS RELEASE:
+     MARK S. GORDON (TEAM LEAD),
+     BRETT BODE (SENIOR ADVISOR),
+     GIUSEPPE BARCA,
+     COLLEEN BERTONI,
+     KRISTOPHER KEIPERT (ADVISOR),
+     SAROM S. LEANG (DEVELOPMENT LEAD),
+     BUU PHAM,
+     JACKSON HAYES (WEBSITE ADMINISTRATOR),
+     PENG XU
+
+ EXECUTION OF GAMESS BEGUN 11:20:09 31-AUG-2026    
+
+            ECHO OF THE FIRST FEW INPUT CARDS -
+ INPUT CARD>! Cl ATOM | EXTERNAL BASIS FILE TEST (EXTFIL, not BASNAM)                       
+ INPUT CARD>!                                                                               
+ INPUT CARD>! ============================================================                  
+ INPUT CARD>! Why this file exists                                                          
+ INPUT CARD>! ============================================================                  
+ INPUT CARD>! caa005b-cl-atom-basischeck.inp (same molecule/geometry/basis DATA, but        
+ INPUT CARD>! using inline $BASIS BASNAM(1)=clbas $END with the basis defined directly      
+ INPUT CARD>! in the .inp after $DATA) crashed with:                                        
+ INPUT CARD>!   ** On entry to DGEMM  parameter number 13 had an illegal value              
+ INPUT CARD>! immediately after ONE-ELECTRON INTEGRALS, before any SCF iteration.           
+ INPUT CARD>!                                                                               
+ INPUT CARD>! This tests whether GAMESS's OTHER custom-basis mechanism -- EXTFIL,           
+ INPUT CARD>! reading basis sets from a separate external file via the EXTBAS               
+ INPUT CARD>! environment variable, keyed by chemical symbol rather than atom position      
+ INPUT CARD>! -- exercises a different internal code path that avoids the crash.            
+ INPUT CARD>!                                                                               
+ INPUT CARD>! Everything else (molecule: isolated Cl atom, UHF, MULT=2, geometry, SCF       
+ INPUT CARD>! settings) is unchanged from caa005b-cl-atom-basischeck.inp. The basis         
+ INPUT CARD>! DATA itself is byte-for-byte identical (verified by diff against the          
+ INPUT CARD>! working def2-TZVPP source) -- only the MECHANISM by which GAMESS reads it     
+ INPUT CARD>! has changed, from inline BASNAM to external EXTFIL.                           
+ INPUT CARD>!                                                                               
+ INPUT CARD>! Requires: environment variable EXTBAS set to point to def2tzvp_ext.bas        
+ INPUT CARD>! before rungms is called (confirmed rungms itself does not set/reset           
+ INPUT CARD>! EXTBAS at all, so exporting it beforehand should reach the GAMESS binary      
+ INPUT CARD>! unmodified).                                                                  
+ INPUT CARD>                                                                                
+ INPUT CARD> $CONTRL SCFTYP=UHF RUNTYP=ENERGY DFTTYP=wB97X-D                                
+ INPUT CARD>         MULT=2 ICHARG=0 NOSYM=1 MAXIT=200                                      
+ INPUT CARD> $END                                                                           
+ INPUT CARD> $GUESS GUESS=HUCKEL $END                                                       
+ INPUT CARD> $BASIS GBASIS=DEF2TZVP EXTFIL=.TRUE. $END                                      
+ INPUT CARD> $SCF CONV=1.0D-6                                                               
+ INPUT CARD>     SOSCF=.T.                                                                  
+ INPUT CARD>     DAMP=.F.                                                                   
+ INPUT CARD>     SHIFT=.T.                                                                  
+ INPUT CARD>     DIRSCF=.TRUE.                                                              
+ INPUT CARD> $END                                                                           
+ INPUT CARD> $SYSTEM MWORDS=20 MEMDDI=20 $END                                               
+ INPUT CARD>                                                                                
+ INPUT CARD> $DATA                                                                          
+ INPUT CARD>Isolated chlorine atom -- EXTFIL external basis test                            
+ INPUT CARD>C1                                                                              
+ INPUT CARD>Cl   17.0   0.0   0.0   0.0                                                     
+ INPUT CARD> $END                                                                           
+     20000000 WORDS OF MEMORY AVAILABLE
+
+     $BASIS REQUESTS READING THE "DEF2TZVP" BASIS SET FROM AN EXTERNAL FILE
+
+
+     RUN TITLE
+     ---------
+ Isolated chlorine atom -- EXTFIL external basis test                            
+
+ THE POINT GROUP OF THE MOLECULE IS C1      
+ THE ORDER OF THE PRINCIPAL AXIS IS     0
+
+ THE EXTERNAL BASIS SET FILE BEING READ IS
+     "/dev/null"
+ *** ELEMENT "CL" BASIS "DEF2TZVP" WAS NOT FOUND IN THE EXTERNAL BASIS FILE ***
+ BASIS FILE NAME SEARCHED WAS
+ "/dev/null"
+ EXECUTION OF GAMESS TERMINATED -ABNORMALLY- AT 11:20:12 31-AUG-2026    
+               580000  WORDS OF DYNAMIC MEMORY USED
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          2.7 SECONDS, CPU UTILIZATION IS     0.52%
+ DDI Process 0: error code 911
+ ddikick.x: application process 0 quit unexpectedly.
+ ddikick.x: Fatal error detected.
+ The error is most likely to be in the application, so check for
+ input errors, disk space, memory needs, application bugs, etc.
+ ddikick.x will now clean up all processes, and exit...
+ ddikick.x: Sending kill signal to DDI processes.
+ ddikick.x: Execution terminated due to error(s).
+unset echo
+----- accounting info -----
+Files used on the parent node nid006023 were:
+-rw-r--r-- 1 darren01 e283    171 Aug 31 11:20 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.dat
+-rw-r--r-- 1 darren01 e283   1788 Aug 31 11:20 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F05
+-rw-r--r-- 1 darren01 e283 785280 Aug 31 11:20 /work/e283/e283/darren01/gamess/restart/caa005b-cl-atom-extfil-test.F10
+ls: No match.
+ls: No match.
+ls: No match.
+Mon 31 Aug 2026 11:20:14 AM BST
+0.347u 0.136s 0:06.06 7.7%	0+0k 498+48io 9pf+0w

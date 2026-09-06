@@ -1,0 +1,964 @@
+1 : caa005bIRC-def2svp-test
+2 : 00
+3 : 8
+----- GAMESS execution script 'rungms' -----
+This job is running on host nid003559
+under operating system Linux at Sun 30 Aug 2026 10:06:27 PM BST
+Available scratch disk space (Kbyte units) at beginning of the job is
+Filesystem                                         1K-blocks         Used  Available Use% Mounted on
+10.253.101.2@o2ib1:10.253.101.3@o2ib1:/cls01096 125829120000 123042709604 2786410396  98% /mnt/lustre/a2fs-work3
+GAMESS temporary binary files will be written to /work/e283/e283/darren01/gamess/restart
+GAMESS supplementary output files will be written to /work/e283/e283/darren01/gamess/restart
+Copying input file /mnt/lustre/a2fs-work3/work/e283/e283/darren01/jobs/caa005bIRC-def2svp-test/caa005bIRC-def2svp-test.inp to your run's scratch directory...
+cp /mnt/lustre/a2fs-work3/work/e283/e283/darren01/jobs/caa005bIRC-def2svp-test/caa005bIRC-def2svp-test.inp /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F05
+unset echo
+setenv NO_STOP_MESSAGE 1
+setenv AUXDATA /work/e283/e283/darren01/gamess/auxdata
+setenv EXTBAS /dev/null
+setenv NUCBAS /mnt/lustre/a2fs-work3/work/e283/e283/darren01/jobs/caa005bIRC-def2svp-test/caa005bIRC-def2svp-test.nucbas
+setenv EXTCAB /work/e283/e283/darren01/gamess/auxdata/AUXBAS/auxdef21
+setenv POSBAS /mnt/lustre/a2fs-work3/work/e283/e283/darren01/jobs/caa005bIRC-def2svp-test/caa005bIRC-def2svp-test.posbas
+setenv DFTBPAR /work/e283/e283/darren01/gamess/auxdata/DFTB
+setenv ERICFMT /work/e283/e283/darren01/gamess/auxdata/ericfmt.dat
+setenv MCPPATH /work/e283/e283/darren01/gamess/auxdata/MCP
+setenv BASPATH /work/e283/e283/darren01/gamess/auxdata/BASES
+setenv QUANPOL /work/e283/e283/darren01/gamess/auxdata/QUANPOL
+setenv MAKEFP /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.efp
+setenv GAMMA /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.gamma
+setenv TRAJECT /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.trj
+setenv RESTART /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.rst
+setenv QMWAVE /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.qmw
+setenv MDDIP /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.dip
+setenv OPTHES1 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.hs1
+setenv OPTHES2 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.hs2
+setenv FCIDUMP /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.FCIDUMP
+setenv XYZ /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.xyz
+setenv IRCDATA /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F04
+setenv INPUT /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F05
+setenv PUNCH /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.dat
+setenv NAMDRST /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.namdrst
+setenv AOINTS /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F08
+setenv MOINTS /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F09
+setenv DICTNRY /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F10
+setenv DRTFILE /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F11
+setenv CIVECTR /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F12
+setenv CASINTS /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F13
+setenv CIINTS /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F14
+setenv WORK15 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F15
+setenv WORK16 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F16
+setenv CSFSAVE /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F17
+setenv FOCKDER /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F18
+setenv WORK19 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F19
+setenv DASORT /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F20
+setenv DIABDAT /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F21
+setenv DFTINTS /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F21
+setenv DFTGRID /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F22
+setenv JKFILE /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F23
+setenv ORDINT /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F24
+setenv EFPIND /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F25
+setenv PCMDATA /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F26
+setenv PCMINTS /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F27
+setenv SVPWRK1 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F26
+setenv SVPWRK2 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F27
+setenv COSCAV /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F26
+setenv COSDATA /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.cosmo
+setenv COSPOT /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.pot
+setenv MLTPL /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F28
+setenv MLTPLT /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F29
+setenv DAFL30 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F30
+setenv SOINTX /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F31
+setenv SOINTY /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F32
+setenv SOINTZ /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F33
+setenv SORESC /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F34
+setenv RISM01 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F26R
+setenv RISM02 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F27R
+setenv QOPWRF /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.wrf
+setenv GCILIST /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F37
+setenv HESSIAN /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F38
+setenv QMMMTEI /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F39
+setenv SOCCDAT /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F40
+setenv AABB41 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F41
+setenv BBAA42 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F42
+setenv BBBB43 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F43
+setenv REMD /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F44
+setenv UNV /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F45
+setenv UNPV /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F46
+setenv MCQD50 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F50
+setenv MCQD51 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F51
+setenv MCQD52 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F52
+setenv MCQD53 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F53
+setenv MCQD54 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F54
+setenv MCQD55 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F55
+setenv MCQD56 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F56
+setenv MCQD57 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F57
+setenv MCQD58 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F58
+setenv MCQD59 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F59
+setenv MCQD60 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F60
+setenv MCQD61 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F61
+setenv MCQD62 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F62
+setenv MCQD63 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F63
+setenv MCQD64 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F64
+setenv NMRINT1 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F61
+setenv NMRINT2 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F62
+setenv NMRINT3 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F63
+setenv NMRINT4 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F64
+setenv NMRINT5 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F65
+setenv NMRINT6 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F66
+setenv DCPHFH2 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F67
+setenv DCPHF21 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F68
+setenv ELNUINT /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F67
+setenv NUNUINT /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F68
+setenv GVVPT /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F69
+setenv NUMOIN /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F69
+setenv NUMOCAS /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F70
+setenv NUELMO /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F71
+setenv NUELCAS /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F72
+setenv EPOVRLP /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F73
+setenv RIVMAT /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F51
+setenv RIT2A /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F52
+setenv RIT3A /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F53
+setenv RIT2B /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F54
+setenv RIT3B /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F55
+setenv KI /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F47
+setenv BI /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F48
+setenv PRMERI /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F49
+setenv TRSERI /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F50
+setenv PVP /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F51
+setenv TPVPI /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F52
+setenv TPVPJ /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F53
+setenv PPVPP /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F54
+setenv TPPVPP /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F55
+setenv DEN2P1 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F70
+setenv DEN2P2 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F71
+setenv DEN2P3 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F72
+setenv DEN2P4 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F73
+setenv DEN2NM /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F74
+setenv DEN2OPT /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F75
+setenv GMCREF /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F70
+setenv GMCO2R /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F71
+setenv GMCROC /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F72
+setenv GMCOOC /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F73
+setenv GMCCC0 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F74
+setenv GMCHMA /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F75
+setenv GMCEI1 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F76
+setenv GMCEI2 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F77
+setenv GMCEOB /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F78
+setenv GMCEDT /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F79
+setenv GMCERF /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F80
+setenv GMCHCR /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F81
+setenv GMCGJK /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F82
+setenv GMCGAI /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F83
+setenv GMCGEO /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F84
+setenv GMCTE1 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F85
+setenv GMCTE2 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F86
+setenv GMCHEF /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F87
+setenv GMCMOL /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F88
+setenv GMCMOS /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F89
+setenv GMCWGT /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F90
+setenv GMCRM2 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F91
+setenv GMCRM1 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F92
+setenv GMCR00 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F93
+setenv GMCRP1 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F94
+setenv GMCRP2 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F95
+setenv GMCVEF /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F96
+setenv GMCDIN /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F97
+setenv GMC2SZ /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F98
+setenv GMCCCS /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F99
+unset echo
+removed '/work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.dat'
+ 
+Assuming a single but multicore node.
+ 
+/work/e283/e283/darren01/gamess/ddikick.x /work/e283/e283/darren01/gamess/gamess.00.x caa005bIRC-def2svp-test -ddi 1 8 nid003559:cpus=8 -scr /work/e283/e283/darren01/gamess/restart
+
+ Distributed Data Interface kickoff program.
+ Initiating 8 compute processes on 1 nodes to run the following command:
+ /work/e283/e283/darren01/gamess/gamess.00.x caa005bIRC-def2svp-test 
+
+          *******************************************************
+          *                                                     *
+          *      GAMESS VERSION = 15 JUL 2024 (R2 Patch 1)          *
+          *                                                     *
+          *              doi.org/10.1063/5.0005188              *
+          *                                                     *
+          **************** 64 BIT LINUX VERSION *****************
+
+  GAMESS HAS BEEN MADE POSSIBLE WITH IMPORTANT CONTRIBUTIONS FROM
+  THE FOLLOWING INDIVIDUALS (IN ALPHABETICAL ORDER):
+
+     IVANA ADAMOVIC, CHRISTINE AIKENS, TOMOKO AKAMA,
+     MELISA ALKAN, YURI ALEXEEV, YURIKO AOKI, POOJA ARORA,
+     TOSHIO ASADA, ANDREY ASADCHEV, KIM K. BALDRIDGE,
+     PRADIPTA BANDYOPADHYAY, TAYLOR A. BARNES, MARIA BARYSZ,
+     ROB BELL, JONATHAN BENTZ, COLLEEN BERTONI,
+     JERRY A. BOATZ, BRETT BODE, KURT BRORSEN, KURT R. BRORSEN,
+     LAIMUTIS BYTAUTAS, CALEB CARLIN, LAURA CARRINGTON,
+     GALINA CHABAN, BENOIT CHAMPAGNE, WEI CHEN, MAHITO CHIBA,
+     DAN CHIPMAN, CHEOL HO CHOI, TANNER CULPITT,
+     DIPAYAN DATTA, PAUL DAY, ALBERT DEFUSCO,
+     NUWAN DESILVA, J. EMILIANO DEUSTUA,
+     TIM DUDLEY, MICHEL DUPUIS, STEVEN T. ELBERT,
+     DMITRI FEDOROV, KATHERINE FERRERAS, MICHAEL FILATOV,
+     ALEX FINDLATER,GRAHAM FLETCHER, MARK FREITAG,
+     CHRISTIAN FRIEDL, DAVID GARMER, 
+     IGOR S. GERASIMOV, KURT GLAESEMANN,
+     MARK S. GORDON, JEFFREY R. GOUR, FENG LONG GU,
+     EMILIE B. GUIDEZ, ANASTASIA GUNINA, SHARON HAMMES-SCHIFFER,
+     MASATAKE HARUTA, KIMIHIKO HIRAO, YASUHIRO IKABATA,
+     TZVETELIN IORDANOV, STEPHAN IRLE, KAZUYA ISHIMURA,
+     JOE IVANIC, FRANK JENSEN, JAN H. JENSEN, VISVALDAS KAIRYS,
+     MUNEAKI KAMIYA, MICHIO KATOUDA, NAOAKI KAWAKAMI, DAN KEMP,
+     BERNARD KIRTMAN, KAZUO KITAURA, MARIUSZ KLOBUKOWSKI,
+     MASATO KOBAYASHI, KONSTANTIN KOMAROV, PRAKASHAN KORAMBATH,
+     JACEK KORCHOWIEC, SHIRO KOSEKI, KAROL KOWALSKI,
+     JIMMY KROMANN, STANISLAW A. KUCHARSKI, HENRY KURTZ,
+     SAROM SOK LEANG, SEUNGHOON LEE, HUI LI, SHUHUA LI, WEI LI,
+     JESSE J. LUTZ, ALEKSANDR O. LYKHIN,
+     ILIAS MAGOULAS, MARCIN MAKOWSKI,
+     JOANI MATO, NIKITA MATSUNAGA, BENEDETTA MENNUCCI,
+     GRANT MERRILL, NORIYUKI MINEZAWA, VLADIMIR MIRONOV,
+     EISAKU MIYOSHI, JOHN A. MONTGOMERY JR., HIROTOSHI MORI,
+     JONATHAN MULLIN, MONIKA MUSIAL, SHIGERU NAGASE,
+     TAKESHI NAGATA, HIROMI NAKAI, TAKAHITO NAKAJIMA,
+     YUYA NAKAJIMA, HARUYUKI NAKANO, HIROYA NAKATA, SEAN NEDD,
+     HEATHER NETZLOFF, KIET A. NGUYEN, YOSHIO NISHIMOTO,
+     BOSILJKA NJEGIC, RYAN OLSON, MIKE PAK, ROBERTO PEVERATI,
+     BUU PHAM, PIOTR PIECUCH, ANNA POMOGAEVA, DAVID POOLE,
+     SPENCER PRUITT, OLIVIER QUINET, LUKE ROSKOP,
+     KLAUS RUEDENBERG, ANDREW SAND, TOSAPORN SATTASATHUCHANA,
+     NOZOMI SAWADA, MICHAEL W. SCHMIDT, PATRICK E. SCHNEIDER,
+     JUNJI SEINO, PRACHI SHARMA, JUN SHEN, JIM SHOEMAKER,
+     GEORGE SCHOENDORFF, YINAN SHU, DEJUN SI, JONATHAN SKONE,
+     LYUDMILA SLIPCHENKO, TONY SMITH, JIE SONG, MARK SPACKMAN,
+     CASPER STEINMANN, WALT STEVENS, PEIFENG SU, SHUJUN SU,
+     CHET SWALINA, CHINAMI TAKASHIMA, TETSUYA TAKETSUGU,
+     ZHEN TAO, NANDUN THELLAMUREGE, ANANTA TIWARI,
+     SEIKEN TOKURA, JACOPO TOMASI,
+     TSUGUKI TOUMA, TAKAO TSUNEDA, HIROAKI UMEDA,
+     JORGE LUIS GALVEZ VALLEJO, YALI WANG, SIMON WEBB,
+     AARON WEST, THERESA L. WINDUS, MARTA WLOCH,
+     PENG XU, KIYOSHI YAGI, SUSUMU YANAGISAWA, YANG YANG,
+     SOOHAENG YOO, TAKESHI YOSHIKAWA, FEDERICO ZAHARIEV,
+     TOBY ZENG
+
+  WHO ARE SUPPORTED BY THEIR INSTITUTION/UNIVERSITY/COMPANY/GROUP
+  (IN ALPHABETICAL ORDER):
+
+     EP ANALYTICS,
+     FACULTES UNIVERSITAIRES NOTRE-DAME DE LA PAIX,
+     INSTITUTE FOR MOLECULAR SCIENCE, IOWA STATE UNIVERSITY,
+     JACKSON STATE UNIVERSITY, JOHANNES KEPLER UNIVERSITY LINZ,
+     KYUNGPOOK NATIONAL UNIVERSITY
+     KYUSHU UNIVERSITY, MICHIGAN STATE UNIVERSITY,
+     MIE UNIVERSITY, THE MOLECULAR SCIENCES SOFTWARE INSTITUTE,
+     MOSCOW STATE UNIVERSITY,
+     N. COPERNICUS UNIVERSITY, NAGOYA UNIVERSITY,
+     NANJING UNIVERSITY, NAT. INST. OF ADVANCED INDUSTRIAL
+     SCIENCE AND TECHNOLOGY, NATIONAL INST. OF STANDARDS AND
+     TECHNOLOGY, NESMEYANOV INSTITUTE OF ORGANOELEMENT COMPOUNDS
+     OF RUSSIAN ACADEMY OF SCIENCES, OSAKA PREFECTURE UNIVERSITY,
+     PENNSYLVANIA STATE UNIVERSITY, TOKYO INSTITUTE OF TECHNOLOGY,
+     UNIVERSITY OF AARHUS, UNIVERSITY OF ALBERTA,
+     UNIVERSITY OF CALIFORNIA AT SANTA BARBARA,
+     UNIVERSITY OF COPENHAGEN, UNIVERSITY OF IOWA,
+     UNIVERSITY OF MEMPHIS, UNIVERSITY OF MINNESOTA,
+     UNIVERSITY OF NEBRASKA, UNIVERSITY OF NEW ENGLAND,
+     UNIVERSITY OF NOTRE DAME, UNIVERSITY OF PISA,
+     UNIVERSITY OF SILESIA, UNIVERSITY OF TOKYO,
+     UNIVERSITY OF ZURICH, WASEDA UNIVERSITY,
+     YALE UNIVERSITY
+
+  GAMESS SOFTWARE MANAGEMENT TEAM FOR THIS RELEASE:
+     MARK S. GORDON (TEAM LEAD),
+     BRETT BODE (SENIOR ADVISOR),
+     GIUSEPPE BARCA,
+     COLLEEN BERTONI,
+     KRISTOPHER KEIPERT (ADVISOR),
+     SAROM S. LEANG (DEVELOPMENT LEAD),
+     BUU PHAM,
+     JACKSON HAYES (WEBSITE ADMINISTRATOR),
+     PENG XU
+
+
+ PARALLEL VERSION RUNNING ON        8 PROCESSORS IN        1 NODES.
+
+ EXECUTION OF GAMESS BEGUN 22:06:30 30-AUG-2026    
+
+            ECHO OF THE FIRST FEW INPUT CARDS -
+ INPUT CARD>! C2H7O3Cl | INTERMEDIATE BASIS TEST -- def2-SVP                                
+ INPUT CARD>!                                                                               
+ INPUT CARD>! ============================================================                  
+ INPUT CARD>! Why this file exists                                                          
+ INPUT CARD>! ============================================================                  
+ INPUT CARD>! caa005bIRCCML1st-prerelax-631Gdp.inp confirmed a genuine minimum at           
+ INPUT CARD>! wB97X-D/6-31G(d,p)/PCM(water): EXECUTION TERMINATED NORMALLY, and the         
+ INPUT CARD>! final Hessian's vibrational analysis showed ZERO IMAGINARY FREQUENCIES.       
+ INPUT CARD>!                                                                               
+ INPUT CARD>! caa005bIRCCML1stdef2TZVPPe.inp then took that CONFIRMED-GOOD geometry and     
+ INPUT CARD>! simply switched the basis to def2-TZVPP (same functional, same PCM            
+ INPUT CARD>! treatment, same geometry) -- and immediately showed 16 SIMULTANEOUS           
+ INPUT CARD>! NEGATIVE EIGENVALUES, reproducing closely across two independently            
+ INPUT CARD>! computed Hessians at NSERCH=2 and NSERCH=3. This ruled out the                
+ INPUT CARD>! "wrong level of theory generated this geometry" explanation: the geometry     
+ INPUT CARD>! is now confirmed correct for this functional/solvent combination, and the     
+ INPUT CARD>! instability appeared purely from enlarging the basis set.                     
+ INPUT CARD>!                                                                               
+ INPUT CARD>! Leading hypothesis: basis-set superposition / basis-flexibility effects.      
+ INPUT CARD>! def2-TZVPP is a much larger, more diffuse, more polarized basis than          
+ INPUT CARD>! 6-31G(d,p), and larger/more diffuse basis sets are well known to cause        
+ INPUT CARD>! exactly this kind of problem specifically for WEAKLY-BOUND, MULTI-FRAGMENT    
+ INPUT CARD>! complexes (this is 3 separate molecules held together only by H-bonds):       
+ INPUT CARD>! basis functions centred on one fragment can "borrow" density from a           
+ INPUT CARD>! neighbouring fragment once the basis is flexible/diffuse enough, creating     
+ INPUT CARD>! spurious extra soft/unstable directions that are an artefact of basis         
+ INPUT CARD>! completeness rather than real chemistry.                                      
+ INPUT CARD>!                                                                               
+ INPUT CARD>! ============================================================                  
+ INPUT CARD>! What this file does                                                           
+ INPUT CARD>! ============================================================                  
+ INPUT CARD>! Tests the middle ground: def2-SVP (same Karlsruhe/def2 family as the          
+ INPUT CARD>! final target def2-TZVPP, but much smaller/less diffuse -- roughly             
+ INPUT CARD>! comparable in size to 6-31G(d,p)) at the SAME confirmed-good geometry.        
+ INPUT CARD>!                                                                               
+ INPUT CARD>! If def2-SVP behaves cleanly (few/no negative eigenvalues, similar to          
+ INPUT CARD>! 6-31G(d,p)): supports the basis-completeness/diffuseness hypothesis, and      
+ INPUT CARD>! the practical path forward is a staged basis escalation (SVP -> TZVPP)        
+ INPUT CARD>! rather than jumping straight to the largest basis.                            
+ INPUT CARD>!                                                                               
+ INPUT CARD>! If def2-SVP ALSO shows many negative eigenvalues despite being a small        
+ INPUT CARD>! basis: the instability is tied to the def2 family's specific functions        
+ INPUT CARD>! (contraction/polarization scheme) rather than sheer size/diffuseness --       
+ INPUT CARD>! a different and more surprising finding, worth stopping to think about        
+ INPUT CARD>! (and a good candidate to post to the GAMESS Google Group either way).         
+ INPUT CARD>!                                                                               
+ INPUT CARD>! Optimizer settings unchanged from TZVPPd/e (conservative DXMAX=0.01,          
+ INPUT CARD>! IHREP=2, METHOD=SEMINUM, Cartesian coordinates, NOSYM=1, DIRSCF=.TRUE.)       
+ INPUT CARD>! since these reflect facts about wB97X-D itself (no analytic Hessian),         
+ INPUT CARD>! not about basis size.                                                         
+    100000000 WORDS OF MEMORY AVAILABLE
+
+     BASIS OPTIONS
+     -------------
+     GBASIS=             IGAUSS=       0      POLAR=NONE    
+     NDFUNC=       0     NFFUNC=       0     DIFFSP=       F
+     NPFUNC=       0      DIFFS=       F     BASNAM=SVPCLBAS
+
+ USING BASNAM FOR ATOM CUSTOMIZED BASIS CONSTRUCTION
+     ----------------
+     ATOM  BASIS NAME
+     ----------------
+       1   SVPCLBAS
+       2   SVPCBAS 
+       3   SVPCBAS 
+       4   SVPOBAS 
+       5   SVPHBAS 
+       6   SVPHBAS 
+       7   SVPOBAS 
+       8   SVPOBAS 
+       9   SVPHBAS 
+      10   SVPHBAS 
+      11   SVPHBAS 
+      12   SVPHBAS 
+      13   SVPHBAS 
+ NOW LOCATING ALL   13 BASIS SETS IN YOUR INPUT FILE...
+ FOUND BASIS SET  $SVPCLB
+ S   5                         
+ 1     10449.8275660           
+ 2      1571.7365221           
+ 3       357.12065523          
+ 4       100.25185935          
+ 5        30.812727554         
+                               
+ S   3                         
+ 1        51.923789434         
+ 2         5.7045760975        
+ 3         2.3508376809        
+                               
+ S   1                         
+ 1         0.44605124672       
+                               
+ S   1                         
+ 1         0.16848856190       
+                               
+ P   5                         
+ 1       307.66790569          
+ 2        72.102015515         
+ 3        22.532680262         
+ 4         7.8991765444        
+ 5         2.8767268321        
+                               
+ P   1                         
+ 1         0.77459363955       
+                               
+ P   1                         
+ 1         0.21037699698       
+                               
+ D   1                         
+ 1         0.6500000           
+                               
+  $end                         
+ FOUND BASIS SET  $SVPCBA
+ S   5                         
+ 1      1238.4016938           
+ 2       186.29004992          
+ 3        42.251176346         
+ 4        11.676557932         
+ 5         3.5930506482        
+                               
+ S   1                         
+ 1         0.40245147363       
+                               
+ S   1                         
+ 1         0.13090182668       
+                               
+ P   3                         
+ 1         9.4680970621        
+ 2         2.0103545142        
+ 3         0.54771004707       
+                               
+ P   1                         
+ 1         0.15268613795       
+                               
+ D   1                         
+ 1         0.8000000           
+                               
+  $end                         
+ FOUND BASIS SET  $SVPOBA
+ S   5                         
+ 1      2266.1767785           
+ 2       340.87010191          
+ 3        77.363135167         
+ 4        21.479644940         
+ 5         6.6589433124        
+                               
+ S   1                         
+ 1         0.80975975668       
+                               
+ S   1                         
+ 1         0.25530772234       
+                               
+ P   3                         
+ 1        17.721504317         
+ 2         3.8635505440        
+ 3         1.0480920883        
+                               
+ P   1                         
+ 1         0.27641544411       
+                               
+ D   1                         
+ 1         1.2000000           
+                               
+  $end                         
+ FOUND BASIS SET  $SVPHBA
+ S   3                         
+ 1        13.0107010           
+ 2         1.9622572           
+ 3         0.44453796          
+                               
+ S   1                         
+ 1         0.12194962          
+                               
+ P   1                         
+ 1         0.8000000           
+                               
+  $end                         
+    4 UNIQUE ATOM CUSTOMIZED BASIS SETS WERE FOUND.
+
+     SEARCHING FOR $MCP
+     $MCP GROUP NOT FOUND
+
+
+     RUN TITLE
+     ---------
+ Chloroacetaldehyde hydrate and water -- def2-SVP intermediate basis test        
+
+ THE POINT GROUP OF THE MOLECULE IS C1      
+ THE ORDER OF THE PRINCIPAL AXIS IS     0
+ *** WARNING! ATOM   1 SHELL    1 TYPE S HAS NORMALIZATION   2.75344813
+ *** WARNING! ATOM   2 SHELL    2 TYPE S HAS NORMALIZATION   1.01108359
+ *** WARNING! ATOM   3 SHELL    3 TYPE S HAS NORMALIZATION   1.01108359
+ *** WARNING! ATOM   4 SHELL    4 TYPE S HAS NORMALIZATION   1.00864081
+ *** WARNING! ATOM   5 SHELL    5 TYPE S HAS NORMALIZATION   1.70131166
+ *** WARNING! ATOM   6 SHELL    6 TYPE S HAS NORMALIZATION   1.70131166
+ *** WARNING! ATOM   7 SHELL    7 TYPE S HAS NORMALIZATION   1.00864081
+ *** WARNING! ATOM   8 SHELL    8 TYPE S HAS NORMALIZATION   1.00864081
+ *** WARNING! ATOM   9 SHELL    9 TYPE S HAS NORMALIZATION   1.70131166
+ *** WARNING! ATOM  10 SHELL   10 TYPE S HAS NORMALIZATION   1.70131166
+ *** WARNING! ATOM  11 SHELL   11 TYPE S HAS NORMALIZATION   1.70131166
+ *** WARNING! ATOM  12 SHELL   12 TYPE S HAS NORMALIZATION   1.70131166
+ *** WARNING! ATOM  13 SHELL   13 TYPE S HAS NORMALIZATION   1.70131166
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ CL         17.0     6.4368345049        0.3951944382        0.4787736216
+ C           6.0     4.3172554904        1.6316071570       -1.8575280455
+ C           6.0     5.6085593590        3.5585987937       -3.5210950485
+ O           8.0     4.3965376626        5.1008156671       -4.7061303516
+ H           1.0     2.6871757774        2.4612401755       -0.9121912272
+ H           1.0     3.7169983997        0.0613187104       -3.0511945253
+ O           8.0     6.7535565832        0.1284193058       -7.2684172742
+ O           8.0     7.5292129243        5.0579355984       -9.0850946691
+ H           1.0     6.6289352188        5.2793882366      -10.6501393448
+ H           1.0     7.1608450627        1.7205194585       -8.1067483225
+ H           1.0     5.1756847794       -0.3677378676       -8.0211087733
+ H           1.0     7.6877826332        3.4753695864       -3.6056449414
+ H           1.0     6.4013112250        5.7313799665       -7.8045347232
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 CL         2 C          3 C          4 O          5 H     
+
+   1 CL      0.0000000    1.7929379 *  2.7339632 *  3.8593282    2.3820777 *
+   2 C       1.7929379 *  0.0000000    1.5105408 *  2.3757777 *  1.0895286 *
+   3 C       2.7339632 *  1.5105408 *  0.0000000    1.2126981 *  2.1524610 *
+   4 O       3.8593282    2.3757777 *  1.2126981 *  0.0000000    2.6076817 *
+   5 H       2.3820777 *  1.0895286 *  2.1524610 *  2.6076817 *  0.0000000  
+   6 H       2.3647567 *  1.0910493 *  2.1186778 *  2.8298426 *  1.7863548 *
+   7 O       4.1054896    3.2393627    2.7557676 *  3.2121355    4.1794658  
+   8 O       5.6600206    4.5611922    3.2142896    2.8492557 *  5.2113751  
+   9 H       6.4321697    5.1837816    3.9182549    3.3612850    5.7558106  
+  10 H       4.6130134    3.6335123    2.7403178 *  2.9287941 *  4.5003106  
+  11 H       4.5650722    3.4588933    3.1686020    3.4090365    4.2575755  
+  12 H       2.7868518 *  2.2335935 *  1.1020674 *  2.0278909 *  3.0531840  
+  13 H       5.2141909    3.9782838    2.5760275 *  1.9811903 *  4.4900001  
+
+                6 H          7 O          8 O          9 H         10 H     
+
+   1 CL      2.3647567 *  4.1054896    5.6600206    6.4321697    4.6130134  
+   2 C       1.0910493 *  3.2393627    4.5611922    5.1837816    3.6335123  
+   3 C       2.1186778 *  2.7557676 *  3.2142896    3.9182549    2.7403178 *
+   4 O       2.8298426 *  3.2121355    2.8492557 *  3.3612850    2.9287941 *
+   5 H       1.7863548 *  4.1794658    5.2113751    5.7558106    4.5003106  
+   6 H       0.0000000    2.7502027 *  4.6104402    5.1155756    3.3539841  
+   7 O       2.7502027 *  0.0000000    2.8102297 *  3.2613832    0.9762518 *
+   8 O       4.6104402    2.8102297 *  0.0000000    0.9625945 *  1.8506988 *
+   9 H       5.1155756    3.2613832    0.9625945 *  0.0000000    2.3318238 *
+  10 H       3.3539841    0.9762518 *  1.8506988 *  2.3318238 *  0.0000000  
+  11 H       2.7502917 *  0.9616471 *  3.1798707    3.3848227    1.5253725 *
+  12 H       2.7866238 *  2.6717297 *  3.0192810    3.8886623    2.5716650 *
+  13 H       4.1650443    2.9843282 *  0.9707949 *  1.5294573 *  2.1660891 *
+
+               11 H         12 H         13 H     
+
+   1 CL      4.5650722    2.7868518 *  5.2141909  
+   2 C       3.4588933    2.2335935 *  3.9782838  
+   3 C       3.1686020    1.1020674 *  2.5760275 *
+   4 O       3.4090365    2.0278909 *  1.9811903 *
+   5 H       4.2575755    3.0531840    4.4900001  
+   6 H       2.7502917 *  2.7866238 *  4.1650443  
+   7 O       0.9616471 *  2.6717297 *  2.9843282 *
+   8 O       3.1798707    3.0192810    0.9707949 *
+   9 H       3.3848227    3.8886623    1.5294573 *
+  10 H       1.5253725 *  2.5716650 *  2.1660891 *
+  11 H       0.0000000    3.3708396    3.2940297  
+  12 H       3.3708396    0.0000000    2.6126176 *
+  13 H       3.2940297    2.6126176 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+     ATOMIC BASIS SET
+     ----------------
+ THE CONTRACTED PRIMITIVE FUNCTIONS HAVE BEEN UNNORMALIZED
+ THE CONTRACTED BASIS FUNCTIONS ARE NOW NORMALIZED TO UNITY
+
+  SHELL TYPE  PRIMITIVE        EXPONENT          CONTRACTION COEFFICIENT(S)
+
+ CL        
+
+      1   S       1         10449.8275660    0.005426595379
+      1   S       2          1571.7365221    0.040626378129
+      1   S       3           357.1206552    0.183597478529
+      1   S       4           100.2518594    0.474389487682
+      1   S       5            30.8127276    0.437351811041
+
+ C         
+
+      2   S       6          1238.4016938    0.005517365048
+      2   S       7           186.2900499    0.041088828556
+      2   S       8            42.2511763    0.182253821265
+      2   S       9            11.6765579    0.468284594374
+      2   S      10             3.5930506    0.445758173360
+
+ C         
+
+      3   S      11          1238.4016938    0.005517365048
+      3   S      12           186.2900499    0.041088828556
+      3   S      13            42.2511763    0.182253821265
+      3   S      14            11.6765579    0.468284594374
+      3   S      15             3.5930506    0.445758173360
+
+ O         
+
+      4   S      16          2266.1767785   -0.005389350392
+      4   S      17           340.8701019   -0.040234721389
+      4   S      18            77.3631352   -0.180081842055
+      4   S      19            21.4796449   -0.468288576577
+      4   S      20             6.6589433   -0.446926171602
+
+ H         
+
+      5   S      21            13.0107010    0.033485484813
+      5   S      22             1.9622572    0.234721870881
+      5   S      23             0.4445380    0.813770285260
+
+ H         
+
+      6   S      24            13.0107010    0.033485484813
+      6   S      25             1.9622572    0.234721870881
+      6   S      26             0.4445380    0.813770285260
+
+ O         
+
+      7   S      27          2266.1767785   -0.005389350392
+      7   S      28           340.8701019   -0.040234721389
+      7   S      29            77.3631352   -0.180081842055
+      7   S      30            21.4796449   -0.468288576577
+      7   S      31             6.6589433   -0.446926171602
+
+ O         
+
+      8   S      32          2266.1767785   -0.005389350392
+      8   S      33           340.8701019   -0.040234721389
+      8   S      34            77.3631352   -0.180081842055
+      8   S      35            21.4796449   -0.468288576577
+      8   S      36             6.6589433   -0.446926171602
+
+ H         
+
+      9   S      37            13.0107010    0.033485484813
+      9   S      38             1.9622572    0.234721870881
+      9   S      39             0.4445380    0.813770285260
+
+ H         
+
+     10   S      40            13.0107010    0.033485484813
+     10   S      41             1.9622572    0.234721870881
+     10   S      42             0.4445380    0.813770285260
+
+ H         
+
+     11   S      43            13.0107010    0.033485484813
+     11   S      44             1.9622572    0.234721870881
+     11   S      45             0.4445380    0.813770285260
+
+ H         
+
+     12   S      46            13.0107010    0.033485484813
+     12   S      47             1.9622572    0.234721870881
+     12   S      48             0.4445380    0.813770285260
+
+ H         
+
+     13   S      49            13.0107010    0.033485484813
+     13   S      50             1.9622572    0.234721870881
+     13   S      51             0.4445380    0.813770285260
+
+ TOTAL NUMBER OF BASIS SET SHELLS             =   13
+ NUMBER OF CARTESIAN GAUSSIAN BASIS FUNCTIONS =   13
+ NUMBER OF ELECTRONS                          =   60
+ CHARGE OF MOLECULE                           =    0
+ SPIN MULTIPLICITY                            =    1
+ NUMBER OF OCCUPIED ORBITALS (ALPHA)          =   30
+ NUMBER OF OCCUPIED ORBITALS (BETA )          =   30
+ TOTAL NUMBER OF ATOMS                        =   13
+ THE NUCLEAR REPULSION ENERGY IS      292.6267568387
+
+ SELECTED MURRAY-HANDY-LAMING RADIAL GRID
+
+ LEGACY BECKE'S FUZZY CELL METHOD
+
+ SELECTED ORIGINAL BECKE'S PARTITION FUNCTION
+
+     LEBEDEV GRID-BASED DFT OPTIONS
+     ------------------------------
+     DFTTYP=WB97X-D 
+     NRAD  =      96     NLEB  =     302
+     NRAD0 =      24     NLEB0 =     110
+     SWOFF =    5.00E-03 (PURE SCF -> DFT)
+     SWITCH=    3.00E-04 (COARSE -> TIGHT GRID)
+     THRESH=    0.00E+00 GTHRE=    1.00E+00
+
+     LC/CAM PARAMETERS
+     -----------------
+     ALPHAC =.22204  BETAC =.77796  CAMMU = 0.200  CAMVWN =  0.00  CAMLYP =  0.00
+
+ GRIMME'S EMPIRICAL DISPERSION CORRECTION= T
+  ________________________________
+
+           DFTD3 V1.2             
+   S.GRIMME, UNIVERSITY MUENSTER  
+   WED MAR 10 08:38:00 CET 2010   
+  ________________________________
+
+ PLEASE CITE DFT-D2 WORK DONE WITH THIS CODE AS:
+ S. GRIMME, J. COMPUT. CHEM., 27 (2006), 1787-1799
+
+ DFT-D2 PARAMETERS WILL BE LOADED AND PRINTED
+ BEFORE THE RESULTS
+
+ IMPLEMENTATION OF DFT-D IN GAMESS BY:
+ R.PEVERATI AND K.K.BALDRIDGE, 
+ J.CHEM.THEORY COMPUT. 4,(2008), 2030-2048
+
+
+     $CONTRL OPTIONS
+     ---------------
+ SCFTYP=RHF          RUNTYP=OPTIMIZE     EXETYP=RUN     
+ MPLEVL=       0     CITYP =NONE         CCTYP =NONE         VBTYP =NONE    
+ DFTTYP=WB97X-D      TDDFT =NONE    
+ MULT  =       1     ICHARG=       0     NZVAR =       0     COORD =UNIQUE  
+ PP    =NONE         RELWFN=NONE         LOCAL =NONE         NUMGRD=       F
+ ISPHER=      -1     NOSYM =       1     MAXIT =     200     UNITS =ANGS    
+ PLTORB=       F     MOLPLT=       F     AIMPAC=       F     FRIEND=        
+ NPRINT=       7     IREST =       0     GEOM  =INPUT   
+ NORMF =       0     NORMP =       0     ITOL  =      20     ICUT  =       9
+ INTTYP=BEST         GRDTYP=BEST         QMTTOL= 1.0E-06
+
+     $SYSTEM OPTIONS
+     ---------------
+  REPLICATED MEMORY=   100000000 WORDS (ON EVERY NODE).
+ DISTRIBUTED MEMDDI=         200 MILLION WORDS IN AGGREGATE,
+ MEMDDI DISTRIBUTED OVER   8 PROCESSORS IS    25000000 WORDS/PROCESSOR.
+ TOTAL MEMORY REQUESTED ON EACH PROCESSOR=   125000000 WORDS.
+ TIMLIM=      525600.00 MINUTES, OR     365.0 DAYS.
+ PARALL= T  BALTYP=  DLB     KDIAG=    0  COREFL= F
+ MXSEQ2=     300 MXSEQ3=     150  mem10=         0  mem22=         0
+
+ ** LOOKING UP INTERNALLY STORED DATA FOR SOLVENT=WATER    **
+ OPTICAL AND PHYSICAL CONSTANTS:
+ EPS= 78.390; EPSINF=  1.776; RSOLV=  1.385 A; VMOL=  18.070 ML/MOL;
+ TCE= .25700E-03 1/K; STEN= 71.810 DYN/CM;  DSTEN=  0.6500; CMF=  1.2770
+
+
+     -----------------------------------
+     INPUT FOR PCM SOLVATION CALCULATION 
+     -----------------------------------
+     IEF   =     -10
+     ICOMP =       0     IFIELD=       0     ICAV  =       0
+     IDISP =       0     IREP  =       0     IDP   =       0
+
+     SOLVNT=WATER        EPS   = 78.3900     EPSINF=  1.7760
+     VMOL  = 18.0700     TCE   =  0.00025700 STEN  = 71.8100
+     DSTEN =  0.6500     CMF   =  1.2770     RSOLV =  1.3850
+
+     NESFP =       0
+     OMEGA = 40.0000     RET   =100.0000     FRO   =  0.7000
+
+     TABS  =298.0000     IPRINT=       0
+
+     --------------------------------
+     INPUT FOR ITERATIVE C-PCM METHOD 
+     --------------------------------
+     IPCMIT  =         1     MXDIIS  =        50
+     MXITR1  =        50     MXITR2  =        50
+     THRES   = 0.100E-09     IMUL    =         3
+     RCUT(1) =   15.0000     RCUT(2) =   30.0000
+
+     IDIRCT  =         1
+     IMGABI  =         0     RABI    =    4.0000
+     IMGASC  =         0     RASC    =   20.0000
+     THRSLS  = 0.500E-03     DENSLS  =    0.0100
+     IEFPOL  =         1     REFPOL  =    0.0000
+
+     INPUT FOR ISOTROPIC DIELECTRICS
+     -------------------------------
+     EPS=    78.39
+
+     INPUT FOR CAVITY DEFINITION 
+     ---------------------------
+   ATOM               COORDINATES                RADIUS       EPS
+      1      3.4062      0.2091      0.2534      1.8100     78.3900
+      2      2.2846      0.8634     -0.9830      1.7000     78.3900
+      3      2.9679      1.8831     -1.8633      1.7000     78.3900
+      4      2.3265      2.6992     -2.4904      1.5000     78.3900
+      5      1.4220      1.3024     -0.4827      1.2000     78.3900
+      6      1.9670      0.0324     -1.6146      1.2000     78.3900
+      7      3.5738      0.0680     -3.8463      1.5000     78.3900
+      8      3.9843      2.6765     -4.8076      1.5000     78.3900
+      9      3.5079      2.7937     -5.6358      1.2000     78.3900
+     10      3.7894      0.9105     -4.2899      1.2000     78.3900
+     11      2.7389     -0.1946     -4.2446      1.2000     78.3900
+     12      4.0682      1.8391     -1.9080      1.2000     78.3900
+     13      3.3874      3.0329     -4.1300      1.2000     78.3900
+
+     ----------------------------
+     INPUT FOR TESSERA DEFINITION
+     ----------------------------
+     NTSALL  =        60     MTHALL  =         4
+     MTHAUT  =         0     AUTFRE  =    2.0000
+     NTSFRZ  =        60     KEEPSM  =         0
+     AREAKP  =   10.0000     BONDRY  =    1.0000
+     AREATL  =    0.0100
+
+     SPHERE     INITS       METHOD
+          1        60       FIXPVA
+          2        60       FIXPVA
+          3        60       FIXPVA
+          4        60       FIXPVA
+          5        60       FIXPVA
+          6        60       FIXPVA
+          7        60       FIXPVA
+          8        60       FIXPVA
+          9        60       FIXPVA
+         10        60       FIXPVA
+         11        60       FIXPVA
+         12        60       FIXPVA
+         13        60       FIXPVA
+
+     ------------------------------
+      FIXPVA TESSELLATION FOR PCM
+         PEIFENG SU AND HUI LI
+     UNIVERSITY OF NEBRASKA-LINCOLN
+     ------------------------------
+
+
+     -----------------------------
+     INPUT FOR PCM GRADIENT METHOD
+     -----------------------------
+     IPCDER  =         3     IFAST   =         0
+     FIXPVA GRADIENTS BY PEIFENG SU AND HUI LI
+  
+
+ PCM DIMENSIONS: MXSP=  2000, MXTS=       780, MEMORY=         45163
+
+          ----------------
+          PROPERTIES INPUT
+          ----------------
+
+     MOMENTS            FIELD           POTENTIAL          DENSITY
+ IEMOM =       1   IEFLD =       0   IEPOT =       0   IEDEN =       0
+ WHERE =COMASS     WHERE =NUCLEI     WHERE =NUCLEI     WHERE =NUCLEI  
+ OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH    
+ IEMINT=       0   IEFINT=       0                     IEDINT=       0
+                                                       MORB  =       0
+          EXTRAPOLATION IN EFFECT
+          LEVEL SHIFTING IN EFFECT
+          SOSCF IN EFFECT
+ ORBITAL PRINTING OPTION: NPREO=     1    13     2     1
+
+     ----------------------
+     TARGET OFFLOAD OPTIONS
+     ----------------------
+     RHF    =       F
+     CPHF    =       F
+     MAKEFP =       F
+
+     -------------------------------
+     INTEGRAL TRANSFORMATION OPTIONS
+     -------------------------------
+     NWORD  =            0
+     CUTTRF = 1.0E-09     MPTRAN =       0
+     DIRTRF =       T     AOINTS =DUP     
+
+          ----------------------
+          INTEGRAL INPUT OPTIONS
+          ----------------------
+ NOPK  =       1 NORDER=       0 SCHWRZ=       T
+
+     ------------------------------------------
+     THE POINT GROUP IS C1 , NAXIS= 1, ORDER= 1
+     ------------------------------------------
+
+     DIMENSIONS OF THE SYMMETRY SUBSPACES ARE
+ A   =   13
+
+ ..... DONE SETTING UP THE RUN .....
+ CPU     0: STEP CPU TIME=     0.03 TOTAL CPU TIME=          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.1 SECONDS, CPU UTILIZATION IS    53.38%
+
+
+          -----------------------------
+          STATIONARY POINT LOCATION RUN
+          -----------------------------
+
+ OBTAINING INITIAL HESSIAN, HESS=GUESS   
+ CARTESIAN COORDINATE OPTIMIZATION USING BADGER'S RULE FORCE CONSTANT GUESS
+
+          PARAMETERS CONTROLLING GEOMETRY SEARCH ARE
+          METHOD =QA                  UPHESS =BFGS    
+          NNEG   =         0          NFRZ   =         0
+          NSTEP  =       300          IFOLOW =         1
+          HESS   =GUESS               RESTAR =         F
+          IHREP  =         2          HSSEND =         T
+          NPRT   =         1          NPUN   =         0
+          OPTTOL = 1.000E-04          RMIN   = 1.500E-03
+          RMAX   = 1.000E-01          RLIM   = 7.000E-02
+          DXMAX  = 1.000E-02          PURIFY =         F
+          MOVIE  =         F          TRUPD  =         T
+          TRMAX  = 5.000E-01          TRMIN  = 5.000E-02
+          ITBMAT =         5          STPT   =         F
+          STSTEP = 1.000E-02          PROJCT=          T
+
+ BEGINNING GEOMETRY SEARCH POINT NSERCH=   0 ...
+
+ COORDINATES OF ALL ATOMS ARE (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ CL         17.0   3.4062263771   0.2091279057   0.2533561081
+ C           6.0   2.2845933847   0.8634093872  -0.9829615815
+ C           6.0   2.9679220138   1.8831295208  -1.8632833921
+ O           8.0   2.3265477065   2.6992356036  -2.4903771140
+ H           1.0   1.4219922861   1.3024323058  -0.4827108444
+ H           1.0   1.9669509886   0.0324484665  -1.6146227258
+ O           8.0   3.5738284953   0.0679565750  -3.8462810595
+ O           8.0   3.9842881842   2.6765444468  -4.8076254061
+ H           1.0   3.5078817045   2.7937321447  -5.6358114425
+ H           1.0   3.7893562925   0.9104597543  -4.2899067776
+ H           1.0   2.7388546345  -0.1945985132  -4.2445882765
+ H           1.0   4.0681996666   1.8390865178  -1.9080252718
+ H           1.0   3.3874282656   3.0329158850  -4.1299822164
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ CPU     0: STEP CPU TIME=     0.00 TOTAL CPU TIME=          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.1 SECONDS, CPU UTILIZATION IS    53.55%
+ DDI Process 0: error code 6
+ ** On entry to DGEMM  parameter number 13 had an illegal value
+ DDI Process 5: error code 6
+ DDI Process 2: error code 6
+ ** On entry to DGEMM  parameter number 13 had an illegal value
+ DDI Process 6: error code 6
+ DDI Process 1: error code 6
+ ** On entry to DGEMM  parameter number 13 had an illegal value
+ DDI Process 7: error code 6
+ ** On entry to DGEMM  parameter number 13 had an illegal value
+ DDI Process 4: error code 6
+ ** On entry to DGEMM  parameter number 13 had an illegal value
+ ** On entry to DGEMM  parameter number 13 had an illegal value
+ ** On entry to DGEMM  parameter number 13 had an illegal value
+
+          -------------
+          GUESS OPTIONS
+          -------------
+          GUESS =HUCKEL            NORB  =       0          NORDER=       0
+          MIX   =       F          PRTMO =       F          PUNMO =       F
+          TOLZ  = 1.0E-08          TOLE  = 1.0E-05
+          SYMDEN=       F          PURIFY=       F
+
+ INITIAL GUESS ORBITALS GENERATED BY HUCKEL   ROUTINE.
+ HUCKEL GUESS REQUIRES     18686 WORDS.
+ ddikick.x: application process 5 quit unexpectedly.
+ ddikick.x: Fatal error detected.
+ The error is most likely to be in the application, so check for
+ input errors, disk space, memory needs, application bugs, etc.
+ ddikick.x will now clean up all processes, and exit...
+ DDI Process 3: terminated upon request.
+ ddikick.x: Sending kill signal to DDI processes.
+ ddikick.x: Execution terminated due to error(s).
+unset echo
+----- accounting info -----
+Files used on the parent node nid003559 were:
+-rw-r--r-- 1 darren01 e283    4636 Aug 30 22:06 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.dat
+-rw-r--r-- 1 darren01 e283    7212 Aug 30 22:06 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F05
+-rw-r--r-- 1 darren01 e283 1145200 Aug 30 22:06 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F10
+-rw-r--r-- 1 darren01 e283       0 Aug 30 22:06 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F26
+-rw-r--r-- 1 darren01 e283       0 Aug 30 22:06 /work/e283/e283/darren01/gamess/restart/caa005bIRC-def2svp-test.F27
+ls: No match.
+ls: No match.
+ls: No match.
+Sun 30 Aug 2026 10:06:31 PM BST
+0.227u 0.095s 0:04.54 6.8%	0+0k 436+48io 9pf+0w
