@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title id="page-title">Try SPARQL against a real ontology graph - ont_mm</title>
+<script src="https://cdn.jsdelivr.net/npm/rdflib@2.2.35/dist/rdflib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+<style>
+  body { font-family: -apple-system, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 1em; line-height: 1.5; }
+  textarea { width: 100%; height: 220px; font-family: monospace; font-size: 14px; box-sizing: border-box; }
+  button { font-size: 15px; padding: 0.5em 1.2em; margin: 0.5em 0; cursor: pointer; }
+  button:disabled { cursor: wait; opacity: 0.6; }
+  #status { margin: 0.5em 0; font-weight: bold; }
+  #error { color: #b00020; white-space: pre-wrap; font-family: monospace; font-size: 13px; background: #fff0f0; padding: 0.8em; border-radius: 4px; display: none; }
+  table { border-collapse: collapse; width: 100%; margin-top: 1em; }
+  th, td { border: 1px solid #ccc; padding: 0.4em 0.6em; text-align: left; font-size: 14px; word-break: break-all; }
+  th { background: #f5f5f5; }
+  .example-btn { font-size: 13px; margin: 0.2em 0.4em 0.2em 0; padding: 0.4em 0.8em; display: inline-block; }
+  .example-desc { font-size: 12px; color: #666; margin: 0 0 0.8em 0; }
+</style>
+</head>
+<body>
+
+<h1 id="page-heading">Try SPARQL against a real ontology graph</h1>
+<p id="page-intro"></p>
+
+<p id="status">Loading graph...</p>
+<div id="error"></div>
+
+<div id="query-area" style="display:none;">
+
+<p><strong>Try one of these first:</strong></p>
+<div id="example-buttons"></div>
+
+<p>Or write your own SPARQL query below (the prefixes configured for
+this graph are already declared for you, and don't need to be
+repeated in the box):</p>
+
+<textarea id="query-box"></textarea>
+<br>
+<button id="run-btn" onclick="runQuery()">Run query</button>
+
+<div id="view-toggle" style="display:none; margin-top: 0.5em;">
+  <button onclick="showView('table')" id="table-view-btn">Table view</button>
+  <button onclick="showView('graph')" id="graph-view-btn">Graph view</button>
+</div>
+<div id="results"></div>
+<div id="graph-container" style="display:none; height: 500px; border: 1px solid #ccc; margin-top: 1em;"></div>
+
+</div>
+
+<script>
+// =====================================================================
+// CONFIG - everything specific to one graph lives here. To reuse this
+// page for a different graph, copy this whole file and edit only this
+// block; nothing below this point should need to change.
+// =====================================================================
+const CONFIG = {
+  pageTitle: "caa dataset - SPARQL playground - ont_mm",
+  heading: "Try SPARQL against a real ontology graph",
+  introHtml: 'This runs entirely in your browser - no server, nothing installed. ' +
+    'It loads <a href="https://github.com/Darren01/ont_mm/blob/main/examples/caa/ont/caa_graph_20260905.ttl">' +
+    '<code>caa_graph_20260905.ttl</code></a>, a real, complete chloroacetaldehyde ' +
+    'computational chemistry project (part of ' +
+    '<a href="https://github.com/Darren01/ont_mm/tree/main/examples/caa">the caa example</a>), ' +
+    'directly from GitHub, then lets you write and run your own SPARQL queries against it.',
+
+  graphUrl: "https://raw.githubusercontent.com/Darren01/ont_mm/main/examples/caa/ont/caa_graph_20260905.ttl",
+
+  prefixes: `
+PREFIX gc: <http://purl.org/gc/>
+PREFIX ex: <http://example.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+`,
+
+  // Each example needs a short label (for its button), a one-line
+  // description (shown under the button row once picked), and the
+  // query body itself (CONFIG.prefixes is prepended automatically -
+  // don't repeat PREFIX lines here).
+  examples: [
+    {
+      label: "Experiments by type",
+      description: "The basic inventory - every experiment, grouped by what kind of calculation it was.",
+      query: `SELECT ?exp ?type WHERE {
+  ?exp a ?type .
+  FILTER(?type IN (gc:GeometryOptimization, gc:SinglePoint,
+                    gc:VibrationalAnalysis, gc:SaddlePoint, gc:IRC))
+}`
+    },
+    {
+      label: "Your own review notes",
+      description: "Every experiment with a recorded annotation - the real, contemporaneous debugging trail.",
+      query: `SELECT ?exp ?comment WHERE {
+  ?exp a gc:MolecularComputation .
+  ?exp skos:editorialNote ?comment .
+}`
+    },
+    {
+      label: "Imaginary frequencies",
+      description: "A data-quality check - flags any result whose geometry may not be a genuine minimum (or, for a transition state, the expected single saddle point).",
+      query: `SELECT ?spectrum ?freq WHERE {
+  ?spectrum gc:hasFrequencyPeak ?peak .
+  ?peak gc:hasFrequency ?fv .
+  ?fv gc:hasFloatValue ?freq .
+  FILTER(?freq < 0)
+}`
+    }
+  ]
+};
+// ===================== end of CONFIG - engine code below =====================
+
+let store = null;
+let lastRows = [];
+let lastVarNames = [];
+
+function shortLabel(value) {
+  if (typeof value !== "string") return String(value);
+  const match = value.match(/[\/#]([^\/#]+)$/);
+  return match ? match[1] : value;
+}
+
+function showError(err) {
+  const box = document.getElementById("error");
+  box.style.display = "block";
+  box.textContent = "Something went wrong:\n\n" + (err && err.message ? err.message : String(err)) +
+    "\n\nIf you're seeing this, please copy this whole message (and check your " +
+    "browser's own developer console for anything extra) and report it back.";
+}
+
+function loadExample(index) {
+  const ex = CONFIG.examples[index];
+  document.getElementById("query-box").value = CONFIG.prefixes.trim() + "\n\n" + ex.query;
+  document.getElementById("example-desc").textContent = ex.description;
+}
+
+function buildExampleButtons() {
+  const container = document.getElementById("example-buttons");
+  let html = "";
+  CONFIG.examples.forEach(function (ex, i) {
+    html += '<button class="example-btn" onclick="loadExample(' + i + ')">' + ex.label + '</button>';
+  });
+  html += '<p class="example-desc" id="example-desc"></p>';
+  container.innerHTML = html;
+}
+
+async function init() {
+  document.title = CONFIG.pageTitle;
+  document.getElementById("page-heading").textContent = CONFIG.heading;
+  document.getElementById("page-intro").innerHTML = CONFIG.introHtml;
+
+  const statusEl = document.getElementById("status");
+  try {
+    if (typeof $rdf === "undefined") {
+      throw new Error("rdflib.js did not load from the CDN - check your internet connection, or the CDN link itself may need updating.");
+    }
+
+    const response = await fetch(CONFIG.graphUrl);
+    if (!response.ok) {
+      throw new Error("Could not fetch the graph (HTTP " + response.status + "). " +
+        "The graph URL in CONFIG may have changed, or the source may be temporarily unreachable.");
+    }
+    const ttlText = await response.text();
+
+    store = $rdf.graph();
+    $rdf.parse(ttlText, store, CONFIG.graphUrl, "text/turtle");
+
+    const tripleCount = store.statementsMatching(undefined, undefined, undefined).length;
+    if (tripleCount === 0) {
+      throw new Error("The graph loaded but contains zero triples - the Turtle parse likely silently failed. This is worth reporting.");
+    }
+
+    statusEl.textContent = "Graph loaded: " + tripleCount + " triples. Ready to query.";
+    document.getElementById("query-area").style.display = "block";
+    buildExampleButtons();
+    if (CONFIG.examples.length > 0) loadExample(0);
+
+  } catch (err) {
+    statusEl.textContent = "Failed to load the graph.";
+    showError(err);
+  }
+}
+
+function runQuery() {
+  const runBtn = document.getElementById("run-btn");
+  const resultsEl = document.getElementById("results");
+  const errorEl = document.getElementById("error");
+  errorEl.style.display = "none";
+  resultsEl.innerHTML = "";
+  runBtn.disabled = true;
+  runBtn.textContent = "Running...";
+
+  try {
+    let queryText = document.getElementById("query-box").value;
+
+    // rdflib.js's SPARQL support is basic and doesn't reliably handle
+    // LIMIT/OFFSET - handled here instead: stripped before parsing,
+    // then applied by hand to the results afterwards.
+    let limitValue = null;
+    let offsetValue = 0;
+    queryText = queryText.replace(/\bLIMIT\s+(\d+)\b/i, function (m, n) {
+      limitValue = parseInt(n, 10);
+      return "";
+    });
+    queryText = queryText.replace(/\bOFFSET\s+(\d+)\b/i, function (m, n) {
+      offsetValue = parseInt(n, 10);
+      return "";
+    });
+
+    const query = $rdf.SPARQLToQuery(queryText, false, store);
+
+    if (!query) {
+      throw new Error("The query could not be parsed. Check your SPARQL syntax - " +
+        "note that rdflib.js's SPARQL support is basic, not the full SPARQL 1.1 " +
+        "specification, so some valid SPARQL may not work here even if it's correct.");
+    }
+
+    const rows = [];
+    let varNames = null;
+
+    store.query(
+      query,
+      function (result) {
+        if (!varNames) {
+          varNames = Object.keys(result).map(function (k) {
+            return k.startsWith("?") ? k.slice(1) : k;
+          });
+        }
+        const row = {};
+        for (const key in result) {
+          const cleanKey = key.startsWith("?") ? key.slice(1) : key;
+          const val = result[key];
+          row[cleanKey] = val && val.value !== undefined ? val.value : String(val);
+        }
+        rows.push(row);
+      },
+      undefined,
+      function () {
+        runBtn.disabled = false;
+        runBtn.textContent = "Run query";
+
+        if (rows.length === 0) {
+          resultsEl.innerHTML = "<p><em>No results.</em> This may be a real, correct " +
+            "finding (the pattern genuinely doesn't match anything) rather than an error - " +
+            "worth double-checking your query logic either way.</p>";
+          document.getElementById("view-toggle").style.display = "none";
+          document.getElementById("graph-container").style.display = "none";
+          return;
+        }
+
+        const totalMatches = rows.length;
+        let displayRows = rows.slice(offsetValue);
+        if (limitValue !== null) {
+          displayRows = displayRows.slice(0, limitValue);
+        }
+
+        let html = "<table><tr>";
+        varNames.forEach(function (v) { html += "<th>" + v + "</th>"; });
+        html += "</tr>";
+        displayRows.forEach(function (row) {
+          html += "<tr>";
+          varNames.forEach(function (v) {
+            html += "<td>" + (row[v] !== undefined ? row[v] : "") + "</td>";
+          });
+          html += "</tr>";
+        });
+        html += "</table><p>" + displayRows.length + " result(s) shown" +
+          (limitValue !== null || offsetValue > 0 ? " (LIMIT/OFFSET applied by this tool, not passed to the underlying engine; " + totalMatches + " total match" + (totalMatches === 1 ? "" : "es") + " before that)" : "") +
+          ".</p>";
+        resultsEl.innerHTML = html;
+
+        lastRows = displayRows;
+        lastVarNames = varNames;
+        const toggleEl = document.getElementById("view-toggle");
+        if (varNames.length >= 2) {
+          toggleEl.style.display = "block";
+        } else {
+          toggleEl.style.display = "none";
+        }
+        showView("table");
+      }
+    );
+  } catch (err) {
+    runBtn.disabled = false;
+    runBtn.textContent = "Run query";
+    showError(err);
+  }
+}
+
+function showView(which) {
+  const resultsEl = document.getElementById("results");
+  const graphEl = document.getElementById("graph-container");
+  const tableBtn = document.getElementById("table-view-btn");
+  const graphBtn = document.getElementById("graph-view-btn");
+
+  if (which === "graph") {
+    resultsEl.style.display = "none";
+    graphEl.style.display = "block";
+    tableBtn.style.fontWeight = "normal";
+    graphBtn.style.fontWeight = "bold";
+    try {
+      renderGraph();
+    } catch (err) {
+      graphEl.innerHTML = "";
+      showError(new Error("Could not draw the graph view: " + err.message +
+        " (the table view above should still work fine)."));
+    }
+  } else {
+    resultsEl.style.display = "block";
+    graphEl.style.display = "none";
+    tableBtn.style.fontWeight = "bold";
+    graphBtn.style.fontWeight = "normal";
+  }
+}
+
+function renderGraph() {
+  const graphEl = document.getElementById("graph-container");
+  if (typeof vis === "undefined") {
+    throw new Error("vis-network did not load from the CDN.");
+  }
+
+  const nodeIds = new Map();
+  const nodes = [];
+  const edges = [];
+
+  function nodeIdFor(value) {
+    if (!nodeIds.has(value)) {
+      nodeIds.set(value, nodeIds.size);
+      nodes.push({ id: nodeIds.get(value), label: shortLabel(value), title: value });
+    }
+    return nodeIds.get(value);
+  }
+
+  lastRows.forEach(function (row) {
+    for (let i = 0; i < lastVarNames.length - 1; i++) {
+      const fromVal = row[lastVarNames[i]];
+      const toVal = row[lastVarNames[i + 1]];
+      if (fromVal === undefined || toVal === undefined) continue;
+      const fromId = nodeIdFor(String(fromVal));
+      const toId = nodeIdFor(String(toVal));
+      edges.push({ from: fromId, to: toId, label: lastVarNames[i + 1] });
+    }
+  });
+
+  graphEl.innerHTML = "";
+  const data = {
+    nodes: new vis.DataSet(nodes),
+    edges: new vis.DataSet(edges)
+  };
+  const options = {
+    nodes: { shape: "box", font: { size: 13 } },
+    edges: { font: { size: 11, align: "middle" }, arrows: "to" },
+    physics: { stabilization: true }
+  };
+  new vis.Network(graphEl, data, options);
+}
+
+init();
+</script>
+
+</body>
+</html>
