@@ -1192,11 +1192,8 @@ This project is licensed under the MIT License – see the [LICENSE](./LICENSE.t
 - [Apache Jena](https://jena.apache.org/download/) (for `shacl` - SHACL validation)
 - [RStudio](https://posit.co/download/rstudio-desktop)
 - [turtle viewer](https://semantechs.co.uk/turtle-editor-viewer/)
-
-
-
-
-
-
-
-test
+- [rdflib.js](https://github.com/linkeddata/rdflib.js) (RDF parsing and
+  SPARQL support for `tools/sparql_playground.html`, running entirely
+  in the browser)
+- [vis-network](https://github.com/visjs/vis-network) (the optional
+  graph view in `tools/sparql_playground.html`)
