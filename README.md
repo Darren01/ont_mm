@@ -62,6 +62,37 @@ from copy-paste templates through to writing your own SPARQL, with a
 short primer built entirely from real lessons this project actually
 hit along the way.
 
+## 🔬 Try it right now - zero install
+
+[`tools/sparql_playground.html`](./tools/sparql_playground.html) runs
+entirely in your own browser - download it and open it directly, no
+cloning, no R, nothing to set up. It loads the real, complete
+[`caa` example graph](./examples/caa/) live from GitHub and lets you
+write and run your own SPARQL queries against it, with three working
+examples to start from and an optional graph view alongside the usual
+table of results.
+
+(If this repository's own GitHub Pages is enabled, this file can be a
+direct, click-and-it-works link instead of a download - see your
+repository's Settings > Pages if you want to set that up.)
+
+This is one concrete way of making a graph queryable without asking
+anyone to install anything - not the only way, and not a permanent,
+always-on public endpoint (a genuine SPARQL *endpoint*, in the formal
+sense, is a live server, which this deliberately isn't). If you want
+that instead:
+
+- **Run your own, self-hosted endpoint**: [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/)
+  loads a `.ttl` file and exposes a real, live SPARQL HTTP endpoint -
+  free and well-documented, though it only stays reachable while
+  Fuseki itself is running somewhere with a stable address (your own
+  laptop won't stay up when it's off).
+- **A hosted third-party triplestore** (e.g. GraphDB, Stardog) can
+  give you a permanent, publicly reachable endpoint without running
+  your own server - typically involves signup and a commercial tier
+  beyond a small free allowance, and we haven't evaluated a specific
+  current provider closely enough to recommend one here.
+
 ## 🧪 Using This With Your Own Data
 
 This is the part you actually want if you have your own GAMESS input/output
