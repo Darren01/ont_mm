@@ -4,7 +4,7 @@ ex:exp_caa001b	gc:MolecularComputation	AM1 code didn't adjust the internal const
 ex:exp_caa002b	gc:MolecularComputation	initial runs where 8,3 distance at 2A was too quick and broke up the molecule	
 ex:exp_caa002d	gc:MolecularComputation	the run showed that the constraints applied destroyed the molecular geometry.	
 ex:exp_caa002e	gc:MolecularComputation	the run showed that the constraints applied destroyed the molecular geometry.	
-ex:exp_caa004a	gc:MolecularComputation	starting from the hydrate with a view to stretching one of the CO bonds.	
+ex:exp_caa004a	gc:MolecularComputation	starting from the hydrate with a view to stretching one of the CO bonds.	https://doi.org/10.1021/ja00249a034
 ex:exp_caa004m	gc:MolecularComputation	this structure appears to be very close to the transitions state within the bounds of the level of theory.	
 ex:exp_caa005b	gc:MolecularComputation	using PROJCT=.t. in $FORCE took the\n rotations/translations to 0cm-1	
 ex:exp_caa005bTSa	gc:MolecularComputation	interesting that the ClC bond is antiperiplanar to the leaving oxygen\n is this exclusive to the mechanism or will it work with anti-planarity to the incipient carbonyl oxygen?	

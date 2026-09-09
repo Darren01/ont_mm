@@ -244,6 +244,10 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
 <http://purl.obolibrary.org/obo/BFO_0000124> rdf:type owl:ObjectProperty .
 
 
+###  http://purl.org/dc/terms/relation
+<http://purl.org/dc/terms/relation> rdf:type owl:ObjectProperty .
+
+
 ###  http://purl.org/gc/IsAtomProperty
 <http://purl.org/gc/IsAtomProperty> rdf:type owl:ObjectProperty ;
                                     rdfs:subPropertyOf <http://purl.org/gc/extraGCObjectProperty> ;
@@ -6515,6 +6519,7 @@ rdfs:Class rdf:type owl:Class .
                                  <http://example.org/hasInputFile> <http://example.org/file_caa004a_inp> ;
                                  <http://example.org/hasOutputFile> <http://example.org/file_caa004a_dat> ,
                                                                     <http://example.org/file_caa004a_log> ;
+                                 <http://purl.org/dc/terms/relation> <https://doi.org/10.1021/ja00249a034> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa004a> ,
                                                                 <http://example.org/spectrum_caa004a> ;
                                  rdfs:label "Vibrational analysis caa004a" ;
@@ -43179,6 +43184,10 @@ rdfs:Class rdf:type owl:Class .
                                <http://www.w3.org/ns/prov#specializationOf> <http://www.w3.org/ns/prov-o> ;
                                <http://www.w3.org/ns/prov#wasRevisionOf> <http://www.w3.org/ns/prov-o-20130312> ;
                                rdfs:label "PROV-O: The PROV Ontology"@en .
+
+
+###  https://doi.org/10.1021/ja00249a034
+<https://doi.org/10.1021/ja00249a034> rdf:type owl:NamedIndividual .
 
 
 #################################################################

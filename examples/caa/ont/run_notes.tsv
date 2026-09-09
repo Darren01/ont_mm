@@ -2,7 +2,7 @@ caa001b.inp	AM1 code didn't adjust the internal constraints
 caa002b.log	initial runs where 8,3 distance at 2A was too quick and broke up the molecule
 caa002d.log	the run showed that the constraints applied destroyed the molecular geometry.
 caa002e.log	the run showed that the constraints applied destroyed the molecular geometry.
-caa004a.log	starting from the hydrate with a view to stretching one of the CO bonds.
+caa004a.log	starting from the hydrate with a view to stretching one of the CO bonds.	10.1021/ja00249a034
 caa004m.log	this structure appears to be very close to the transitions state within the bounds of the level of theory.
 caa005b.log	using PROJCT=.t. in $FORCE took the\n rotations/translations to 0cm-1
 caa005bTSa.log	interesting that the ClC bond is antiperiplanar to the leaving oxygen\n is this exclusive to the mechanism or will it work with anti-planarity to the incipient carbonyl oxygen?
