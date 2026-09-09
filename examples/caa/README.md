@@ -47,7 +47,10 @@ relevant to understanding what fraction of the aldehyde in an aqueous
 system is actually available to react as an aldehyde, rather than
 being tied up as the hydrate.
 
-`[DIAGRAM: reaction scheme - chloroacetaldehyde + H2O <-> hydrate](../../images/ChloroacetaldehydeAndHydrate.png)`
+![Reaction scheme: chloroacetaldehyde + H2O <-> hydrate](../../images/ChloroacetaldehydeAndHydrate.png)
+
+An animation of the reaction is also available for those with access
+to Jmol - see [caa005bIRC.cml](./outputs/caa005bIRC.cml).
 
 ## Phase 1: Exploration
 
@@ -57,7 +60,7 @@ constraints (AM1, then 3-21G once AM1 turned out not to support
 constraints at all) - didn't converge to anything useful, despite
 numerous variations.
 
-![Reaction scheme: chloroacetaldehyde + H2O <-> hydrate](../../images/ChloroacetaldehydeAndHydrate.png)
+![The "product first" strategy: starting from the hydrate, stretching the C-O bond while holding hydrogen bonds in place](../../images/ComputationStrategies.png)
 
 The strategy that actually worked came from the other direction:
 starting from the *product* (the hydrate, with one spectator water

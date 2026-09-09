@@ -40,6 +40,12 @@ repeated in the box):</p>
 <br>
 <button id="run-btn" onclick="runQuery()">Run query</button>
 
+<div id="label-style-toggle" style="display:none; margin-top: 0.5em; font-size: 14px;">
+  <label>
+    <input type="checkbox" id="short-labels-toggle" checked onchange="toggleLabelStyle()">
+    Show short labels (uncheck for full URIs)
+  </label>
+</div>
 <div id="view-toggle" style="display:none; margin-top: 0.5em;">
   <button onclick="showView('table')" id="table-view-btn">Table view</button>
   <button onclick="showView('graph')" id="graph-view-btn">Graph view</button>
@@ -107,6 +113,28 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
   FILTER(?freq < 0)
 }`
     }
+  ],
+
+  // Turn a cell value into a real, clickable link when it matches a
+  // known pattern - scoped deliberately narrow, to mappings this
+  // project's naming convention makes genuinely reliable. Each entry:
+  // a regex to test the raw value against, and a function building
+  // the real URL from the regex match. Return null/undefined from
+  // urlFor to leave a matching value as plain text after all.
+  linkPatterns: [
+    {
+      // ex:exp_caa001a -> the real .log file on GitHub, which GitHub
+      // already renders as readable plain text - no extra work needed.
+      regex: /example\.org\/exp_([A-Za-z0-9\-]+)$/,
+      urlFor: function (match) {
+        // raw.githubusercontent.com, not github.com/.../blob/... - the
+        // latter wraps the file in GitHub's own repo-browsing UI
+        // (sidebar, header, navigation); the raw URL opens the actual
+        // plain-text log content directly, feeling like a standalone
+        // document rather than a webpage about the file.
+        return "https://raw.githubusercontent.com/Darren01/ont_mm/main/examples/caa/outputs/" + match[1] + ".log";
+      }
+    }
   ]
 };
 // ===================== end of CONFIG - engine code below =====================
@@ -114,11 +142,75 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 let store = null;
 let lastRows = [];
 let lastVarNames = [];
+let lastTotalMatches = 0;
+let lastWasLimited = false;
+let useShortLabels = true;
+
+// Builds a {prefix: full_uri} map from CONFIG.prefixes, once, for
+// expanding a prefixed name (e.g. "gc:SinglePoint") to the full URI
+// that actually appears in query results - needed because the manual
+// FILTER workaround below compares against rdflib.js's raw, fully-
+// expanded result values, not the prefixed forms written in a query.
+const PREFIX_MAP = (function () {
+  const map = {};
+  const re = /PREFIX\s+(\w+):\s*<([^>]+)>/gi;
+  let m;
+  while ((m = re.exec(CONFIG.prefixes)) !== null) {
+    map[m[1]] = m[2];
+  }
+  return map;
+})();
+
+function expandPrefixed(value) {
+  const m = value.match(/^(\w+):([\w-]+)$/);
+  if (m && PREFIX_MAP[m[1]]) {
+    return PREFIX_MAP[m[1]] + m[2];
+  }
+  return value;
+}
 
 function shortLabel(value) {
   if (typeof value !== "string") return String(value);
+
+  // A number (e.g. a raw energy value like -766.3719959497) gets
+  // rounded for display, not just a URI shortened - the full,
+  // unrounded value is still always available via the hover tooltip.
+  if (/^-?\d+\.\d+$/.test(value)) {
+    const num = parseFloat(value);
+    return num.toFixed(4).replace(/\.?0+$/, "") || "0";
+  }
+
   const match = value.match(/[\/#]([^\/#]+)$/);
   return match ? match[1] : value;
+}
+
+function escapeHtml(value) {
+  const div = document.createElement("div");
+  div.textContent = value;
+  return div.innerHTML;
+}
+
+// Renders a table cell's value as a real link when it matches one of
+// CONFIG.linkPatterns, otherwise as plain, safely-escaped text. Either
+// way, the visible text honours the current short/full label setting;
+// the full, real value is always kept as a hover tooltip, and a
+// link's actual target is always the real, full URL regardless of
+// which label style is showing.
+function linkifyValue(value) {
+  const strValue = String(value);
+  const displayText = useShortLabels ? shortLabel(strValue) : strValue;
+
+  for (const pattern of CONFIG.linkPatterns) {
+    const match = strValue.match(pattern.regex);
+    if (match) {
+      const url = pattern.urlFor(match);
+      if (url) {
+        return '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener" title="' +
+          escapeHtml(strValue) + '">' + escapeHtml(displayText) + "</a>";
+      }
+    }
+  }
+  return '<span title="' + escapeHtml(strValue) + '">' + escapeHtml(displayText) + "</span>";
 }
 
 function showError(err) {
@@ -208,6 +300,44 @@ function runQuery() {
       return "";
     });
 
+    // rdflib.js's FILTER support is genuinely unreliable, confirmed
+    // directly against its own open, unresolved GitHub issue (#535 -
+    // "FILTER(contains(...)) does not filter anything") - IN() and
+    // numeric comparisons were both confirmed broken on this project's
+    // own real queries too. Handled the same way as LIMIT/OFFSET
+    // above: stripped before parsing, applied by hand to the raw rows
+    // afterwards. This only covers the two FILTER shapes this
+    // project's own queries actually use (IN(...) membership, and a
+    // single numeric comparison) - not arbitrary SPARQL FILTER syntax.
+    const manualFilters = [];
+
+    queryText = queryText.replace(/FILTER\s*\(\s*\?(\w+)\s+IN\s*\(([^)]+)\)\s*\)/gi,
+      function (whole, varName, list) {
+        const values = list.split(",").map(function (v) {
+          return expandPrefixed(v.trim());
+        });
+        manualFilters.push(function (row) {
+          return values.indexOf(row[varName]) !== -1;
+        });
+        return "";
+      });
+
+    queryText = queryText.replace(/FILTER\s*\(\s*\?(\w+)\s*(<=|>=|<|>|=)\s*(-?\d+\.?\d*)\s*\)/gi,
+      function (whole, varName, op, numStr) {
+        const num = parseFloat(numStr);
+        manualFilters.push(function (row) {
+          const val = parseFloat(row[varName]);
+          if (isNaN(val)) return false;
+          if (op === "<") return val < num;
+          if (op === ">") return val > num;
+          if (op === "<=") return val <= num;
+          if (op === ">=") return val >= num;
+          if (op === "=") return val === num;
+          return false;
+        });
+        return "";
+      });
+
     const query = $rdf.SPARQLToQuery(queryText, false, store);
 
     if (!query) {
@@ -246,32 +376,31 @@ function runQuery() {
             "worth double-checking your query logic either way.</p>";
           document.getElementById("view-toggle").style.display = "none";
           document.getElementById("graph-container").style.display = "none";
+          document.getElementById("label-style-toggle").style.display = "none";
           return;
         }
 
-        const totalMatches = rows.length;
-        let displayRows = rows.slice(offsetValue);
+        // Apply the manual FILTER workarounds before anything else -
+        // totalMatches and LIMIT/OFFSET should both reflect the
+        // filtered set, not rdflib.js's raw, unfiltered result count.
+        const filteredRows = manualFilters.length === 0 ? rows :
+          rows.filter(function (row) {
+            return manualFilters.every(function (f) { return f(row); });
+          });
+
+        const totalMatches = filteredRows.length;
+        let displayRows = filteredRows.slice(offsetValue);
         if (limitValue !== null) {
           displayRows = displayRows.slice(0, limitValue);
         }
 
-        let html = "<table><tr>";
-        varNames.forEach(function (v) { html += "<th>" + v + "</th>"; });
-        html += "</tr>";
-        displayRows.forEach(function (row) {
-          html += "<tr>";
-          varNames.forEach(function (v) {
-            html += "<td>" + (row[v] !== undefined ? row[v] : "") + "</td>";
-          });
-          html += "</tr>";
-        });
-        html += "</table><p>" + displayRows.length + " result(s) shown" +
-          (limitValue !== null || offsetValue > 0 ? " (LIMIT/OFFSET applied by this tool, not passed to the underlying engine; " + totalMatches + " total match" + (totalMatches === 1 ? "" : "es") + " before that)" : "") +
-          ".</p>";
-        resultsEl.innerHTML = html;
-
         lastRows = displayRows;
         lastVarNames = varNames;
+        lastTotalMatches = totalMatches;
+        lastWasLimited = (limitValue !== null || offsetValue > 0 || manualFilters.length > 0);
+
+        renderTable();
+
         const toggleEl = document.getElementById("view-toggle");
         if (varNames.length >= 2) {
           toggleEl.style.display = "block";
@@ -285,6 +414,33 @@ function runQuery() {
     runBtn.disabled = false;
     runBtn.textContent = "Run query";
     showError(err);
+  }
+}
+
+function renderTable() {
+  const resultsEl = document.getElementById("results");
+  document.getElementById("label-style-toggle").style.display = lastRows.length > 0 ? "block" : "none";
+  let html = "<table><tr>";
+  lastVarNames.forEach(function (v) { html += "<th>" + v + "</th>"; });
+  html += "</tr>";
+  lastRows.forEach(function (row) {
+    html += "<tr>";
+    lastVarNames.forEach(function (v) {
+      html += "<td>" + (row[v] !== undefined ? linkifyValue(row[v]) : "") + "</td>";
+    });
+    html += "</tr>";
+  });
+  html += "</table><p>" + lastRows.length + " result(s) shown" +
+    (lastWasLimited ? " (LIMIT/OFFSET/FILTER applied by this tool itself, not by the underlying engine; " +
+      lastTotalMatches + " total match" + (lastTotalMatches === 1 ? "" : "es") + " before that)" : "") +
+    ".</p>";
+  resultsEl.innerHTML = html;
+}
+
+function toggleLabelStyle() {
+  useShortLabels = document.getElementById("short-labels-toggle").checked;
+  if (lastVarNames.length > 0) {
+    renderTable();
   }
 }
 
@@ -314,46 +470,90 @@ function showView(which) {
   }
 }
 
+// Above this many nodes, force-directed physics gets slow and the
+// result is unreadable clutter anyway - capped rather than attempted,
+// with a clear, honest message instead of a jammed browser.
+const MAX_GRAPH_NODES = 75;
+
 function renderGraph() {
   const graphEl = document.getElementById("graph-container");
   if (typeof vis === "undefined") {
     throw new Error("vis-network did not load from the CDN.");
   }
 
+  graphEl.innerHTML = '<p style="padding:1em;">Building graph...</p>';
+
   const nodeIds = new Map();
   const nodes = [];
   const edges = [];
+  let capped = false;
 
   function nodeIdFor(value) {
     if (!nodeIds.has(value)) {
+      if (nodeIds.size >= MAX_GRAPH_NODES) {
+        capped = true;
+        return null;
+      }
       nodeIds.set(value, nodeIds.size);
       nodes.push({ id: nodeIds.get(value), label: shortLabel(value), title: value });
     }
     return nodeIds.get(value);
   }
 
-  lastRows.forEach(function (row) {
+  for (const row of lastRows) {
     for (let i = 0; i < lastVarNames.length - 1; i++) {
       const fromVal = row[lastVarNames[i]];
       const toVal = row[lastVarNames[i + 1]];
       if (fromVal === undefined || toVal === undefined) continue;
       const fromId = nodeIdFor(String(fromVal));
       const toId = nodeIdFor(String(toVal));
+      if (fromId === null || toId === null) { capped = true; continue; }
       edges.push({ from: fromId, to: toId, label: lastVarNames[i + 1] });
     }
-  });
+    if (capped) break;
+  }
 
-  graphEl.innerHTML = "";
-  const data = {
-    nodes: new vis.DataSet(nodes),
-    edges: new vis.DataSet(edges)
-  };
-  const options = {
-    nodes: { shape: "box", font: { size: 13 } },
-    edges: { font: { size: 11, align: "middle" }, arrows: "to" },
-    physics: { stabilization: true }
-  };
-  new vis.Network(graphEl, data, options);
+  // Run a real timer so the "Building graph..." message actually has
+  // a moment to appear on screen before the (potentially slow) layout
+  // work begins, rather than both happening in the same render frame.
+  setTimeout(function () {
+    graphEl.innerHTML = "";
+
+    if (capped) {
+      const note = document.createElement("p");
+      note.style.cssText = "color:#666; font-size:13px; padding:0 0 0.5em 0;";
+      note.textContent = "Showing the first " + MAX_GRAPH_NODES + " nodes only - " +
+        "this result set is too large to usefully draw in full. Add a LIMIT to " +
+        "your query for a smaller, clearer picture (the table view above still " +
+        "shows every result).";
+      graphEl.appendChild(note);
+    }
+
+    const canvasDiv = document.createElement("div");
+    canvasDiv.style.height = capped ? "460px" : "500px";
+    graphEl.appendChild(canvasDiv);
+
+    const data = {
+      nodes: new vis.DataSet(nodes),
+      edges: new vis.DataSet(edges)
+    };
+    const options = {
+      nodes: { shape: "box", font: { size: 13 } },
+      edges: { font: { size: 11, align: "middle" }, arrows: "to" },
+      physics: {
+        stabilization: { iterations: 150 }
+      }
+    };
+    const network = new vis.Network(canvasDiv, data, options);
+
+    // Freeze physics once the initial layout settles, so the browser
+    // isn't left continuously recomputing forces forever - this,
+    // more than anything else, is what was making the graph view feel
+    // like it had jammed the browser.
+    network.once("stabilizationIterationsDone", function () {
+      network.setOptions({ physics: false });
+    });
+  }, 10);
 }
 
 init();
