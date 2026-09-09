@@ -1197,3 +1197,6 @@ This project is licensed under the MIT License – see the [LICENSE](./LICENSE.t
   in the browser)
 - [vis-network](https://github.com/visjs/vis-network) (the optional
   graph view in `tools/sparql_playground.html`)
+- [Jmol](https://jmol.sourceforge.net/) (used to generate the reaction
+  animation GIF in the `caa` example - see
+  `examples/caa/animation/README.md`)

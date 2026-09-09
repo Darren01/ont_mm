@@ -1,0 +1,12 @@
+load "file:///home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRC.cml"
+n = getProperty("modelInfo.modelCount")
+print n
+animation fps 10
+capture transparent "file:///home/darren/Desktop/jmol_animation/caa_IRC_animation.gif"
+for (var i = 1; i <= n; i = i+1) {
+    frame @{"1." + i}
+    moveto 0.0 { 283 -959 6 126.45} 100.0 0.0 0.0 {2.933925 1.2908465 -2.5222576} 5.2381773 {0 0 0} 0 0 0 3.0 0.0 0.0;
+    var PNGaddress = "file:///home/darren/Desktop/jmol_animation/img_" + i + ".png"
+    write @PNGaddress
+}
+capture end

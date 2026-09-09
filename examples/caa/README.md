@@ -49,8 +49,14 @@ being tied up as the hydrate.
 
 ![Reaction scheme: chloroacetaldehyde + H2O <-> hydrate](../../images/ChloroacetaldehydeAndHydrate.png)
 
-An animation of the reaction is also available for those with access
-to Jmol - see [caa005bIRC.cml](./outputs/caa005bIRC.cml).
+![Animation of the reaction along the IRC, looping continuously](../../images/caa_IRC_animation.gif)
+
+This GIF is a quick, fixed-angle illustration, not the real underlying
+data. To rotate, zoom, measure distances, or inspect any individual
+frame yourself, open [caa005bIRC.cml](./outputs/caa005bIRC.cml)
+directly in [Jmol](https://jmol.sourceforge.net/) (free, open-source) -
+see [`animation/README.md`](./animation/README.md) for how this GIF
+itself was made, including the Jmol script used.
 
 ## Phase 1: Exploration
 
