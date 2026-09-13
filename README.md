@@ -64,17 +64,16 @@ hit along the way.
 
 ## 🔬 Try it right now - zero install
 
-[`tools/sparql_playground.html`](./tools/sparql_playground.html) runs
-entirely in your own browser - download it and open it directly, no
-cloning, no R, nothing to set up. It loads the real, complete
-[`caa` example graph](./examples/caa/) live from GitHub and lets you
-write and run your own SPARQL queries against it, with three working
-examples to start from and an optional graph view alongside the usual
-table of results.
+**[Open the SPARQL playground directly](https://darren01.github.io/ont_mm/tools/sparql_playground.html)**
+- runs entirely in your own browser, no cloning, no R, nothing to set
+up. It loads the real, complete [`caa` example graph](./examples/caa/)
+live from GitHub and lets you write and run your own SPARQL queries
+against it, with three working examples to start from and an optional
+graph view alongside the usual table of results.
 
-(If this repository's own GitHub Pages is enabled, this file can be a
-direct, click-and-it-works link instead of a download - see your
-repository's Settings > Pages if you want to set that up.)
+(The file itself is [`tools/sparql_playground.html`](./tools/sparql_playground.html)
+if you'd rather download and adapt your own copy - e.g. to point it at
+a different graph.)
 
 This is one concrete way of making a graph queryable without asking
 anyone to install anything - not the only way, and not a permanent,
