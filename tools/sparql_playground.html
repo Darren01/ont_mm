@@ -22,6 +22,11 @@
 <body>
 
 <h1 id="page-heading">Try SPARQL against a real ontology graph</h1>
+
+<p>
+  <label for="dataset-select"><strong>Dataset:</strong></label>
+  <select id="dataset-select" onchange="switchDataset(this.value)"></select>
+</p>
 <p id="page-intro"></p>
 
 <p id="status">Loading graph...</p>
@@ -61,17 +66,45 @@ repeated in the box):</p>
 // page for a different graph, copy this whole file and edit only this
 // block; nothing below this point should need to change.
 // =====================================================================
-const CONFIG = {
-  pageTitle: "caa dataset - SPARQL playground - ont_mm",
-  heading: "Try SPARQL against a real ontology graph",
-  introHtml: 'This runs entirely in your browser - no server, nothing installed. ' +
-    'It loads <a href="https://github.com/Darren01/ont_mm/blob/main/examples/caa/ont/caa_graph_20260905.ttl">' +
-    '<code>caa_graph_20260905.ttl</code></a>, a real, complete chloroacetaldehyde ' +
-    'computational chemistry project (part of ' +
-    '<a href="https://github.com/Darren01/ont_mm/tree/main/examples/caa">the caa example</a>), ' +
-    'directly from GitHub, then lets you write and run your own SPARQL queries against it.',
+// DATASETS - every graph this page can query. To add another one
+// later, add a new entry here with its own id; nothing else needs
+// to change - the dropdown, the graph loading, and the file-link
+// pattern all read from this automatically.
+const DATASETS = {
+  caa: {
+    label: "caa - chloroacetaldehyde",
+    pageTitle: "caa dataset - SPARQL playground - ont_mm",
+    introHtml: 'It loads <a href="https://github.com/Darren01/ont_mm/blob/main/examples/caa/ont/caa_graph_20260905.ttl">' +
+      '<code>caa_graph_20260905.ttl</code></a>, a real, complete chloroacetaldehyde ' +
+      'computational chemistry project (part of ' +
+      '<a href="https://github.com/Darren01/ont_mm/tree/main/examples/caa">the caa example</a>).',
+    graphUrl: "https://raw.githubusercontent.com/Darren01/ont_mm/main/examples/caa/ont/caa_graph_20260905.ttl",
+    outputsPath: "examples/caa/outputs/"
+  },
+  aa: {
+    label: "aa - acetaldehyde",
+    pageTitle: "aa dataset - SPARQL playground - ont_mm",
+    introHtml: 'It loads <a href="https://github.com/Darren01/ont_mm/blob/main/examples/aa/ont/aa_graph_20260909.ttl">' +
+      '<code>aa_graph_20260909.ttl</code></a>, a real, complete acetaldehyde ' +
+      'hydration methodology study (part of ' +
+      '<a href="https://github.com/Darren01/ont_mm/tree/main/examples/aa">the aa example</a>).',
+    graphUrl: "https://raw.githubusercontent.com/Darren01/ont_mm/main/examples/aa/ont/aa_graph_20260909.ttl",
+    outputsPath: "examples/aa/outputs/"
+  }
+};
 
-  graphUrl: "https://raw.githubusercontent.com/Darren01/ont_mm/main/examples/caa/ont/caa_graph_20260905.ttl",
+// caa stays the default - the existing, already-shared GitHub Pages
+// link has no ?dataset= parameter, and should keep behaving exactly
+// as it always has.
+const DEFAULT_DATASET_ID = "caa";
+
+let currentDatasetId = DEFAULT_DATASET_ID;
+
+// Everything below is genuinely generic across every dataset above -
+// the same ontology schema, so the same prefixes and the same three
+// example queries work unchanged regardless of which graph is loaded.
+const SHARED = {
+  heading: "Try SPARQL against a real ontology graph",
 
   prefixes: `
 PREFIX gc: <http://purl.org/gc/>
@@ -83,7 +116,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
   // Each example needs a short label (for its button), a one-line
   // description (shown under the button row once picked), and the
-  // query body itself (CONFIG.prefixes is prepended automatically -
+  // query body itself (SHARED.prefixes is prepended automatically -
   // don't repeat PREFIX lines here).
   examples: [
     {
@@ -117,27 +150,22 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
   // Turn a cell value into a real, clickable link when it matches a
   // known pattern - scoped deliberately narrow, to mappings this
-  // project's naming convention makes genuinely reliable. Each entry:
-  // a regex to test the raw value against, and a function building
-  // the real URL from the regex match. Return null/undefined from
-  // urlFor to leave a matching value as plain text after all.
+  // project's naming convention makes genuinely reliable. urlFor
+  // reads the CURRENTLY SELECTED dataset's own outputsPath, so the
+  // same pattern correctly targets whichever graph is actually loaded.
   linkPatterns: [
     {
-      // ex:exp_caa001a -> the real .log file on GitHub, which GitHub
-      // already renders as readable plain text - no extra work needed.
+      // ex:exp_aa001a / ex:exp_caa001a -> the real .log file on
+      // GitHub, which GitHub already renders as readable plain text.
       regex: /example\.org\/exp_([A-Za-z0-9\-]+)$/,
       urlFor: function (match) {
-        // raw.githubusercontent.com, not github.com/.../blob/... - the
-        // latter wraps the file in GitHub's own repo-browsing UI
-        // (sidebar, header, navigation); the raw URL opens the actual
-        // plain-text log content directly, feeling like a standalone
-        // document rather than a webpage about the file.
-        return "https://raw.githubusercontent.com/Darren01/ont_mm/main/examples/caa/outputs/" + match[1] + ".log";
+        const outputsPath = DATASETS[currentDatasetId].outputsPath;
+        return "https://raw.githubusercontent.com/Darren01/ont_mm/main/" + outputsPath + match[1] + ".log";
       }
     }
   ]
 };
-// ===================== end of CONFIG - engine code below =====================
+// ===================== end of config - engine code below =====================
 
 let store = null;
 let lastRows = [];
@@ -146,7 +174,7 @@ let lastTotalMatches = 0;
 let lastWasLimited = false;
 let useShortLabels = true;
 
-// Builds a {prefix: full_uri} map from CONFIG.prefixes, once, for
+// Builds a {prefix: full_uri} map from SHARED.prefixes, once, for
 // expanding a prefixed name (e.g. "gc:SinglePoint") to the full URI
 // that actually appears in query results - needed because the manual
 // FILTER workaround below compares against rdflib.js's raw, fully-
@@ -155,7 +183,7 @@ const PREFIX_MAP = (function () {
   const map = {};
   const re = /PREFIX\s+(\w+):\s*<([^>]+)>/gi;
   let m;
-  while ((m = re.exec(CONFIG.prefixes)) !== null) {
+  while ((m = re.exec(SHARED.prefixes)) !== null) {
     map[m[1]] = m[2];
   }
   return map;
@@ -191,7 +219,7 @@ function escapeHtml(value) {
 }
 
 // Renders a table cell's value as a real link when it matches one of
-// CONFIG.linkPatterns, otherwise as plain, safely-escaped text. Either
+// SHARED.linkPatterns, otherwise as plain, safely-escaped text. Either
 // way, the visible text honours the current short/full label setting;
 // the full, real value is always kept as a hover tooltip, and a
 // link's actual target is always the real, full URL regardless of
@@ -222,7 +250,7 @@ function linkifyValue(value) {
   const strValue = String(value);
   const displayText = useShortLabels ? shortLabel(strValue) : strValue;
 
-  for (const pattern of CONFIG.linkPatterns) {
+  for (const pattern of SHARED.linkPatterns) {
     const match = strValue.match(pattern.regex);
     if (match) {
       const url = pattern.urlFor(match);
@@ -247,41 +275,92 @@ function showError(err) {
 }
 
 function loadExample(index) {
-  const ex = CONFIG.examples[index];
-  document.getElementById("query-box").value = CONFIG.prefixes.trim() + "\n\n" + ex.query;
+  const ex = SHARED.examples[index];
+  document.getElementById("query-box").value = SHARED.prefixes.trim() + "\n\n" + ex.query;
   document.getElementById("example-desc").textContent = ex.description;
 }
 
 function buildExampleButtons() {
   const container = document.getElementById("example-buttons");
   let html = "";
-  CONFIG.examples.forEach(function (ex, i) {
+  SHARED.examples.forEach(function (ex, i) {
     html += '<button class="example-btn" onclick="loadExample(' + i + ')">' + ex.label + '</button>';
   });
   html += '<p class="example-desc" id="example-desc"></p>';
   container.innerHTML = html;
 }
 
-async function init() {
-  document.title = CONFIG.pageTitle;
-  document.getElementById("page-heading").textContent = CONFIG.heading;
-  document.getElementById("page-intro").innerHTML = CONFIG.introHtml;
+// Reads ?dataset=<id> from the page's own URL, so a link can point
+// directly at a specific dataset (e.g. "...sparql_playground.html?dataset=aa").
+// Falls back to DEFAULT_DATASET_ID for anything missing or unrecognised,
+// so the existing, already-shared link (no parameter at all) keeps
+// behaving exactly as it always has.
+function getDatasetIdFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const requested = params.get("dataset");
+  if (requested && DATASETS[requested]) {
+    return requested;
+  }
+  return DEFAULT_DATASET_ID;
+}
+
+function populateDatasetSelector() {
+  const select = document.getElementById("dataset-select");
+  select.innerHTML = "";
+  Object.keys(DATASETS).forEach(function (id) {
+    const option = document.createElement("option");
+    option.value = id;
+    option.textContent = DATASETS[id].label;
+    select.appendChild(option);
+  });
+  select.value = currentDatasetId;
+}
+
+// Called when the dropdown changes. Resets the whole query/results UI
+// back to its just-loaded state before fetching the newly-selected
+// graph - stale results from the previous dataset should never linger
+// on screen once a different one is chosen.
+function switchDataset(id) {
+  if (!DATASETS[id]) return;
+  currentDatasetId = id;
+
+  const url = new URL(window.location.href);
+  url.searchParams.set("dataset", id);
+  history.replaceState(null, "", url);
+
+  document.getElementById("query-area").style.display = "none";
+  document.getElementById("results").innerHTML = "";
+  document.getElementById("view-toggle").style.display = "none";
+  document.getElementById("graph-container").style.display = "none";
+  document.getElementById("label-style-toggle").style.display = "none";
+  document.getElementById("error").style.display = "none";
+  lastRows = [];
+  lastVarNames = [];
+
+  loadDataset();
+}
+
+async function loadDataset() {
+  document.title = DATASETS[currentDatasetId].pageTitle;
+  document.getElementById("page-heading").textContent = SHARED.heading;
+  document.getElementById("page-intro").innerHTML = DATASETS[currentDatasetId].introHtml;
 
   const statusEl = document.getElementById("status");
+  statusEl.textContent = "Loading graph...";
   try {
     if (typeof $rdf === "undefined") {
       throw new Error("rdflib.js did not load from the CDN - check your internet connection, or the CDN link itself may need updating.");
     }
 
-    const response = await fetch(CONFIG.graphUrl);
+    const response = await fetch(DATASETS[currentDatasetId].graphUrl);
     if (!response.ok) {
       throw new Error("Could not fetch the graph (HTTP " + response.status + "). " +
-        "The graph URL in CONFIG may have changed, or the source may be temporarily unreachable.");
+        "The graph URL for this dataset may have changed, or the source may be temporarily unreachable.");
     }
     const ttlText = await response.text();
 
     store = $rdf.graph();
-    $rdf.parse(ttlText, store, CONFIG.graphUrl, "text/turtle");
+    $rdf.parse(ttlText, store, DATASETS[currentDatasetId].graphUrl, "text/turtle");
 
     const tripleCount = store.statementsMatching(undefined, undefined, undefined).length;
     if (tripleCount === 0) {
@@ -291,12 +370,18 @@ async function init() {
     statusEl.textContent = "Graph loaded: " + tripleCount + " triples. Ready to query.";
     document.getElementById("query-area").style.display = "block";
     buildExampleButtons();
-    if (CONFIG.examples.length > 0) loadExample(0);
+    if (SHARED.examples.length > 0) loadExample(0);
 
   } catch (err) {
     statusEl.textContent = "Failed to load the graph.";
     showError(err);
   }
+}
+
+function init() {
+  currentDatasetId = getDatasetIdFromUrl();
+  populateDatasetSelector();
+  loadDataset();
 }
 
 function runQuery() {

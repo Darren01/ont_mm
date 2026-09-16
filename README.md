@@ -66,10 +66,13 @@ hit along the way.
 
 **[Open the SPARQL playground directly](https://darren01.github.io/ont_mm/tools/sparql_playground.html)**
 - runs entirely in your own browser, no cloning, no R, nothing to set
-up. It loads the real, complete [`caa` example graph](./examples/caa/)
-live from GitHub and lets you write and run your own SPARQL queries
-against it, with three working examples to start from and an optional
-graph view alongside the usual table of results.
+up. A dropdown lets you switch between the two real example graphs
+this repo publishes - [`caa`](./examples/caa/) (the default) and
+[`aa`](./examples/aa/) - loading whichever you pick live from GitHub,
+with three working example queries (generic across both datasets,
+since they share the same ontology schema) and an optional graph view
+alongside the usual table of results. Link directly to a specific one
+with `?dataset=aa` on the URL.
 
 (The file itself is [`tools/sparql_playground.html`](./tools/sparql_playground.html)
 if you'd rather download and adapt your own copy - e.g. to point it at
@@ -1197,5 +1200,5 @@ This project is licensed under the MIT License – see the [LICENSE](./LICENSE.t
 - [vis-network](https://github.com/visjs/vis-network) (the optional
   graph view in `tools/sparql_playground.html`)
 - [Jmol](https://jmol.sourceforge.net/) (used to generate the reaction
-  animation GIF in the `caa` example - see
-  `examples/caa/animation/README.md`)
+  animation GIFs in both the `caa` and `aa` examples - see
+  `examples/caa/animation/README.md` and `examples/aa/animation/README.md`)
