@@ -52,7 +52,8 @@ flush_batch() {
   echo "=== Batch $batch_num: ${#batch[@]} file(s), ~$((batch_size / 1024 / 1024)) MB ==="
 
   git add "${batch[@]}"
-  git commit -m "Add caa dataset: $label, batch $batch_num"
+  dataset=$(echo "$dir" | sed -n "s|examples/\([^/]*\)/.*|\1|p");   dataset=$(echo "$dir" | sed -n 's|examples/\([^/]*\)/.*|\1|p')
+  git commit -m "Add $dataset dataset: $label, batch $batch_num"
 
   attempt=1
   while [ $attempt -le $max_retries ]; do
