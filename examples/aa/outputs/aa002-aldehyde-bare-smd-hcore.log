@@ -1,0 +1,1117 @@
+1 : aa002-aldehyde-bare-smd-hcore
+2 : 00
+3 : 8
+----- GAMESS execution script 'rungms' -----
+This job is running on host nid001227
+under operating system Linux at Sun 13 Sep 2026 03:20:36 PM BST
+Available scratch disk space (Kbyte units) at beginning of the job is
+Filesystem                                         1K-blocks         Used  Available Use% Mounted on
+10.253.101.2@o2ib1:10.253.101.3@o2ib1:/cls01096 125829120000 124176175396 1652944604  99% /mnt/lustre/a2fs-work3
+GAMESS temporary binary files will be written to /work/e283/e283/darren01/gamess/restart
+GAMESS supplementary output files will be written to /work/e283/e283/darren01/gamess/restart
+Copying input file /mnt/lustre/a2fs-work3/work/e283/e283/darren01/jobs/aa002-aldehyde-bare-smd-hcore/aa002-aldehyde-bare-smd-hcore.inp to your run's scratch directory...
+cp /mnt/lustre/a2fs-work3/work/e283/e283/darren01/jobs/aa002-aldehyde-bare-smd-hcore/aa002-aldehyde-bare-smd-hcore.inp /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F05
+unset echo
+setenv NO_STOP_MESSAGE 1
+setenv AUXDATA /work/e283/e283/darren01/gamess/auxdata
+setenv EXTBAS /dev/null
+setenv NUCBAS /mnt/lustre/a2fs-work3/work/e283/e283/darren01/jobs/aa002-aldehyde-bare-smd-hcore/aa002-aldehyde-bare-smd-hcore.nucbas
+setenv EXTCAB /work/e283/e283/darren01/gamess/auxdata/AUXBAS/auxdef21
+setenv POSBAS /mnt/lustre/a2fs-work3/work/e283/e283/darren01/jobs/aa002-aldehyde-bare-smd-hcore/aa002-aldehyde-bare-smd-hcore.posbas
+setenv DFTBPAR /work/e283/e283/darren01/gamess/auxdata/DFTB
+setenv ERICFMT /work/e283/e283/darren01/gamess/auxdata/ericfmt.dat
+setenv MCPPATH /work/e283/e283/darren01/gamess/auxdata/MCP
+setenv BASPATH /work/e283/e283/darren01/gamess/auxdata/BASES
+setenv QUANPOL /work/e283/e283/darren01/gamess/auxdata/QUANPOL
+setenv MAKEFP /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.efp
+setenv GAMMA /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.gamma
+setenv TRAJECT /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.trj
+setenv RESTART /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.rst
+setenv QMWAVE /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.qmw
+setenv MDDIP /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.dip
+setenv OPTHES1 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.hs1
+setenv OPTHES2 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.hs2
+setenv FCIDUMP /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.FCIDUMP
+setenv XYZ /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.xyz
+setenv IRCDATA /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F04
+setenv INPUT /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F05
+setenv PUNCH /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.dat
+setenv NAMDRST /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.namdrst
+setenv AOINTS /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F08
+setenv MOINTS /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F09
+setenv DICTNRY /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F10
+setenv DRTFILE /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F11
+setenv CIVECTR /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F12
+setenv CASINTS /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F13
+setenv CIINTS /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F14
+setenv WORK15 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F15
+setenv WORK16 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F16
+setenv CSFSAVE /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F17
+setenv FOCKDER /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F18
+setenv WORK19 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F19
+setenv DASORT /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F20
+setenv DIABDAT /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F21
+setenv DFTINTS /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F21
+setenv DFTGRID /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F22
+setenv JKFILE /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F23
+setenv ORDINT /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F24
+setenv EFPIND /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F25
+setenv PCMDATA /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F26
+setenv PCMINTS /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F27
+setenv SVPWRK1 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F26
+setenv SVPWRK2 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F27
+setenv COSCAV /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F26
+setenv COSDATA /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.cosmo
+setenv COSPOT /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.pot
+setenv MLTPL /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F28
+setenv MLTPLT /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F29
+setenv DAFL30 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F30
+setenv SOINTX /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F31
+setenv SOINTY /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F32
+setenv SOINTZ /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F33
+setenv SORESC /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F34
+setenv RISM01 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F26R
+setenv RISM02 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F27R
+setenv QOPWRF /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.wrf
+setenv GCILIST /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F37
+setenv HESSIAN /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F38
+setenv QMMMTEI /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F39
+setenv SOCCDAT /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F40
+setenv AABB41 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F41
+setenv BBAA42 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F42
+setenv BBBB43 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F43
+setenv REMD /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F44
+setenv UNV /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F45
+setenv UNPV /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F46
+setenv MCQD50 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F50
+setenv MCQD51 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F51
+setenv MCQD52 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F52
+setenv MCQD53 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F53
+setenv MCQD54 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F54
+setenv MCQD55 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F55
+setenv MCQD56 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F56
+setenv MCQD57 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F57
+setenv MCQD58 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F58
+setenv MCQD59 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F59
+setenv MCQD60 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F60
+setenv MCQD61 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F61
+setenv MCQD62 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F62
+setenv MCQD63 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F63
+setenv MCQD64 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F64
+setenv NMRINT1 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F61
+setenv NMRINT2 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F62
+setenv NMRINT3 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F63
+setenv NMRINT4 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F64
+setenv NMRINT5 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F65
+setenv NMRINT6 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F66
+setenv DCPHFH2 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F67
+setenv DCPHF21 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F68
+setenv ELNUINT /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F67
+setenv NUNUINT /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F68
+setenv GVVPT /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F69
+setenv NUMOIN /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F69
+setenv NUMOCAS /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F70
+setenv NUELMO /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F71
+setenv NUELCAS /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F72
+setenv EPOVRLP /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F73
+setenv RIVMAT /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F51
+setenv RIT2A /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F52
+setenv RIT3A /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F53
+setenv RIT2B /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F54
+setenv RIT3B /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F55
+setenv KI /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F47
+setenv BI /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F48
+setenv PRMERI /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F49
+setenv TRSERI /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F50
+setenv PVP /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F51
+setenv TPVPI /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F52
+setenv TPVPJ /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F53
+setenv PPVPP /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F54
+setenv TPPVPP /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F55
+setenv DEN2P1 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F70
+setenv DEN2P2 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F71
+setenv DEN2P3 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F72
+setenv DEN2P4 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F73
+setenv DEN2NM /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F74
+setenv DEN2OPT /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F75
+setenv GMCREF /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F70
+setenv GMCO2R /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F71
+setenv GMCROC /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F72
+setenv GMCOOC /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F73
+setenv GMCCC0 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F74
+setenv GMCHMA /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F75
+setenv GMCEI1 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F76
+setenv GMCEI2 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F77
+setenv GMCEOB /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F78
+setenv GMCEDT /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F79
+setenv GMCERF /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F80
+setenv GMCHCR /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F81
+setenv GMCGJK /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F82
+setenv GMCGAI /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F83
+setenv GMCGEO /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F84
+setenv GMCTE1 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F85
+setenv GMCTE2 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F86
+setenv GMCHEF /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F87
+setenv GMCMOL /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F88
+setenv GMCMOS /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F89
+setenv GMCWGT /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F90
+setenv GMCRM2 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F91
+setenv GMCRM1 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F92
+setenv GMCR00 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F93
+setenv GMCRP1 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F94
+setenv GMCRP2 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F95
+setenv GMCVEF /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F96
+setenv GMCDIN /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F97
+setenv GMC2SZ /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F98
+setenv GMCCCS /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F99
+unset echo
+ 
+Assuming a single but multicore node.
+ 
+/work/e283/e283/darren01/gamess/ddikick.x /work/e283/e283/darren01/gamess/gamess.00.x aa002-aldehyde-bare-smd-hcore -ddi 1 8 nid001227:cpus=8 -scr /work/e283/e283/darren01/gamess/restart
+
+ Distributed Data Interface kickoff program.
+ Initiating 8 compute processes on 1 nodes to run the following command:
+ /work/e283/e283/darren01/gamess/gamess.00.x aa002-aldehyde-bare-smd-hcore 
+
+          *******************************************************
+          *                                                     *
+          *      GAMESS VERSION = 15 JUL 2024 (R2 Patch 1)          *
+          *                                                     *
+          *              doi.org/10.1063/5.0005188              *
+          *                                                     *
+          **************** 64 BIT LINUX VERSION *****************
+
+  GAMESS HAS BEEN MADE POSSIBLE WITH IMPORTANT CONTRIBUTIONS FROM
+  THE FOLLOWING INDIVIDUALS (IN ALPHABETICAL ORDER):
+
+     IVANA ADAMOVIC, CHRISTINE AIKENS, TOMOKO AKAMA,
+     MELISA ALKAN, YURI ALEXEEV, YURIKO AOKI, POOJA ARORA,
+     TOSHIO ASADA, ANDREY ASADCHEV, KIM K. BALDRIDGE,
+     PRADIPTA BANDYOPADHYAY, TAYLOR A. BARNES, MARIA BARYSZ,
+     ROB BELL, JONATHAN BENTZ, COLLEEN BERTONI,
+     JERRY A. BOATZ, BRETT BODE, KURT BRORSEN, KURT R. BRORSEN,
+     LAIMUTIS BYTAUTAS, CALEB CARLIN, LAURA CARRINGTON,
+     GALINA CHABAN, BENOIT CHAMPAGNE, WEI CHEN, MAHITO CHIBA,
+     DAN CHIPMAN, CHEOL HO CHOI, TANNER CULPITT,
+     DIPAYAN DATTA, PAUL DAY, ALBERT DEFUSCO,
+     NUWAN DESILVA, J. EMILIANO DEUSTUA,
+     TIM DUDLEY, MICHEL DUPUIS, STEVEN T. ELBERT,
+     DMITRI FEDOROV, KATHERINE FERRERAS, MICHAEL FILATOV,
+     ALEX FINDLATER,GRAHAM FLETCHER, MARK FREITAG,
+     CHRISTIAN FRIEDL, DAVID GARMER, 
+     IGOR S. GERASIMOV, KURT GLAESEMANN,
+     MARK S. GORDON, JEFFREY R. GOUR, FENG LONG GU,
+     EMILIE B. GUIDEZ, ANASTASIA GUNINA, SHARON HAMMES-SCHIFFER,
+     MASATAKE HARUTA, KIMIHIKO HIRAO, YASUHIRO IKABATA,
+     TZVETELIN IORDANOV, STEPHAN IRLE, KAZUYA ISHIMURA,
+     JOE IVANIC, FRANK JENSEN, JAN H. JENSEN, VISVALDAS KAIRYS,
+     MUNEAKI KAMIYA, MICHIO KATOUDA, NAOAKI KAWAKAMI, DAN KEMP,
+     BERNARD KIRTMAN, KAZUO KITAURA, MARIUSZ KLOBUKOWSKI,
+     MASATO KOBAYASHI, KONSTANTIN KOMAROV, PRAKASHAN KORAMBATH,
+     JACEK KORCHOWIEC, SHIRO KOSEKI, KAROL KOWALSKI,
+     JIMMY KROMANN, STANISLAW A. KUCHARSKI, HENRY KURTZ,
+     SAROM SOK LEANG, SEUNGHOON LEE, HUI LI, SHUHUA LI, WEI LI,
+     JESSE J. LUTZ, ALEKSANDR O. LYKHIN,
+     ILIAS MAGOULAS, MARCIN MAKOWSKI,
+     JOANI MATO, NIKITA MATSUNAGA, BENEDETTA MENNUCCI,
+     GRANT MERRILL, NORIYUKI MINEZAWA, VLADIMIR MIRONOV,
+     EISAKU MIYOSHI, JOHN A. MONTGOMERY JR., HIROTOSHI MORI,
+     JONATHAN MULLIN, MONIKA MUSIAL, SHIGERU NAGASE,
+     TAKESHI NAGATA, HIROMI NAKAI, TAKAHITO NAKAJIMA,
+     YUYA NAKAJIMA, HARUYUKI NAKANO, HIROYA NAKATA, SEAN NEDD,
+     HEATHER NETZLOFF, KIET A. NGUYEN, YOSHIO NISHIMOTO,
+     BOSILJKA NJEGIC, RYAN OLSON, MIKE PAK, ROBERTO PEVERATI,
+     BUU PHAM, PIOTR PIECUCH, ANNA POMOGAEVA, DAVID POOLE,
+     SPENCER PRUITT, OLIVIER QUINET, LUKE ROSKOP,
+     KLAUS RUEDENBERG, ANDREW SAND, TOSAPORN SATTASATHUCHANA,
+     NOZOMI SAWADA, MICHAEL W. SCHMIDT, PATRICK E. SCHNEIDER,
+     JUNJI SEINO, PRACHI SHARMA, JUN SHEN, JIM SHOEMAKER,
+     GEORGE SCHOENDORFF, YINAN SHU, DEJUN SI, JONATHAN SKONE,
+     LYUDMILA SLIPCHENKO, TONY SMITH, JIE SONG, MARK SPACKMAN,
+     CASPER STEINMANN, WALT STEVENS, PEIFENG SU, SHUJUN SU,
+     CHET SWALINA, CHINAMI TAKASHIMA, TETSUYA TAKETSUGU,
+     ZHEN TAO, NANDUN THELLAMUREGE, ANANTA TIWARI,
+     SEIKEN TOKURA, JACOPO TOMASI,
+     TSUGUKI TOUMA, TAKAO TSUNEDA, HIROAKI UMEDA,
+     JORGE LUIS GALVEZ VALLEJO, YALI WANG, SIMON WEBB,
+     AARON WEST, THERESA L. WINDUS, MARTA WLOCH,
+     PENG XU, KIYOSHI YAGI, SUSUMU YANAGISAWA, YANG YANG,
+     SOOHAENG YOO, TAKESHI YOSHIKAWA, FEDERICO ZAHARIEV,
+     TOBY ZENG
+
+  WHO ARE SUPPORTED BY THEIR INSTITUTION/UNIVERSITY/COMPANY/GROUP
+  (IN ALPHABETICAL ORDER):
+
+     EP ANALYTICS,
+     FACULTES UNIVERSITAIRES NOTRE-DAME DE LA PAIX,
+     INSTITUTE FOR MOLECULAR SCIENCE, IOWA STATE UNIVERSITY,
+     JACKSON STATE UNIVERSITY, JOHANNES KEPLER UNIVERSITY LINZ,
+     KYUNGPOOK NATIONAL UNIVERSITY
+     KYUSHU UNIVERSITY, MICHIGAN STATE UNIVERSITY,
+     MIE UNIVERSITY, THE MOLECULAR SCIENCES SOFTWARE INSTITUTE,
+     MOSCOW STATE UNIVERSITY,
+     N. COPERNICUS UNIVERSITY, NAGOYA UNIVERSITY,
+     NANJING UNIVERSITY, NAT. INST. OF ADVANCED INDUSTRIAL
+     SCIENCE AND TECHNOLOGY, NATIONAL INST. OF STANDARDS AND
+     TECHNOLOGY, NESMEYANOV INSTITUTE OF ORGANOELEMENT COMPOUNDS
+     OF RUSSIAN ACADEMY OF SCIENCES, OSAKA PREFECTURE UNIVERSITY,
+     PENNSYLVANIA STATE UNIVERSITY, TOKYO INSTITUTE OF TECHNOLOGY,
+     UNIVERSITY OF AARHUS, UNIVERSITY OF ALBERTA,
+     UNIVERSITY OF CALIFORNIA AT SANTA BARBARA,
+     UNIVERSITY OF COPENHAGEN, UNIVERSITY OF IOWA,
+     UNIVERSITY OF MEMPHIS, UNIVERSITY OF MINNESOTA,
+     UNIVERSITY OF NEBRASKA, UNIVERSITY OF NEW ENGLAND,
+     UNIVERSITY OF NOTRE DAME, UNIVERSITY OF PISA,
+     UNIVERSITY OF SILESIA, UNIVERSITY OF TOKYO,
+     UNIVERSITY OF ZURICH, WASEDA UNIVERSITY,
+     YALE UNIVERSITY
+
+  GAMESS SOFTWARE MANAGEMENT TEAM FOR THIS RELEASE:
+     MARK S. GORDON (TEAM LEAD),
+     BRETT BODE (SENIOR ADVISOR),
+     GIUSEPPE BARCA,
+     COLLEEN BERTONI,
+     KRISTOPHER KEIPERT (ADVISOR),
+     SAROM S. LEANG (DEVELOPMENT LEAD),
+     BUU PHAM,
+     JACKSON HAYES (WEBSITE ADMINISTRATOR),
+     PENG XU
+
+
+ PARALLEL VERSION RUNNING ON        8 PROCESSORS IN        1 NODES.
+
+ EXECUTION OF GAMESS BEGUN 15:20:40 13-SEP-2026    
+
+            ECHO OF THE FIRST FEW INPUT CARDS -
+ INPUT CARD>! CH3CHO | Bare acetaldehyde at wB97X-D/6-21G+(d,p)/SMD(water) -- HCORE guess va
+ INPUT CARD>!                                                                               
+ INPUT CARD>! Diagnostic variant after 5 failed real attempts (across 5 nodes, 3 core       
+ INPUT CARD>! counts: 8/1/4/8) of the plain aa002-aldehyde-bare-smd.inp, all failing        
+ INPUT CARD>! right as the first SCF iteration begins. An EXETYP=CHECK run of the           
+ INPUT CARD>! same input passed cleanly (ruled out a genuine input/syntax error).           
+ INPUT CARD>! Confirmed via docs-input.txt that FIXPVA (the more robust cavity              
+ INPUT CARD>! tessellation SMD's own docs recommend) is already GAMESS's default, so        
+ INPUT CARD>! that wasn't the missing piece either.                                         
+ INPUT CARD>!                                                                               
+ INPUT CARD>! This file has no other change except adding an explicit $GUESS                
+ INPUT CARD>! GUESS=HCORE (the original file had no $GUESS group at all, so was             
+ INPUT CARD>! running on whatever GAMESS's implicit default guess is) -- testing            
+ INPUT CARD>! whether a different starting density avoids whatever numerical issue          
+ INPUT CARD>! is occurring for this specific small, compact, unpadded structure             
+ INPUT CARD>! (its sibling aa001h-smd, the SAME aldehyde but padded with two                
+ INPUT CARD>! spectator waters, succeeded under SMD without incident).                      
+ INPUT CARD>                                                                                
+ INPUT CARD> $GUESS GUESS=HCORE $END                                                        
+ INPUT CARD> $BASIS GBASIS=N21 NGAUSS=6 NDFUNC=1 NPFUNC=1 DIFFSP=.t. $END                   
+ INPUT CARD> $CONTRL SCFTYP=RHF RUNTYP=OPTIMIZE NZVAR=15 $END                               
+ INPUT CARD> $CONTRL DFTTYP=wB97X-D $END                                                    
+ INPUT CARD> $SCF DIIS=.t. DAMP=.t. $END                                                    
+ INPUT CARD> $STATPT OPTTOL=0.00005 NSTEP=200 IHREP=20 HSSEND=.t. $END                      
+ INPUT CARD> $ZMAT DLC=.t. AUTO=.t. $END                                                    
+ INPUT CARD> $FORCE METHOD=SEMINUM PURIFY=.t. $END                                          
+ INPUT CARD> $PCM SOLVNT=WATER SMD=.T. $END                                                 
+ INPUT CARD> $SYSTEM MWORDS=50 MEMDDI=50 $END                                               
+ INPUT CARD>!$CONTRL EXETYP=CHECK $END                                                      
+ INPUT CARD>                                                                                
+ INPUT CARD> $DATA                                                                          
+ INPUT CARD>Acetaldehyde, bare, for hydration thermodynamic cycle -- SMD variant            
+ INPUT CARD>C1                                                                              
+ INPUT CARD>H     1.0      3.6657610174     0.0379901068    -0.0941132260                   
+ INPUT CARD>C     6.0      2.7591011479     0.5767279012    -0.3981699059                   
+ INPUT CARD>C     6.0      2.9710403081     1.1516003370    -1.7596418654                   
+ INPUT CARD>O     8.0      2.8739948527     2.3752059029    -2.0189413055                   
+ INPUT CARD>H     1.0      2.5142723904     1.3505311539     0.3310375804                   
+ INPUT CARD>H     1.0      1.9556269459    -0.1693470907    -0.4461844260                   
+ INPUT CARD>H     1.0      3.2280176124     0.4557155267    -2.5684948527                   
+ INPUT CARD> $END                                                                           
+     50000000 WORDS OF MEMORY AVAILABLE
+
+     BASIS OPTIONS
+     -------------
+     GBASIS=N21          IGAUSS=       6      POLAR=COMMON  
+     NDFUNC=       1     NFFUNC=       0     DIFFSP=       T
+     NPFUNC=       1      DIFFS=       F     BASNAM=        
+
+
+     RUN TITLE
+     ---------
+ Acetaldehyde, bare, for hydration thermodynamic cycle -- SMD variant            
+
+ THE POINT GROUP OF THE MOLECULE IS C1      
+ THE ORDER OF THE PRINCIPAL AXIS IS     0
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ H           1.0     6.9272838594        0.0717908921       -0.1778482090
+ C           6.0     5.2139451419        1.0898577027       -0.7524320187
+ C           6.0     5.6144520808        2.1762090843       -3.3252409621
+ O           8.0     5.4310627617        4.4884883209       -3.8152458527
+ H           1.0     4.7512858764        2.5521338188        0.6255703186
+ H           1.0     3.6955990620       -0.3200195982       -0.8431663051
+ H           1.0     6.1000687710        0.8611774738       -4.8537514725
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 H          2 C          3 C          4 O          5 H     
+
+   1 H       0.0000000    1.0975978 *  2.1205542 *  3.1296061    1.7970652 *
+   2 C       1.0975978 *  0.0000000    1.4929844 *  2.4237623 *  1.0910803 *
+   3 C       2.1205542 *  1.4929844 *  0.0000000    1.2545376 *  2.1492210 *
+   4 O       3.1296061    2.4237623 *  1.2545376 *  0.0000000    2.5887756 *
+   5 H       1.7970652 *  1.0910803 *  2.1492210 *  2.5887756 *  0.0000000  
+   6 H       1.7582666 *  1.0974990 *  2.1215883 *  3.1291714    1.7961594 *
+   7 H       2.5472884 *  2.2236989 *  1.0975136 *  2.0277536 *  3.1172769  
+
+                6 H          7 H     
+
+   1 H       1.7582666 *  2.5472884 *
+   2 C       1.0974990 *  2.2236989 *
+   3 C       2.1215883 *  1.0975136 *
+   4 O       3.1291714    2.0277536 *
+   5 H       1.7961594 *  3.1172769  
+   6 H       0.0000000    2.5522310 *
+   7 H       2.5522310 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+     ATOMIC BASIS SET
+     ----------------
+ THE CONTRACTED PRIMITIVE FUNCTIONS HAVE BEEN UNNORMALIZED
+ THE CONTRACTED BASIS FUNCTIONS ARE NOW NORMALIZED TO UNITY
+
+  SHELL TYPE  PRIMITIVE        EXPONENT          CONTRACTION COEFFICIENT(S)
+
+ H         
+
+      1   S       1             5.4471780    0.156284978695
+      1   S       2             0.8245472    0.904690876670
+
+      2   S       3             0.1831916    1.000000000000
+
+      3   P       4             1.1000000    1.000000000000
+
+ C         
+
+      4   S       5          3047.5200000    0.001825880123
+      4   S       6           456.4240000    0.014056600945
+      4   S       7           103.6530000    0.068757004621
+      4   S       8            29.2258000    0.230422015486
+      4   S       9             9.3486300    0.468463031485
+      4   S      10             3.1890400    0.362780024382
+
+      5   L      11             3.6649800   -0.395895162119    0.236459946619
+      5   L      12             0.7705450    1.215834355681    0.860618805716
+
+      6   L      13             0.1958570    1.000000000000    1.000000000000
+
+      7   L      14             0.0438000    1.000000000000    1.000000000000
+
+ C         
+
+      8   S      15          3047.5200000    0.001825880123
+      8   S      16           456.4240000    0.014056600945
+      8   S      17           103.6530000    0.068757004621
+      8   S      18            29.2258000    0.230422015486
+      8   S      19             9.3486300    0.468463031485
+      8   S      20             3.1890400    0.362780024382
+
+      9   L      21             3.6649800   -0.395895162119    0.236459946619
+      9   L      22             0.7705450    1.215834355681    0.860618805716
+
+     10   L      23             0.1958570    1.000000000000    1.000000000000
+
+     11   L      24             0.0438000    1.000000000000    1.000000000000
+
+ O         
+
+     12   S      25          5472.2700000    0.001832168810
+     12   S      26           817.8060000    0.014104690837
+     12   S      27           186.4460000    0.068626155420
+     12   S      28            53.0230000    0.229375850996
+     12   S      29            17.1800000    0.466398697024
+     12   S      30             5.9119600    0.364172763431
+
+     13   L      31             7.4029400   -0.404453583190    0.244586106967
+     13   L      32             1.5762000    1.221561761397    0.853955373466
+
+     14   L      33             0.3736840    1.000000000000    1.000000000000
+
+     15   L      34             0.0845000    1.000000000000    1.000000000000
+
+ H         
+
+     16   S      35             5.4471780    0.156284978695
+     16   S      36             0.8245472    0.904690876670
+
+     17   S      37             0.1831916    1.000000000000
+
+     18   P      38             1.1000000    1.000000000000
+
+ H         
+
+     19   S      39             5.4471780    0.156284978695
+     19   S      40             0.8245472    0.904690876670
+
+     20   S      41             0.1831916    1.000000000000
+
+     21   P      42             1.1000000    1.000000000000
+
+ H         
+
+     22   S      43             5.4471780    0.156284978695
+     22   S      44             0.8245472    0.904690876670
+
+     23   S      45             0.1831916    1.000000000000
+
+     24   P      46             1.1000000    1.000000000000
+
+ TOTAL NUMBER OF BASIS SET SHELLS             =   24
+ NUMBER OF CARTESIAN GAUSSIAN BASIS FUNCTIONS =   59
+ NUMBER OF ELECTRONS                          =   24
+ CHARGE OF MOLECULE                           =    0
+ SPIN MULTIPLICITY                            =    1
+ NUMBER OF OCCUPIED ORBITALS (ALPHA)          =   12
+ NUMBER OF OCCUPIED ORBITALS (BETA )          =   12
+ TOTAL NUMBER OF ATOMS                        =    7
+ THE NUCLEAR REPULSION ENERGY IS       68.8778202666
+
+ SELECTED MURRAY-HANDY-LAMING RADIAL GRID
+
+ LEGACY BECKE'S FUZZY CELL METHOD
+
+ SELECTED ORIGINAL BECKE'S PARTITION FUNCTION
+
+     LEBEDEV GRID-BASED DFT OPTIONS
+     ------------------------------
+     DFTTYP=WB97X-D 
+     NRAD  =      96     NLEB  =     302
+     NRAD0 =      24     NLEB0 =     110
+     SWOFF =    5.00E-03 (PURE SCF -> DFT)
+     SWITCH=    3.00E-04 (COARSE -> TIGHT GRID)
+     THRESH=    0.00E+00 GTHRE=    1.00E+00
+
+     LC/CAM PARAMETERS
+     -----------------
+     ALPHAC =.22204  BETAC =.77796  CAMMU = 0.200  CAMVWN =  0.00  CAMLYP =  0.00
+
+ GRIMME'S EMPIRICAL DISPERSION CORRECTION= T
+  ________________________________
+
+           DFTD3 V1.2             
+   S.GRIMME, UNIVERSITY MUENSTER  
+   WED MAR 10 08:38:00 CET 2010   
+  ________________________________
+
+ PLEASE CITE DFT-D2 WORK DONE WITH THIS CODE AS:
+ S. GRIMME, J. COMPUT. CHEM., 27 (2006), 1787-1799
+
+ DFT-D2 PARAMETERS WILL BE LOADED AND PRINTED
+ BEFORE THE RESULTS
+
+ IMPLEMENTATION OF DFT-D IN GAMESS BY:
+ R.PEVERATI AND K.K.BALDRIDGE, 
+ J.CHEM.THEORY COMPUT. 4,(2008), 2030-2048
+
+
+     $CONTRL OPTIONS
+     ---------------
+ SCFTYP=RHF          RUNTYP=OPTIMIZE     EXETYP=RUN     
+ MPLEVL=       0     CITYP =NONE         CCTYP =NONE         VBTYP =NONE    
+ DFTTYP=WB97X-D      TDDFT =NONE    
+ MULT  =       1     ICHARG=       0     NZVAR =      15     COORD =UNIQUE  
+ PP    =NONE         RELWFN=NONE         LOCAL =NONE         NUMGRD=       F
+ ISPHER=      -1     NOSYM =       0     MAXIT =      30     UNITS =ANGS    
+ PLTORB=       F     MOLPLT=       F     AIMPAC=       F     FRIEND=        
+ NPRINT=       7     IREST =       0     GEOM  =INPUT   
+ NORMF =       0     NORMP =       0     ITOL  =      20     ICUT  =       9
+ INTTYP=BEST         GRDTYP=BEST         QMTTOL= 1.0E-06
+
+     $SYSTEM OPTIONS
+     ---------------
+  REPLICATED MEMORY=    50000000 WORDS (ON EVERY NODE).
+ DISTRIBUTED MEMDDI=          50 MILLION WORDS IN AGGREGATE,
+ MEMDDI DISTRIBUTED OVER   8 PROCESSORS IS     6250000 WORDS/PROCESSOR.
+ TOTAL MEMORY REQUESTED ON EACH PROCESSOR=    56250000 WORDS.
+ TIMLIM=      525600.00 MINUTES, OR     365.0 DAYS.
+ PARALL= T  BALTYP=  DLB     KDIAG=    0  COREFL= F
+ MXSEQ2=     300 MXSEQ3=     150  mem10=         0  mem22=         0
+
+     -----------------------------------
+     INPUT FOR PCM SOLVATION CALCULATION 
+     -----------------------------------
+     IEF   =     -10
+     ICOMP =       0     IFIELD=       0     ICAV  =       0
+     IDISP =       0     IREP  =       0     IDP   =       0
+
+     SOLVNT=WATER        EPS   = 78.3550     EPSINF=  1.7778
+     VMOL  =  0.0000     TCE   =  0.00000000 STEN  =  0.0000
+     DSTEN =  0.0000     CMF   =  0.0000     RSOLV =  0.0000
+
+     NESFP =       0
+     OMEGA = 40.0000     RET   =100.0000     FRO   =  0.7000
+
+     TABS  =298.0000     IPRINT=       0
+
+     --------------------------------
+     INPUT FOR ITERATIVE C-PCM METHOD 
+     --------------------------------
+     IPCMIT  =         1     MXDIIS  =        50
+     MXITR1  =        50     MXITR2  =        50
+     THRES   = 0.100E-09     IMUL    =         3
+     RCUT(1) =   15.0000     RCUT(2) =   30.0000
+
+     IDIRCT  =         1
+     IMGABI  =         0     RABI    =    4.0000
+     IMGASC  =         0     RASC    =   20.0000
+     THRSLS  = 0.500E-03     DENSLS  =    0.0100
+     IEFPOL  =         1     REFPOL  =    0.0000
+
+     ---------------------------------
+     INPUT FOR AQUEOUS SMD CALCULATION 
+     ---------------------------------
+     EPS   = 78.3550
+
+     INPUT FOR ISOTROPIC DIELECTRICS
+     -------------------------------
+     EPS=    78.36
+
+     INPUT FOR CAVITY DEFINITION 
+     ---------------------------
+   ATOM               COORDINATES                RADIUS       EPS
+      1      3.6658      0.0380     -0.0941      1.2000     78.3550
+      2      2.7591      0.5767     -0.3982      1.8500     78.3550
+      3      2.9710      1.1516     -1.7596      1.8500     78.3550
+      4      2.8740      2.3752     -2.0189      1.5200     78.3550
+      5      2.5143      1.3505      0.3310      1.2000     78.3550
+      6      1.9556     -0.1693     -0.4462      1.2000     78.3550
+      7      3.2280      0.4557     -2.5685      1.2000     78.3550
+
+     ----------------------------
+     INPUT FOR TESSERA DEFINITION
+     ----------------------------
+     NTSALL  =        60     MTHALL  =         4
+     MTHAUT  =         0     AUTFRE  =    2.0000
+     NTSFRZ  =        60     KEEPSM  =         0
+     AREAKP  =   10.0000     BONDRY  =    1.0000
+     AREATL  =    0.0100
+
+     SPHERE     INITS       METHOD
+          1        60       FIXPVA
+          2        60       FIXPVA
+          3        60       FIXPVA
+          4        60       FIXPVA
+          5        60       FIXPVA
+          6        60       FIXPVA
+          7        60       FIXPVA
+
+     ------------------------------
+      FIXPVA TESSELLATION FOR PCM
+         PEIFENG SU AND HUI LI
+     UNIVERSITY OF NEBRASKA-LINCOLN
+     ------------------------------
+
+
+     -----------------------------
+     INPUT FOR PCM GRADIENT METHOD
+     -----------------------------
+     IPCDER  =         3     IFAST   =         0
+     FIXPVA GRADIENTS BY PEIFENG SU AND HUI LI
+  
+
+ PCM DIMENSIONS: MXSP=  2000, MXTS=       420, MEMORY=         37243
+
+          ----------------
+          PROPERTIES INPUT
+          ----------------
+
+     MOMENTS            FIELD           POTENTIAL          DENSITY
+ IEMOM =       1   IEFLD =       0   IEPOT =       0   IEDEN =       0
+ WHERE =COMASS     WHERE =NUCLEI     WHERE =NUCLEI     WHERE =NUCLEI  
+ OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH    
+ IEMINT=       0   IEFINT=       0                     IEDINT=       0
+                                                       MORB  =       0
+          EXTRAPOLATION IN EFFECT
+          DAMPING IN EFFECT
+          DIIS IN EFFECT
+ ORBITAL PRINTING OPTION: NPREO=     1    59     2     1
+
+     ----------------------
+     TARGET OFFLOAD OPTIONS
+     ----------------------
+     RHF    =       F
+     CPHF    =       F
+     MAKEFP =       F
+
+     -------------------------------
+     INTEGRAL TRANSFORMATION OPTIONS
+     -------------------------------
+     NWORD  =            0
+     CUTTRF = 1.0E-09     MPTRAN =       0
+     DIRTRF =       F     AOINTS =DUP     
+
+          ----------------------
+          INTEGRAL INPUT OPTIONS
+          ----------------------
+ NOPK  =       1 NORDER=       0 SCHWRZ=       T
+
+
+ -----------------------------------------------
+  STATISTICS ON AUTOMATIC COORDINATE GENERATION 
+ -----------------------------------------------
+  NUMBER OF USER SPECIFIED BONDS                             0
+  NUMBER OF BONDS                                            6
+  NUMBER OF ANGLES                                           9
+  NUMBER OF TORSIONS                                         6
+  NUMBER OF EXTRA COORD.                                     0
+  NUMBER OF EXTRA COORD. FOR CONSTRAINTS                     0
+  NUMBER OF CONSTRAINED COORD.                               0
+
+  TOTAL NUMBER OF PRIMITIVES                                21
+ -----------------------------------------------
+
+   --- ENCODED Z MATRIX ---
+ COORD  TYPE   I   J   K   L   M   N
+    1      1    1   2
+    2      1    2   3
+    3      1    2   5
+    4      1    2   6
+    5      1    3   7
+    6      1    3   4
+    7      2    1   2   6
+    8      2    1   2   3
+    9      2    1   2   5
+   10      2    2   3   7
+   11      2    2   3   4
+   12      2    3   2   6
+   13      2    3   2   5
+   14      2    4   3   7
+   15      2    5   2   6
+   16      3    1   2   3   4
+   17      3    1   2   3   7
+   18      3    4   3   2   5
+   19      3    4   3   2   6
+   20      3    5   2   3   7
+   21      3    6   2   3   7
+
+          INDEP./SYM. INTERNAL COORDINATES
+          --------------------------------
+ CRD  1=   0.1085 (  7) -0.2651 (  8) -0.4481 ( 10)  0.5236 ( 11) -0.2623 ( 12)
+           0.5503 ( 13)
+ CRD  2=   0.6931 (  2)  0.1228 (  6) -0.2279 (  7)  0.2562 (  8) -0.2071 (  9)
+           0.2148 ( 10)  0.1572 ( 11)  0.2520 ( 12)  0.1267 ( 13) -0.3720 ( 14)
+          -0.2059 ( 15)
+ CRD  3=   0.1501 (  1) -0.1510 (  4)  0.6214 (  8) -0.2272 (  9) -0.6256 ( 12)
+           0.2276 ( 15) -0.1429 ( 16) -0.1428 ( 19)  0.1745 ( 20)
+ CRD  4=  -0.1139 (  1)  0.2196 (  3) -0.1124 (  4)  0.3525 (  5) -0.2776 (  6)
+           0.2176 (  7) -0.2258 (  8) -0.1287 (  9)  0.3936 ( 10) -0.4018 ( 11)
+          -0.2228 ( 12)  0.4730 ( 13) -0.1303 ( 15)
+ CRD  5=  -0.2391 (  1) -0.2537 (  3) -0.2396 (  4)  0.3977 (  5)  0.4623 (  6)
+          -0.1432 (  7)  0.1379 (  8) -0.1413 (  9) -0.2692 ( 10) -0.1976 ( 11)
+           0.1374 ( 12)  0.1432 ( 13)  0.4668 ( 14) -0.1413 ( 15)
+ CRD  6=  -0.4343 (  1) -0.2072 (  2) -0.4357 (  3) -0.4350 (  4) -0.3237 (  5)
+          -0.3662 (  6) -0.1304 (  7)  0.1273 (  8) -0.1317 (  9)  0.1041 ( 10)
+           0.1276 ( 12)  0.1330 ( 13) -0.1784 ( 14) -0.1324 ( 15)
+ CRD  7=   0.5116 (  1) -0.5404 (  4)  0.3529 (  9) -0.3318 ( 15) -0.1691 ( 16)
+          -0.1406 ( 17)  0.2284 ( 18) -0.1455 ( 19)  0.2569 ( 20) -0.1170 ( 21)
+ CRD  8=  -0.3177 (  1)  0.5904 (  3) -0.2638 (  4) -0.4167 (  7)  0.1879 (  9)
+           0.2230 ( 15) -0.2224 ( 16) -0.2238 ( 17)  0.2378 ( 19)  0.2364 ( 21)
+ CRD  9=  -0.4120 ( 16) -0.4063 ( 17) -0.4069 ( 18) -0.4122 ( 19) -0.4012 ( 20)
+          -0.4065 ( 21)
+ CRD 10=   0.2279 (  1)  0.2557 (  3)  0.2270 (  4) -0.3963 (  5) -0.3289 (  6)
+          -0.1999 (  7)  0.2119 (  8) -0.2377 (  9) -0.2083 ( 10) -0.2132 ( 11)
+           0.2116 ( 12)  0.2396 ( 13)  0.4214 ( 14) -0.2364 ( 15)
+ CRD 11=   0.1658 (  1) -0.2288 (  3)  0.1642 (  4)  0.6108 (  5) -0.5797 (  6)
+          -0.2081 (  7) -0.2147 ( 10)  0.2118 ( 11)
+ CRD 12=   0.3453 (  1) -0.3486 (  4) -0.2554 (  9)  0.2558 ( 15)  0.3779 ( 16)
+          -0.1904 ( 17)  0.3764 ( 19) -0.5180 ( 20) -0.1919 ( 21)
+ CRD 13=  -0.1454 (  1)  0.6835 (  2) -0.1920 (  3) -0.1444 (  4) -0.1809 (  5)
+          -0.2726 (  6)  0.1531 (  7) -0.1814 (  8)  0.2006 (  9) -0.1792 ( 10)
+          -0.1291 ( 11) -0.1818 ( 12) -0.1826 ( 13)  0.3083 ( 14)  0.1995 ( 15)
+ CRD 14=  -0.2326 (  1)  0.4334 (  3) -0.2305 (  4)  0.1783 (  5) -0.1808 (  6)
+           0.3150 (  7)  0.1382 (  8) -0.1477 (  9) -0.2444 ( 10)  0.2338 ( 11)
+           0.1375 ( 12) -0.2604 ( 13) -0.1491 ( 15)  0.2622 ( 16)  0.2634 ( 17)
+          -0.2639 ( 19) -0.2627 ( 21)
+ CRD 15=  -0.2787 (  1)  0.2793 (  4)  0.2022 (  8)  0.2058 (  9) -0.2028 ( 12)
+          -0.2054 ( 15)  0.1553 ( 16) -0.4027 ( 17)  0.5527 ( 18)  0.1558 ( 19)
+          -0.4022 ( 21)
+
+ THE DETERMINANT OF THE G MATRIX IS 10**(    -5)
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                 - - ATOMS - -         COORDINATE      COORDINATE
+ NO.   TYPE    I  J  K  L  M  N        (BOHR,RAD)       (ANG,DEG)
+ ----------------------------------------------------------------
+   1 STRETCH   1  2                     2.0741591       1.0975978
+   2 STRETCH   2  3                     2.8213314       1.4929844
+   3 STRETCH   2  5                     2.0618427       1.0910803
+   4 STRETCH   2  6                     2.0739724       1.0974990
+   5 STRETCH   3  7                     2.0740000       1.0975136
+   6 STRETCH   3  4                     2.3707323       1.2545376
+   7 BEND      1  2  6                  1.8579184     106.4508815
+   8 BEND      1  2  3                  1.9011223     108.9262821
+   9 BEND      1  2  5                  1.9265714     110.3844097
+  10 BEND      2  3  7                  2.0501025     117.4622198
+  11 BEND      2  3  4                  2.1568252     123.5769798
+  12 BEND      3  2  6                  1.9026386     109.0131599
+  13 BEND      3  2  5                  1.9479088     111.6069560
+  14 BEND      4  3  7                  2.0762536     118.9605666
+  15 BEND      5  2  6                  1.9252520     110.3088167
+  16 TORSION   1  2  3  4              -2.1336057    -122.2466004
+  17 TORSION   1  2  3  7               1.0048794      57.5753463
+  18 TORSION   4  3  2  5              -0.0020115      -0.1152495
+  19 TORSION   4  3  2  6               2.1289578     121.9802965
+  20 TORSION   5  2  3  7               3.1364736     179.7066972
+  21 TORSION   6  2  3  7              -1.0157425     -58.1977568
+
+     ------------------------------------------
+     THE POINT GROUP IS C1 , NAXIS= 1, ORDER= 1
+     ------------------------------------------
+
+     DIMENSIONS OF THE SYMMETRY SUBSPACES ARE
+ A   =   59
+
+ ..... DONE SETTING UP THE RUN .....
+ CPU     0: STEP CPU TIME=     0.03 TOTAL CPU TIME=          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    71.67%
+
+
+          -----------------------------
+          STATIONARY POINT LOCATION RUN
+          -----------------------------
+
+ OBTAINING INITIAL HESSIAN, HESS=GUESS   
+ DIAGONAL GUESS HESSIAN IN INTERNAL COORDS IS
+     1  0.3413     2  0.3946     3  0.3456     4  0.3414     5  0.3413
+     6  0.5065     7  0.2026     8  0.2258     9  0.2030    10  0.2258
+    11  0.2580    12  0.2258    13  0.2262    14  0.2294    15  0.2030
+    16  0.2500    17  0.2500    18  0.2500    19  0.2500    20  0.2500
+    21  0.2500
+ TRANSFORMING HESSIAN TO SYMMETRY COORDINATES
+
+          PARAMETERS CONTROLLING GEOMETRY SEARCH ARE
+          METHOD =QA                  UPHESS =BFGS    
+          NNEG   =         0          NFRZ   =         0
+          NSTEP  =       200          IFOLOW =         1
+          HESS   =GUESS               RESTAR =         F
+          IHREP  =        20          HSSEND =         T
+          NPRT   =         0          NPUN   =         0
+          OPTTOL = 5.000E-05          RMIN   = 1.500E-03
+          RMAX   = 1.000E-01          RLIM   = 7.000E-02
+          DXMAX  = 3.000E-01          PURIFY =         F
+          MOVIE  =         F          TRUPD  =         T
+          TRMAX  = 5.000E-01          TRMIN  = 5.000E-02
+          ITBMAT =         5          STPT   =         F
+          STSTEP = 1.000E-02          PROJCT=          T
+
+ BEGINNING GEOMETRY SEARCH POINT NSERCH=   0 ...
+
+ COORDINATES OF ALL ATOMS ARE (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ H           1.0   3.6657610174   0.0379901068  -0.0941132260
+ C           6.0   2.7591011479   0.5767279012  -0.3981699059
+ C           6.0   2.9710403081   1.1516003370  -1.7596418654
+ O           8.0   2.8739948527   2.3752059029  -2.0189413055
+ H           1.0   2.5142723904   1.3505311539   0.3310375804
+ H           1.0   1.9556269459  -0.1693470907  -0.4461844260
+ H           1.0   3.2280176124   0.4557155267  -2.5684948527
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                 - - ATOMS - -         COORDINATE      COORDINATE
+ NO.   TYPE    I  J  K  L  M  N        (BOHR,RAD)       (ANG,DEG)
+ ----------------------------------------------------------------
+   1 STRETCH   1  2                     2.0741591       1.0975978
+   2 STRETCH   2  3                     2.8213314       1.4929844
+   3 STRETCH   2  5                     2.0618427       1.0910803
+   4 STRETCH   2  6                     2.0739724       1.0974990
+   5 STRETCH   3  7                     2.0740000       1.0975136
+   6 STRETCH   3  4                     2.3707323       1.2545376
+   7 BEND      1  2  6                  1.8579184     106.4508815
+   8 BEND      1  2  3                  1.9011223     108.9262821
+   9 BEND      1  2  5                  1.9265714     110.3844097
+  10 BEND      2  3  7                  2.0501025     117.4622198
+  11 BEND      2  3  4                  2.1568252     123.5769798
+  12 BEND      3  2  6                  1.9026386     109.0131599
+  13 BEND      3  2  5                  1.9479088     111.6069560
+  14 BEND      4  3  7                  2.0762536     118.9605666
+  15 BEND      5  2  6                  1.9252520     110.3088167
+  16 TORSION   1  2  3  4              -2.1336057    -122.2466004
+  17 TORSION   1  2  3  7               1.0048794      57.5753463
+  18 TORSION   4  3  2  5              -0.0020115      -0.1152495
+  19 TORSION   4  3  2  6               2.1289578     121.9802965
+  20 TORSION   5  2  3  7               3.1364736     179.7066972
+  21 TORSION   6  2  3  7              -1.0157425     -58.1977568
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ CPU     0: STEP CPU TIME=     0.00 TOTAL CPU TIME=          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    71.40%
+
+          -------------
+          GUESS OPTIONS
+          -------------
+          GUESS =HCORE             NORB  =       0          NORDER=       0
+          MIX   =       F          PRTMO =       F          PUNMO =       F
+          TOLZ  = 1.0E-08          TOLE  = 1.0E-05
+          SYMDEN=       F          PURIFY=       F
+
+ INITIAL GUESS ORBITALS GENERATED BY HCORE    ROUTINE.
+
+ SYMMETRIES FOR INITIAL GUESS ORBITALS FOLLOW.   BOTH SET(S).
+    12 ORBITALS ARE OCCUPIED (    3 CORE ORBITALS).
+     4=A        5=A        6=A        7=A        8=A        9=A       10=A   
+    11=A       12=A       13=A       14=A       15=A       16=A       17=A   
+    18=A       19=A       20=A       21=A       22=A   
+ ...... END OF INITIAL ORBITAL SELECTION ......
+ CPU     0: STEP CPU TIME=     0.00 TOTAL CPU TIME=          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    73.28%
+
+                    ----------------------
+                    AO INTEGRAL TECHNOLOGY
+                    ----------------------
+     S,P,L SHELL ROTATED AXIS INTEGRALS, REPROGRAMMED BY
+        KAZUYA ISHIMURA (IMS) AND JOSE SIERRA (SYNSTAR).
+     S,P,D,L SHELL ROTATED AXIS INTEGRALS PROGRAMMED BY
+        KAZUYA ISHIMURA (INSTITUTE FOR MOLECULAR SCIENCE).
+     S,P,D,F,G SHELL TO TOTAL QUARTET ANGULAR MOMENTUM SUM 5,
+        ERIC PROGRAM BY GRAHAM FLETCHER (ELORET AND NASA ADVANCED
+        SUPERCOMPUTING DIVISION, AMES RESEARCH CENTER).
+     S,P,D,F,G,L SHELL GENERAL RYS QUADRATURE PROGRAMMED BY
+        MICHEL DUPUIS (PACIFIC NORTHWEST NATIONAL LABORATORY).
+
+          --------------------------------
+          2 ELECTRON LC EXCHANGE INTEGRALS
+          --------------------------------
+
+ THE -PK- OPTION IS OFF, THE INTEGRALS ARE NOT IN SUPERMATRIX FORM.
+ STORING   15000 INTEGRALS/RECORD ON DISK, USING 12 BYTES/INTEGRAL.
+ TWO ELECTRON INTEGRAL EVALUATION REQUIRES   89656 WORDS OF MEMORY.
+ SCHWARZ INEQUALITY OVERHEAD:      1769 INTEGRALS, T=        0.00
+ II,JST,KST,LST =  1  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  2  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  3  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  4  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  5  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  6  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  7  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  8  1  1  1 NREC =         1 INTLOC = 1458
+ II,JST,KST,LST =  9  1  1  1 NREC =         1 INTLOC = 1458
+ II,JST,KST,LST = 10  1  1  1 NREC =         1 INTLOC = 1662
+ II,JST,KST,LST = 11  1  1  1 NREC =         1 INTLOC = 5846
+ II,JST,KST,LST = 12  1  1  1 NREC =         1 INTLOC =12740
+ II,JST,KST,LST = 13  1  1  1 NREC =         1 INTLOC =14670
+ II,JST,KST,LST = 14  1  1  1 NREC =         3 INTLOC = 2825
+ II,JST,KST,LST = 15  1  1  1 NREC =         3 INTLOC = 2825
+ II,JST,KST,LST = 16  1  1  1 NREC =         4 INTLOC = 2427
+ II,JST,KST,LST = 17  1  1  1 NREC =         5 INTLOC = 5054
+ II,JST,KST,LST = 18  1  1  1 NREC =         5 INTLOC = 5054
+ II,JST,KST,LST = 19  1  1  1 NREC =         6 INTLOC =12184
+ II,JST,KST,LST = 20  1  1  1 NREC =         7 INTLOC = 7030
+ II,JST,KST,LST = 21  1  1  1 NREC =         7 INTLOC =13330
+ II,JST,KST,LST = 22  1  1  1 NREC =         9 INTLOC =12122
+ II,JST,KST,LST = 23  1  1  1 NREC =         9 INTLOC =14911
+ II,JST,KST,LST = 24  1  1  1 NREC =        10 INTLOC = 7422
+ SCHWARZ INEQUALITY TEST SKIPPED        4131 INTEGRAL BLOCKS.
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =             1419928
+        100 INTEGRAL RECORDS WERE STORED ON DISK FILE 21.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ CPU     0: STEP CPU TIME=     0.03 TOTAL CPU TIME=          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.1 SECONDS, CPU UTILIZATION IS    46.67%
+
+          --------------------
+          2 ELECTRON INTEGRALS
+          --------------------
+
+ THE -PK- OPTION IS OFF, THE INTEGRALS ARE NOT IN SUPERMATRIX FORM.
+ STORING   15000 INTEGRALS/RECORD ON DISK, USING 12 BYTES/INTEGRAL.
+ TWO ELECTRON INTEGRAL EVALUATION REQUIRES   89656 WORDS OF MEMORY.
+ SCHWARZ INEQUALITY OVERHEAD:      1769 INTEGRALS, T=        0.00
+ II,JST,KST,LST =  1  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  2  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  3  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  4  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  5  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  6  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  7  1  1  1 NREC =         1 INTLOC = 1337
+ II,JST,KST,LST =  8  1  1  1 NREC =         1 INTLOC = 1337
+ II,JST,KST,LST =  9  1  1  1 NREC =         1 INTLOC = 1337
+ II,JST,KST,LST = 10  1  1  1 NREC =         1 INTLOC = 3333
+ II,JST,KST,LST = 11  1  1  1 NREC =         1 INTLOC = 9765
+ II,JST,KST,LST = 12  1  1  1 NREC =         2 INTLOC = 5472
+ II,JST,KST,LST = 13  1  1  1 NREC =         2 INTLOC = 5472
+ II,JST,KST,LST = 14  1  1  1 NREC =         2 INTLOC = 5472
+ II,JST,KST,LST = 15  1  1  1 NREC =         3 INTLOC = 1420
+ II,JST,KST,LST = 16  1  1  1 NREC =         4 INTLOC = 9219
+ II,JST,KST,LST = 17  1  1  1 NREC =         5 INTLOC = 4711
+ II,JST,KST,LST = 18  1  1  1 NREC =         5 INTLOC = 7660
+ II,JST,KST,LST = 19  1  1  1 NREC =         6 INTLOC = 3375
+ II,JST,KST,LST = 20  1  1  1 NREC =         7 INTLOC = 5503
+ II,JST,KST,LST = 21  1  1  1 NREC =         7 INTLOC = 5503
+ II,JST,KST,LST = 22  1  1  1 NREC =         9 INTLOC =12399
+ II,JST,KST,LST = 23  1  1  1 NREC =        10 INTLOC =  228
+ II,JST,KST,LST = 24  1  1  1 NREC =        10 INTLOC = 3708
+ SCHWARZ INEQUALITY TEST SKIPPED        3302 INTEGRAL BLOCKS.
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =             1440510
+         99 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ CPU     0: STEP CPU TIME=     0.01 TOTAL CPU TIME=          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.1 SECONDS, CPU UTILIZATION IS    50.35%
+
+          -------------------------------------
+          ---- POLARISABLE CONTINUUM MODEL ----
+          ----      UNIVERSITY OF PISA     ----
+          -------------------------------------
+
+     ----------------------------
+     INPUT FOR TESSERA DEFINITION
+     ----------------------------
+     NTSALL  =        60     MTHALL  =         4
+     MTHAUT  =         0     AUTFRE  =    2.0000
+     NTSFRZ  =        60     KEEPSM  =         0
+     AREAKP  =   10.0000     BONDRY  =    1.0000
+     AREATL  =    0.0100
+
+     SPHERE     INITS       METHOD
+          1        60       FIXPVA
+          2        60       FIXPVA
+          3        60       FIXPVA
+          4        60       FIXPVA
+          5        60       FIXPVA
+          6        60       FIXPVA
+          7        60       FIXPVA
+
+     ------------------------------
+      FIXPVA TESSELLATION FOR PCM
+         PEIFENG SU AND HUI LI
+     UNIVERSITY OF NEBRASKA-LINCOLN
+     ------------------------------
+
+
+     INPUT FOR CAVITY DEFINITION 
+     ---------------------------
+   ATOM               COORDINATES                RADIUS       EPS
+      1      3.6658      0.0380     -0.0941      1.2000     78.3550
+      2      2.7591      0.5767     -0.3982      1.8500     78.3550
+      3      2.9710      1.1516     -1.7596      1.8500     78.3550
+      4      2.8740      2.3752     -2.0189      1.5200     78.3550
+      5      2.5143      1.3505      0.3310      1.2000     78.3550
+      6      1.9556     -0.1693     -0.4462      1.2000     78.3550
+      7      3.2280      0.4557     -2.5685      1.2000     78.3550
+
+ MEMORY USED TO GENERATE CAVITY=    211102
+
+
+ TOTAL NUMBER OF SPHERES=     7
+ SPHERE           CENTER  (X,Y,Z) (A)               RADIUS (A)      AREA(A*A)
+     1   3.665761017   0.037990107  -0.094113226   1.200000000   3.736818537
+     2   2.759101148   0.576727901  -0.398169906   1.850000000  10.883868176
+     3   2.971040308   1.151600337  -1.759641865   1.850000000  12.261907418
+     4   2.873994853   2.375205903  -2.018941306   1.520000000  13.451701026
+     5   2.514272390   1.350531154   0.331037580   1.200000000   3.547013559
+     6   1.955626946  -0.169347091  -0.446184426   1.200000000   3.572920014
+     7   3.228017612   0.455715527  -2.568494853   1.200000000   4.203194246
+
+ TOTAL NUMBER OF TESSERAE=     158
+ SURFACE AREA=    51.65742298(A**2)    CAVITY VOLUME=     38.83478009 (A**3)
+ CPU     0: STEP CPU TIME=     0.00 TOTAL CPU TIME=          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.1 SECONDS, CPU UTILIZATION IS    51.16%
+
+          THE SOLUTE IS ENCLOSED IN ONE CAVITY
+ DONE CHECKING SEPARATION.
+ CPU     0: STEP CPU TIME=     0.00 TOTAL CPU TIME=          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.1 SECONDS, CPU UTILIZATION IS    51.17%
+
+ ..... DONE GENERATING CAVITY .....
+ CPU     0: STEP CPU TIME=     0.00 TOTAL CPU TIME=          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.1 SECONDS, CPU UTILIZATION IS    51.18%
+ NUCLEI-NUCLEAR CHARGE POLARIZATION ADJUSTMENT TO VNN=        0.0000000000
+
+          --------------------------
+           R-WB97X-D SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =        68.8778202666
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=T  SHIFT=F  RSTRCT=F  DIIS=T  DEM=F  SOSCF=F
+         DENSITY MATRIX CONVERGENCE THRESHOLD=  1.00E-05
+     COARSE -> FINE DFT GRID SWITCH THRESHOLD=  3.00E-04 (SWITCH IN $DFT)
+                   HF -> DFT SWITCH THRESHOLD=  5.00E-03 (SWOFF IN $DFT)
+     MEMORY REQUIRED FOR RHF ITERS=    373524 WORDS.
+
+     EXCHANGE FUNCTIONAL   =WB97X-D   
+     CORRELATION FUNCTIONAL=WB97X-D   
+     DFT THRESHOLD         =.493E-08
+     GRID CHANGE THRESHOLD =.300E-03
+ FOR AN EULER-MACLAURIN QUADRATURE USING  96 RADIAL POINTS:
+ SMALLEST GAUSSIAN PRIMITIVE EXPONENT=        0.0438000000 OF TYPE -P-
+ ON ATOM NUMBER   2 HAS RADIAL NORMALIZATION=  1.000000
+  LARGEST GAUSSIAN PRIMITIVE EXPONENT=     5472.2700000000 OF TYPE -S-
+ ON ATOM NUMBER   4 HAS RADIAL NORMALIZATION=  1.000000
+ DFT IS SWITCHED OFF, PERFORMING PURE SCF UNTIL SWOFF THRESHOLD IS REACHED.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING
+ DDI Process 2: error code 911
+ DDI Process 3: error code 911
+ ddikick.x: application process 2 quit unexpectedly.
+ ddikick.x: Fatal error detected.
+ The error is most likely to be in the application, so check for
+ input errors, disk space, memory needs, application bugs, etc.
+ ddikick.x will now clean up all processes, and exit...
+ DDI Process 0: terminated upon request.
+ DDI Process 1: terminated upon request.
+ DDI Process 4: terminated upon request.
+ DDI Process 5: terminated upon request.
+ DDI Process 6: terminated upon request.
+ DDI Process 7: terminated upon request.
+ ddikick.x: Sending kill signal to DDI processes.
+ ddikick.x: Execution terminated due to error(s).
+unset echo
+----- accounting info -----
+Files used on the parent node nid001227 were:
+-rw-r--r-- 1 darren01 e283    2451 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.dat
+-rw-r--r-- 1 darren01 e283    1958 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F05
+-rw-r--r-- 1 darren01 e283 2160192 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F08
+-rw-r--r-- 1 darren01 e283 2340208 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F08.001
+-rw-r--r-- 1 darren01 e283 2160192 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F08.002
+-rw-r--r-- 1 darren01 e283 1980176 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F08.003
+-rw-r--r-- 1 darren01 e283 2340208 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F08.004
+-rw-r--r-- 1 darren01 e283 2160192 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F08.005
+-rw-r--r-- 1 darren01 e283 2340208 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F08.006
+-rw-r--r-- 1 darren01 e283 2340208 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F08.007
+-rw-r--r-- 1 darren01 e283 1930480 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F10
+-rw-r--r-- 1 darren01 e283 2160192 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F21
+-rw-r--r-- 1 darren01 e283 2160192 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F21.001
+-rw-r--r-- 1 darren01 e283 2160192 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F21.002
+-rw-r--r-- 1 darren01 e283 1980176 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F21.003
+-rw-r--r-- 1 darren01 e283 2700240 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F21.004
+-rw-r--r-- 1 darren01 e283 1980176 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F21.005
+-rw-r--r-- 1 darren01 e283 2520224 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F21.006
+-rw-r--r-- 1 darren01 e283 2340208 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F21.007
+-rw-r--r-- 1 darren01 e283 2040248 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F22
+-rw-r--r-- 1 darren01 e283 2040248 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F22.001
+-rw-r--r-- 1 darren01 e283 2040248 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F22.002
+-rw-r--r-- 1 darren01 e283 2040248 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F22.003
+-rw-r--r-- 1 darren01 e283 2040248 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F22.004
+-rw-r--r-- 1 darren01 e283 2040248 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F22.005
+-rw-r--r-- 1 darren01 e283 2040248 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F22.006
+-rw-r--r-- 1 darren01 e283 2040248 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F22.007
+-rw-r--r-- 1 darren01 e283       8 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F26
+-rw-r--r-- 1 darren01 e283       0 Sep 13 15:20 /work/e283/e283/darren01/gamess/restart/aa002-aldehyde-bare-smd-hcore.F27
+ls: No match.
+ls: No match.
+ls: No match.
+Sun 13 Sep 2026 03:20:41 PM BST
+0.258u 0.140s 0:04.55 8.5%	0+0k 496+48io 9pf+0w
