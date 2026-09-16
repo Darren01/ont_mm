@@ -1,0 +1,26 @@
+! H2O | Standalone water at wB97X-D/6-21G+(d,p)/SMD(water)
+!
+! SMD variant of aa002-water-bare.inp. See aa002-aldehyde-bare-smd.inp
+! for full provenance notes on why SMD is being tried. This one matters
+! most for the standalone-water-entropy question specifically, since
+! SMD's more complete solvation description could plausibly affect the
+! standalone water's own computed properties differently than plain PCM.
+
+ $BASIS GBASIS=N21 NGAUSS=6 NDFUNC=1 NPFUNC=1 DIFFSP=.t. $END
+ $CONTRL SCFTYP=RHF RUNTYP=OPTIMIZE NZVAR=3 $END
+ $CONTRL DFTTYP=wB97X-D $END
+ $SCF DIIS=.t. DAMP=.t. $END
+ $STATPT OPTTOL=0.00005 NSTEP=200 IHREP=20 HSSEND=.t. $END
+ $ZMAT DLC=.t. AUTO=.t. $END
+ $FORCE METHOD=SEMINUM PURIFY=.t. $END
+ $PCM SOLVNT=WATER SMD=.T. $END
+ $SYSTEM MWORDS=20 MEMDDI=20 $END
+!$CONTRL EXETYP=CHECK $END
+
+ $DATA
+Water, standalone, for acetaldehyde hydration thermodynamic cycle -- SMD variant
+C1
+O     8.0      3.5486492584     2.8311475219    -4.6311803360
+H     1.0      3.0765449397     3.5122781864    -5.1178290703
+H     1.0      3.2539156984     2.8458984372    -3.6954621779
+ $END

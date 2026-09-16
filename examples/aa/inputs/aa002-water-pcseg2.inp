@@ -1,0 +1,33 @@
+! H2O | aa002-water-pcseg2: SINGLE POINT at wB97X-D/PCseg-2/PCM(water)
+!
+! Single-point energy (RUNTYP=ENERGY, no optimization) at the confirmed
+! genuine minimum for standalone water, geometry taken from
+! aa002-water-bare.log (EXECUTION TERMINATED NORMALLY, sensible
+! frequencies: 1535.62, 3832.92, 3971.16 cm-1 -- bend, symmetric
+! stretch, asymmetric stretch).
+!
+! Native GBASIS=PCSEG-2, ISPHER=1 mandatory -- same recipe used
+! throughout this project. Part of the standalone hydration
+! thermodynamic cycle: dG_hyd = G(hydrate) - [G(aldehyde) + G(water)].
+
+ $CONTRL SCFTYP=RHF RUNTYP=ENERGY DFTTYP=wB97X-D
+         NOSYM=1 ISPHER=1
+ $END
+ $GUESS GUESS=HUCKEL $END
+ $BASIS GBASIS=PCSEG-2 $END
+ $SCF CONV=1.0D-6
+     SOSCF=.T.
+     DAMP=.F.
+     SHIFT=.T.
+     DIRSCF=.TRUE.
+ $END
+ $PCM SOLVNT=WATER $END
+ $SYSTEM MWORDS=50 MEMDDI=50 $END
+
+ $DATA
+Water, standalone, single point at PCseg-2
+C1
+O     8.0   3.5495873684   2.8299867725  -4.6307952672
+H     1.0   3.0676840612   3.5164803179  -5.1010477598
+H     1.0   3.2478880947   2.8601182355  -3.7183548083
+ $END

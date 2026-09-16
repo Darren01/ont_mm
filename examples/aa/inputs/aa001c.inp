@@ -1,0 +1,48 @@
+! C2H8O3 | Equilibrium Geometry | wB97X-D/6-21G+(d,p)
+! Constraints applied to hydrate
+! aa001a: PURIFY not set at all -- trans/rot frequencies contaminated.
+! aa001b: added STATPT PURIFY=.T. -- made essentially no difference
+! (changes under 2 cm-1, pure numerical noise). Checked $FORCE's own
+! documentation directly: PURIFY is ALSO a separate $FORCE keyword,
+! specifically responsible for cleaning up the FINAL Hessian/frequency
+! output from HSSEND -- "(default=.FALSE. if $ZMAT is given)". STATPT's
+! PURIFY only affects the Hessian used internally during the search
+! itself, not the final HSSEND analysis. This also retroactively explains
+! why the chloroacetaldehyde work never needed this: those runs used
+! Cartesian coordinates, where STATPT's own PROJCT (default=.TRUE.,
+! Cartesian-specific) handled cleanup automatically.
+! This version moves PURIFY=.T. to $FORCE, the correct group, using the
+! converged geometry from aa001b.log.
+ $BASIS GBASIS=N21 NGAUSS=6 NDFUNC=1 NPFUNC=1 DIFFSP=.t. $END
+ $CONTRL SCFTYP=RHF RUNTYP=OPTIMIZE NZVAR=33 $END
+ $CONTRL DFTTYP=wB97X-D $END
+ $SCF DIIS=.t. DAMP=.t. $END
+ $STATPT OPTTOL=0.00005 NSTEP=200 IHREP=20 HSSEND=.t. $END
+ $ZMAT DLC=.t. AUTO=.t. $END
+ $ZMAT NONVDW(1)=8,13, 10,7, 7,3, 8,10 $END
+ $ZMAT IFZMAT(1)=1,10,7, 1,8,13 FVALUE(1)=1.2, 1.2 $END
+!$ZMAT IFZMAT(1)=1,8,13, 1,10,7, 1,7,3 FVALUE(1)=5.050, 5.118, 1.436 $END
+ $FORCE METHOD=SEMINUM PURIFY=.t. $END
+ $PCM SOLVNT=WATER $END
+ $SYSTEM MWORDS=25 MEMDDI=24 $END
+!$CONTRL EXETYP=CHECK $END
+
+ $DATA
+Acetacetaldehyde hydrate and water
+C1
+H     1.0   2.8629255881   0.5447124149  -0.3097793790
+C     6.0   2.7344040330   0.1837247224  -1.3343231999
+C     6.0   3.4400625009   1.1391419548  -2.2717788530
+O     8.0   2.8874499391   2.4165693689  -2.3134222434
+H     1.0   1.6631589796   0.1544777745  -1.5559290222
+H     1.0   3.1605550184  -0.8201477561  -1.4074652117
+O     8.0   3.3298619051   0.5338989118  -3.7552096293
+O     8.0   3.5369532017   2.7146087853  -4.5393890555
+H     1.0   3.0586240062   3.1459953016  -5.2524943044
+H     1.0   3.4341044144   1.5339814351  -4.4101664568
+H     1.0   2.4964554157   0.0582407559  -3.8802850721
+H     1.0   4.5265718503   1.1290890462  -2.1706636249
+H     1.0   3.1791473803   2.8315845702  -3.3999630327
+ $END
+
+

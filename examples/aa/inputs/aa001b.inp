@@ -1,0 +1,40 @@
+! C2H8O3 | Equilibrium Geometry | wB97X-D/6-21G+(d,p)
+! Constraints applied to hydrate
+! Starting structure from aa001a.log (converged, but PURIFY was not set,
+! so translation/rotation frequencies were not properly zeroed -- this
+! version adds STATPT PURIFY=.T., the correct keyword for internal
+! (DLC) coordinate optimizations specifically (PROJCT is the analogous
+! keyword for Cartesian optimizations, and is not relevant here since
+! NZVAR=33/DLC=.T. means internal coordinates are in use).
+ $BASIS GBASIS=N21 NGAUSS=6 NDFUNC=1 NPFUNC=1 DIFFSP=.t. $END
+ $CONTRL SCFTYP=RHF RUNTYP=OPTIMIZE NZVAR=33 $END
+ $CONTRL DFTTYP=wB97X-D $END
+ $SCF DIIS=.t. DAMP=.t. $END
+ $STATPT OPTTOL=0.00005 NSTEP=200 IHREP=20 HSSEND=.t. PURIFY=.t. $END
+ $ZMAT DLC=.t. AUTO=.t. $END
+ $ZMAT NONVDW(1)=8,13, 10,7, 7,3, 8,10 $END
+ $ZMAT IFZMAT(1)=1,10,7, 1,8,13 FVALUE(1)=1.2, 1.2 $END
+!$ZMAT IFZMAT(1)=1,8,13, 1,10,7, 1,7,3 FVALUE(1)=5.050, 5.118, 1.436 $END
+ $FORCE METHOD=SEMINUM $END
+ $PCM SOLVNT=WATER $END
+ $SYSTEM MWORDS=25 MEMDDI=24 $END
+!$CONTRL EXETYP=CHECK $END
+
+ $DATA
+Acetacetaldehyde hydrate and water
+C1
+H     1.0   2.8577176384   0.5434213799  -0.3108674536
+C     6.0   2.7310412428   0.1830995420  -1.3358685377
+C     6.0   3.4395785343   1.1384180712  -2.2713110956
+O     8.0   2.8879491447   2.4164238232  -2.3130465611
+H     1.0   1.6602494653   0.1550305517  -1.5598138371
+H     1.0   3.1563921308  -0.8211472677  -1.4086361591
+O     8.0   3.3318011443   0.5345287311  -3.7551645704
+O     8.0   3.5378466551   2.7153846472  -4.5388375274
+H     1.0   3.0585061921   3.1459160942  -5.2517903760
+H     1.0   3.4360852219   1.5348403122  -4.4097648853
+H     1.0   2.4997567685   0.0568643403  -3.8814504927
+H     1.0   4.5258239740   1.1275251842  -2.1676612330
+H     1.0   3.1799343095   2.8315467611  -3.3993617181
+ $END
+

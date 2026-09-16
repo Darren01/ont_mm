@@ -1,0 +1,48 @@
+! C2H8O3 | Unconstrained optimization of forward-IRC endpoint
+! wB97X-D/6-21G+(d,p)/PCM(water) -- same level throughout the aa001
+! series, so this optimization is fully consistent with the IRC search
+! itself (no level-of-theory mismatch, unlike the earlier chloroacetaldehyde
+! work where the IRC and the refinement level differed).
+!
+! Starting geometry: the final point reached by the forward IRC run
+! (aa001e.log), i.e. one endpoint of the reaction path. Constraints
+! removed entirely -- this is a genuine, unconstrained RUNTYP=OPTIMIZE to
+! let this endpoint fully relax to its nearest true minimum.
+!
+! No $HESS input needed: RUNTYP=OPTIMIZE defaults to HESS=GUESS
+! regardless of coordinate system (Cartesian or internal/DLC) -- this
+! default already worked cleanly for aa001a/aa001b/aa001c. HSSEND=.t. and
+! $FORCE PURIFY=.t. retained to get a clean final frequency analysis,
+! confirming genuine minimum status (should show zero imaginary
+! frequencies, all six trans/rot modes at 0.00 given PURIFY is correctly
+! placed in $FORCE this time).
+
+ $BASIS GBASIS=N21 NGAUSS=6 NDFUNC=1 NPFUNC=1 DIFFSP=.t. $END
+ $CONTRL SCFTYP=RHF RUNTYP=OPTIMIZE NZVAR=33 $END
+ $CONTRL DFTTYP=wB97X-D $END
+ $SCF DIIS=.t. DAMP=.t. $END
+ $STATPT OPTTOL=0.00005 NSTEP=200 IHREP=20 HSSEND=.t. $END
+ $ZMAT DLC=.t. AUTO=.t. $END
+ $ZMAT NONVDW(1)=8,13, 10,7, 7,3, 8,10 $END
+ $FORCE METHOD=SEMINUM PURIFY=.t. $END
+ $PCM SOLVNT=WATER $END
+ $SYSTEM MWORDS=25 MEMDDI=24 $END
+!$CONTRL EXETYP=CHECK $END
+
+ $DATA
+Acetaldehyde hydrate and water -- forward IRC endpoint, unconstrained opt
+C1
+H     1.0   3.1699626804   0.6353905231  -0.2505676751
+C     6.0   2.9242219615   0.1716395096  -1.2092523877
+C     6.0   3.3950983560   1.0625415556  -2.3435054944
+O     8.0   2.6806877172   2.3248415596  -2.2557948014
+H     1.0   1.8399006646   0.0329094812  -1.2629729716
+H     1.0   3.4192745731  -0.8006529639  -1.2701011297
+O     8.0   3.1609182304   0.4457602371  -3.6653652872
+O     8.0   3.7513576298   2.9106932315  -4.7377757276
+H     1.0   3.5137874322   3.3401650852  -5.5638750036
+H     1.0   3.5705646430   1.9560646791  -4.8124714492
+H     1.0   2.2573577217   0.1067556026  -3.7118086679
+H     1.0   4.4713937814   1.2307693858  -2.3343633404
+H     1.0   2.9745226167   2.8751054089  -3.0076897780
+ $END

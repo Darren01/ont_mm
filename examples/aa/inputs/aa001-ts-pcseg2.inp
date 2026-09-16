@@ -1,0 +1,42 @@
+! C2H8O3 | aa001-ts-pcseg2: SINGLE POINT at wB97X-D/PCseg-2/PCM(water)
+!
+! Single-point energy (RUNTYP=ENERGY, no optimization) at the genuine,
+! unconstrained acetaldehyde-hydration saddle point located in aa001d.log
+! (NSERCH=8, SADDLE POINT LOCATED, exactly one imaginary frequency
+! 1360.89i, all six trans/rot modes cleanly at 0.00 thanks to correct use
+! of $FORCE PURIFY=.T.).
+!
+! Native GBASIS=PCSEG-2, ISPHER=1 mandatory -- same recipe validated
+! throughout the chloroacetaldehyde work.
+
+ $CONTRL SCFTYP=RHF RUNTYP=ENERGY DFTTYP=wB97X-D
+         COORD=UNIQUE MAXIT=200 NOSYM=1 ISPHER=1
+ $END
+ $GUESS GUESS=HUCKEL $END
+ $BASIS GBASIS=PCSEG-2 $END
+ $SCF CONV=1.0D-6
+     SOSCF=.T.
+     DAMP=.F.
+     SHIFT=.T.
+     DIRSCF=.TRUE.
+ $END
+ $PCM SOLVNT=WATER $END
+ $SYSTEM MWORDS=100 MEMDDI=200 $END
+
+ $DATA
+Acetaldehyde hydrate and water -- TS, single point at PCseg-2
+C1
+H     1.0   2.8383040249   0.5040029178  -0.2921908654
+C     6.0   2.7195772992   0.1766680895  -1.3299775402
+C     6.0   3.4364357908   1.1650469427  -2.2235497510
+O     8.0   2.8996661779   2.4141082219  -2.2920252081
+H     1.0   1.6507136153   0.1572364489  -1.5627112795
+H     1.0   3.1460834692  -0.8243873231  -1.4307614936
+O     8.0   3.3411700405   0.5059377058  -3.7780889382
+O     8.0   3.5332767452   2.7338411132  -4.5715854963
+H     1.0   2.9783735766   3.1800078251  -5.2192228080
+H     1.0   3.4301215813   1.4791823211  -4.4199126938
+H     1.0   2.4986480458   0.0492190140  -3.9119813729
+H     1.0   4.5252395008   1.1211694365  -2.1568603702
+H     1.0   3.2187800649   2.8646725340  -3.4845984226
+ $END

@@ -1,0 +1,57 @@
+! C2H8O3 | IRC (forward) | wB97X-D/6-21G+(d,p)
+! Forward direction from the genuine, unconstrained saddle point located
+! in aa001d.log (NSERCH=8, SADDLE POINT LOCATED, exactly one imaginary
+! frequency 1360.89i, all six trans/rot modes cleanly at 0.00). Geometry
+! and Hessian both taken from aa001d directly: the Hessian is the second,
+! unlabeled $HESS block from aa001d.dat (confirmed genuine and final by a
+! tiny-gradient $GRAD block immediately preceding it, and confirmed NOT
+! the "CAUTION, APPROXIMATE HESSIAN!" block that appeared earlier in the
+! same file from an intermediate step).
+!
+! $IRC settings (SADDLE=.t., TSENGY=.t., NPOINT=200, STRIDE=0.1,
+! OPTTOL=0.00005) follow the proven working recipe from the earlier
+! chloroacetaldehyde IRC run (caa005bTSaIRCb.inp), adjusted only for
+! direction (FORWRD=.t. here; that reference file was FORWRD=.f.,
+! i.e. backward).
+!
+! One deliberate change from the historical reference: $FORCE uses
+! PURIFY=.t. here rather than PROJCT=.t. The aa001c/aa001d work
+! established directly (via docs-input.txt) that PURIFY is the correct
+! $FORCE-level keyword for cleaning up translation/rotation contamination
+! when a $ZMAT is in use (PROJCT is $STATPT's own, Cartesian-specific
+! keyword, not $FORCE's) -- the historical reference file may have
+! carried this same unnoticed issue, since it wasn't the focus of that
+! run. Whether $FORCE is even substantively invoked during RUNTYP=IRC is
+! not fully certain either way; kept for consistency with the working
+! reference file's structure.
+
+ $BASIS GBASIS=N21 NGAUSS=6 NDFUNC=1 NPFUNC=1 DIFFSP=.t. $END
+ $CONTRL SCFTYP=RHF RUNTYP=IRC NZVAR=33 $END
+ $CONTRL DFTTYP=wB97X-D $END
+ $IRC saddle=.t. tsengy=.t. forwrd=.t. $END
+ $IRC npoint=200 stride=0.1 opttol=0.00005 $END
+ $SCF DIIS=.t. DAMP=.t. $END
+ $ZMAT DLC=.t. AUTO=.t. $END
+ $ZMAT NONVDW(1)=8,13, 10,7, 7,3, 8,10 $END
+ $FORCE METHOD=SEMINUM PURIFY=.t. $END
+ $PCM SOLVNT=WATER $END
+ $SYSTEM MWORDS=25 MEMDDI=24 $END
+!$CONTRL EXETYP=CHECK $END
+
+ $DATA
+Acetaldehyde hydrate and water -- IRC forward
+C1
+H     1.0   2.8383040249   0.5040029178  -0.2921908654
+C     6.0   2.7195772992   0.1766680895  -1.3299775402
+C     6.0   3.4364357908   1.1650469427  -2.2235497510
+O     8.0   2.8996661779   2.4141082219  -2.2920252081
+H     1.0   1.6507136153   0.1572364489  -1.5627112795
+H     1.0   3.1460834692  -0.8243873231  -1.4307614936
+O     8.0   3.3411700405   0.5059377058  -3.7780889382
+O     8.0   3.5332767452   2.7338411132  -4.5715854963
+H     1.0   2.9783735766   3.1800078251  -5.2192228080
+H     1.0   3.4301215813   1.4791823211  -4.4199126938
+H     1.0   2.4986480458   0.0492190140  -3.9119813729
+H     1.0   4.5252395008   1.1211694365  -2.1568603702
+H     1.0   3.2187800649   2.8646725340  -3.4845984226
+ $END

@@ -1,0 +1,38 @@
+! CH3CH(OH)2 | aa002-hydrate-pcseg2: SINGLE POINT at wB97X-D/PCseg-2/PCM(water)
+!
+! Single-point energy (RUNTYP=ENERGY, no optimization) at the confirmed
+! genuine minimum for bare acetaldehyde hydrate, geometry taken from
+! aa002-hydrate-bare.log (EXECUTION TERMINATED NORMALLY).
+!
+! Native GBASIS=PCSEG-2, ISPHER=1 mandatory -- same recipe used
+! throughout this project. Part of the standalone hydration
+! thermodynamic cycle: dG_hyd = G(hydrate) - [G(aldehyde) + G(water)].
+
+ $CONTRL SCFTYP=RHF RUNTYP=ENERGY DFTTYP=wB97X-D
+         NOSYM=1 ISPHER=1
+ $END
+ $GUESS GUESS=HUCKEL $END
+ $BASIS GBASIS=PCSEG-2 $END
+ $SCF CONV=1.0D-6
+     SOSCF=.T.
+     DAMP=.F.
+     SHIFT=.T.
+     DIRSCF=.TRUE.
+ $END
+ $PCM SOLVNT=WATER $END
+ $SYSTEM MWORDS=50 MEMDDI=50 $END
+
+ $DATA
+Acetaldehyde hydrate, bare, single point at PCseg-2
+C1
+H     1.0   3.1848057716   0.6489760272  -0.2548550968
+C     6.0   2.9295091818   0.1801194691  -1.2083747963
+C     6.0   3.3969164601   1.0567506346  -2.3577495360
+O     8.0   2.6697019960   2.3198535949  -2.2564736383
+H     1.0   1.8442833966   0.0442520663  -1.2537086429
+H     1.0   3.4186721596  -0.7953138406  -1.2669217872
+O     8.0   3.1597055359   0.4406055617  -3.6628105086
+H     1.0   2.2416981014   0.1451772713  -3.7165951153
+H     1.0   4.4710063228   1.2359155903  -2.3441721344
+H     1.0   3.0114662056   2.9395420820  -2.9121452891
+ $END

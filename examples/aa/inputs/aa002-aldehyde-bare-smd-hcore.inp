@@ -1,0 +1,41 @@
+! CH3CHO | Bare acetaldehyde at wB97X-D/6-21G+(d,p)/SMD(water) -- HCORE guess variant
+!
+! Diagnostic variant after 5 failed real attempts (across 5 nodes, 3 core
+! counts: 8/1/4/8) of the plain aa002-aldehyde-bare-smd.inp, all failing
+! right as the first SCF iteration begins. An EXETYP=CHECK run of the
+! same input passed cleanly (ruled out a genuine input/syntax error).
+! Confirmed via docs-input.txt that FIXPVA (the more robust cavity
+! tessellation SMD's own docs recommend) is already GAMESS's default, so
+! that wasn't the missing piece either.
+!
+! This file has no other change except adding an explicit $GUESS
+! GUESS=HCORE (the original file had no $GUESS group at all, so was
+! running on whatever GAMESS's implicit default guess is) -- testing
+! whether a different starting density avoids whatever numerical issue
+! is occurring for this specific small, compact, unpadded structure
+! (its sibling aa001h-smd, the SAME aldehyde but padded with two
+! spectator waters, succeeded under SMD without incident).
+
+ $GUESS GUESS=HCORE $END
+ $BASIS GBASIS=N21 NGAUSS=6 NDFUNC=1 NPFUNC=1 DIFFSP=.t. $END
+ $CONTRL SCFTYP=RHF RUNTYP=OPTIMIZE NZVAR=15 $END
+ $CONTRL DFTTYP=wB97X-D $END
+ $SCF DIIS=.t. DAMP=.t. $END
+ $STATPT OPTTOL=0.00005 NSTEP=200 IHREP=20 HSSEND=.t. $END
+ $ZMAT DLC=.t. AUTO=.t. $END
+ $FORCE METHOD=SEMINUM PURIFY=.t. $END
+ $PCM SOLVNT=WATER SMD=.T. $END
+ $SYSTEM MWORDS=50 MEMDDI=50 $END
+!$CONTRL EXETYP=CHECK $END
+
+ $DATA
+Acetaldehyde, bare, for hydration thermodynamic cycle -- SMD variant
+C1
+H     1.0      3.6657610174     0.0379901068    -0.0941132260
+C     6.0      2.7591011479     0.5767279012    -0.3981699059
+C     6.0      2.9710403081     1.1516003370    -1.7596418654
+O     8.0      2.8739948527     2.3752059029    -2.0189413055
+H     1.0      2.5142723904     1.3505311539     0.3310375804
+H     1.0      1.9556269459    -0.1693470907    -0.4461844260
+H     1.0      3.2280176124     0.4557155267    -2.5684948527
+ $END

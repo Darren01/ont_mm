@@ -1,0 +1,44 @@
+! C2H8O3 | SMD variant: Saddle Point Search
+! wB97X-D/6-21G+(d,p)/SMD(water)
+!
+! Step 2 of 2: the actual SMD saddle-point search, using the genuine
+! Hessian computed in aa001d-smd-hess.inp (appended below after
+! confirming which of its two punched $HESS blocks is the genuine final
+! one, not the "CAUTION, APPROXIMATE HESSIAN!" intermediate -- same
+! verification procedure as the original aa001c/aa001d and
+! chloroacetaldehyde TSb work).
+!
+! Starting geometry: same as aa001d-smd-hess.inp (the converged plain-PCM
+! aa001d saddle point). $ZMAT/NONVDW restored here since this is a
+! genuine search, unlike the Hessian-only precursor.
+
+ $BASIS GBASIS=N21 NGAUSS=6 NDFUNC=1 NPFUNC=1 DIFFSP=.t. $END
+ $CONTRL SCFTYP=RHF RUNTYP=SADPOINT NZVAR=33 $END
+ $CONTRL DFTTYP=wB97X-D $END
+ $SCF DIIS=.t. DAMP=.t. $END
+ $STATPT OPTTOL=0.00005 NSTEP=200 IHREP=20 HESS=READ
+         HSSEND=.t. $END
+ $ZMAT DLC=.t. AUTO=.t. $END
+ $ZMAT NONVDW(1)=8,13, 10,7, 7,3, 8,10 $END
+ $FORCE METHOD=SEMINUM PURIFY=.t. $END
+ $PCM SOLVNT=WATER SMD=.T. $END
+ $SYSTEM MWORDS=25 MEMDDI=24 $END
+!$CONTRL EXETYP=CHECK $END
+
+ $DATA
+Acetaldehyde hydrate and water -- TS, SMD saddle point search
+C1
+H     1.0   2.8383040249   0.5040029178  -0.2921908654
+C     6.0   2.7195772992   0.1766680895  -1.3299775402
+C     6.0   3.4364357908   1.1650469427  -2.2235497510
+O     8.0   2.8996661779   2.4141082219  -2.2920252081
+H     1.0   1.6507136153   0.1572364489  -1.5627112795
+H     1.0   3.1460834692  -0.8243873231  -1.4307614936
+O     8.0   3.3411700405   0.5059377058  -3.7780889382
+O     8.0   3.5332767452   2.7338411132  -4.5715854963
+H     1.0   2.9783735766   3.1800078251  -5.2192228080
+H     1.0   3.4301215813   1.4791823211  -4.4199126938
+H     1.0   2.4986480458   0.0492190140  -3.9119813729
+H     1.0   4.5252395008   1.1211694365  -2.1568603702
+H     1.0   3.2187800649   2.8646725340  -3.4845984226
+ $END

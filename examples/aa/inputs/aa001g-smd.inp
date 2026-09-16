@@ -1,0 +1,43 @@
+! C2H8O3 | SMD variant: unconstrained re-optimization of hydrate-side endpoint
+! wB97X-D/6-21G+(d,p)/SMD(water) -- testing whether SMD's more complete
+! solvation treatment narrows the gap to experiment found with bare
+! electrostatics-only PCM (see aa002-aldehyde-bare-smd.inp for full
+! rationale).
+!
+! Starting geometry: the previously-converged plain-PCM aa001g structure
+! (confirmed via bond-length analysis to be the genuine HYDRATE -- C3-O4
+! and C3-O7 both genuine C-OH single bonds), as a reasonable starting
+! guess for SMD reoptimization.
+!
+! Otherwise identical to aa001g.inp (same basis, NZVAR=33, same NONVDW
+! exclusions, no $HESS needed -- RUNTYP=OPTIMIZE defaults to HESS=GUESS).
+
+ $BASIS GBASIS=N21 NGAUSS=6 NDFUNC=1 NPFUNC=1 DIFFSP=.t. $END
+ $CONTRL SCFTYP=RHF RUNTYP=OPTIMIZE NZVAR=33 $END
+ $CONTRL DFTTYP=wB97X-D $END
+ $SCF DIIS=.t. DAMP=.t. $END
+ $STATPT OPTTOL=0.00005 NSTEP=200 IHREP=20 HSSEND=.t. $END
+ $ZMAT DLC=.t. AUTO=.t. $END
+ $ZMAT NONVDW(1)=8,13, 10,7, 7,3, 8,10 $END
+ $FORCE METHOD=SEMINUM PURIFY=.t. $END
+ $PCM SOLVNT=WATER SMD=.T. $END
+ $SYSTEM MWORDS=25 MEMDDI=24 $END
+!$CONTRL EXETYP=CHECK $END
+
+ $DATA
+Acetaldehyde hydrate and water -- hydrate-side endpoint, SMD reoptimization
+C1
+H     1.0   3.1783988026   0.6372496332  -0.2513794820
+C     6.0   2.9291373045   0.1725700238  -1.2087172538
+C     6.0   3.3938301430   1.0635782756  -2.3453537599
+O     8.0   2.6765640506   2.3242142618  -2.2566869546
+H     1.0   1.8448285714   0.0318890371  -1.2576125055
+H     1.0   3.4257795818  -0.7987961849  -1.2711312293
+O     8.0   3.1572041113   0.4451103667  -3.6660435666
+O     8.0   3.7554861914   2.9100758218  -4.7355306723
+H     1.0   3.5168618072   3.3405940503  -5.5607852990
+H     1.0   3.5714428721   1.9561157899  -4.8109178100
+H     1.0   2.2537618581   0.1053689215  -3.7102830390
+H     1.0   4.4697404506   1.2344814262  -2.3399607799
+H     1.0   2.9713924770   2.8762493261  -3.0068513860
+ $END

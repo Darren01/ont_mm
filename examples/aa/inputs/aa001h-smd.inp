@@ -1,0 +1,37 @@
+! C2H8O3 | SMD variant: unconstrained re-optimization of aldehyde-side endpoint
+! wB97X-D/6-21G+(d,p)/SMD(water). See aa001g-smd.inp/
+! aa002-aldehyde-bare-smd.inp for full provenance notes.
+!
+! Starting geometry: the previously-converged plain-PCM aa001h structure
+! (confirmed via bond-length analysis to be the genuine ALDEHYDE -- intact
+! C3=O4 double bond).
+
+ $BASIS GBASIS=N21 NGAUSS=6 NDFUNC=1 NPFUNC=1 DIFFSP=.t. $END
+ $CONTRL SCFTYP=RHF RUNTYP=OPTIMIZE NZVAR=33 $END
+ $CONTRL DFTTYP=wB97X-D $END
+ $SCF DIIS=.t. DAMP=.t. $END
+ $STATPT OPTTOL=0.00005 NSTEP=200 IHREP=20 HSSEND=.t. $END
+ $ZMAT DLC=.t. AUTO=.t. $END
+ $ZMAT NONVDW(1)=8,13, 10,7, 7,3, 8,10 $END
+ $FORCE METHOD=SEMINUM PURIFY=.t. $END
+ $PCM SOLVNT=WATER SMD=.T. $END
+ $SYSTEM MWORDS=25 MEMDDI=24 $END
+!$CONTRL EXETYP=CHECK $END
+
+ $DATA
+Acetaldehyde hydrate and water -- aldehyde-side endpoint, SMD reoptimization
+C1
+H     1.0   3.6657610174   0.0379901068  -0.0941132260
+C     6.0   2.7591011479   0.5767279012  -0.3981699059
+C     6.0   2.9710403081   1.1516003370  -1.7596418654
+O     8.0   2.8739948527   2.3752059029  -2.0189413055
+H     1.0   2.5142723904   1.3505311539   0.3310375804
+H     1.0   1.9556269459  -0.1693470907  -0.4461844260
+O     8.0   3.6780390693   0.1312765728  -5.0631371300
+O     8.0   3.5486492584   2.8311475219  -4.6311803360
+H     1.0   3.0765449397   3.5122781864  -5.1178290703
+H     1.0   3.6102503788   1.1091982485  -5.0317600136
+H     1.0   2.8697506520  -0.1952712618  -5.4675626174
+H     1.0   3.2280176124   0.4557155267  -2.5684948527
+H     1.0   3.2539156984   2.8458984372  -3.6954621779
+ $END

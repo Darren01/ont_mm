@@ -1,0 +1,47 @@
+! CH3CHO | Bare acetaldehyde at wB97X-D/6-21G+(d,p)/PCM(water)
+!
+! Part of the standalone hydration thermodynamic cycle for acetaldehyde:
+!   dG_hydration = G(hydrate) - [G(aldehyde) + G(water)]
+! -- the direct analogue of the chloroacetaldehyde caa008 series, and the
+! genuine calibration case: Sorensen & Jencks (JACS 1987, 109, 4675)
+! report the experimental hydration equilibrium constant for acetaldehyde
+! directly, K_h = 1.2 +/- 0.1 at 25 C, I = 1.0, corresponding to
+! dG_experimental = -RT ln(K_h) = -0.11 kcal/mol (54.5% hydrate, 45.5%
+! aldehyde -- essentially thermoneutral, a sensitive test case).
+!
+! Kept at the SAME level of theory as the rest of the aa001 series
+! (wB97X-D/6-21G+(d,p)/PCM(water), i.e. GBASIS=N21 NGAUSS=6 NDFUNC=1
+! NPFUNC=1 DIFFSP=.t.) rather than switching basis mid-project, unlike
+! the earlier chloroacetaldehyde work.
+!
+! Starting geometry: extracted from the converged aa001h structure (the
+! IRC endpoint confirmed via bond-length analysis to be the genuine
+! aldehyde -- C3=O4 = 1.255 A, a genuine double bond, both spectator
+! waters unbonded to C3), taking just the 7 atoms belonging to the
+! aldehyde itself and discarding both spectator waters. NZVAR=15
+! (3*7-6) for this smaller, 7-atom system. No $ZMAT NONVDW exclusions
+! needed here (those were specifically for managing artificially-close
+! inter-fragment H-bond contacts within the larger cluster).
+
+ $BASIS GBASIS=N21 NGAUSS=6 NDFUNC=1 NPFUNC=1 DIFFSP=.t. $END
+ $CONTRL SCFTYP=RHF RUNTYP=OPTIMIZE NZVAR=15 $END
+ $CONTRL DFTTYP=wB97X-D $END
+ $SCF DIIS=.t. DAMP=.t. $END
+ $STATPT OPTTOL=0.00005 NSTEP=200 IHREP=20 HSSEND=.t. $END
+ $ZMAT DLC=.t. AUTO=.t. $END
+ $FORCE METHOD=SEMINUM PURIFY=.t. $END
+ $PCM SOLVNT=WATER $END
+ $SYSTEM MWORDS=25 MEMDDI=24 $END
+!$CONTRL EXETYP=CHECK $END
+
+ $DATA
+Acetaldehyde, bare, for hydration thermodynamic cycle
+C1
+H     1.0      3.6657610174     0.0379901068    -0.0941132260
+C     6.0      2.7591011479     0.5767279012    -0.3981699059
+C     6.0      2.9710403081     1.1516003370    -1.7596418654
+O     8.0      2.8739948527     2.3752059029    -2.0189413055
+H     1.0      2.5142723904     1.3505311539     0.3310375804
+H     1.0      1.9556269459    -0.1693470907    -0.4461844260
+H     1.0      3.2280176124     0.4557155267    -2.5684948527
+ $END

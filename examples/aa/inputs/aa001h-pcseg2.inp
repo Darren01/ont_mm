@@ -1,0 +1,41 @@
+! C2H8O3 | aa001h-pcseg2: SINGLE POINT at wB97X-D/PCseg-2/PCM(water)
+!
+! Single-point energy (RUNTYP=ENERGY, no optimization) at the confirmed
+! genuine minimum from the backward IRC endpoint, geometry taken from
+! aa001h.log (EXECUTION TERMINATED NORMALLY, zero imaginary frequencies,
+! all six trans/rot modes cleanly at 0.00).
+!
+! Native GBASIS=PCSEG-2, ISPHER=1 mandatory -- same recipe used
+! throughout this project.
+
+ $CONTRL SCFTYP=RHF RUNTYP=ENERGY DFTTYP=wB97X-D
+         COORD=UNIQUE MAXIT=200 NOSYM=1 ISPHER=1
+ $END
+ $GUESS GUESS=HUCKEL $END
+ $BASIS GBASIS=PCSEG-2 $END
+ $SCF CONV=1.0D-6
+     SOSCF=.T.
+     DAMP=.F.
+     SHIFT=.T.
+     DIRSCF=.TRUE.
+ $END
+ $PCM SOLVNT=WATER $END
+ $SYSTEM MWORDS=100 MEMDDI=200 $END
+
+ $DATA
+Acetaldehyde hydrate and water -- backward IRC endpoint, single point at PCseg-2
+C1
+H     1.0   3.6657610174   0.0379901068  -0.0941132260
+C     6.0   2.7591011479   0.5767279012  -0.3981699059
+C     6.0   2.9710403081   1.1516003370  -1.7596418654
+O     8.0   2.8739948527   2.3752059029  -2.0189413055
+H     1.0   2.5142723904   1.3505311539   0.3310375804
+H     1.0   1.9556269459  -0.1693470907  -0.4461844260
+O     8.0   3.6780390693   0.1312765728  -5.0631371300
+O     8.0   3.5486492584   2.8311475219  -4.6311803360
+H     1.0   3.0765449397   3.5122781864  -5.1178290703
+H     1.0   3.6102503788   1.1091982485  -5.0317600136
+H     1.0   2.8697506520  -0.1952712618  -5.4675626174
+H     1.0   3.2280176124   0.4557155267  -2.5684948527
+H     1.0   3.2539156984   2.8458984372  -3.6954621779
+ $END

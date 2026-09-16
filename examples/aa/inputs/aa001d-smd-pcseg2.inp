@@ -1,0 +1,42 @@
+! C2H8O3 | aa001d-smd-pcseg2: SINGLE POINT at wB97X-D/PCseg-2/SMD(water)
+!
+! Single-point energy (RUNTYP=ENERGY, no optimization) at the genuine
+! SMD-embedded saddle point located in aa001d-smd.log (NSERCH=5, SADDLE
+! POINT LOCATED, exactly one imaginary frequency 1248.16i, all six
+! trans/rot modes cleanly at 0.00).
+!
+! Native GBASIS=PCSEG-2, ISPHER=1 mandatory. SMD=.T. added to $PCM for
+! consistency with the SMD-optimized geometry -- avoiding mixing an
+! SMD-optimized structure with a plain-PCM single-point energy.
+
+ $CONTRL SCFTYP=RHF RUNTYP=ENERGY DFTTYP=wB97X-D
+         COORD=UNIQUE MAXIT=200 NOSYM=1 ISPHER=1
+ $END
+ $GUESS GUESS=HUCKEL $END
+ $BASIS GBASIS=PCSEG-2 $END
+ $SCF CONV=1.0D-6
+     SOSCF=.T.
+     DAMP=.F.
+     SHIFT=.T.
+     DIRSCF=.TRUE.
+ $END
+ $PCM SOLVNT=WATER SMD=.T. $END
+ $SYSTEM MWORDS=100 MEMDDI=200 $END
+
+ $DATA
+Acetaldehyde hydrate and water -- TS, SMD single point at PCseg-2
+C1
+H     1.0   2.8144380291   0.5014210291  -0.3007136913
+C     6.0   2.7045959840   0.1680744807  -1.3378986342
+C     6.0   3.4378351391   1.1462044426  -2.2279603536
+O     8.0   2.9149388626   2.4249927414  -2.2814870535
+H     1.0   1.6372533887   0.1420462394  -1.5784068339
+H     1.0   3.1297094629  -0.8359375774  -1.4233380945
+O     8.0   3.3505302688   0.5208211909  -3.7600641373
+O     8.0   3.5212654353   2.7344115575  -4.5883317141
+H     1.0   2.9441539534   3.1573322023  -5.2350921276
+H     1.0   3.4289860766   1.4950838243  -4.4186507787
+H     1.0   2.5469588950  -0.0008398195  -3.9041376856
+H     1.0   4.5238641396   1.1056372690  -2.1304952773
+H     1.0   3.2223041424   2.8750268748  -3.5281135685
+ $END

@@ -1,0 +1,27 @@
+ID	Label	Type	hasZeroPointEnergy	hasEnthalpy	hasEntropy	hasGibbsFreeEnergy	hasElectronicEnergy
+ID	LABEL	TYPE	I gc:hasZeroPointEnergy	I gc:hasEnthalpy	I gc:hasEntropy	I gc:hasGibbsFreeEnergy	I gc:hasElectronicEnergy
+ex:energies_aa001a	System energies aa001a	gc:SystemEnergies	ex:zpe_aa001a	ex:enthalpy_aa001a	ex:entropy_aa001a	ex:gibbs_aa001a	
+ex:energies_aa001b	System energies aa001b	gc:SystemEnergies	ex:zpe_aa001b	ex:enthalpy_aa001b	ex:entropy_aa001b	ex:gibbs_aa001b	
+ex:energies_aa001c	System energies aa001c	gc:SystemEnergies	ex:zpe_aa001c	ex:enthalpy_aa001c	ex:entropy_aa001c	ex:gibbs_aa001c	
+ex:energies_aa001d-smd-hess	System energies aa001d-smd-hess	gc:SystemEnergies	ex:zpe_aa001d-smd-hess	ex:enthalpy_aa001d-smd-hess	ex:entropy_aa001d-smd-hess	ex:gibbs_aa001d-smd-hess	
+ex:energies_aa001d-smd	System energies aa001d-smd	gc:SystemEnergies	ex:zpe_aa001d-smd	ex:enthalpy_aa001d-smd	ex:entropy_aa001d-smd	ex:gibbs_aa001d-smd	
+ex:energies_aa001d	System energies aa001d	gc:SystemEnergies	ex:zpe_aa001d	ex:enthalpy_aa001d	ex:entropy_aa001d	ex:gibbs_aa001d	
+ex:energies_aa001g-smd	System energies aa001g-smd	gc:SystemEnergies	ex:zpe_aa001g-smd	ex:enthalpy_aa001g-smd	ex:entropy_aa001g-smd	ex:gibbs_aa001g-smd	
+ex:energies_aa001g	System energies aa001g	gc:SystemEnergies	ex:zpe_aa001g	ex:enthalpy_aa001g	ex:entropy_aa001g	ex:gibbs_aa001g	
+ex:energies_aa001h-smd	System energies aa001h-smd	gc:SystemEnergies	ex:zpe_aa001h-smd	ex:enthalpy_aa001h-smd	ex:entropy_aa001h-smd	ex:gibbs_aa001h-smd	
+ex:energies_aa001h	System energies aa001h	gc:SystemEnergies	ex:zpe_aa001h	ex:enthalpy_aa001h	ex:entropy_aa001h	ex:gibbs_aa001h	
+ex:energies_aa002-aldehyde-bare	System energies aa002-aldehyde-bare	gc:SystemEnergies	ex:zpe_aa002-aldehyde-bare	ex:enthalpy_aa002-aldehyde-bare	ex:entropy_aa002-aldehyde-bare	ex:gibbs_aa002-aldehyde-bare	
+ex:energies_aa002-hydrate-bare-smd	System energies aa002-hydrate-bare-smd	gc:SystemEnergies	ex:zpe_aa002-hydrate-bare-smd	ex:enthalpy_aa002-hydrate-bare-smd	ex:entropy_aa002-hydrate-bare-smd	ex:gibbs_aa002-hydrate-bare-smd	
+ex:energies_aa002-hydrate-bare	System energies aa002-hydrate-bare	gc:SystemEnergies	ex:zpe_aa002-hydrate-bare	ex:enthalpy_aa002-hydrate-bare	ex:entropy_aa002-hydrate-bare	ex:gibbs_aa002-hydrate-bare	
+ex:energies_aa002-water-bare-smd	System energies aa002-water-bare-smd	gc:SystemEnergies	ex:zpe_aa002-water-bare-smd	ex:enthalpy_aa002-water-bare-smd	ex:entropy_aa002-water-bare-smd	ex:gibbs_aa002-water-bare-smd	
+ex:energies_aa002-water-bare	System energies aa002-water-bare	gc:SystemEnergies	ex:zpe_aa002-water-bare	ex:enthalpy_aa002-water-bare	ex:entropy_aa002-water-bare	ex:gibbs_aa002-water-bare	
+ex:energies_aa001-ts-pcseg2	System energies aa001-ts-pcseg2	gc:SystemEnergies					ex:electronic_energy_aa001-ts-pcseg2
+ex:energies_aa001d-smd-pcseg2	System energies aa001d-smd-pcseg2	gc:SystemEnergies					ex:electronic_energy_aa001d-smd-pcseg2
+ex:energies_aa001g-pcseg2	System energies aa001g-pcseg2	gc:SystemEnergies					ex:electronic_energy_aa001g-pcseg2
+ex:energies_aa001g-smd-pcseg2	System energies aa001g-smd-pcseg2	gc:SystemEnergies					ex:electronic_energy_aa001g-smd-pcseg2
+ex:energies_aa001h-pcseg2	System energies aa001h-pcseg2	gc:SystemEnergies					ex:electronic_energy_aa001h-pcseg2
+ex:energies_aa001h-smd-pcseg2	System energies aa001h-smd-pcseg2	gc:SystemEnergies					ex:electronic_energy_aa001h-smd-pcseg2
+ex:energies_aa002-aldehyde-bare-smd-energy	System energies aa002-aldehyde-bare-smd-energy	gc:SystemEnergies					ex:electronic_energy_aa002-aldehyde-bare-smd-energy
+ex:energies_aa002-aldehyde-pcseg2	System energies aa002-aldehyde-pcseg2	gc:SystemEnergies					ex:electronic_energy_aa002-aldehyde-pcseg2
+ex:energies_aa002-hydrate-pcseg2	System energies aa002-hydrate-pcseg2	gc:SystemEnergies					ex:electronic_energy_aa002-hydrate-pcseg2
+ex:energies_aa002-water-pcseg2	System energies aa002-water-pcseg2	gc:SystemEnergies					ex:electronic_energy_aa002-water-pcseg2

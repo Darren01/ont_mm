@@ -1,0 +1,49 @@
+! CH3CHO | Bare acetaldehyde at wB97X-D/6-21G+(d,p)/SMD(water)
+!
+! SMD variant of aa002-aldehyde-bare.inp -- testing whether SMD's more
+! complete solvation treatment (electrostatics + cavitation + dispersion
+! + solvent-structure "CDS" correction, all with coded gradients) narrows
+! the gap to experiment found with bare electrostatics-only PCM. Per
+! docs-input.txt: naming SOLVNT=WATER with SMD=.T. automatically selects
+! the correct SOLA/SOLB/SOLC/SOLG/SOLH/SOLN parameters for water, so no
+! further $PCM input is needed beyond adding SMD=.T.. Confirmed
+! ICOMP=ICAV=IDISP=IREP=IDP all default to 0 already, matching SMD's own
+! requirement that these be off.
+!
+! Starting geometry: the previously-converged plain-PCM aa002-aldehyde-bare
+! structure, as a reasonable starting guess -- SMD uses different atomic
+! radii so the geometry is expected to shift somewhat on reoptimization.
+!
+! Otherwise identical to aa002-aldehyde-bare.inp (same basis, NZVAR=15,
+! no NONVDW needed).
+
+! CHECK-ONLY diagnostic run: after 4 failed real attempts across 5
+! different nodes and 3 different core counts (8, 1, 4, 8 again), all
+! failing at the very start of the first SCF iteration in different ways
+! (TCP recv errors, silent error 911), this validates setup/input parsing
+! WITHOUT attempting any real SCF work, to check for anything genuinely
+! wrong that we haven't caught yet.
+
+ $BASIS GBASIS=N21 NGAUSS=6 NDFUNC=1 NPFUNC=1 DIFFSP=.t. $END
+ $CONTRL SCFTYP=RHF RUNTYP=OPTIMIZE NZVAR=15 $END
+ $CONTRL DFTTYP=wB97X-D $END
+ $CONTRL EXETYP=CHECK $END
+ $SCF DIIS=.t. DAMP=.t. $END
+ $STATPT OPTTOL=0.00005 NSTEP=200 IHREP=20 HSSEND=.t. $END
+ $ZMAT DLC=.t. AUTO=.t. $END
+ $FORCE METHOD=SEMINUM PURIFY=.t. $END
+ $PCM SOLVNT=WATER SMD=.T. $END
+ $SYSTEM MWORDS=50 MEMDDI=50 $END
+!$CONTRL EXETYP=CHECK $END (already enabled above)
+
+ $DATA
+Acetaldehyde, bare, for hydration thermodynamic cycle -- SMD variant
+C1
+H     1.0      3.6657610174     0.0379901068    -0.0941132260
+C     6.0      2.7591011479     0.5767279012    -0.3981699059
+C     6.0      2.9710403081     1.1516003370    -1.7596418654
+O     8.0      2.8739948527     2.3752059029    -2.0189413055
+H     1.0      2.5142723904     1.3505311539     0.3310375804
+H     1.0      1.9556269459    -0.1693470907    -0.4461844260
+H     1.0      3.2280176124     0.4557155267    -2.5684948527
+ $END

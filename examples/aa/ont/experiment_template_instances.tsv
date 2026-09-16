@@ -1,0 +1,153 @@
+ID	Label	Type	hasInputFile	hasOutputFile	wasGeneratedBy	fileURL
+ID	LABEL	TYPE	I ex:hasInputFile	I ex:hasOutputFile SPLIT=|	I prov:wasGeneratedBy	A ex:fileURL
+ex:avogadro_build	Structure built in Avogadro	prov:Activity				
+ex:exp_aa001-ts-pcseg2	Single point aa001-ts-pcseg2	gc:SinglePoint	ex:file_aa001-ts-pcseg2_inp	ex:file_aa001-ts-pcseg2_dat|ex:file_aa001-ts-pcseg2_log		
+ex:file_aa001-ts-pcseg2_inp	Input file aa001-ts-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001-ts-pcseg2.inp
+ex:file_aa001-ts-pcseg2_dat	Output data aa001-ts-pcseg2	ex:DataFile			ex:exp_aa001-ts-pcseg2	
+ex:file_aa001-ts-pcseg2_log	Output log aa001-ts-pcseg2	ex:LogFile			ex:exp_aa001-ts-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001-ts-pcseg2.log
+						
+ex:exp_aa001a	Vibrational analysis aa001a	gc:VibrationalAnalysis	ex:file_aa001a_inp	ex:file_aa001a_dat|ex:file_aa001a_log		
+ex:file_aa001a_inp	Input file aa001a	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001a.inp
+ex:file_aa001a_dat	Output data aa001a	ex:DataFile			ex:exp_aa001a	
+ex:file_aa001a_log	Output log aa001a	ex:LogFile			ex:exp_aa001a	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001a.log
+						
+ex:exp_aa001b	Vibrational analysis aa001b	gc:VibrationalAnalysis	ex:file_aa001b_inp	ex:file_aa001b_dat|ex:file_aa001b_log		
+ex:file_aa001b_inp	Input file aa001b	ex:InputFile			ex:exp_aa001a	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001b.inp
+ex:file_aa001b_dat	Output data aa001b	ex:DataFile			ex:exp_aa001b	
+ex:file_aa001b_log	Output log aa001b	ex:LogFile			ex:exp_aa001b	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001b.log
+						
+ex:exp_aa001c	Vibrational analysis aa001c	gc:VibrationalAnalysis	ex:file_aa001c_inp	ex:file_aa001c_dat|ex:file_aa001c_log		
+ex:file_aa001c_inp	Input file aa001c	ex:InputFile			ex:exp_aa001b	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001c.inp
+ex:file_aa001c_dat	Output data aa001c	ex:DataFile			ex:exp_aa001c	
+ex:file_aa001c_log	Output log aa001c	ex:LogFile			ex:exp_aa001c	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001c.log
+						
+ex:exp_aa001d-smd-hess	Vibrational analysis aa001d-smd-hess	gc:VibrationalAnalysis	ex:file_aa001d-smd-hess_inp	ex:file_aa001d-smd-hess_dat|ex:file_aa001d-smd-hess_log		
+ex:file_aa001d-smd-hess_inp	Input file aa001d-smd-hess	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001d-smd-hess.inp
+ex:file_aa001d-smd-hess_dat	Output data aa001d-smd-hess	ex:DataFile			ex:exp_aa001d-smd-hess	
+ex:file_aa001d-smd-hess_log	Output log aa001d-smd-hess	ex:LogFile			ex:exp_aa001d-smd-hess	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001d-smd-hess.log
+						
+ex:exp_aa001d-smd-pcseg2	Single point aa001d-smd-pcseg2	gc:SinglePoint	ex:file_aa001d-smd-pcseg2_inp	ex:file_aa001d-smd-pcseg2_dat|ex:file_aa001d-smd-pcseg2_log		
+ex:file_aa001d-smd-pcseg2_inp	Input file aa001d-smd-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001d-smd-pcseg2.inp
+ex:file_aa001d-smd-pcseg2_dat	Output data aa001d-smd-pcseg2	ex:DataFile			ex:exp_aa001d-smd-pcseg2	
+ex:file_aa001d-smd-pcseg2_log	Output log aa001d-smd-pcseg2	ex:LogFile			ex:exp_aa001d-smd-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001d-smd-pcseg2.log
+						
+ex:exp_aa001d-smd	Saddle point aa001d-smd	gc:SaddlePoint	ex:file_aa001d-smd_inp	ex:file_aa001d-smd_dat|ex:file_aa001d-smd_log		
+ex:file_aa001d-smd_inp	Input file aa001d-smd	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001d-smd.inp
+ex:file_aa001d-smd_dat	Output data aa001d-smd	ex:DataFile			ex:exp_aa001d-smd	
+ex:file_aa001d-smd_log	Output log aa001d-smd	ex:LogFile			ex:exp_aa001d-smd	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001d-smd.log
+						
+ex:exp_aa001d	Saddle point aa001d	gc:SaddlePoint	ex:file_aa001d_inp	ex:file_aa001d_dat|ex:file_aa001d_log		
+ex:file_aa001d_inp	Input file aa001d	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001d.inp
+ex:file_aa001d_dat	Output data aa001d	ex:DataFile			ex:exp_aa001d	
+ex:file_aa001d_log	Output log aa001d	ex:LogFile			ex:exp_aa001d	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001d.log
+						
+ex:exp_aa001e	IRC (forward) aa001e	gc:IRC	ex:file_aa001e_inp	ex:file_aa001e_dat|ex:file_aa001e_log		
+ex:file_aa001e_inp	Input file aa001e	ex:InputFile			ex:exp_aa001d	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001e.inp
+ex:file_aa001e_dat	Output data aa001e	ex:DataFile			ex:exp_aa001e	
+ex:file_aa001e_log	Output log aa001e	ex:LogFile			ex:exp_aa001e	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001e.log
+						
+ex:exp_aa001f	IRC (backward) aa001f	gc:IRC	ex:file_aa001f_inp	ex:file_aa001f_dat|ex:file_aa001f_log		
+ex:file_aa001f_inp	Input file aa001f	ex:InputFile			ex:exp_aa001e	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001f.inp
+ex:file_aa001f_dat	Output data aa001f	ex:DataFile			ex:exp_aa001f	
+ex:file_aa001f_log	Output log aa001f	ex:LogFile			ex:exp_aa001f	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001f.log
+						
+ex:exp_aa001g-pcseg2	Single point aa001g-pcseg2	gc:SinglePoint	ex:file_aa001g-pcseg2_inp	ex:file_aa001g-pcseg2_dat|ex:file_aa001g-pcseg2_log		
+ex:file_aa001g-pcseg2_inp	Input file aa001g-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001g-pcseg2.inp
+ex:file_aa001g-pcseg2_dat	Output data aa001g-pcseg2	ex:DataFile			ex:exp_aa001g-pcseg2	
+ex:file_aa001g-pcseg2_log	Output log aa001g-pcseg2	ex:LogFile			ex:exp_aa001g-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001g-pcseg2.log
+						
+ex:exp_aa001g-smd-pcseg2	Single point aa001g-smd-pcseg2	gc:SinglePoint	ex:file_aa001g-smd-pcseg2_inp	ex:file_aa001g-smd-pcseg2_dat|ex:file_aa001g-smd-pcseg2_log		
+ex:file_aa001g-smd-pcseg2_inp	Input file aa001g-smd-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001g-smd-pcseg2.inp
+ex:file_aa001g-smd-pcseg2_dat	Output data aa001g-smd-pcseg2	ex:DataFile			ex:exp_aa001g-smd-pcseg2	
+ex:file_aa001g-smd-pcseg2_log	Output log aa001g-smd-pcseg2	ex:LogFile			ex:exp_aa001g-smd-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001g-smd-pcseg2.log
+						
+ex:exp_aa001g-smd	Vibrational analysis aa001g-smd	gc:VibrationalAnalysis	ex:file_aa001g-smd_inp	ex:file_aa001g-smd_dat|ex:file_aa001g-smd_log		
+ex:file_aa001g-smd_inp	Input file aa001g-smd	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001g-smd.inp
+ex:file_aa001g-smd_dat	Output data aa001g-smd	ex:DataFile			ex:exp_aa001g-smd	
+ex:file_aa001g-smd_log	Output log aa001g-smd	ex:LogFile			ex:exp_aa001g-smd	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001g-smd.log
+						
+ex:exp_aa001g	Vibrational analysis aa001g	gc:VibrationalAnalysis	ex:file_aa001g_inp	ex:file_aa001g_dat|ex:file_aa001g_log		
+ex:file_aa001g_inp	Input file aa001g	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001g.inp
+ex:file_aa001g_dat	Output data aa001g	ex:DataFile			ex:exp_aa001g	
+ex:file_aa001g_log	Output log aa001g	ex:LogFile			ex:exp_aa001g	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001g.log
+						
+ex:exp_aa001h-pcseg2	Single point aa001h-pcseg2	gc:SinglePoint	ex:file_aa001h-pcseg2_inp	ex:file_aa001h-pcseg2_dat|ex:file_aa001h-pcseg2_log		
+ex:file_aa001h-pcseg2_inp	Input file aa001h-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001h-pcseg2.inp
+ex:file_aa001h-pcseg2_dat	Output data aa001h-pcseg2	ex:DataFile			ex:exp_aa001h-pcseg2	
+ex:file_aa001h-pcseg2_log	Output log aa001h-pcseg2	ex:LogFile			ex:exp_aa001h-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001h-pcseg2.log
+						
+ex:exp_aa001h-smd-pcseg2	Single point aa001h-smd-pcseg2	gc:SinglePoint	ex:file_aa001h-smd-pcseg2_inp	ex:file_aa001h-smd-pcseg2_dat|ex:file_aa001h-smd-pcseg2_log		
+ex:file_aa001h-smd-pcseg2_inp	Input file aa001h-smd-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001h-smd-pcseg2.inp
+ex:file_aa001h-smd-pcseg2_dat	Output data aa001h-smd-pcseg2	ex:DataFile			ex:exp_aa001h-smd-pcseg2	
+ex:file_aa001h-smd-pcseg2_log	Output log aa001h-smd-pcseg2	ex:LogFile			ex:exp_aa001h-smd-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001h-smd-pcseg2.log
+						
+ex:exp_aa001h-smd	Vibrational analysis aa001h-smd	gc:VibrationalAnalysis	ex:file_aa001h-smd_inp	ex:file_aa001h-smd_dat|ex:file_aa001h-smd_log		
+ex:file_aa001h-smd_inp	Input file aa001h-smd	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001h-smd.inp
+ex:file_aa001h-smd_dat	Output data aa001h-smd	ex:DataFile			ex:exp_aa001h-smd	
+ex:file_aa001h-smd_log	Output log aa001h-smd	ex:LogFile			ex:exp_aa001h-smd	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001h-smd.log
+						
+ex:exp_aa001h	Vibrational analysis aa001h	gc:VibrationalAnalysis	ex:file_aa001h_inp	ex:file_aa001h_dat|ex:file_aa001h_log		
+ex:file_aa001h_inp	Input file aa001h	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001h.inp
+ex:file_aa001h_dat	Output data aa001h	ex:DataFile			ex:exp_aa001h	
+ex:file_aa001h_log	Output log aa001h	ex:LogFile			ex:exp_aa001h	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001h.log
+						
+ex:exp_aa002-aldehyde-bare-smd-check	Vibrational analysis aa002-aldehyde-bare-smd-check	gc:VibrationalAnalysis	ex:file_aa002-aldehyde-bare-smd-check_inp	ex:file_aa002-aldehyde-bare-smd-check_dat|ex:file_aa002-aldehyde-bare-smd-check_log		
+ex:file_aa002-aldehyde-bare-smd-check_inp	Input file aa002-aldehyde-bare-smd-check	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-aldehyde-bare-smd-check.inp
+ex:file_aa002-aldehyde-bare-smd-check_dat	Output data aa002-aldehyde-bare-smd-check	ex:DataFile			ex:exp_aa002-aldehyde-bare-smd-check	
+ex:file_aa002-aldehyde-bare-smd-check_log	Output log aa002-aldehyde-bare-smd-check	ex:LogFile			ex:exp_aa002-aldehyde-bare-smd-check	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-aldehyde-bare-smd-check.log
+						
+ex:exp_aa002-aldehyde-bare-smd-energy	Single point aa002-aldehyde-bare-smd-energy	gc:SinglePoint	ex:file_aa002-aldehyde-bare-smd-energy_inp	ex:file_aa002-aldehyde-bare-smd-energy_dat|ex:file_aa002-aldehyde-bare-smd-energy_log		
+ex:file_aa002-aldehyde-bare-smd-energy_inp	Input file aa002-aldehyde-bare-smd-energy	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-aldehyde-bare-smd-energy.inp
+ex:file_aa002-aldehyde-bare-smd-energy_dat	Output data aa002-aldehyde-bare-smd-energy	ex:DataFile			ex:exp_aa002-aldehyde-bare-smd-energy	
+ex:file_aa002-aldehyde-bare-smd-energy_log	Output log aa002-aldehyde-bare-smd-energy	ex:LogFile			ex:exp_aa002-aldehyde-bare-smd-energy	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-aldehyde-bare-smd-energy.log
+						
+ex:exp_aa002-aldehyde-bare-smd-hcore	Vibrational analysis aa002-aldehyde-bare-smd-hcore	gc:VibrationalAnalysis	ex:file_aa002-aldehyde-bare-smd-hcore_inp	ex:file_aa002-aldehyde-bare-smd-hcore_dat|ex:file_aa002-aldehyde-bare-smd-hcore_log		
+ex:file_aa002-aldehyde-bare-smd-hcore_inp	Input file aa002-aldehyde-bare-smd-hcore	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-aldehyde-bare-smd-hcore.inp
+ex:file_aa002-aldehyde-bare-smd-hcore_dat	Output data aa002-aldehyde-bare-smd-hcore	ex:DataFile			ex:exp_aa002-aldehyde-bare-smd-hcore	
+ex:file_aa002-aldehyde-bare-smd-hcore_log	Output log aa002-aldehyde-bare-smd-hcore	ex:LogFile			ex:exp_aa002-aldehyde-bare-smd-hcore	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-aldehyde-bare-smd-hcore.log
+						
+ex:exp_aa002-aldehyde-bare-smd	Vibrational analysis aa002-aldehyde-bare-smd	gc:VibrationalAnalysis	ex:file_aa002-aldehyde-bare-smd_inp	ex:file_aa002-aldehyde-bare-smd_dat|ex:file_aa002-aldehyde-bare-smd_log		
+ex:file_aa002-aldehyde-bare-smd_inp	Input file aa002-aldehyde-bare-smd	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-aldehyde-bare-smd.inp
+ex:file_aa002-aldehyde-bare-smd_dat	Output data aa002-aldehyde-bare-smd	ex:DataFile			ex:exp_aa002-aldehyde-bare-smd	
+ex:file_aa002-aldehyde-bare-smd_log	Output log aa002-aldehyde-bare-smd	ex:LogFile			ex:exp_aa002-aldehyde-bare-smd	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-aldehyde-bare-smd.log
+						
+ex:exp_aa002-aldehyde-bare	Vibrational analysis aa002-aldehyde-bare	gc:VibrationalAnalysis	ex:file_aa002-aldehyde-bare_inp	ex:file_aa002-aldehyde-bare_dat|ex:file_aa002-aldehyde-bare_log		
+ex:file_aa002-aldehyde-bare_inp	Input file aa002-aldehyde-bare	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-aldehyde-bare.inp
+ex:file_aa002-aldehyde-bare_dat	Output data aa002-aldehyde-bare	ex:DataFile			ex:exp_aa002-aldehyde-bare	
+ex:file_aa002-aldehyde-bare_log	Output log aa002-aldehyde-bare	ex:LogFile			ex:exp_aa002-aldehyde-bare	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-aldehyde-bare.log
+						
+ex:exp_aa002-aldehyde-pcseg2	Single point aa002-aldehyde-pcseg2	gc:SinglePoint	ex:file_aa002-aldehyde-pcseg2_inp	ex:file_aa002-aldehyde-pcseg2_dat|ex:file_aa002-aldehyde-pcseg2_log		
+ex:file_aa002-aldehyde-pcseg2_inp	Input file aa002-aldehyde-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-aldehyde-pcseg2.inp
+ex:file_aa002-aldehyde-pcseg2_dat	Output data aa002-aldehyde-pcseg2	ex:DataFile			ex:exp_aa002-aldehyde-pcseg2	
+ex:file_aa002-aldehyde-pcseg2_log	Output log aa002-aldehyde-pcseg2	ex:LogFile			ex:exp_aa002-aldehyde-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-aldehyde-pcseg2.log
+						
+ex:exp_aa002-hydrate-bare-smd	Vibrational analysis aa002-hydrate-bare-smd	gc:VibrationalAnalysis	ex:file_aa002-hydrate-bare-smd_inp	ex:file_aa002-hydrate-bare-smd_dat|ex:file_aa002-hydrate-bare-smd_log		
+ex:file_aa002-hydrate-bare-smd_inp	Input file aa002-hydrate-bare-smd	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-hydrate-bare-smd.inp
+ex:file_aa002-hydrate-bare-smd_dat	Output data aa002-hydrate-bare-smd	ex:DataFile			ex:exp_aa002-hydrate-bare-smd	
+ex:file_aa002-hydrate-bare-smd_log	Output log aa002-hydrate-bare-smd	ex:LogFile			ex:exp_aa002-hydrate-bare-smd	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-hydrate-bare-smd.log
+						
+ex:exp_aa002-hydrate-bare	Vibrational analysis aa002-hydrate-bare	gc:VibrationalAnalysis	ex:file_aa002-hydrate-bare_inp	ex:file_aa002-hydrate-bare_dat|ex:file_aa002-hydrate-bare_log		
+ex:file_aa002-hydrate-bare_inp	Input file aa002-hydrate-bare	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-hydrate-bare.inp
+ex:file_aa002-hydrate-bare_dat	Output data aa002-hydrate-bare	ex:DataFile			ex:exp_aa002-hydrate-bare	
+ex:file_aa002-hydrate-bare_log	Output log aa002-hydrate-bare	ex:LogFile			ex:exp_aa002-hydrate-bare	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-hydrate-bare.log
+						
+ex:exp_aa002-hydrate-pcseg2	Single point aa002-hydrate-pcseg2	gc:SinglePoint	ex:file_aa002-hydrate-pcseg2_inp	ex:file_aa002-hydrate-pcseg2_dat|ex:file_aa002-hydrate-pcseg2_log		
+ex:file_aa002-hydrate-pcseg2_inp	Input file aa002-hydrate-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-hydrate-pcseg2.inp
+ex:file_aa002-hydrate-pcseg2_dat	Output data aa002-hydrate-pcseg2	ex:DataFile			ex:exp_aa002-hydrate-pcseg2	
+ex:file_aa002-hydrate-pcseg2_log	Output log aa002-hydrate-pcseg2	ex:LogFile			ex:exp_aa002-hydrate-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-hydrate-pcseg2.log
+						
+ex:exp_aa002-water-bare-smd	Vibrational analysis aa002-water-bare-smd	gc:VibrationalAnalysis	ex:file_aa002-water-bare-smd_inp	ex:file_aa002-water-bare-smd_dat|ex:file_aa002-water-bare-smd_log		
+ex:file_aa002-water-bare-smd_inp	Input file aa002-water-bare-smd	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-water-bare-smd.inp
+ex:file_aa002-water-bare-smd_dat	Output data aa002-water-bare-smd	ex:DataFile			ex:exp_aa002-water-bare-smd	
+ex:file_aa002-water-bare-smd_log	Output log aa002-water-bare-smd	ex:LogFile			ex:exp_aa002-water-bare-smd	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-water-bare-smd.log
+						
+ex:exp_aa002-water-bare	Vibrational analysis aa002-water-bare	gc:VibrationalAnalysis	ex:file_aa002-water-bare_inp	ex:file_aa002-water-bare_dat|ex:file_aa002-water-bare_log		
+ex:file_aa002-water-bare_inp	Input file aa002-water-bare	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-water-bare.inp
+ex:file_aa002-water-bare_dat	Output data aa002-water-bare	ex:DataFile			ex:exp_aa002-water-bare	
+ex:file_aa002-water-bare_log	Output log aa002-water-bare	ex:LogFile			ex:exp_aa002-water-bare	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-water-bare.log
+						
+ex:exp_aa002-water-pcseg2	Single point aa002-water-pcseg2	gc:SinglePoint	ex:file_aa002-water-pcseg2_inp	ex:file_aa002-water-pcseg2_dat|ex:file_aa002-water-pcseg2_log		
+ex:file_aa002-water-pcseg2_inp	Input file aa002-water-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-water-pcseg2.inp
+ex:file_aa002-water-pcseg2_dat	Output data aa002-water-pcseg2	ex:DataFile			ex:exp_aa002-water-pcseg2	
+ex:file_aa002-water-pcseg2_log	Output log aa002-water-pcseg2	ex:LogFile			ex:exp_aa002-water-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-water-pcseg2.log
+						

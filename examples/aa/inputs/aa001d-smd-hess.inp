@@ -1,0 +1,49 @@
+! C2H8O3 | SMD variant: HESSIAN-ONLY precursor at the TS geometry
+! wB97X-D/6-21G+(d,p)/SMD(water)
+!
+! Step 1 of 2 for the SMD-TS refinement. Same reasoning as the original
+! aa001d/aa001c saga: RUNTYP=SADPOINT needs a real starting Hessian
+! (defaults to HESS=READ), so this computes a genuine Hessian first via a
+! standalone RUNTYP=HESSIAN calculation, matching aa001c/aa001d's own
+! precursor pattern. See aa002-aldehyde-bare-smd.inp for why SMD is being
+! tried at all.
+!
+! RUNTYP=HESSIAN does not use $STATPT/$ZMAT's search-specific settings
+! at all -- both dropped here (matching the original chloroacetaldehyde
+! TSb-hess precedent). $FORCE alone controls the Hessian computation.
+! NZVAR also dropped (defaults to 0, plain Cartesian) -- a Hessian
+! evaluation doesn't need the internal-coordinate distinction that
+! NZVAR=33 implies, and keeping it without a $ZMAT group to actually
+! define those coordinates caused "ERROR IN $ZMAT INPUT" on first
+! attempt.
+!
+! Starting geometry: the previously-converged plain-PCM aa001d saddle
+! point (NSERCH=8, SADDLE POINT LOCATED), as a reasonable starting guess
+! for the SMD-embedded Hessian.
+
+ $BASIS GBASIS=N21 NGAUSS=6 NDFUNC=1 NPFUNC=1 DIFFSP=.t. $END
+ $CONTRL SCFTYP=RHF RUNTYP=HESSIAN $END
+ $CONTRL DFTTYP=wB97X-D $END
+ $SCF DIIS=.t. DAMP=.t. $END
+ $FORCE METHOD=SEMINUM PURIFY=.t. $END
+ $PCM SOLVNT=WATER SMD=.T. $END
+ $SYSTEM MWORDS=25 MEMDDI=24 $END
+!$CONTRL EXETYP=CHECK $END
+
+ $DATA
+Acetaldehyde hydrate and water -- TS geometry, SMD Hessian precursor
+C1
+H     1.0   2.8383040249   0.5040029178  -0.2921908654
+C     6.0   2.7195772992   0.1766680895  -1.3299775402
+C     6.0   3.4364357908   1.1650469427  -2.2235497510
+O     8.0   2.8996661779   2.4141082219  -2.2920252081
+H     1.0   1.6507136153   0.1572364489  -1.5627112795
+H     1.0   3.1460834692  -0.8243873231  -1.4307614936
+O     8.0   3.3411700405   0.5059377058  -3.7780889382
+O     8.0   3.5332767452   2.7338411132  -4.5715854963
+H     1.0   2.9783735766   3.1800078251  -5.2192228080
+H     1.0   3.4301215813   1.4791823211  -4.4199126938
+H     1.0   2.4986480458   0.0492190140  -3.9119813729
+H     1.0   4.5252395008   1.1211694365  -2.1568603702
+H     1.0   3.2187800649   2.8646725340  -3.4845984226
+ $END
