@@ -131,7 +131,9 @@ process_gamess_directory <- function(input_dir, output_dir, ontology_dir,
     # (the best available signal for that), but does NOT determine
     # direction - that always comes from classify_gamess_job()'s own
     # detected FORWRD value, checked below.
-    irc_rows$candidate_base <- sub("[FfBb]\\.log$", "", basename(irc_rows$file))
+    # changed irc_rows$candidate_base <- sub("[FfBb]\\.log$", "", basename(irc_rows$file))
+    
+    irc_rows$candidate_base <- sub("[A-Za-z]\\.log$", "", basename(irc_rows$file))
 
     groups <- split(irc_rows, irc_rows$candidate_base)
 

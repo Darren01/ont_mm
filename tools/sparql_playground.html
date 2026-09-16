@@ -196,6 +196,28 @@ function escapeHtml(value) {
 // the full, real value is always kept as a hover tooltip, and a
 // link's actual target is always the real, full URL regardless of
 // which label style is showing.
+// Downloads a URL's real content as a local file, via fetch()+Blob -
+// more reliable than a plain <a download> attribute, which many
+// browsers silently ignore for cross-origin links (like GitHub's raw
+// content) and just navigate to instead of actually downloading.
+async function downloadFile(url, filename) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("HTTP " + response.status);
+    const blob = await response.blob();
+    const blobUrl = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = blobUrl;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(blobUrl);
+  } catch (err) {
+    alert("Could not download the file: " + err.message);
+  }
+}
+
 function linkifyValue(value) {
   const strValue = String(value);
   const displayText = useShortLabels ? shortLabel(strValue) : strValue;
@@ -205,8 +227,11 @@ function linkifyValue(value) {
     if (match) {
       const url = pattern.urlFor(match);
       if (url) {
+        const filename = url.split("/").pop();
         return '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener" title="' +
-          escapeHtml(strValue) + '">' + escapeHtml(displayText) + "</a>";
+          escapeHtml(strValue) + '">' + escapeHtml(displayText) + "</a>" +
+          ' <a href="#" onclick="downloadFile(\'' + escapeHtml(url) + '\', \'' + escapeHtml(filename) + '\'); return false;" ' +
+          'title="Download this file - e.g. to open directly in Jmol">⬇</a>';
       }
     }
   }
