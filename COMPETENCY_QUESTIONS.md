@@ -142,10 +142,18 @@ pattern parses as `xsd:decimal`, which won't match this project's
 `xsd:float` data as an exact term - `FILTER`'s numeric comparison
 works correctly across both, a direct triple-pattern match doesn't.
 
+A genuine gap found later, via real use: this query originally only
+ever returned `?constraint`, never the experiment the question itself
+asks for by name - the constraint's own ID happens to embed the
+experiment name as a substring, but that's not the same as actually
+returning it as its own column. Fixed here by joining back through
+`ex:hasConstraint`.
+
 ```sparql
 PREFIX ex: <http://example.org/>
 
-SELECT ?constraint WHERE {
+SELECT ?exp ?constraint WHERE {
+  ?exp ex:hasConstraint ?constraint .
   ?constraint ex:targetValue ?target .
   FILTER(?target = 1.2)
 }
