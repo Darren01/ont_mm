@@ -1,2 +1,2 @@
-ID	Label	Type	hasInputFile	hasOutputFile	wasGeneratedBy	fileURL
-ID	LABEL	TYPE	I ex:hasInputFile	I ex:hasOutputFile SPLIT=|	I prov:wasGeneratedBy	A ex:fileURL
+ID	Label	Type	hasInputFile	hasOutputFile	wasGeneratedBy	fileURL	hasMethod	hasBasisSet	hasSolvent	hasSolvationModel	hasRuntyp	hasHssend
+ID	LABEL	TYPE	I ex:hasInputFile	I ex:hasOutputFile SPLIT=|	I prov:wasGeneratedBy	A ex:fileURL	A gc:hasMethod	A gc:hasBasisSet	A ex:hasSolvent	A ex:hasSolvationModel	A ex:hasRuntyp	AT ex:hasHssend^^xsd:boolean

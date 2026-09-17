@@ -97,6 +97,28 @@ process_experiments <- function(
     # a geometry optimisation
     classification <- classify_gamess_job(file)
 
+    # Level of theory: method, basis set, solvent, and solvation model
+    # as separate, structured fields for the graph itself (gc:hasMethod
+    # etc), rather than only ever existing as a human-readable summary
+    # string. Plus the raw RUNTYP/HSSEND classify_gamess_job() already
+    # computes above - genuinely available all along, just never
+    # written into the graph until now.
+    #
+    # Deliberately reads the .log file here, NOT the .inp file the
+    # main loop variable itself points to: extract_level_of_theory_parts()
+    # specifically looks for "INPUT CARD>" lines (GAMESS's own echo of
+    # the input in its output), which only exist in the .log file -
+    # confirmed directly: calling it with the raw .inp instead silently
+    # returns NA for method/solvent/solvation_model (only basis_set
+    # happens to still work, via a different parsing path).
+    log_file_for_lot <- file.path(output_dir, paste0(name, ".log"))
+    lot <- if (file.exists(log_file_for_lot)) {
+      extract_level_of_theory_parts(log_file_for_lot)
+    } else {
+      list(method = NA, basis_set = NA, solvent = NA, solvation_model = NA)
+    }
+    hssend_str <- if (is.na(classification$hssend)) "" else tolower(as.character(classification$hssend))
+
     job_label <- switch(
       classification$job_type,
       "GeometryOptimization" = "Geometry optimisation",
@@ -132,7 +154,13 @@ process_experiments <- function(
       input_id,
       paste(data_id, log_id, sep = "|"),
       "",
-      ""
+      "",
+      lot$method,
+      lot$basis_set,
+      lot$solvent,
+      lot$solvation_model,
+      classification$runtyp,
+      hssend_str
     )
     idx <- idx + 1
     
