@@ -78,9 +78,10 @@ ORDER BY ?exp
 PREFIX ex: <http://example.org/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 
-SELECT ?output WHERE {
+SELECT ?output ?type WHERE {
   ?exp ex:hasInputFile ex:file_caa001a_inp .
   ?output prov:wasGeneratedBy ?exp .
+  ?output a ?type .
 }
 ```
 
@@ -90,6 +91,15 @@ any other experiment's own input file URI (e.g.
 different run. This is the real, general answer to "where did this
 output actually come from?" for any experiment in the graph, not just
 the one shown here.
+
+**A genuine, real result worth understanding, not a bug**: this can
+correctly return a *later* experiment's own input file, not just this
+run's own log/data files - `caa001b`'s input, for instance, is
+genuinely `prov:wasGeneratedBy caa001a`, since its starting geometry
+was itself built from `caa001a`'s result, as part of the same
+iterative optimisation sequence. `?type` is included specifically so
+this distinction is visible directly in the results, rather than
+looking like an error.
 
 ## 4. What geometric constraints were applied in a given experiment, and what were their target values and units?
 
