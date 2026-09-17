@@ -82,6 +82,7 @@ SELECT ?output ?type WHERE {
   ?exp ex:hasInputFile ex:file_caa001a_inp .
   ?output prov:wasGeneratedBy ?exp .
   ?output a ?type .
+  FILTER(?type != <http://www.w3.org/2002/07/owl#NamedIndividual>)
 }
 ```
 
@@ -100,6 +101,13 @@ was itself built from `caa001a`'s result, as part of the same
 iterative optimisation sequence. `?type` is included specifically so
 this distinction is visible directly in the results, rather than
 looking like an error.
+
+**A second, separate real finding**: every individual in this graph
+genuinely has *two* `rdf:type` triples - `owl:NamedIndividual` (added
+automatically by `robot` to every instance) alongside its own, actual
+class. A plain `?output a ?type` therefore doubles every row rather
+than erroring - not a bug, just uninformative duplication, filtered
+out above since `owl:NamedIndividual` never distinguishes anything.
 
 ## 4. What geometric constraints were applied in a given experiment, and what were their target values and units?
 

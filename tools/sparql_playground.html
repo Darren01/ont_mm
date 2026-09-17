@@ -92,6 +92,7 @@ const DATASETS = {
   ?exp ex:hasInputFile ex:file_caa001a_inp .
   ?output prov:wasGeneratedBy ?exp .
   ?output a ?type .
+  FILTER(?type != owl:NamedIndividual)
 }`
       }
     ]
@@ -119,6 +120,7 @@ const DATASETS = {
   ?exp ex:hasInputFile ex:file_aa001a_inp .
   ?output prov:wasGeneratedBy ?exp .
   ?output a ?type .
+  FILTER(?type != owl:NamedIndividual)
 }`
       }
     ]
@@ -146,6 +148,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
 `,
 
   // Each example needs a short label (for its button), a one-line
@@ -516,6 +519,21 @@ function runQuery() {
           if (op === ">=") return val >= num;
           if (op === "=") return val === num;
           return false;
+        });
+        return "";
+      });
+
+    // FILTER(?var != value) against a URI or prefixed name - e.g.
+    // excluding owl:NamedIndividual, which robot adds to every real
+    // instance alongside its actual, specific class, so a plain
+    // "?x a ?type" genuinely returns both and needs this to show only
+    // the meaningful one. Strips a wrapping <...> if given a full URI
+    // directly, then reuses expandPrefixed() the same way IN() does.
+    queryText = queryText.replace(/FILTER\s*\(\s*\?(\w+)\s*!=\s*(\S+?)\s*\)/gi,
+      function (whole, varName, rawValue) {
+        const expanded = expandPrefixed(rawValue.replace(/^<|>$/g, ""));
+        manualFilters.push(function (row) {
+          return row[varName] !== expanded;
         });
         return "";
       });
