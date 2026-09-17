@@ -92,13 +92,6 @@ const DATASETS = {
   ?exp ex:hasInputFile ex:file_caa001a_inp .
   ?output prov:wasGeneratedBy ?exp .
 }`
-      },
-      {
-        label: "Linked to a published paper",
-        description: "Which experiment is linked to a specific DOI - a real literature cross-reference, not just internal notes.",
-        query: `SELECT ?exp WHERE {
-  ?exp dcterms:relation <https://doi.org/10.1021/ja00249a034> .
-}`
       }
     ]
   },
@@ -111,11 +104,12 @@ const DATASETS = {
       '<a href="https://github.com/Darren01/ont_mm/tree/main/examples/aa">the aa example</a>).',
     graphUrl: "https://raw.githubusercontent.com/Darren01/ont_mm/main/examples/aa/ont/aa_graph_20260909.ttl",
     outputsPath: "examples/aa/outputs/",
-    // No literature-link example here: aa's own literature reference
-    // (Sorensen & Jencks 1987, cited in its README) isn't yet wired
-    // into the graph as a real dcterms:relation - unlike caa's, this
-    // would currently return nothing, so it's left out rather than
-    // shown broken.
+    // aa's own literature reference (Sorensen & Jencks 1987, cited in
+    // its README) isn't yet wired into the graph as a real
+    // dcterms:relation - so the shared "Linked to a published paper"
+    // example above will honestly return zero results here. That's a
+    // real, correct finding, not an error - not worth a separate
+    // dataset-specific example on its own.
     datasetExamples: [
       {
         label: "Provenance: trace a file",
@@ -148,6 +142,7 @@ PREFIX ex: <http://example.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 `,
 
   // Each example needs a short label (for its button), a one-line
@@ -200,6 +195,13 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
   OPTIONAL { ?energies gc:hasEntropy ?entropy . ?entropy gc:hasFloatValue ?entropyVal . }
   OPTIONAL { ?energies gc:hasGibbsFreeEnergy ?gibbs . ?gibbs gc:hasFloatValue ?gibbsVal . }
   OPTIONAL { ?energies gc:hasElectronicEnergy ?elec . ?elec gc:hasFloatValue ?electronicVal . }
+}`
+    },
+    {
+      label: "Linked to a published paper",
+      description: "Which experiment is linked to a specific DOI - a real literature cross-reference, not just internal notes. An honest \"no results\" here is itself a real finding for a dataset with no link recorded yet, not an error.",
+      query: `SELECT ?exp WHERE {
+  ?exp dcterms:relation <https://doi.org/10.1021/ja00249a034> .
 }`
     }
   ],
