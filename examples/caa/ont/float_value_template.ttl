@@ -4970,6 +4970,14 @@ rdfs:Class rdf:type owl:Class .
                                          rdfs:label "Enthalpy caa005bTSa" .
 
 
+###  http://example.org/enthalpy_caa005bTSb-hess
+<http://example.org/enthalpy_caa005bTSb-hess> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/FloatValue> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                              <http://purl.org/gc/hasFloatValue> "265.379"^^xsd:float ;
+                                              rdfs:label "Enthalpy caa005bTSb-hess" .
+
+
 ###  http://example.org/enthalpy_caa007b
 <http://example.org/enthalpy_caa007b> rdf:type owl:NamedIndividual ,
                                                <http://purl.org/gc/FloatValue> ;
@@ -5216,6 +5224,14 @@ rdfs:Class rdf:type owl:Class .
                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/joulePerMoleKelvin> ;
                                         <http://purl.org/gc/hasFloatValue> "351.008"^^xsd:float ;
                                         rdfs:label "Entropy caa005bTSa" .
+
+
+###  http://example.org/entropy_caa005bTSb-hess
+<http://example.org/entropy_caa005bTSb-hess> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FloatValue> ;
+                                             <http://purl.org/gc/hasUnit> <http://purl.org/gc/joulePerMoleKelvin> ;
+                                             <http://purl.org/gc/hasFloatValue> "346.183"^^xsd:float ;
+                                             rdfs:label "Entropy caa005bTSb-hess" .
 
 
 ###  http://example.org/entropy_caa007b
@@ -9486,7 +9502,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/freqval_caa004e_3> rdf:type owl:NamedIndividual ,
                                                 <http://purl.org/gc/FloatValue> ;
                                        <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
-                                       <http://purl.org/gc/hasFloatValue> "0.23"^^xsd:float ;
+                                       <http://purl.org/gc/hasFloatValue> "0.24"^^xsd:float ;
                                        rdfs:label "Frequency mode 3 caa004e" .
 
 
@@ -9574,7 +9590,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/freqval_caa004e_4> rdf:type owl:NamedIndividual ,
                                                 <http://purl.org/gc/FloatValue> ;
                                        <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
-                                       <http://purl.org/gc/hasFloatValue> "0.11"^^xsd:float ;
+                                       <http://purl.org/gc/hasFloatValue> "0.1"^^xsd:float ;
                                        rdfs:label "Frequency mode 4 caa004e" .
 
 
@@ -13362,6 +13378,318 @@ rdfs:Class rdf:type owl:Class .
                                           rdfs:label "Frequency mode 9 caa005bTSa" .
 
 
+###  http://example.org/freqval_caa005bTSb-hess_1
+<http://example.org/freqval_caa005bTSb-hess_1> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                               <http://purl.org/gc/hasFloatValue> "-1259.25"^^xsd:float ;
+                                               rdfs:label "Frequency mode 1 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_10
+<http://example.org/freqval_caa005bTSb-hess_10> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "153.47"^^xsd:float ;
+                                                rdfs:label "Frequency mode 10 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_11
+<http://example.org/freqval_caa005bTSb-hess_11> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "204.74"^^xsd:float ;
+                                                rdfs:label "Frequency mode 11 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_12
+<http://example.org/freqval_caa005bTSb-hess_12> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "295.77"^^xsd:float ;
+                                                rdfs:label "Frequency mode 12 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_13
+<http://example.org/freqval_caa005bTSb-hess_13> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "332.11"^^xsd:float ;
+                                                rdfs:label "Frequency mode 13 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_14
+<http://example.org/freqval_caa005bTSb-hess_14> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "493.24"^^xsd:float ;
+                                                rdfs:label "Frequency mode 14 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_15
+<http://example.org/freqval_caa005bTSb-hess_15> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "512.71"^^xsd:float ;
+                                                rdfs:label "Frequency mode 15 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_16
+<http://example.org/freqval_caa005bTSb-hess_16> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "541.16"^^xsd:float ;
+                                                rdfs:label "Frequency mode 16 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_17
+<http://example.org/freqval_caa005bTSb-hess_17> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "608.84"^^xsd:float ;
+                                                rdfs:label "Frequency mode 17 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_18
+<http://example.org/freqval_caa005bTSb-hess_18> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "632.48"^^xsd:float ;
+                                                rdfs:label "Frequency mode 18 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_19
+<http://example.org/freqval_caa005bTSb-hess_19> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "680.08"^^xsd:float ;
+                                                rdfs:label "Frequency mode 19 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_2
+<http://example.org/freqval_caa005bTSb-hess_2> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.0"^^xsd:float ;
+                                               rdfs:label "Frequency mode 2 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_20
+<http://example.org/freqval_caa005bTSb-hess_20> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "743.84"^^xsd:float ;
+                                                rdfs:label "Frequency mode 20 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_21
+<http://example.org/freqval_caa005bTSb-hess_21> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "797.64"^^xsd:float ;
+                                                rdfs:label "Frequency mode 21 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_22
+<http://example.org/freqval_caa005bTSb-hess_22> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "909.16"^^xsd:float ;
+                                                rdfs:label "Frequency mode 22 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_23
+<http://example.org/freqval_caa005bTSb-hess_23> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "977.0"^^xsd:float ;
+                                                rdfs:label "Frequency mode 23 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_24
+<http://example.org/freqval_caa005bTSb-hess_24> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "1055.57"^^xsd:float ;
+                                                rdfs:label "Frequency mode 24 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_25
+<http://example.org/freqval_caa005bTSb-hess_25> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "1103.01"^^xsd:float ;
+                                                rdfs:label "Frequency mode 25 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_26
+<http://example.org/freqval_caa005bTSb-hess_26> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "1196.38"^^xsd:float ;
+                                                rdfs:label "Frequency mode 26 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_27
+<http://example.org/freqval_caa005bTSb-hess_27> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "1249.65"^^xsd:float ;
+                                                rdfs:label "Frequency mode 27 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_28
+<http://example.org/freqval_caa005bTSb-hess_28> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "1302.31"^^xsd:float ;
+                                                rdfs:label "Frequency mode 28 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_29
+<http://example.org/freqval_caa005bTSb-hess_29> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "1356.97"^^xsd:float ;
+                                                rdfs:label "Frequency mode 29 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_3
+<http://example.org/freqval_caa005bTSb-hess_3> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.0"^^xsd:float ;
+                                               rdfs:label "Frequency mode 3 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_30
+<http://example.org/freqval_caa005bTSb-hess_30> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "1393.95"^^xsd:float ;
+                                                rdfs:label "Frequency mode 30 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_31
+<http://example.org/freqval_caa005bTSb-hess_31> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "1454.4"^^xsd:float ;
+                                                rdfs:label "Frequency mode 31 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_32
+<http://example.org/freqval_caa005bTSb-hess_32> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "1474.11"^^xsd:float ;
+                                                rdfs:label "Frequency mode 32 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_33
+<http://example.org/freqval_caa005bTSb-hess_33> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "1829.44"^^xsd:float ;
+                                                rdfs:label "Frequency mode 33 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_34
+<http://example.org/freqval_caa005bTSb-hess_34> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "2250.67"^^xsd:float ;
+                                                rdfs:label "Frequency mode 34 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_35
+<http://example.org/freqval_caa005bTSb-hess_35> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "3045.54"^^xsd:float ;
+                                                rdfs:label "Frequency mode 35 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_36
+<http://example.org/freqval_caa005bTSb-hess_36> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "3158.01"^^xsd:float ;
+                                                rdfs:label "Frequency mode 36 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_37
+<http://example.org/freqval_caa005bTSb-hess_37> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "3255.67"^^xsd:float ;
+                                                rdfs:label "Frequency mode 37 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_38
+<http://example.org/freqval_caa005bTSb-hess_38> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "3839.46"^^xsd:float ;
+                                                rdfs:label "Frequency mode 38 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_39
+<http://example.org/freqval_caa005bTSb-hess_39> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "3922.0"^^xsd:float ;
+                                                rdfs:label "Frequency mode 39 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_4
+<http://example.org/freqval_caa005bTSb-hess_4> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.0"^^xsd:float ;
+                                               rdfs:label "Frequency mode 4 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_5
+<http://example.org/freqval_caa005bTSb-hess_5> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.0"^^xsd:float ;
+                                               rdfs:label "Frequency mode 5 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_6
+<http://example.org/freqval_caa005bTSb-hess_6> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.0"^^xsd:float ;
+                                               rdfs:label "Frequency mode 6 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_7
+<http://example.org/freqval_caa005bTSb-hess_7> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.0"^^xsd:float ;
+                                               rdfs:label "Frequency mode 7 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_8
+<http://example.org/freqval_caa005bTSb-hess_8> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.0"^^xsd:float ;
+                                               rdfs:label "Frequency mode 8 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_9
+<http://example.org/freqval_caa005bTSb-hess_9> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                               <http://purl.org/gc/hasFloatValue> "123.74"^^xsd:float ;
+                                               rdfs:label "Frequency mode 9 caa005bTSb-hess" .
+
+
 ###  http://example.org/freqval_caa005b_1
 <http://example.org/freqval_caa005b_1> rdf:type owl:NamedIndividual ,
                                                 <http://purl.org/gc/FloatValue> ;
@@ -14680,6 +15008,14 @@ rdfs:Class rdf:type owl:Class .
                                       <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
                                       <http://purl.org/gc/hasFloatValue> "170.217"^^xsd:float ;
                                       rdfs:label "Gibbs free energy caa005bTSa" .
+
+
+###  http://example.org/gibbs_caa005bTSb-hess
+<http://example.org/gibbs_caa005bTSb-hess> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                           <http://purl.org/gc/hasFloatValue> "162.165"^^xsd:float ;
+                                           rdfs:label "Gibbs free energy caa005bTSb-hess" .
 
 
 ###  http://example.org/gibbs_caa007b
@@ -19054,7 +19390,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/intval_caa004e_6> rdf:type owl:NamedIndividual ,
                                                <http://purl.org/gc/FloatValue> ;
                                       <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
-                                      <http://purl.org/gc/hasFloatValue> "0.05498"^^xsd:float ;
+                                      <http://purl.org/gc/hasFloatValue> "0.05497"^^xsd:float ;
                                       rdfs:label "IR intensity mode 6 caa004e" .
 
 
@@ -22826,6 +23162,318 @@ rdfs:Class rdf:type owl:Class .
                                          rdfs:label "IR intensity mode 9 caa005bTSa" .
 
 
+###  http://example.org/intval_caa005bTSb-hess_1
+<http://example.org/intval_caa005bTSb-hess_1> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/FloatValue> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                              <http://purl.org/gc/hasFloatValue> "15.71907"^^xsd:float ;
+                                              rdfs:label "IR intensity mode 1 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_10
+<http://example.org/intval_caa005bTSb-hess_10> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.06332"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 10 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_11
+<http://example.org/intval_caa005bTSb-hess_11> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.55458"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 11 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_12
+<http://example.org/intval_caa005bTSb-hess_12> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.79916"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 12 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_13
+<http://example.org/intval_caa005bTSb-hess_13> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "3.41987"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 13 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_14
+<http://example.org/intval_caa005bTSb-hess_14> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.78512"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 14 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_15
+<http://example.org/intval_caa005bTSb-hess_15> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "4.43696"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 15 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_16
+<http://example.org/intval_caa005bTSb-hess_16> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "13.75722"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 16 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_17
+<http://example.org/intval_caa005bTSb-hess_17> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "5.95893"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 17 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_18
+<http://example.org/intval_caa005bTSb-hess_18> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "3.13954"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 18 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_19
+<http://example.org/intval_caa005bTSb-hess_19> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "12.54137"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 19 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_2
+<http://example.org/intval_caa005bTSb-hess_2> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/FloatValue> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                              <http://purl.org/gc/hasFloatValue> "0.08223"^^xsd:float ;
+                                              rdfs:label "IR intensity mode 2 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_20
+<http://example.org/intval_caa005bTSb-hess_20> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "10.43672"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 20 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_21
+<http://example.org/intval_caa005bTSb-hess_21> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "3.2616"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 21 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_22
+<http://example.org/intval_caa005bTSb-hess_22> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.27979"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 22 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_23
+<http://example.org/intval_caa005bTSb-hess_23> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.01417"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 23 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_24
+<http://example.org/intval_caa005bTSb-hess_24> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "18.93766"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 24 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_25
+<http://example.org/intval_caa005bTSb-hess_25> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "12.51592"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 25 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_26
+<http://example.org/intval_caa005bTSb-hess_26> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "1.42709"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 26 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_27
+<http://example.org/intval_caa005bTSb-hess_27> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "4.83139"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 27 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_28
+<http://example.org/intval_caa005bTSb-hess_28> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.33647"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 28 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_29
+<http://example.org/intval_caa005bTSb-hess_29> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "1.48292"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 29 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_3
+<http://example.org/intval_caa005bTSb-hess_3> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/FloatValue> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                              <http://purl.org/gc/hasFloatValue> "0.09234"^^xsd:float ;
+                                              rdfs:label "IR intensity mode 3 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_30
+<http://example.org/intval_caa005bTSb-hess_30> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "17.48383"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 30 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_31
+<http://example.org/intval_caa005bTSb-hess_31> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "6.24032"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 31 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_32
+<http://example.org/intval_caa005bTSb-hess_32> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "19.13392"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 32 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_33
+<http://example.org/intval_caa005bTSb-hess_33> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "4.62118"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 33 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_34
+<http://example.org/intval_caa005bTSb-hess_34> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "36.14748"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 34 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_35
+<http://example.org/intval_caa005bTSb-hess_35> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "1.01084"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 35 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_36
+<http://example.org/intval_caa005bTSb-hess_36> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.27772"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 36 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_37
+<http://example.org/intval_caa005bTSb-hess_37> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.00691"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 37 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_38
+<http://example.org/intval_caa005bTSb-hess_38> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "2.72401"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 38 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_39
+<http://example.org/intval_caa005bTSb-hess_39> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "4.45158"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 39 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_4
+<http://example.org/intval_caa005bTSb-hess_4> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/FloatValue> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                              <http://purl.org/gc/hasFloatValue> "0.47455"^^xsd:float ;
+                                              rdfs:label "IR intensity mode 4 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_5
+<http://example.org/intval_caa005bTSb-hess_5> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/FloatValue> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                              <http://purl.org/gc/hasFloatValue> "1.57282"^^xsd:float ;
+                                              rdfs:label "IR intensity mode 5 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_6
+<http://example.org/intval_caa005bTSb-hess_6> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/FloatValue> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                              <http://purl.org/gc/hasFloatValue> "4.86707"^^xsd:float ;
+                                              rdfs:label "IR intensity mode 6 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_7
+<http://example.org/intval_caa005bTSb-hess_7> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/FloatValue> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                              <http://purl.org/gc/hasFloatValue> "1.05895"^^xsd:float ;
+                                              rdfs:label "IR intensity mode 7 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_8
+<http://example.org/intval_caa005bTSb-hess_8> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/FloatValue> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                              <http://purl.org/gc/hasFloatValue> "0.02156"^^xsd:float ;
+                                              rdfs:label "IR intensity mode 8 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_9
+<http://example.org/intval_caa005bTSb-hess_9> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/FloatValue> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                              <http://purl.org/gc/hasFloatValue> "0.11637"^^xsd:float ;
+                                              rdfs:label "IR intensity mode 9 caa005bTSb-hess" .
+
+
 ###  http://example.org/intval_caa005b_1
 <http://example.org/intval_caa005b_1> rdf:type owl:NamedIndividual ,
                                                <http://purl.org/gc/FloatValue> ;
@@ -26456,6 +27104,14 @@ rdfs:Class rdf:type owl:Class .
                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
                                     <http://purl.org/gc/hasFloatValue> "0.096648"^^xsd:float ;
                                     rdfs:label "Zero-point energy caa005bTSa" .
+
+
+###  http://example.org/zpe_caa005bTSb-hess
+<http://example.org/zpe_caa005bTSb-hess> rdf:type owl:NamedIndividual ,
+                                                  <http://purl.org/gc/FloatValue> ;
+                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                         <http://purl.org/gc/hasFloatValue> "0.093161"^^xsd:float ;
+                                         rdfs:label "Zero-point energy caa005bTSb-hess" .
 
 
 ###  http://example.org/zpe_caa007b

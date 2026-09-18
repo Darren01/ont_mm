@@ -49,6 +49,22 @@
 <http://example.org/fileURL> rdf:type owl:AnnotationProperty .
 
 
+###  http://example.org/hasHssend
+<http://example.org/hasHssend> rdf:type owl:AnnotationProperty .
+
+
+###  http://example.org/hasRuntyp
+<http://example.org/hasRuntyp> rdf:type owl:AnnotationProperty .
+
+
+###  http://example.org/hasSolvationModel
+<http://example.org/hasSolvationModel> rdf:type owl:AnnotationProperty .
+
+
+###  http://example.org/hasSolvent
+<http://example.org/hasSolvent> rdf:type owl:AnnotationProperty .
+
+
 ###  http://example.org/targetValue
 <http://example.org/targetValue> rdf:type owl:AnnotationProperty .
 
@@ -5725,6 +5741,16 @@ rdfs:Class rdf:type owl:Class .
                                          rdfs:label "System energies caa005bTSa" .
 
 
+###  http://example.org/energies_caa005bTSb-hess
+<http://example.org/energies_caa005bTSb-hess> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/SystemEnergies> ;
+                                              <http://purl.org/gc/hasEnthalpy> <http://example.org/enthalpy_caa005bTSb-hess> ;
+                                              <http://purl.org/gc/hasEntropy> <http://example.org/entropy_caa005bTSb-hess> ;
+                                              <http://purl.org/gc/hasGibbsFreeEnergy> <http://example.org/gibbs_caa005bTSb-hess> ;
+                                              <http://purl.org/gc/hasZeroPointEnergy> <http://example.org/zpe_caa005bTSb-hess> ;
+                                              rdfs:label "System energies caa005bTSb-hess" .
+
+
 ###  http://example.org/energies_caa005bTSb-pcseg2
 <http://example.org/energies_caa005bTSb-pcseg2> rdf:type owl:NamedIndividual ,
                                                          <http://purl.org/gc/SystemEnergies> ;
@@ -6044,6 +6070,14 @@ rdfs:Class rdf:type owl:Class .
                                          rdfs:label "Enthalpy caa005bTSa" .
 
 
+###  http://example.org/enthalpy_caa005bTSb-hess
+<http://example.org/enthalpy_caa005bTSb-hess> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/FloatValue> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                              <http://purl.org/gc/hasFloatValue> "265.379"^^xsd:float ;
+                                              rdfs:label "Enthalpy caa005bTSb-hess" .
+
+
 ###  http://example.org/enthalpy_caa007b
 <http://example.org/enthalpy_caa007b> rdf:type owl:NamedIndividual ,
                                                <http://purl.org/gc/FloatValue> ;
@@ -6292,6 +6326,14 @@ rdfs:Class rdf:type owl:Class .
                                         rdfs:label "Entropy caa005bTSa" .
 
 
+###  http://example.org/entropy_caa005bTSb-hess
+<http://example.org/entropy_caa005bTSb-hess> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FloatValue> ;
+                                             <http://purl.org/gc/hasUnit> <http://purl.org/gc/joulePerMoleKelvin> ;
+                                             <http://purl.org/gc/hasFloatValue> "346.183"^^xsd:float ;
+                                             rdfs:label "Entropy caa005bTSb-hess" .
+
+
 ###  http://example.org/entropy_caa007b
 <http://example.org/entropy_caa007b> rdf:type owl:NamedIndividual ,
                                               <http://purl.org/gc/FloatValue> ;
@@ -6330,6 +6372,9 @@ rdfs:Class rdf:type owl:Class .
                                 <http://example.org/hasInputFile> <http://example.org/file_caa001_inp> ;
                                 <http://example.org/hasOutputFile> <http://example.org/file_caa001_dat> ,
                                                                    <http://example.org/file_caa001_log> ;
+                                <http://purl.org/gc/hasBasisSet> "AM1" ;
+                                <http://purl.org/gc/hasMethod> "RHF" ;
+                                <http://example.org/hasRuntyp> "OPTIMIZE" ;
                                 rdfs:label "Geometry optimisation caa001" .
 
 
@@ -6345,6 +6390,12 @@ rdfs:Class rdf:type owl:Class .
                                                                     <http://example.org/file_caa001a_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa001a> ,
                                                                 <http://example.org/spectrum_caa001a> ;
+                                 <http://purl.org/gc/hasBasisSet> "AM1" ;
+                                 <http://purl.org/gc/hasMethod> "RHF" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Experiment caa001a" ,
                                             "Vibrational analysis caa001a" .
 
@@ -6361,6 +6412,12 @@ rdfs:Class rdf:type owl:Class .
                                                                     <http://example.org/file_caa001b_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa001b> ,
                                                                 <http://example.org/spectrum_caa001b> ;
+                                 <http://purl.org/gc/hasBasisSet> "AM1" ;
+                                 <http://purl.org/gc/hasMethod> "RHF" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Experiment caa001b" ,
                                             "Vibrational analysis caa001b" ;
                                  <http://www.w3.org/2004/02/skos/core#editorialNote> "AM1 code didn't adjust the internal constraints" .
@@ -6377,6 +6434,12 @@ rdfs:Class rdf:type owl:Class .
                                                                    <http://example.org/file_caa002_log> ;
                                 <http://purl.org/gc/hasResult> <http://example.org/energies_caa002> ,
                                                                <http://example.org/spectrum_caa002> ;
+                                <http://purl.org/gc/hasBasisSet> "3-21G" ;
+                                <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                <http://example.org/hasSolvationModel> "PCM" ;
+                                <http://example.org/hasSolvent> "water" ;
                                 rdfs:label "Experiment caa002" ,
                                            "Vibrational analysis caa002" .
 
@@ -6393,6 +6456,12 @@ rdfs:Class rdf:type owl:Class .
                                                                     <http://example.org/file_caa002a_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa002a> ,
                                                                 <http://example.org/spectrum_caa002a> ;
+                                 <http://purl.org/gc/hasBasisSet> "3-21G" ;
+                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Experiment caa002a" ,
                                             "Vibrational analysis caa002a" .
 
@@ -6409,6 +6478,12 @@ rdfs:Class rdf:type owl:Class .
                                                                     <http://example.org/file_caa002b_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa002b> ,
                                                                 <http://example.org/spectrum_caa002b> ;
+                                 <http://purl.org/gc/hasBasisSet> "3-21G" ;
+                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Experiment caa002b" ,
                                             "Vibrational analysis caa002b" ;
                                  <http://www.w3.org/2004/02/skos/core#editorialNote> "initial runs where 8,3 distance at 2A was too quick and broke up the molecule" .
@@ -6424,6 +6499,12 @@ rdfs:Class rdf:type owl:Class .
                                  <http://example.org/hasInputFile> <http://example.org/file_caa002c_inp> ;
                                  <http://example.org/hasOutputFile> <http://example.org/file_caa002c_dat> ,
                                                                     <http://example.org/file_caa002c_log> ;
+                                 <http://purl.org/gc/hasBasisSet> "3-21G" ;
+                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Experiment caa002c" ,
                                             "Vibrational analysis caa002c" .
 
@@ -6438,6 +6519,12 @@ rdfs:Class rdf:type owl:Class .
                                  <http://example.org/hasInputFile> <http://example.org/file_caa002d_inp> ;
                                  <http://example.org/hasOutputFile> <http://example.org/file_caa002d_dat> ,
                                                                     <http://example.org/file_caa002d_log> ;
+                                 <http://purl.org/gc/hasBasisSet> "3-21G" ;
+                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Experiment caa002d" ,
                                             "Vibrational analysis caa002d" ;
                                  <http://www.w3.org/2004/02/skos/core#editorialNote> "the run showed that the constraints applied destroyed the molecular geometry." .
@@ -6451,6 +6538,12 @@ rdfs:Class rdf:type owl:Class .
                                  <http://example.org/hasInputFile> <http://example.org/file_caa002e_inp> ;
                                  <http://example.org/hasOutputFile> <http://example.org/file_caa002e_dat> ,
                                                                     <http://example.org/file_caa002e_log> ;
+                                 <http://purl.org/gc/hasBasisSet> "3-21G" ;
+                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Experiment caa002e" ,
                                             "Vibrational analysis caa002e" ;
                                  <http://www.w3.org/2004/02/skos/core#editorialNote> "the run showed that the constraints applied destroyed the molecular geometry." .
@@ -6466,6 +6559,12 @@ rdfs:Class rdf:type owl:Class .
                                                                     <http://example.org/file_caa003a_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa003a> ,
                                                                 <http://example.org/spectrum_caa003a> ;
+                                 <http://purl.org/gc/hasBasisSet> "3-21G" ;
+                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Experiment caa003a" ,
                                             "Vibrational analysis caa003a" .
 
@@ -6480,6 +6579,12 @@ rdfs:Class rdf:type owl:Class .
                                                                     <http://example.org/file_caa003b_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa003b> ,
                                                                 <http://example.org/spectrum_caa003b> ;
+                                 <http://purl.org/gc/hasBasisSet> "3-21G" ;
+                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Experiment caa003b" ,
                                             "Vibrational analysis caa003b" .
 
@@ -6494,6 +6599,12 @@ rdfs:Class rdf:type owl:Class .
                                                                     <http://example.org/file_caa003c_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa003c> ,
                                                                 <http://example.org/spectrum_caa003c> ;
+                                 <http://purl.org/gc/hasBasisSet> "3-21G" ;
+                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Experiment caa003c" ,
                                             "Vibrational analysis caa003c" .
 
@@ -6508,6 +6619,12 @@ rdfs:Class rdf:type owl:Class .
                                                                     <http://example.org/file_caa003d_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa003d> ,
                                                                 <http://example.org/spectrum_caa003d> ;
+                                 <http://purl.org/gc/hasBasisSet> "3-21G" ;
+                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Experiment caa003d" ,
                                             "Vibrational analysis caa003d" .
 
@@ -6522,6 +6639,12 @@ rdfs:Class rdf:type owl:Class .
                                  <http://purl.org/dc/terms/relation> <https://doi.org/10.1021/ja00249a034> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa004a> ,
                                                                 <http://example.org/spectrum_caa004a> ;
+                                 <http://purl.org/gc/hasBasisSet> "3-21G" ;
+                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Vibrational analysis caa004a" ;
                                  <http://www.w3.org/2004/02/skos/core#editorialNote> "starting from the hydrate with a view to stretching one of the CO bonds." .
 
@@ -6536,6 +6659,12 @@ rdfs:Class rdf:type owl:Class .
                                                                     <http://example.org/file_caa004b_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa004b> ,
                                                                 <http://example.org/spectrum_caa004b> ;
+                                 <http://purl.org/gc/hasBasisSet> "3-21G" ;
+                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Experiment caa004b" ,
                                             "Vibrational analysis caa004b" .
 
@@ -6551,6 +6680,12 @@ rdfs:Class rdf:type owl:Class .
                                                                     <http://example.org/file_caa004c_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa004c> ,
                                                                 <http://example.org/spectrum_caa004c> ;
+                                 <http://purl.org/gc/hasBasisSet> "3-21G" ;
+                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Experiment caa004c" ,
                                             "Vibrational analysis caa004c" .
 
@@ -6566,6 +6701,12 @@ rdfs:Class rdf:type owl:Class .
                                                                     <http://example.org/file_caa004d_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa004d> ,
                                                                 <http://example.org/spectrum_caa004d> ;
+                                 <http://purl.org/gc/hasBasisSet> "3-21G" ;
+                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Experiment caa004d" ,
                                             "Vibrational analysis caa004d" .
 
@@ -6582,6 +6723,12 @@ rdfs:Class rdf:type owl:Class .
                                                                     <http://example.org/file_caa004e_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa004e> ,
                                                                 <http://example.org/spectrum_caa004e> ;
+                                 <http://purl.org/gc/hasBasisSet> "3-21G" ;
+                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Experiment caa004e" ,
                                             "Vibrational analysis caa004e" .
 
@@ -6598,6 +6745,12 @@ rdfs:Class rdf:type owl:Class .
                                                                     <http://example.org/file_caa004f_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa004f> ,
                                                                 <http://example.org/spectrum_caa004f> ;
+                                 <http://purl.org/gc/hasBasisSet> "3-21G" ;
+                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Experiment caa004f" ,
                                             "Vibrational analysis caa004f" .
 
@@ -6614,6 +6767,12 @@ rdfs:Class rdf:type owl:Class .
                                                                     <http://example.org/file_caa004g_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa004g> ,
                                                                 <http://example.org/spectrum_caa004g> ;
+                                 <http://purl.org/gc/hasBasisSet> "3-21G" ;
+                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Experiment caa004g" ,
                                             "Vibrational analysis caa004g" .
 
@@ -6630,6 +6789,12 @@ rdfs:Class rdf:type owl:Class .
                                                                     <http://example.org/file_caa004h_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa004h> ,
                                                                 <http://example.org/spectrum_caa004h> ;
+                                 <http://purl.org/gc/hasBasisSet> "3-21G" ;
+                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Experiment caa004h" ,
                                             "Vibrational analysis caa004h" .
 
@@ -6645,6 +6810,12 @@ rdfs:Class rdf:type owl:Class .
                                                                     <http://example.org/file_caa004j_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa004j> ,
                                                                 <http://example.org/spectrum_caa004j> ;
+                                 <http://purl.org/gc/hasBasisSet> "3-21G" ;
+                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Experiment caa004j" ,
                                             "Vibrational analysis caa004j" .
 
@@ -6660,6 +6831,12 @@ rdfs:Class rdf:type owl:Class .
                                                                     <http://example.org/file_caa004k_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa004k> ,
                                                                 <http://example.org/spectrum_caa004k> ;
+                                 <http://purl.org/gc/hasBasisSet> "3-21G" ;
+                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Experiment caa004k" ,
                                             "Vibrational analysis caa004k" .
 
@@ -6675,6 +6852,12 @@ rdfs:Class rdf:type owl:Class .
                                                                     <http://example.org/file_caa004l_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa004l> ,
                                                                 <http://example.org/spectrum_caa004l> ;
+                                 <http://purl.org/gc/hasBasisSet> "3-21G" ;
+                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Experiment caa004l" ,
                                             "Vibrational analysis caa004l" .
 
@@ -6690,6 +6873,12 @@ rdfs:Class rdf:type owl:Class .
                                                                     <http://example.org/file_caa004m_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa004m> ,
                                                                 <http://example.org/spectrum_caa004m> ;
+                                 <http://purl.org/gc/hasBasisSet> "3-21G" ;
+                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Experiment caa004m" ,
                                             "Vibrational analysis caa004m" ;
                                  <http://www.w3.org/2004/02/skos/core#editorialNote> "this structure appears to be very close to the transitions state within the bounds of the level of theory." .
@@ -6706,6 +6895,12 @@ rdfs:Class rdf:type owl:Class .
                                                                     <http://example.org/file_caa005a_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa005a> ,
                                                                 <http://example.org/spectrum_caa005a> ;
+                                 <http://purl.org/gc/hasBasisSet> "3-21G+(p)" ;
+                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Experiment caa005a" ,
                                             "Vibrational analysis caa005a" .
 
@@ -6721,6 +6916,12 @@ rdfs:Class rdf:type owl:Class .
                                                                     <http://example.org/file_caa005b_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa005b> ,
                                                                 <http://example.org/spectrum_caa005b> ;
+                                 <http://purl.org/gc/hasBasisSet> "3-21G+(p)" ;
+                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Experiment caa005b" ,
                                             "Vibrational analysis caa005b" ;
                                  <http://www.w3.org/2004/02/skos/core#editorialNote> "using PROJCT=.t. in $FORCE took then rotations/translations to 0cm-1" .
@@ -6733,6 +6934,9 @@ rdfs:Class rdf:type owl:Class .
                                                     <http://example.org/hasInputFile> <http://example.org/file_caa005b-cl-atom-basischeck_inp> ;
                                                     <http://example.org/hasOutputFile> <http://example.org/file_caa005b-cl-atom-basischeck_dat> ,
                                                                                        <http://example.org/file_caa005b-cl-atom-basischeck_log> ;
+                                                    <http://purl.org/gc/hasBasisSet> "Basis set specified in $DATA block - not automatically extracted" ;
+                                                    <http://purl.org/gc/hasMethod> "UHF" ;
+                                                    <http://example.org/hasRuntyp> "ENERGY" ;
                                                     rdfs:label "Single point caa005b-cl-atom-basischeck" ;
                                                     <http://www.w3.org/2004/02/skos/core#editorialNote> "isolated Cl atom, the smallest possible case; ROHF failed (needs explicit NSETO/NPAIR for the degenerate 3p5 open shell), switched to UHF" .
 
@@ -6744,6 +6948,9 @@ rdfs:Class rdf:type owl:Class .
                                                      <http://example.org/hasInputFile> <http://example.org/file_caa005b-cl-atom-extfil-test_inp> ;
                                                      <http://example.org/hasOutputFile> <http://example.org/file_caa005b-cl-atom-extfil-test_dat> ,
                                                                                         <http://example.org/file_caa005b-cl-atom-extfil-test_log> ;
+                                                     <http://purl.org/gc/hasBasisSet> "Custom/mixed basis (BASNAM) - see input file" ;
+                                                     <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                                     <http://example.org/hasRuntyp> "ENERGY" ;
                                                      rdfs:label "Single point caa005b-cl-atom-extfil-test" ;
                                                      <http://www.w3.org/2004/02/skos/core#editorialNote> "same isolated Cl atom via EXTFIL (external basis file) instead of BASNAM; got further (basis read correctly) but hit the identical DGEMM crash -- ruled out BASNAM specifically as the cause, and ruled out core count (crashed the same at 8 and 1 cores)" .
 
@@ -6755,6 +6962,9 @@ rdfs:Class rdf:type owl:Class .
                                                  <http://example.org/hasInputFile> <http://example.org/file_caa005bIRC-def2svp-test_inp> ;
                                                  <http://example.org/hasOutputFile> <http://example.org/file_caa005bIRC-def2svp-test_dat> ,
                                                                                     <http://example.org/file_caa005bIRC-def2svp-test_log> ;
+                                                 <http://purl.org/gc/hasBasisSet> "Basis set specified in $DATA block - not automatically extracted" ;
+                                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
                                                  rdfs:label "Vibrational analysis caa005bIRC-def2svp-test" ;
                                                  <http://www.w3.org/2004/02/skos/core#editorialNote> "fresh def2-SVP basis (verified byte-for-byte vs Basis Set Exchange); crashed \"DGEMM parameter 13 illegal value\" before the first SCF cycle" .
 
@@ -6766,6 +6976,10 @@ rdfs:Class rdf:type owl:Class .
                                                 <http://example.org/hasInputFile> <http://example.org/file_caa005bIRC-pcseg2-test_inp> ;
                                                 <http://example.org/hasOutputFile> <http://example.org/file_caa005bIRC-pcseg2-test_dat> ,
                                                                                    <http://example.org/file_caa005bIRC-pcseg2-test_log> ;
+                                                <http://purl.org/gc/hasBasisSet> "Custom/mixed basis (BASNAM) - see input file" ;
+                                                <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                                <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                                <http://example.org/hasRuntyp> "OPTIMIZE" ;
                                                 rdfs:label "Vibrational analysis caa005bIRC-pcseg2-test" ;
                                                 <http://www.w3.org/2004/02/skos/core#editorialNote> "native GBASIS=PCSEG-2 instead of custom def2-TZVPP; converged cleanly to the chemically correct energy (-766.37 vs def2-TZVPP's wrong -491.67 at the same geometry), zero imaginary frequencies -- resolved the whole saga: custom BASNAM/EXTFIL basis construction was broken on this ARCHER2 build, never a real chemical instability. Note RUNTYP was accidentally OPTIMIZE, not a strict single point" .
 
@@ -6777,6 +6991,9 @@ rdfs:Class rdf:type owl:Class .
                                                       <http://example.org/hasInputFile> <http://example.org/file_caa005bIRC-trimmedTZVPP-test_inp> ;
                                                       <http://example.org/hasOutputFile> <http://example.org/file_caa005bIRC-trimmedTZVPP-test_dat> ,
                                                                                          <http://example.org/file_caa005bIRC-trimmedTZVPP-test_log> ;
+                                                      <http://purl.org/gc/hasBasisSet> "Custom/mixed basis (BASNAM) - see input file" ;
+                                                      <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                                      <http://example.org/hasRuntyp> "OPTIMIZE" ;
                                                       rdfs:label "Vibrational analysis caa005bIRC-trimmedTZVPP-test" ;
                                                       <http://www.w3.org/2004/02/skos/core#editorialNote> "def2-TZVPP with shells removed, using already-proven basis text (not retyped); same DGEMM crash -- ruled out bad/mistyped basis data specifically" .
 
@@ -6790,6 +7007,12 @@ rdfs:Class rdf:type owl:Class .
                                                                              <http://example.org/file_caa005bIRCCML1st_log> ;
                                           <http://purl.org/gc/hasResult> <http://example.org/energies_caa005bIRCCML1st> ,
                                                                          <http://example.org/spectrum_caa005bIRCCML1st> ;
+                                          <http://purl.org/gc/hasBasisSet> "3-21G+(p)" ;
+                                          <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                          <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                          <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                          <http://example.org/hasSolvationModel> "PCM" ;
+                                          <http://example.org/hasSolvent> "water" ;
                                           rdfs:label "Vibrational analysis caa005bIRCCML1st" .
 
 
@@ -6800,6 +7023,9 @@ rdfs:Class rdf:type owl:Class .
                                                           <http://example.org/hasInputFile> <http://example.org/file_caa005bIRCCML1st-prerelax-631Gdp_inp> ;
                                                           <http://example.org/hasOutputFile> <http://example.org/file_caa005bIRCCML1st-prerelax-631Gdp_dat> ,
                                                                                              <http://example.org/file_caa005bIRCCML1st-prerelax-631Gdp_log> ;
+                                                          <http://purl.org/gc/hasBasisSet> "Custom/mixed basis (BASNAM) - see input file" ;
+                                                          <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                                          <http://example.org/hasRuntyp> "OPTIMIZE" ;
                                                           rdfs:label "Vibrational analysis caa005bIRCCML1st-prerelax-631Gdp" ;
                                                           <http://www.w3.org/2004/02/skos/core#editorialNote> "relaxed the 1st IRC geometry at wB97X-D/6-31G(d,p)/PCM(water) as a bridging step; converged, zero imaginary frequencies -- genuine minimum" .
 
@@ -6813,6 +7039,12 @@ rdfs:Class rdf:type owl:Class .
                                                                                       <http://example.org/file_caa005bIRCCML1stdef2TZVPP_log> ;
                                                    <http://purl.org/gc/hasResult> <http://example.org/energies_caa005bIRCCML1stdef2TZVPP> ,
                                                                                   <http://example.org/spectrum_caa005bIRCCML1stdef2TZVPP> ;
+                                                   <http://purl.org/gc/hasBasisSet> "Custom/mixed basis (BASNAM) - see input file" ;
+                                                   <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                                   <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                                   <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                                   <http://example.org/hasSolvationModel> "PCM" ;
+                                                   <http://example.org/hasSolvent> "water" ;
                                                    rdfs:label "Vibrational analysis caa005bIRCCML1stdef2TZVPP" ;
                                                    <http://www.w3.org/2004/02/skos/core#editorialNote> "an attempt to run the 1st IRC geometry at a high level of theory" .
 
@@ -6825,6 +7057,11 @@ rdfs:Class rdf:type owl:Class .
                                                             <http://example.org/hasOutputFile> <http://example.org/file_caa005bIRCCML1stdef2TZVPP-uhfcheck_dat> ,
                                                                                                <http://example.org/file_caa005bIRCCML1stdef2TZVPP-uhfcheck_log> ;
                                                             <http://purl.org/gc/hasResult> <http://example.org/energies_caa005bIRCCML1stdef2TZVPP-uhfcheck> ;
+                                                            <http://purl.org/gc/hasBasisSet> "Custom/mixed basis (BASNAM) - see input file" ;
+                                                            <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                                            <http://example.org/hasRuntyp> "ENERGY" ;
+                                                            <http://example.org/hasSolvationModel> "PCM" ;
+                                                            <http://example.org/hasSolvent> "water" ;
                                                             rdfs:label "Single point caa005bIRCCML1stdef2TZVPP-uhfcheck" ;
                                                             <http://www.w3.org/2004/02/skos/core#editorialNote> "UHF with MIX=.true. at the same geometry found a lower, spin-contaminated solution (S**2=1.487)" .
 
@@ -6837,6 +7074,11 @@ rdfs:Class rdf:type owl:Class .
                                                                   <http://example.org/hasOutputFile> <http://example.org/file_caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix_dat> ,
                                                                                                      <http://example.org/file_caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix_log> ;
                                                                   <http://purl.org/gc/hasResult> <http://example.org/energies_caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix> ;
+                                                                  <http://purl.org/gc/hasBasisSet> "Custom/mixed basis (BASNAM) - see input file" ;
+                                                                  <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                                                  <http://example.org/hasRuntyp> "ENERGY" ;
+                                                                  <http://example.org/hasSolvationModel> "PCM" ;
+                                                                  <http://example.org/hasSolvent> "water" ;
                                                                   rdfs:label "Single point caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix" ;
                                                                   <http://www.w3.org/2004/02/skos/core#editorialNote> "control run: plain UHF (no MIX) reconverged straight to the RHF energy, S**2~0 -- ruled out a genuine RHF/electronic instability" .
 
@@ -6848,6 +7090,12 @@ rdfs:Class rdf:type owl:Class .
                                                     <http://example.org/hasInputFile> <http://example.org/file_caa005bIRCCML1stdef2TZVPPa_inp> ;
                                                     <http://example.org/hasOutputFile> <http://example.org/file_caa005bIRCCML1stdef2TZVPPa_dat> ,
                                                                                        <http://example.org/file_caa005bIRCCML1stdef2TZVPPa_log> ;
+                                                    <http://purl.org/gc/hasBasisSet> "Custom/mixed basis (BASNAM) - see input file" ;
+                                                    <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                                    <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                                    <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                                    <http://example.org/hasSolvationModel> "PCM" ;
+                                                    <http://example.org/hasSolvent> "water" ;
                                                     rdfs:label "Vibrational analysis caa005bIRCCML1stdef2TZVPPa" ;
                                                     <http://www.w3.org/2004/02/skos/core#editorialNote> "another failed attempt to run the 1st IRC geometry at a high level of theory" .
 
@@ -6859,6 +7107,9 @@ rdfs:Class rdf:type owl:Class .
                                                     <http://example.org/hasInputFile> <http://example.org/file_caa005bIRCCML1stdef2TZVPPb_inp> ;
                                                     <http://example.org/hasOutputFile> <http://example.org/file_caa005bIRCCML1stdef2TZVPPb_dat> ,
                                                                                        <http://example.org/file_caa005bIRCCML1stdef2TZVPPb_log> ;
+                                                    <http://purl.org/gc/hasBasisSet> "Custom/mixed basis (BASNAM) - see input file" ;
+                                                    <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                                    <http://example.org/hasRuntyp> "OPTIMIZE" ;
                                                     rdfs:label "Vibrational analysis caa005bIRCCML1stdef2TZVPPb" ;
                                                     <http://www.w3.org/2004/02/skos/core#editorialNote> "fixed SOSCF/DIIS conflict and $FORCE method; still showed runaway negative Hessian curvature from the first optimization step" .
 
@@ -6870,6 +7121,9 @@ rdfs:Class rdf:type owl:Class .
                                                     <http://example.org/hasInputFile> <http://example.org/file_caa005bIRCCML1stdef2TZVPPc_inp> ;
                                                     <http://example.org/hasOutputFile> <http://example.org/file_caa005bIRCCML1stdef2TZVPPc_dat> ,
                                                                                        <http://example.org/file_caa005bIRCCML1stdef2TZVPPc_log> ;
+                                                    <http://purl.org/gc/hasBasisSet> "Custom/mixed basis (BASNAM) - see input file" ;
+                                                    <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                                    <http://example.org/hasRuntyp> "OPTIMIZE" ;
                                                     rdfs:label "Vibrational analysis caa005bIRCCML1stdef2TZVPPc" ;
                                                     <http://www.w3.org/2004/02/skos/core#editorialNote> "tried an upfront analytic Hessian (HESS=CALC); aborted, wB97X-D not supported for the TD-DFT/analytic-Hessian machinery this needs" .
 
@@ -6881,6 +7135,9 @@ rdfs:Class rdf:type owl:Class .
                                                     <http://example.org/hasInputFile> <http://example.org/file_caa005bIRCCML1stdef2TZVPPd_inp> ;
                                                     <http://example.org/hasOutputFile> <http://example.org/file_caa005bIRCCML1stdef2TZVPPd_dat> ,
                                                                                        <http://example.org/file_caa005bIRCCML1stdef2TZVPPd_log> ;
+                                                    <http://purl.org/gc/hasBasisSet> "Custom/mixed basis (BASNAM) - see input file" ;
+                                                    <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                                    <http://example.org/hasRuntyp> "OPTIMIZE" ;
                                                     rdfs:label "Vibrational analysis caa005bIRCCML1stdef2TZVPPd" ;
                                                     <http://www.w3.org/2004/02/skos/core#editorialNote> "semi-numerical Hessian, IHREP=2; two independently computed Hessians both showed 16 simultaneous negative eigenvalues -- real feature of the surface, not numerical noise" .
 
@@ -6892,6 +7149,9 @@ rdfs:Class rdf:type owl:Class .
                                                     <http://example.org/hasInputFile> <http://example.org/file_caa005bIRCCML1stdef2TZVPPe_inp> ;
                                                     <http://example.org/hasOutputFile> <http://example.org/file_caa005bIRCCML1stdef2TZVPPe_dat> ,
                                                                                        <http://example.org/file_caa005bIRCCML1stdef2TZVPPe_log> ;
+                                                    <http://purl.org/gc/hasBasisSet> "Custom/mixed basis (BASNAM) - see input file" ;
+                                                    <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                                    <http://example.org/hasRuntyp> "OPTIMIZE" ;
                                                     rdfs:label "Vibrational analysis caa005bIRCCML1stdef2TZVPPe" ;
                                                     <http://www.w3.org/2004/02/skos/core#editorialNote> "re-ran def2-TZVPP starting from the confirmed 6-31G(d,p) minimum; the same 16 negative eigenvalues recurred, ruling out a bad starting geometry" .
 
@@ -6905,6 +7165,12 @@ rdfs:Class rdf:type owl:Class .
                                                                                <http://example.org/file_caa005bIRCCML_last_log> ;
                                             <http://purl.org/gc/hasResult> <http://example.org/energies_caa005bIRCCML_last> ,
                                                                            <http://example.org/spectrum_caa005bIRCCML_last> ;
+                                            <http://purl.org/gc/hasBasisSet> "3-21G+(p)" ;
+                                            <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                            <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                            <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                            <http://example.org/hasSolvationModel> "PCM" ;
+                                            <http://example.org/hasSolvent> "water" ;
                                             rdfs:label "Vibrational analysis caa005bIRCCML_last" .
 
 
@@ -6917,6 +7183,12 @@ rdfs:Class rdf:type owl:Class .
                                                                        <http://example.org/file_caa005bTSa_log> ;
                                     <http://purl.org/gc/hasResult> <http://example.org/energies_caa005bTSa> ,
                                                                    <http://example.org/spectrum_caa005bTSa> ;
+                                    <http://purl.org/gc/hasBasisSet> "3-21G+(p)" ;
+                                    <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                    <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                    <http://example.org/hasRuntyp> "SADPOINT" ;
+                                    <http://example.org/hasSolvationModel> "PCM" ;
+                                    <http://example.org/hasSolvent> "water" ;
                                     rdfs:label "Saddle point caa005bTSa" ;
                                     <http://www.w3.org/2004/02/skos/core#editorialNote> "interesting that the ClC bond is antiperiplanar to the leaving oxygenn is this exclusive to the mechanism or will it work with anti-planarity to the incipient carbonyl oxygen?" .
 
@@ -6929,6 +7201,11 @@ rdfs:Class rdf:type owl:Class .
                                         <http://example.org/hasOutputFile> <http://example.org/file_caa005bTSaIRCb_dat> ,
                                                                            <http://example.org/file_caa005bTSaIRCb_log> ;
                                         <http://purl.org/gc/hasResult> <http://example.org/reactionpath_caa005bTSaIRCf> ;
+                                        <http://purl.org/gc/hasBasisSet> "3-21G+(p)" ;
+                                        <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                        <http://example.org/hasRuntyp> "IRC" ;
+                                        <http://example.org/hasSolvationModel> "PCM" ;
+                                        <http://example.org/hasSolvent> "water" ;
                                         rdfs:label "IRC (backward) caa005bTSaIRCb" ;
                                         <http://www.w3.org/2004/02/skos/core#editorialNote> "the same geometry (from caa005bTSa.log) was used in each backward / forward scans" .
 
@@ -6941,6 +7218,11 @@ rdfs:Class rdf:type owl:Class .
                                         <http://example.org/hasOutputFile> <http://example.org/file_caa005bTSaIRCf_dat> ,
                                                                            <http://example.org/file_caa005bTSaIRCf_log> ;
                                         <http://purl.org/gc/hasResult> <http://example.org/reactionpath_caa005bTSaIRCf> ;
+                                        <http://purl.org/gc/hasBasisSet> "3-21G+(p)" ;
+                                        <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                        <http://example.org/hasRuntyp> "IRC" ;
+                                        <http://example.org/hasSolvationModel> "PCM" ;
+                                        <http://example.org/hasSolvent> "water" ;
                                         rdfs:label "IRC (forward) caa005bTSaIRCf" .
 
 
@@ -6951,6 +7233,9 @@ rdfs:Class rdf:type owl:Class .
                                     <http://example.org/hasInputFile> <http://example.org/file_caa005bTSb_inp> ;
                                     <http://example.org/hasOutputFile> <http://example.org/file_caa005bTSb_dat> ,
                                                                        <http://example.org/file_caa005bTSb_log> ;
+                                    <http://purl.org/gc/hasBasisSet> "Basis set specified in $DATA block - not automatically extracted" ;
+                                    <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                    <http://example.org/hasRuntyp> "SADPOINT" ;
                                     rdfs:label "Saddle point caa005bTSb" ;
                                     <http://www.w3.org/2004/02/skos/core#editorialNote> "RUNTYP=SADPOINT re-search of the TS at 6-31G(d,p), using a genuine RUNTYP=HESSIAN-computed raw (unprojected) Hessian via HESS=READ after HESS=GUESS overrides failed to take effect; converged cleanly, SADDLE POINT LOCATED at NSERCH=7, exactly one imaginary frequency (1195.01i) -- confirmed genuine TS" .
 
@@ -6958,11 +7243,18 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005bTSb-hess
 <http://example.org/exp_caa005bTSb-hess> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/MolecularComputation> ,
-                                                  <http://purl.org/gc/SaddlePoint> ;
+                                                  <http://purl.org/gc/VibrationalAnalysis> ;
                                          <http://example.org/hasInputFile> <http://example.org/file_caa005bTSb-hess_inp> ;
                                          <http://example.org/hasOutputFile> <http://example.org/file_caa005bTSb-hess_dat> ,
                                                                             <http://example.org/file_caa005bTSb-hess_log> ;
-                                         rdfs:label "Saddle point caa005bTSb-hess" ;
+                                         <http://purl.org/gc/hasResult> <http://example.org/energies_caa005bTSb-hess> ,
+                                                                        <http://example.org/spectrum_caa005bTSb-hess> ;
+                                         <http://purl.org/gc/hasBasisSet> "6-31G(d,p)" ;
+                                         <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                         <http://example.org/hasRuntyp> "HESSIAN" ;
+                                         <http://example.org/hasSolvationModel> "PCM" ;
+                                         <http://example.org/hasSolvent> "water" ;
+                                         rdfs:label "Vibrational analysis caa005bTSb-hess" ;
                                          <http://www.w3.org/2004/02/skos/core#editorialNote> "RUNTYP=HESSIAN precursor at the TS geometry, 6-31G(d,p)/PCM(water), to supply the real $HESS block caa005bTSb's saddle-point search needs" .
 
 
@@ -6974,6 +7266,11 @@ rdfs:Class rdf:type owl:Class .
                                            <http://example.org/hasOutputFile> <http://example.org/file_caa005bTSb-pcseg2_dat> ,
                                                                               <http://example.org/file_caa005bTSb-pcseg2_log> ;
                                            <http://purl.org/gc/hasResult> <http://example.org/energies_caa005bTSb-pcseg2> ;
+                                           <http://purl.org/gc/hasBasisSet> "Custom/mixed basis (BASNAM) - see input file" ;
+                                           <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                           <http://example.org/hasRuntyp> "ENERGY" ;
+                                           <http://example.org/hasSolvationModel> "PCM" ;
+                                           <http://example.org/hasSolvent> "water" ;
                                            rdfs:label "Single point caa005bTSb-pcseg2" ;
                                            <http://www.w3.org/2004/02/skos/core#editorialNote> "single-point energy at wB97X-D/PCseg-2/PCM(water) for the TS (from caa005bTSb confirmed saddle point); -766.3338684973 Hartree. Forward barrier ~23.9 kcal/mol, reverse barrier ~31.4 kcal/mol, reaction energy ~-7.5 kcal/mol (product side lower)" .
 
@@ -6986,6 +7283,11 @@ rdfs:Class rdf:type owl:Class .
                                  <http://example.org/hasOutputFile> <http://example.org/file_caa006a_dat> ,
                                                                     <http://example.org/file_caa006a_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa006a> ;
+                                 <http://purl.org/gc/hasBasisSet> "aug-cc-pVTZ" ;
+                                 <http://purl.org/gc/hasMethod> "CCSD(T)" ;
+                                 <http://example.org/hasRuntyp> "ENERGY" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Single point caa006a" ;
                                  <http://www.w3.org/2004/02/skos/core#editorialNote> "geometry from caa005bTSa.log so at top of IRC" .
 
@@ -6998,6 +7300,11 @@ rdfs:Class rdf:type owl:Class .
                                  <http://example.org/hasOutputFile> <http://example.org/file_caa006b_dat> ,
                                                                     <http://example.org/file_caa006b_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa006b> ;
+                                 <http://purl.org/gc/hasBasisSet> "aug-cc-pVTZ" ;
+                                 <http://purl.org/gc/hasMethod> "CCSD(T)" ;
+                                 <http://example.org/hasRuntyp> "ENERGY" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Single point caa006b" ;
                                  <http://www.w3.org/2004/02/skos/core#editorialNote> "geometry from caa005bTSa.log so at start (1st frame) of IRC" .
 
@@ -7010,6 +7317,11 @@ rdfs:Class rdf:type owl:Class .
                                  <http://example.org/hasOutputFile> <http://example.org/file_caa006c_dat> ,
                                                                     <http://example.org/file_caa006c_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa006c> ;
+                                 <http://purl.org/gc/hasBasisSet> "aug-cc-pVTZ" ;
+                                 <http://purl.org/gc/hasMethod> "CCSD(T)" ;
+                                 <http://example.org/hasRuntyp> "ENERGY" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Single point caa006c" .
 
 
@@ -7021,6 +7333,11 @@ rdfs:Class rdf:type owl:Class .
                                         <http://example.org/hasOutputFile> <http://example.org/file_caa007a-pcseg2_dat> ,
                                                                            <http://example.org/file_caa007a-pcseg2_log> ;
                                         <http://purl.org/gc/hasResult> <http://example.org/energies_caa007a-pcseg2> ;
+                                        <http://purl.org/gc/hasBasisSet> "Custom/mixed basis (BASNAM) - see input file" ;
+                                        <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                        <http://example.org/hasRuntyp> "ENERGY" ;
+                                        <http://example.org/hasSolvationModel> "PCM" ;
+                                        <http://example.org/hasSolvent> "water" ;
                                         rdfs:label "Single point caa007a-pcseg2" ;
                                         <http://www.w3.org/2004/02/skos/core#editorialNote> "single-point energy at wB97X-D/PCseg-2/PCM(water) for the 1st IRC point (from caa005bIRCCML1st-prerelax-631Gdp confirmed minimum); -766.3719959497 Hartree" .
 
@@ -7034,6 +7351,12 @@ rdfs:Class rdf:type owl:Class .
                                                                     <http://example.org/file_caa007b_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa007b> ,
                                                                 <http://example.org/spectrum_caa007b> ;
+                                 <http://purl.org/gc/hasBasisSet> "6-31G(d,p)" ;
+                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                 <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                 <http://example.org/hasSolvationModel> "PCM" ;
+                                 <http://example.org/hasSolvent> "water" ;
                                  rdfs:label "Vibrational analysis caa007b" ;
                                  <http://www.w3.org/2004/02/skos/core#editorialNote> "last IRC point (Reaction Coordinate +89 of caa005bIRC.cml) re-optimized at wB97X-D/6-31G(d,p)/PCM(water); converged, zero imaginary frequencies -- genuine minimum" .
 
@@ -7046,6 +7369,11 @@ rdfs:Class rdf:type owl:Class .
                                         <http://example.org/hasOutputFile> <http://example.org/file_caa007b-pcseg2_dat> ,
                                                                            <http://example.org/file_caa007b-pcseg2_log> ;
                                         <http://purl.org/gc/hasResult> <http://example.org/energies_caa007b-pcseg2> ;
+                                        <http://purl.org/gc/hasBasisSet> "Custom/mixed basis (BASNAM) - see input file" ;
+                                        <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                        <http://example.org/hasRuntyp> "ENERGY" ;
+                                        <http://example.org/hasSolvationModel> "PCM" ;
+                                        <http://example.org/hasSolvent> "water" ;
                                         rdfs:label "Single point caa007b-pcseg2" ;
                                         <http://www.w3.org/2004/02/skos/core#editorialNote> "single-point energy at wB97X-D/PCseg-2/PCM(water) for the last IRC point (from caa007b confirmed minimum); -766.3839610278 Hartree" .
 
@@ -7059,6 +7387,12 @@ rdfs:Class rdf:type owl:Class .
                                                                                  <http://example.org/file_caa008-aldehyde-bare_log> ;
                                               <http://purl.org/gc/hasResult> <http://example.org/energies_caa008-aldehyde-bare> ,
                                                                              <http://example.org/spectrum_caa008-aldehyde-bare> ;
+                                              <http://purl.org/gc/hasBasisSet> "6-31G(d,p)" ;
+                                              <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                              <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                              <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                              <http://example.org/hasSolvationModel> "PCM" ;
+                                              <http://example.org/hasSolvent> "water" ;
                                               rdfs:label "Vibrational analysis caa008-aldehyde-bare" ;
                                               <http://www.w3.org/2004/02/skos/core#editorialNote> "geometry+frequency optimization of bare chloroacetaldehyde at wB97X-D/6-31G(d,p)/PCM(water); extracted from the 1st IRC point converged cluster (bond-length analysis: C3=O4 1.213 A confirms intact carbonyl), part of the standalone hydration thermodynamic cycle dG_hyd = G(hydrate) - [G(aldehyde) + G(water)]" .
 
@@ -7071,6 +7405,11 @@ rdfs:Class rdf:type owl:Class .
                                                 <http://example.org/hasOutputFile> <http://example.org/file_caa008-aldehyde-pcseg2_dat> ,
                                                                                    <http://example.org/file_caa008-aldehyde-pcseg2_log> ;
                                                 <http://purl.org/gc/hasResult> <http://example.org/energies_caa008-aldehyde-pcseg2> ;
+                                                <http://purl.org/gc/hasBasisSet> "PCSEG" ;
+                                                <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                                <http://example.org/hasRuntyp> "ENERGY" ;
+                                                <http://example.org/hasSolvationModel> "PCM" ;
+                                                <http://example.org/hasSolvent> "water" ;
                                                 rdfs:label "Single point caa008-aldehyde-pcseg2" ;
                                                 <http://www.w3.org/2004/02/skos/core#editorialNote> "single-point energy at wB97X-D/PCseg-2/PCM(water) for bare chloroacetaldehyde; -613.4620192589 Hartree" .
 
@@ -7084,6 +7423,12 @@ rdfs:Class rdf:type owl:Class .
                                                                                 <http://example.org/file_caa008-hydrate-bare_log> ;
                                              <http://purl.org/gc/hasResult> <http://example.org/energies_caa008-hydrate-bare> ,
                                                                             <http://example.org/spectrum_caa008-hydrate-bare> ;
+                                             <http://purl.org/gc/hasBasisSet> "6-31G(d,p)" ;
+                                             <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                             <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                             <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                             <http://example.org/hasSolvationModel> "PCM" ;
+                                             <http://example.org/hasSolvent> "water" ;
                                              rdfs:label "Vibrational analysis caa008-hydrate-bare" ;
                                              <http://www.w3.org/2004/02/skos/core#editorialNote> "geometry+frequency optimization of bare chloroacetaldehyde hydrate at wB97X-D/6-31G(d,p)/PCM(water); extracted from the last IRC point converged cluster -- bond-length analysis (C3-O4 1.387 A, C3-O7 1.418 A, C3-O8 3.022 A) confirmed which of the two original spectator waters was incorporated into the gem-diol via a proton relay" .
 
@@ -7096,6 +7441,11 @@ rdfs:Class rdf:type owl:Class .
                                                <http://example.org/hasOutputFile> <http://example.org/file_caa008-hydrate-pcseg2_dat> ,
                                                                                   <http://example.org/file_caa008-hydrate-pcseg2_log> ;
                                                <http://purl.org/gc/hasResult> <http://example.org/energies_caa008-hydrate-pcseg2> ;
+                                               <http://purl.org/gc/hasBasisSet> "PCSEG" ;
+                                               <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                               <http://example.org/hasRuntyp> "ENERGY" ;
+                                               <http://example.org/hasSolvationModel> "PCM" ;
+                                               <http://example.org/hasSolvent> "water" ;
                                                rdfs:label "Single point caa008-hydrate-pcseg2" ;
                                                <http://www.w3.org/2004/02/skos/core#editorialNote> "single-point energy at wB97X-D/PCseg-2/PCM(water) for bare hydrate; -689.9272336982 Hartree" .
 
@@ -7109,6 +7459,12 @@ rdfs:Class rdf:type owl:Class .
                                                                               <http://example.org/file_caa008-water-bare_log> ;
                                            <http://purl.org/gc/hasResult> <http://example.org/energies_caa008-water-bare> ,
                                                                           <http://example.org/spectrum_caa008-water-bare> ;
+                                           <http://purl.org/gc/hasBasisSet> "6-31G(d,p)" ;
+                                           <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                           <http://example.org/hasHssend> "true"^^xsd:boolean ;
+                                           <http://example.org/hasRuntyp> "OPTIMIZE" ;
+                                           <http://example.org/hasSolvationModel> "PCM" ;
+                                           <http://example.org/hasSolvent> "water" ;
                                            rdfs:label "Vibrational analysis caa008-water-bare" ;
                                            <http://www.w3.org/2004/02/skos/core#editorialNote> "geometry+frequency optimization of a standalone water molecule at wB97X-D/6-31G(d,p)/PCM(water), for the hydration thermodynamic cycle" .
 
@@ -7121,6 +7477,11 @@ rdfs:Class rdf:type owl:Class .
                                              <http://example.org/hasOutputFile> <http://example.org/file_caa008-water-pcseg2_dat> ,
                                                                                 <http://example.org/file_caa008-water-pcseg2_log> ;
                                              <http://purl.org/gc/hasResult> <http://example.org/energies_caa008-water-pcseg2> ;
+                                             <http://purl.org/gc/hasBasisSet> "PCSEG" ;
+                                             <http://purl.org/gc/hasMethod> "wB97X-D" ;
+                                             <http://example.org/hasRuntyp> "ENERGY" ;
+                                             <http://example.org/hasSolvationModel> "PCM" ;
+                                             <http://example.org/hasSolvent> "water" ;
                                              rdfs:label "Single point caa008-water-pcseg2" ;
                                              <http://www.w3.org/2004/02/skos/core#editorialNote> "single-point energy at wB97X-D/PCseg-2/PCM(water) for standalone water; -76.4502962836 Hartree. Combined with 6-31G(d,p) thermal data: dG_hyd = -4.44 kcal/mol (0K, elec+ZPE), -5.99 kcal/mol (dH, 298K), but +5.88 kcal/mol (dG, 298K) -- the sign flip traced to -TdS ~ +11.9 kcal/mol, almost certainly an artifact of treating standalone water as an ideal gas (overestimated translational/rotational entropy relative to true liquid-phase water). Enthalpy trusted over raw Gibbs free energy pending a proper solution-phase entropy correction; acetaldehyde calibration (planned) will test this directly" .
 
@@ -12764,7 +13125,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/freqval_caa004e_3> rdf:type owl:NamedIndividual ,
                                                 <http://purl.org/gc/FloatValue> ;
                                        <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
-                                       <http://purl.org/gc/hasFloatValue> "0.23"^^xsd:float ;
+                                       <http://purl.org/gc/hasFloatValue> "0.24"^^xsd:float ;
                                        rdfs:label "Frequency mode 3 caa004e" .
 
 
@@ -12852,7 +13213,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/freqval_caa004e_4> rdf:type owl:NamedIndividual ,
                                                 <http://purl.org/gc/FloatValue> ;
                                        <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
-                                       <http://purl.org/gc/hasFloatValue> "0.11"^^xsd:float ;
+                                       <http://purl.org/gc/hasFloatValue> "0.1"^^xsd:float ;
                                        rdfs:label "Frequency mode 4 caa004e" .
 
 
@@ -16640,6 +17001,318 @@ rdfs:Class rdf:type owl:Class .
                                           rdfs:label "Frequency mode 9 caa005bTSa" .
 
 
+###  http://example.org/freqval_caa005bTSb-hess_1
+<http://example.org/freqval_caa005bTSb-hess_1> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                               <http://purl.org/gc/hasFloatValue> "-1259.25"^^xsd:float ;
+                                               rdfs:label "Frequency mode 1 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_10
+<http://example.org/freqval_caa005bTSb-hess_10> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "153.47"^^xsd:float ;
+                                                rdfs:label "Frequency mode 10 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_11
+<http://example.org/freqval_caa005bTSb-hess_11> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "204.74"^^xsd:float ;
+                                                rdfs:label "Frequency mode 11 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_12
+<http://example.org/freqval_caa005bTSb-hess_12> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "295.77"^^xsd:float ;
+                                                rdfs:label "Frequency mode 12 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_13
+<http://example.org/freqval_caa005bTSb-hess_13> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "332.11"^^xsd:float ;
+                                                rdfs:label "Frequency mode 13 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_14
+<http://example.org/freqval_caa005bTSb-hess_14> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "493.24"^^xsd:float ;
+                                                rdfs:label "Frequency mode 14 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_15
+<http://example.org/freqval_caa005bTSb-hess_15> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "512.71"^^xsd:float ;
+                                                rdfs:label "Frequency mode 15 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_16
+<http://example.org/freqval_caa005bTSb-hess_16> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "541.16"^^xsd:float ;
+                                                rdfs:label "Frequency mode 16 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_17
+<http://example.org/freqval_caa005bTSb-hess_17> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "608.84"^^xsd:float ;
+                                                rdfs:label "Frequency mode 17 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_18
+<http://example.org/freqval_caa005bTSb-hess_18> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "632.48"^^xsd:float ;
+                                                rdfs:label "Frequency mode 18 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_19
+<http://example.org/freqval_caa005bTSb-hess_19> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "680.08"^^xsd:float ;
+                                                rdfs:label "Frequency mode 19 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_2
+<http://example.org/freqval_caa005bTSb-hess_2> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.0"^^xsd:float ;
+                                               rdfs:label "Frequency mode 2 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_20
+<http://example.org/freqval_caa005bTSb-hess_20> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "743.84"^^xsd:float ;
+                                                rdfs:label "Frequency mode 20 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_21
+<http://example.org/freqval_caa005bTSb-hess_21> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "797.64"^^xsd:float ;
+                                                rdfs:label "Frequency mode 21 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_22
+<http://example.org/freqval_caa005bTSb-hess_22> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "909.16"^^xsd:float ;
+                                                rdfs:label "Frequency mode 22 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_23
+<http://example.org/freqval_caa005bTSb-hess_23> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "977.0"^^xsd:float ;
+                                                rdfs:label "Frequency mode 23 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_24
+<http://example.org/freqval_caa005bTSb-hess_24> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "1055.57"^^xsd:float ;
+                                                rdfs:label "Frequency mode 24 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_25
+<http://example.org/freqval_caa005bTSb-hess_25> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "1103.01"^^xsd:float ;
+                                                rdfs:label "Frequency mode 25 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_26
+<http://example.org/freqval_caa005bTSb-hess_26> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "1196.38"^^xsd:float ;
+                                                rdfs:label "Frequency mode 26 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_27
+<http://example.org/freqval_caa005bTSb-hess_27> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "1249.65"^^xsd:float ;
+                                                rdfs:label "Frequency mode 27 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_28
+<http://example.org/freqval_caa005bTSb-hess_28> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "1302.31"^^xsd:float ;
+                                                rdfs:label "Frequency mode 28 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_29
+<http://example.org/freqval_caa005bTSb-hess_29> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "1356.97"^^xsd:float ;
+                                                rdfs:label "Frequency mode 29 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_3
+<http://example.org/freqval_caa005bTSb-hess_3> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.0"^^xsd:float ;
+                                               rdfs:label "Frequency mode 3 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_30
+<http://example.org/freqval_caa005bTSb-hess_30> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "1393.95"^^xsd:float ;
+                                                rdfs:label "Frequency mode 30 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_31
+<http://example.org/freqval_caa005bTSb-hess_31> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "1454.4"^^xsd:float ;
+                                                rdfs:label "Frequency mode 31 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_32
+<http://example.org/freqval_caa005bTSb-hess_32> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "1474.11"^^xsd:float ;
+                                                rdfs:label "Frequency mode 32 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_33
+<http://example.org/freqval_caa005bTSb-hess_33> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "1829.44"^^xsd:float ;
+                                                rdfs:label "Frequency mode 33 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_34
+<http://example.org/freqval_caa005bTSb-hess_34> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "2250.67"^^xsd:float ;
+                                                rdfs:label "Frequency mode 34 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_35
+<http://example.org/freqval_caa005bTSb-hess_35> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "3045.54"^^xsd:float ;
+                                                rdfs:label "Frequency mode 35 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_36
+<http://example.org/freqval_caa005bTSb-hess_36> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "3158.01"^^xsd:float ;
+                                                rdfs:label "Frequency mode 36 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_37
+<http://example.org/freqval_caa005bTSb-hess_37> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "3255.67"^^xsd:float ;
+                                                rdfs:label "Frequency mode 37 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_38
+<http://example.org/freqval_caa005bTSb-hess_38> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "3839.46"^^xsd:float ;
+                                                rdfs:label "Frequency mode 38 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_39
+<http://example.org/freqval_caa005bTSb-hess_39> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                                <http://purl.org/gc/hasFloatValue> "3922.0"^^xsd:float ;
+                                                rdfs:label "Frequency mode 39 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_4
+<http://example.org/freqval_caa005bTSb-hess_4> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.0"^^xsd:float ;
+                                               rdfs:label "Frequency mode 4 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_5
+<http://example.org/freqval_caa005bTSb-hess_5> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.0"^^xsd:float ;
+                                               rdfs:label "Frequency mode 5 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_6
+<http://example.org/freqval_caa005bTSb-hess_6> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.0"^^xsd:float ;
+                                               rdfs:label "Frequency mode 6 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_7
+<http://example.org/freqval_caa005bTSb-hess_7> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.0"^^xsd:float ;
+                                               rdfs:label "Frequency mode 7 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_8
+<http://example.org/freqval_caa005bTSb-hess_8> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.0"^^xsd:float ;
+                                               rdfs:label "Frequency mode 8 caa005bTSb-hess" .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_9
+<http://example.org/freqval_caa005bTSb-hess_9> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/cm-1> ;
+                                               <http://purl.org/gc/hasFloatValue> "123.74"^^xsd:float ;
+                                               rdfs:label "Frequency mode 9 caa005bTSb-hess" .
+
+
 ###  http://example.org/freqval_caa005b_1
 <http://example.org/freqval_caa005b_1> rdf:type owl:NamedIndividual ,
                                                 <http://purl.org/gc/FloatValue> ;
@@ -17958,6 +18631,14 @@ rdfs:Class rdf:type owl:Class .
                                       <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
                                       <http://purl.org/gc/hasFloatValue> "170.217"^^xsd:float ;
                                       rdfs:label "Gibbs free energy caa005bTSa" .
+
+
+###  http://example.org/gibbs_caa005bTSb-hess
+<http://example.org/gibbs_caa005bTSb-hess> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                           <http://purl.org/gc/hasFloatValue> "162.165"^^xsd:float ;
+                                           rdfs:label "Gibbs free energy caa005bTSb-hess" .
 
 
 ###  http://example.org/gibbs_caa007b
@@ -22332,7 +23013,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/intval_caa004e_6> rdf:type owl:NamedIndividual ,
                                                <http://purl.org/gc/FloatValue> ;
                                       <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
-                                      <http://purl.org/gc/hasFloatValue> "0.05498"^^xsd:float ;
+                                      <http://purl.org/gc/hasFloatValue> "0.05497"^^xsd:float ;
                                       rdfs:label "IR intensity mode 6 caa004e" .
 
 
@@ -26102,6 +26783,318 @@ rdfs:Class rdf:type owl:Class .
                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
                                          <http://purl.org/gc/hasFloatValue> "0.07325"^^xsd:float ;
                                          rdfs:label "IR intensity mode 9 caa005bTSa" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_1
+<http://example.org/intval_caa005bTSb-hess_1> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/FloatValue> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                              <http://purl.org/gc/hasFloatValue> "15.71907"^^xsd:float ;
+                                              rdfs:label "IR intensity mode 1 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_10
+<http://example.org/intval_caa005bTSb-hess_10> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.06332"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 10 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_11
+<http://example.org/intval_caa005bTSb-hess_11> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.55458"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 11 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_12
+<http://example.org/intval_caa005bTSb-hess_12> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.79916"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 12 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_13
+<http://example.org/intval_caa005bTSb-hess_13> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "3.41987"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 13 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_14
+<http://example.org/intval_caa005bTSb-hess_14> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.78512"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 14 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_15
+<http://example.org/intval_caa005bTSb-hess_15> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "4.43696"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 15 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_16
+<http://example.org/intval_caa005bTSb-hess_16> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "13.75722"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 16 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_17
+<http://example.org/intval_caa005bTSb-hess_17> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "5.95893"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 17 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_18
+<http://example.org/intval_caa005bTSb-hess_18> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "3.13954"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 18 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_19
+<http://example.org/intval_caa005bTSb-hess_19> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "12.54137"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 19 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_2
+<http://example.org/intval_caa005bTSb-hess_2> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/FloatValue> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                              <http://purl.org/gc/hasFloatValue> "0.08223"^^xsd:float ;
+                                              rdfs:label "IR intensity mode 2 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_20
+<http://example.org/intval_caa005bTSb-hess_20> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "10.43672"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 20 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_21
+<http://example.org/intval_caa005bTSb-hess_21> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "3.2616"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 21 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_22
+<http://example.org/intval_caa005bTSb-hess_22> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.27979"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 22 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_23
+<http://example.org/intval_caa005bTSb-hess_23> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.01417"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 23 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_24
+<http://example.org/intval_caa005bTSb-hess_24> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "18.93766"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 24 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_25
+<http://example.org/intval_caa005bTSb-hess_25> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "12.51592"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 25 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_26
+<http://example.org/intval_caa005bTSb-hess_26> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "1.42709"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 26 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_27
+<http://example.org/intval_caa005bTSb-hess_27> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "4.83139"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 27 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_28
+<http://example.org/intval_caa005bTSb-hess_28> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.33647"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 28 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_29
+<http://example.org/intval_caa005bTSb-hess_29> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "1.48292"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 29 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_3
+<http://example.org/intval_caa005bTSb-hess_3> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/FloatValue> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                              <http://purl.org/gc/hasFloatValue> "0.09234"^^xsd:float ;
+                                              rdfs:label "IR intensity mode 3 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_30
+<http://example.org/intval_caa005bTSb-hess_30> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "17.48383"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 30 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_31
+<http://example.org/intval_caa005bTSb-hess_31> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "6.24032"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 31 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_32
+<http://example.org/intval_caa005bTSb-hess_32> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "19.13392"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 32 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_33
+<http://example.org/intval_caa005bTSb-hess_33> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "4.62118"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 33 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_34
+<http://example.org/intval_caa005bTSb-hess_34> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "36.14748"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 34 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_35
+<http://example.org/intval_caa005bTSb-hess_35> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "1.01084"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 35 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_36
+<http://example.org/intval_caa005bTSb-hess_36> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.27772"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 36 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_37
+<http://example.org/intval_caa005bTSb-hess_37> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "0.00691"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 37 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_38
+<http://example.org/intval_caa005bTSb-hess_38> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "2.72401"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 38 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_39
+<http://example.org/intval_caa005bTSb-hess_39> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                               <http://purl.org/gc/hasFloatValue> "4.45158"^^xsd:float ;
+                                               rdfs:label "IR intensity mode 39 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_4
+<http://example.org/intval_caa005bTSb-hess_4> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/FloatValue> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                              <http://purl.org/gc/hasFloatValue> "0.47455"^^xsd:float ;
+                                              rdfs:label "IR intensity mode 4 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_5
+<http://example.org/intval_caa005bTSb-hess_5> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/FloatValue> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                              <http://purl.org/gc/hasFloatValue> "1.57282"^^xsd:float ;
+                                              rdfs:label "IR intensity mode 5 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_6
+<http://example.org/intval_caa005bTSb-hess_6> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/FloatValue> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                              <http://purl.org/gc/hasFloatValue> "4.86707"^^xsd:float ;
+                                              rdfs:label "IR intensity mode 6 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_7
+<http://example.org/intval_caa005bTSb-hess_7> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/FloatValue> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                              <http://purl.org/gc/hasFloatValue> "1.05895"^^xsd:float ;
+                                              rdfs:label "IR intensity mode 7 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_8
+<http://example.org/intval_caa005bTSb-hess_8> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/FloatValue> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                              <http://purl.org/gc/hasFloatValue> "0.02156"^^xsd:float ;
+                                              rdfs:label "IR intensity mode 8 caa005bTSb-hess" .
+
+
+###  http://example.org/intval_caa005bTSb-hess_9
+<http://example.org/intval_caa005bTSb-hess_9> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/FloatValue> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
+                                              <http://purl.org/gc/hasFloatValue> "0.11637"^^xsd:float ;
+                                              rdfs:label "IR intensity mode 9 caa005bTSb-hess" .
 
 
 ###  http://example.org/intval_caa005b_1
@@ -39944,6 +40937,318 @@ rdfs:Class rdf:type owl:Class .
                                        rdfs:label "Mode 9 caa005bTSa" .
 
 
+###  http://example.org/peak_caa005bTSb-hess_1
+<http://example.org/peak_caa005bTSb-hess_1> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/FrequencyPeak> ;
+                                            <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_1> ;
+                                            <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_1> ;
+                                            rdfs:label "Mode 1 caa005bTSb-hess (imaginary)" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_10
+<http://example.org/peak_caa005bTSb-hess_10> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_10> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_10> ;
+                                             rdfs:label "Mode 10 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_11
+<http://example.org/peak_caa005bTSb-hess_11> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_11> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_11> ;
+                                             rdfs:label "Mode 11 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_12
+<http://example.org/peak_caa005bTSb-hess_12> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_12> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_12> ;
+                                             rdfs:label "Mode 12 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_13
+<http://example.org/peak_caa005bTSb-hess_13> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_13> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_13> ;
+                                             rdfs:label "Mode 13 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_14
+<http://example.org/peak_caa005bTSb-hess_14> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_14> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_14> ;
+                                             rdfs:label "Mode 14 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_15
+<http://example.org/peak_caa005bTSb-hess_15> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_15> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_15> ;
+                                             rdfs:label "Mode 15 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_16
+<http://example.org/peak_caa005bTSb-hess_16> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_16> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_16> ;
+                                             rdfs:label "Mode 16 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_17
+<http://example.org/peak_caa005bTSb-hess_17> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_17> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_17> ;
+                                             rdfs:label "Mode 17 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_18
+<http://example.org/peak_caa005bTSb-hess_18> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_18> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_18> ;
+                                             rdfs:label "Mode 18 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_19
+<http://example.org/peak_caa005bTSb-hess_19> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_19> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_19> ;
+                                             rdfs:label "Mode 19 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_2
+<http://example.org/peak_caa005bTSb-hess_2> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/FrequencyPeak> ;
+                                            <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_2> ;
+                                            <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_2> ;
+                                            rdfs:label "Mode 2 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_20
+<http://example.org/peak_caa005bTSb-hess_20> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_20> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_20> ;
+                                             rdfs:label "Mode 20 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_21
+<http://example.org/peak_caa005bTSb-hess_21> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_21> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_21> ;
+                                             rdfs:label "Mode 21 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_22
+<http://example.org/peak_caa005bTSb-hess_22> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_22> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_22> ;
+                                             rdfs:label "Mode 22 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_23
+<http://example.org/peak_caa005bTSb-hess_23> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_23> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_23> ;
+                                             rdfs:label "Mode 23 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_24
+<http://example.org/peak_caa005bTSb-hess_24> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_24> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_24> ;
+                                             rdfs:label "Mode 24 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_25
+<http://example.org/peak_caa005bTSb-hess_25> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_25> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_25> ;
+                                             rdfs:label "Mode 25 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_26
+<http://example.org/peak_caa005bTSb-hess_26> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_26> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_26> ;
+                                             rdfs:label "Mode 26 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_27
+<http://example.org/peak_caa005bTSb-hess_27> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_27> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_27> ;
+                                             rdfs:label "Mode 27 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_28
+<http://example.org/peak_caa005bTSb-hess_28> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_28> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_28> ;
+                                             rdfs:label "Mode 28 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_29
+<http://example.org/peak_caa005bTSb-hess_29> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_29> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_29> ;
+                                             rdfs:label "Mode 29 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_3
+<http://example.org/peak_caa005bTSb-hess_3> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/FrequencyPeak> ;
+                                            <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_3> ;
+                                            <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_3> ;
+                                            rdfs:label "Mode 3 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_30
+<http://example.org/peak_caa005bTSb-hess_30> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_30> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_30> ;
+                                             rdfs:label "Mode 30 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_31
+<http://example.org/peak_caa005bTSb-hess_31> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_31> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_31> ;
+                                             rdfs:label "Mode 31 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_32
+<http://example.org/peak_caa005bTSb-hess_32> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_32> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_32> ;
+                                             rdfs:label "Mode 32 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_33
+<http://example.org/peak_caa005bTSb-hess_33> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_33> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_33> ;
+                                             rdfs:label "Mode 33 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_34
+<http://example.org/peak_caa005bTSb-hess_34> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_34> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_34> ;
+                                             rdfs:label "Mode 34 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_35
+<http://example.org/peak_caa005bTSb-hess_35> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_35> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_35> ;
+                                             rdfs:label "Mode 35 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_36
+<http://example.org/peak_caa005bTSb-hess_36> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_36> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_36> ;
+                                             rdfs:label "Mode 36 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_37
+<http://example.org/peak_caa005bTSb-hess_37> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_37> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_37> ;
+                                             rdfs:label "Mode 37 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_38
+<http://example.org/peak_caa005bTSb-hess_38> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_38> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_38> ;
+                                             rdfs:label "Mode 38 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_39
+<http://example.org/peak_caa005bTSb-hess_39> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_39> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_39> ;
+                                             rdfs:label "Mode 39 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_4
+<http://example.org/peak_caa005bTSb-hess_4> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/FrequencyPeak> ;
+                                            <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_4> ;
+                                            <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_4> ;
+                                            rdfs:label "Mode 4 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_5
+<http://example.org/peak_caa005bTSb-hess_5> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/FrequencyPeak> ;
+                                            <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_5> ;
+                                            <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_5> ;
+                                            rdfs:label "Mode 5 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_6
+<http://example.org/peak_caa005bTSb-hess_6> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/FrequencyPeak> ;
+                                            <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_6> ;
+                                            <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_6> ;
+                                            rdfs:label "Mode 6 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_7
+<http://example.org/peak_caa005bTSb-hess_7> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/FrequencyPeak> ;
+                                            <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_7> ;
+                                            <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_7> ;
+                                            rdfs:label "Mode 7 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_8
+<http://example.org/peak_caa005bTSb-hess_8> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/FrequencyPeak> ;
+                                            <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_8> ;
+                                            <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_8> ;
+                                            rdfs:label "Mode 8 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_9
+<http://example.org/peak_caa005bTSb-hess_9> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/FrequencyPeak> ;
+                                            <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_9> ;
+                                            <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_9> ;
+                                            rdfs:label "Mode 9 caa005bTSb-hess" .
+
+
 ###  http://example.org/peak_caa005b_1
 <http://example.org/peak_caa005b_1> rdf:type owl:NamedIndividual ,
                                              <http://purl.org/gc/FrequencyPeak> ;
@@ -42558,6 +43863,51 @@ rdfs:Class rdf:type owl:Class .
                                          rdfs:label "Vibrational spectrum caa005bTSa" .
 
 
+###  http://example.org/spectrum_caa005bTSb-hess
+<http://example.org/spectrum_caa005bTSb-hess> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/VibrationalSpectra> ;
+                                              <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa005bTSb-hess_1> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_10> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_11> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_12> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_13> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_14> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_15> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_16> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_17> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_18> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_19> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_2> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_20> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_21> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_22> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_23> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_24> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_25> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_26> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_27> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_28> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_29> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_3> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_30> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_31> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_32> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_33> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_34> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_35> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_36> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_37> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_38> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_39> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_4> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_5> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_6> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_7> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_8> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_9> ;
+                                              rdfs:label "Vibrational spectrum caa005bTSb-hess" .
+
+
 ###  http://example.org/spectrum_caa007b
 <http://example.org/spectrum_caa007b> rdf:type owl:NamedIndividual ,
                                                <http://purl.org/gc/VibrationalSpectra> ;
@@ -42895,6 +44245,14 @@ rdfs:Class rdf:type owl:Class .
                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
                                     <http://purl.org/gc/hasFloatValue> "0.096648"^^xsd:float ;
                                     rdfs:label "Zero-point energy caa005bTSa" .
+
+
+###  http://example.org/zpe_caa005bTSb-hess
+<http://example.org/zpe_caa005bTSb-hess> rdf:type owl:NamedIndividual ,
+                                                  <http://purl.org/gc/FloatValue> ;
+                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                         <http://purl.org/gc/hasFloatValue> "0.093161"^^xsd:float ;
+                                         rdfs:label "Zero-point energy caa005bTSb-hess" .
 
 
 ###  http://example.org/zpe_caa007b

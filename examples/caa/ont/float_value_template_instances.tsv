@@ -468,30 +468,6 @@ ex:intval_caa003a_36	IR intensity mode 36 caa003a	gc:FloatValue	6.72487	gc:debye
 ex:intval_caa003a_37	IR intensity mode 37 caa003a	gc:FloatValue	0.00765	gc:debyeSquaredPerAmuAngstromSquared
 ex:intval_caa003a_38	IR intensity mode 38 caa003a	gc:FloatValue	1.23435	gc:debyeSquaredPerAmuAngstromSquared
 ex:intval_caa003a_39	IR intensity mode 39 caa003a	gc:FloatValue	0.46147	gc:debyeSquaredPerAmuAngstromSquared
-ex:zpe_caa001a	Zero-point energy caa001a	gc:FloatValue	0.094038	gc:hartree
-ex:enthalpy_caa001a	Enthalpy caa001a	gc:FloatValue	280.339	gc:kiloJoules
-ex:entropy_caa001a	Entropy caa001a	gc:FloatValue	470.28	gc:joulePerMoleKelvin
-ex:gibbs_caa001a	Gibbs free energy caa001a	gc:FloatValue	140.125	gc:kiloJoules
-ex:zpe_caa001b	Zero-point energy caa001b	gc:FloatValue	0.094037	gc:hartree
-ex:enthalpy_caa001b	Enthalpy caa001b	gc:FloatValue	280.338	gc:kiloJoules
-ex:entropy_caa001b	Entropy caa001b	gc:FloatValue	470.323	gc:joulePerMoleKelvin
-ex:gibbs_caa001b	Gibbs free energy caa001b	gc:FloatValue	140.112	gc:kiloJoules
-ex:zpe_caa002	Zero-point energy caa002	gc:FloatValue	0.09806	gc:hartree
-ex:enthalpy_caa002	Enthalpy caa002	gc:FloatValue	286.379	gc:kiloJoules
-ex:entropy_caa002	Entropy caa002	gc:FloatValue	418.694	gc:joulePerMoleKelvin
-ex:gibbs_caa002	Gibbs free energy caa002	gc:FloatValue	161.545	gc:kiloJoules
-ex:zpe_caa002a	Zero-point energy caa002a	gc:FloatValue	0.096527	gc:hartree
-ex:enthalpy_caa002a	Enthalpy caa002a	gc:FloatValue	281.317	gc:kiloJoules
-ex:entropy_caa002a	Entropy caa002a	gc:FloatValue	412.115	gc:joulePerMoleKelvin
-ex:gibbs_caa002a	Gibbs free energy caa002a	gc:FloatValue	158.444	gc:kiloJoules
-ex:zpe_caa002b	Zero-point energy caa002b	gc:FloatValue	0.0981	gc:hartree
-ex:enthalpy_caa002b	Enthalpy caa002b	gc:FloatValue	286.244	gc:kiloJoules
-ex:entropy_caa002b	Entropy caa002b	gc:FloatValue	414.465	gc:joulePerMoleKelvin
-ex:gibbs_caa002b	Gibbs free energy caa002b	gc:FloatValue	162.672	gc:kiloJoules
-ex:zpe_caa003a	Zero-point energy caa003a	gc:FloatValue	0.095903	gc:hartree
-ex:enthalpy_caa003a	Enthalpy caa003a	gc:FloatValue	279.028	gc:kiloJoules
-ex:entropy_caa003a	Entropy caa003a	gc:FloatValue	405.861	gc:joulePerMoleKelvin
-ex:gibbs_caa003a	Gibbs free energy caa003a	gc:FloatValue	158.02	gc:kiloJoules
 ex:freqval_caa003b_1	Frequency mode 1 caa003b	gc:FloatValue	0.28	gc:cm-1
 ex:freqval_caa003b_2	Frequency mode 2 caa003b	gc:FloatValue	0.22	gc:cm-1
 ex:freqval_caa003b_3	Frequency mode 3 caa003b	gc:FloatValue	0.12	gc:cm-1
@@ -1040,8 +1016,8 @@ ex:intval_caa004d_38	IR intensity mode 38 caa004d	gc:FloatValue	1.70903	gc:debye
 ex:intval_caa004d_39	IR intensity mode 39 caa004d	gc:FloatValue	0.49122	gc:debyeSquaredPerAmuAngstromSquared
 ex:freqval_caa004e_1	Frequency mode 1 caa004e	gc:FloatValue	-62.1	gc:cm-1
 ex:freqval_caa004e_2	Frequency mode 2 caa004e	gc:FloatValue	13.54	gc:cm-1
-ex:freqval_caa004e_3	Frequency mode 3 caa004e	gc:FloatValue	0.23	gc:cm-1
-ex:freqval_caa004e_4	Frequency mode 4 caa004e	gc:FloatValue	0.11	gc:cm-1
+ex:freqval_caa004e_3	Frequency mode 3 caa004e	gc:FloatValue	0.24	gc:cm-1
+ex:freqval_caa004e_4	Frequency mode 4 caa004e	gc:FloatValue	0.1	gc:cm-1
 ex:freqval_caa004e_5	Frequency mode 5 caa004e	gc:FloatValue	33.01	gc:cm-1
 ex:freqval_caa004e_6	Frequency mode 6 caa004e	gc:FloatValue	48.3	gc:cm-1
 ex:freqval_caa004e_7	Frequency mode 7 caa004e	gc:FloatValue	49.33	gc:cm-1
@@ -1082,7 +1058,7 @@ ex:intval_caa004e_2	IR intensity mode 2 caa004e	gc:FloatValue	0.09146	gc:debyeSq
 ex:intval_caa004e_3	IR intensity mode 3 caa004e	gc:FloatValue	0	gc:debyeSquaredPerAmuAngstromSquared
 ex:intval_caa004e_4	IR intensity mode 4 caa004e	gc:FloatValue	0	gc:debyeSquaredPerAmuAngstromSquared
 ex:intval_caa004e_5	IR intensity mode 5 caa004e	gc:FloatValue	0.00325	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa004e_6	IR intensity mode 6 caa004e	gc:FloatValue	0.05498	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa004e_6	IR intensity mode 6 caa004e	gc:FloatValue	0.05497	gc:debyeSquaredPerAmuAngstromSquared
 ex:intval_caa004e_7	IR intensity mode 7 caa004e	gc:FloatValue	0.52321	gc:debyeSquaredPerAmuAngstromSquared
 ex:intval_caa004e_8	IR intensity mode 8 caa004e	gc:FloatValue	0.21116	gc:debyeSquaredPerAmuAngstromSquared
 ex:intval_caa004e_9	IR intensity mode 9 caa004e	gc:FloatValue	4.96243	gc:debyeSquaredPerAmuAngstromSquared
@@ -1662,66 +1638,6 @@ ex:intval_caa004m_36	IR intensity mode 36 caa004m	gc:FloatValue	0.07481	gc:debye
 ex:intval_caa004m_37	IR intensity mode 37 caa004m	gc:FloatValue	0.00294	gc:debyeSquaredPerAmuAngstromSquared
 ex:intval_caa004m_38	IR intensity mode 38 caa004m	gc:FloatValue	1.6003	gc:debyeSquaredPerAmuAngstromSquared
 ex:intval_caa004m_39	IR intensity mode 39 caa004m	gc:FloatValue	1.16944	gc:debyeSquaredPerAmuAngstromSquared
-ex:zpe_caa003b	Zero-point energy caa003b	gc:FloatValue	0.097285	gc:hartree
-ex:enthalpy_caa003b	Enthalpy caa003b	gc:FloatValue	285.219	gc:kiloJoules
-ex:entropy_caa003b	Entropy caa003b	gc:FloatValue	422.222	gc:joulePerMoleKelvin
-ex:gibbs_caa003b	Gibbs free energy caa003b	gc:FloatValue	159.333	gc:kiloJoules
-ex:zpe_caa003c	Zero-point energy caa003c	gc:FloatValue	0.098261	gc:hartree
-ex:enthalpy_caa003c	Enthalpy caa003c	gc:FloatValue	286.485	gc:kiloJoules
-ex:entropy_caa003c	Entropy caa003c	gc:FloatValue	410.686	gc:joulePerMoleKelvin
-ex:gibbs_caa003c	Gibbs free energy caa003c	gc:FloatValue	164.039	gc:kiloJoules
-ex:zpe_caa003d	Zero-point energy caa003d	gc:FloatValue	0.097335	gc:hartree
-ex:enthalpy_caa003d	Enthalpy caa003d	gc:FloatValue	280.542	gc:kiloJoules
-ex:entropy_caa003d	Entropy caa003d	gc:FloatValue	378.945	gc:joulePerMoleKelvin
-ex:gibbs_caa003d	Gibbs free energy caa003d	gc:FloatValue	167.559	gc:kiloJoules
-ex:zpe_caa004a	Zero-point energy caa004a	gc:FloatValue	0.099002	gc:hartree
-ex:enthalpy_caa004a	Enthalpy caa004a	gc:FloatValue	288.904	gc:kiloJoules
-ex:entropy_caa004a	Entropy caa004a	gc:FloatValue	436.927	gc:joulePerMoleKelvin
-ex:gibbs_caa004a	Gibbs free energy caa004a	gc:FloatValue	158.634	gc:kiloJoules
-ex:zpe_caa004b	Zero-point energy caa004b	gc:FloatValue	0.098395	gc:hartree
-ex:enthalpy_caa004b	Enthalpy caa004b	gc:FloatValue	287.147	gc:kiloJoules
-ex:entropy_caa004b	Entropy caa004b	gc:FloatValue	425.302	gc:joulePerMoleKelvin
-ex:gibbs_caa004b	Gibbs free energy caa004b	gc:FloatValue	160.344	gc:kiloJoules
-ex:zpe_caa004c	Zero-point energy caa004c	gc:FloatValue	0.096946	gc:hartree
-ex:enthalpy_caa004c	Enthalpy caa004c	gc:FloatValue	280.548	gc:kiloJoules
-ex:entropy_caa004c	Entropy caa004c	gc:FloatValue	402.135	gc:joulePerMoleKelvin
-ex:gibbs_caa004c	Gibbs free energy caa004c	gc:FloatValue	160.651	gc:kiloJoules
-ex:zpe_caa004d	Zero-point energy caa004d	gc:FloatValue	0.098159	gc:hartree
-ex:enthalpy_caa004d	Enthalpy caa004d	gc:FloatValue	284.115	gc:kiloJoules
-ex:entropy_caa004d	Entropy caa004d	gc:FloatValue	392.848	gc:joulePerMoleKelvin
-ex:gibbs_caa004d	Gibbs free energy caa004d	gc:FloatValue	166.987	gc:kiloJoules
-ex:zpe_caa004e	Zero-point energy caa004e	gc:FloatValue	0.099384	gc:hartree
-ex:enthalpy_caa004e	Enthalpy caa004e	gc:FloatValue	285.457	gc:kiloJoules
-ex:entropy_caa004e	Entropy caa004e	gc:FloatValue	378.764	gc:joulePerMoleKelvin
-ex:gibbs_caa004e	Gibbs free energy caa004e	gc:FloatValue	172.529	gc:kiloJoules
-ex:zpe_caa004f	Zero-point energy caa004f	gc:FloatValue	0.099257	gc:hartree
-ex:enthalpy_caa004f	Enthalpy caa004f	gc:FloatValue	285.251	gc:kiloJoules
-ex:entropy_caa004f	Entropy caa004f	gc:FloatValue	375.583	gc:joulePerMoleKelvin
-ex:gibbs_caa004f	Gibbs free energy caa004f	gc:FloatValue	173.271	gc:kiloJoules
-ex:zpe_caa004g	Zero-point energy caa004g	gc:FloatValue	0.102098	gc:hartree
-ex:enthalpy_caa004g	Enthalpy caa004g	gc:FloatValue	291.908	gc:kiloJoules
-ex:entropy_caa004g	Entropy caa004g	gc:FloatValue	368.917	gc:joulePerMoleKelvin
-ex:gibbs_caa004g	Gibbs free energy caa004g	gc:FloatValue	181.915	gc:kiloJoules
-ex:zpe_caa004h	Zero-point energy caa004h	gc:FloatValue	0.100366	gc:hartree
-ex:enthalpy_caa004h	Enthalpy caa004h	gc:FloatValue	287.958	gc:kiloJoules
-ex:entropy_caa004h	Entropy caa004h	gc:FloatValue	373.172	gc:joulePerMoleKelvin
-ex:gibbs_caa004h	Gibbs free energy caa004h	gc:FloatValue	176.697	gc:kiloJoules
-ex:zpe_caa004j	Zero-point energy caa004j	gc:FloatValue	0.099806	gc:hartree
-ex:enthalpy_caa004j	Enthalpy caa004j	gc:FloatValue	285.857	gc:kiloJoules
-ex:entropy_caa004j	Entropy caa004j	gc:FloatValue	368.921	gc:joulePerMoleKelvin
-ex:gibbs_caa004j	Gibbs free energy caa004j	gc:FloatValue	175.864	gc:kiloJoules
-ex:zpe_caa004k	Zero-point energy caa004k	gc:FloatValue	0.102779	gc:hartree
-ex:enthalpy_caa004k	Enthalpy caa004k	gc:FloatValue	292.059	gc:kiloJoules
-ex:entropy_caa004k	Entropy caa004k	gc:FloatValue	357.538	gc:joulePerMoleKelvin
-ex:gibbs_caa004k	Gibbs free energy caa004k	gc:FloatValue	185.459	gc:kiloJoules
-ex:zpe_caa004l	Zero-point energy caa004l	gc:FloatValue	0.102424	gc:hartree
-ex:enthalpy_caa004l	Enthalpy caa004l	gc:FloatValue	289.995	gc:kiloJoules
-ex:entropy_caa004l	Entropy caa004l	gc:FloatValue	351.826	gc:joulePerMoleKelvin
-ex:gibbs_caa004l	Gibbs free energy caa004l	gc:FloatValue	185.098	gc:kiloJoules
-ex:zpe_caa004m	Zero-point energy caa004m	gc:FloatValue	0.098499	gc:hartree
-ex:enthalpy_caa004m	Enthalpy caa004m	gc:FloatValue	279.119	gc:kiloJoules
-ex:entropy_caa004m	Entropy caa004m	gc:FloatValue	348.681	gc:joulePerMoleKelvin
-ex:gibbs_caa004m	Gibbs free energy caa004m	gc:FloatValue	175.16	gc:kiloJoules
 ex:freqval_caa005a_1	Frequency mode 1 caa005a	gc:FloatValue	-1351.83	gc:cm-1
 ex:freqval_caa005a_2	Frequency mode 2 caa005a	gc:FloatValue	44.58	gc:cm-1
 ex:freqval_caa005a_3	Frequency mode 3 caa005a	gc:FloatValue	23.18	gc:cm-1
@@ -2190,6 +2106,366 @@ ex:intval_caa005bTSa_36	IR intensity mode 36 caa005bTSa	gc:FloatValue	0.08399	gc
 ex:intval_caa005bTSa_37	IR intensity mode 37 caa005bTSa	gc:FloatValue	0.00257	gc:debyeSquaredPerAmuAngstromSquared
 ex:intval_caa005bTSa_38	IR intensity mode 38 caa005bTSa	gc:FloatValue	2.89287	gc:debyeSquaredPerAmuAngstromSquared
 ex:intval_caa005bTSa_39	IR intensity mode 39 caa005bTSa	gc:FloatValue	4.85864	gc:debyeSquaredPerAmuAngstromSquared
+ex:freqval_caa005bTSb-hess_1	Frequency mode 1 caa005bTSb-hess	gc:FloatValue	-1259.25	gc:cm-1
+ex:freqval_caa005bTSb-hess_2	Frequency mode 2 caa005bTSb-hess	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa005bTSb-hess_3	Frequency mode 3 caa005bTSb-hess	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa005bTSb-hess_4	Frequency mode 4 caa005bTSb-hess	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa005bTSb-hess_5	Frequency mode 5 caa005bTSb-hess	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa005bTSb-hess_6	Frequency mode 6 caa005bTSb-hess	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa005bTSb-hess_7	Frequency mode 7 caa005bTSb-hess	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa005bTSb-hess_8	Frequency mode 8 caa005bTSb-hess	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa005bTSb-hess_9	Frequency mode 9 caa005bTSb-hess	gc:FloatValue	123.74	gc:cm-1
+ex:freqval_caa005bTSb-hess_10	Frequency mode 10 caa005bTSb-hess	gc:FloatValue	153.47	gc:cm-1
+ex:freqval_caa005bTSb-hess_11	Frequency mode 11 caa005bTSb-hess	gc:FloatValue	204.74	gc:cm-1
+ex:freqval_caa005bTSb-hess_12	Frequency mode 12 caa005bTSb-hess	gc:FloatValue	295.77	gc:cm-1
+ex:freqval_caa005bTSb-hess_13	Frequency mode 13 caa005bTSb-hess	gc:FloatValue	332.11	gc:cm-1
+ex:freqval_caa005bTSb-hess_14	Frequency mode 14 caa005bTSb-hess	gc:FloatValue	493.24	gc:cm-1
+ex:freqval_caa005bTSb-hess_15	Frequency mode 15 caa005bTSb-hess	gc:FloatValue	512.71	gc:cm-1
+ex:freqval_caa005bTSb-hess_16	Frequency mode 16 caa005bTSb-hess	gc:FloatValue	541.16	gc:cm-1
+ex:freqval_caa005bTSb-hess_17	Frequency mode 17 caa005bTSb-hess	gc:FloatValue	608.84	gc:cm-1
+ex:freqval_caa005bTSb-hess_18	Frequency mode 18 caa005bTSb-hess	gc:FloatValue	632.48	gc:cm-1
+ex:freqval_caa005bTSb-hess_19	Frequency mode 19 caa005bTSb-hess	gc:FloatValue	680.08	gc:cm-1
+ex:freqval_caa005bTSb-hess_20	Frequency mode 20 caa005bTSb-hess	gc:FloatValue	743.84	gc:cm-1
+ex:freqval_caa005bTSb-hess_21	Frequency mode 21 caa005bTSb-hess	gc:FloatValue	797.64	gc:cm-1
+ex:freqval_caa005bTSb-hess_22	Frequency mode 22 caa005bTSb-hess	gc:FloatValue	909.16	gc:cm-1
+ex:freqval_caa005bTSb-hess_23	Frequency mode 23 caa005bTSb-hess	gc:FloatValue	977	gc:cm-1
+ex:freqval_caa005bTSb-hess_24	Frequency mode 24 caa005bTSb-hess	gc:FloatValue	1055.57	gc:cm-1
+ex:freqval_caa005bTSb-hess_25	Frequency mode 25 caa005bTSb-hess	gc:FloatValue	1103.01	gc:cm-1
+ex:freqval_caa005bTSb-hess_26	Frequency mode 26 caa005bTSb-hess	gc:FloatValue	1196.38	gc:cm-1
+ex:freqval_caa005bTSb-hess_27	Frequency mode 27 caa005bTSb-hess	gc:FloatValue	1249.65	gc:cm-1
+ex:freqval_caa005bTSb-hess_28	Frequency mode 28 caa005bTSb-hess	gc:FloatValue	1302.31	gc:cm-1
+ex:freqval_caa005bTSb-hess_29	Frequency mode 29 caa005bTSb-hess	gc:FloatValue	1356.97	gc:cm-1
+ex:freqval_caa005bTSb-hess_30	Frequency mode 30 caa005bTSb-hess	gc:FloatValue	1393.95	gc:cm-1
+ex:freqval_caa005bTSb-hess_31	Frequency mode 31 caa005bTSb-hess	gc:FloatValue	1454.4	gc:cm-1
+ex:freqval_caa005bTSb-hess_32	Frequency mode 32 caa005bTSb-hess	gc:FloatValue	1474.11	gc:cm-1
+ex:freqval_caa005bTSb-hess_33	Frequency mode 33 caa005bTSb-hess	gc:FloatValue	1829.44	gc:cm-1
+ex:freqval_caa005bTSb-hess_34	Frequency mode 34 caa005bTSb-hess	gc:FloatValue	2250.67	gc:cm-1
+ex:freqval_caa005bTSb-hess_35	Frequency mode 35 caa005bTSb-hess	gc:FloatValue	3045.54	gc:cm-1
+ex:freqval_caa005bTSb-hess_36	Frequency mode 36 caa005bTSb-hess	gc:FloatValue	3158.01	gc:cm-1
+ex:freqval_caa005bTSb-hess_37	Frequency mode 37 caa005bTSb-hess	gc:FloatValue	3255.67	gc:cm-1
+ex:freqval_caa005bTSb-hess_38	Frequency mode 38 caa005bTSb-hess	gc:FloatValue	3839.46	gc:cm-1
+ex:freqval_caa005bTSb-hess_39	Frequency mode 39 caa005bTSb-hess	gc:FloatValue	3922	gc:cm-1
+ex:intval_caa005bTSb-hess_1	IR intensity mode 1 caa005bTSb-hess	gc:FloatValue	15.71907	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_2	IR intensity mode 2 caa005bTSb-hess	gc:FloatValue	0.08223	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_3	IR intensity mode 3 caa005bTSb-hess	gc:FloatValue	0.09234	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_4	IR intensity mode 4 caa005bTSb-hess	gc:FloatValue	0.47455	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_5	IR intensity mode 5 caa005bTSb-hess	gc:FloatValue	1.57282	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_6	IR intensity mode 6 caa005bTSb-hess	gc:FloatValue	4.86707	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_7	IR intensity mode 7 caa005bTSb-hess	gc:FloatValue	1.05895	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_8	IR intensity mode 8 caa005bTSb-hess	gc:FloatValue	0.02156	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_9	IR intensity mode 9 caa005bTSb-hess	gc:FloatValue	0.11637	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_10	IR intensity mode 10 caa005bTSb-hess	gc:FloatValue	0.06332	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_11	IR intensity mode 11 caa005bTSb-hess	gc:FloatValue	0.55458	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_12	IR intensity mode 12 caa005bTSb-hess	gc:FloatValue	0.79916	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_13	IR intensity mode 13 caa005bTSb-hess	gc:FloatValue	3.41987	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_14	IR intensity mode 14 caa005bTSb-hess	gc:FloatValue	0.78512	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_15	IR intensity mode 15 caa005bTSb-hess	gc:FloatValue	4.43696	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_16	IR intensity mode 16 caa005bTSb-hess	gc:FloatValue	13.75722	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_17	IR intensity mode 17 caa005bTSb-hess	gc:FloatValue	5.95893	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_18	IR intensity mode 18 caa005bTSb-hess	gc:FloatValue	3.13954	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_19	IR intensity mode 19 caa005bTSb-hess	gc:FloatValue	12.54137	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_20	IR intensity mode 20 caa005bTSb-hess	gc:FloatValue	10.43672	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_21	IR intensity mode 21 caa005bTSb-hess	gc:FloatValue	3.2616	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_22	IR intensity mode 22 caa005bTSb-hess	gc:FloatValue	0.27979	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_23	IR intensity mode 23 caa005bTSb-hess	gc:FloatValue	0.01417	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_24	IR intensity mode 24 caa005bTSb-hess	gc:FloatValue	18.93766	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_25	IR intensity mode 25 caa005bTSb-hess	gc:FloatValue	12.51592	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_26	IR intensity mode 26 caa005bTSb-hess	gc:FloatValue	1.42709	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_27	IR intensity mode 27 caa005bTSb-hess	gc:FloatValue	4.83139	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_28	IR intensity mode 28 caa005bTSb-hess	gc:FloatValue	0.33647	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_29	IR intensity mode 29 caa005bTSb-hess	gc:FloatValue	1.48292	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_30	IR intensity mode 30 caa005bTSb-hess	gc:FloatValue	17.48383	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_31	IR intensity mode 31 caa005bTSb-hess	gc:FloatValue	6.24032	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_32	IR intensity mode 32 caa005bTSb-hess	gc:FloatValue	19.13392	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_33	IR intensity mode 33 caa005bTSb-hess	gc:FloatValue	4.62118	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_34	IR intensity mode 34 caa005bTSb-hess	gc:FloatValue	36.14748	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_35	IR intensity mode 35 caa005bTSb-hess	gc:FloatValue	1.01084	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_36	IR intensity mode 36 caa005bTSb-hess	gc:FloatValue	0.27772	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_37	IR intensity mode 37 caa005bTSb-hess	gc:FloatValue	0.00691	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_38	IR intensity mode 38 caa005bTSb-hess	gc:FloatValue	2.72401	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa005bTSb-hess_39	IR intensity mode 39 caa005bTSb-hess	gc:FloatValue	4.45158	gc:debyeSquaredPerAmuAngstromSquared
+ex:freqval_caa007b_1	Frequency mode 1 caa007b	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa007b_2	Frequency mode 2 caa007b	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa007b_3	Frequency mode 3 caa007b	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa007b_4	Frequency mode 4 caa007b	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa007b_5	Frequency mode 5 caa007b	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa007b_6	Frequency mode 6 caa007b	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa007b_7	Frequency mode 7 caa007b	gc:FloatValue	65.32	gc:cm-1
+ex:freqval_caa007b_8	Frequency mode 8 caa007b	gc:FloatValue	104.64	gc:cm-1
+ex:freqval_caa007b_9	Frequency mode 9 caa007b	gc:FloatValue	127.63	gc:cm-1
+ex:freqval_caa007b_10	Frequency mode 10 caa007b	gc:FloatValue	195.01	gc:cm-1
+ex:freqval_caa007b_11	Frequency mode 11 caa007b	gc:FloatValue	253.73	gc:cm-1
+ex:freqval_caa007b_12	Frequency mode 12 caa007b	gc:FloatValue	352.12	gc:cm-1
+ex:freqval_caa007b_13	Frequency mode 13 caa007b	gc:FloatValue	381.89	gc:cm-1
+ex:freqval_caa007b_14	Frequency mode 14 caa007b	gc:FloatValue	398.61	gc:cm-1
+ex:freqval_caa007b_15	Frequency mode 15 caa007b	gc:FloatValue	451.34	gc:cm-1
+ex:freqval_caa007b_16	Frequency mode 16 caa007b	gc:FloatValue	485.53	gc:cm-1
+ex:freqval_caa007b_17	Frequency mode 17 caa007b	gc:FloatValue	545.26	gc:cm-1
+ex:freqval_caa007b_18	Frequency mode 18 caa007b	gc:FloatValue	583.63	gc:cm-1
+ex:freqval_caa007b_19	Frequency mode 19 caa007b	gc:FloatValue	786.28	gc:cm-1
+ex:freqval_caa007b_20	Frequency mode 20 caa007b	gc:FloatValue	792.97	gc:cm-1
+ex:freqval_caa007b_21	Frequency mode 21 caa007b	gc:FloatValue	893.19	gc:cm-1
+ex:freqval_caa007b_22	Frequency mode 22 caa007b	gc:FloatValue	1021.02	gc:cm-1
+ex:freqval_caa007b_23	Frequency mode 23 caa007b	gc:FloatValue	1071.27	gc:cm-1
+ex:freqval_caa007b_24	Frequency mode 24 caa007b	gc:FloatValue	1160.77	gc:cm-1
+ex:freqval_caa007b_25	Frequency mode 25 caa007b	gc:FloatValue	1200.43	gc:cm-1
+ex:freqval_caa007b_26	Frequency mode 26 caa007b	gc:FloatValue	1296.07	gc:cm-1
+ex:freqval_caa007b_27	Frequency mode 27 caa007b	gc:FloatValue	1343.88	gc:cm-1
+ex:freqval_caa007b_28	Frequency mode 28 caa007b	gc:FloatValue	1379.53	gc:cm-1
+ex:freqval_caa007b_29	Frequency mode 29 caa007b	gc:FloatValue	1442.07	gc:cm-1
+ex:freqval_caa007b_30	Frequency mode 30 caa007b	gc:FloatValue	1479.74	gc:cm-1
+ex:freqval_caa007b_31	Frequency mode 31 caa007b	gc:FloatValue	1524.59	gc:cm-1
+ex:freqval_caa007b_32	Frequency mode 32 caa007b	gc:FloatValue	1678.32	gc:cm-1
+ex:freqval_caa007b_33	Frequency mode 33 caa007b	gc:FloatValue	3074.83	gc:cm-1
+ex:freqval_caa007b_34	Frequency mode 34 caa007b	gc:FloatValue	3126.93	gc:cm-1
+ex:freqval_caa007b_35	Frequency mode 35 caa007b	gc:FloatValue	3211.45	gc:cm-1
+ex:freqval_caa007b_36	Frequency mode 36 caa007b	gc:FloatValue	3628.44	gc:cm-1
+ex:freqval_caa007b_37	Frequency mode 37 caa007b	gc:FloatValue	3795.39	gc:cm-1
+ex:freqval_caa007b_38	Frequency mode 38 caa007b	gc:FloatValue	3864.13	gc:cm-1
+ex:freqval_caa007b_39	Frequency mode 39 caa007b	gc:FloatValue	3948.91	gc:cm-1
+ex:intval_caa007b_1	IR intensity mode 1 caa007b	gc:FloatValue	0.0687	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_2	IR intensity mode 2 caa007b	gc:FloatValue	0.0373	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_3	IR intensity mode 3 caa007b	gc:FloatValue	0.04814	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_4	IR intensity mode 4 caa007b	gc:FloatValue	0.03464	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_5	IR intensity mode 5 caa007b	gc:FloatValue	0.01863	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_6	IR intensity mode 6 caa007b	gc:FloatValue	0.02377	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_7	IR intensity mode 7 caa007b	gc:FloatValue	0.06323	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_8	IR intensity mode 8 caa007b	gc:FloatValue	0.12311	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_9	IR intensity mode 9 caa007b	gc:FloatValue	0.20542	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_10	IR intensity mode 10 caa007b	gc:FloatValue	0.11014	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_11	IR intensity mode 11 caa007b	gc:FloatValue	1.32946	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_12	IR intensity mode 12 caa007b	gc:FloatValue	3.99544	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_13	IR intensity mode 13 caa007b	gc:FloatValue	1.12084	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_14	IR intensity mode 14 caa007b	gc:FloatValue	0.50929	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_15	IR intensity mode 15 caa007b	gc:FloatValue	5.02641	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_16	IR intensity mode 16 caa007b	gc:FloatValue	2.36455	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_17	IR intensity mode 17 caa007b	gc:FloatValue	5.32623	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_18	IR intensity mode 18 caa007b	gc:FloatValue	2.97658	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_19	IR intensity mode 19 caa007b	gc:FloatValue	1.5356	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_20	IR intensity mode 20 caa007b	gc:FloatValue	4.25773	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_21	IR intensity mode 21 caa007b	gc:FloatValue	0.24702	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_22	IR intensity mode 22 caa007b	gc:FloatValue	2.68269	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_23	IR intensity mode 23 caa007b	gc:FloatValue	3.23428	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_24	IR intensity mode 24 caa007b	gc:FloatValue	4.22919	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_25	IR intensity mode 25 caa007b	gc:FloatValue	0.15093	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_26	IR intensity mode 26 caa007b	gc:FloatValue	0.20037	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_27	IR intensity mode 27 caa007b	gc:FloatValue	0.71003	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_28	IR intensity mode 28 caa007b	gc:FloatValue	2.46049	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_29	IR intensity mode 29 caa007b	gc:FloatValue	1.57486	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_30	IR intensity mode 30 caa007b	gc:FloatValue	0.21131	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_31	IR intensity mode 31 caa007b	gc:FloatValue	2.3663	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_32	IR intensity mode 32 caa007b	gc:FloatValue	2.77109	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_33	IR intensity mode 33 caa007b	gc:FloatValue	1.22696	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_34	IR intensity mode 34 caa007b	gc:FloatValue	0.42426	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_35	IR intensity mode 35 caa007b	gc:FloatValue	0.0815	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_36	IR intensity mode 36 caa007b	gc:FloatValue	12.64894	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_37	IR intensity mode 37 caa007b	gc:FloatValue	4.27626	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_38	IR intensity mode 38 caa007b	gc:FloatValue	1.61284	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa007b_39	IR intensity mode 39 caa007b	gc:FloatValue	3.40666	gc:debyeSquaredPerAmuAngstromSquared
+ex:freqval_caa008-aldehyde-bare_1	Frequency mode 1 caa008-aldehyde-bare	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa008-aldehyde-bare_2	Frequency mode 2 caa008-aldehyde-bare	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa008-aldehyde-bare_3	Frequency mode 3 caa008-aldehyde-bare	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa008-aldehyde-bare_4	Frequency mode 4 caa008-aldehyde-bare	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa008-aldehyde-bare_5	Frequency mode 5 caa008-aldehyde-bare	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa008-aldehyde-bare_6	Frequency mode 6 caa008-aldehyde-bare	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa008-aldehyde-bare_7	Frequency mode 7 caa008-aldehyde-bare	gc:FloatValue	95.74	gc:cm-1
+ex:freqval_caa008-aldehyde-bare_8	Frequency mode 8 caa008-aldehyde-bare	gc:FloatValue	273.72	gc:cm-1
+ex:freqval_caa008-aldehyde-bare_9	Frequency mode 9 caa008-aldehyde-bare	gc:FloatValue	463.71	gc:cm-1
+ex:freqval_caa008-aldehyde-bare_10	Frequency mode 10 caa008-aldehyde-bare	gc:FloatValue	707.62	gc:cm-1
+ex:freqval_caa008-aldehyde-bare_11	Frequency mode 11 caa008-aldehyde-bare	gc:FloatValue	813.89	gc:cm-1
+ex:freqval_caa008-aldehyde-bare_12	Frequency mode 12 caa008-aldehyde-bare	gc:FloatValue	1048.99	gc:cm-1
+ex:freqval_caa008-aldehyde-bare_13	Frequency mode 13 caa008-aldehyde-bare	gc:FloatValue	1077.92	gc:cm-1
+ex:freqval_caa008-aldehyde-bare_14	Frequency mode 14 caa008-aldehyde-bare	gc:FloatValue	1224.56	gc:cm-1
+ex:freqval_caa008-aldehyde-bare_15	Frequency mode 15 caa008-aldehyde-bare	gc:FloatValue	1302.11	gc:cm-1
+ex:freqval_caa008-aldehyde-bare_16	Frequency mode 16 caa008-aldehyde-bare	gc:FloatValue	1436.48	gc:cm-1
+ex:freqval_caa008-aldehyde-bare_17	Frequency mode 17 caa008-aldehyde-bare	gc:FloatValue	1447.8	gc:cm-1
+ex:freqval_caa008-aldehyde-bare_18	Frequency mode 18 caa008-aldehyde-bare	gc:FloatValue	1856.82	gc:cm-1
+ex:freqval_caa008-aldehyde-bare_19	Frequency mode 19 caa008-aldehyde-bare	gc:FloatValue	3004.24	gc:cm-1
+ex:freqval_caa008-aldehyde-bare_20	Frequency mode 20 caa008-aldehyde-bare	gc:FloatValue	3112.04	gc:cm-1
+ex:freqval_caa008-aldehyde-bare_21	Frequency mode 21 caa008-aldehyde-bare	gc:FloatValue	3192.28	gc:cm-1
+ex:intval_caa008-aldehyde-bare_1	IR intensity mode 1 caa008-aldehyde-bare	gc:FloatValue	0.03629	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-aldehyde-bare_2	IR intensity mode 2 caa008-aldehyde-bare	gc:FloatValue	0.00227	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-aldehyde-bare_3	IR intensity mode 3 caa008-aldehyde-bare	gc:FloatValue	0.007	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-aldehyde-bare_4	IR intensity mode 4 caa008-aldehyde-bare	gc:FloatValue	0.00016	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-aldehyde-bare_5	IR intensity mode 5 caa008-aldehyde-bare	gc:FloatValue	0.00038	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-aldehyde-bare_6	IR intensity mode 6 caa008-aldehyde-bare	gc:FloatValue	0.00328	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-aldehyde-bare_7	IR intensity mode 7 caa008-aldehyde-bare	gc:FloatValue	0.752	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-aldehyde-bare_8	IR intensity mode 8 caa008-aldehyde-bare	gc:FloatValue	0.5489	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-aldehyde-bare_9	IR intensity mode 9 caa008-aldehyde-bare	gc:FloatValue	0.36613	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-aldehyde-bare_10	IR intensity mode 10 caa008-aldehyde-bare	gc:FloatValue	0.21802	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-aldehyde-bare_11	IR intensity mode 11 caa008-aldehyde-bare	gc:FloatValue	1.64377	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-aldehyde-bare_12	IR intensity mode 12 caa008-aldehyde-bare	gc:FloatValue	1.42711	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-aldehyde-bare_13	IR intensity mode 13 caa008-aldehyde-bare	gc:FloatValue	0.0243	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-aldehyde-bare_14	IR intensity mode 14 caa008-aldehyde-bare	gc:FloatValue	0.04653	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-aldehyde-bare_15	IR intensity mode 15 caa008-aldehyde-bare	gc:FloatValue	0.75258	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-aldehyde-bare_16	IR intensity mode 16 caa008-aldehyde-bare	gc:FloatValue	0.59162	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-aldehyde-bare_17	IR intensity mode 17 caa008-aldehyde-bare	gc:FloatValue	0.28715	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-aldehyde-bare_18	IR intensity mode 18 caa008-aldehyde-bare	gc:FloatValue	5.92539	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-aldehyde-bare_19	IR intensity mode 19 caa008-aldehyde-bare	gc:FloatValue	1.81114	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-aldehyde-bare_20	IR intensity mode 20 caa008-aldehyde-bare	gc:FloatValue	0.29377	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-aldehyde-bare_21	IR intensity mode 21 caa008-aldehyde-bare	gc:FloatValue	0.02196	gc:debyeSquaredPerAmuAngstromSquared
+ex:freqval_caa008-hydrate-bare_1	Frequency mode 1 caa008-hydrate-bare	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa008-hydrate-bare_2	Frequency mode 2 caa008-hydrate-bare	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa008-hydrate-bare_3	Frequency mode 3 caa008-hydrate-bare	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa008-hydrate-bare_4	Frequency mode 4 caa008-hydrate-bare	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa008-hydrate-bare_5	Frequency mode 5 caa008-hydrate-bare	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa008-hydrate-bare_6	Frequency mode 6 caa008-hydrate-bare	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa008-hydrate-bare_7	Frequency mode 7 caa008-hydrate-bare	gc:FloatValue	109.97	gc:cm-1
+ex:freqval_caa008-hydrate-bare_8	Frequency mode 8 caa008-hydrate-bare	gc:FloatValue	206.8	gc:cm-1
+ex:freqval_caa008-hydrate-bare_9	Frequency mode 9 caa008-hydrate-bare	gc:FloatValue	277.25	gc:cm-1
+ex:freqval_caa008-hydrate-bare_10	Frequency mode 10 caa008-hydrate-bare	gc:FloatValue	368.17	gc:cm-1
+ex:freqval_caa008-hydrate-bare_11	Frequency mode 11 caa008-hydrate-bare	gc:FloatValue	427	gc:cm-1
+ex:freqval_caa008-hydrate-bare_12	Frequency mode 12 caa008-hydrate-bare	gc:FloatValue	467.31	gc:cm-1
+ex:freqval_caa008-hydrate-bare_13	Frequency mode 13 caa008-hydrate-bare	gc:FloatValue	584.59	gc:cm-1
+ex:freqval_caa008-hydrate-bare_14	Frequency mode 14 caa008-hydrate-bare	gc:FloatValue	787.04	gc:cm-1
+ex:freqval_caa008-hydrate-bare_15	Frequency mode 15 caa008-hydrate-bare	gc:FloatValue	890.25	gc:cm-1
+ex:freqval_caa008-hydrate-bare_16	Frequency mode 16 caa008-hydrate-bare	gc:FloatValue	1008.77	gc:cm-1
+ex:freqval_caa008-hydrate-bare_17	Frequency mode 17 caa008-hydrate-bare	gc:FloatValue	1094.16	gc:cm-1
+ex:freqval_caa008-hydrate-bare_18	Frequency mode 18 caa008-hydrate-bare	gc:FloatValue	1133.95	gc:cm-1
+ex:freqval_caa008-hydrate-bare_19	Frequency mode 19 caa008-hydrate-bare	gc:FloatValue	1195.99	gc:cm-1
+ex:freqval_caa008-hydrate-bare_20	Frequency mode 20 caa008-hydrate-bare	gc:FloatValue	1278.61	gc:cm-1
+ex:freqval_caa008-hydrate-bare_21	Frequency mode 21 caa008-hydrate-bare	gc:FloatValue	1311.24	gc:cm-1
+ex:freqval_caa008-hydrate-bare_22	Frequency mode 22 caa008-hydrate-bare	gc:FloatValue	1360.88	gc:cm-1
+ex:freqval_caa008-hydrate-bare_23	Frequency mode 23 caa008-hydrate-bare	gc:FloatValue	1443.49	gc:cm-1
+ex:freqval_caa008-hydrate-bare_24	Frequency mode 24 caa008-hydrate-bare	gc:FloatValue	1469.44	gc:cm-1
+ex:freqval_caa008-hydrate-bare_25	Frequency mode 25 caa008-hydrate-bare	gc:FloatValue	1484.93	gc:cm-1
+ex:freqval_caa008-hydrate-bare_26	Frequency mode 26 caa008-hydrate-bare	gc:FloatValue	3081.96	gc:cm-1
+ex:freqval_caa008-hydrate-bare_27	Frequency mode 27 caa008-hydrate-bare	gc:FloatValue	3127.36	gc:cm-1
+ex:freqval_caa008-hydrate-bare_28	Frequency mode 28 caa008-hydrate-bare	gc:FloatValue	3213.12	gc:cm-1
+ex:freqval_caa008-hydrate-bare_29	Frequency mode 29 caa008-hydrate-bare	gc:FloatValue	3870.44	gc:cm-1
+ex:freqval_caa008-hydrate-bare_30	Frequency mode 30 caa008-hydrate-bare	gc:FloatValue	3884.3	gc:cm-1
+ex:intval_caa008-hydrate-bare_1	IR intensity mode 1 caa008-hydrate-bare	gc:FloatValue	0.00241	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_2	IR intensity mode 2 caa008-hydrate-bare	gc:FloatValue	0.00902	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_3	IR intensity mode 3 caa008-hydrate-bare	gc:FloatValue	0.01318	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_4	IR intensity mode 4 caa008-hydrate-bare	gc:FloatValue	0.01313	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_5	IR intensity mode 5 caa008-hydrate-bare	gc:FloatValue	0.0118	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_6	IR intensity mode 6 caa008-hydrate-bare	gc:FloatValue	0.01615	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_7	IR intensity mode 7 caa008-hydrate-bare	gc:FloatValue	0.04572	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_8	IR intensity mode 8 caa008-hydrate-bare	gc:FloatValue	0.23642	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_9	IR intensity mode 9 caa008-hydrate-bare	gc:FloatValue	4.36129	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_10	IR intensity mode 10 caa008-hydrate-bare	gc:FloatValue	0.54264	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_11	IR intensity mode 11 caa008-hydrate-bare	gc:FloatValue	1.53117	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_12	IR intensity mode 12 caa008-hydrate-bare	gc:FloatValue	2.85823	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_13	IR intensity mode 13 caa008-hydrate-bare	gc:FloatValue	2.60956	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_14	IR intensity mode 14 caa008-hydrate-bare	gc:FloatValue	1.49618	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_15	IR intensity mode 15 caa008-hydrate-bare	gc:FloatValue	0.3031	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_16	IR intensity mode 16 caa008-hydrate-bare	gc:FloatValue	1.28175	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_17	IR intensity mode 17 caa008-hydrate-bare	gc:FloatValue	5.27022	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_18	IR intensity mode 18 caa008-hydrate-bare	gc:FloatValue	5.41751	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_19	IR intensity mode 19 caa008-hydrate-bare	gc:FloatValue	0.10488	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_20	IR intensity mode 20 caa008-hydrate-bare	gc:FloatValue	0.29933	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_21	IR intensity mode 21 caa008-hydrate-bare	gc:FloatValue	1.1741	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_22	IR intensity mode 22 caa008-hydrate-bare	gc:FloatValue	1.55524	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_23	IR intensity mode 23 caa008-hydrate-bare	gc:FloatValue	1.71834	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_24	IR intensity mode 24 caa008-hydrate-bare	gc:FloatValue	0.51755	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_25	IR intensity mode 25 caa008-hydrate-bare	gc:FloatValue	0.83954	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_26	IR intensity mode 26 caa008-hydrate-bare	gc:FloatValue	1.25076	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_27	IR intensity mode 27 caa008-hydrate-bare	gc:FloatValue	0.4334	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_28	IR intensity mode 28 caa008-hydrate-bare	gc:FloatValue	0.07796	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_29	IR intensity mode 29 caa008-hydrate-bare	gc:FloatValue	1.64316	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-hydrate-bare_30	IR intensity mode 30 caa008-hydrate-bare	gc:FloatValue	2.20592	gc:debyeSquaredPerAmuAngstromSquared
+ex:freqval_caa008-water-bare_1	Frequency mode 1 caa008-water-bare	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa008-water-bare_2	Frequency mode 2 caa008-water-bare	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa008-water-bare_3	Frequency mode 3 caa008-water-bare	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa008-water-bare_4	Frequency mode 4 caa008-water-bare	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa008-water-bare_5	Frequency mode 5 caa008-water-bare	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa008-water-bare_6	Frequency mode 6 caa008-water-bare	gc:FloatValue	0	gc:cm-1
+ex:freqval_caa008-water-bare_7	Frequency mode 7 caa008-water-bare	gc:FloatValue	1689.99	gc:cm-1
+ex:freqval_caa008-water-bare_8	Frequency mode 8 caa008-water-bare	gc:FloatValue	3895.92	gc:cm-1
+ex:freqval_caa008-water-bare_9	Frequency mode 9 caa008-water-bare	gc:FloatValue	3991.87	gc:cm-1
+ex:intval_caa008-water-bare_1	IR intensity mode 1 caa008-water-bare	gc:FloatValue	3.35215	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-water-bare_2	IR intensity mode 2 caa008-water-bare	gc:FloatValue	0.02899	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-water-bare_3	IR intensity mode 3 caa008-water-bare	gc:FloatValue	1.283	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-water-bare_4	IR intensity mode 4 caa008-water-bare	gc:FloatValue	0.59806	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-water-bare_5	IR intensity mode 5 caa008-water-bare	gc:FloatValue	1.92186	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-water-bare_6	IR intensity mode 6 caa008-water-bare	gc:FloatValue	4.59981	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-water-bare_7	IR intensity mode 7 caa008-water-bare	gc:FloatValue	2.77788	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-water-bare_8	IR intensity mode 8 caa008-water-bare	gc:FloatValue	0.51341	gc:debyeSquaredPerAmuAngstromSquared
+ex:intval_caa008-water-bare_9	IR intensity mode 9 caa008-water-bare	gc:FloatValue	1.7832	gc:debyeSquaredPerAmuAngstromSquared
+ex:zpe_caa001a	Zero-point energy caa001a	gc:FloatValue	0.094038	gc:hartree
+ex:enthalpy_caa001a	Enthalpy caa001a	gc:FloatValue	280.339	gc:kiloJoules
+ex:entropy_caa001a	Entropy caa001a	gc:FloatValue	470.28	gc:joulePerMoleKelvin
+ex:gibbs_caa001a	Gibbs free energy caa001a	gc:FloatValue	140.125	gc:kiloJoules
+ex:zpe_caa001b	Zero-point energy caa001b	gc:FloatValue	0.094037	gc:hartree
+ex:enthalpy_caa001b	Enthalpy caa001b	gc:FloatValue	280.338	gc:kiloJoules
+ex:entropy_caa001b	Entropy caa001b	gc:FloatValue	470.323	gc:joulePerMoleKelvin
+ex:gibbs_caa001b	Gibbs free energy caa001b	gc:FloatValue	140.112	gc:kiloJoules
+ex:zpe_caa002	Zero-point energy caa002	gc:FloatValue	0.09806	gc:hartree
+ex:enthalpy_caa002	Enthalpy caa002	gc:FloatValue	286.379	gc:kiloJoules
+ex:entropy_caa002	Entropy caa002	gc:FloatValue	418.694	gc:joulePerMoleKelvin
+ex:gibbs_caa002	Gibbs free energy caa002	gc:FloatValue	161.545	gc:kiloJoules
+ex:zpe_caa002a	Zero-point energy caa002a	gc:FloatValue	0.096527	gc:hartree
+ex:enthalpy_caa002a	Enthalpy caa002a	gc:FloatValue	281.317	gc:kiloJoules
+ex:entropy_caa002a	Entropy caa002a	gc:FloatValue	412.115	gc:joulePerMoleKelvin
+ex:gibbs_caa002a	Gibbs free energy caa002a	gc:FloatValue	158.444	gc:kiloJoules
+ex:zpe_caa002b	Zero-point energy caa002b	gc:FloatValue	0.0981	gc:hartree
+ex:enthalpy_caa002b	Enthalpy caa002b	gc:FloatValue	286.244	gc:kiloJoules
+ex:entropy_caa002b	Entropy caa002b	gc:FloatValue	414.465	gc:joulePerMoleKelvin
+ex:gibbs_caa002b	Gibbs free energy caa002b	gc:FloatValue	162.672	gc:kiloJoules
+ex:zpe_caa003a	Zero-point energy caa003a	gc:FloatValue	0.095903	gc:hartree
+ex:enthalpy_caa003a	Enthalpy caa003a	gc:FloatValue	279.028	gc:kiloJoules
+ex:entropy_caa003a	Entropy caa003a	gc:FloatValue	405.861	gc:joulePerMoleKelvin
+ex:gibbs_caa003a	Gibbs free energy caa003a	gc:FloatValue	158.02	gc:kiloJoules
+ex:zpe_caa003b	Zero-point energy caa003b	gc:FloatValue	0.097285	gc:hartree
+ex:enthalpy_caa003b	Enthalpy caa003b	gc:FloatValue	285.219	gc:kiloJoules
+ex:entropy_caa003b	Entropy caa003b	gc:FloatValue	422.222	gc:joulePerMoleKelvin
+ex:gibbs_caa003b	Gibbs free energy caa003b	gc:FloatValue	159.333	gc:kiloJoules
+ex:zpe_caa003c	Zero-point energy caa003c	gc:FloatValue	0.098261	gc:hartree
+ex:enthalpy_caa003c	Enthalpy caa003c	gc:FloatValue	286.485	gc:kiloJoules
+ex:entropy_caa003c	Entropy caa003c	gc:FloatValue	410.686	gc:joulePerMoleKelvin
+ex:gibbs_caa003c	Gibbs free energy caa003c	gc:FloatValue	164.039	gc:kiloJoules
+ex:zpe_caa003d	Zero-point energy caa003d	gc:FloatValue	0.097335	gc:hartree
+ex:enthalpy_caa003d	Enthalpy caa003d	gc:FloatValue	280.542	gc:kiloJoules
+ex:entropy_caa003d	Entropy caa003d	gc:FloatValue	378.945	gc:joulePerMoleKelvin
+ex:gibbs_caa003d	Gibbs free energy caa003d	gc:FloatValue	167.559	gc:kiloJoules
+ex:zpe_caa004a	Zero-point energy caa004a	gc:FloatValue	0.099002	gc:hartree
+ex:enthalpy_caa004a	Enthalpy caa004a	gc:FloatValue	288.904	gc:kiloJoules
+ex:entropy_caa004a	Entropy caa004a	gc:FloatValue	436.927	gc:joulePerMoleKelvin
+ex:gibbs_caa004a	Gibbs free energy caa004a	gc:FloatValue	158.634	gc:kiloJoules
+ex:zpe_caa004b	Zero-point energy caa004b	gc:FloatValue	0.098395	gc:hartree
+ex:enthalpy_caa004b	Enthalpy caa004b	gc:FloatValue	287.147	gc:kiloJoules
+ex:entropy_caa004b	Entropy caa004b	gc:FloatValue	425.302	gc:joulePerMoleKelvin
+ex:gibbs_caa004b	Gibbs free energy caa004b	gc:FloatValue	160.344	gc:kiloJoules
+ex:zpe_caa004c	Zero-point energy caa004c	gc:FloatValue	0.096946	gc:hartree
+ex:enthalpy_caa004c	Enthalpy caa004c	gc:FloatValue	280.548	gc:kiloJoules
+ex:entropy_caa004c	Entropy caa004c	gc:FloatValue	402.135	gc:joulePerMoleKelvin
+ex:gibbs_caa004c	Gibbs free energy caa004c	gc:FloatValue	160.651	gc:kiloJoules
+ex:zpe_caa004d	Zero-point energy caa004d	gc:FloatValue	0.098159	gc:hartree
+ex:enthalpy_caa004d	Enthalpy caa004d	gc:FloatValue	284.115	gc:kiloJoules
+ex:entropy_caa004d	Entropy caa004d	gc:FloatValue	392.848	gc:joulePerMoleKelvin
+ex:gibbs_caa004d	Gibbs free energy caa004d	gc:FloatValue	166.987	gc:kiloJoules
+ex:zpe_caa004e	Zero-point energy caa004e	gc:FloatValue	0.099384	gc:hartree
+ex:enthalpy_caa004e	Enthalpy caa004e	gc:FloatValue	285.457	gc:kiloJoules
+ex:entropy_caa004e	Entropy caa004e	gc:FloatValue	378.764	gc:joulePerMoleKelvin
+ex:gibbs_caa004e	Gibbs free energy caa004e	gc:FloatValue	172.529	gc:kiloJoules
+ex:zpe_caa004f	Zero-point energy caa004f	gc:FloatValue	0.099257	gc:hartree
+ex:enthalpy_caa004f	Enthalpy caa004f	gc:FloatValue	285.251	gc:kiloJoules
+ex:entropy_caa004f	Entropy caa004f	gc:FloatValue	375.583	gc:joulePerMoleKelvin
+ex:gibbs_caa004f	Gibbs free energy caa004f	gc:FloatValue	173.271	gc:kiloJoules
+ex:zpe_caa004g	Zero-point energy caa004g	gc:FloatValue	0.102098	gc:hartree
+ex:enthalpy_caa004g	Enthalpy caa004g	gc:FloatValue	291.908	gc:kiloJoules
+ex:entropy_caa004g	Entropy caa004g	gc:FloatValue	368.917	gc:joulePerMoleKelvin
+ex:gibbs_caa004g	Gibbs free energy caa004g	gc:FloatValue	181.915	gc:kiloJoules
+ex:zpe_caa004h	Zero-point energy caa004h	gc:FloatValue	0.100366	gc:hartree
+ex:enthalpy_caa004h	Enthalpy caa004h	gc:FloatValue	287.958	gc:kiloJoules
+ex:entropy_caa004h	Entropy caa004h	gc:FloatValue	373.172	gc:joulePerMoleKelvin
+ex:gibbs_caa004h	Gibbs free energy caa004h	gc:FloatValue	176.697	gc:kiloJoules
+ex:zpe_caa004j	Zero-point energy caa004j	gc:FloatValue	0.099806	gc:hartree
+ex:enthalpy_caa004j	Enthalpy caa004j	gc:FloatValue	285.857	gc:kiloJoules
+ex:entropy_caa004j	Entropy caa004j	gc:FloatValue	368.921	gc:joulePerMoleKelvin
+ex:gibbs_caa004j	Gibbs free energy caa004j	gc:FloatValue	175.864	gc:kiloJoules
+ex:zpe_caa004k	Zero-point energy caa004k	gc:FloatValue	0.102779	gc:hartree
+ex:enthalpy_caa004k	Enthalpy caa004k	gc:FloatValue	292.059	gc:kiloJoules
+ex:entropy_caa004k	Entropy caa004k	gc:FloatValue	357.538	gc:joulePerMoleKelvin
+ex:gibbs_caa004k	Gibbs free energy caa004k	gc:FloatValue	185.459	gc:kiloJoules
+ex:zpe_caa004l	Zero-point energy caa004l	gc:FloatValue	0.102424	gc:hartree
+ex:enthalpy_caa004l	Enthalpy caa004l	gc:FloatValue	289.995	gc:kiloJoules
+ex:entropy_caa004l	Entropy caa004l	gc:FloatValue	351.826	gc:joulePerMoleKelvin
+ex:gibbs_caa004l	Gibbs free energy caa004l	gc:FloatValue	185.098	gc:kiloJoules
+ex:zpe_caa004m	Zero-point energy caa004m	gc:FloatValue	0.098499	gc:hartree
+ex:enthalpy_caa004m	Enthalpy caa004m	gc:FloatValue	279.119	gc:kiloJoules
+ex:entropy_caa004m	Entropy caa004m	gc:FloatValue	348.681	gc:joulePerMoleKelvin
+ex:gibbs_caa004m	Gibbs free energy caa004m	gc:FloatValue	175.16	gc:kiloJoules
 ex:zpe_caa005a	Zero-point energy caa005a	gc:FloatValue	0.096452	gc:hartree
 ex:enthalpy_caa005a	Enthalpy caa005a	gc:FloatValue	274.017	gc:kiloJoules
 ex:entropy_caa005a	Entropy caa005a	gc:FloatValue	351.173	gc:joulePerMoleKelvin
@@ -2214,11 +2490,37 @@ ex:zpe_caa005bTSa	Zero-point energy caa005bTSa	gc:FloatValue	0.096648	gc:hartree
 ex:enthalpy_caa005bTSa	Enthalpy caa005bTSa	gc:FloatValue	274.871	gc:kiloJoules
 ex:entropy_caa005bTSa	Entropy caa005bTSa	gc:FloatValue	351.008	gc:joulePerMoleKelvin
 ex:gibbs_caa005bTSa	Gibbs free energy caa005bTSa	gc:FloatValue	170.217	gc:kiloJoules
+ex:zpe_caa005bTSb-hess	Zero-point energy caa005bTSb-hess	gc:FloatValue	0.093161	gc:hartree
+ex:enthalpy_caa005bTSb-hess	Enthalpy caa005bTSb-hess	gc:FloatValue	265.379	gc:kiloJoules
+ex:entropy_caa005bTSb-hess	Entropy caa005bTSb-hess	gc:FloatValue	346.183	gc:joulePerMoleKelvin
+ex:gibbs_caa005bTSb-hess	Gibbs free energy caa005bTSb-hess	gc:FloatValue	162.165	gc:kiloJoules
+ex:zpe_caa007b	Zero-point energy caa007b	gc:FloatValue	0.104032	gc:hartree
+ex:enthalpy_caa007b	Enthalpy caa007b	gc:FloatValue	297.446	gc:kiloJoules
+ex:entropy_caa007b	Entropy caa007b	gc:FloatValue	374.576	gc:joulePerMoleKelvin
+ex:gibbs_caa007b	Gibbs free energy caa007b	gc:FloatValue	185.767	gc:kiloJoules
+ex:zpe_caa008-aldehyde-bare	Zero-point energy caa008-aldehyde-bare	gc:FloatValue	0.047974	gc:hartree
+ex:enthalpy_caa008-aldehyde-bare	Enthalpy caa008-aldehyde-bare	gc:FloatValue	140.415	gc:kiloJoules
+ex:entropy_caa008-aldehyde-bare	Entropy caa008-aldehyde-bare	gc:FloatValue	294.257	gc:joulePerMoleKelvin
+ex:gibbs_caa008-aldehyde-bare	Gibbs free energy caa008-aldehyde-bare	gc:FloatValue	52.682	gc:kiloJoules
+ex:zpe_caa008-hydrate-bare	Zero-point energy caa008-hydrate-bare	gc:FloatValue	0.077633	gc:hartree
+ex:enthalpy_caa008-hydrate-bare	Enthalpy caa008-hydrate-bare	gc:FloatValue	221.739	gc:kiloJoules
+ex:entropy_caa008-hydrate-bare	Entropy caa008-hydrate-bare	gc:FloatValue	322.193	gc:joulePerMoleKelvin
+ex:gibbs_caa008-hydrate-bare	Gibbs free energy caa008-hydrate-bare	gc:FloatValue	125.677	gc:kiloJoules
+ex:zpe_caa008-water-bare	Zero-point energy caa008-water-bare	gc:FloatValue	0.02182	gc:hartree
+ex:enthalpy_caa008-water-bare	Enthalpy caa008-water-bare	gc:FloatValue	67.209	gc:kiloJoules
+ex:entropy_caa008-water-bare	Entropy caa008-water-bare	gc:FloatValue	194.445	gc:joulePerMoleKelvin
+ex:gibbs_caa008-water-bare	Gibbs free energy caa008-water-bare	gc:FloatValue	9.236	gc:kiloJoules
 ex:electronic_energy_caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix	Electronic energy caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix (U-WB97X-D)	gc:FloatValue	-491.6712564597	gc:hartree
 ex:electronic_energy_caa005bIRCCML1stdef2TZVPP-uhfcheck	Electronic energy caa005bIRCCML1stdef2TZVPP-uhfcheck (U-WB97X-D)	gc:FloatValue	-491.6953591779	gc:hartree
+ex:electronic_energy_caa005bTSb-pcseg2	Electronic energy caa005bTSb-pcseg2 (R-WB97X-D)	gc:FloatValue	-766.3338684973	gc:hartree
 ex:electronic_energy_caa006a	Electronic energy caa006a (RHF)	gc:FloatValue	-763.9836618095	gc:hartree
 ex:electronic_energy_caa006b	Electronic energy caa006b (RHF)	gc:FloatValue	-764.0506640991	gc:hartree
 ex:electronic_energy_caa006c	Electronic energy caa006c (RHF)	gc:FloatValue	-764.0560828241	gc:hartree
+ex:electronic_energy_caa007a-pcseg2	Electronic energy caa007a-pcseg2 (R-WB97X-D)	gc:FloatValue	-766.3719959497	gc:hartree
+ex:electronic_energy_caa007b-pcseg2	Electronic energy caa007b-pcseg2 (R-WB97X-D)	gc:FloatValue	-766.3839610278	gc:hartree
+ex:electronic_energy_caa008-aldehyde-pcseg2	Electronic energy caa008-aldehyde-pcseg2 (R-WB97X-D)	gc:FloatValue	-613.4620192589	gc:hartree
+ex:electronic_energy_caa008-hydrate-pcseg2	Electronic energy caa008-hydrate-pcseg2 (R-WB97X-D)	gc:FloatValue	-689.9272336982	gc:hartree
+ex:electronic_energy_caa008-water-pcseg2	Electronic energy caa008-water-pcseg2 (R-WB97X-D)	gc:FloatValue	-76.4502962836	gc:hartree
 ex:pathenergy_caa005bTSaIRCf_1	Path energy 1 caa005bTSaIRCf	gc:FloatValue	-765.8776395	gc:hartree
 ex:pathenergy_caa005bTSaIRCf_2	Path energy 2 caa005bTSaIRCf	gc:FloatValue	-765.8776348	gc:hartree
 ex:pathenergy_caa005bTSaIRCf_3	Path energy 3 caa005bTSaIRCf	gc:FloatValue	-765.8776297	gc:hartree
@@ -2508,223 +2810,3 @@ ex:pathenergy_caa005bTSaIRCf_286	Path energy 286 caa005bTSaIRCf	gc:FloatValue	-7
 ex:pathenergy_caa005bTSaIRCf_287	Path energy 287 caa005bTSaIRCf	gc:FloatValue	-765.8919771	gc:hartree
 ex:pathenergy_caa005bTSaIRCf_288	Path energy 288 caa005bTSaIRCf	gc:FloatValue	-765.8919781	gc:hartree
 ex:pathenergy_caa005bTSaIRCf_289	Path energy 289 caa005bTSaIRCf	gc:FloatValue	-765.891979	gc:hartree
-ex:freqval_caa007b_1	Frequency mode 1 caa007b	gc:FloatValue	0	gc:cm-1
-ex:freqval_caa007b_2	Frequency mode 2 caa007b	gc:FloatValue	0	gc:cm-1
-ex:freqval_caa007b_3	Frequency mode 3 caa007b	gc:FloatValue	0	gc:cm-1
-ex:freqval_caa007b_4	Frequency mode 4 caa007b	gc:FloatValue	0	gc:cm-1
-ex:freqval_caa007b_5	Frequency mode 5 caa007b	gc:FloatValue	0	gc:cm-1
-ex:freqval_caa007b_6	Frequency mode 6 caa007b	gc:FloatValue	0	gc:cm-1
-ex:freqval_caa007b_7	Frequency mode 7 caa007b	gc:FloatValue	65.32	gc:cm-1
-ex:freqval_caa007b_8	Frequency mode 8 caa007b	gc:FloatValue	104.64	gc:cm-1
-ex:freqval_caa007b_9	Frequency mode 9 caa007b	gc:FloatValue	127.63	gc:cm-1
-ex:freqval_caa007b_10	Frequency mode 10 caa007b	gc:FloatValue	195.01	gc:cm-1
-ex:freqval_caa007b_11	Frequency mode 11 caa007b	gc:FloatValue	253.73	gc:cm-1
-ex:freqval_caa007b_12	Frequency mode 12 caa007b	gc:FloatValue	352.12	gc:cm-1
-ex:freqval_caa007b_13	Frequency mode 13 caa007b	gc:FloatValue	381.89	gc:cm-1
-ex:freqval_caa007b_14	Frequency mode 14 caa007b	gc:FloatValue	398.61	gc:cm-1
-ex:freqval_caa007b_15	Frequency mode 15 caa007b	gc:FloatValue	451.34	gc:cm-1
-ex:freqval_caa007b_16	Frequency mode 16 caa007b	gc:FloatValue	485.53	gc:cm-1
-ex:freqval_caa007b_17	Frequency mode 17 caa007b	gc:FloatValue	545.26	gc:cm-1
-ex:freqval_caa007b_18	Frequency mode 18 caa007b	gc:FloatValue	583.63	gc:cm-1
-ex:freqval_caa007b_19	Frequency mode 19 caa007b	gc:FloatValue	786.28	gc:cm-1
-ex:freqval_caa007b_20	Frequency mode 20 caa007b	gc:FloatValue	792.97	gc:cm-1
-ex:freqval_caa007b_21	Frequency mode 21 caa007b	gc:FloatValue	893.19	gc:cm-1
-ex:freqval_caa007b_22	Frequency mode 22 caa007b	gc:FloatValue	1021.02	gc:cm-1
-ex:freqval_caa007b_23	Frequency mode 23 caa007b	gc:FloatValue	1071.27	gc:cm-1
-ex:freqval_caa007b_24	Frequency mode 24 caa007b	gc:FloatValue	1160.77	gc:cm-1
-ex:freqval_caa007b_25	Frequency mode 25 caa007b	gc:FloatValue	1200.43	gc:cm-1
-ex:freqval_caa007b_26	Frequency mode 26 caa007b	gc:FloatValue	1296.07	gc:cm-1
-ex:freqval_caa007b_27	Frequency mode 27 caa007b	gc:FloatValue	1343.88	gc:cm-1
-ex:freqval_caa007b_28	Frequency mode 28 caa007b	gc:FloatValue	1379.53	gc:cm-1
-ex:freqval_caa007b_29	Frequency mode 29 caa007b	gc:FloatValue	1442.07	gc:cm-1
-ex:freqval_caa007b_30	Frequency mode 30 caa007b	gc:FloatValue	1479.74	gc:cm-1
-ex:freqval_caa007b_31	Frequency mode 31 caa007b	gc:FloatValue	1524.59	gc:cm-1
-ex:freqval_caa007b_32	Frequency mode 32 caa007b	gc:FloatValue	1678.32	gc:cm-1
-ex:freqval_caa007b_33	Frequency mode 33 caa007b	gc:FloatValue	3074.83	gc:cm-1
-ex:freqval_caa007b_34	Frequency mode 34 caa007b	gc:FloatValue	3126.93	gc:cm-1
-ex:freqval_caa007b_35	Frequency mode 35 caa007b	gc:FloatValue	3211.45	gc:cm-1
-ex:freqval_caa007b_36	Frequency mode 36 caa007b	gc:FloatValue	3628.44	gc:cm-1
-ex:freqval_caa007b_37	Frequency mode 37 caa007b	gc:FloatValue	3795.39	gc:cm-1
-ex:freqval_caa007b_38	Frequency mode 38 caa007b	gc:FloatValue	3864.13	gc:cm-1
-ex:freqval_caa007b_39	Frequency mode 39 caa007b	gc:FloatValue	3948.91	gc:cm-1
-ex:intval_caa007b_1	IR intensity mode 1 caa007b	gc:FloatValue	0.0687	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_2	IR intensity mode 2 caa007b	gc:FloatValue	0.0373	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_3	IR intensity mode 3 caa007b	gc:FloatValue	0.04814	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_4	IR intensity mode 4 caa007b	gc:FloatValue	0.03464	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_5	IR intensity mode 5 caa007b	gc:FloatValue	0.01863	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_6	IR intensity mode 6 caa007b	gc:FloatValue	0.02377	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_7	IR intensity mode 7 caa007b	gc:FloatValue	0.06323	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_8	IR intensity mode 8 caa007b	gc:FloatValue	0.12311	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_9	IR intensity mode 9 caa007b	gc:FloatValue	0.20542	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_10	IR intensity mode 10 caa007b	gc:FloatValue	0.11014	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_11	IR intensity mode 11 caa007b	gc:FloatValue	1.32946	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_12	IR intensity mode 12 caa007b	gc:FloatValue	3.99544	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_13	IR intensity mode 13 caa007b	gc:FloatValue	1.12084	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_14	IR intensity mode 14 caa007b	gc:FloatValue	0.50929	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_15	IR intensity mode 15 caa007b	gc:FloatValue	5.02641	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_16	IR intensity mode 16 caa007b	gc:FloatValue	2.36455	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_17	IR intensity mode 17 caa007b	gc:FloatValue	5.32623	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_18	IR intensity mode 18 caa007b	gc:FloatValue	2.97658	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_19	IR intensity mode 19 caa007b	gc:FloatValue	1.5356	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_20	IR intensity mode 20 caa007b	gc:FloatValue	4.25773	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_21	IR intensity mode 21 caa007b	gc:FloatValue	0.24702	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_22	IR intensity mode 22 caa007b	gc:FloatValue	2.68269	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_23	IR intensity mode 23 caa007b	gc:FloatValue	3.23428	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_24	IR intensity mode 24 caa007b	gc:FloatValue	4.22919	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_25	IR intensity mode 25 caa007b	gc:FloatValue	0.15093	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_26	IR intensity mode 26 caa007b	gc:FloatValue	0.20037	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_27	IR intensity mode 27 caa007b	gc:FloatValue	0.71003	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_28	IR intensity mode 28 caa007b	gc:FloatValue	2.46049	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_29	IR intensity mode 29 caa007b	gc:FloatValue	1.57486	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_30	IR intensity mode 30 caa007b	gc:FloatValue	0.21131	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_31	IR intensity mode 31 caa007b	gc:FloatValue	2.3663	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_32	IR intensity mode 32 caa007b	gc:FloatValue	2.77109	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_33	IR intensity mode 33 caa007b	gc:FloatValue	1.22696	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_34	IR intensity mode 34 caa007b	gc:FloatValue	0.42426	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_35	IR intensity mode 35 caa007b	gc:FloatValue	0.0815	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_36	IR intensity mode 36 caa007b	gc:FloatValue	12.64894	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_37	IR intensity mode 37 caa007b	gc:FloatValue	4.27626	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_38	IR intensity mode 38 caa007b	gc:FloatValue	1.61284	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa007b_39	IR intensity mode 39 caa007b	gc:FloatValue	3.40666	gc:debyeSquaredPerAmuAngstromSquared
-ex:freqval_caa008-aldehyde-bare_1	Frequency mode 1 caa008-aldehyde-bare	gc:FloatValue	0	gc:cm-1
-ex:freqval_caa008-aldehyde-bare_2	Frequency mode 2 caa008-aldehyde-bare	gc:FloatValue	0	gc:cm-1
-ex:freqval_caa008-aldehyde-bare_3	Frequency mode 3 caa008-aldehyde-bare	gc:FloatValue	0	gc:cm-1
-ex:freqval_caa008-aldehyde-bare_4	Frequency mode 4 caa008-aldehyde-bare	gc:FloatValue	0	gc:cm-1
-ex:freqval_caa008-aldehyde-bare_5	Frequency mode 5 caa008-aldehyde-bare	gc:FloatValue	0	gc:cm-1
-ex:freqval_caa008-aldehyde-bare_6	Frequency mode 6 caa008-aldehyde-bare	gc:FloatValue	0	gc:cm-1
-ex:freqval_caa008-aldehyde-bare_7	Frequency mode 7 caa008-aldehyde-bare	gc:FloatValue	95.74	gc:cm-1
-ex:freqval_caa008-aldehyde-bare_8	Frequency mode 8 caa008-aldehyde-bare	gc:FloatValue	273.72	gc:cm-1
-ex:freqval_caa008-aldehyde-bare_9	Frequency mode 9 caa008-aldehyde-bare	gc:FloatValue	463.71	gc:cm-1
-ex:freqval_caa008-aldehyde-bare_10	Frequency mode 10 caa008-aldehyde-bare	gc:FloatValue	707.62	gc:cm-1
-ex:freqval_caa008-aldehyde-bare_11	Frequency mode 11 caa008-aldehyde-bare	gc:FloatValue	813.89	gc:cm-1
-ex:freqval_caa008-aldehyde-bare_12	Frequency mode 12 caa008-aldehyde-bare	gc:FloatValue	1048.99	gc:cm-1
-ex:freqval_caa008-aldehyde-bare_13	Frequency mode 13 caa008-aldehyde-bare	gc:FloatValue	1077.92	gc:cm-1
-ex:freqval_caa008-aldehyde-bare_14	Frequency mode 14 caa008-aldehyde-bare	gc:FloatValue	1224.56	gc:cm-1
-ex:freqval_caa008-aldehyde-bare_15	Frequency mode 15 caa008-aldehyde-bare	gc:FloatValue	1302.11	gc:cm-1
-ex:freqval_caa008-aldehyde-bare_16	Frequency mode 16 caa008-aldehyde-bare	gc:FloatValue	1436.48	gc:cm-1
-ex:freqval_caa008-aldehyde-bare_17	Frequency mode 17 caa008-aldehyde-bare	gc:FloatValue	1447.8	gc:cm-1
-ex:freqval_caa008-aldehyde-bare_18	Frequency mode 18 caa008-aldehyde-bare	gc:FloatValue	1856.82	gc:cm-1
-ex:freqval_caa008-aldehyde-bare_19	Frequency mode 19 caa008-aldehyde-bare	gc:FloatValue	3004.24	gc:cm-1
-ex:freqval_caa008-aldehyde-bare_20	Frequency mode 20 caa008-aldehyde-bare	gc:FloatValue	3112.04	gc:cm-1
-ex:freqval_caa008-aldehyde-bare_21	Frequency mode 21 caa008-aldehyde-bare	gc:FloatValue	3192.28	gc:cm-1
-ex:intval_caa008-aldehyde-bare_1	IR intensity mode 1 caa008-aldehyde-bare	gc:FloatValue	0.03629	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-aldehyde-bare_2	IR intensity mode 2 caa008-aldehyde-bare	gc:FloatValue	0.00227	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-aldehyde-bare_3	IR intensity mode 3 caa008-aldehyde-bare	gc:FloatValue	0.007	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-aldehyde-bare_4	IR intensity mode 4 caa008-aldehyde-bare	gc:FloatValue	0.00016	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-aldehyde-bare_5	IR intensity mode 5 caa008-aldehyde-bare	gc:FloatValue	0.00038	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-aldehyde-bare_6	IR intensity mode 6 caa008-aldehyde-bare	gc:FloatValue	0.00328	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-aldehyde-bare_7	IR intensity mode 7 caa008-aldehyde-bare	gc:FloatValue	0.752	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-aldehyde-bare_8	IR intensity mode 8 caa008-aldehyde-bare	gc:FloatValue	0.5489	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-aldehyde-bare_9	IR intensity mode 9 caa008-aldehyde-bare	gc:FloatValue	0.36613	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-aldehyde-bare_10	IR intensity mode 10 caa008-aldehyde-bare	gc:FloatValue	0.21802	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-aldehyde-bare_11	IR intensity mode 11 caa008-aldehyde-bare	gc:FloatValue	1.64377	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-aldehyde-bare_12	IR intensity mode 12 caa008-aldehyde-bare	gc:FloatValue	1.42711	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-aldehyde-bare_13	IR intensity mode 13 caa008-aldehyde-bare	gc:FloatValue	0.0243	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-aldehyde-bare_14	IR intensity mode 14 caa008-aldehyde-bare	gc:FloatValue	0.04653	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-aldehyde-bare_15	IR intensity mode 15 caa008-aldehyde-bare	gc:FloatValue	0.75258	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-aldehyde-bare_16	IR intensity mode 16 caa008-aldehyde-bare	gc:FloatValue	0.59162	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-aldehyde-bare_17	IR intensity mode 17 caa008-aldehyde-bare	gc:FloatValue	0.28715	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-aldehyde-bare_18	IR intensity mode 18 caa008-aldehyde-bare	gc:FloatValue	5.92539	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-aldehyde-bare_19	IR intensity mode 19 caa008-aldehyde-bare	gc:FloatValue	1.81114	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-aldehyde-bare_20	IR intensity mode 20 caa008-aldehyde-bare	gc:FloatValue	0.29377	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-aldehyde-bare_21	IR intensity mode 21 caa008-aldehyde-bare	gc:FloatValue	0.02196	gc:debyeSquaredPerAmuAngstromSquared
-ex:freqval_caa008-hydrate-bare_1	Frequency mode 1 caa008-hydrate-bare	gc:FloatValue	0	gc:cm-1
-ex:freqval_caa008-hydrate-bare_2	Frequency mode 2 caa008-hydrate-bare	gc:FloatValue	0	gc:cm-1
-ex:freqval_caa008-hydrate-bare_3	Frequency mode 3 caa008-hydrate-bare	gc:FloatValue	0	gc:cm-1
-ex:freqval_caa008-hydrate-bare_4	Frequency mode 4 caa008-hydrate-bare	gc:FloatValue	0	gc:cm-1
-ex:freqval_caa008-hydrate-bare_5	Frequency mode 5 caa008-hydrate-bare	gc:FloatValue	0	gc:cm-1
-ex:freqval_caa008-hydrate-bare_6	Frequency mode 6 caa008-hydrate-bare	gc:FloatValue	0	gc:cm-1
-ex:freqval_caa008-hydrate-bare_7	Frequency mode 7 caa008-hydrate-bare	gc:FloatValue	109.97	gc:cm-1
-ex:freqval_caa008-hydrate-bare_8	Frequency mode 8 caa008-hydrate-bare	gc:FloatValue	206.8	gc:cm-1
-ex:freqval_caa008-hydrate-bare_9	Frequency mode 9 caa008-hydrate-bare	gc:FloatValue	277.25	gc:cm-1
-ex:freqval_caa008-hydrate-bare_10	Frequency mode 10 caa008-hydrate-bare	gc:FloatValue	368.17	gc:cm-1
-ex:freqval_caa008-hydrate-bare_11	Frequency mode 11 caa008-hydrate-bare	gc:FloatValue	427	gc:cm-1
-ex:freqval_caa008-hydrate-bare_12	Frequency mode 12 caa008-hydrate-bare	gc:FloatValue	467.31	gc:cm-1
-ex:freqval_caa008-hydrate-bare_13	Frequency mode 13 caa008-hydrate-bare	gc:FloatValue	584.59	gc:cm-1
-ex:freqval_caa008-hydrate-bare_14	Frequency mode 14 caa008-hydrate-bare	gc:FloatValue	787.04	gc:cm-1
-ex:freqval_caa008-hydrate-bare_15	Frequency mode 15 caa008-hydrate-bare	gc:FloatValue	890.25	gc:cm-1
-ex:freqval_caa008-hydrate-bare_16	Frequency mode 16 caa008-hydrate-bare	gc:FloatValue	1008.77	gc:cm-1
-ex:freqval_caa008-hydrate-bare_17	Frequency mode 17 caa008-hydrate-bare	gc:FloatValue	1094.16	gc:cm-1
-ex:freqval_caa008-hydrate-bare_18	Frequency mode 18 caa008-hydrate-bare	gc:FloatValue	1133.95	gc:cm-1
-ex:freqval_caa008-hydrate-bare_19	Frequency mode 19 caa008-hydrate-bare	gc:FloatValue	1195.99	gc:cm-1
-ex:freqval_caa008-hydrate-bare_20	Frequency mode 20 caa008-hydrate-bare	gc:FloatValue	1278.61	gc:cm-1
-ex:freqval_caa008-hydrate-bare_21	Frequency mode 21 caa008-hydrate-bare	gc:FloatValue	1311.24	gc:cm-1
-ex:freqval_caa008-hydrate-bare_22	Frequency mode 22 caa008-hydrate-bare	gc:FloatValue	1360.88	gc:cm-1
-ex:freqval_caa008-hydrate-bare_23	Frequency mode 23 caa008-hydrate-bare	gc:FloatValue	1443.49	gc:cm-1
-ex:freqval_caa008-hydrate-bare_24	Frequency mode 24 caa008-hydrate-bare	gc:FloatValue	1469.44	gc:cm-1
-ex:freqval_caa008-hydrate-bare_25	Frequency mode 25 caa008-hydrate-bare	gc:FloatValue	1484.93	gc:cm-1
-ex:freqval_caa008-hydrate-bare_26	Frequency mode 26 caa008-hydrate-bare	gc:FloatValue	3081.96	gc:cm-1
-ex:freqval_caa008-hydrate-bare_27	Frequency mode 27 caa008-hydrate-bare	gc:FloatValue	3127.36	gc:cm-1
-ex:freqval_caa008-hydrate-bare_28	Frequency mode 28 caa008-hydrate-bare	gc:FloatValue	3213.12	gc:cm-1
-ex:freqval_caa008-hydrate-bare_29	Frequency mode 29 caa008-hydrate-bare	gc:FloatValue	3870.44	gc:cm-1
-ex:freqval_caa008-hydrate-bare_30	Frequency mode 30 caa008-hydrate-bare	gc:FloatValue	3884.3	gc:cm-1
-ex:intval_caa008-hydrate-bare_1	IR intensity mode 1 caa008-hydrate-bare	gc:FloatValue	0.00241	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_2	IR intensity mode 2 caa008-hydrate-bare	gc:FloatValue	0.00902	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_3	IR intensity mode 3 caa008-hydrate-bare	gc:FloatValue	0.01318	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_4	IR intensity mode 4 caa008-hydrate-bare	gc:FloatValue	0.01313	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_5	IR intensity mode 5 caa008-hydrate-bare	gc:FloatValue	0.0118	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_6	IR intensity mode 6 caa008-hydrate-bare	gc:FloatValue	0.01615	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_7	IR intensity mode 7 caa008-hydrate-bare	gc:FloatValue	0.04572	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_8	IR intensity mode 8 caa008-hydrate-bare	gc:FloatValue	0.23642	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_9	IR intensity mode 9 caa008-hydrate-bare	gc:FloatValue	4.36129	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_10	IR intensity mode 10 caa008-hydrate-bare	gc:FloatValue	0.54264	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_11	IR intensity mode 11 caa008-hydrate-bare	gc:FloatValue	1.53117	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_12	IR intensity mode 12 caa008-hydrate-bare	gc:FloatValue	2.85823	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_13	IR intensity mode 13 caa008-hydrate-bare	gc:FloatValue	2.60956	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_14	IR intensity mode 14 caa008-hydrate-bare	gc:FloatValue	1.49618	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_15	IR intensity mode 15 caa008-hydrate-bare	gc:FloatValue	0.3031	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_16	IR intensity mode 16 caa008-hydrate-bare	gc:FloatValue	1.28175	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_17	IR intensity mode 17 caa008-hydrate-bare	gc:FloatValue	5.27022	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_18	IR intensity mode 18 caa008-hydrate-bare	gc:FloatValue	5.41751	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_19	IR intensity mode 19 caa008-hydrate-bare	gc:FloatValue	0.10488	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_20	IR intensity mode 20 caa008-hydrate-bare	gc:FloatValue	0.29933	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_21	IR intensity mode 21 caa008-hydrate-bare	gc:FloatValue	1.1741	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_22	IR intensity mode 22 caa008-hydrate-bare	gc:FloatValue	1.55524	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_23	IR intensity mode 23 caa008-hydrate-bare	gc:FloatValue	1.71834	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_24	IR intensity mode 24 caa008-hydrate-bare	gc:FloatValue	0.51755	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_25	IR intensity mode 25 caa008-hydrate-bare	gc:FloatValue	0.83954	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_26	IR intensity mode 26 caa008-hydrate-bare	gc:FloatValue	1.25076	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_27	IR intensity mode 27 caa008-hydrate-bare	gc:FloatValue	0.4334	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_28	IR intensity mode 28 caa008-hydrate-bare	gc:FloatValue	0.07796	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_29	IR intensity mode 29 caa008-hydrate-bare	gc:FloatValue	1.64316	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-hydrate-bare_30	IR intensity mode 30 caa008-hydrate-bare	gc:FloatValue	2.20592	gc:debyeSquaredPerAmuAngstromSquared
-ex:freqval_caa008-water-bare_1	Frequency mode 1 caa008-water-bare	gc:FloatValue	0	gc:cm-1
-ex:freqval_caa008-water-bare_2	Frequency mode 2 caa008-water-bare	gc:FloatValue	0	gc:cm-1
-ex:freqval_caa008-water-bare_3	Frequency mode 3 caa008-water-bare	gc:FloatValue	0	gc:cm-1
-ex:freqval_caa008-water-bare_4	Frequency mode 4 caa008-water-bare	gc:FloatValue	0	gc:cm-1
-ex:freqval_caa008-water-bare_5	Frequency mode 5 caa008-water-bare	gc:FloatValue	0	gc:cm-1
-ex:freqval_caa008-water-bare_6	Frequency mode 6 caa008-water-bare	gc:FloatValue	0	gc:cm-1
-ex:freqval_caa008-water-bare_7	Frequency mode 7 caa008-water-bare	gc:FloatValue	1689.99	gc:cm-1
-ex:freqval_caa008-water-bare_8	Frequency mode 8 caa008-water-bare	gc:FloatValue	3895.92	gc:cm-1
-ex:freqval_caa008-water-bare_9	Frequency mode 9 caa008-water-bare	gc:FloatValue	3991.87	gc:cm-1
-ex:intval_caa008-water-bare_1	IR intensity mode 1 caa008-water-bare	gc:FloatValue	3.35215	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-water-bare_2	IR intensity mode 2 caa008-water-bare	gc:FloatValue	0.02899	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-water-bare_3	IR intensity mode 3 caa008-water-bare	gc:FloatValue	1.283	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-water-bare_4	IR intensity mode 4 caa008-water-bare	gc:FloatValue	0.59806	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-water-bare_5	IR intensity mode 5 caa008-water-bare	gc:FloatValue	1.92186	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-water-bare_6	IR intensity mode 6 caa008-water-bare	gc:FloatValue	4.59981	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-water-bare_7	IR intensity mode 7 caa008-water-bare	gc:FloatValue	2.77788	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-water-bare_8	IR intensity mode 8 caa008-water-bare	gc:FloatValue	0.51341	gc:debyeSquaredPerAmuAngstromSquared
-ex:intval_caa008-water-bare_9	IR intensity mode 9 caa008-water-bare	gc:FloatValue	1.7832	gc:debyeSquaredPerAmuAngstromSquared
-ex:zpe_caa007b	Zero-point energy caa007b	gc:FloatValue	0.104032	gc:hartree
-ex:enthalpy_caa007b	Enthalpy caa007b	gc:FloatValue	297.446	gc:kiloJoules
-ex:entropy_caa007b	Entropy caa007b	gc:FloatValue	374.576	gc:joulePerMoleKelvin
-ex:gibbs_caa007b	Gibbs free energy caa007b	gc:FloatValue	185.767	gc:kiloJoules
-ex:zpe_caa008-aldehyde-bare	Zero-point energy caa008-aldehyde-bare	gc:FloatValue	0.047974	gc:hartree
-ex:enthalpy_caa008-aldehyde-bare	Enthalpy caa008-aldehyde-bare	gc:FloatValue	140.415	gc:kiloJoules
-ex:entropy_caa008-aldehyde-bare	Entropy caa008-aldehyde-bare	gc:FloatValue	294.257	gc:joulePerMoleKelvin
-ex:gibbs_caa008-aldehyde-bare	Gibbs free energy caa008-aldehyde-bare	gc:FloatValue	52.682	gc:kiloJoules
-ex:zpe_caa008-hydrate-bare	Zero-point energy caa008-hydrate-bare	gc:FloatValue	0.077633	gc:hartree
-ex:enthalpy_caa008-hydrate-bare	Enthalpy caa008-hydrate-bare	gc:FloatValue	221.739	gc:kiloJoules
-ex:entropy_caa008-hydrate-bare	Entropy caa008-hydrate-bare	gc:FloatValue	322.193	gc:joulePerMoleKelvin
-ex:gibbs_caa008-hydrate-bare	Gibbs free energy caa008-hydrate-bare	gc:FloatValue	125.677	gc:kiloJoules
-ex:zpe_caa008-water-bare	Zero-point energy caa008-water-bare	gc:FloatValue	0.02182	gc:hartree
-ex:enthalpy_caa008-water-bare	Enthalpy caa008-water-bare	gc:FloatValue	67.209	gc:kiloJoules
-ex:entropy_caa008-water-bare	Entropy caa008-water-bare	gc:FloatValue	194.445	gc:joulePerMoleKelvin
-ex:gibbs_caa008-water-bare	Gibbs free energy caa008-water-bare	gc:FloatValue	9.236	gc:kiloJoules
-ex:electronic_energy_caa005bTSb-pcseg2	Electronic energy caa005bTSb-pcseg2 (R-WB97X-D)	gc:FloatValue	-766.3338684973	gc:hartree
-ex:electronic_energy_caa007a-pcseg2	Electronic energy caa007a-pcseg2 (R-WB97X-D)	gc:FloatValue	-766.3719959497	gc:hartree
-ex:electronic_energy_caa007b-pcseg2	Electronic energy caa007b-pcseg2 (R-WB97X-D)	gc:FloatValue	-766.3839610278	gc:hartree
-ex:electronic_energy_caa008-aldehyde-pcseg2	Electronic energy caa008-aldehyde-pcseg2 (R-WB97X-D)	gc:FloatValue	-613.4620192589	gc:hartree
-ex:electronic_energy_caa008-hydrate-pcseg2	Electronic energy caa008-hydrate-pcseg2 (R-WB97X-D)	gc:FloatValue	-689.9272336982	gc:hartree
-ex:electronic_energy_caa008-water-pcseg2	Electronic energy caa008-water-pcseg2 (R-WB97X-D)	gc:FloatValue	-76.4502962836	gc:hartree

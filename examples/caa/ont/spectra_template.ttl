@@ -8725,6 +8725,162 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/peak_caa005bTSa_9> rdf:type owl:NamedIndividual .
 
 
+###  http://example.org/peak_caa005bTSb-hess_1
+<http://example.org/peak_caa005bTSb-hess_1> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_10
+<http://example.org/peak_caa005bTSb-hess_10> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_11
+<http://example.org/peak_caa005bTSb-hess_11> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_12
+<http://example.org/peak_caa005bTSb-hess_12> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_13
+<http://example.org/peak_caa005bTSb-hess_13> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_14
+<http://example.org/peak_caa005bTSb-hess_14> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_15
+<http://example.org/peak_caa005bTSb-hess_15> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_16
+<http://example.org/peak_caa005bTSb-hess_16> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_17
+<http://example.org/peak_caa005bTSb-hess_17> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_18
+<http://example.org/peak_caa005bTSb-hess_18> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_19
+<http://example.org/peak_caa005bTSb-hess_19> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_2
+<http://example.org/peak_caa005bTSb-hess_2> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_20
+<http://example.org/peak_caa005bTSb-hess_20> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_21
+<http://example.org/peak_caa005bTSb-hess_21> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_22
+<http://example.org/peak_caa005bTSb-hess_22> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_23
+<http://example.org/peak_caa005bTSb-hess_23> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_24
+<http://example.org/peak_caa005bTSb-hess_24> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_25
+<http://example.org/peak_caa005bTSb-hess_25> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_26
+<http://example.org/peak_caa005bTSb-hess_26> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_27
+<http://example.org/peak_caa005bTSb-hess_27> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_28
+<http://example.org/peak_caa005bTSb-hess_28> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_29
+<http://example.org/peak_caa005bTSb-hess_29> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_3
+<http://example.org/peak_caa005bTSb-hess_3> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_30
+<http://example.org/peak_caa005bTSb-hess_30> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_31
+<http://example.org/peak_caa005bTSb-hess_31> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_32
+<http://example.org/peak_caa005bTSb-hess_32> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_33
+<http://example.org/peak_caa005bTSb-hess_33> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_34
+<http://example.org/peak_caa005bTSb-hess_34> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_35
+<http://example.org/peak_caa005bTSb-hess_35> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_36
+<http://example.org/peak_caa005bTSb-hess_36> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_37
+<http://example.org/peak_caa005bTSb-hess_37> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_38
+<http://example.org/peak_caa005bTSb-hess_38> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_39
+<http://example.org/peak_caa005bTSb-hess_39> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_4
+<http://example.org/peak_caa005bTSb-hess_4> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_5
+<http://example.org/peak_caa005bTSb-hess_5> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_6
+<http://example.org/peak_caa005bTSb-hess_6> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_7
+<http://example.org/peak_caa005bTSb-hess_7> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_8
+<http://example.org/peak_caa005bTSb-hess_8> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/peak_caa005bTSb-hess_9
+<http://example.org/peak_caa005bTSb-hess_9> rdf:type owl:NamedIndividual .
+
+
 ###  http://example.org/peak_caa005b_1
 <http://example.org/peak_caa005b_1> rdf:type owl:NamedIndividual .
 
@@ -10490,6 +10646,51 @@ rdfs:Class rdf:type owl:Class .
                                                                                <http://example.org/peak_caa005bTSa_8> ,
                                                                                <http://example.org/peak_caa005bTSa_9> ;
                                          rdfs:label "Vibrational spectrum caa005bTSa" .
+
+
+###  http://example.org/spectrum_caa005bTSb-hess
+<http://example.org/spectrum_caa005bTSb-hess> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/VibrationalSpectra> ;
+                                              <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa005bTSb-hess_1> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_10> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_11> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_12> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_13> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_14> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_15> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_16> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_17> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_18> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_19> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_2> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_20> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_21> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_22> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_23> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_24> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_25> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_26> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_27> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_28> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_29> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_3> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_30> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_31> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_32> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_33> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_34> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_35> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_36> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_37> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_38> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_39> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_4> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_5> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_6> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_7> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_8> ,
+                                                                                    <http://example.org/peak_caa005bTSb-hess_9> ;
+                                              rdfs:label "Vibrational spectrum caa005bTSb-hess" .
 
 
 ###  http://example.org/spectrum_caa007b

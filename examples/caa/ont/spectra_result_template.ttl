@@ -4785,6 +4785,10 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/energies_caa005bTSa> rdf:type owl:NamedIndividual .
 
 
+###  http://example.org/energies_caa005bTSb-hess
+<http://example.org/energies_caa005bTSb-hess> rdf:type owl:NamedIndividual .
+
+
 ###  http://example.org/energies_caa005bTSb-pcseg2
 <http://example.org/energies_caa005bTSb-pcseg2> rdf:type owl:NamedIndividual .
 
@@ -5050,6 +5054,13 @@ rdfs:Class rdf:type owl:Class .
                                         <http://purl.org/gc/hasResult> <http://example.org/reactionpath_caa005bTSaIRCf> .
 
 
+###  http://example.org/exp_caa005bTSb-hess
+<http://example.org/exp_caa005bTSb-hess> rdf:type owl:NamedIndividual ,
+                                                  <http://purl.org/gc/MolecularComputation> ;
+                                         <http://purl.org/gc/hasResult> <http://example.org/energies_caa005bTSb-hess> ,
+                                                                        <http://example.org/spectrum_caa005bTSb-hess> .
+
+
 ###  http://example.org/exp_caa005bTSb-pcseg2
 <http://example.org/exp_caa005bTSb-pcseg2> rdf:type owl:NamedIndividual ,
                                                     <http://purl.org/gc/MolecularComputation> ;
@@ -5242,6 +5253,10 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa005bTSa
 <http://example.org/spectrum_caa005bTSa> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/spectrum_caa005bTSb-hess
+<http://example.org/spectrum_caa005bTSb-hess> rdf:type owl:NamedIndividual .
 
 
 ###  http://example.org/spectrum_caa007b

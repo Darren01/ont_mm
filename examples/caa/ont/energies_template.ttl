@@ -4997,6 +4997,16 @@ rdfs:Class rdf:type owl:Class .
                                          rdfs:label "System energies caa005bTSa" .
 
 
+###  http://example.org/energies_caa005bTSb-hess
+<http://example.org/energies_caa005bTSb-hess> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/SystemEnergies> ;
+                                              <http://purl.org/gc/hasEnthalpy> <http://example.org/enthalpy_caa005bTSb-hess> ;
+                                              <http://purl.org/gc/hasEntropy> <http://example.org/entropy_caa005bTSb-hess> ;
+                                              <http://purl.org/gc/hasGibbsFreeEnergy> <http://example.org/gibbs_caa005bTSb-hess> ;
+                                              <http://purl.org/gc/hasZeroPointEnergy> <http://example.org/zpe_caa005bTSb-hess> ;
+                                              rdfs:label "System energies caa005bTSb-hess" .
+
+
 ###  http://example.org/energies_caa005bTSb-pcseg2
 <http://example.org/energies_caa005bTSb-pcseg2> rdf:type owl:NamedIndividual ,
                                                          <http://purl.org/gc/SystemEnergies> ;
@@ -5208,6 +5218,10 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/enthalpy_caa005bTSa> rdf:type owl:NamedIndividual .
 
 
+###  http://example.org/enthalpy_caa005bTSb-hess
+<http://example.org/enthalpy_caa005bTSb-hess> rdf:type owl:NamedIndividual .
+
+
 ###  http://example.org/enthalpy_caa007b
 <http://example.org/enthalpy_caa007b> rdf:type owl:NamedIndividual .
 
@@ -5330,6 +5344,10 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/entropy_caa005bTSa
 <http://example.org/entropy_caa005bTSa> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/entropy_caa005bTSb-hess
+<http://example.org/entropy_caa005bTSb-hess> rdf:type owl:NamedIndividual .
 
 
 ###  http://example.org/entropy_caa007b
@@ -5456,6 +5474,10 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/gibbs_caa005bTSa> rdf:type owl:NamedIndividual .
 
 
+###  http://example.org/gibbs_caa005bTSb-hess
+<http://example.org/gibbs_caa005bTSb-hess> rdf:type owl:NamedIndividual .
+
+
 ###  http://example.org/gibbs_caa007b
 <http://example.org/gibbs_caa007b> rdf:type owl:NamedIndividual .
 
@@ -5578,6 +5600,10 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/zpe_caa005bTSa
 <http://example.org/zpe_caa005bTSa> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/zpe_caa005bTSb-hess
+<http://example.org/zpe_caa005bTSb-hess> rdf:type owl:NamedIndividual .
 
 
 ###  http://example.org/zpe_caa007b

@@ -8725,6 +8725,162 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/freqval_caa005bTSa_9> rdf:type owl:NamedIndividual .
 
 
+###  http://example.org/freqval_caa005bTSb-hess_1
+<http://example.org/freqval_caa005bTSb-hess_1> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_10
+<http://example.org/freqval_caa005bTSb-hess_10> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_11
+<http://example.org/freqval_caa005bTSb-hess_11> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_12
+<http://example.org/freqval_caa005bTSb-hess_12> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_13
+<http://example.org/freqval_caa005bTSb-hess_13> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_14
+<http://example.org/freqval_caa005bTSb-hess_14> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_15
+<http://example.org/freqval_caa005bTSb-hess_15> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_16
+<http://example.org/freqval_caa005bTSb-hess_16> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_17
+<http://example.org/freqval_caa005bTSb-hess_17> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_18
+<http://example.org/freqval_caa005bTSb-hess_18> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_19
+<http://example.org/freqval_caa005bTSb-hess_19> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_2
+<http://example.org/freqval_caa005bTSb-hess_2> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_20
+<http://example.org/freqval_caa005bTSb-hess_20> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_21
+<http://example.org/freqval_caa005bTSb-hess_21> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_22
+<http://example.org/freqval_caa005bTSb-hess_22> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_23
+<http://example.org/freqval_caa005bTSb-hess_23> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_24
+<http://example.org/freqval_caa005bTSb-hess_24> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_25
+<http://example.org/freqval_caa005bTSb-hess_25> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_26
+<http://example.org/freqval_caa005bTSb-hess_26> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_27
+<http://example.org/freqval_caa005bTSb-hess_27> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_28
+<http://example.org/freqval_caa005bTSb-hess_28> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_29
+<http://example.org/freqval_caa005bTSb-hess_29> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_3
+<http://example.org/freqval_caa005bTSb-hess_3> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_30
+<http://example.org/freqval_caa005bTSb-hess_30> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_31
+<http://example.org/freqval_caa005bTSb-hess_31> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_32
+<http://example.org/freqval_caa005bTSb-hess_32> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_33
+<http://example.org/freqval_caa005bTSb-hess_33> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_34
+<http://example.org/freqval_caa005bTSb-hess_34> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_35
+<http://example.org/freqval_caa005bTSb-hess_35> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_36
+<http://example.org/freqval_caa005bTSb-hess_36> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_37
+<http://example.org/freqval_caa005bTSb-hess_37> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_38
+<http://example.org/freqval_caa005bTSb-hess_38> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_39
+<http://example.org/freqval_caa005bTSb-hess_39> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_4
+<http://example.org/freqval_caa005bTSb-hess_4> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_5
+<http://example.org/freqval_caa005bTSb-hess_5> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_6
+<http://example.org/freqval_caa005bTSb-hess_6> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_7
+<http://example.org/freqval_caa005bTSb-hess_7> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_8
+<http://example.org/freqval_caa005bTSb-hess_8> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/freqval_caa005bTSb-hess_9
+<http://example.org/freqval_caa005bTSb-hess_9> rdf:type owl:NamedIndividual .
+
+
 ###  http://example.org/freqval_caa005b_1
 <http://example.org/freqval_caa005b_1> rdf:type owl:NamedIndividual .
 
@@ -13331,6 +13487,162 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/intval_caa005bTSa_9
 <http://example.org/intval_caa005bTSa_9> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_1
+<http://example.org/intval_caa005bTSb-hess_1> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_10
+<http://example.org/intval_caa005bTSb-hess_10> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_11
+<http://example.org/intval_caa005bTSb-hess_11> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_12
+<http://example.org/intval_caa005bTSb-hess_12> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_13
+<http://example.org/intval_caa005bTSb-hess_13> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_14
+<http://example.org/intval_caa005bTSb-hess_14> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_15
+<http://example.org/intval_caa005bTSb-hess_15> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_16
+<http://example.org/intval_caa005bTSb-hess_16> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_17
+<http://example.org/intval_caa005bTSb-hess_17> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_18
+<http://example.org/intval_caa005bTSb-hess_18> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_19
+<http://example.org/intval_caa005bTSb-hess_19> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_2
+<http://example.org/intval_caa005bTSb-hess_2> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_20
+<http://example.org/intval_caa005bTSb-hess_20> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_21
+<http://example.org/intval_caa005bTSb-hess_21> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_22
+<http://example.org/intval_caa005bTSb-hess_22> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_23
+<http://example.org/intval_caa005bTSb-hess_23> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_24
+<http://example.org/intval_caa005bTSb-hess_24> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_25
+<http://example.org/intval_caa005bTSb-hess_25> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_26
+<http://example.org/intval_caa005bTSb-hess_26> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_27
+<http://example.org/intval_caa005bTSb-hess_27> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_28
+<http://example.org/intval_caa005bTSb-hess_28> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_29
+<http://example.org/intval_caa005bTSb-hess_29> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_3
+<http://example.org/intval_caa005bTSb-hess_3> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_30
+<http://example.org/intval_caa005bTSb-hess_30> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_31
+<http://example.org/intval_caa005bTSb-hess_31> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_32
+<http://example.org/intval_caa005bTSb-hess_32> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_33
+<http://example.org/intval_caa005bTSb-hess_33> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_34
+<http://example.org/intval_caa005bTSb-hess_34> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_35
+<http://example.org/intval_caa005bTSb-hess_35> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_36
+<http://example.org/intval_caa005bTSb-hess_36> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_37
+<http://example.org/intval_caa005bTSb-hess_37> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_38
+<http://example.org/intval_caa005bTSb-hess_38> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_39
+<http://example.org/intval_caa005bTSb-hess_39> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_4
+<http://example.org/intval_caa005bTSb-hess_4> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_5
+<http://example.org/intval_caa005bTSb-hess_5> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_6
+<http://example.org/intval_caa005bTSb-hess_6> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_7
+<http://example.org/intval_caa005bTSb-hess_7> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_8
+<http://example.org/intval_caa005bTSb-hess_8> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/intval_caa005bTSb-hess_9
+<http://example.org/intval_caa005bTSb-hess_9> rdf:type owl:NamedIndividual .
 
 
 ###  http://example.org/intval_caa005b_1
@@ -21995,6 +22307,318 @@ rdfs:Class rdf:type owl:Class .
                                        <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSa_9> ;
                                        <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSa_9> ;
                                        rdfs:label "Mode 9 caa005bTSa" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_1
+<http://example.org/peak_caa005bTSb-hess_1> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/FrequencyPeak> ;
+                                            <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_1> ;
+                                            <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_1> ;
+                                            rdfs:label "Mode 1 caa005bTSb-hess (imaginary)" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_10
+<http://example.org/peak_caa005bTSb-hess_10> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_10> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_10> ;
+                                             rdfs:label "Mode 10 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_11
+<http://example.org/peak_caa005bTSb-hess_11> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_11> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_11> ;
+                                             rdfs:label "Mode 11 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_12
+<http://example.org/peak_caa005bTSb-hess_12> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_12> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_12> ;
+                                             rdfs:label "Mode 12 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_13
+<http://example.org/peak_caa005bTSb-hess_13> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_13> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_13> ;
+                                             rdfs:label "Mode 13 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_14
+<http://example.org/peak_caa005bTSb-hess_14> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_14> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_14> ;
+                                             rdfs:label "Mode 14 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_15
+<http://example.org/peak_caa005bTSb-hess_15> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_15> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_15> ;
+                                             rdfs:label "Mode 15 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_16
+<http://example.org/peak_caa005bTSb-hess_16> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_16> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_16> ;
+                                             rdfs:label "Mode 16 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_17
+<http://example.org/peak_caa005bTSb-hess_17> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_17> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_17> ;
+                                             rdfs:label "Mode 17 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_18
+<http://example.org/peak_caa005bTSb-hess_18> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_18> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_18> ;
+                                             rdfs:label "Mode 18 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_19
+<http://example.org/peak_caa005bTSb-hess_19> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_19> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_19> ;
+                                             rdfs:label "Mode 19 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_2
+<http://example.org/peak_caa005bTSb-hess_2> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/FrequencyPeak> ;
+                                            <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_2> ;
+                                            <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_2> ;
+                                            rdfs:label "Mode 2 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_20
+<http://example.org/peak_caa005bTSb-hess_20> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_20> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_20> ;
+                                             rdfs:label "Mode 20 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_21
+<http://example.org/peak_caa005bTSb-hess_21> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_21> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_21> ;
+                                             rdfs:label "Mode 21 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_22
+<http://example.org/peak_caa005bTSb-hess_22> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_22> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_22> ;
+                                             rdfs:label "Mode 22 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_23
+<http://example.org/peak_caa005bTSb-hess_23> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_23> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_23> ;
+                                             rdfs:label "Mode 23 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_24
+<http://example.org/peak_caa005bTSb-hess_24> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_24> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_24> ;
+                                             rdfs:label "Mode 24 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_25
+<http://example.org/peak_caa005bTSb-hess_25> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_25> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_25> ;
+                                             rdfs:label "Mode 25 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_26
+<http://example.org/peak_caa005bTSb-hess_26> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_26> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_26> ;
+                                             rdfs:label "Mode 26 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_27
+<http://example.org/peak_caa005bTSb-hess_27> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_27> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_27> ;
+                                             rdfs:label "Mode 27 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_28
+<http://example.org/peak_caa005bTSb-hess_28> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_28> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_28> ;
+                                             rdfs:label "Mode 28 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_29
+<http://example.org/peak_caa005bTSb-hess_29> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_29> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_29> ;
+                                             rdfs:label "Mode 29 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_3
+<http://example.org/peak_caa005bTSb-hess_3> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/FrequencyPeak> ;
+                                            <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_3> ;
+                                            <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_3> ;
+                                            rdfs:label "Mode 3 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_30
+<http://example.org/peak_caa005bTSb-hess_30> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_30> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_30> ;
+                                             rdfs:label "Mode 30 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_31
+<http://example.org/peak_caa005bTSb-hess_31> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_31> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_31> ;
+                                             rdfs:label "Mode 31 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_32
+<http://example.org/peak_caa005bTSb-hess_32> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_32> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_32> ;
+                                             rdfs:label "Mode 32 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_33
+<http://example.org/peak_caa005bTSb-hess_33> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_33> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_33> ;
+                                             rdfs:label "Mode 33 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_34
+<http://example.org/peak_caa005bTSb-hess_34> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_34> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_34> ;
+                                             rdfs:label "Mode 34 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_35
+<http://example.org/peak_caa005bTSb-hess_35> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_35> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_35> ;
+                                             rdfs:label "Mode 35 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_36
+<http://example.org/peak_caa005bTSb-hess_36> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_36> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_36> ;
+                                             rdfs:label "Mode 36 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_37
+<http://example.org/peak_caa005bTSb-hess_37> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_37> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_37> ;
+                                             rdfs:label "Mode 37 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_38
+<http://example.org/peak_caa005bTSb-hess_38> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_38> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_38> ;
+                                             rdfs:label "Mode 38 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_39
+<http://example.org/peak_caa005bTSb-hess_39> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FrequencyPeak> ;
+                                             <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_39> ;
+                                             <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_39> ;
+                                             rdfs:label "Mode 39 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_4
+<http://example.org/peak_caa005bTSb-hess_4> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/FrequencyPeak> ;
+                                            <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_4> ;
+                                            <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_4> ;
+                                            rdfs:label "Mode 4 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_5
+<http://example.org/peak_caa005bTSb-hess_5> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/FrequencyPeak> ;
+                                            <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_5> ;
+                                            <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_5> ;
+                                            rdfs:label "Mode 5 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_6
+<http://example.org/peak_caa005bTSb-hess_6> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/FrequencyPeak> ;
+                                            <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_6> ;
+                                            <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_6> ;
+                                            rdfs:label "Mode 6 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_7
+<http://example.org/peak_caa005bTSb-hess_7> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/FrequencyPeak> ;
+                                            <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_7> ;
+                                            <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_7> ;
+                                            rdfs:label "Mode 7 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_8
+<http://example.org/peak_caa005bTSb-hess_8> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/FrequencyPeak> ;
+                                            <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_8> ;
+                                            <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_8> ;
+                                            rdfs:label "Mode 8 caa005bTSb-hess" .
+
+
+###  http://example.org/peak_caa005bTSb-hess_9
+<http://example.org/peak_caa005bTSb-hess_9> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/FrequencyPeak> ;
+                                            <http://purl.org/gc/hasFrequency> <http://example.org/freqval_caa005bTSb-hess_9> ;
+                                            <http://purl.org/gc/hasIntensity> <http://example.org/intval_caa005bTSb-hess_9> ;
+                                            rdfs:label "Mode 9 caa005bTSb-hess" .
 
 
 ###  http://example.org/peak_caa005b_1
