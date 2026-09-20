@@ -30,7 +30,16 @@ process_reaction_path_results <- function(reactions, output_dir) {
   type_rows <- list(
     spectra_result       = c("ID", "TYPE", "I gc:hasResult"),
     reaction_path         = c("ID", "LABEL", "TYPE", "I gc:hasReactionPathPoint SPLIT=|"),
-    reaction_path_points  = c("ID", "LABEL", "TYPE", "I gc:hasIndex", "I gc:hasPathEnergy"),
+    # gc:hasIndex is a genuine owl:DatatypeProperty with declared range
+    # xsd:nonNegativeInteger (confirmed directly in gc_core.ttl) - "I"
+    # (object property) was wrong here, a real, confirmed bug: it
+    # silently produced an untyped plain-string literal ("289" rather
+    # than "289"^^xsd:nonNegativeInteger) for every one of this
+    # project's 289 real reaction-path points, invisible to SPARQL and
+    # SHACL alike, only surfaced by actually running a real DL reasoner
+    # (robot reason correctly reported the whole ontology inconsistent
+    # over this exact violation).
+    reaction_path_points  = c("ID", "LABEL", "TYPE", "AT gc:hasIndex^^xsd:nonNegativeInteger", "I gc:hasPathEnergy"),
     float_values          = c("ID", "LABEL", "TYPE", "AT gc:hasFloatValue^^xsd:float", "I gc:hasUnit")
   )
 
