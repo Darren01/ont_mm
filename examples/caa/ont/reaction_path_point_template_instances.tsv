@@ -1,5 +1,5 @@
 ID	Label	Type	hasIndex	hasPathEnergy
-ID	LABEL	TYPE	I gc:hasIndex	I gc:hasPathEnergy
+ID	LABEL	TYPE	AT gc:hasIndex^^xsd:nonNegativeInteger	I gc:hasPathEnergy
 ex:pathpoint_caa005bTSaIRCf_1	Path point 1 (backward) caa005bTSaIRCf	gc:ReactionPathPoint	1	ex:pathenergy_caa005bTSaIRCf_1
 ex:pathpoint_caa005bTSaIRCf_2	Path point 2 (backward) caa005bTSaIRCf	gc:ReactionPathPoint	2	ex:pathenergy_caa005bTSaIRCf_2
 ex:pathpoint_caa005bTSaIRCf_3	Path point 3 (backward) caa005bTSaIRCf	gc:ReactionPathPoint	3	ex:pathenergy_caa005bTSaIRCf_3
