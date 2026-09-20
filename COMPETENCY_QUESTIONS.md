@@ -237,13 +237,17 @@ SELECT ?spectrum ?freq WHERE {
 ORDER BY ?spectrum ?freq
 ```
 
-**A separate, bigger question worth its own discussion, not solved
-here:** should every frequency really be extracted into the graph at
-all, or would it be enough for the graph to point to *which file*
-contains the frequency data, with extraction only happening on demand?
-Real trade-off between a fully self-contained graph and a leaner one
-that leans on the underlying files more - worth a dedicated
-conversation later, not a quick decision here.
+**This was an open question when first written - now answered.**
+Not every frequency is extracted into the graph: only the imaginary
+ones and GAMESS's own translation/rotation modes are (see the scoping
+principle in this document's own opening, and
+`identify_diagnostic_modes()`/`filter_vibrational_modes()` in
+`gamess_functions`/`ont_mm`) - real provenance links
+(`prov:wasGeneratedBy`/`hasOutputFile`) cover the rest, so nothing is
+actually lost, just not duplicated as its own triple. A real,
+measured result of that choice: roughly 80-83% fewer peak/float-value
+triples across both `caa` and `aa`, with every genuinely diagnostic
+value (confirmed directly, not assumed) still present.
 
 ## 9. Does a given transition state show exactly one imaginary frequency, and a given minimum show zero?
 
@@ -383,6 +387,3 @@ the actual *subtraction* has always been done by hand or in R
   questions actually chain together in practice, rather than reading
   as a list of disconnected examples. Where this belongs in the
   document, and its full shape, still to be worked out.
-- **Whether extracting every frequency into the graph is even the
-  right design** (see the note under #8) - a real, open question about
-  this project's own architecture, not just a documentation gap.
