@@ -196,29 +196,27 @@ SELECT ?exp ?constraint WHERE {
 
 ## 7. Find a successful run of a given type, at a given level of theory, with its input/output/data files
 
-**Status: ⚠️ Partially answerable** - the type filter and file lookup
-now work correctly with the playground's `FILTER` fix in place. Two
-real gaps remain, unrelated to the `FILTER` issue:
+**Status: ⚠️ Partially answerable** - the type filter, level-of-theory
+filter, and file lookup now all work correctly. One real gap remains:
 
 ```sparql
 PREFIX gc: <http://purl.org/gc/>
 PREFIX ex: <http://example.org/>
 
-SELECT ?exp ?type ?inputFile ?outputFile WHERE {
+SELECT ?exp ?type ?method ?inputFile ?outputFile WHERE {
   ?exp a ?type .
   FILTER(?type IN (gc:GeometryOptimization, gc:SaddlePoint, gc:SinglePoint))
+  ?exp gc:hasMethod ?method .
+  FILTER(?method = "wB97X-D")
   OPTIONAL { ?exp ex:hasInputFile ?inputFile . }
   OPTIONAL { ?exp ex:hasOutputFile ?outputFile . }
 }
 ORDER BY ?type ?exp
 ```
 
-1. **No level-of-theory filter is possible.** The base ontology already
-   *defines* `gc:hasMethod`/`gc:hasBasisSet` as valid properties - but
-   no experiment in this graph actually has them populated. Planned,
-   not yet done.
-2. **The `.dat` file isn't tracked at all.** Only `hasInputFile`
-   (`.inp`) and `hasOutputFile` (`.log`) exist. Also planned.
+**The `.dat` file isn't tracked at all.** Only `hasInputFile` (`.inp`)
+and `hasOutputFile` (`.log`) exist. Still genuinely open, unrelated to
+today's level-of-theory work.
 
 ## 8. Which results show an imaginary (negative) frequency?
 
@@ -344,9 +342,20 @@ ORDER BY ?index
 
 ## 14. Which experiments used a specific method/basis-set combination?
 
-**Status: ❌ Not answerable.** Same root gap as #7's level-of-theory
-issue - `gc:hasMethod`/`gc:hasBasisSet` exist in the schema, populated
-on no experiment.
+**Status: ✅ Answerable. Verified working**, on both `caa` and `aa` -
+`gc:hasMethod`/`gc:hasBasisSet` are now genuinely populated on every
+experiment (see `GLOSSARY.md`'s "Level of theory" section for how, and
+`examples/aa/README.md`'s "A second real bug" for a real extraction
+bug this very data uncovered).
+
+```sparql
+PREFIX gc: <http://purl.org/gc/>
+
+SELECT ?exp WHERE {
+  ?exp gc:hasMethod "wB97X-D" .
+  ?exp gc:hasBasisSet "6-31G(d,p)" .
+}
+```
 
 ## 15. What is the activation energy (forward/reverse barrier) and reaction energy for a given pathway?
 
