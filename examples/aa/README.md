@@ -12,6 +12,7 @@ experimental benchmark.
 - [The chemistry](#the-chemistry)
 - [Workflow](#workflow)
 - [A real methodology bug: PURIFY](#a-real-methodology-bug-purify)
+- [A second real bug: the ontology's own basis-set label](#a-second-real-bug-the-ontologys-own-basis-set-label)
 - [Results: the water-assisted model](#results-the-water-assisted-model)
 - [Results: the standalone cycle vs. experiment](#results-the-standalone-cycle-vs-experiment)
 - [Diagnosing the error, and fixing it - twice](#diagnosing-the-error-and-fixing-it---twice)
@@ -83,6 +84,27 @@ GAMESS's own documentation. This fixed it: all six trans/rot modes came
 out cleanly at 0.00 cm⁻¹ from `aa001c` onward. Both false starts are
 kept in `inputs/`/`outputs/` rather than deleted, since they document a
 genuine, non-obvious GAMESS behaviour worth remembering.
+
+## A second real bug: the ontology's own basis-set label
+
+This project's ontology build pipeline stores level-of-theory
+information (method, basis set, solvent) as real, formally queryable
+graph properties, not just narrative text. Doing that surfaced a
+genuine, previously-unnoticed extraction bug: GAMESS's `GBASIS=N21`
+keyword is a *family* name, not a fixed basis set - it's genuinely
+valid with either `NGAUSS=3` (giving `3-21G`) or `NGAUSS=6` (giving a
+real, different basis, `6-21G`), confirmed directly against GAMESS's
+own manual. The extraction code hardcoded `N21` to always mean
+`3-21G`, regardless of the actual `NGAUSS` value used - so every
+`aa001`-series experiment, which genuinely used `GBASIS=N21
+NGAUSS=6`, was being recorded in the graph as `3-21G` when the real
+basis was `6-21G`. This narrative text was never affected - the
+`wB97X-D/6-21G+(d,p)/PCM(water)` label above was always correct - but
+the graph's own, formal `gc:hasBasisSet` value was wrong until this
+was found and fixed. A concrete demonstration of the value of making
+this data genuinely queryable rather than only narrative: the mistake
+had been carried through the whole project until the graph itself was
+actually asked the question.
 
 ## Results: the water-assisted model
 
@@ -211,10 +233,12 @@ the same reason as the `PURIFY` false starts above.
 
 - Apply the same standalone hydration cycle and comparison to
   chloroacetaldehyde's own literature value, if one can be found.
-- Higher-level electronic structure (larger basis, or a correlated
-  method), a quasi-harmonic entropy correction for low-frequency modes,
+- Re-run the aa001 series at a genuinely larger basis set than the
+  `6-21G` actually used (see "A second real bug" above) - not just
+  speculative, now a specific, confirmed next step. A correlated
+  method, a quasi-harmonic entropy correction for low-frequency modes,
   a larger explicit microsolvation shell, and conformational sampling
-  are all real, plausible next steps for closing the remaining ~1.7
+  remain real, plausible options too for closing the remaining ~1.7
   kcal/mol gap - none yet attempted.
 
 ## Acknowledgements
