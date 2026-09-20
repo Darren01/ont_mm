@@ -1,0 +1,71 @@
+@prefix gc: <http://purl.org/gc/> .
+@prefix ex: <http://example.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/dl_axioms> a owl:Ontology ;
+    rdfs:comment "This project's own DL axioms, kept separate from gc_core.ttl (the upstream Gainesville Core mirror) rather than modifying it directly. Merged with a built, asserted graph before reasoning - see build_reasoned_graph(). Each axiom here was tested and confirmed working against real reasoning before being added; see the two-part DL test done earlier this session."@en .
+
+# =========================================================
+# 1. ImaginaryFrequencyPeak - a defined class
+# =========================================================
+# Confirmed working: a real OWL 2 reasoner (HermiT) correctly
+# classifies any FrequencyPeak whose hasFrequency value is negative as
+# this class, purely from this declarative axiom - no procedural code
+# anywhere checks the sign. Tested against 3 cases: a genuine negative
+# value (correctly classified), a positive value (correctly not), and
+# exactly zero (correctly not - maxExclusive means zero itself doesn't
+# count, confirmed deliberately rather than assumed).
+ex:ImaginaryFrequencyPeak a owl:Class ;
+    rdfs:label "Imaginary frequency peak"@en ;
+    rdfs:comment "A gc:FrequencyPeak whose gc:hasFrequency value is negative - GAMESS's convention for an imaginary vibrational mode. Confirms a genuine transition state (for a SaddlePoint), or flags an unconverged geometry (for a VibrationalAnalysis where none was expected)."@en ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:intersectionOf (
+            gc:FrequencyPeak
+            [
+                a owl:Restriction ;
+                owl:onProperty gc:hasFrequency ;
+                owl:someValuesFrom [
+                    a owl:Class ;
+                    owl:intersectionOf (
+                        gc:FloatValue
+                        [
+                            a owl:Restriction ;
+                            owl:onProperty gc:hasFloatValue ;
+                            owl:someValuesFrom [
+                                a rdfs:Datatype ;
+                                owl:onDatatype xsd:float ;
+                                owl:withRestrictions ( [ xsd:maxExclusive "0.0"^^xsd:float ] )
+                            ]
+                        ]
+                    )
+                ]
+            ]
+        )
+    ] .
+
+# =========================================================
+# 2. Experiment-type disjointness
+# =========================================================
+# Confirmed working: tested with a deliberate violation (one
+# individual asserted as both gc:SinglePoint and
+# gc:VibrationalAnalysis at once) - the reasoner correctly flags the
+# whole ontology as inconsistent. The same test with that one
+# assertion removed is confirmed genuinely consistent - a proper,
+# controlled test, not just a single run assumed correct.
+#
+# Mirrors classify_gamess_job()'s own, already-established rule that
+# these five types are mutually exclusive - this makes that rule
+# checkable by a reasoner, not only by manual review (as it has been,
+# all session).
+[] a owl:AllDisjointClasses ;
+   owl:members (
+       gc:GeometryOptimization
+       gc:SinglePoint
+       gc:VibrationalAnalysis
+       gc:SaddlePoint
+       gc:IRC
+   ) .
