@@ -7,6 +7,23 @@ ask and answer?** Formal ontology methodology says to write these
 version, checked against what's genuinely been built and tested, not
 what was intended or hoped for.
 
+**A deliberate scoping principle, worth stating plainly:** this graph
+holds meaningful, bounded *results* (the five thermochemistry values
+in CQ #11, an imaginary frequency as a diagnostic signal) rather than
+every raw intermediate number a GAMESS run produces (the full
+vibrational mode list, most of which is neither queried nor
+individually meaningful) - full traceability back to the original
+`.log` file is kept via `prov:wasGeneratedBy`/`hasOutputFile` instead,
+so nothing is ever actually lost, just not duplicated as its own
+triple. This mirrors the same principle AiiDA/Materials Cloud states
+for computational provenance graphs generally: it's often unreasonable
+to keep every piece of output data, but "all information needed to
+reproduce the outputs must be preserved" (Talirz et al., *Materials
+Cloud, a platform for open computational science*, Scientific Data 7,
+299 (2020), doi:10.1038/s41597-020-00637-5) - the same trade-off this
+graph makes, kept honest by real provenance links rather than by
+leaving anything genuinely irretrievable.
+
 Every query below is tested against the real
 [`caa` example dataset](./examples/caa/) - a complete, messy, real
 computational chemistry project, not a toy. You can try any of these

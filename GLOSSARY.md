@@ -7,10 +7,6 @@ itself, not to any one dataset's actual contents. That's deliberately
 how this glossary is scoped: every term below is one that
 [`COMPETENCY_QUESTIONS.md`](./COMPETENCY_QUESTIONS.md) actually
 references, whether or not the `caa` example happens to populate it.
-Some terms here (`hasMethod`, `hasBasisSet`) are things the questions
-need but the graph doesn't yet provide - included anyway, since the
-glossary describes the model the competency questions are written
-against, not just what one example dataset currently contains.
 
 Where a definition comes directly from the ontology's own schema
 (`gc_core.ttl`), it's quoted as such. Where a term is this project's
@@ -60,6 +56,43 @@ computation of the energy of molecular system for given geometry."*
 **`gc:IRC`** - *"A class for calculations that follow the intrinsic
 reaction coordinate away from a saddle point, in either the forward or
 backward direction."*
+
+## Level of theory
+
+**`gc:hasMethod`** - *"A property that defines the calculation method
+for given technology."* Written into every experiment by
+`extract_level_of_theory_parts()` - the real correlated or DFT method
+used (e.g. `wB97X-D`, `CCSD(T)`), or, when no such method was set, the
+raw `SCFTYP` keyword (`RHF`/`UHF`/`ROHF`) instead of leaving this
+blank - a deliberate choice, so a competency question like "which
+experiments used RHF" stays answerable.
+
+**`gc:hasBasisSet`** - *"A property that allows Basis Sets to be
+assigned to a given quantum methodology."* Same extraction path as
+`hasMethod` above. Finding this genuinely queryable for the first time
+surfaced a real, previously-unnoticed extraction bug (`GBASIS=N21` was
+hardcoded to `3-21G` regardless of the real `NGAUSS` value used) - see
+`examples/aa/README.md`'s own "A second real bug" section.
+
+**`ex:hasSolvent`**, **`ex:hasSolvationModel`** - this project's own
+properties, never formally defined until now: **`ex:hasSolvent`** is
+the actual solvent named in a `$PCM` group (e.g. `water`);
+**`ex:hasSolvationModel`** is which implicit solvation model was used
+(`PCM` or `SMD` - a real, genuinely different setting `$PCM`'s own
+`SMD` keyword controls, kept as a separate property rather than folded
+into one string, since this project's own `aa` data shows the
+distinction is scientifically meaningful, not cosmetic).
+
+**`ex:hasRuntyp`**, **`ex:hasHssend`** - this project's own
+properties, never formally defined until now: the raw GAMESS
+`RUNTYP`/`HSSEND` keyword values `classify_gamess_job()` already
+computes for its own type classification, written into the graph
+alongside it rather than only ever existing internally. Genuinely
+useful on their own, not just as classification inputs - e.g.
+distinguishing a `SaddlePoint` search that itself computed a
+confirming Hessian (`HSSEND=.t.`) from one that read it from a
+separate companion file instead (like `caa005bTSb`, see
+`examples/caa`'s own real data).
 
 ## Files and provenance
 
@@ -158,13 +191,3 @@ editorial note, not part of the thing itself. Used here for a
 researcher's own, contemporaneous review comments on an experiment -
 the mechanism behind `run_notes.tsv`.
 
-## Not yet populated, but part of the model
-
-**`gc:hasMethod`** - *"A property that defines the calculation method
-for given technology."* Defined in the schema; not yet written by any
-extraction code into any experiment in any built graph.
-
-**`gc:hasBasisSet`** - *"A property that allows Basis Sets to be
-assigned to a given quantum methodology."* Same real status as
-`hasMethod` above - defined, unused. Together these are the level of
-theory gap noted throughout `COMPETENCY_QUESTIONS.md`.
