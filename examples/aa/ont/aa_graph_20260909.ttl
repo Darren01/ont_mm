@@ -9099,7 +9099,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_1> rdf:type owl:NamedIndividual ,
                                                  <http://purl.org/gc/ReactionPathPoint> ;
                                         <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_1> ;
-                                        <http://purl.org/gc/hasIndex> "1" ;
+                                        <http://purl.org/gc/hasIndex> "1"^^xsd:nonNegativeInteger ;
                                         rdfs:label "Path point 1 (backward) aa001e" .
 
 
@@ -9107,7 +9107,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_10> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_10> ;
-                                         <http://purl.org/gc/hasIndex> "10" ;
+                                         <http://purl.org/gc/hasIndex> "10"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 10 (backward) aa001e" .
 
 
@@ -9115,7 +9115,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_100> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_100> ;
-                                          <http://purl.org/gc/hasIndex> "100" ;
+                                          <http://purl.org/gc/hasIndex> "100"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 100 (backward) aa001e" .
 
 
@@ -9123,7 +9123,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_101> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_101> ;
-                                          <http://purl.org/gc/hasIndex> "101" ;
+                                          <http://purl.org/gc/hasIndex> "101"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 101 (backward) aa001e" .
 
 
@@ -9131,7 +9131,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_102> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_102> ;
-                                          <http://purl.org/gc/hasIndex> "102" ;
+                                          <http://purl.org/gc/hasIndex> "102"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 102 (backward) aa001e" .
 
 
@@ -9139,7 +9139,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_103> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_103> ;
-                                          <http://purl.org/gc/hasIndex> "103" ;
+                                          <http://purl.org/gc/hasIndex> "103"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 103 (backward) aa001e" .
 
 
@@ -9147,7 +9147,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_104> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_104> ;
-                                          <http://purl.org/gc/hasIndex> "104" ;
+                                          <http://purl.org/gc/hasIndex> "104"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 104 (backward) aa001e" .
 
 
@@ -9155,7 +9155,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_105> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_105> ;
-                                          <http://purl.org/gc/hasIndex> "105" ;
+                                          <http://purl.org/gc/hasIndex> "105"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 105 (backward) aa001e" .
 
 
@@ -9163,7 +9163,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_106> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_106> ;
-                                          <http://purl.org/gc/hasIndex> "106" ;
+                                          <http://purl.org/gc/hasIndex> "106"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 106 (backward) aa001e" .
 
 
@@ -9171,7 +9171,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_107> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_107> ;
-                                          <http://purl.org/gc/hasIndex> "107" ;
+                                          <http://purl.org/gc/hasIndex> "107"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 107 (backward) aa001e" .
 
 
@@ -9179,7 +9179,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_108> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_108> ;
-                                          <http://purl.org/gc/hasIndex> "108" ;
+                                          <http://purl.org/gc/hasIndex> "108"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 108 (backward) aa001e" .
 
 
@@ -9187,7 +9187,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_109> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_109> ;
-                                          <http://purl.org/gc/hasIndex> "109" ;
+                                          <http://purl.org/gc/hasIndex> "109"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 109 (backward) aa001e" .
 
 
@@ -9195,7 +9195,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_11> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_11> ;
-                                         <http://purl.org/gc/hasIndex> "11" ;
+                                         <http://purl.org/gc/hasIndex> "11"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 11 (backward) aa001e" .
 
 
@@ -9203,7 +9203,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_110> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_110> ;
-                                          <http://purl.org/gc/hasIndex> "110" ;
+                                          <http://purl.org/gc/hasIndex> "110"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 110 (backward) aa001e" .
 
 
@@ -9211,7 +9211,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_111> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_111> ;
-                                          <http://purl.org/gc/hasIndex> "111" ;
+                                          <http://purl.org/gc/hasIndex> "111"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 111 (backward) aa001e" .
 
 
@@ -9219,7 +9219,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_112> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_112> ;
-                                          <http://purl.org/gc/hasIndex> "112" ;
+                                          <http://purl.org/gc/hasIndex> "112"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 112 (backward) aa001e" .
 
 
@@ -9227,7 +9227,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_113> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_113> ;
-                                          <http://purl.org/gc/hasIndex> "113" ;
+                                          <http://purl.org/gc/hasIndex> "113"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 113 (backward) aa001e" .
 
 
@@ -9235,7 +9235,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_114> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_114> ;
-                                          <http://purl.org/gc/hasIndex> "114" ;
+                                          <http://purl.org/gc/hasIndex> "114"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 114 (backward) aa001e" .
 
 
@@ -9243,7 +9243,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_115> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_115> ;
-                                          <http://purl.org/gc/hasIndex> "115" ;
+                                          <http://purl.org/gc/hasIndex> "115"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 115 (backward) aa001e" .
 
 
@@ -9251,7 +9251,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_116> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_116> ;
-                                          <http://purl.org/gc/hasIndex> "116" ;
+                                          <http://purl.org/gc/hasIndex> "116"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 116 (backward) aa001e" .
 
 
@@ -9259,7 +9259,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_117> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_117> ;
-                                          <http://purl.org/gc/hasIndex> "117" ;
+                                          <http://purl.org/gc/hasIndex> "117"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 117 (backward) aa001e" .
 
 
@@ -9267,7 +9267,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_118> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_118> ;
-                                          <http://purl.org/gc/hasIndex> "118" ;
+                                          <http://purl.org/gc/hasIndex> "118"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 118 (backward) aa001e" .
 
 
@@ -9275,7 +9275,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_119> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_119> ;
-                                          <http://purl.org/gc/hasIndex> "119" ;
+                                          <http://purl.org/gc/hasIndex> "119"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 119 (backward) aa001e" .
 
 
@@ -9283,7 +9283,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_12> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_12> ;
-                                         <http://purl.org/gc/hasIndex> "12" ;
+                                         <http://purl.org/gc/hasIndex> "12"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 12 (backward) aa001e" .
 
 
@@ -9291,7 +9291,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_120> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_120> ;
-                                          <http://purl.org/gc/hasIndex> "120" ;
+                                          <http://purl.org/gc/hasIndex> "120"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 120 (backward) aa001e" .
 
 
@@ -9299,7 +9299,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_121> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_121> ;
-                                          <http://purl.org/gc/hasIndex> "121" ;
+                                          <http://purl.org/gc/hasIndex> "121"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 121 (backward) aa001e" .
 
 
@@ -9307,7 +9307,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_122> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_122> ;
-                                          <http://purl.org/gc/hasIndex> "122" ;
+                                          <http://purl.org/gc/hasIndex> "122"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 122 (backward) aa001e" .
 
 
@@ -9315,7 +9315,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_123> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_123> ;
-                                          <http://purl.org/gc/hasIndex> "123" ;
+                                          <http://purl.org/gc/hasIndex> "123"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 123 (backward) aa001e" .
 
 
@@ -9323,7 +9323,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_124> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_124> ;
-                                          <http://purl.org/gc/hasIndex> "124" ;
+                                          <http://purl.org/gc/hasIndex> "124"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 124 (backward) aa001e" .
 
 
@@ -9331,7 +9331,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_125> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_125> ;
-                                          <http://purl.org/gc/hasIndex> "125" ;
+                                          <http://purl.org/gc/hasIndex> "125"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 125 (backward) aa001e" .
 
 
@@ -9339,7 +9339,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_126> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_126> ;
-                                          <http://purl.org/gc/hasIndex> "126" ;
+                                          <http://purl.org/gc/hasIndex> "126"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 126 (backward) aa001e" .
 
 
@@ -9347,7 +9347,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_127> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_127> ;
-                                          <http://purl.org/gc/hasIndex> "127" ;
+                                          <http://purl.org/gc/hasIndex> "127"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 127 (backward) aa001e" .
 
 
@@ -9355,7 +9355,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_128> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_128> ;
-                                          <http://purl.org/gc/hasIndex> "128" ;
+                                          <http://purl.org/gc/hasIndex> "128"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 128 (backward) aa001e" .
 
 
@@ -9363,7 +9363,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_129> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_129> ;
-                                          <http://purl.org/gc/hasIndex> "129" ;
+                                          <http://purl.org/gc/hasIndex> "129"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 129 (backward) aa001e" .
 
 
@@ -9371,7 +9371,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_13> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_13> ;
-                                         <http://purl.org/gc/hasIndex> "13" ;
+                                         <http://purl.org/gc/hasIndex> "13"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 13 (backward) aa001e" .
 
 
@@ -9379,7 +9379,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_130> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_130> ;
-                                          <http://purl.org/gc/hasIndex> "130" ;
+                                          <http://purl.org/gc/hasIndex> "130"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 130 (backward) aa001e" .
 
 
@@ -9387,7 +9387,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_131> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_131> ;
-                                          <http://purl.org/gc/hasIndex> "131" ;
+                                          <http://purl.org/gc/hasIndex> "131"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 131 (backward) aa001e" .
 
 
@@ -9395,7 +9395,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_132> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_132> ;
-                                          <http://purl.org/gc/hasIndex> "132" ;
+                                          <http://purl.org/gc/hasIndex> "132"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 132 (backward) aa001e" .
 
 
@@ -9403,7 +9403,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_133> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_133> ;
-                                          <http://purl.org/gc/hasIndex> "133" ;
+                                          <http://purl.org/gc/hasIndex> "133"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 133 (backward) aa001e" .
 
 
@@ -9411,7 +9411,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_134> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_134> ;
-                                          <http://purl.org/gc/hasIndex> "134" ;
+                                          <http://purl.org/gc/hasIndex> "134"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 134 (backward) aa001e" .
 
 
@@ -9419,7 +9419,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_135> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_135> ;
-                                          <http://purl.org/gc/hasIndex> "135" ;
+                                          <http://purl.org/gc/hasIndex> "135"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 135 (backward) aa001e" .
 
 
@@ -9427,7 +9427,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_136> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_136> ;
-                                          <http://purl.org/gc/hasIndex> "136" ;
+                                          <http://purl.org/gc/hasIndex> "136"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 136 (backward) aa001e" .
 
 
@@ -9435,7 +9435,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_137> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_137> ;
-                                          <http://purl.org/gc/hasIndex> "137" ;
+                                          <http://purl.org/gc/hasIndex> "137"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 137 (backward) aa001e" .
 
 
@@ -9443,7 +9443,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_138> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_138> ;
-                                          <http://purl.org/gc/hasIndex> "138" ;
+                                          <http://purl.org/gc/hasIndex> "138"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 138 (backward) aa001e" .
 
 
@@ -9451,7 +9451,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_139> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_139> ;
-                                          <http://purl.org/gc/hasIndex> "139" ;
+                                          <http://purl.org/gc/hasIndex> "139"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 139 (backward) aa001e" .
 
 
@@ -9459,7 +9459,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_14> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_14> ;
-                                         <http://purl.org/gc/hasIndex> "14" ;
+                                         <http://purl.org/gc/hasIndex> "14"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 14 (backward) aa001e" .
 
 
@@ -9467,7 +9467,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_140> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_140> ;
-                                          <http://purl.org/gc/hasIndex> "140" ;
+                                          <http://purl.org/gc/hasIndex> "140"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 140 (backward) aa001e" .
 
 
@@ -9475,7 +9475,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_141> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_141> ;
-                                          <http://purl.org/gc/hasIndex> "141" ;
+                                          <http://purl.org/gc/hasIndex> "141"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 141 (backward) aa001e" .
 
 
@@ -9483,7 +9483,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_142> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_142> ;
-                                          <http://purl.org/gc/hasIndex> "142" ;
+                                          <http://purl.org/gc/hasIndex> "142"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 142 (backward) aa001e" .
 
 
@@ -9491,7 +9491,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_143> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_143> ;
-                                          <http://purl.org/gc/hasIndex> "143" ;
+                                          <http://purl.org/gc/hasIndex> "143"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 143 (backward) aa001e" .
 
 
@@ -9499,7 +9499,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_144> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_144> ;
-                                          <http://purl.org/gc/hasIndex> "144" ;
+                                          <http://purl.org/gc/hasIndex> "144"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 144 (backward) aa001e" .
 
 
@@ -9507,7 +9507,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_145> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_145> ;
-                                          <http://purl.org/gc/hasIndex> "145" ;
+                                          <http://purl.org/gc/hasIndex> "145"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 145 (backward) aa001e" .
 
 
@@ -9515,7 +9515,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_146> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_146> ;
-                                          <http://purl.org/gc/hasIndex> "146" ;
+                                          <http://purl.org/gc/hasIndex> "146"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 146 (backward) aa001e" .
 
 
@@ -9523,7 +9523,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_147> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_147> ;
-                                          <http://purl.org/gc/hasIndex> "147" ;
+                                          <http://purl.org/gc/hasIndex> "147"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 147 (backward) aa001e" .
 
 
@@ -9531,7 +9531,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_148> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_148> ;
-                                          <http://purl.org/gc/hasIndex> "148" ;
+                                          <http://purl.org/gc/hasIndex> "148"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 148 (backward) aa001e" .
 
 
@@ -9539,7 +9539,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_149> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_149> ;
-                                          <http://purl.org/gc/hasIndex> "149" ;
+                                          <http://purl.org/gc/hasIndex> "149"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 149 (backward) aa001e" .
 
 
@@ -9547,7 +9547,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_15> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_15> ;
-                                         <http://purl.org/gc/hasIndex> "15" ;
+                                         <http://purl.org/gc/hasIndex> "15"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 15 (backward) aa001e" .
 
 
@@ -9555,7 +9555,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_150> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_150> ;
-                                          <http://purl.org/gc/hasIndex> "150" ;
+                                          <http://purl.org/gc/hasIndex> "150"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 150 (backward) aa001e" .
 
 
@@ -9563,7 +9563,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_151> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_151> ;
-                                          <http://purl.org/gc/hasIndex> "151" ;
+                                          <http://purl.org/gc/hasIndex> "151"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 151 (backward) aa001e" .
 
 
@@ -9571,7 +9571,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_152> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_152> ;
-                                          <http://purl.org/gc/hasIndex> "152" ;
+                                          <http://purl.org/gc/hasIndex> "152"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 152 (backward) aa001e" .
 
 
@@ -9579,7 +9579,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_153> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_153> ;
-                                          <http://purl.org/gc/hasIndex> "153" ;
+                                          <http://purl.org/gc/hasIndex> "153"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 153 (backward) aa001e" .
 
 
@@ -9587,7 +9587,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_154> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_154> ;
-                                          <http://purl.org/gc/hasIndex> "154" ;
+                                          <http://purl.org/gc/hasIndex> "154"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 154 (backward) aa001e" .
 
 
@@ -9595,7 +9595,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_155> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_155> ;
-                                          <http://purl.org/gc/hasIndex> "155" ;
+                                          <http://purl.org/gc/hasIndex> "155"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 155 (backward) aa001e" .
 
 
@@ -9603,7 +9603,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_156> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_156> ;
-                                          <http://purl.org/gc/hasIndex> "156" ;
+                                          <http://purl.org/gc/hasIndex> "156"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 156 (backward) aa001e" .
 
 
@@ -9611,7 +9611,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_157> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_157> ;
-                                          <http://purl.org/gc/hasIndex> "157" ;
+                                          <http://purl.org/gc/hasIndex> "157"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 157 (backward) aa001e" .
 
 
@@ -9619,7 +9619,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_158> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_158> ;
-                                          <http://purl.org/gc/hasIndex> "158" ;
+                                          <http://purl.org/gc/hasIndex> "158"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 158 (backward) aa001e" .
 
 
@@ -9627,7 +9627,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_159> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_159> ;
-                                          <http://purl.org/gc/hasIndex> "159" ;
+                                          <http://purl.org/gc/hasIndex> "159"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 159 (backward) aa001e" .
 
 
@@ -9635,7 +9635,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_16> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_16> ;
-                                         <http://purl.org/gc/hasIndex> "16" ;
+                                         <http://purl.org/gc/hasIndex> "16"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 16 (backward) aa001e" .
 
 
@@ -9643,7 +9643,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_160> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_160> ;
-                                          <http://purl.org/gc/hasIndex> "160" ;
+                                          <http://purl.org/gc/hasIndex> "160"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 160 (backward) aa001e" .
 
 
@@ -9651,7 +9651,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_161> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_161> ;
-                                          <http://purl.org/gc/hasIndex> "161" ;
+                                          <http://purl.org/gc/hasIndex> "161"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 161 (backward) aa001e" .
 
 
@@ -9659,7 +9659,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_162> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_162> ;
-                                          <http://purl.org/gc/hasIndex> "162" ;
+                                          <http://purl.org/gc/hasIndex> "162"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 162 (backward) aa001e" .
 
 
@@ -9667,7 +9667,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_163> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_163> ;
-                                          <http://purl.org/gc/hasIndex> "163" ;
+                                          <http://purl.org/gc/hasIndex> "163"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 163 (backward) aa001e" .
 
 
@@ -9675,7 +9675,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_164> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_164> ;
-                                          <http://purl.org/gc/hasIndex> "164" ;
+                                          <http://purl.org/gc/hasIndex> "164"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 164 (backward) aa001e" .
 
 
@@ -9683,7 +9683,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_165> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_165> ;
-                                          <http://purl.org/gc/hasIndex> "165" ;
+                                          <http://purl.org/gc/hasIndex> "165"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 165 (backward) aa001e" .
 
 
@@ -9691,7 +9691,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_166> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_166> ;
-                                          <http://purl.org/gc/hasIndex> "166" ;
+                                          <http://purl.org/gc/hasIndex> "166"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 166 (backward) aa001e" .
 
 
@@ -9699,7 +9699,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_167> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_167> ;
-                                          <http://purl.org/gc/hasIndex> "167" ;
+                                          <http://purl.org/gc/hasIndex> "167"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 167 (backward) aa001e" .
 
 
@@ -9707,7 +9707,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_168> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_168> ;
-                                          <http://purl.org/gc/hasIndex> "168" ;
+                                          <http://purl.org/gc/hasIndex> "168"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 168 (backward) aa001e" .
 
 
@@ -9715,7 +9715,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_169> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_169> ;
-                                          <http://purl.org/gc/hasIndex> "169" ;
+                                          <http://purl.org/gc/hasIndex> "169"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 169 (backward) aa001e" .
 
 
@@ -9723,7 +9723,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_17> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_17> ;
-                                         <http://purl.org/gc/hasIndex> "17" ;
+                                         <http://purl.org/gc/hasIndex> "17"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 17 (backward) aa001e" .
 
 
@@ -9731,7 +9731,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_170> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_170> ;
-                                          <http://purl.org/gc/hasIndex> "170" ;
+                                          <http://purl.org/gc/hasIndex> "170"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 170 (backward) aa001e" .
 
 
@@ -9739,7 +9739,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_171> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_171> ;
-                                          <http://purl.org/gc/hasIndex> "171" ;
+                                          <http://purl.org/gc/hasIndex> "171"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 171 (backward) aa001e" .
 
 
@@ -9747,7 +9747,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_172> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_172> ;
-                                          <http://purl.org/gc/hasIndex> "172" ;
+                                          <http://purl.org/gc/hasIndex> "172"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 172 (backward) aa001e" .
 
 
@@ -9755,7 +9755,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_173> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_173> ;
-                                          <http://purl.org/gc/hasIndex> "173" ;
+                                          <http://purl.org/gc/hasIndex> "173"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 173 (backward) aa001e" .
 
 
@@ -9763,7 +9763,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_174> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_174> ;
-                                          <http://purl.org/gc/hasIndex> "174" ;
+                                          <http://purl.org/gc/hasIndex> "174"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 174 (backward) aa001e" .
 
 
@@ -9771,7 +9771,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_175> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_175> ;
-                                          <http://purl.org/gc/hasIndex> "175" ;
+                                          <http://purl.org/gc/hasIndex> "175"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 175 (backward) aa001e" .
 
 
@@ -9779,7 +9779,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_176> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_176> ;
-                                          <http://purl.org/gc/hasIndex> "176" ;
+                                          <http://purl.org/gc/hasIndex> "176"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 176 (backward) aa001e" .
 
 
@@ -9787,7 +9787,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_177> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_177> ;
-                                          <http://purl.org/gc/hasIndex> "177" ;
+                                          <http://purl.org/gc/hasIndex> "177"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 177 (backward) aa001e" .
 
 
@@ -9795,7 +9795,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_178> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_178> ;
-                                          <http://purl.org/gc/hasIndex> "178" ;
+                                          <http://purl.org/gc/hasIndex> "178"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 178 (backward) aa001e" .
 
 
@@ -9803,7 +9803,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_179> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_179> ;
-                                          <http://purl.org/gc/hasIndex> "179" ;
+                                          <http://purl.org/gc/hasIndex> "179"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 179 (backward) aa001e" .
 
 
@@ -9811,7 +9811,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_18> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_18> ;
-                                         <http://purl.org/gc/hasIndex> "18" ;
+                                         <http://purl.org/gc/hasIndex> "18"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 18 (backward) aa001e" .
 
 
@@ -9819,7 +9819,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_180> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_180> ;
-                                          <http://purl.org/gc/hasIndex> "180" ;
+                                          <http://purl.org/gc/hasIndex> "180"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 180 (backward) aa001e" .
 
 
@@ -9827,7 +9827,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_181> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_181> ;
-                                          <http://purl.org/gc/hasIndex> "181" ;
+                                          <http://purl.org/gc/hasIndex> "181"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 181 (backward) aa001e" .
 
 
@@ -9835,7 +9835,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_182> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_182> ;
-                                          <http://purl.org/gc/hasIndex> "182" ;
+                                          <http://purl.org/gc/hasIndex> "182"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 182 (backward) aa001e" .
 
 
@@ -9843,7 +9843,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_183> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_183> ;
-                                          <http://purl.org/gc/hasIndex> "183" ;
+                                          <http://purl.org/gc/hasIndex> "183"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 183 (backward) aa001e" .
 
 
@@ -9851,7 +9851,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_184> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_184> ;
-                                          <http://purl.org/gc/hasIndex> "184" ;
+                                          <http://purl.org/gc/hasIndex> "184"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 184 (backward) aa001e" .
 
 
@@ -9859,7 +9859,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_185> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_185> ;
-                                          <http://purl.org/gc/hasIndex> "185" ;
+                                          <http://purl.org/gc/hasIndex> "185"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 185 (backward) aa001e" .
 
 
@@ -9867,7 +9867,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_186> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_186> ;
-                                          <http://purl.org/gc/hasIndex> "186" ;
+                                          <http://purl.org/gc/hasIndex> "186"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 186 (backward) aa001e" .
 
 
@@ -9875,7 +9875,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_187> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_187> ;
-                                          <http://purl.org/gc/hasIndex> "187" ;
+                                          <http://purl.org/gc/hasIndex> "187"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 187 (backward) aa001e" .
 
 
@@ -9883,7 +9883,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_188> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_188> ;
-                                          <http://purl.org/gc/hasIndex> "188" ;
+                                          <http://purl.org/gc/hasIndex> "188"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 188 (backward) aa001e" .
 
 
@@ -9891,7 +9891,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_189> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_189> ;
-                                          <http://purl.org/gc/hasIndex> "189" ;
+                                          <http://purl.org/gc/hasIndex> "189"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 189 (backward) aa001e" .
 
 
@@ -9899,7 +9899,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_19> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_19> ;
-                                         <http://purl.org/gc/hasIndex> "19" ;
+                                         <http://purl.org/gc/hasIndex> "19"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 19 (backward) aa001e" .
 
 
@@ -9907,7 +9907,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_190> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_190> ;
-                                          <http://purl.org/gc/hasIndex> "190" ;
+                                          <http://purl.org/gc/hasIndex> "190"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 190 (backward) aa001e" .
 
 
@@ -9915,7 +9915,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_191> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_191> ;
-                                          <http://purl.org/gc/hasIndex> "191" ;
+                                          <http://purl.org/gc/hasIndex> "191"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 191 (backward) aa001e" .
 
 
@@ -9923,7 +9923,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_192> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_192> ;
-                                          <http://purl.org/gc/hasIndex> "192" ;
+                                          <http://purl.org/gc/hasIndex> "192"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 192 (backward) aa001e" .
 
 
@@ -9931,7 +9931,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_193> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_193> ;
-                                          <http://purl.org/gc/hasIndex> "193" ;
+                                          <http://purl.org/gc/hasIndex> "193"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 193 (backward) aa001e" .
 
 
@@ -9939,7 +9939,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_194> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_194> ;
-                                          <http://purl.org/gc/hasIndex> "194" ;
+                                          <http://purl.org/gc/hasIndex> "194"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 194 (backward) aa001e" .
 
 
@@ -9947,7 +9947,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_195> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_195> ;
-                                          <http://purl.org/gc/hasIndex> "195" ;
+                                          <http://purl.org/gc/hasIndex> "195"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 195 (backward) aa001e" .
 
 
@@ -9955,7 +9955,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_196> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_196> ;
-                                          <http://purl.org/gc/hasIndex> "196" ;
+                                          <http://purl.org/gc/hasIndex> "196"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 196 (backward) aa001e" .
 
 
@@ -9963,7 +9963,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_197> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_197> ;
-                                          <http://purl.org/gc/hasIndex> "197" ;
+                                          <http://purl.org/gc/hasIndex> "197"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 197 (backward) aa001e" .
 
 
@@ -9971,7 +9971,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_198> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_198> ;
-                                          <http://purl.org/gc/hasIndex> "198" ;
+                                          <http://purl.org/gc/hasIndex> "198"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 198 (backward) aa001e" .
 
 
@@ -9979,7 +9979,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_199> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_199> ;
-                                          <http://purl.org/gc/hasIndex> "199" ;
+                                          <http://purl.org/gc/hasIndex> "199"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 199 (backward) aa001e" .
 
 
@@ -9987,7 +9987,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_2> rdf:type owl:NamedIndividual ,
                                                  <http://purl.org/gc/ReactionPathPoint> ;
                                         <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_2> ;
-                                        <http://purl.org/gc/hasIndex> "2" ;
+                                        <http://purl.org/gc/hasIndex> "2"^^xsd:nonNegativeInteger ;
                                         rdfs:label "Path point 2 (backward) aa001e" .
 
 
@@ -9995,7 +9995,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_20> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_20> ;
-                                         <http://purl.org/gc/hasIndex> "20" ;
+                                         <http://purl.org/gc/hasIndex> "20"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 20 (backward) aa001e" .
 
 
@@ -10003,7 +10003,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_200> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_200> ;
-                                          <http://purl.org/gc/hasIndex> "200" ;
+                                          <http://purl.org/gc/hasIndex> "200"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 200 (backward) aa001e" .
 
 
@@ -10011,7 +10011,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_201> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_201> ;
-                                          <http://purl.org/gc/hasIndex> "201" ;
+                                          <http://purl.org/gc/hasIndex> "201"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 201 (forward) aa001e" .
 
 
@@ -10019,7 +10019,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_202> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_202> ;
-                                          <http://purl.org/gc/hasIndex> "202" ;
+                                          <http://purl.org/gc/hasIndex> "202"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 202 (forward) aa001e" .
 
 
@@ -10027,7 +10027,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_203> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_203> ;
-                                          <http://purl.org/gc/hasIndex> "203" ;
+                                          <http://purl.org/gc/hasIndex> "203"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 203 (forward) aa001e" .
 
 
@@ -10035,7 +10035,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_204> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_204> ;
-                                          <http://purl.org/gc/hasIndex> "204" ;
+                                          <http://purl.org/gc/hasIndex> "204"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 204 (forward) aa001e" .
 
 
@@ -10043,7 +10043,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_205> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_205> ;
-                                          <http://purl.org/gc/hasIndex> "205" ;
+                                          <http://purl.org/gc/hasIndex> "205"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 205 (forward) aa001e" .
 
 
@@ -10051,7 +10051,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_206> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_206> ;
-                                          <http://purl.org/gc/hasIndex> "206" ;
+                                          <http://purl.org/gc/hasIndex> "206"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 206 (forward) aa001e" .
 
 
@@ -10059,7 +10059,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_207> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_207> ;
-                                          <http://purl.org/gc/hasIndex> "207" ;
+                                          <http://purl.org/gc/hasIndex> "207"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 207 (forward) aa001e" .
 
 
@@ -10067,7 +10067,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_208> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_208> ;
-                                          <http://purl.org/gc/hasIndex> "208" ;
+                                          <http://purl.org/gc/hasIndex> "208"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 208 (forward) aa001e" .
 
 
@@ -10075,7 +10075,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_209> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_209> ;
-                                          <http://purl.org/gc/hasIndex> "209" ;
+                                          <http://purl.org/gc/hasIndex> "209"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 209 (forward) aa001e" .
 
 
@@ -10083,7 +10083,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_21> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_21> ;
-                                         <http://purl.org/gc/hasIndex> "21" ;
+                                         <http://purl.org/gc/hasIndex> "21"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 21 (backward) aa001e" .
 
 
@@ -10091,7 +10091,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_210> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_210> ;
-                                          <http://purl.org/gc/hasIndex> "210" ;
+                                          <http://purl.org/gc/hasIndex> "210"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 210 (forward) aa001e" .
 
 
@@ -10099,7 +10099,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_211> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_211> ;
-                                          <http://purl.org/gc/hasIndex> "211" ;
+                                          <http://purl.org/gc/hasIndex> "211"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 211 (forward) aa001e" .
 
 
@@ -10107,7 +10107,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_212> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_212> ;
-                                          <http://purl.org/gc/hasIndex> "212" ;
+                                          <http://purl.org/gc/hasIndex> "212"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 212 (forward) aa001e" .
 
 
@@ -10115,7 +10115,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_213> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_213> ;
-                                          <http://purl.org/gc/hasIndex> "213" ;
+                                          <http://purl.org/gc/hasIndex> "213"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 213 (forward) aa001e" .
 
 
@@ -10123,7 +10123,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_214> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_214> ;
-                                          <http://purl.org/gc/hasIndex> "214" ;
+                                          <http://purl.org/gc/hasIndex> "214"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 214 (forward) aa001e" .
 
 
@@ -10131,7 +10131,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_215> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_215> ;
-                                          <http://purl.org/gc/hasIndex> "215" ;
+                                          <http://purl.org/gc/hasIndex> "215"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 215 (forward) aa001e" .
 
 
@@ -10139,7 +10139,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_216> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_216> ;
-                                          <http://purl.org/gc/hasIndex> "216" ;
+                                          <http://purl.org/gc/hasIndex> "216"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 216 (forward) aa001e" .
 
 
@@ -10147,7 +10147,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_217> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_217> ;
-                                          <http://purl.org/gc/hasIndex> "217" ;
+                                          <http://purl.org/gc/hasIndex> "217"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 217 (forward) aa001e" .
 
 
@@ -10155,7 +10155,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_218> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_218> ;
-                                          <http://purl.org/gc/hasIndex> "218" ;
+                                          <http://purl.org/gc/hasIndex> "218"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 218 (forward) aa001e" .
 
 
@@ -10163,7 +10163,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_219> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_219> ;
-                                          <http://purl.org/gc/hasIndex> "219" ;
+                                          <http://purl.org/gc/hasIndex> "219"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 219 (forward) aa001e" .
 
 
@@ -10171,7 +10171,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_22> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_22> ;
-                                         <http://purl.org/gc/hasIndex> "22" ;
+                                         <http://purl.org/gc/hasIndex> "22"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 22 (backward) aa001e" .
 
 
@@ -10179,7 +10179,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_220> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_220> ;
-                                          <http://purl.org/gc/hasIndex> "220" ;
+                                          <http://purl.org/gc/hasIndex> "220"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 220 (forward) aa001e" .
 
 
@@ -10187,7 +10187,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_221> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_221> ;
-                                          <http://purl.org/gc/hasIndex> "221" ;
+                                          <http://purl.org/gc/hasIndex> "221"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 221 (forward) aa001e" .
 
 
@@ -10195,7 +10195,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_222> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_222> ;
-                                          <http://purl.org/gc/hasIndex> "222" ;
+                                          <http://purl.org/gc/hasIndex> "222"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 222 (forward) aa001e" .
 
 
@@ -10203,7 +10203,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_223> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_223> ;
-                                          <http://purl.org/gc/hasIndex> "223" ;
+                                          <http://purl.org/gc/hasIndex> "223"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 223 (forward) aa001e" .
 
 
@@ -10211,7 +10211,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_224> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_224> ;
-                                          <http://purl.org/gc/hasIndex> "224" ;
+                                          <http://purl.org/gc/hasIndex> "224"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 224 (forward) aa001e" .
 
 
@@ -10219,7 +10219,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_225> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_225> ;
-                                          <http://purl.org/gc/hasIndex> "225" ;
+                                          <http://purl.org/gc/hasIndex> "225"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 225 (forward) aa001e" .
 
 
@@ -10227,7 +10227,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_226> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_226> ;
-                                          <http://purl.org/gc/hasIndex> "226" ;
+                                          <http://purl.org/gc/hasIndex> "226"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 226 (forward) aa001e" .
 
 
@@ -10235,7 +10235,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_227> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_227> ;
-                                          <http://purl.org/gc/hasIndex> "227" ;
+                                          <http://purl.org/gc/hasIndex> "227"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 227 (forward) aa001e" .
 
 
@@ -10243,7 +10243,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_228> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_228> ;
-                                          <http://purl.org/gc/hasIndex> "228" ;
+                                          <http://purl.org/gc/hasIndex> "228"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 228 (forward) aa001e" .
 
 
@@ -10251,7 +10251,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_229> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_229> ;
-                                          <http://purl.org/gc/hasIndex> "229" ;
+                                          <http://purl.org/gc/hasIndex> "229"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 229 (forward) aa001e" .
 
 
@@ -10259,7 +10259,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_23> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_23> ;
-                                         <http://purl.org/gc/hasIndex> "23" ;
+                                         <http://purl.org/gc/hasIndex> "23"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 23 (backward) aa001e" .
 
 
@@ -10267,7 +10267,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_230> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_230> ;
-                                          <http://purl.org/gc/hasIndex> "230" ;
+                                          <http://purl.org/gc/hasIndex> "230"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 230 (forward) aa001e" .
 
 
@@ -10275,7 +10275,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_231> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_231> ;
-                                          <http://purl.org/gc/hasIndex> "231" ;
+                                          <http://purl.org/gc/hasIndex> "231"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 231 (forward) aa001e" .
 
 
@@ -10283,7 +10283,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_232> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_232> ;
-                                          <http://purl.org/gc/hasIndex> "232" ;
+                                          <http://purl.org/gc/hasIndex> "232"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 232 (forward) aa001e" .
 
 
@@ -10291,7 +10291,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_233> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_233> ;
-                                          <http://purl.org/gc/hasIndex> "233" ;
+                                          <http://purl.org/gc/hasIndex> "233"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 233 (forward) aa001e" .
 
 
@@ -10299,7 +10299,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_234> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_234> ;
-                                          <http://purl.org/gc/hasIndex> "234" ;
+                                          <http://purl.org/gc/hasIndex> "234"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 234 (forward) aa001e" .
 
 
@@ -10307,7 +10307,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_235> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_235> ;
-                                          <http://purl.org/gc/hasIndex> "235" ;
+                                          <http://purl.org/gc/hasIndex> "235"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 235 (forward) aa001e" .
 
 
@@ -10315,7 +10315,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_236> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_236> ;
-                                          <http://purl.org/gc/hasIndex> "236" ;
+                                          <http://purl.org/gc/hasIndex> "236"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 236 (forward) aa001e" .
 
 
@@ -10323,7 +10323,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_237> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_237> ;
-                                          <http://purl.org/gc/hasIndex> "237" ;
+                                          <http://purl.org/gc/hasIndex> "237"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 237 (forward) aa001e" .
 
 
@@ -10331,7 +10331,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_238> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_238> ;
-                                          <http://purl.org/gc/hasIndex> "238" ;
+                                          <http://purl.org/gc/hasIndex> "238"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 238 (forward) aa001e" .
 
 
@@ -10339,7 +10339,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_239> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_239> ;
-                                          <http://purl.org/gc/hasIndex> "239" ;
+                                          <http://purl.org/gc/hasIndex> "239"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 239 (forward) aa001e" .
 
 
@@ -10347,7 +10347,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_24> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_24> ;
-                                         <http://purl.org/gc/hasIndex> "24" ;
+                                         <http://purl.org/gc/hasIndex> "24"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 24 (backward) aa001e" .
 
 
@@ -10355,7 +10355,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_240> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_240> ;
-                                          <http://purl.org/gc/hasIndex> "240" ;
+                                          <http://purl.org/gc/hasIndex> "240"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 240 (forward) aa001e" .
 
 
@@ -10363,7 +10363,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_241> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_241> ;
-                                          <http://purl.org/gc/hasIndex> "241" ;
+                                          <http://purl.org/gc/hasIndex> "241"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 241 (forward) aa001e" .
 
 
@@ -10371,7 +10371,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_242> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_242> ;
-                                          <http://purl.org/gc/hasIndex> "242" ;
+                                          <http://purl.org/gc/hasIndex> "242"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 242 (forward) aa001e" .
 
 
@@ -10379,7 +10379,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_243> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_243> ;
-                                          <http://purl.org/gc/hasIndex> "243" ;
+                                          <http://purl.org/gc/hasIndex> "243"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 243 (forward) aa001e" .
 
 
@@ -10387,7 +10387,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_244> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_244> ;
-                                          <http://purl.org/gc/hasIndex> "244" ;
+                                          <http://purl.org/gc/hasIndex> "244"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 244 (forward) aa001e" .
 
 
@@ -10395,7 +10395,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_245> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_245> ;
-                                          <http://purl.org/gc/hasIndex> "245" ;
+                                          <http://purl.org/gc/hasIndex> "245"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 245 (forward) aa001e" .
 
 
@@ -10403,7 +10403,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_246> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_246> ;
-                                          <http://purl.org/gc/hasIndex> "246" ;
+                                          <http://purl.org/gc/hasIndex> "246"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 246 (forward) aa001e" .
 
 
@@ -10411,7 +10411,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_247> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_247> ;
-                                          <http://purl.org/gc/hasIndex> "247" ;
+                                          <http://purl.org/gc/hasIndex> "247"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 247 (forward) aa001e" .
 
 
@@ -10419,7 +10419,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_248> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_248> ;
-                                          <http://purl.org/gc/hasIndex> "248" ;
+                                          <http://purl.org/gc/hasIndex> "248"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 248 (forward) aa001e" .
 
 
@@ -10427,7 +10427,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_249> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_249> ;
-                                          <http://purl.org/gc/hasIndex> "249" ;
+                                          <http://purl.org/gc/hasIndex> "249"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 249 (forward) aa001e" .
 
 
@@ -10435,7 +10435,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_25> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_25> ;
-                                         <http://purl.org/gc/hasIndex> "25" ;
+                                         <http://purl.org/gc/hasIndex> "25"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 25 (backward) aa001e" .
 
 
@@ -10443,7 +10443,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_250> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_250> ;
-                                          <http://purl.org/gc/hasIndex> "250" ;
+                                          <http://purl.org/gc/hasIndex> "250"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 250 (forward) aa001e" .
 
 
@@ -10451,7 +10451,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_251> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_251> ;
-                                          <http://purl.org/gc/hasIndex> "251" ;
+                                          <http://purl.org/gc/hasIndex> "251"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 251 (forward) aa001e" .
 
 
@@ -10459,7 +10459,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_252> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_252> ;
-                                          <http://purl.org/gc/hasIndex> "252" ;
+                                          <http://purl.org/gc/hasIndex> "252"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 252 (forward) aa001e" .
 
 
@@ -10467,7 +10467,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_253> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_253> ;
-                                          <http://purl.org/gc/hasIndex> "253" ;
+                                          <http://purl.org/gc/hasIndex> "253"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 253 (forward) aa001e" .
 
 
@@ -10475,7 +10475,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_254> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_254> ;
-                                          <http://purl.org/gc/hasIndex> "254" ;
+                                          <http://purl.org/gc/hasIndex> "254"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 254 (forward) aa001e" .
 
 
@@ -10483,7 +10483,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_255> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_255> ;
-                                          <http://purl.org/gc/hasIndex> "255" ;
+                                          <http://purl.org/gc/hasIndex> "255"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 255 (forward) aa001e" .
 
 
@@ -10491,7 +10491,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_256> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_256> ;
-                                          <http://purl.org/gc/hasIndex> "256" ;
+                                          <http://purl.org/gc/hasIndex> "256"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 256 (forward) aa001e" .
 
 
@@ -10499,7 +10499,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_257> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_257> ;
-                                          <http://purl.org/gc/hasIndex> "257" ;
+                                          <http://purl.org/gc/hasIndex> "257"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 257 (forward) aa001e" .
 
 
@@ -10507,7 +10507,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_258> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_258> ;
-                                          <http://purl.org/gc/hasIndex> "258" ;
+                                          <http://purl.org/gc/hasIndex> "258"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 258 (forward) aa001e" .
 
 
@@ -10515,7 +10515,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_259> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_259> ;
-                                          <http://purl.org/gc/hasIndex> "259" ;
+                                          <http://purl.org/gc/hasIndex> "259"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 259 (forward) aa001e" .
 
 
@@ -10523,7 +10523,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_26> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_26> ;
-                                         <http://purl.org/gc/hasIndex> "26" ;
+                                         <http://purl.org/gc/hasIndex> "26"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 26 (backward) aa001e" .
 
 
@@ -10531,7 +10531,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_260> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_260> ;
-                                          <http://purl.org/gc/hasIndex> "260" ;
+                                          <http://purl.org/gc/hasIndex> "260"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 260 (forward) aa001e" .
 
 
@@ -10539,7 +10539,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_261> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_261> ;
-                                          <http://purl.org/gc/hasIndex> "261" ;
+                                          <http://purl.org/gc/hasIndex> "261"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 261 (forward) aa001e" .
 
 
@@ -10547,7 +10547,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_262> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_262> ;
-                                          <http://purl.org/gc/hasIndex> "262" ;
+                                          <http://purl.org/gc/hasIndex> "262"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 262 (forward) aa001e" .
 
 
@@ -10555,7 +10555,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_263> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_263> ;
-                                          <http://purl.org/gc/hasIndex> "263" ;
+                                          <http://purl.org/gc/hasIndex> "263"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 263 (forward) aa001e" .
 
 
@@ -10563,7 +10563,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_264> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_264> ;
-                                          <http://purl.org/gc/hasIndex> "264" ;
+                                          <http://purl.org/gc/hasIndex> "264"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 264 (forward) aa001e" .
 
 
@@ -10571,7 +10571,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_265> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_265> ;
-                                          <http://purl.org/gc/hasIndex> "265" ;
+                                          <http://purl.org/gc/hasIndex> "265"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 265 (forward) aa001e" .
 
 
@@ -10579,7 +10579,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_266> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_266> ;
-                                          <http://purl.org/gc/hasIndex> "266" ;
+                                          <http://purl.org/gc/hasIndex> "266"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 266 (forward) aa001e" .
 
 
@@ -10587,7 +10587,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_267> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_267> ;
-                                          <http://purl.org/gc/hasIndex> "267" ;
+                                          <http://purl.org/gc/hasIndex> "267"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 267 (forward) aa001e" .
 
 
@@ -10595,7 +10595,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_268> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/ReactionPathPoint> ;
                                           <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_268> ;
-                                          <http://purl.org/gc/hasIndex> "268" ;
+                                          <http://purl.org/gc/hasIndex> "268"^^xsd:nonNegativeInteger ;
                                           rdfs:label "Path point 268 (forward) aa001e" .
 
 
@@ -10603,7 +10603,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_27> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_27> ;
-                                         <http://purl.org/gc/hasIndex> "27" ;
+                                         <http://purl.org/gc/hasIndex> "27"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 27 (backward) aa001e" .
 
 
@@ -10611,7 +10611,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_28> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_28> ;
-                                         <http://purl.org/gc/hasIndex> "28" ;
+                                         <http://purl.org/gc/hasIndex> "28"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 28 (backward) aa001e" .
 
 
@@ -10619,7 +10619,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_29> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_29> ;
-                                         <http://purl.org/gc/hasIndex> "29" ;
+                                         <http://purl.org/gc/hasIndex> "29"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 29 (backward) aa001e" .
 
 
@@ -10627,7 +10627,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_3> rdf:type owl:NamedIndividual ,
                                                  <http://purl.org/gc/ReactionPathPoint> ;
                                         <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_3> ;
-                                        <http://purl.org/gc/hasIndex> "3" ;
+                                        <http://purl.org/gc/hasIndex> "3"^^xsd:nonNegativeInteger ;
                                         rdfs:label "Path point 3 (backward) aa001e" .
 
 
@@ -10635,7 +10635,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_30> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_30> ;
-                                         <http://purl.org/gc/hasIndex> "30" ;
+                                         <http://purl.org/gc/hasIndex> "30"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 30 (backward) aa001e" .
 
 
@@ -10643,7 +10643,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_31> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_31> ;
-                                         <http://purl.org/gc/hasIndex> "31" ;
+                                         <http://purl.org/gc/hasIndex> "31"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 31 (backward) aa001e" .
 
 
@@ -10651,7 +10651,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_32> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_32> ;
-                                         <http://purl.org/gc/hasIndex> "32" ;
+                                         <http://purl.org/gc/hasIndex> "32"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 32 (backward) aa001e" .
 
 
@@ -10659,7 +10659,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_33> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_33> ;
-                                         <http://purl.org/gc/hasIndex> "33" ;
+                                         <http://purl.org/gc/hasIndex> "33"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 33 (backward) aa001e" .
 
 
@@ -10667,7 +10667,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_34> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_34> ;
-                                         <http://purl.org/gc/hasIndex> "34" ;
+                                         <http://purl.org/gc/hasIndex> "34"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 34 (backward) aa001e" .
 
 
@@ -10675,7 +10675,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_35> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_35> ;
-                                         <http://purl.org/gc/hasIndex> "35" ;
+                                         <http://purl.org/gc/hasIndex> "35"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 35 (backward) aa001e" .
 
 
@@ -10683,7 +10683,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_36> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_36> ;
-                                         <http://purl.org/gc/hasIndex> "36" ;
+                                         <http://purl.org/gc/hasIndex> "36"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 36 (backward) aa001e" .
 
 
@@ -10691,7 +10691,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_37> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_37> ;
-                                         <http://purl.org/gc/hasIndex> "37" ;
+                                         <http://purl.org/gc/hasIndex> "37"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 37 (backward) aa001e" .
 
 
@@ -10699,7 +10699,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_38> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_38> ;
-                                         <http://purl.org/gc/hasIndex> "38" ;
+                                         <http://purl.org/gc/hasIndex> "38"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 38 (backward) aa001e" .
 
 
@@ -10707,7 +10707,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_39> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_39> ;
-                                         <http://purl.org/gc/hasIndex> "39" ;
+                                         <http://purl.org/gc/hasIndex> "39"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 39 (backward) aa001e" .
 
 
@@ -10715,7 +10715,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_4> rdf:type owl:NamedIndividual ,
                                                  <http://purl.org/gc/ReactionPathPoint> ;
                                         <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_4> ;
-                                        <http://purl.org/gc/hasIndex> "4" ;
+                                        <http://purl.org/gc/hasIndex> "4"^^xsd:nonNegativeInteger ;
                                         rdfs:label "Path point 4 (backward) aa001e" .
 
 
@@ -10723,7 +10723,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_40> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_40> ;
-                                         <http://purl.org/gc/hasIndex> "40" ;
+                                         <http://purl.org/gc/hasIndex> "40"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 40 (backward) aa001e" .
 
 
@@ -10731,7 +10731,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_41> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_41> ;
-                                         <http://purl.org/gc/hasIndex> "41" ;
+                                         <http://purl.org/gc/hasIndex> "41"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 41 (backward) aa001e" .
 
 
@@ -10739,7 +10739,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_42> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_42> ;
-                                         <http://purl.org/gc/hasIndex> "42" ;
+                                         <http://purl.org/gc/hasIndex> "42"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 42 (backward) aa001e" .
 
 
@@ -10747,7 +10747,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_43> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_43> ;
-                                         <http://purl.org/gc/hasIndex> "43" ;
+                                         <http://purl.org/gc/hasIndex> "43"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 43 (backward) aa001e" .
 
 
@@ -10755,7 +10755,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_44> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_44> ;
-                                         <http://purl.org/gc/hasIndex> "44" ;
+                                         <http://purl.org/gc/hasIndex> "44"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 44 (backward) aa001e" .
 
 
@@ -10763,7 +10763,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_45> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_45> ;
-                                         <http://purl.org/gc/hasIndex> "45" ;
+                                         <http://purl.org/gc/hasIndex> "45"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 45 (backward) aa001e" .
 
 
@@ -10771,7 +10771,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_46> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_46> ;
-                                         <http://purl.org/gc/hasIndex> "46" ;
+                                         <http://purl.org/gc/hasIndex> "46"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 46 (backward) aa001e" .
 
 
@@ -10779,7 +10779,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_47> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_47> ;
-                                         <http://purl.org/gc/hasIndex> "47" ;
+                                         <http://purl.org/gc/hasIndex> "47"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 47 (backward) aa001e" .
 
 
@@ -10787,7 +10787,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_48> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_48> ;
-                                         <http://purl.org/gc/hasIndex> "48" ;
+                                         <http://purl.org/gc/hasIndex> "48"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 48 (backward) aa001e" .
 
 
@@ -10795,7 +10795,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_49> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_49> ;
-                                         <http://purl.org/gc/hasIndex> "49" ;
+                                         <http://purl.org/gc/hasIndex> "49"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 49 (backward) aa001e" .
 
 
@@ -10803,7 +10803,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_5> rdf:type owl:NamedIndividual ,
                                                  <http://purl.org/gc/ReactionPathPoint> ;
                                         <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_5> ;
-                                        <http://purl.org/gc/hasIndex> "5" ;
+                                        <http://purl.org/gc/hasIndex> "5"^^xsd:nonNegativeInteger ;
                                         rdfs:label "Path point 5 (backward) aa001e" .
 
 
@@ -10811,7 +10811,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_50> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_50> ;
-                                         <http://purl.org/gc/hasIndex> "50" ;
+                                         <http://purl.org/gc/hasIndex> "50"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 50 (backward) aa001e" .
 
 
@@ -10819,7 +10819,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_51> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_51> ;
-                                         <http://purl.org/gc/hasIndex> "51" ;
+                                         <http://purl.org/gc/hasIndex> "51"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 51 (backward) aa001e" .
 
 
@@ -10827,7 +10827,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_52> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_52> ;
-                                         <http://purl.org/gc/hasIndex> "52" ;
+                                         <http://purl.org/gc/hasIndex> "52"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 52 (backward) aa001e" .
 
 
@@ -10835,7 +10835,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_53> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_53> ;
-                                         <http://purl.org/gc/hasIndex> "53" ;
+                                         <http://purl.org/gc/hasIndex> "53"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 53 (backward) aa001e" .
 
 
@@ -10843,7 +10843,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_54> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_54> ;
-                                         <http://purl.org/gc/hasIndex> "54" ;
+                                         <http://purl.org/gc/hasIndex> "54"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 54 (backward) aa001e" .
 
 
@@ -10851,7 +10851,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_55> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_55> ;
-                                         <http://purl.org/gc/hasIndex> "55" ;
+                                         <http://purl.org/gc/hasIndex> "55"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 55 (backward) aa001e" .
 
 
@@ -10859,7 +10859,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_56> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_56> ;
-                                         <http://purl.org/gc/hasIndex> "56" ;
+                                         <http://purl.org/gc/hasIndex> "56"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 56 (backward) aa001e" .
 
 
@@ -10867,7 +10867,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_57> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_57> ;
-                                         <http://purl.org/gc/hasIndex> "57" ;
+                                         <http://purl.org/gc/hasIndex> "57"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 57 (backward) aa001e" .
 
 
@@ -10875,7 +10875,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_58> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_58> ;
-                                         <http://purl.org/gc/hasIndex> "58" ;
+                                         <http://purl.org/gc/hasIndex> "58"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 58 (backward) aa001e" .
 
 
@@ -10883,7 +10883,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_59> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_59> ;
-                                         <http://purl.org/gc/hasIndex> "59" ;
+                                         <http://purl.org/gc/hasIndex> "59"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 59 (backward) aa001e" .
 
 
@@ -10891,7 +10891,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_6> rdf:type owl:NamedIndividual ,
                                                  <http://purl.org/gc/ReactionPathPoint> ;
                                         <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_6> ;
-                                        <http://purl.org/gc/hasIndex> "6" ;
+                                        <http://purl.org/gc/hasIndex> "6"^^xsd:nonNegativeInteger ;
                                         rdfs:label "Path point 6 (backward) aa001e" .
 
 
@@ -10899,7 +10899,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_60> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_60> ;
-                                         <http://purl.org/gc/hasIndex> "60" ;
+                                         <http://purl.org/gc/hasIndex> "60"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 60 (backward) aa001e" .
 
 
@@ -10907,7 +10907,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_61> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_61> ;
-                                         <http://purl.org/gc/hasIndex> "61" ;
+                                         <http://purl.org/gc/hasIndex> "61"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 61 (backward) aa001e" .
 
 
@@ -10915,7 +10915,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_62> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_62> ;
-                                         <http://purl.org/gc/hasIndex> "62" ;
+                                         <http://purl.org/gc/hasIndex> "62"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 62 (backward) aa001e" .
 
 
@@ -10923,7 +10923,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_63> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_63> ;
-                                         <http://purl.org/gc/hasIndex> "63" ;
+                                         <http://purl.org/gc/hasIndex> "63"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 63 (backward) aa001e" .
 
 
@@ -10931,7 +10931,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_64> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_64> ;
-                                         <http://purl.org/gc/hasIndex> "64" ;
+                                         <http://purl.org/gc/hasIndex> "64"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 64 (backward) aa001e" .
 
 
@@ -10939,7 +10939,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_65> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_65> ;
-                                         <http://purl.org/gc/hasIndex> "65" ;
+                                         <http://purl.org/gc/hasIndex> "65"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 65 (backward) aa001e" .
 
 
@@ -10947,7 +10947,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_66> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_66> ;
-                                         <http://purl.org/gc/hasIndex> "66" ;
+                                         <http://purl.org/gc/hasIndex> "66"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 66 (backward) aa001e" .
 
 
@@ -10955,7 +10955,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_67> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_67> ;
-                                         <http://purl.org/gc/hasIndex> "67" ;
+                                         <http://purl.org/gc/hasIndex> "67"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 67 (backward) aa001e" .
 
 
@@ -10963,7 +10963,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_68> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_68> ;
-                                         <http://purl.org/gc/hasIndex> "68" ;
+                                         <http://purl.org/gc/hasIndex> "68"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 68 (backward) aa001e" .
 
 
@@ -10971,7 +10971,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_69> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_69> ;
-                                         <http://purl.org/gc/hasIndex> "69" ;
+                                         <http://purl.org/gc/hasIndex> "69"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 69 (backward) aa001e" .
 
 
@@ -10979,7 +10979,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_7> rdf:type owl:NamedIndividual ,
                                                  <http://purl.org/gc/ReactionPathPoint> ;
                                         <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_7> ;
-                                        <http://purl.org/gc/hasIndex> "7" ;
+                                        <http://purl.org/gc/hasIndex> "7"^^xsd:nonNegativeInteger ;
                                         rdfs:label "Path point 7 (backward) aa001e" .
 
 
@@ -10987,7 +10987,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_70> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_70> ;
-                                         <http://purl.org/gc/hasIndex> "70" ;
+                                         <http://purl.org/gc/hasIndex> "70"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 70 (backward) aa001e" .
 
 
@@ -10995,7 +10995,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_71> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_71> ;
-                                         <http://purl.org/gc/hasIndex> "71" ;
+                                         <http://purl.org/gc/hasIndex> "71"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 71 (backward) aa001e" .
 
 
@@ -11003,7 +11003,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_72> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_72> ;
-                                         <http://purl.org/gc/hasIndex> "72" ;
+                                         <http://purl.org/gc/hasIndex> "72"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 72 (backward) aa001e" .
 
 
@@ -11011,7 +11011,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_73> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_73> ;
-                                         <http://purl.org/gc/hasIndex> "73" ;
+                                         <http://purl.org/gc/hasIndex> "73"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 73 (backward) aa001e" .
 
 
@@ -11019,7 +11019,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_74> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_74> ;
-                                         <http://purl.org/gc/hasIndex> "74" ;
+                                         <http://purl.org/gc/hasIndex> "74"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 74 (backward) aa001e" .
 
 
@@ -11027,7 +11027,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_75> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_75> ;
-                                         <http://purl.org/gc/hasIndex> "75" ;
+                                         <http://purl.org/gc/hasIndex> "75"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 75 (backward) aa001e" .
 
 
@@ -11035,7 +11035,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_76> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_76> ;
-                                         <http://purl.org/gc/hasIndex> "76" ;
+                                         <http://purl.org/gc/hasIndex> "76"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 76 (backward) aa001e" .
 
 
@@ -11043,7 +11043,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_77> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_77> ;
-                                         <http://purl.org/gc/hasIndex> "77" ;
+                                         <http://purl.org/gc/hasIndex> "77"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 77 (backward) aa001e" .
 
 
@@ -11051,7 +11051,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_78> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_78> ;
-                                         <http://purl.org/gc/hasIndex> "78" ;
+                                         <http://purl.org/gc/hasIndex> "78"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 78 (backward) aa001e" .
 
 
@@ -11059,7 +11059,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_79> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_79> ;
-                                         <http://purl.org/gc/hasIndex> "79" ;
+                                         <http://purl.org/gc/hasIndex> "79"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 79 (backward) aa001e" .
 
 
@@ -11067,7 +11067,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_8> rdf:type owl:NamedIndividual ,
                                                  <http://purl.org/gc/ReactionPathPoint> ;
                                         <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_8> ;
-                                        <http://purl.org/gc/hasIndex> "8" ;
+                                        <http://purl.org/gc/hasIndex> "8"^^xsd:nonNegativeInteger ;
                                         rdfs:label "Path point 8 (backward) aa001e" .
 
 
@@ -11075,7 +11075,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_80> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_80> ;
-                                         <http://purl.org/gc/hasIndex> "80" ;
+                                         <http://purl.org/gc/hasIndex> "80"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 80 (backward) aa001e" .
 
 
@@ -11083,7 +11083,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_81> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_81> ;
-                                         <http://purl.org/gc/hasIndex> "81" ;
+                                         <http://purl.org/gc/hasIndex> "81"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 81 (backward) aa001e" .
 
 
@@ -11091,7 +11091,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_82> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_82> ;
-                                         <http://purl.org/gc/hasIndex> "82" ;
+                                         <http://purl.org/gc/hasIndex> "82"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 82 (backward) aa001e" .
 
 
@@ -11099,7 +11099,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_83> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_83> ;
-                                         <http://purl.org/gc/hasIndex> "83" ;
+                                         <http://purl.org/gc/hasIndex> "83"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 83 (backward) aa001e" .
 
 
@@ -11107,7 +11107,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_84> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_84> ;
-                                         <http://purl.org/gc/hasIndex> "84" ;
+                                         <http://purl.org/gc/hasIndex> "84"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 84 (backward) aa001e" .
 
 
@@ -11115,7 +11115,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_85> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_85> ;
-                                         <http://purl.org/gc/hasIndex> "85" ;
+                                         <http://purl.org/gc/hasIndex> "85"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 85 (backward) aa001e" .
 
 
@@ -11123,7 +11123,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_86> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_86> ;
-                                         <http://purl.org/gc/hasIndex> "86" ;
+                                         <http://purl.org/gc/hasIndex> "86"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 86 (backward) aa001e" .
 
 
@@ -11131,7 +11131,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_87> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_87> ;
-                                         <http://purl.org/gc/hasIndex> "87" ;
+                                         <http://purl.org/gc/hasIndex> "87"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 87 (backward) aa001e" .
 
 
@@ -11139,7 +11139,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_88> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_88> ;
-                                         <http://purl.org/gc/hasIndex> "88" ;
+                                         <http://purl.org/gc/hasIndex> "88"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 88 (backward) aa001e" .
 
 
@@ -11147,7 +11147,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_89> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_89> ;
-                                         <http://purl.org/gc/hasIndex> "89" ;
+                                         <http://purl.org/gc/hasIndex> "89"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 89 (backward) aa001e" .
 
 
@@ -11155,7 +11155,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_9> rdf:type owl:NamedIndividual ,
                                                  <http://purl.org/gc/ReactionPathPoint> ;
                                         <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_9> ;
-                                        <http://purl.org/gc/hasIndex> "9" ;
+                                        <http://purl.org/gc/hasIndex> "9"^^xsd:nonNegativeInteger ;
                                         rdfs:label "Path point 9 (backward) aa001e" .
 
 
@@ -11163,7 +11163,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_90> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_90> ;
-                                         <http://purl.org/gc/hasIndex> "90" ;
+                                         <http://purl.org/gc/hasIndex> "90"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 90 (backward) aa001e" .
 
 
@@ -11171,7 +11171,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_91> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_91> ;
-                                         <http://purl.org/gc/hasIndex> "91" ;
+                                         <http://purl.org/gc/hasIndex> "91"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 91 (backward) aa001e" .
 
 
@@ -11179,7 +11179,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_92> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_92> ;
-                                         <http://purl.org/gc/hasIndex> "92" ;
+                                         <http://purl.org/gc/hasIndex> "92"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 92 (backward) aa001e" .
 
 
@@ -11187,7 +11187,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_93> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_93> ;
-                                         <http://purl.org/gc/hasIndex> "93" ;
+                                         <http://purl.org/gc/hasIndex> "93"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 93 (backward) aa001e" .
 
 
@@ -11195,7 +11195,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_94> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_94> ;
-                                         <http://purl.org/gc/hasIndex> "94" ;
+                                         <http://purl.org/gc/hasIndex> "94"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 94 (backward) aa001e" .
 
 
@@ -11203,7 +11203,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_95> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_95> ;
-                                         <http://purl.org/gc/hasIndex> "95" ;
+                                         <http://purl.org/gc/hasIndex> "95"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 95 (backward) aa001e" .
 
 
@@ -11211,7 +11211,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_96> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_96> ;
-                                         <http://purl.org/gc/hasIndex> "96" ;
+                                         <http://purl.org/gc/hasIndex> "96"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 96 (backward) aa001e" .
 
 
@@ -11219,7 +11219,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_97> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_97> ;
-                                         <http://purl.org/gc/hasIndex> "97" ;
+                                         <http://purl.org/gc/hasIndex> "97"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 97 (backward) aa001e" .
 
 
@@ -11227,7 +11227,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_98> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_98> ;
-                                         <http://purl.org/gc/hasIndex> "98" ;
+                                         <http://purl.org/gc/hasIndex> "98"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 98 (backward) aa001e" .
 
 
@@ -11235,7 +11235,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/pathpoint_aa001e_99> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/ReactionPathPoint> ;
                                          <http://purl.org/gc/hasPathEnergy> <http://example.org/pathenergy_aa001e_99> ;
-                                         <http://purl.org/gc/hasIndex> "99" ;
+                                         <http://purl.org/gc/hasIndex> "99"^^xsd:nonNegativeInteger ;
                                          rdfs:label "Path point 99 (backward) aa001e" .
 
 
