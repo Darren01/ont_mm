@@ -6895,7 +6895,7 @@ rdfs:Class rdf:type owl:Class .
                                                                     <http://example.org/file_caa005a_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa005a> ,
                                                                 <http://example.org/spectrum_caa005a> ;
-                                 <http://purl.org/gc/hasBasisSet> "3-21G+(p)" ;
+                                 <http://purl.org/gc/hasBasisSet> "6-21G+(p)" ;
                                  <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                  <http://example.org/hasHssend> "true"^^xsd:boolean ;
                                  <http://example.org/hasRuntyp> "OPTIMIZE" ;
@@ -6916,7 +6916,7 @@ rdfs:Class rdf:type owl:Class .
                                                                     <http://example.org/file_caa005b_log> ;
                                  <http://purl.org/gc/hasResult> <http://example.org/energies_caa005b> ,
                                                                 <http://example.org/spectrum_caa005b> ;
-                                 <http://purl.org/gc/hasBasisSet> "3-21G+(p)" ;
+                                 <http://purl.org/gc/hasBasisSet> "6-21G+(p)" ;
                                  <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                  <http://example.org/hasHssend> "true"^^xsd:boolean ;
                                  <http://example.org/hasRuntyp> "OPTIMIZE" ;
@@ -7007,7 +7007,7 @@ rdfs:Class rdf:type owl:Class .
                                                                              <http://example.org/file_caa005bIRCCML1st_log> ;
                                           <http://purl.org/gc/hasResult> <http://example.org/energies_caa005bIRCCML1st> ,
                                                                          <http://example.org/spectrum_caa005bIRCCML1st> ;
-                                          <http://purl.org/gc/hasBasisSet> "3-21G+(p)" ;
+                                          <http://purl.org/gc/hasBasisSet> "6-21G+(p)" ;
                                           <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                           <http://example.org/hasHssend> "true"^^xsd:boolean ;
                                           <http://example.org/hasRuntyp> "OPTIMIZE" ;
@@ -7165,7 +7165,7 @@ rdfs:Class rdf:type owl:Class .
                                                                                <http://example.org/file_caa005bIRCCML_last_log> ;
                                             <http://purl.org/gc/hasResult> <http://example.org/energies_caa005bIRCCML_last> ,
                                                                            <http://example.org/spectrum_caa005bIRCCML_last> ;
-                                            <http://purl.org/gc/hasBasisSet> "3-21G+(p)" ;
+                                            <http://purl.org/gc/hasBasisSet> "6-21G+(p)" ;
                                             <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                             <http://example.org/hasHssend> "true"^^xsd:boolean ;
                                             <http://example.org/hasRuntyp> "OPTIMIZE" ;
@@ -7183,7 +7183,7 @@ rdfs:Class rdf:type owl:Class .
                                                                        <http://example.org/file_caa005bTSa_log> ;
                                     <http://purl.org/gc/hasResult> <http://example.org/energies_caa005bTSa> ,
                                                                    <http://example.org/spectrum_caa005bTSa> ;
-                                    <http://purl.org/gc/hasBasisSet> "3-21G+(p)" ;
+                                    <http://purl.org/gc/hasBasisSet> "6-21G+(p)" ;
                                     <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                     <http://example.org/hasHssend> "true"^^xsd:boolean ;
                                     <http://example.org/hasRuntyp> "SADPOINT" ;
@@ -7201,7 +7201,7 @@ rdfs:Class rdf:type owl:Class .
                                         <http://example.org/hasOutputFile> <http://example.org/file_caa005bTSaIRCb_dat> ,
                                                                            <http://example.org/file_caa005bTSaIRCb_log> ;
                                         <http://purl.org/gc/hasResult> <http://example.org/reactionpath_caa005bTSaIRCf> ;
-                                        <http://purl.org/gc/hasBasisSet> "3-21G+(p)" ;
+                                        <http://purl.org/gc/hasBasisSet> "6-21G+(p)" ;
                                         <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                         <http://example.org/hasRuntyp> "IRC" ;
                                         <http://example.org/hasSolvationModel> "PCM" ;
@@ -7218,7 +7218,7 @@ rdfs:Class rdf:type owl:Class .
                                         <http://example.org/hasOutputFile> <http://example.org/file_caa005bTSaIRCf_dat> ,
                                                                            <http://example.org/file_caa005bTSaIRCf_log> ;
                                         <http://purl.org/gc/hasResult> <http://example.org/reactionpath_caa005bTSaIRCf> ;
-                                        <http://purl.org/gc/hasBasisSet> "3-21G+(p)" ;
+                                        <http://purl.org/gc/hasBasisSet> "6-21G+(p)" ;
                                         <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                         <http://example.org/hasRuntyp> "IRC" ;
                                         <http://example.org/hasSolvationModel> "PCM" ;

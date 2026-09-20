@@ -126,7 +126,7 @@ ex:file_caa004m_inp	Input file caa004m	ex:InputFile			ex:exp_caa004l	file:////ho
 ex:file_caa004m_dat	Output data caa004m	ex:DataFile			ex:exp_caa004m							
 ex:file_caa004m_log	Output log caa004m	ex:LogFile			ex:exp_caa004m	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004m.log						
 												
-ex:exp_caa005a	Vibrational analysis caa005a	gc:VibrationalAnalysis	ex:file_caa005a_inp	ex:file_caa005a_dat|ex:file_caa005a_log			wB97X-D	3-21G+(p)	water	PCM	OPTIMIZE	true
+ex:exp_caa005a	Vibrational analysis caa005a	gc:VibrationalAnalysis	ex:file_caa005a_inp	ex:file_caa005a_dat|ex:file_caa005a_log			wB97X-D	6-21G+(p)	water	PCM	OPTIMIZE	true
 ex:file_caa005a_inp	Input file caa005a	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005a.inp						
 ex:file_caa005a_dat	Output data caa005a	ex:DataFile			ex:exp_caa005a							
 ex:file_caa005a_log	Output log caa005a	ex:LogFile			ex:exp_caa005a	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005a.log						
@@ -141,7 +141,7 @@ ex:file_caa005b-cl-atom-extfil-test_inp	Input file caa005b-cl-atom-extfil-test	e
 ex:file_caa005b-cl-atom-extfil-test_dat	Output data caa005b-cl-atom-extfil-test	ex:DataFile			ex:exp_caa005b-cl-atom-extfil-test							
 ex:file_caa005b-cl-atom-extfil-test_log	Output log caa005b-cl-atom-extfil-test	ex:LogFile			ex:exp_caa005b-cl-atom-extfil-test	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005b-cl-atom-extfil-test.log						
 												
-ex:exp_caa005b	Vibrational analysis caa005b	gc:VibrationalAnalysis	ex:file_caa005b_inp	ex:file_caa005b_dat|ex:file_caa005b_log			wB97X-D	3-21G+(p)	water	PCM	OPTIMIZE	true
+ex:exp_caa005b	Vibrational analysis caa005b	gc:VibrationalAnalysis	ex:file_caa005b_inp	ex:file_caa005b_dat|ex:file_caa005b_log			wB97X-D	6-21G+(p)	water	PCM	OPTIMIZE	true
 ex:file_caa005b_inp	Input file caa005b	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005b.inp						
 ex:file_caa005b_dat	Output data caa005b	ex:DataFile			ex:exp_caa005b							
 ex:file_caa005b_log	Output log caa005b	ex:LogFile			ex:exp_caa005b	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005b.log						
@@ -161,7 +161,7 @@ ex:file_caa005bIRC-trimmedTZVPP-test_inp	Input file caa005bIRC-trimmedTZVPP-test
 ex:file_caa005bIRC-trimmedTZVPP-test_dat	Output data caa005bIRC-trimmedTZVPP-test	ex:DataFile			ex:exp_caa005bIRC-trimmedTZVPP-test							
 ex:file_caa005bIRC-trimmedTZVPP-test_log	Output log caa005bIRC-trimmedTZVPP-test	ex:LogFile			ex:exp_caa005bIRC-trimmedTZVPP-test	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRC-trimmedTZVPP-test.log						
 												
-ex:exp_caa005bIRCCML_last	Vibrational analysis caa005bIRCCML_last	gc:VibrationalAnalysis	ex:file_caa005bIRCCML_last_inp	ex:file_caa005bIRCCML_last_dat|ex:file_caa005bIRCCML_last_log			wB97X-D	3-21G+(p)	water	PCM	OPTIMIZE	true
+ex:exp_caa005bIRCCML_last	Vibrational analysis caa005bIRCCML_last	gc:VibrationalAnalysis	ex:file_caa005bIRCCML_last_inp	ex:file_caa005bIRCCML_last_dat|ex:file_caa005bIRCCML_last_log			wB97X-D	6-21G+(p)	water	PCM	OPTIMIZE	true
 ex:file_caa005bIRCCML_last_inp	Input file caa005bIRCCML_last	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRCCML_last.inp						
 ex:file_caa005bIRCCML_last_dat	Output data caa005bIRCCML_last	ex:DataFile			ex:exp_caa005bIRCCML_last							
 ex:file_caa005bIRCCML_last_log	Output log caa005bIRCCML_last	ex:LogFile			ex:exp_caa005bIRCCML_last	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML_last.log						
@@ -171,7 +171,7 @@ ex:file_caa005bIRCCML1st-prerelax-631Gdp_inp	Input file caa005bIRCCML1st-prerela
 ex:file_caa005bIRCCML1st-prerelax-631Gdp_dat	Output data caa005bIRCCML1st-prerelax-631Gdp	ex:DataFile			ex:exp_caa005bIRCCML1st-prerelax-631Gdp							
 ex:file_caa005bIRCCML1st-prerelax-631Gdp_log	Output log caa005bIRCCML1st-prerelax-631Gdp	ex:LogFile			ex:exp_caa005bIRCCML1st-prerelax-631Gdp	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML1st-prerelax-631Gdp.log						
 												
-ex:exp_caa005bIRCCML1st	Vibrational analysis caa005bIRCCML1st	gc:VibrationalAnalysis	ex:file_caa005bIRCCML1st_inp	ex:file_caa005bIRCCML1st_dat|ex:file_caa005bIRCCML1st_log			wB97X-D	3-21G+(p)	water	PCM	OPTIMIZE	true
+ex:exp_caa005bIRCCML1st	Vibrational analysis caa005bIRCCML1st	gc:VibrationalAnalysis	ex:file_caa005bIRCCML1st_inp	ex:file_caa005bIRCCML1st_dat|ex:file_caa005bIRCCML1st_log			wB97X-D	6-21G+(p)	water	PCM	OPTIMIZE	true
 ex:file_caa005bIRCCML1st_inp	Input file caa005bIRCCML1st	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRCCML1st.inp						
 ex:file_caa005bIRCCML1st_dat	Output data caa005bIRCCML1st	ex:DataFile			ex:exp_caa005bIRCCML1st							
 ex:file_caa005bIRCCML1st_log	Output log caa005bIRCCML1st	ex:LogFile			ex:exp_caa005bIRCCML1st	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML1st.log						
@@ -216,17 +216,17 @@ ex:file_caa005bIRCCML1stdef2TZVPPe_inp	Input file caa005bIRCCML1stdef2TZVPPe	ex:
 ex:file_caa005bIRCCML1stdef2TZVPPe_dat	Output data caa005bIRCCML1stdef2TZVPPe	ex:DataFile			ex:exp_caa005bIRCCML1stdef2TZVPPe							
 ex:file_caa005bIRCCML1stdef2TZVPPe_log	Output log caa005bIRCCML1stdef2TZVPPe	ex:LogFile			ex:exp_caa005bIRCCML1stdef2TZVPPe	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML1stdef2TZVPPe.log						
 												
-ex:exp_caa005bTSa	Saddle point caa005bTSa	gc:SaddlePoint	ex:file_caa005bTSa_inp	ex:file_caa005bTSa_dat|ex:file_caa005bTSa_log			wB97X-D	3-21G+(p)	water	PCM	SADPOINT	true
+ex:exp_caa005bTSa	Saddle point caa005bTSa	gc:SaddlePoint	ex:file_caa005bTSa_inp	ex:file_caa005bTSa_dat|ex:file_caa005bTSa_log			wB97X-D	6-21G+(p)	water	PCM	SADPOINT	true
 ex:file_caa005bTSa_inp	Input file caa005bTSa	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bTSa.inp						
 ex:file_caa005bTSa_dat	Output data caa005bTSa	ex:DataFile			ex:exp_caa005bTSa							
 ex:file_caa005bTSa_log	Output log caa005bTSa	ex:LogFile			ex:exp_caa005bTSa	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bTSa.log						
 												
-ex:exp_caa005bTSaIRCb	IRC (backward) caa005bTSaIRCb	gc:IRC	ex:file_caa005bTSaIRCb_inp	ex:file_caa005bTSaIRCb_dat|ex:file_caa005bTSaIRCb_log			wB97X-D	3-21G+(p)	water	PCM	IRC	
+ex:exp_caa005bTSaIRCb	IRC (backward) caa005bTSaIRCb	gc:IRC	ex:file_caa005bTSaIRCb_inp	ex:file_caa005bTSaIRCb_dat|ex:file_caa005bTSaIRCb_log			wB97X-D	6-21G+(p)	water	PCM	IRC	
 ex:file_caa005bTSaIRCb_inp	Input file caa005bTSaIRCb	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bTSaIRCb.inp						
 ex:file_caa005bTSaIRCb_dat	Output data caa005bTSaIRCb	ex:DataFile			ex:exp_caa005bTSaIRCb							
 ex:file_caa005bTSaIRCb_log	Output log caa005bTSaIRCb	ex:LogFile			ex:exp_caa005bTSaIRCb	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bTSaIRCb.log						
 												
-ex:exp_caa005bTSaIRCf	IRC (forward) caa005bTSaIRCf	gc:IRC	ex:file_caa005bTSaIRCf_inp	ex:file_caa005bTSaIRCf_dat|ex:file_caa005bTSaIRCf_log			wB97X-D	3-21G+(p)	water	PCM	IRC	
+ex:exp_caa005bTSaIRCf	IRC (forward) caa005bTSaIRCf	gc:IRC	ex:file_caa005bTSaIRCf_inp	ex:file_caa005bTSaIRCf_dat|ex:file_caa005bTSaIRCf_log			wB97X-D	6-21G+(p)	water	PCM	IRC	
 ex:file_caa005bTSaIRCf_inp	Input file caa005bTSaIRCf	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bTSaIRCf.inp						
 ex:file_caa005bTSaIRCf_dat	Output data caa005bTSaIRCf	ex:DataFile			ex:exp_caa005bTSaIRCf							
 ex:file_caa005bTSaIRCf_log	Output log caa005bTSaIRCf	ex:LogFile			ex:exp_caa005bTSaIRCf	file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bTSaIRCf.log						
