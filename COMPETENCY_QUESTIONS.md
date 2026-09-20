@@ -357,6 +357,14 @@ SELECT ?exp WHERE {
 }
 ```
 
+**Running this exact query against `aa` correctly returns zero
+results** - not a bug, a real, genuine finding. `aa`'s own geometry
+and frequency work never used `6-31G(d,p)` at all; it used `6-21G` the
+whole way through (see "A second real bug" in `examples/aa/README.md`).
+This query is itself now a real, working way to discover that
+difference between the two datasets, rather than something that has
+to be read out of the README by hand.
+
 ## 15. What is the activation energy (forward/reverse barrier) and reaction energy for a given pathway?
 
 **Status: ❌ Not really answerable as a single SPARQL query today.**
