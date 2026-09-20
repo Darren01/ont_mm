@@ -5515,7 +5515,7 @@ rdfs:Class rdf:type owl:Class .
                                                 <http://example.org/hasRuntyp> "ENERGY" ;
                                                 <http://example.org/hasSolvationModel> "PCM" ;
                                                 <http://example.org/hasSolvent> "water" ;
-                                                <http://purl.org/gc/hasBasisSet> "PCSEG" ;
+                                                <http://purl.org/gc/hasBasisSet> "PCSEG-2" ;
                                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                                 rdfs:label "Single point caa008-aldehyde-pcseg2" .
 
@@ -5544,7 +5544,7 @@ rdfs:Class rdf:type owl:Class .
                                                <http://example.org/hasRuntyp> "ENERGY" ;
                                                <http://example.org/hasSolvationModel> "PCM" ;
                                                <http://example.org/hasSolvent> "water" ;
-                                               <http://purl.org/gc/hasBasisSet> "PCSEG" ;
+                                               <http://purl.org/gc/hasBasisSet> "PCSEG-2" ;
                                                <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                                rdfs:label "Single point caa008-hydrate-pcseg2" .
 
@@ -5573,7 +5573,7 @@ rdfs:Class rdf:type owl:Class .
                                              <http://example.org/hasRuntyp> "ENERGY" ;
                                              <http://example.org/hasSolvationModel> "PCM" ;
                                              <http://example.org/hasSolvent> "water" ;
-                                             <http://purl.org/gc/hasBasisSet> "PCSEG" ;
+                                             <http://purl.org/gc/hasBasisSet> "PCSEG-2" ;
                                              <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                              rdfs:label "Single point caa008-water-pcseg2" .
 

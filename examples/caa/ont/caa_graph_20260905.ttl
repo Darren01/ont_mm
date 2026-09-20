@@ -7405,7 +7405,7 @@ rdfs:Class rdf:type owl:Class .
                                                 <http://example.org/hasOutputFile> <http://example.org/file_caa008-aldehyde-pcseg2_dat> ,
                                                                                    <http://example.org/file_caa008-aldehyde-pcseg2_log> ;
                                                 <http://purl.org/gc/hasResult> <http://example.org/energies_caa008-aldehyde-pcseg2> ;
-                                                <http://purl.org/gc/hasBasisSet> "PCSEG" ;
+                                                <http://purl.org/gc/hasBasisSet> "PCSEG-2" ;
                                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                                 <http://example.org/hasRuntyp> "ENERGY" ;
                                                 <http://example.org/hasSolvationModel> "PCM" ;
@@ -7441,7 +7441,7 @@ rdfs:Class rdf:type owl:Class .
                                                <http://example.org/hasOutputFile> <http://example.org/file_caa008-hydrate-pcseg2_dat> ,
                                                                                   <http://example.org/file_caa008-hydrate-pcseg2_log> ;
                                                <http://purl.org/gc/hasResult> <http://example.org/energies_caa008-hydrate-pcseg2> ;
-                                               <http://purl.org/gc/hasBasisSet> "PCSEG" ;
+                                               <http://purl.org/gc/hasBasisSet> "PCSEG-2" ;
                                                <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                                <http://example.org/hasRuntyp> "ENERGY" ;
                                                <http://example.org/hasSolvationModel> "PCM" ;
@@ -7477,7 +7477,7 @@ rdfs:Class rdf:type owl:Class .
                                              <http://example.org/hasOutputFile> <http://example.org/file_caa008-water-pcseg2_dat> ,
                                                                                 <http://example.org/file_caa008-water-pcseg2_log> ;
                                              <http://purl.org/gc/hasResult> <http://example.org/energies_caa008-water-pcseg2> ;
-                                             <http://purl.org/gc/hasBasisSet> "PCSEG" ;
+                                             <http://purl.org/gc/hasBasisSet> "PCSEG-2" ;
                                              <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                              <http://example.org/hasRuntyp> "ENERGY" ;
                                              <http://example.org/hasSolvationModel> "PCM" ;
