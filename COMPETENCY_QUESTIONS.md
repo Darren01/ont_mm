@@ -57,6 +57,119 @@ graph a question needs, not by how interesting the question is.
 
 ---
 
+## A worked example: following one transition state
+
+The questions below are organised for reference, not for a first
+read. This section instead walks through a real, connected task -
+finding a transition state and understanding where it came from - to
+show how they actually chain together in practice, and how to adapt
+each step to a different question of your own. Every query here is
+tested and real, run against the actual `caa` graph, not invented for
+the example.
+
+**Start broad.** Suppose you've just been handed this graph and want
+your bearings - a natural first move is CQ #1's own inventory, here
+narrowed to one type:
+
+```sparql
+PREFIX gc: <http://purl.org/gc/>
+
+SELECT ?exp WHERE {
+  ?exp a gc:SaddlePoint .
+}
+ORDER BY ?exp
+```
+
+Two results: `caa005bTSa` and `caa005bTSb`. Let's follow the first one.
+**To adapt this step**: swap `gc:SaddlePoint` for any of the other four
+types (`GeometryOptimization`, `SinglePoint`, `VibrationalAnalysis`,
+`IRC`), or use CQ #1's own `FILTER(?type IN (...))` form to see several
+types at once.
+
+**Ask what it actually produced.** Now that we have one experiment in
+hand, CQ #3's provenance query, pointed at its own input file:
+
+```sparql
+PREFIX ex: <http://example.org/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
+SELECT ?output ?type WHERE {
+  ?exp ex:hasInputFile ex:file_caa005bTSa_inp .
+  ?output prov:wasGeneratedBy ?exp .
+  ?output a ?type .
+  FILTER(?type != owl:NamedIndividual)
+}
+```
+
+A clean result here - just the real `.log` and `.dat` files this run
+produced, nothing more tangled. (CQ #3's own notes explain a messier
+case worth knowing about: sometimes this same query returns a *later*
+experiment's own input file, when that run's starting geometry was
+built from this one's result - not the case here, but worth watching
+for elsewhere.) **To adapt this step**: swap `ex:file_caa005bTSa_inp`
+for any other experiment's own input file URI to trace a completely
+different run's own outputs.
+
+**Ask what produced *this* geometry.** A transition state doesn't just
+appear - it's usually found by deliberately constraining part of the
+geometry while the rest relaxes. What was actually held fixed here?
+CQ #4's constraints query, pointed at this specific experiment:
+
+```sparql
+PREFIX gc: <http://purl.org/gc/>
+PREFIX ex: <http://example.org/>
+
+SELECT ?constraint ?type ?target ?unit WHERE {
+  ?constraint a ?type ; ex:targetValue ?target ; gc:hasUnit ?unit .
+  ex:exp_caa005bTSa ex:hasConstraint ?constraint .
+  FILTER(?type IN (ex:DistanceConstraint, ex:AngleConstraint, ex:DihedralConstraint))
+}
+```
+
+**Zero results - a real, genuine finding, not a dead end.** This
+specific transition state was found via an unconstrained saddle-point
+search, using a real Hessian - by the time you're searching directly
+for a saddle point, you no longer need an artificial geometric
+constraint holding anything in place. The constraints that actually
+narrowed in on this region of the surface were used earlier, in the
+`caa004` scan series that led up to it. Running the same query against
+one of those instead:
+
+```sparql
+PREFIX gc: <http://purl.org/gc/>
+PREFIX ex: <http://example.org/>
+
+SELECT ?constraint ?type ?target ?unit WHERE {
+  ?constraint a ?type ; ex:targetValue ?target ; gc:hasUnit ?unit .
+  ex:exp_caa004m ex:hasConstraint ?constraint .
+  FILTER(?type IN (ex:DistanceConstraint, ex:AngleConstraint, ex:DihedralConstraint))
+}
+```
+
+Two real constraints - `Distance constraint caa004m (atoms 10-7)` and
+`Distance constraint caa004m (atoms 8-13)`, both fixed to 1.2 Å - a
+genuine two-dimensional scan, not a simple one-parameter search.
+Note: `caa004m` isn't linked to `caa005bTSa` by any formal
+`prov:wasGeneratedBy` triple in the graph - this is a narrative
+connection (the same scan series, narrowing toward the same region),
+not something the graph itself formally asserts. **To adapt this
+step**: swap `ex:exp_caa004m` for any other experiment's own ID, or
+drop that line entirely to see every constraint in the graph at once,
+the way CQ #4's own version of this query does.
+
+**Putting it together**: three short queries - an inventory, a
+provenance trace, a constraint lookup - turned "what transition states
+exist?" into a specific, real geometric story: this one was found via
+an unconstrained saddle-point search, cleanly producing just its own
+`.log`/`.dat` files, sitting at the end of a real two-dimensional scan
+that held two distances fixed at 1.2 Å each. None of these three
+queries needed anything beyond what's already in the numbered list
+below - the value here is entirely in chaining them, and in noticing
+when a step's own answer (like the empty result above) is itself part
+of the real story rather than something to work around.
+
+---
+
 ## 1. How many experiments of each type exist?
 
 **Status: ✅ Answerable. Verified working.**
