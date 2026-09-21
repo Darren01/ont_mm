@@ -152,13 +152,13 @@ work fine there.
 
 ## 5. Which experiments are linked to a specific published paper?
 
-**Status: ✅ Answerable in principle - the mechanism itself is proven
-working elsewhere in this project.** Currently returns no results
-against the real `caa` graph - traced honestly: the source
-`run_notes.tsv` no longer has a DOI recorded on any line (very likely
-lost across this project's several rebuilds), not a bug in the
-underlying linking mechanism. Kept in this document deliberately -
-genuinely useful once literature links are added back.
+**Status: ✅ Answerable. Verified working** against the real `caa`
+graph - correctly finds `exp_caa004a`, the real DOI restored to
+`run_notes.tsv` in an earlier session, confirmed still present through
+every rebuild since (including today's). Running this same query
+against `aa` correctly returns zero results - a real finding, not a
+bug: `aa` has no literature link recorded in its own graph at all yet
+(see CQ #14 for the same honest pattern with a different property).
 
 ```sparql
 PREFIX dcterms: <http://purl.org/dc/terms/>
