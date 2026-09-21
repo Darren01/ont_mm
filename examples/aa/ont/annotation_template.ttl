@@ -212,6 +212,10 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
 <http://purl.obolibrary.org/obo/BFO_0000124> rdf:type owl:ObjectProperty .
 
 
+###  http://purl.org/dc/terms/relation
+<http://purl.org/dc/terms/relation> rdf:type owl:ObjectProperty .
+
+
 ###  http://purl.org/gc/IsAtomProperty
 <http://purl.org/gc/IsAtomProperty> rdf:type owl:ObjectProperty ;
                                     rdfs:subPropertyOf <http://purl.org/gc/extraGCObjectProperty> ;
@@ -4742,6 +4746,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_aa002-aldehyde-bare
 <http://example.org/exp_aa002-aldehyde-bare> rdf:type owl:NamedIndividual ,
                                                       <http://purl.org/gc/MolecularComputation> ;
+                                             <http://purl.org/dc/terms/relation> <https://doi.org/10.1021/ja00249a034> ;
                                              <http://www.w3.org/2004/02/skos/core#editorialNote> "geometry+frequency optimization of BARE acetaldehyde (7 atoms, NZVAR=15) at wB97X-D/6-21G+(d,p)/PCM(water), extracted from aa001h by removing both spectator waters; part of the standalone hydration thermodynamic cycle dG_hyd = G(hydrate) - [G(aldehyde) + G(water)], built to compare directly against the experimental K_h from Sorensen & Jencks (JACS 1987, 109, 4675): K_h = 1.2 +/- 0.1 at 25C, i.e. dG_exp = -0.11 kcal/mol (54.5% hydrate)" .
 
 
@@ -5030,6 +5035,10 @@ rdfs:Class rdf:type owl:Class .
                                <http://www.w3.org/ns/prov#specializationOf> <http://www.w3.org/ns/prov-o> ;
                                <http://www.w3.org/ns/prov#wasRevisionOf> <http://www.w3.org/ns/prov-o-20130312> ;
                                rdfs:label "PROV-O: The PROV Ontology"@en .
+
+
+###  https://doi.org/10.1021/ja00249a034
+<https://doi.org/10.1021/ja00249a034> rdf:type owl:NamedIndividual .
 
 
 #################################################################
