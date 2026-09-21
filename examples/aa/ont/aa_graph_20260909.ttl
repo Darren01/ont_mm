@@ -4771,7 +4771,7 @@ rdfs:Class rdf:type owl:Class .
                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/angstrom> ;
                                           <http://example.org/targetValue> "1.2"^^xsd:float ;
                                           <http://purl.org/gc/constraintMode> "fixed" ;
-                                          rdfs:label "Distance constraint aa001a" .
+                                          rdfs:label "Distance constraint aa001a (atoms 10-7)" .
 
 
 ###  http://example.org/constraint_aa001a_d2
@@ -4782,7 +4782,7 @@ rdfs:Class rdf:type owl:Class .
                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/angstrom> ;
                                           <http://example.org/targetValue> "1.2"^^xsd:float ;
                                           <http://purl.org/gc/constraintMode> "fixed" ;
-                                          rdfs:label "Distance constraint aa001a" .
+                                          rdfs:label "Distance constraint aa001a (atoms 8-13)" .
 
 
 ###  http://example.org/constraint_aa001b_d1
@@ -4793,7 +4793,7 @@ rdfs:Class rdf:type owl:Class .
                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/angstrom> ;
                                           <http://example.org/targetValue> "1.2"^^xsd:float ;
                                           <http://purl.org/gc/constraintMode> "fixed" ;
-                                          rdfs:label "Distance constraint aa001b" .
+                                          rdfs:label "Distance constraint aa001b (atoms 10-7)" .
 
 
 ###  http://example.org/constraint_aa001b_d2
@@ -4804,7 +4804,7 @@ rdfs:Class rdf:type owl:Class .
                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/angstrom> ;
                                           <http://example.org/targetValue> "1.2"^^xsd:float ;
                                           <http://purl.org/gc/constraintMode> "fixed" ;
-                                          rdfs:label "Distance constraint aa001b" .
+                                          rdfs:label "Distance constraint aa001b (atoms 8-13)" .
 
 
 ###  http://example.org/constraint_aa001c_d1
@@ -4815,7 +4815,7 @@ rdfs:Class rdf:type owl:Class .
                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/angstrom> ;
                                           <http://example.org/targetValue> "1.2"^^xsd:float ;
                                           <http://purl.org/gc/constraintMode> "fixed" ;
-                                          rdfs:label "Distance constraint aa001c" .
+                                          rdfs:label "Distance constraint aa001c (atoms 10-7)" .
 
 
 ###  http://example.org/constraint_aa001c_d2
@@ -4826,7 +4826,7 @@ rdfs:Class rdf:type owl:Class .
                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/angstrom> ;
                                           <http://example.org/targetValue> "1.2"^^xsd:float ;
                                           <http://purl.org/gc/constraintMode> "fixed" ;
-                                          rdfs:label "Distance constraint aa001c" .
+                                          rdfs:label "Distance constraint aa001c (atoms 8-13)" .
 
 
 ###  http://example.org/electronic_energy_aa001-ts-pcseg2
