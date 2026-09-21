@@ -152,13 +152,14 @@ work fine there.
 
 ## 5. Which experiments are linked to a specific published paper?
 
-**Status: ✅ Answerable. Verified working** against the real `caa`
-graph - correctly finds `exp_caa004a`, the real DOI restored to
-`run_notes.tsv` in an earlier session, confirmed still present through
-every rebuild since (including today's). Running this same query
-against `aa` correctly returns zero results - a real finding, not a
-bug: `aa` has no literature link recorded in its own graph at all yet
-(see CQ #14 for the same honest pattern with a different property).
+**Status: ✅ Answerable. Verified working** against both `caa` and
+`aa` - each correctly finds its own experiment linked to this DOI
+(`exp_caa004a` and `exp_aa002-aldehyde-bare` respectively). Both
+projects genuinely share this reference deliberately, not by
+coincidence: Sorensen & Jencks (1987) is specifically about
+acetaldehyde hydration, and the same methodology applies directly to
+chloroacetaldehyde too - `aa`'s own link was added once this was
+confirmed, rather than assumed.
 
 ```sparql
 PREFIX dcterms: <http://purl.org/dc/terms/>
