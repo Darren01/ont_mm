@@ -27,6 +27,10 @@
   <label for="dataset-select"><strong>Dataset:</strong></label>
   <select id="dataset-select" onchange="switchDataset(this.value)"></select>
 </p>
+<p id="own-graph-file-row" style="display:none;">
+  <label for="own-graph-file"><strong>Turtle file:</strong></label>
+  <input type="file" id="own-graph-file" accept=".ttl,.n3,.rdf,.owl" onchange="loadUserFile(this.files[0])">
+</p>
 <p id="page-intro"></p>
 
 <p id="status">Loading graph...</p>
@@ -188,6 +192,44 @@ const DATASETS = {
 }`
       }
     ]
+  },
+  own_graph: {
+    label: "My own graph (upload a file)...",
+    pageTitle: "My own graph - SPARQL playground - ont_mm",
+    introHtml: "Choose a Turtle (.ttl) file below to load your own graph - " +
+      "nothing is uploaded anywhere, the file is read directly in your own " +
+      "browser. None of the ont_mm-specific example queries apply here, " +
+      "since they use this project's own vocabulary - the two queries below " +
+      "work on any RDF graph, and are a genuine, general-purpose way to get " +
+      "your bearings in an unfamiliar one: the first gives a rough map of " +
+      "what kinds of things it holds, the second shows every predicate it " +
+      "actually uses, so you can go looking for your own graph's own " +
+      "equivalent of a term you've seen used here.",
+    isUserUpload: true,
+    prefixesOverride: `
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+`,
+    datasetExamples: [
+      {
+        label: "What kinds of things exist?",
+        description: "Genuinely generic - works on any RDF graph, not just this project's own. Counts how many individuals exist of each real type actually used, most common first - the fastest way to get a rough map of an unfamiliar graph's own subject matter.",
+        query: `SELECT ?type (COUNT(?s) AS ?count) WHERE {
+  ?s a ?type .
+}
+GROUP BY ?type
+ORDER BY DESC(?count)`
+      },
+      {
+        label: "What properties are actually used?",
+        description: "Also genuinely generic. Lists every real predicate used anywhere in the loaded graph - directly useful for finding your own graph's own equivalent of a property you've seen in one of this project's own examples (its own version of something like ex:hasConstraint or gc:hasFrequency, under whatever name it actually uses).",
+        query: `SELECT DISTINCT ?property WHERE {
+  ?s ?property ?o .
+}
+ORDER BY ?property`
+      }
+    ]
   }
 };
 
@@ -289,6 +331,11 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
       regex: /example\.org\/exp_([A-Za-z0-9\-]+)$/,
       urlFor: function (match) {
         const outputsPath = DATASETS[currentDatasetId].outputsPath;
+        // No known outputsPath (the own-graph case, which also has no
+        // real reason to share this project's own example.org
+        // namespace in the first place) - skip the link rather than
+        // build one pointing at a file that was never actually there.
+        if (!outputsPath) return null;
         return "https://raw.githubusercontent.com/Darren01/ont_mm/main/" + outputsPath + match[1] + ".log";
       }
     }
@@ -410,12 +457,20 @@ function showError(err) {
 // loads, so switching datasets always shows the right combined set.
 function currentExamples() {
   const datasetOwn = DATASETS[currentDatasetId].datasetExamples || [];
+  // The shared examples use this project's own gc:/ex: vocabulary,
+  // which an unrelated, user-supplied graph has no reason to share -
+  // an uploaded graph gets only its own two, genuinely generic ones.
+  if (DATASETS[currentDatasetId].isUserUpload) return datasetOwn;
   return SHARED.examples.concat(datasetOwn);
+}
+
+function currentPrefixes() {
+  return DATASETS[currentDatasetId].prefixesOverride || SHARED.prefixes;
 }
 
 function loadExample(index) {
   const ex = currentExamples()[index];
-  document.getElementById("query-box").value = SHARED.prefixes.trim() + "\n\n" + ex.query;
+  document.getElementById("query-box").value = currentPrefixes().trim() + "\n\n" + ex.query;
   document.getElementById("example-desc").textContent = ex.description;
 }
 
@@ -476,30 +531,41 @@ function switchDataset(id) {
   lastRows = [];
   lastVarNames = [];
 
+  const fileRow = document.getElementById("own-graph-file-row");
+  const fileInput = document.getElementById("own-graph-file");
+
+  if (DATASETS[id].isUserUpload) {
+    // No file has been picked yet on switching here - show the picker
+    // and the dataset's own intro, then wait for loadUserFile() to be
+    // triggered by the file input's own onchange, rather than fetch
+    // anything automatically.
+    fileRow.style.display = "block";
+    fileInput.value = "";
+    document.title = DATASETS[id].pageTitle;
+    document.getElementById("page-heading").textContent = SHARED.heading;
+    document.getElementById("page-intro").innerHTML = DATASETS[id].introHtml;
+    document.getElementById("status").textContent = "Choose a Turtle file above to begin.";
+    return;
+  }
+
+  fileRow.style.display = "none";
   loadDataset();
 }
 
-async function loadDataset() {
-  document.title = DATASETS[currentDatasetId].pageTitle;
-  document.getElementById("page-heading").textContent = SHARED.heading;
-  document.getElementById("page-intro").innerHTML = DATASETS[currentDatasetId].introHtml;
-
+// Shared by both loading paths below: parses a Turtle string that's
+// already been obtained (however it got here - fetched from GitHub,
+// or read from a local file the person picked), then brings the rest
+// of the UI up to date. Neither caller needs to know how the other
+// one got its text.
+function parseAndDisplayGraph(ttlText, baseUri) {
   const statusEl = document.getElementById("status");
-  statusEl.textContent = "Loading graph...";
   try {
     if (typeof $rdf === "undefined") {
       throw new Error("rdflib.js did not load from the CDN - check your internet connection, or the CDN link itself may need updating.");
     }
 
-    const response = await fetch(DATASETS[currentDatasetId].graphUrl);
-    if (!response.ok) {
-      throw new Error("Could not fetch the graph (HTTP " + response.status + "). " +
-        "The graph URL for this dataset may have changed, or the source may be temporarily unreachable.");
-    }
-    const ttlText = await response.text();
-
     store = $rdf.graph();
-    $rdf.parse(ttlText, store, DATASETS[currentDatasetId].graphUrl, "text/turtle");
+    $rdf.parse(ttlText, store, baseUri, "text/turtle");
 
     const tripleCount = store.statementsMatching(undefined, undefined, undefined).length;
     if (tripleCount === 0) {
@@ -511,6 +577,51 @@ async function loadDataset() {
     buildExampleButtons();
     if (currentExamples().length > 0) loadExample(0);
 
+  } catch (err) {
+    statusEl.textContent = "Failed to load the graph.";
+    showError(err);
+  }
+}
+
+async function loadDataset() {
+  document.title = DATASETS[currentDatasetId].pageTitle;
+  document.getElementById("page-heading").textContent = SHARED.heading;
+  document.getElementById("page-intro").innerHTML = DATASETS[currentDatasetId].introHtml;
+
+  const statusEl = document.getElementById("status");
+  statusEl.textContent = "Loading graph...";
+  try {
+    const response = await fetch(DATASETS[currentDatasetId].graphUrl);
+    if (!response.ok) {
+      throw new Error("Could not fetch the graph (HTTP " + response.status + "). " +
+        "The graph URL for this dataset may have changed, or the source may be temporarily unreachable.");
+    }
+    const ttlText = await response.text();
+    parseAndDisplayGraph(ttlText, DATASETS[currentDatasetId].graphUrl);
+
+  } catch (err) {
+    statusEl.textContent = "Failed to load the graph.";
+    showError(err);
+  }
+}
+
+// The own-graph counterpart to loadDataset() above: reads a local
+// file the person picked (nothing is uploaded anywhere - this all
+// happens in their own browser), then hands its text to the exact
+// same parseAndDisplayGraph() every built-in dataset already uses.
+async function loadUserFile(file) {
+  if (!file) return;
+
+  document.title = DATASETS[currentDatasetId].pageTitle;
+  document.getElementById("page-heading").textContent = SHARED.heading;
+  document.getElementById("page-intro").innerHTML = DATASETS[currentDatasetId].introHtml;
+  document.getElementById("error").style.display = "none";
+
+  const statusEl = document.getElementById("status");
+  statusEl.textContent = "Reading " + file.name + "...";
+  try {
+    const ttlText = await file.text();
+    parseAndDisplayGraph(ttlText, "http://example.org/uploaded-graph/");
   } catch (err) {
     statusEl.textContent = "Failed to load the graph.";
     showError(err);
@@ -602,6 +713,63 @@ function runQuery() {
         return "";
       });
 
+    // SELECT DISTINCT ?var [?var2 ...] - rdflib.js parses the DISTINCT
+    // keyword without error but genuinely ignores it (confirmed
+    // directly: a query mixing rdf:type and other properties returned
+    // every raw, un-deduplicated triple, not the distinct set of
+    // requested variables). Handled the same way as everything above:
+    // "DISTINCT" is stripped so rdflib.js treats it as a plain SELECT,
+    // and the real projection + deduplication is done by hand below,
+    // once the raw rows are in.
+    let distinctVars = null;
+    let distinctSortVar = null;
+    queryText = queryText.replace(/SELECT\s+DISTINCT\s+((?:\?\w+\s*)+)WHERE/i,
+      function (whole, varList) {
+        distinctVars = varList.trim().split(/\s+/).map(function (v) { return v.slice(1); });
+        return "SELECT " + varList + "WHERE";
+      });
+    // A plain "ORDER BY ?var" (ascending, no DESC) on one of the
+    // DISTINCT variables - rdflib.js's own attempt at this runs on
+    // the raw, un-deduplicated rows, before this workaround's own
+    // dedup step discards whatever order it produced. Recognised only
+    // for a variable already in distinctVars, and applied by hand,
+    // alphabetically, once dedup has happened.
+    if (distinctVars) {
+      const orderByMatch = queryText.match(/ORDER BY\s+\?(\w+)\s*$/i);
+      if (orderByMatch && distinctVars.indexOf(orderByMatch[1]) !== -1) {
+        distinctSortVar = orderByMatch[1];
+        queryText = queryText.replace(/ORDER BY\s+\?\w+\s*$/i, "");
+      }
+    }
+
+    // SELECT ?var (COUNT(?other) AS ?alias) WHERE {...} GROUP BY ?var
+    // [ORDER BY DESC(?alias)] - rdflib.js has no real GROUP BY/COUNT
+    // support at all (confirmed directly: it silently returns one
+    // ungrouped row per underlying triple, ignoring both the
+    // aggregate and the grouping entirely). This covers the one
+    // shape this playground's own examples actually need - a single
+    // grouping variable, a single COUNT(...), and an optional
+    // ORDER BY DESC on that same count - not general SPARQL
+    // aggregation. The SELECT/GROUP BY/ORDER BY clauses are rewritten
+    // into a plain, ungrouped projection before parsing; the real
+    // grouping, counting, and sorting happen by hand below.
+    let groupByInfo = null;
+    const groupBySelectMatch = queryText.match(/SELECT\s+\?(\w+)\s+\(COUNT\(\?(\w+)\)\s+AS\s+\?(\w+)\)\s+WHERE/i);
+    const groupByClauseMatch = queryText.match(/GROUP BY\s+\?(\w+)/i);
+    if (groupBySelectMatch && groupByClauseMatch && groupBySelectMatch[1] === groupByClauseMatch[1]) {
+      const orderByDescMatch = queryText.match(/ORDER BY DESC\(\?(\w+)\)/i);
+      groupByInfo = {
+        groupVar: groupBySelectMatch[1],
+        countVar: groupBySelectMatch[2],
+        aliasVar: groupBySelectMatch[3],
+        orderByAlias: orderByDescMatch ? orderByDescMatch[1] : null
+      };
+      queryText = queryText.replace(/SELECT\s+\?(\w+)\s+\(COUNT\(\?(\w+)\)\s+AS\s+\?(\w+)\)\s+WHERE/i,
+        "SELECT ?" + groupByInfo.groupVar + " ?" + groupByInfo.countVar + " WHERE");
+      queryText = queryText.replace(/GROUP BY\s+\?\w+/i, "");
+      queryText = queryText.replace(/ORDER BY DESC\(\?\w+\)/i, "");
+    }
+
     const query = $rdf.SPARQLToQuery(queryText, false, store);
 
     if (!query) {
@@ -638,9 +806,59 @@ function runQuery() {
         runBtn.disabled = false;
         runBtn.textContent = "Run query";
 
-        const varNames = Array.from(varNameSet);
+        let varNames = Array.from(varNameSet);
+        let workingRows = rows;
 
-        if (rows.length === 0) {
+        // Apply GROUP BY + COUNT by hand first - it changes the shape
+        // of the result entirely (many raw rows collapse into one
+        // grouped row each), so DISTINCT and the manual FILTERs below
+        // should see the grouped result, not the raw rows underneath.
+        if (groupByInfo && workingRows.length > 0) {
+          const groups = {};
+          workingRows.forEach(function (row) {
+            const key = row[groupByInfo.groupVar];
+            if (!groups[key]) groups[key] = new Set();
+            groups[key].add(row[groupByInfo.countVar]);
+          });
+          workingRows = Object.keys(groups).map(function (key) {
+            const grouped = {};
+            grouped[groupByInfo.groupVar] = key;
+            grouped[groupByInfo.aliasVar] = groups[key].size;
+            return grouped;
+          });
+          if (groupByInfo.orderByAlias === groupByInfo.aliasVar) {
+            workingRows.sort(function (a, b) { return b[groupByInfo.aliasVar] - a[groupByInfo.aliasVar]; });
+          }
+          varNames = [groupByInfo.groupVar, groupByInfo.aliasVar];
+        }
+
+        // Apply SELECT DISTINCT by hand - project only the requested
+        // variable(s), then drop rows whose projected values have
+        // already been seen (in first-seen order, matching how a real
+        // SPARQL engine's DISTINCT behaves absent an ORDER BY).
+        if (distinctVars && workingRows.length > 0) {
+          const seen = new Set();
+          const dedupedRows = [];
+          workingRows.forEach(function (row) {
+            const key = distinctVars.map(function (v) { return row[v]; }).join("\u0000");
+            if (!seen.has(key)) {
+              seen.add(key);
+              const projected = {};
+              distinctVars.forEach(function (v) { projected[v] = row[v]; });
+              dedupedRows.push(projected);
+            }
+          });
+          if (distinctSortVar) {
+            dedupedRows.sort(function (a, b) {
+              return a[distinctSortVar] < b[distinctSortVar] ? -1 :
+                     a[distinctSortVar] > b[distinctSortVar] ? 1 : 0;
+            });
+          }
+          workingRows = dedupedRows;
+          varNames = distinctVars.slice();
+        }
+
+        if (workingRows.length === 0) {
           resultsEl.innerHTML = "<p><em>No results.</em> This may be a real, correct " +
             "finding (the pattern genuinely doesn't match anything) rather than an error - " +
             "worth double-checking your query logic either way.</p>";
@@ -653,8 +871,8 @@ function runQuery() {
         // Apply the manual FILTER workarounds before anything else -
         // totalMatches and LIMIT/OFFSET should both reflect the
         // filtered set, not rdflib.js's raw, unfiltered result count.
-        const filteredRows = manualFilters.length === 0 ? rows :
-          rows.filter(function (row) {
+        const filteredRows = manualFilters.length === 0 ? workingRows :
+          workingRows.filter(function (row) {
             return manualFilters.every(function (f) { return f(row); });
           });
 
