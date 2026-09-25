@@ -82,36 +82,41 @@ already-published ontology has a real cost; it shouldn't be done
 casually, but it's the right call when the replacement is an exact,
 already-available standard rather than a genuinely different concept.
 
-## Executing it: a real lesson in ontology-pipeline hygiene
+## Executing it: a real lesson, but not the one it first looked like
 
-This is the most concretely useful part of this case study for anyone
-running a similar `robot template`-based pipeline, found the hard way,
-through several rounds of "why hasn't this actually changed?"
+Getting this to actually take effect took several rounds of "why
+hasn't this changed?" - genuinely worth documenting honestly, since
+the first, plausible-looking explanation turned out to be wrong on
+direct testing, and the real cause was much more mundane.
 
-The established rebuild routine for this project has always been:
-delete the `*_instances.tsv` files and the final built graph, then
-rebuild. That's sufficient when *data* changes. It is **not**
-sufficient when a *property name itself* is being renamed or removed,
-because two kinds of generated file silently persist the old
-declaration across rebuilds unless deleted too:
+This project keeps two separate clones of the same repository (one
+for day-to-day work, one that a related, independent project had
+earlier copied examples from). The rebuild that should have picked up
+the fix was run with its template path pointing at the *other*, not
+-yet-pulled clone - so the very first extraction step wrote
+`experiment_template_instances.tsv` with the old property name baked
+in, even though the fix had already been committed and pushed
+elsewhere. Every rebuild after that, for several rounds, correctly,
+predictably reproduced the same stale result, because the real input
+to the build - that one TSV file - genuinely hadn't changed yet.
 
-1. **The per-template generated schema file** (`experiment_template.ttl`,
-   built by `robot template` from the TSV). It does not appear to be
-   regenerated from scratch by the graph-build step - it accumulates.
-2. **The local, per-dataset copy of the merged-in ontology**
-   (`gc_core.ttl` inside each dataset's own `ont/` folder), which
-   likewise persisted a stale declaration until deleted directly.
+Two directly plausible-looking fixes were tried along the way (deleting
+the per-template generated `.ttl` file; deleting a local, per-dataset
+copy of the merged-in schema) before the actual cause was found.
+Tested directly afterwards, deliberately, to check: does `robot
+template` or `robot merge` ever preserve old content from a previous
+run at the same output path? No - both cleanly, completely overwrite
+their output every time, regardless of what existed there before.
+Neither deletion was ever the actual fix; the real fix was simply
+re-running the extraction step against the correct, up-to-date
+template.
 
-Neither of these was ever a problem before, because no earlier change
-to this project had actually removed a property - only added new ones
-or changed data values. Renaming one was the first time this gap
-actually mattered, and it took several rounds of grep-and-rebuild to
-find both places.
-
-**The practical rule going forward**: before rebuilding after a
-property rename or removal, delete every generated `.ttl` file in the
-dataset's `ont/` folder, not just the `*_instances.tsv` files and the
-final graph.
+**The practical rule going forward**: when a rebuild doesn't reflect
+an expected change, check what the build's own inputs actually
+contain (here: which clone a path variable really points to, and
+whether the extraction step has genuinely been re-run since the fix)
+before suspecting the build tooling itself of caching or accumulating
+anything - `robot` doesn't.
 
 A second, smaller lesson from the same debugging session: a naive,
 unqualified `grep "hasInputFile"` is genuinely misleading here, since
