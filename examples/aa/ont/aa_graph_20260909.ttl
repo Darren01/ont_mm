@@ -240,14 +240,6 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
 <http://example.org/hasConstraint> rdf:type owl:ObjectProperty .
 
 
-###  http://example.org/hasInputFile
-<http://example.org/hasInputFile> rdf:type owl:ObjectProperty .
-
-
-###  http://example.org/hasOutputFile
-<http://example.org/hasOutputFile> rdf:type owl:ObjectProperty .
-
-
 ###  http://example.org/involvesAtom1
 <http://example.org/involvesAtom1> rdf:type owl:ObjectProperty .
 
@@ -5213,10 +5205,10 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa001-ts-pcseg2> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/MolecularComputation> ,
                                                   <http://purl.org/gc/SinglePoint> ;
-                                         <http://example.org/hasInputFile> <http://example.org/file_aa001-ts-pcseg2_inp> ;
-                                         <http://example.org/hasOutputFile> <http://example.org/file_aa001-ts-pcseg2_dat> ,
-                                                                            <http://example.org/file_aa001-ts-pcseg2_log> ;
                                          <http://purl.org/gc/hasResult> <http://example.org/energies_aa001-ts-pcseg2> ;
+                                         <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001-ts-pcseg2_dat> ,
+                                                                               <http://example.org/file_aa001-ts-pcseg2_log> ;
+                                         <http://www.w3.org/ns/prov#used> <http://example.org/file_aa001-ts-pcseg2_inp> ;
                                          <http://purl.org/gc/hasBasisSet> "PCSEG-2" ;
                                          <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                          <http://example.org/hasRuntyp> "ENERGY" ;
@@ -5232,11 +5224,11 @@ rdfs:Class rdf:type owl:Class .
                                          <http://purl.org/gc/VibrationalAnalysis> ;
                                 <http://example.org/hasConstraint> <http://example.org/constraint_aa001a_d1> ,
                                                                    <http://example.org/constraint_aa001a_d2> ;
-                                <http://example.org/hasInputFile> <http://example.org/file_aa001a_inp> ;
-                                <http://example.org/hasOutputFile> <http://example.org/file_aa001a_dat> ,
-                                                                   <http://example.org/file_aa001a_log> ;
                                 <http://purl.org/gc/hasResult> <http://example.org/energies_aa001a> ,
                                                                <http://example.org/spectrum_aa001a> ;
+                                <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001a_dat> ,
+                                                                      <http://example.org/file_aa001a_log> ;
+                                <http://www.w3.org/ns/prov#used> <http://example.org/file_aa001a_inp> ;
                                 <http://purl.org/gc/hasBasisSet> "6-21G+(d,p)" ;
                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
@@ -5254,11 +5246,11 @@ rdfs:Class rdf:type owl:Class .
                                          <http://purl.org/gc/VibrationalAnalysis> ;
                                 <http://example.org/hasConstraint> <http://example.org/constraint_aa001b_d1> ,
                                                                    <http://example.org/constraint_aa001b_d2> ;
-                                <http://example.org/hasInputFile> <http://example.org/file_aa001b_inp> ;
-                                <http://example.org/hasOutputFile> <http://example.org/file_aa001b_dat> ,
-                                                                   <http://example.org/file_aa001b_log> ;
                                 <http://purl.org/gc/hasResult> <http://example.org/energies_aa001b> ,
                                                                <http://example.org/spectrum_aa001b> ;
+                                <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001b_dat> ,
+                                                                      <http://example.org/file_aa001b_log> ;
+                                <http://www.w3.org/ns/prov#used> <http://example.org/file_aa001b_inp> ;
                                 <http://purl.org/gc/hasBasisSet> "6-21G+(d,p)" ;
                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
@@ -5276,11 +5268,11 @@ rdfs:Class rdf:type owl:Class .
                                          <http://purl.org/gc/VibrationalAnalysis> ;
                                 <http://example.org/hasConstraint> <http://example.org/constraint_aa001c_d1> ,
                                                                    <http://example.org/constraint_aa001c_d2> ;
-                                <http://example.org/hasInputFile> <http://example.org/file_aa001c_inp> ;
-                                <http://example.org/hasOutputFile> <http://example.org/file_aa001c_dat> ,
-                                                                   <http://example.org/file_aa001c_log> ;
                                 <http://purl.org/gc/hasResult> <http://example.org/energies_aa001c> ,
                                                                <http://example.org/spectrum_aa001c> ;
+                                <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001c_dat> ,
+                                                                      <http://example.org/file_aa001c_log> ;
+                                <http://www.w3.org/ns/prov#used> <http://example.org/file_aa001c_inp> ;
                                 <http://purl.org/gc/hasBasisSet> "6-21G+(d,p)" ;
                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
@@ -5296,11 +5288,11 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa001d> rdf:type owl:NamedIndividual ,
                                          <http://purl.org/gc/MolecularComputation> ,
                                          <http://purl.org/gc/SaddlePoint> ;
-                                <http://example.org/hasInputFile> <http://example.org/file_aa001d_inp> ;
-                                <http://example.org/hasOutputFile> <http://example.org/file_aa001d_dat> ,
-                                                                   <http://example.org/file_aa001d_log> ;
                                 <http://purl.org/gc/hasResult> <http://example.org/energies_aa001d> ,
                                                                <http://example.org/spectrum_aa001d> ;
+                                <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001d_dat> ,
+                                                                      <http://example.org/file_aa001d_log> ;
+                                <http://www.w3.org/ns/prov#used> <http://example.org/file_aa001d_inp> ;
                                 <http://purl.org/gc/hasBasisSet> "6-21G+(d,p)" ;
                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
@@ -5315,11 +5307,11 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa001d-smd> rdf:type owl:NamedIndividual ,
                                              <http://purl.org/gc/MolecularComputation> ,
                                              <http://purl.org/gc/SaddlePoint> ;
-                                    <http://example.org/hasInputFile> <http://example.org/file_aa001d-smd_inp> ;
-                                    <http://example.org/hasOutputFile> <http://example.org/file_aa001d-smd_dat> ,
-                                                                       <http://example.org/file_aa001d-smd_log> ;
                                     <http://purl.org/gc/hasResult> <http://example.org/energies_aa001d-smd> ,
                                                                    <http://example.org/spectrum_aa001d-smd> ;
+                                    <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001d-smd_dat> ,
+                                                                          <http://example.org/file_aa001d-smd_log> ;
+                                    <http://www.w3.org/ns/prov#used> <http://example.org/file_aa001d-smd_inp> ;
                                     <http://purl.org/gc/hasBasisSet> "6-21G+(d,p)" ;
                                     <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                     <http://example.org/hasHssend> "true"^^xsd:boolean ;
@@ -5333,11 +5325,11 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa001d-smd-hess> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/MolecularComputation> ,
                                                   <http://purl.org/gc/VibrationalAnalysis> ;
-                                         <http://example.org/hasInputFile> <http://example.org/file_aa001d-smd-hess_inp> ;
-                                         <http://example.org/hasOutputFile> <http://example.org/file_aa001d-smd-hess_dat> ,
-                                                                            <http://example.org/file_aa001d-smd-hess_log> ;
                                          <http://purl.org/gc/hasResult> <http://example.org/energies_aa001d-smd-hess> ,
                                                                         <http://example.org/spectrum_aa001d-smd-hess> ;
+                                         <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001d-smd-hess_dat> ,
+                                                                               <http://example.org/file_aa001d-smd-hess_log> ;
+                                         <http://www.w3.org/ns/prov#used> <http://example.org/file_aa001d-smd-hess_inp> ;
                                          <http://purl.org/gc/hasBasisSet> "6-21G+(d,p)" ;
                                          <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                          <http://example.org/hasRuntyp> "HESSIAN" ;
@@ -5350,10 +5342,10 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa001d-smd-pcseg2> rdf:type owl:NamedIndividual ,
                                                     <http://purl.org/gc/MolecularComputation> ,
                                                     <http://purl.org/gc/SinglePoint> ;
-                                           <http://example.org/hasInputFile> <http://example.org/file_aa001d-smd-pcseg2_inp> ;
-                                           <http://example.org/hasOutputFile> <http://example.org/file_aa001d-smd-pcseg2_dat> ,
-                                                                              <http://example.org/file_aa001d-smd-pcseg2_log> ;
                                            <http://purl.org/gc/hasResult> <http://example.org/energies_aa001d-smd-pcseg2> ;
+                                           <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001d-smd-pcseg2_dat> ,
+                                                                                 <http://example.org/file_aa001d-smd-pcseg2_log> ;
+                                           <http://www.w3.org/ns/prov#used> <http://example.org/file_aa001d-smd-pcseg2_inp> ;
                                            <http://purl.org/gc/hasBasisSet> "PCSEG-2" ;
                                            <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                            <http://example.org/hasRuntyp> "ENERGY" ;
@@ -5366,10 +5358,10 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa001e> rdf:type owl:NamedIndividual ,
                                          <http://purl.org/gc/IRC> ,
                                          <http://purl.org/gc/MolecularComputation> ;
-                                <http://example.org/hasInputFile> <http://example.org/file_aa001e_inp> ;
-                                <http://example.org/hasOutputFile> <http://example.org/file_aa001e_dat> ,
-                                                                   <http://example.org/file_aa001e_log> ;
                                 <http://purl.org/gc/hasResult> <http://example.org/reactionpath_aa001e> ;
+                                <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001e_dat> ,
+                                                                      <http://example.org/file_aa001e_log> ;
+                                <http://www.w3.org/ns/prov#used> <http://example.org/file_aa001e_inp> ;
                                 <http://purl.org/gc/hasBasisSet> "6-21G+(d,p)" ;
                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                 <http://example.org/hasRuntyp> "IRC" ;
@@ -5383,10 +5375,10 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa001f> rdf:type owl:NamedIndividual ,
                                          <http://purl.org/gc/IRC> ,
                                          <http://purl.org/gc/MolecularComputation> ;
-                                <http://example.org/hasInputFile> <http://example.org/file_aa001f_inp> ;
-                                <http://example.org/hasOutputFile> <http://example.org/file_aa001f_dat> ,
-                                                                   <http://example.org/file_aa001f_log> ;
                                 <http://purl.org/gc/hasResult> <http://example.org/reactionpath_aa001e> ;
+                                <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001f_dat> ,
+                                                                      <http://example.org/file_aa001f_log> ;
+                                <http://www.w3.org/ns/prov#used> <http://example.org/file_aa001f_inp> ;
                                 <http://purl.org/gc/hasBasisSet> "6-21G+(d,p)" ;
                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                 <http://example.org/hasRuntyp> "IRC" ;
@@ -5400,11 +5392,11 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa001g> rdf:type owl:NamedIndividual ,
                                          <http://purl.org/gc/MolecularComputation> ,
                                          <http://purl.org/gc/VibrationalAnalysis> ;
-                                <http://example.org/hasInputFile> <http://example.org/file_aa001g_inp> ;
-                                <http://example.org/hasOutputFile> <http://example.org/file_aa001g_dat> ,
-                                                                   <http://example.org/file_aa001g_log> ;
                                 <http://purl.org/gc/hasResult> <http://example.org/energies_aa001g> ,
                                                                <http://example.org/spectrum_aa001g> ;
+                                <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001g_dat> ,
+                                                                      <http://example.org/file_aa001g_log> ;
+                                <http://www.w3.org/ns/prov#used> <http://example.org/file_aa001g_inp> ;
                                 <http://purl.org/gc/hasBasisSet> "6-21G+(d,p)" ;
                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
@@ -5419,10 +5411,10 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa001g-pcseg2> rdf:type owl:NamedIndividual ,
                                                 <http://purl.org/gc/MolecularComputation> ,
                                                 <http://purl.org/gc/SinglePoint> ;
-                                       <http://example.org/hasInputFile> <http://example.org/file_aa001g-pcseg2_inp> ;
-                                       <http://example.org/hasOutputFile> <http://example.org/file_aa001g-pcseg2_dat> ,
-                                                                          <http://example.org/file_aa001g-pcseg2_log> ;
                                        <http://purl.org/gc/hasResult> <http://example.org/energies_aa001g-pcseg2> ;
+                                       <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001g-pcseg2_dat> ,
+                                                                             <http://example.org/file_aa001g-pcseg2_log> ;
+                                       <http://www.w3.org/ns/prov#used> <http://example.org/file_aa001g-pcseg2_inp> ;
                                        <http://purl.org/gc/hasBasisSet> "PCSEG-2" ;
                                        <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                        <http://example.org/hasRuntyp> "ENERGY" ;
@@ -5436,11 +5428,11 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa001g-smd> rdf:type owl:NamedIndividual ,
                                              <http://purl.org/gc/MolecularComputation> ,
                                              <http://purl.org/gc/VibrationalAnalysis> ;
-                                    <http://example.org/hasInputFile> <http://example.org/file_aa001g-smd_inp> ;
-                                    <http://example.org/hasOutputFile> <http://example.org/file_aa001g-smd_dat> ,
-                                                                       <http://example.org/file_aa001g-smd_log> ;
                                     <http://purl.org/gc/hasResult> <http://example.org/energies_aa001g-smd> ,
                                                                    <http://example.org/spectrum_aa001g-smd> ;
+                                    <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001g-smd_dat> ,
+                                                                          <http://example.org/file_aa001g-smd_log> ;
+                                    <http://www.w3.org/ns/prov#used> <http://example.org/file_aa001g-smd_inp> ;
                                     <http://purl.org/gc/hasBasisSet> "6-21G+(d,p)" ;
                                     <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                     <http://example.org/hasHssend> "true"^^xsd:boolean ;
@@ -5454,10 +5446,10 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa001g-smd-pcseg2> rdf:type owl:NamedIndividual ,
                                                     <http://purl.org/gc/MolecularComputation> ,
                                                     <http://purl.org/gc/SinglePoint> ;
-                                           <http://example.org/hasInputFile> <http://example.org/file_aa001g-smd-pcseg2_inp> ;
-                                           <http://example.org/hasOutputFile> <http://example.org/file_aa001g-smd-pcseg2_dat> ,
-                                                                              <http://example.org/file_aa001g-smd-pcseg2_log> ;
                                            <http://purl.org/gc/hasResult> <http://example.org/energies_aa001g-smd-pcseg2> ;
+                                           <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001g-smd-pcseg2_dat> ,
+                                                                                 <http://example.org/file_aa001g-smd-pcseg2_log> ;
+                                           <http://www.w3.org/ns/prov#used> <http://example.org/file_aa001g-smd-pcseg2_inp> ;
                                            <http://purl.org/gc/hasBasisSet> "PCSEG-2" ;
                                            <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                            <http://example.org/hasRuntyp> "ENERGY" ;
@@ -5470,11 +5462,11 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa001h> rdf:type owl:NamedIndividual ,
                                          <http://purl.org/gc/MolecularComputation> ,
                                          <http://purl.org/gc/VibrationalAnalysis> ;
-                                <http://example.org/hasInputFile> <http://example.org/file_aa001h_inp> ;
-                                <http://example.org/hasOutputFile> <http://example.org/file_aa001h_dat> ,
-                                                                   <http://example.org/file_aa001h_log> ;
                                 <http://purl.org/gc/hasResult> <http://example.org/energies_aa001h> ,
                                                                <http://example.org/spectrum_aa001h> ;
+                                <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001h_dat> ,
+                                                                      <http://example.org/file_aa001h_log> ;
+                                <http://www.w3.org/ns/prov#used> <http://example.org/file_aa001h_inp> ;
                                 <http://purl.org/gc/hasBasisSet> "6-21G+(d,p)" ;
                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
@@ -5489,10 +5481,10 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa001h-pcseg2> rdf:type owl:NamedIndividual ,
                                                 <http://purl.org/gc/MolecularComputation> ,
                                                 <http://purl.org/gc/SinglePoint> ;
-                                       <http://example.org/hasInputFile> <http://example.org/file_aa001h-pcseg2_inp> ;
-                                       <http://example.org/hasOutputFile> <http://example.org/file_aa001h-pcseg2_dat> ,
-                                                                          <http://example.org/file_aa001h-pcseg2_log> ;
                                        <http://purl.org/gc/hasResult> <http://example.org/energies_aa001h-pcseg2> ;
+                                       <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001h-pcseg2_dat> ,
+                                                                             <http://example.org/file_aa001h-pcseg2_log> ;
+                                       <http://www.w3.org/ns/prov#used> <http://example.org/file_aa001h-pcseg2_inp> ;
                                        <http://purl.org/gc/hasBasisSet> "PCSEG-2" ;
                                        <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                        <http://example.org/hasRuntyp> "ENERGY" ;
@@ -5506,11 +5498,11 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa001h-smd> rdf:type owl:NamedIndividual ,
                                              <http://purl.org/gc/MolecularComputation> ,
                                              <http://purl.org/gc/VibrationalAnalysis> ;
-                                    <http://example.org/hasInputFile> <http://example.org/file_aa001h-smd_inp> ;
-                                    <http://example.org/hasOutputFile> <http://example.org/file_aa001h-smd_dat> ,
-                                                                       <http://example.org/file_aa001h-smd_log> ;
                                     <http://purl.org/gc/hasResult> <http://example.org/energies_aa001h-smd> ,
                                                                    <http://example.org/spectrum_aa001h-smd> ;
+                                    <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001h-smd_dat> ,
+                                                                          <http://example.org/file_aa001h-smd_log> ;
+                                    <http://www.w3.org/ns/prov#used> <http://example.org/file_aa001h-smd_inp> ;
                                     <http://purl.org/gc/hasBasisSet> "6-21G+(d,p)" ;
                                     <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                     <http://example.org/hasHssend> "true"^^xsd:boolean ;
@@ -5524,10 +5516,10 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa001h-smd-pcseg2> rdf:type owl:NamedIndividual ,
                                                     <http://purl.org/gc/MolecularComputation> ,
                                                     <http://purl.org/gc/SinglePoint> ;
-                                           <http://example.org/hasInputFile> <http://example.org/file_aa001h-smd-pcseg2_inp> ;
-                                           <http://example.org/hasOutputFile> <http://example.org/file_aa001h-smd-pcseg2_dat> ,
-                                                                              <http://example.org/file_aa001h-smd-pcseg2_log> ;
                                            <http://purl.org/gc/hasResult> <http://example.org/energies_aa001h-smd-pcseg2> ;
+                                           <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001h-smd-pcseg2_dat> ,
+                                                                                 <http://example.org/file_aa001h-smd-pcseg2_log> ;
+                                           <http://www.w3.org/ns/prov#used> <http://example.org/file_aa001h-smd-pcseg2_inp> ;
                                            <http://purl.org/gc/hasBasisSet> "PCSEG-2" ;
                                            <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                            <http://example.org/hasRuntyp> "ENERGY" ;
@@ -5540,12 +5532,12 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa002-aldehyde-bare> rdf:type owl:NamedIndividual ,
                                                       <http://purl.org/gc/MolecularComputation> ,
                                                       <http://purl.org/gc/VibrationalAnalysis> ;
-                                             <http://example.org/hasInputFile> <http://example.org/file_aa002-aldehyde-bare_inp> ;
-                                             <http://example.org/hasOutputFile> <http://example.org/file_aa002-aldehyde-bare_dat> ,
-                                                                                <http://example.org/file_aa002-aldehyde-bare_log> ;
                                              <http://purl.org/dc/terms/relation> <https://doi.org/10.1021/ja00249a034> ;
                                              <http://purl.org/gc/hasResult> <http://example.org/energies_aa002-aldehyde-bare> ,
                                                                             <http://example.org/spectrum_aa002-aldehyde-bare> ;
+                                             <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-aldehyde-bare_dat> ,
+                                                                                   <http://example.org/file_aa002-aldehyde-bare_log> ;
+                                             <http://www.w3.org/ns/prov#used> <http://example.org/file_aa002-aldehyde-bare_inp> ;
                                              <http://purl.org/gc/hasBasisSet> "6-21G+(d,p)" ;
                                              <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                              <http://example.org/hasHssend> "true"^^xsd:boolean ;
@@ -5559,9 +5551,9 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_aa002-aldehyde-bare-smd
 <http://example.org/exp_aa002-aldehyde-bare-smd> rdf:type owl:NamedIndividual ,
                                                           <http://purl.org/gc/VibrationalAnalysis> ;
-                                                 <http://example.org/hasInputFile> <http://example.org/file_aa002-aldehyde-bare-smd_inp> ;
-                                                 <http://example.org/hasOutputFile> <http://example.org/file_aa002-aldehyde-bare-smd_dat> ,
-                                                                                    <http://example.org/file_aa002-aldehyde-bare-smd_log> ;
+                                                 <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-aldehyde-bare-smd_dat> ,
+                                                                                       <http://example.org/file_aa002-aldehyde-bare-smd_log> ;
+                                                 <http://www.w3.org/ns/prov#used> <http://example.org/file_aa002-aldehyde-bare-smd_inp> ;
                                                  <http://purl.org/gc/hasBasisSet> "6-21G+(d,p)" ;
                                                  <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                                  <http://example.org/hasHssend> "true"^^xsd:boolean ;
@@ -5574,9 +5566,9 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_aa002-aldehyde-bare-smd-check
 <http://example.org/exp_aa002-aldehyde-bare-smd-check> rdf:type owl:NamedIndividual ,
                                                                 <http://purl.org/gc/VibrationalAnalysis> ;
-                                                       <http://example.org/hasInputFile> <http://example.org/file_aa002-aldehyde-bare-smd-check_inp> ;
-                                                       <http://example.org/hasOutputFile> <http://example.org/file_aa002-aldehyde-bare-smd-check_dat> ,
-                                                                                          <http://example.org/file_aa002-aldehyde-bare-smd-check_log> ;
+                                                       <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-aldehyde-bare-smd-check_dat> ,
+                                                                                             <http://example.org/file_aa002-aldehyde-bare-smd-check_log> ;
+                                                       <http://www.w3.org/ns/prov#used> <http://example.org/file_aa002-aldehyde-bare-smd-check_inp> ;
                                                        <http://purl.org/gc/hasBasisSet> "6-21G+(d,p)" ;
                                                        <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                                        <http://example.org/hasHssend> "true"^^xsd:boolean ;
@@ -5590,10 +5582,10 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa002-aldehyde-bare-smd-energy> rdf:type owl:NamedIndividual ,
                                                                  <http://purl.org/gc/MolecularComputation> ,
                                                                  <http://purl.org/gc/SinglePoint> ;
-                                                        <http://example.org/hasInputFile> <http://example.org/file_aa002-aldehyde-bare-smd-energy_inp> ;
-                                                        <http://example.org/hasOutputFile> <http://example.org/file_aa002-aldehyde-bare-smd-energy_dat> ,
-                                                                                           <http://example.org/file_aa002-aldehyde-bare-smd-energy_log> ;
                                                         <http://purl.org/gc/hasResult> <http://example.org/energies_aa002-aldehyde-bare-smd-energy> ;
+                                                        <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-aldehyde-bare-smd-energy_dat> ,
+                                                                                              <http://example.org/file_aa002-aldehyde-bare-smd-energy_log> ;
+                                                        <http://www.w3.org/ns/prov#used> <http://example.org/file_aa002-aldehyde-bare-smd-energy_inp> ;
                                                         <http://purl.org/gc/hasBasisSet> "6-21G+(d,p)" ;
                                                         <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                                         <http://example.org/hasRuntyp> "ENERGY" ;
@@ -5605,9 +5597,9 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_aa002-aldehyde-bare-smd-hcore
 <http://example.org/exp_aa002-aldehyde-bare-smd-hcore> rdf:type owl:NamedIndividual ,
                                                                 <http://purl.org/gc/VibrationalAnalysis> ;
-                                                       <http://example.org/hasInputFile> <http://example.org/file_aa002-aldehyde-bare-smd-hcore_inp> ;
-                                                       <http://example.org/hasOutputFile> <http://example.org/file_aa002-aldehyde-bare-smd-hcore_dat> ,
-                                                                                          <http://example.org/file_aa002-aldehyde-bare-smd-hcore_log> ;
+                                                       <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-aldehyde-bare-smd-hcore_dat> ,
+                                                                                             <http://example.org/file_aa002-aldehyde-bare-smd-hcore_log> ;
+                                                       <http://www.w3.org/ns/prov#used> <http://example.org/file_aa002-aldehyde-bare-smd-hcore_inp> ;
                                                        <http://purl.org/gc/hasBasisSet> "6-21G+(d,p)" ;
                                                        <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                                        <http://example.org/hasHssend> "true"^^xsd:boolean ;
@@ -5621,10 +5613,10 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa002-aldehyde-pcseg2> rdf:type owl:NamedIndividual ,
                                                         <http://purl.org/gc/MolecularComputation> ,
                                                         <http://purl.org/gc/SinglePoint> ;
-                                               <http://example.org/hasInputFile> <http://example.org/file_aa002-aldehyde-pcseg2_inp> ;
-                                               <http://example.org/hasOutputFile> <http://example.org/file_aa002-aldehyde-pcseg2_dat> ,
-                                                                                  <http://example.org/file_aa002-aldehyde-pcseg2_log> ;
                                                <http://purl.org/gc/hasResult> <http://example.org/energies_aa002-aldehyde-pcseg2> ;
+                                               <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-aldehyde-pcseg2_dat> ,
+                                                                                     <http://example.org/file_aa002-aldehyde-pcseg2_log> ;
+                                               <http://www.w3.org/ns/prov#used> <http://example.org/file_aa002-aldehyde-pcseg2_inp> ;
                                                <http://purl.org/gc/hasBasisSet> "PCSEG-2" ;
                                                <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                                <http://example.org/hasRuntyp> "ENERGY" ;
@@ -5638,11 +5630,11 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa002-hydrate-bare> rdf:type owl:NamedIndividual ,
                                                      <http://purl.org/gc/MolecularComputation> ,
                                                      <http://purl.org/gc/VibrationalAnalysis> ;
-                                            <http://example.org/hasInputFile> <http://example.org/file_aa002-hydrate-bare_inp> ;
-                                            <http://example.org/hasOutputFile> <http://example.org/file_aa002-hydrate-bare_dat> ,
-                                                                               <http://example.org/file_aa002-hydrate-bare_log> ;
                                             <http://purl.org/gc/hasResult> <http://example.org/energies_aa002-hydrate-bare> ,
                                                                            <http://example.org/spectrum_aa002-hydrate-bare> ;
+                                            <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-hydrate-bare_dat> ,
+                                                                                  <http://example.org/file_aa002-hydrate-bare_log> ;
+                                            <http://www.w3.org/ns/prov#used> <http://example.org/file_aa002-hydrate-bare_inp> ;
                                             <http://purl.org/gc/hasBasisSet> "6-21G+(d,p)" ;
                                             <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                             <http://example.org/hasHssend> "true"^^xsd:boolean ;
@@ -5657,11 +5649,11 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa002-hydrate-bare-smd> rdf:type owl:NamedIndividual ,
                                                          <http://purl.org/gc/MolecularComputation> ,
                                                          <http://purl.org/gc/VibrationalAnalysis> ;
-                                                <http://example.org/hasInputFile> <http://example.org/file_aa002-hydrate-bare-smd_inp> ;
-                                                <http://example.org/hasOutputFile> <http://example.org/file_aa002-hydrate-bare-smd_dat> ,
-                                                                                   <http://example.org/file_aa002-hydrate-bare-smd_log> ;
                                                 <http://purl.org/gc/hasResult> <http://example.org/energies_aa002-hydrate-bare-smd> ,
                                                                                <http://example.org/spectrum_aa002-hydrate-bare-smd> ;
+                                                <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-hydrate-bare-smd_dat> ,
+                                                                                      <http://example.org/file_aa002-hydrate-bare-smd_log> ;
+                                                <http://www.w3.org/ns/prov#used> <http://example.org/file_aa002-hydrate-bare-smd_inp> ;
                                                 <http://purl.org/gc/hasBasisSet> "6-21G+(d,p)" ;
                                                 <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                                 <http://example.org/hasHssend> "true"^^xsd:boolean ;
@@ -5675,10 +5667,10 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa002-hydrate-pcseg2> rdf:type owl:NamedIndividual ,
                                                        <http://purl.org/gc/MolecularComputation> ,
                                                        <http://purl.org/gc/SinglePoint> ;
-                                              <http://example.org/hasInputFile> <http://example.org/file_aa002-hydrate-pcseg2_inp> ;
-                                              <http://example.org/hasOutputFile> <http://example.org/file_aa002-hydrate-pcseg2_dat> ,
-                                                                                 <http://example.org/file_aa002-hydrate-pcseg2_log> ;
                                               <http://purl.org/gc/hasResult> <http://example.org/energies_aa002-hydrate-pcseg2> ;
+                                              <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-hydrate-pcseg2_dat> ,
+                                                                                    <http://example.org/file_aa002-hydrate-pcseg2_log> ;
+                                              <http://www.w3.org/ns/prov#used> <http://example.org/file_aa002-hydrate-pcseg2_inp> ;
                                               <http://purl.org/gc/hasBasisSet> "PCSEG-2" ;
                                               <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                               <http://example.org/hasRuntyp> "ENERGY" ;
@@ -5692,11 +5684,11 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa002-water-bare> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/MolecularComputation> ,
                                                    <http://purl.org/gc/VibrationalAnalysis> ;
-                                          <http://example.org/hasInputFile> <http://example.org/file_aa002-water-bare_inp> ;
-                                          <http://example.org/hasOutputFile> <http://example.org/file_aa002-water-bare_dat> ,
-                                                                             <http://example.org/file_aa002-water-bare_log> ;
                                           <http://purl.org/gc/hasResult> <http://example.org/energies_aa002-water-bare> ,
                                                                          <http://example.org/spectrum_aa002-water-bare> ;
+                                          <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-water-bare_dat> ,
+                                                                                <http://example.org/file_aa002-water-bare_log> ;
+                                          <http://www.w3.org/ns/prov#used> <http://example.org/file_aa002-water-bare_inp> ;
                                           <http://purl.org/gc/hasBasisSet> "6-21G+(d,p)" ;
                                           <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                           <http://example.org/hasHssend> "true"^^xsd:boolean ;
@@ -5711,11 +5703,11 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa002-water-bare-smd> rdf:type owl:NamedIndividual ,
                                                        <http://purl.org/gc/MolecularComputation> ,
                                                        <http://purl.org/gc/VibrationalAnalysis> ;
-                                              <http://example.org/hasInputFile> <http://example.org/file_aa002-water-bare-smd_inp> ;
-                                              <http://example.org/hasOutputFile> <http://example.org/file_aa002-water-bare-smd_dat> ,
-                                                                                 <http://example.org/file_aa002-water-bare-smd_log> ;
                                               <http://purl.org/gc/hasResult> <http://example.org/energies_aa002-water-bare-smd> ,
                                                                              <http://example.org/spectrum_aa002-water-bare-smd> ;
+                                              <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-water-bare-smd_dat> ,
+                                                                                    <http://example.org/file_aa002-water-bare-smd_log> ;
+                                              <http://www.w3.org/ns/prov#used> <http://example.org/file_aa002-water-bare-smd_inp> ;
                                               <http://purl.org/gc/hasBasisSet> "6-21G+(d,p)" ;
                                               <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                               <http://example.org/hasHssend> "true"^^xsd:boolean ;
@@ -5729,10 +5721,10 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa002-water-pcseg2> rdf:type owl:NamedIndividual ,
                                                      <http://purl.org/gc/MolecularComputation> ,
                                                      <http://purl.org/gc/SinglePoint> ;
-                                            <http://example.org/hasInputFile> <http://example.org/file_aa002-water-pcseg2_inp> ;
-                                            <http://example.org/hasOutputFile> <http://example.org/file_aa002-water-pcseg2_dat> ,
-                                                                               <http://example.org/file_aa002-water-pcseg2_log> ;
                                             <http://purl.org/gc/hasResult> <http://example.org/energies_aa002-water-pcseg2> ;
+                                            <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-water-pcseg2_dat> ,
+                                                                                  <http://example.org/file_aa002-water-pcseg2_log> ;
+                                            <http://www.w3.org/ns/prov#used> <http://example.org/file_aa002-water-pcseg2_inp> ;
                                             <http://purl.org/gc/hasBasisSet> "PCSEG-2" ;
                                             <http://purl.org/gc/hasMethod> "wB97X-D" ;
                                             <http://example.org/hasRuntyp> "ENERGY" ;

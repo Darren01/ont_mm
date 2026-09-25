@@ -1,5 +1,5 @@
-ID	Label	Type	hasInputFile	hasOutputFile	wasGeneratedBy	fileURL	hasMethod	hasBasisSet	hasSolvent	hasSolvationModel	hasRuntyp	hasHssend
-ID	LABEL	TYPE	I ex:hasInputFile	I ex:hasOutputFile SPLIT=|	I prov:wasGeneratedBy	A ex:fileURL	A gc:hasMethod	A gc:hasBasisSet	A ex:hasSolvent	A ex:hasSolvationModel	A ex:hasRuntyp	AT ex:hasHssend^^xsd:boolean
+ID	Label	Type	used	generated	wasGeneratedBy	fileURL	hasMethod	hasBasisSet	hasSolvent	hasSolvationModel	hasRuntyp	hasHssend
+ID	LABEL	TYPE	I prov:used	I prov:generated SPLIT=|	I prov:wasGeneratedBy	A ex:fileURL	A gc:hasMethod	A gc:hasBasisSet	A ex:hasSolvent	A ex:hasSolvationModel	A ex:hasRuntyp	AT ex:hasHssend^^xsd:boolean
 ex:avogadro_build	Structure built in Avogadro	prov:Activity										
 ex:exp_aa001-ts-pcseg2	Single point aa001-ts-pcseg2	gc:SinglePoint	ex:file_aa001-ts-pcseg2_inp	ex:file_aa001-ts-pcseg2_dat|ex:file_aa001-ts-pcseg2_log			wB97X-D	PCSEG-2	water	PCM	ENERGY	
 ex:file_aa001-ts-pcseg2_inp	Input file aa001-ts-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001-ts-pcseg2.inp						
