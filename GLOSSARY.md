@@ -96,17 +96,26 @@ separate companion file instead (like `caa005bTSb`, see
 
 ## Files and provenance
 
-**`ex:hasInputFile`**, **`ex:hasOutputFile`** - this project's own
-properties, linking an experiment to its real `.inp`/`.log` files.
-Never formally defined anywhere until now: **`ex:hasInputFile`**
-relates an experiment to the GAMESS (US) input deck it was run from;
-**`ex:hasOutputFile`** relates it to the log file(s) it produced.
+**`prov:used`**, **`prov:generated`**, **`prov:wasGeneratedBy`** -
+all from [W3C PROV-O](https://www.w3.org/TR/prov-o/), a real,
+external, widely-used standard for describing where something came
+from - already declared in this project's own `gc_core.ttl`, since
+Gainesville Core itself already imports the vocabulary, so no new
+import was ever needed. **`prov:used`** relates an experiment to the
+GAMESS (US) input deck it was run from; **`prov:generated`** relates
+it to the log/data file(s) it directly produced;
+**`prov:wasGeneratedBy`** is used the other way round, linking a file
+to the experiment that produced it - the mechanism behind tracing
+"what output came from this input."
 
-**`prov:wasGeneratedBy`** - from
-[W3C PROV-O](https://www.w3.org/TR/prov-o/), a real, external,
-widely-used standard for describing where something came from. Used
-here to link a generated file to the experiment that produced it -
-the mechanism behind tracing "what output came from this input."
+These three replaced this project's own, locally-invented
+`ex:hasInputFile`/`ex:hasOutputFile`, once a real audit turned up
+that exact, already-available PROV-O equivalents had existed the
+whole time. A genuine example of preferring a real, external standard
+over a project's own invented term once one turns out to exist -
+worth knowing if you're wondering whether an older copy of a graph or
+a saved query still using the old names will keep working: it won't,
+without a rebuild.
 
 ## Constraints
 

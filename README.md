@@ -886,8 +886,8 @@ Row 3+	→	Data
 Example:
 
 ```text
-ID	Label	Type	provWasGeneratedBy	hasInputFile	hasOutputFile	fileURL
-ID	LABEL	TYPE	I prov:wasGeneratedBy	I ex:hasInputFile	I ex:hasOutputFile SPLIT=|	A ex:fileURL
+ID	Label	Type	used	generated	wasGeneratedBy	fileURL
+ID	LABEL	TYPE	I prov:used	I prov:generated SPLIT=|	I prov:wasGeneratedBy	A ex:fileURL
 ```
 
 ---

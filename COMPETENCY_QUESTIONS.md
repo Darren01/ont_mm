@@ -13,7 +13,7 @@ in CQ #11, an imaginary frequency as a diagnostic signal) rather than
 every raw intermediate number a GAMESS run produces (the full
 vibrational mode list, most of which is neither queried nor
 individually meaningful) - full traceability back to the original
-`.log` file is kept via `prov:wasGeneratedBy`/`hasOutputFile` instead,
+`.log` file is kept via `prov:wasGeneratedBy`/`prov:generated` instead,
 so nothing is ever actually lost, just not duplicated as its own
 triple. This mirrors the same principle AiiDA/Materials Cloud states
 for computational provenance graphs generally: it's often unreasonable
@@ -94,7 +94,7 @@ PREFIX ex: <http://example.org/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 
 SELECT ?output ?type WHERE {
-  ?exp ex:hasInputFile ex:file_caa005bTSa_inp .
+  ?exp prov:used ex:file_caa005bTSa_inp .
   ?output prov:wasGeneratedBy ?exp .
   ?output a ?type .
   FILTER(?type != owl:NamedIndividual)
@@ -209,7 +209,7 @@ PREFIX ex: <http://example.org/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 
 SELECT ?output ?type WHERE {
-  ?exp ex:hasInputFile ex:file_caa001a_inp .
+  ?exp prov:used ex:file_caa001a_inp .
   ?output prov:wasGeneratedBy ?exp .
   ?output a ?type .
   FILTER(?type != <http://www.w3.org/2002/07/owl#NamedIndividual>)
@@ -315,22 +315,22 @@ filter, and file lookup now all work correctly. One real gap remains:
 
 ```sparql
 PREFIX gc: <http://purl.org/gc/>
-PREFIX ex: <http://example.org/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
 
 SELECT ?exp ?type ?method ?inputFile ?outputFile WHERE {
   ?exp a ?type .
   FILTER(?type IN (gc:GeometryOptimization, gc:SaddlePoint, gc:SinglePoint))
   ?exp gc:hasMethod ?method .
   FILTER(?method = "wB97X-D")
-  OPTIONAL { ?exp ex:hasInputFile ?inputFile . }
-  OPTIONAL { ?exp ex:hasOutputFile ?outputFile . }
+  OPTIONAL { ?exp prov:used ?inputFile . }
+  OPTIONAL { ?exp prov:generated ?outputFile . }
 }
 ORDER BY ?type ?exp
 ```
 
-**The `.dat` file isn't tracked at all.** Only `hasInputFile` (`.inp`)
-and `hasOutputFile` (`.log`) exist. Still genuinely open, unrelated to
-today's level-of-theory work.
+**The `.dat` file isn't tracked at all.** Only `prov:used` (`.inp`)
+and `prov:generated` (`.log`) exist. Still genuinely open, unrelated
+to today's level-of-theory work.
 
 ## 8. Which results show an imaginary (negative) frequency?
 
@@ -357,7 +357,7 @@ ones and GAMESS's own translation/rotation modes are (see the scoping
 principle in this document's own opening, and
 `identify_diagnostic_modes()`/`filter_vibrational_modes()` in
 `gamess_functions`/`ont_mm`) - real provenance links
-(`prov:wasGeneratedBy`/`hasOutputFile`) cover the rest, so nothing is
+(`prov:wasGeneratedBy`/`prov:generated`) cover the rest, so nothing is
 actually lost, just not duplicated as its own triple. A real,
 measured result of that choice: roughly 80-83% fewer peak/float-value
 triples across both `caa` and `aa`, with every genuinely diagnostic
@@ -428,15 +428,15 @@ SELECT ?exp ?zpeVal ?enthalpyVal ?entropyVal ?gibbsVal ?electronicVal WHERE {
 ## 12. What is the full chain of files (input → intermediate data → output) for a given experiment?
 
 **Status: ⚠️ Partially answerable - blocked by the same gap as #7.**
-`hasInputFile`/`hasOutputFile` work; the intermediate `.dat` file has
+`prov:used`/`prov:generated` work; the intermediate `.dat` file has
 no property to query for at all.
 
 ```sparql
-PREFIX ex: <http://example.org/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
 
 SELECT ?exp ?inputFile ?outputFile WHERE {
-  OPTIONAL { ?exp ex:hasInputFile ?inputFile . }
-  OPTIONAL { ?exp ex:hasOutputFile ?outputFile . }
+  OPTIONAL { ?exp prov:used ?inputFile . }
+  OPTIONAL { ?exp prov:generated ?outputFile . }
 }
 ```
 

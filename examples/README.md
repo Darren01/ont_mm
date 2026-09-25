@@ -210,7 +210,7 @@ source(file.path(my_code_dir, "gamess_functions/R/sparql_to_file.R"))
 sparql_query(
   graph_file = file.path(my_ontology_dir, "gc_core_full.ttl"),
   query = "SELECT ?output WHERE {
-             ?exp ex:hasInputFile ex:file_rem01_inp .
+             ?exp prov:used ex:file_rem01_inp .
              ?output prov:wasGeneratedBy ?exp .
            }"
 )
@@ -224,7 +224,7 @@ PREFIX prov: <http://www.w3.org/ns/prov#>
 
 SELECT ?output
 WHERE {
-  ?exp ex:hasInputFile ex:file_rem01_inp .
+  ?exp prov:used ex:file_rem01_inp .
   ?output prov:wasGeneratedBy ?exp .
 }
 ```
