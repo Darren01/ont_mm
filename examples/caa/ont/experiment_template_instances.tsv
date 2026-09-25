@@ -1,5 +1,5 @@
-ID	Label	Type	hasInputFile	hasOutputFile	wasGeneratedBy	fileURL	hasMethod	hasBasisSet	hasSolvent	hasSolvationModel	hasRuntyp	hasHssend
-ID	LABEL	TYPE	I ex:hasInputFile	I ex:hasOutputFile SPLIT=|	I prov:wasGeneratedBy	A ex:fileURL	A gc:hasMethod	A gc:hasBasisSet	A ex:hasSolvent	A ex:hasSolvationModel	A ex:hasRuntyp	AT ex:hasHssend^^xsd:boolean
+ID	Label	Type	used	generated	wasGeneratedBy	fileURL	hasMethod	hasBasisSet	hasSolvent	hasSolvationModel	hasRuntyp	hasHssend
+ID	LABEL	TYPE	I prov:used	I prov:generated SPLIT=|	I prov:wasGeneratedBy	A ex:fileURL	A gc:hasMethod	A gc:hasBasisSet	A ex:hasSolvent	A ex:hasSolvationModel	A ex:hasRuntyp	AT ex:hasHssend^^xsd:boolean
 ex:avogadro_build	Structure built in Avogadro	prov:Activity										
 ex:exp_caa001	Geometry optimisation caa001	gc:GeometryOptimization	ex:file_caa001_inp	ex:file_caa001_dat|ex:file_caa001_log			RHF	AM1			OPTIMIZE	
 ex:file_caa001_inp	Input file caa001	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa001.inp						
