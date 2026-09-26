@@ -276,6 +276,7 @@ my_code_dir <- strip_trailing_slash("/path/to/wherever/you/cloned/both/repos")
 
 my_input_dir     <- strip_trailing_slash("/path/to/your/input/folder")    # .inp files
 my_output_dir    <- strip_trailing_slash("/path/to/your/output/folder")   # .log files
+my_data_dir      <- strip_trailing_slash("/path/to/your/dat/folder")      # .dat files - see the note below if you don't have one
 my_ontology_dir  <- strip_trailing_slash("/path/to/where/you/want/the/instance/data")
 my_graph_file    <- file.path(my_ontology_dir, "your_graph_YYYYMMDD.ttl")   # dated, same convention as releases/
 my_release_file  <- file.path(my_ontology_dir, "gc_core.ttl")
@@ -404,6 +405,7 @@ Either way, run it against your own folders:
 result <- process_gamess_directory(
   input_dir  = my_input_dir,
   output_dir = my_output_dir,
+  data_dir   = my_data_dir,
   ontology_dir = my_ontology_dir,
   experiment_template_file = my_experiment_template
 )
@@ -411,6 +413,17 @@ result <- process_gamess_directory(
 
 This writes instance TSV files - it does not yet produce a queryable
 graph. That's the next step.
+
+**A real, direct gotcha, confirmed rather than assumed:** `data_dir`
+defaults to `output_dir` if you leave it out - meaning every `.dat`
+file individual still gets created, just silently with no real
+`fileURL` or `schema:sha256` at all, since GAMESS (US) never actually
+writes `.dat` files into the same folder as `.log` files. Confirmed
+directly that this never throws an error either way - a missing or
+wrongly-pathed `.dat` file just leaves those two properties blank for
+that one file, nothing worse. The [SPARQL playground](./tools/sparql_playground.html)'s
+own "Find files missing a checksum" example is a genuine, direct way
+to check for this on any dataset, old or new.
 
 **A real, twice-confirmed gotcha, worth knowing before it costs you an
 afternoon of confused debugging:** `process_gamess_directory()`
@@ -648,6 +661,7 @@ the full walkthrough again - just fresh data paths and one call:
 ```r
 my_input_dir    <- "/path/to/a/different/project/inputs"
 my_output_dir   <- "/path/to/a/different/project/outputs"
+my_data_dir     <- "/path/to/a/different/project/dat"
 my_ontology_dir <- "/path/to/a/different/project/ont"
 my_graph_file   <- file.path(my_ontology_dir, "your_graph_YYYYMMDD.ttl")
 
@@ -662,6 +676,7 @@ source(file.path(my_code_dir, "ont_mm/scripts/process_experiments.R"))
 result <- process_gamess_directory(
   input_dir  = my_input_dir,
   output_dir = my_output_dir,
+  data_dir   = my_data_dir,
   ontology_dir = my_ontology_dir,
   experiment_template_file = my_experiment_template
 )
