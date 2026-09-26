@@ -20,15 +20,48 @@
 #' @param release_file Path to the base gc_core.ttl release to merge
 #'   each template against (--merge-before --input).
 #' @param output_file Path for the final merged graph.
+#' @param extensions_file Optional path to a small file of this
+#'   project's own, real, external-vocabulary term declarations (e.g.
+#'   schema_terms.ttl) - merged in alongside release_file, but only
+#'   for the experiment template, since that is the only one that
+#'   currently references any such term (prov:used/prov:generated are
+#'   already in release_file itself; schema:sha256 is not). Kept
+#'   deliberately separate from release_file itself, which is a real,
+#'   versioned upstream release and shouldn't be hand-edited to carry
+#'   this project's own additions.
 #' @param robot_cmd Command to invoke robot (default "robot"; use
 #'   "java -jar /path/to/robot.jar" if it's not on PATH).
 #' @return Invisibly, a list: built (template names successfully turned
 #'   into .ttl), skipped (template names with no instances file found).
 #' @export
-build_ontology_graph <- function(ontology_dir, release_file, output_file, robot_cmd = "robot") {
+build_ontology_graph <- function(ontology_dir, release_file, output_file, extensions_file = NULL, robot_cmd = "robot") {
 
   if (!file.exists(release_file)) {
     stop("Release file not found: ", release_file)
+  }
+  if (!is.null(extensions_file) && !file.exists(extensions_file)) {
+    stop("Extensions file not found: ", extensions_file)
+  }
+
+  # --merge-before takes a single --input as its own "target ontology"
+  # to merge into before applying the template - confirmed directly
+  # that passing it two separate --input flags fails outright (a real
+  # OWL API null-pointer error, not a graceful rejection). When an
+  # extensions_file is given, pre-merge it with release_file into one
+  # combined file first (robot merge's own --input IS confirmed to
+  # accept several), and use that as the experiment template's own
+  # --merge-before input instead of release_file directly.
+  experiment_merge_input <- release_file
+  if (!is.null(extensions_file)) {
+    experiment_merge_input <- file.path(ontology_dir, "release_with_extensions.ttl")
+    premerge_args <- c("merge", "--input", release_file, "--input", extensions_file,
+                        "--output", experiment_merge_input)
+    premerge_result <- system2(robot_cmd, premerge_args, stdout = TRUE, stderr = TRUE)
+    premerge_status <- attr(premerge_result, "status")
+    if (!is.null(premerge_status) && premerge_status != 0) {
+      stop("Pre-merging release_file and extensions_file failed:\n",
+           paste(premerge_result, collapse = "\n"))
+    }
   }
 
   # Every known template type, in a safe build order (though order
@@ -53,11 +86,13 @@ build_ontology_graph <- function(ontology_dir, release_file, output_file, robot_
       next
     }
 
+    merge_before_input <- if (t == "experiment") experiment_merge_input else release_file
+
     args <- c(
       "template",
       "--template", instances_file,
       "--merge-before",
-      "--input", release_file,
+      "--input", merge_before_input,
       "--ontology-iri", "http://purl.org/gc/core",
       "--prefix", shQuote("gc: http://purl.org/gc/"),
       "--prefix", shQuote("ex: http://example.org/"),
@@ -67,6 +102,9 @@ build_ontology_graph <- function(ontology_dir, release_file, output_file, robot_
     )
     if (t == "experiment") {
       args <- c(args, "--prefix", shQuote("prov: http://www.w3.org/ns/prov#"))
+      if (!is.null(extensions_file)) {
+        args <- c(args, "--prefix", shQuote("schema: http://schema.org/"))
+      }
     }
 
     cat("Building", t, "...\n")

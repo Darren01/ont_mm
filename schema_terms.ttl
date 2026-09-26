@@ -1,0 +1,18 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+
+<http://example.org/schema_terms> a owl:Ontology ;
+    rdfs:comment "A small, deliberately separate file for real, external vocabulary terms this project reuses that aren't part of the upstream gc_core.ttl release - kept apart from that versioned file for the same reason dl_axioms.ttl is: so a new gc_core.ttl release can simply be swapped in without needing to re-merge anything of our own back into it." .
+
+schema:MediaObject a owl:Class ;
+    rdfs:label "MediaObject" ;
+    rdfs:comment "An image, video, audio, or generic file - reused here from https://schema.org/MediaObject purely as the declared domain of schema:sha256; this project's own file individuals keep their existing gc:/ex: types and are not asserted as schema:MediaObject." .
+
+schema:sha256 a owl:DatatypeProperty ;
+    rdfs:label "sha256" ;
+    rdfs:domain schema:MediaObject ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The SHA-2 SHA256 hash of the content of the item, as a lowercase hexadecimal string. Reused directly from https://schema.org/sha256 - confirmed via direct testing (2026-09-25) to introduce no reasoning issues when used on an individual not formally typed schema:MediaObject." .
