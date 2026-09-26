@@ -48,6 +48,19 @@ process_experiments <- function(
       ""
     }
   }
+
+  # SHA-256 of the file's own real, current content - the point being
+  # a genuine content fingerprint, not just a filename/path. Requires
+  # the digest package (a standard, widely-used CRAN package for
+  # exactly this, not something new or unusual). Returns "" if the
+  # file doesn't exist, matching make_url()'s own behaviour above.
+  make_hash <- function(path) {
+    if (file.exists(path)) {
+      digest::digest(path, file = TRUE, algo = "sha256")
+    } else {
+      ""
+    }
+  }
   
   # =========================
   # Files
@@ -155,6 +168,7 @@ process_experiments <- function(
       paste(data_id, log_id, sep = "|"),
       "",
       "",
+      "",   # sha256 - not applicable to the experiment itself, only to its files below
       lot$method,
       lot$basis_set,
       lot$solvent,
@@ -175,7 +189,8 @@ process_experiments <- function(
       "",
       "",
       prov_source,
-      input_url
+      input_url,
+      make_hash(file)
     )
     idx <- idx + 1
     
@@ -187,7 +202,8 @@ process_experiments <- function(
       "",
       "",
       exp_id,
-      data_url
+      data_url,
+      make_hash(file.path(data_dir, paste0(name, ".dat")))
     )
     idx <- idx + 1
     
@@ -199,7 +215,8 @@ process_experiments <- function(
       "",
       "",
       exp_id,
-      log_url
+      log_url,
+      make_hash(file.path(output_dir, paste0(name, ".log")))
     )
     idx <- idx + 1
     
