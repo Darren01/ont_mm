@@ -117,6 +117,21 @@ worth knowing if you're wondering whether an older copy of a graph or
 a saved query still using the old names will keep working: it won't,
 without a rebuild.
 
+**`schema:sha256`** - from [Schema.org](https://schema.org/sha256),
+recorded directly on each input/data/log file individual (the same
+ones `prov:used`/`prov:generated` already point at) as a real content
+fingerprint - the SHA-256 hash of the file's own, actual bytes at
+build time, not just its filename or path. Considered against
+[SPDX's own checksum model](https://spdx.org/rdf/terms#checksum)
+first, which is the more commonly-cited standard for this - rejected
+only because it requires a separate `Checksum` node plus an
+`algorithm` value for every hash, real overhead this project doesn't
+need since it only ever uses SHA-256. Not declared in `gc_core.ttl`
+itself (unlike the `prov:` terms above): a small, separate file,
+[`schema_terms.ttl`](./schema_terms.ttl), carries just this one
+property's real declaration, kept apart from that versioned release
+for the same reason [`dl_axioms.ttl`](./dl_axioms.ttl) is.
+
 ## Constraints
 
 **`ex:DistanceConstraint`**, **`ex:AngleConstraint`**,

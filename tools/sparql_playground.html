@@ -255,6 +255,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX schema: <http://schema.org/>
 `,
 
   // Each example needs a short label (for its button), a one-line
@@ -315,6 +316,15 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
       description: "Which experiment is linked to a specific DOI - a real literature cross-reference, not just internal notes. An honest \"no results\" here is itself a real finding for a dataset with no link recorded yet, not an error.",
       query: `SELECT ?exp WHERE {
   ?exp dcterms:relation <https://doi.org/10.1021/ja00249a034> .
+}`
+    },
+    {
+      label: "Find files missing a checksum",
+      description: "A real, honest gap-finder, not a hypothetical one: this dataset's own .dat files were never wired into the pipeline's checksum step (only the .inp and .log files were), so this genuinely, correctly finds every one of them. The same query is worth running on any new dataset before trusting its provenance completely - a missing checksum here means a missing file:// URL too, not just a missing hash.",
+      query: `SELECT ?file WHERE {
+  ?file a ex:DataFile .
+  OPTIONAL { ?file schema:sha256 ?hash . }
+  FILTER(!BOUND(?hash))
 }`
     }
   ],
