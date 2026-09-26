@@ -1,153 +1,153 @@
-ID	Label	Type	used	generated	wasGeneratedBy	fileURL	hasMethod	hasBasisSet	hasSolvent	hasSolvationModel	hasRuntyp	hasHssend
-ID	LABEL	TYPE	I prov:used	I prov:generated SPLIT=|	I prov:wasGeneratedBy	A ex:fileURL	A gc:hasMethod	A gc:hasBasisSet	A ex:hasSolvent	A ex:hasSolvationModel	A ex:hasRuntyp	AT ex:hasHssend^^xsd:boolean
-ex:avogadro_build	Structure built in Avogadro	prov:Activity										
-ex:exp_aa001-ts-pcseg2	Single point aa001-ts-pcseg2	gc:SinglePoint	ex:file_aa001-ts-pcseg2_inp	ex:file_aa001-ts-pcseg2_dat|ex:file_aa001-ts-pcseg2_log			wB97X-D	PCSEG-2	water	PCM	ENERGY	
-ex:file_aa001-ts-pcseg2_inp	Input file aa001-ts-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001-ts-pcseg2.inp						
-ex:file_aa001-ts-pcseg2_dat	Output data aa001-ts-pcseg2	ex:DataFile			ex:exp_aa001-ts-pcseg2							
-ex:file_aa001-ts-pcseg2_log	Output log aa001-ts-pcseg2	ex:LogFile			ex:exp_aa001-ts-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001-ts-pcseg2.log						
-												
-ex:exp_aa001a	Vibrational analysis aa001a	gc:VibrationalAnalysis	ex:file_aa001a_inp	ex:file_aa001a_dat|ex:file_aa001a_log			wB97X-D	6-21G+(d,p)	water	PCM	OPTIMIZE	true
-ex:file_aa001a_inp	Input file aa001a	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001a.inp						
-ex:file_aa001a_dat	Output data aa001a	ex:DataFile			ex:exp_aa001a							
-ex:file_aa001a_log	Output log aa001a	ex:LogFile			ex:exp_aa001a	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001a.log						
-												
-ex:exp_aa001b	Vibrational analysis aa001b	gc:VibrationalAnalysis	ex:file_aa001b_inp	ex:file_aa001b_dat|ex:file_aa001b_log			wB97X-D	6-21G+(d,p)	water	PCM	OPTIMIZE	true
-ex:file_aa001b_inp	Input file aa001b	ex:InputFile			ex:exp_aa001a	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001b.inp						
-ex:file_aa001b_dat	Output data aa001b	ex:DataFile			ex:exp_aa001b							
-ex:file_aa001b_log	Output log aa001b	ex:LogFile			ex:exp_aa001b	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001b.log						
-												
-ex:exp_aa001c	Vibrational analysis aa001c	gc:VibrationalAnalysis	ex:file_aa001c_inp	ex:file_aa001c_dat|ex:file_aa001c_log			wB97X-D	6-21G+(d,p)	water	PCM	OPTIMIZE	true
-ex:file_aa001c_inp	Input file aa001c	ex:InputFile			ex:exp_aa001b	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001c.inp						
-ex:file_aa001c_dat	Output data aa001c	ex:DataFile			ex:exp_aa001c							
-ex:file_aa001c_log	Output log aa001c	ex:LogFile			ex:exp_aa001c	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001c.log						
-												
-ex:exp_aa001d-smd-hess	Vibrational analysis aa001d-smd-hess	gc:VibrationalAnalysis	ex:file_aa001d-smd-hess_inp	ex:file_aa001d-smd-hess_dat|ex:file_aa001d-smd-hess_log			wB97X-D	6-21G+(d,p)	water	SMD	HESSIAN	
-ex:file_aa001d-smd-hess_inp	Input file aa001d-smd-hess	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001d-smd-hess.inp						
-ex:file_aa001d-smd-hess_dat	Output data aa001d-smd-hess	ex:DataFile			ex:exp_aa001d-smd-hess							
-ex:file_aa001d-smd-hess_log	Output log aa001d-smd-hess	ex:LogFile			ex:exp_aa001d-smd-hess	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001d-smd-hess.log						
-												
-ex:exp_aa001d-smd-pcseg2	Single point aa001d-smd-pcseg2	gc:SinglePoint	ex:file_aa001d-smd-pcseg2_inp	ex:file_aa001d-smd-pcseg2_dat|ex:file_aa001d-smd-pcseg2_log			wB97X-D	PCSEG-2	water	SMD	ENERGY	
-ex:file_aa001d-smd-pcseg2_inp	Input file aa001d-smd-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001d-smd-pcseg2.inp						
-ex:file_aa001d-smd-pcseg2_dat	Output data aa001d-smd-pcseg2	ex:DataFile			ex:exp_aa001d-smd-pcseg2							
-ex:file_aa001d-smd-pcseg2_log	Output log aa001d-smd-pcseg2	ex:LogFile			ex:exp_aa001d-smd-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001d-smd-pcseg2.log						
-												
-ex:exp_aa001d-smd	Saddle point aa001d-smd	gc:SaddlePoint	ex:file_aa001d-smd_inp	ex:file_aa001d-smd_dat|ex:file_aa001d-smd_log			wB97X-D	6-21G+(d,p)	water	SMD	SADPOINT	true
-ex:file_aa001d-smd_inp	Input file aa001d-smd	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001d-smd.inp						
-ex:file_aa001d-smd_dat	Output data aa001d-smd	ex:DataFile			ex:exp_aa001d-smd							
-ex:file_aa001d-smd_log	Output log aa001d-smd	ex:LogFile			ex:exp_aa001d-smd	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001d-smd.log						
-												
-ex:exp_aa001d	Saddle point aa001d	gc:SaddlePoint	ex:file_aa001d_inp	ex:file_aa001d_dat|ex:file_aa001d_log			wB97X-D	6-21G+(d,p)	water	PCM	SADPOINT	true
-ex:file_aa001d_inp	Input file aa001d	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001d.inp						
-ex:file_aa001d_dat	Output data aa001d	ex:DataFile			ex:exp_aa001d							
-ex:file_aa001d_log	Output log aa001d	ex:LogFile			ex:exp_aa001d	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001d.log						
-												
-ex:exp_aa001e	IRC (forward) aa001e	gc:IRC	ex:file_aa001e_inp	ex:file_aa001e_dat|ex:file_aa001e_log			wB97X-D	6-21G+(d,p)	water	PCM	IRC	
-ex:file_aa001e_inp	Input file aa001e	ex:InputFile			ex:exp_aa001d	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001e.inp						
-ex:file_aa001e_dat	Output data aa001e	ex:DataFile			ex:exp_aa001e							
-ex:file_aa001e_log	Output log aa001e	ex:LogFile			ex:exp_aa001e	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001e.log						
-												
-ex:exp_aa001f	IRC (backward) aa001f	gc:IRC	ex:file_aa001f_inp	ex:file_aa001f_dat|ex:file_aa001f_log			wB97X-D	6-21G+(d,p)	water	PCM	IRC	
-ex:file_aa001f_inp	Input file aa001f	ex:InputFile			ex:exp_aa001e	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001f.inp						
-ex:file_aa001f_dat	Output data aa001f	ex:DataFile			ex:exp_aa001f							
-ex:file_aa001f_log	Output log aa001f	ex:LogFile			ex:exp_aa001f	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001f.log						
-												
-ex:exp_aa001g-pcseg2	Single point aa001g-pcseg2	gc:SinglePoint	ex:file_aa001g-pcseg2_inp	ex:file_aa001g-pcseg2_dat|ex:file_aa001g-pcseg2_log			wB97X-D	PCSEG-2	water	PCM	ENERGY	
-ex:file_aa001g-pcseg2_inp	Input file aa001g-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001g-pcseg2.inp						
-ex:file_aa001g-pcseg2_dat	Output data aa001g-pcseg2	ex:DataFile			ex:exp_aa001g-pcseg2							
-ex:file_aa001g-pcseg2_log	Output log aa001g-pcseg2	ex:LogFile			ex:exp_aa001g-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001g-pcseg2.log						
-												
-ex:exp_aa001g-smd-pcseg2	Single point aa001g-smd-pcseg2	gc:SinglePoint	ex:file_aa001g-smd-pcseg2_inp	ex:file_aa001g-smd-pcseg2_dat|ex:file_aa001g-smd-pcseg2_log			wB97X-D	PCSEG-2	water	SMD	ENERGY	
-ex:file_aa001g-smd-pcseg2_inp	Input file aa001g-smd-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001g-smd-pcseg2.inp						
-ex:file_aa001g-smd-pcseg2_dat	Output data aa001g-smd-pcseg2	ex:DataFile			ex:exp_aa001g-smd-pcseg2							
-ex:file_aa001g-smd-pcseg2_log	Output log aa001g-smd-pcseg2	ex:LogFile			ex:exp_aa001g-smd-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001g-smd-pcseg2.log						
-												
-ex:exp_aa001g-smd	Vibrational analysis aa001g-smd	gc:VibrationalAnalysis	ex:file_aa001g-smd_inp	ex:file_aa001g-smd_dat|ex:file_aa001g-smd_log			wB97X-D	6-21G+(d,p)	water	SMD	OPTIMIZE	true
-ex:file_aa001g-smd_inp	Input file aa001g-smd	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001g-smd.inp						
-ex:file_aa001g-smd_dat	Output data aa001g-smd	ex:DataFile			ex:exp_aa001g-smd							
-ex:file_aa001g-smd_log	Output log aa001g-smd	ex:LogFile			ex:exp_aa001g-smd	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001g-smd.log						
-												
-ex:exp_aa001g	Vibrational analysis aa001g	gc:VibrationalAnalysis	ex:file_aa001g_inp	ex:file_aa001g_dat|ex:file_aa001g_log			wB97X-D	6-21G+(d,p)	water	PCM	OPTIMIZE	true
-ex:file_aa001g_inp	Input file aa001g	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001g.inp						
-ex:file_aa001g_dat	Output data aa001g	ex:DataFile			ex:exp_aa001g							
-ex:file_aa001g_log	Output log aa001g	ex:LogFile			ex:exp_aa001g	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001g.log						
-												
-ex:exp_aa001h-pcseg2	Single point aa001h-pcseg2	gc:SinglePoint	ex:file_aa001h-pcseg2_inp	ex:file_aa001h-pcseg2_dat|ex:file_aa001h-pcseg2_log			wB97X-D	PCSEG-2	water	PCM	ENERGY	
-ex:file_aa001h-pcseg2_inp	Input file aa001h-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001h-pcseg2.inp						
-ex:file_aa001h-pcseg2_dat	Output data aa001h-pcseg2	ex:DataFile			ex:exp_aa001h-pcseg2							
-ex:file_aa001h-pcseg2_log	Output log aa001h-pcseg2	ex:LogFile			ex:exp_aa001h-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001h-pcseg2.log						
-												
-ex:exp_aa001h-smd-pcseg2	Single point aa001h-smd-pcseg2	gc:SinglePoint	ex:file_aa001h-smd-pcseg2_inp	ex:file_aa001h-smd-pcseg2_dat|ex:file_aa001h-smd-pcseg2_log			wB97X-D	PCSEG-2	water	SMD	ENERGY	
-ex:file_aa001h-smd-pcseg2_inp	Input file aa001h-smd-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001h-smd-pcseg2.inp						
-ex:file_aa001h-smd-pcseg2_dat	Output data aa001h-smd-pcseg2	ex:DataFile			ex:exp_aa001h-smd-pcseg2							
-ex:file_aa001h-smd-pcseg2_log	Output log aa001h-smd-pcseg2	ex:LogFile			ex:exp_aa001h-smd-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001h-smd-pcseg2.log						
-												
-ex:exp_aa001h-smd	Vibrational analysis aa001h-smd	gc:VibrationalAnalysis	ex:file_aa001h-smd_inp	ex:file_aa001h-smd_dat|ex:file_aa001h-smd_log			wB97X-D	6-21G+(d,p)	water	SMD	OPTIMIZE	true
-ex:file_aa001h-smd_inp	Input file aa001h-smd	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001h-smd.inp						
-ex:file_aa001h-smd_dat	Output data aa001h-smd	ex:DataFile			ex:exp_aa001h-smd							
-ex:file_aa001h-smd_log	Output log aa001h-smd	ex:LogFile			ex:exp_aa001h-smd	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001h-smd.log						
-												
-ex:exp_aa001h	Vibrational analysis aa001h	gc:VibrationalAnalysis	ex:file_aa001h_inp	ex:file_aa001h_dat|ex:file_aa001h_log			wB97X-D	6-21G+(d,p)	water	PCM	OPTIMIZE	true
-ex:file_aa001h_inp	Input file aa001h	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001h.inp						
-ex:file_aa001h_dat	Output data aa001h	ex:DataFile			ex:exp_aa001h							
-ex:file_aa001h_log	Output log aa001h	ex:LogFile			ex:exp_aa001h	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001h.log						
-												
-ex:exp_aa002-aldehyde-bare-smd-check	Vibrational analysis aa002-aldehyde-bare-smd-check	gc:VibrationalAnalysis	ex:file_aa002-aldehyde-bare-smd-check_inp	ex:file_aa002-aldehyde-bare-smd-check_dat|ex:file_aa002-aldehyde-bare-smd-check_log			wB97X-D	6-21G+(d,p)	water	SMD	OPTIMIZE	true
-ex:file_aa002-aldehyde-bare-smd-check_inp	Input file aa002-aldehyde-bare-smd-check	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-aldehyde-bare-smd-check.inp						
-ex:file_aa002-aldehyde-bare-smd-check_dat	Output data aa002-aldehyde-bare-smd-check	ex:DataFile			ex:exp_aa002-aldehyde-bare-smd-check							
-ex:file_aa002-aldehyde-bare-smd-check_log	Output log aa002-aldehyde-bare-smd-check	ex:LogFile			ex:exp_aa002-aldehyde-bare-smd-check	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-aldehyde-bare-smd-check.log						
-												
-ex:exp_aa002-aldehyde-bare-smd-energy	Single point aa002-aldehyde-bare-smd-energy	gc:SinglePoint	ex:file_aa002-aldehyde-bare-smd-energy_inp	ex:file_aa002-aldehyde-bare-smd-energy_dat|ex:file_aa002-aldehyde-bare-smd-energy_log			wB97X-D	6-21G+(d,p)	water	SMD	ENERGY	
-ex:file_aa002-aldehyde-bare-smd-energy_inp	Input file aa002-aldehyde-bare-smd-energy	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-aldehyde-bare-smd-energy.inp						
-ex:file_aa002-aldehyde-bare-smd-energy_dat	Output data aa002-aldehyde-bare-smd-energy	ex:DataFile			ex:exp_aa002-aldehyde-bare-smd-energy							
-ex:file_aa002-aldehyde-bare-smd-energy_log	Output log aa002-aldehyde-bare-smd-energy	ex:LogFile			ex:exp_aa002-aldehyde-bare-smd-energy	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-aldehyde-bare-smd-energy.log						
-												
-ex:exp_aa002-aldehyde-bare-smd-hcore	Vibrational analysis aa002-aldehyde-bare-smd-hcore	gc:VibrationalAnalysis	ex:file_aa002-aldehyde-bare-smd-hcore_inp	ex:file_aa002-aldehyde-bare-smd-hcore_dat|ex:file_aa002-aldehyde-bare-smd-hcore_log			wB97X-D	6-21G+(d,p)	water	SMD	OPTIMIZE	true
-ex:file_aa002-aldehyde-bare-smd-hcore_inp	Input file aa002-aldehyde-bare-smd-hcore	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-aldehyde-bare-smd-hcore.inp						
-ex:file_aa002-aldehyde-bare-smd-hcore_dat	Output data aa002-aldehyde-bare-smd-hcore	ex:DataFile			ex:exp_aa002-aldehyde-bare-smd-hcore							
-ex:file_aa002-aldehyde-bare-smd-hcore_log	Output log aa002-aldehyde-bare-smd-hcore	ex:LogFile			ex:exp_aa002-aldehyde-bare-smd-hcore	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-aldehyde-bare-smd-hcore.log						
-												
-ex:exp_aa002-aldehyde-bare-smd	Vibrational analysis aa002-aldehyde-bare-smd	gc:VibrationalAnalysis	ex:file_aa002-aldehyde-bare-smd_inp	ex:file_aa002-aldehyde-bare-smd_dat|ex:file_aa002-aldehyde-bare-smd_log			wB97X-D	6-21G+(d,p)	water	SMD	OPTIMIZE	true
-ex:file_aa002-aldehyde-bare-smd_inp	Input file aa002-aldehyde-bare-smd	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-aldehyde-bare-smd.inp						
-ex:file_aa002-aldehyde-bare-smd_dat	Output data aa002-aldehyde-bare-smd	ex:DataFile			ex:exp_aa002-aldehyde-bare-smd							
-ex:file_aa002-aldehyde-bare-smd_log	Output log aa002-aldehyde-bare-smd	ex:LogFile			ex:exp_aa002-aldehyde-bare-smd	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-aldehyde-bare-smd.log						
-												
-ex:exp_aa002-aldehyde-bare	Vibrational analysis aa002-aldehyde-bare	gc:VibrationalAnalysis	ex:file_aa002-aldehyde-bare_inp	ex:file_aa002-aldehyde-bare_dat|ex:file_aa002-aldehyde-bare_log			wB97X-D	6-21G+(d,p)	water	PCM	OPTIMIZE	true
-ex:file_aa002-aldehyde-bare_inp	Input file aa002-aldehyde-bare	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-aldehyde-bare.inp						
-ex:file_aa002-aldehyde-bare_dat	Output data aa002-aldehyde-bare	ex:DataFile			ex:exp_aa002-aldehyde-bare							
-ex:file_aa002-aldehyde-bare_log	Output log aa002-aldehyde-bare	ex:LogFile			ex:exp_aa002-aldehyde-bare	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-aldehyde-bare.log						
-												
-ex:exp_aa002-aldehyde-pcseg2	Single point aa002-aldehyde-pcseg2	gc:SinglePoint	ex:file_aa002-aldehyde-pcseg2_inp	ex:file_aa002-aldehyde-pcseg2_dat|ex:file_aa002-aldehyde-pcseg2_log			wB97X-D	PCSEG-2	water	PCM	ENERGY	
-ex:file_aa002-aldehyde-pcseg2_inp	Input file aa002-aldehyde-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-aldehyde-pcseg2.inp						
-ex:file_aa002-aldehyde-pcseg2_dat	Output data aa002-aldehyde-pcseg2	ex:DataFile			ex:exp_aa002-aldehyde-pcseg2							
-ex:file_aa002-aldehyde-pcseg2_log	Output log aa002-aldehyde-pcseg2	ex:LogFile			ex:exp_aa002-aldehyde-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-aldehyde-pcseg2.log						
-												
-ex:exp_aa002-hydrate-bare-smd	Vibrational analysis aa002-hydrate-bare-smd	gc:VibrationalAnalysis	ex:file_aa002-hydrate-bare-smd_inp	ex:file_aa002-hydrate-bare-smd_dat|ex:file_aa002-hydrate-bare-smd_log			wB97X-D	6-21G+(d,p)	water	SMD	OPTIMIZE	true
-ex:file_aa002-hydrate-bare-smd_inp	Input file aa002-hydrate-bare-smd	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-hydrate-bare-smd.inp						
-ex:file_aa002-hydrate-bare-smd_dat	Output data aa002-hydrate-bare-smd	ex:DataFile			ex:exp_aa002-hydrate-bare-smd							
-ex:file_aa002-hydrate-bare-smd_log	Output log aa002-hydrate-bare-smd	ex:LogFile			ex:exp_aa002-hydrate-bare-smd	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-hydrate-bare-smd.log						
-												
-ex:exp_aa002-hydrate-bare	Vibrational analysis aa002-hydrate-bare	gc:VibrationalAnalysis	ex:file_aa002-hydrate-bare_inp	ex:file_aa002-hydrate-bare_dat|ex:file_aa002-hydrate-bare_log			wB97X-D	6-21G+(d,p)	water	PCM	OPTIMIZE	true
-ex:file_aa002-hydrate-bare_inp	Input file aa002-hydrate-bare	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-hydrate-bare.inp						
-ex:file_aa002-hydrate-bare_dat	Output data aa002-hydrate-bare	ex:DataFile			ex:exp_aa002-hydrate-bare							
-ex:file_aa002-hydrate-bare_log	Output log aa002-hydrate-bare	ex:LogFile			ex:exp_aa002-hydrate-bare	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-hydrate-bare.log						
-												
-ex:exp_aa002-hydrate-pcseg2	Single point aa002-hydrate-pcseg2	gc:SinglePoint	ex:file_aa002-hydrate-pcseg2_inp	ex:file_aa002-hydrate-pcseg2_dat|ex:file_aa002-hydrate-pcseg2_log			wB97X-D	PCSEG-2	water	PCM	ENERGY	
-ex:file_aa002-hydrate-pcseg2_inp	Input file aa002-hydrate-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-hydrate-pcseg2.inp						
-ex:file_aa002-hydrate-pcseg2_dat	Output data aa002-hydrate-pcseg2	ex:DataFile			ex:exp_aa002-hydrate-pcseg2							
-ex:file_aa002-hydrate-pcseg2_log	Output log aa002-hydrate-pcseg2	ex:LogFile			ex:exp_aa002-hydrate-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-hydrate-pcseg2.log						
-												
-ex:exp_aa002-water-bare-smd	Vibrational analysis aa002-water-bare-smd	gc:VibrationalAnalysis	ex:file_aa002-water-bare-smd_inp	ex:file_aa002-water-bare-smd_dat|ex:file_aa002-water-bare-smd_log			wB97X-D	6-21G+(d,p)	water	SMD	OPTIMIZE	true
-ex:file_aa002-water-bare-smd_inp	Input file aa002-water-bare-smd	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-water-bare-smd.inp						
-ex:file_aa002-water-bare-smd_dat	Output data aa002-water-bare-smd	ex:DataFile			ex:exp_aa002-water-bare-smd							
-ex:file_aa002-water-bare-smd_log	Output log aa002-water-bare-smd	ex:LogFile			ex:exp_aa002-water-bare-smd	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-water-bare-smd.log						
-												
-ex:exp_aa002-water-bare	Vibrational analysis aa002-water-bare	gc:VibrationalAnalysis	ex:file_aa002-water-bare_inp	ex:file_aa002-water-bare_dat|ex:file_aa002-water-bare_log			wB97X-D	6-21G+(d,p)	water	PCM	OPTIMIZE	true
-ex:file_aa002-water-bare_inp	Input file aa002-water-bare	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-water-bare.inp						
-ex:file_aa002-water-bare_dat	Output data aa002-water-bare	ex:DataFile			ex:exp_aa002-water-bare							
-ex:file_aa002-water-bare_log	Output log aa002-water-bare	ex:LogFile			ex:exp_aa002-water-bare	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-water-bare.log						
-												
-ex:exp_aa002-water-pcseg2	Single point aa002-water-pcseg2	gc:SinglePoint	ex:file_aa002-water-pcseg2_inp	ex:file_aa002-water-pcseg2_dat|ex:file_aa002-water-pcseg2_log			wB97X-D	PCSEG-2	water	PCM	ENERGY	
-ex:file_aa002-water-pcseg2_inp	Input file aa002-water-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-water-pcseg2.inp						
-ex:file_aa002-water-pcseg2_dat	Output data aa002-water-pcseg2	ex:DataFile			ex:exp_aa002-water-pcseg2							
-ex:file_aa002-water-pcseg2_log	Output log aa002-water-pcseg2	ex:LogFile			ex:exp_aa002-water-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-water-pcseg2.log						
-												
+ID	Label	Type	used	generated	wasGeneratedBy	fileURL	sha256	hasMethod	hasBasisSet	hasSolvent	hasSolvationModel	hasRuntyp	hasHssend
+ID	LABEL	TYPE	I prov:used	I prov:generated SPLIT=|	I prov:wasGeneratedBy	A ex:fileURL	A schema:sha256	A gc:hasMethod	A gc:hasBasisSet	A ex:hasSolvent	A ex:hasSolvationModel	A ex:hasRuntyp	AT ex:hasHssend^^xsd:boolean
+ex:avogadro_build	Structure built in Avogadro	prov:Activity											
+ex:exp_aa001-ts-pcseg2	Single point aa001-ts-pcseg2	gc:SinglePoint	ex:file_aa001-ts-pcseg2_inp	ex:file_aa001-ts-pcseg2_dat|ex:file_aa001-ts-pcseg2_log				wB97X-D	PCSEG-2	water	PCM	ENERGY	
+ex:file_aa001-ts-pcseg2_inp	Input file aa001-ts-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001-ts-pcseg2.inp	9207e77c41e956c28f3be4a27d6c7a0c9af33c4bd51f3ff50dee91bd37f506e4						
+ex:file_aa001-ts-pcseg2_dat	Output data aa001-ts-pcseg2	ex:DataFile			ex:exp_aa001-ts-pcseg2								
+ex:file_aa001-ts-pcseg2_log	Output log aa001-ts-pcseg2	ex:LogFile			ex:exp_aa001-ts-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001-ts-pcseg2.log	e859b0bdbf7756384d7ddb651e0158cfb7f61639a33e0cea4e69449a7464a081						
+													
+ex:exp_aa001a	Vibrational analysis aa001a	gc:VibrationalAnalysis	ex:file_aa001a_inp	ex:file_aa001a_dat|ex:file_aa001a_log				wB97X-D	6-21G+(d,p)	water	PCM	OPTIMIZE	true
+ex:file_aa001a_inp	Input file aa001a	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001a.inp	af069c48c22deb860321d336e4beba67083e68eb8e6901f52814377defb6c260						
+ex:file_aa001a_dat	Output data aa001a	ex:DataFile			ex:exp_aa001a								
+ex:file_aa001a_log	Output log aa001a	ex:LogFile			ex:exp_aa001a	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001a.log	ca9cf795626c1c861c4bb82b1c19c9cfa247ad01202666a558e7c475669ff930						
+													
+ex:exp_aa001b	Vibrational analysis aa001b	gc:VibrationalAnalysis	ex:file_aa001b_inp	ex:file_aa001b_dat|ex:file_aa001b_log				wB97X-D	6-21G+(d,p)	water	PCM	OPTIMIZE	true
+ex:file_aa001b_inp	Input file aa001b	ex:InputFile			ex:exp_aa001a	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001b.inp	719a4b99a4c15f0c6253e05a4a9dacee765b0fd5a22b255f994dd2287cb61d1a						
+ex:file_aa001b_dat	Output data aa001b	ex:DataFile			ex:exp_aa001b								
+ex:file_aa001b_log	Output log aa001b	ex:LogFile			ex:exp_aa001b	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001b.log	96789c959d5748a534cbafbb7de17677af2aa84fa50f00e7fc1ca99b85f9f699						
+													
+ex:exp_aa001c	Vibrational analysis aa001c	gc:VibrationalAnalysis	ex:file_aa001c_inp	ex:file_aa001c_dat|ex:file_aa001c_log				wB97X-D	6-21G+(d,p)	water	PCM	OPTIMIZE	true
+ex:file_aa001c_inp	Input file aa001c	ex:InputFile			ex:exp_aa001b	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001c.inp	a2c3336ff120c7da5a18e3ddfea8ec0a73fa7ce957a44ca8f6462373b3faff1a						
+ex:file_aa001c_dat	Output data aa001c	ex:DataFile			ex:exp_aa001c								
+ex:file_aa001c_log	Output log aa001c	ex:LogFile			ex:exp_aa001c	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001c.log	3030ee71a040d76eccd51cb7bc64ce56140827da1b820544a7f702da36b77d8e						
+													
+ex:exp_aa001d-smd-hess	Vibrational analysis aa001d-smd-hess	gc:VibrationalAnalysis	ex:file_aa001d-smd-hess_inp	ex:file_aa001d-smd-hess_dat|ex:file_aa001d-smd-hess_log				wB97X-D	6-21G+(d,p)	water	SMD	HESSIAN	
+ex:file_aa001d-smd-hess_inp	Input file aa001d-smd-hess	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001d-smd-hess.inp	8063fe005c0eba2eaf5fdaa0a30a30a2940a44d443f12eca0c395ea95de886d8						
+ex:file_aa001d-smd-hess_dat	Output data aa001d-smd-hess	ex:DataFile			ex:exp_aa001d-smd-hess								
+ex:file_aa001d-smd-hess_log	Output log aa001d-smd-hess	ex:LogFile			ex:exp_aa001d-smd-hess	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001d-smd-hess.log	7b0b28bcf43ad73b87c08afb2d173d0fe8aae31330736406b6b4a2b8937c43f5						
+													
+ex:exp_aa001d-smd-pcseg2	Single point aa001d-smd-pcseg2	gc:SinglePoint	ex:file_aa001d-smd-pcseg2_inp	ex:file_aa001d-smd-pcseg2_dat|ex:file_aa001d-smd-pcseg2_log				wB97X-D	PCSEG-2	water	SMD	ENERGY	
+ex:file_aa001d-smd-pcseg2_inp	Input file aa001d-smd-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001d-smd-pcseg2.inp	a3e7dbc7e4ab7ed5fcdc05b8d7103e7c8cf9167c5b50ba6c00237cc8810e93ce						
+ex:file_aa001d-smd-pcseg2_dat	Output data aa001d-smd-pcseg2	ex:DataFile			ex:exp_aa001d-smd-pcseg2								
+ex:file_aa001d-smd-pcseg2_log	Output log aa001d-smd-pcseg2	ex:LogFile			ex:exp_aa001d-smd-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001d-smd-pcseg2.log	d73aa91754f2598fa50b7ff5aba64aca91ca994353eb7000cd7a5da6fcdc2c38						
+													
+ex:exp_aa001d-smd	Saddle point aa001d-smd	gc:SaddlePoint	ex:file_aa001d-smd_inp	ex:file_aa001d-smd_dat|ex:file_aa001d-smd_log				wB97X-D	6-21G+(d,p)	water	SMD	SADPOINT	true
+ex:file_aa001d-smd_inp	Input file aa001d-smd	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001d-smd.inp	a2a9cc8f78a2b4d8029aa3f355ebc0d41caaf3ef5132493649a72c88bceb048d						
+ex:file_aa001d-smd_dat	Output data aa001d-smd	ex:DataFile			ex:exp_aa001d-smd								
+ex:file_aa001d-smd_log	Output log aa001d-smd	ex:LogFile			ex:exp_aa001d-smd	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001d-smd.log	0c5933fd5e716db18b0b439ee8023a24f8db64b8e6f48595512f50b794e7dd11						
+													
+ex:exp_aa001d	Saddle point aa001d	gc:SaddlePoint	ex:file_aa001d_inp	ex:file_aa001d_dat|ex:file_aa001d_log				wB97X-D	6-21G+(d,p)	water	PCM	SADPOINT	true
+ex:file_aa001d_inp	Input file aa001d	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001d.inp	526750c6c68dd079363f2a2e3ec6cb8a715ee053407a56473b58cb79b8cfd8c2						
+ex:file_aa001d_dat	Output data aa001d	ex:DataFile			ex:exp_aa001d								
+ex:file_aa001d_log	Output log aa001d	ex:LogFile			ex:exp_aa001d	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001d.log	44a890c2447cdb74d6ac793acc9a3439c7676bb590c9479e6fd6509b9eac2fd2						
+													
+ex:exp_aa001e	IRC (forward) aa001e	gc:IRC	ex:file_aa001e_inp	ex:file_aa001e_dat|ex:file_aa001e_log				wB97X-D	6-21G+(d,p)	water	PCM	IRC	
+ex:file_aa001e_inp	Input file aa001e	ex:InputFile			ex:exp_aa001d	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001e.inp	34ef548241eb2d0a916807bc196786d5af8a31f5e263e5e68289a76797f302d2						
+ex:file_aa001e_dat	Output data aa001e	ex:DataFile			ex:exp_aa001e								
+ex:file_aa001e_log	Output log aa001e	ex:LogFile			ex:exp_aa001e	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001e.log	c816ff90e312d6d946533a7eed526ddb197eb8cd42d5e4e0b5281545773438b1						
+													
+ex:exp_aa001f	IRC (backward) aa001f	gc:IRC	ex:file_aa001f_inp	ex:file_aa001f_dat|ex:file_aa001f_log				wB97X-D	6-21G+(d,p)	water	PCM	IRC	
+ex:file_aa001f_inp	Input file aa001f	ex:InputFile			ex:exp_aa001e	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001f.inp	7a9f680bd48ec5b218bb709ba5945673e6dcadd6d42e49f253a032910dac372d						
+ex:file_aa001f_dat	Output data aa001f	ex:DataFile			ex:exp_aa001f								
+ex:file_aa001f_log	Output log aa001f	ex:LogFile			ex:exp_aa001f	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001f.log	4d0b428a5f482745265a1ca5294351dd878a4ba58d1054be551f90950988c6d7						
+													
+ex:exp_aa001g-pcseg2	Single point aa001g-pcseg2	gc:SinglePoint	ex:file_aa001g-pcseg2_inp	ex:file_aa001g-pcseg2_dat|ex:file_aa001g-pcseg2_log				wB97X-D	PCSEG-2	water	PCM	ENERGY	
+ex:file_aa001g-pcseg2_inp	Input file aa001g-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001g-pcseg2.inp	ce9f446cadbb7ee4b1d9b592f5f2e4be2d237e6b298ef6e8d53603a86b3280fd						
+ex:file_aa001g-pcseg2_dat	Output data aa001g-pcseg2	ex:DataFile			ex:exp_aa001g-pcseg2								
+ex:file_aa001g-pcseg2_log	Output log aa001g-pcseg2	ex:LogFile			ex:exp_aa001g-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001g-pcseg2.log	5548860b7fc70cccc943edf065b7202f7427dd79847b0b0b41bedb7453752ae3						
+													
+ex:exp_aa001g-smd-pcseg2	Single point aa001g-smd-pcseg2	gc:SinglePoint	ex:file_aa001g-smd-pcseg2_inp	ex:file_aa001g-smd-pcseg2_dat|ex:file_aa001g-smd-pcseg2_log				wB97X-D	PCSEG-2	water	SMD	ENERGY	
+ex:file_aa001g-smd-pcseg2_inp	Input file aa001g-smd-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001g-smd-pcseg2.inp	785be705d18fab1a0608d1c07d3cf6b406e00412382e7308328e497614727fc6						
+ex:file_aa001g-smd-pcseg2_dat	Output data aa001g-smd-pcseg2	ex:DataFile			ex:exp_aa001g-smd-pcseg2								
+ex:file_aa001g-smd-pcseg2_log	Output log aa001g-smd-pcseg2	ex:LogFile			ex:exp_aa001g-smd-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001g-smd-pcseg2.log	b4d748fe4f1e126a743ce471e3c6612f4c5e464fb4229acb25ca79faa94c5e65						
+													
+ex:exp_aa001g-smd	Vibrational analysis aa001g-smd	gc:VibrationalAnalysis	ex:file_aa001g-smd_inp	ex:file_aa001g-smd_dat|ex:file_aa001g-smd_log				wB97X-D	6-21G+(d,p)	water	SMD	OPTIMIZE	true
+ex:file_aa001g-smd_inp	Input file aa001g-smd	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001g-smd.inp	baafafdfc48f1af8c6bd4a44ff06cc4014fbdb1ff988d494040f0448a6418b74						
+ex:file_aa001g-smd_dat	Output data aa001g-smd	ex:DataFile			ex:exp_aa001g-smd								
+ex:file_aa001g-smd_log	Output log aa001g-smd	ex:LogFile			ex:exp_aa001g-smd	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001g-smd.log	d57f262c614eb2812054c6728f4e2f85ab82034f06ccb48b3f6eb34ea86d1218						
+													
+ex:exp_aa001g	Vibrational analysis aa001g	gc:VibrationalAnalysis	ex:file_aa001g_inp	ex:file_aa001g_dat|ex:file_aa001g_log				wB97X-D	6-21G+(d,p)	water	PCM	OPTIMIZE	true
+ex:file_aa001g_inp	Input file aa001g	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001g.inp	f276b130778d55085eb2841462a199907e6be8c21d62d290a09c14b9894733fa						
+ex:file_aa001g_dat	Output data aa001g	ex:DataFile			ex:exp_aa001g								
+ex:file_aa001g_log	Output log aa001g	ex:LogFile			ex:exp_aa001g	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001g.log	4a0b2a8665432996dc35323890ad83902780d2c591f7104917cc3abe448ef941						
+													
+ex:exp_aa001h-pcseg2	Single point aa001h-pcseg2	gc:SinglePoint	ex:file_aa001h-pcseg2_inp	ex:file_aa001h-pcseg2_dat|ex:file_aa001h-pcseg2_log				wB97X-D	PCSEG-2	water	PCM	ENERGY	
+ex:file_aa001h-pcseg2_inp	Input file aa001h-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001h-pcseg2.inp	96486581bcfecb024a503fa3217fbd79be1ab07bb7b4fe9a14a5dc9534a119e9						
+ex:file_aa001h-pcseg2_dat	Output data aa001h-pcseg2	ex:DataFile			ex:exp_aa001h-pcseg2								
+ex:file_aa001h-pcseg2_log	Output log aa001h-pcseg2	ex:LogFile			ex:exp_aa001h-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001h-pcseg2.log	83ebba7fbead2a603817f195649a27e101f134628d367554f9b726b89cdd132d						
+													
+ex:exp_aa001h-smd-pcseg2	Single point aa001h-smd-pcseg2	gc:SinglePoint	ex:file_aa001h-smd-pcseg2_inp	ex:file_aa001h-smd-pcseg2_dat|ex:file_aa001h-smd-pcseg2_log				wB97X-D	PCSEG-2	water	SMD	ENERGY	
+ex:file_aa001h-smd-pcseg2_inp	Input file aa001h-smd-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001h-smd-pcseg2.inp	fead8b5767c0f661be300054f2646c449032a3093931cf388c3920c299eeb4bc						
+ex:file_aa001h-smd-pcseg2_dat	Output data aa001h-smd-pcseg2	ex:DataFile			ex:exp_aa001h-smd-pcseg2								
+ex:file_aa001h-smd-pcseg2_log	Output log aa001h-smd-pcseg2	ex:LogFile			ex:exp_aa001h-smd-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001h-smd-pcseg2.log	aff3133b67855a97d56436cb4eba9e51cf8ff84ba1e2603b05f5c6815394b337						
+													
+ex:exp_aa001h-smd	Vibrational analysis aa001h-smd	gc:VibrationalAnalysis	ex:file_aa001h-smd_inp	ex:file_aa001h-smd_dat|ex:file_aa001h-smd_log				wB97X-D	6-21G+(d,p)	water	SMD	OPTIMIZE	true
+ex:file_aa001h-smd_inp	Input file aa001h-smd	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001h-smd.inp	165ffeeb46b2e77571ecdfc3973a28648963441864f3044384789b5e5cf2e385						
+ex:file_aa001h-smd_dat	Output data aa001h-smd	ex:DataFile			ex:exp_aa001h-smd								
+ex:file_aa001h-smd_log	Output log aa001h-smd	ex:LogFile			ex:exp_aa001h-smd	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001h-smd.log	0065e31d26fb349e191f721a7bdc68bac8aa2b561ac71bf2f5cbac6438c8dd51						
+													
+ex:exp_aa001h	Vibrational analysis aa001h	gc:VibrationalAnalysis	ex:file_aa001h_inp	ex:file_aa001h_dat|ex:file_aa001h_log				wB97X-D	6-21G+(d,p)	water	PCM	OPTIMIZE	true
+ex:file_aa001h_inp	Input file aa001h	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa001h.inp	970ef8fcb82a6a35f7110ae22aed6e0dc341a3b790c3ae1fad16f6b16321e2f8						
+ex:file_aa001h_dat	Output data aa001h	ex:DataFile			ex:exp_aa001h								
+ex:file_aa001h_log	Output log aa001h	ex:LogFile			ex:exp_aa001h	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa001h.log	038b4954a564325cc5aabfe4b8ee3e001e31cfe595af7aefc0aac98d0a4a577c						
+													
+ex:exp_aa002-aldehyde-bare-smd-check	Vibrational analysis aa002-aldehyde-bare-smd-check	gc:VibrationalAnalysis	ex:file_aa002-aldehyde-bare-smd-check_inp	ex:file_aa002-aldehyde-bare-smd-check_dat|ex:file_aa002-aldehyde-bare-smd-check_log				wB97X-D	6-21G+(d,p)	water	SMD	OPTIMIZE	true
+ex:file_aa002-aldehyde-bare-smd-check_inp	Input file aa002-aldehyde-bare-smd-check	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-aldehyde-bare-smd-check.inp	bda00c32b8c766a517e87eecafdde64a4a64f6a01ee416b46e92d5ffd8251649						
+ex:file_aa002-aldehyde-bare-smd-check_dat	Output data aa002-aldehyde-bare-smd-check	ex:DataFile			ex:exp_aa002-aldehyde-bare-smd-check								
+ex:file_aa002-aldehyde-bare-smd-check_log	Output log aa002-aldehyde-bare-smd-check	ex:LogFile			ex:exp_aa002-aldehyde-bare-smd-check	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-aldehyde-bare-smd-check.log	619c7a0a02882fbbabfa11d222119c9fc0968fd0706bf9d4125701e3c418a32a						
+													
+ex:exp_aa002-aldehyde-bare-smd-energy	Single point aa002-aldehyde-bare-smd-energy	gc:SinglePoint	ex:file_aa002-aldehyde-bare-smd-energy_inp	ex:file_aa002-aldehyde-bare-smd-energy_dat|ex:file_aa002-aldehyde-bare-smd-energy_log				wB97X-D	6-21G+(d,p)	water	SMD	ENERGY	
+ex:file_aa002-aldehyde-bare-smd-energy_inp	Input file aa002-aldehyde-bare-smd-energy	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-aldehyde-bare-smd-energy.inp	068237e6d56e2800b675984ced26c0f22183e2167e7220dd99ad355d86a79e8d						
+ex:file_aa002-aldehyde-bare-smd-energy_dat	Output data aa002-aldehyde-bare-smd-energy	ex:DataFile			ex:exp_aa002-aldehyde-bare-smd-energy								
+ex:file_aa002-aldehyde-bare-smd-energy_log	Output log aa002-aldehyde-bare-smd-energy	ex:LogFile			ex:exp_aa002-aldehyde-bare-smd-energy	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-aldehyde-bare-smd-energy.log	47e6b9eb3dac9ac347a4c067fab3c2d353c37121d01b6284a32c48dd5d4b34e0						
+													
+ex:exp_aa002-aldehyde-bare-smd-hcore	Vibrational analysis aa002-aldehyde-bare-smd-hcore	gc:VibrationalAnalysis	ex:file_aa002-aldehyde-bare-smd-hcore_inp	ex:file_aa002-aldehyde-bare-smd-hcore_dat|ex:file_aa002-aldehyde-bare-smd-hcore_log				wB97X-D	6-21G+(d,p)	water	SMD	OPTIMIZE	true
+ex:file_aa002-aldehyde-bare-smd-hcore_inp	Input file aa002-aldehyde-bare-smd-hcore	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-aldehyde-bare-smd-hcore.inp	60b3d0687647cb1726ed0cb92267bfa39625a76138b6acca754833788cb8bdd7						
+ex:file_aa002-aldehyde-bare-smd-hcore_dat	Output data aa002-aldehyde-bare-smd-hcore	ex:DataFile			ex:exp_aa002-aldehyde-bare-smd-hcore								
+ex:file_aa002-aldehyde-bare-smd-hcore_log	Output log aa002-aldehyde-bare-smd-hcore	ex:LogFile			ex:exp_aa002-aldehyde-bare-smd-hcore	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-aldehyde-bare-smd-hcore.log	b713e135660b191e90bdf02fbf8836f9d74ba73e93d3a9b9bf2f18abb7dc255d						
+													
+ex:exp_aa002-aldehyde-bare-smd	Vibrational analysis aa002-aldehyde-bare-smd	gc:VibrationalAnalysis	ex:file_aa002-aldehyde-bare-smd_inp	ex:file_aa002-aldehyde-bare-smd_dat|ex:file_aa002-aldehyde-bare-smd_log				wB97X-D	6-21G+(d,p)	water	SMD	OPTIMIZE	true
+ex:file_aa002-aldehyde-bare-smd_inp	Input file aa002-aldehyde-bare-smd	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-aldehyde-bare-smd.inp	16463eab92dcc7ea6a0d3f1e9f8c1f57b5902459fc57c007574ce846999d9315						
+ex:file_aa002-aldehyde-bare-smd_dat	Output data aa002-aldehyde-bare-smd	ex:DataFile			ex:exp_aa002-aldehyde-bare-smd								
+ex:file_aa002-aldehyde-bare-smd_log	Output log aa002-aldehyde-bare-smd	ex:LogFile			ex:exp_aa002-aldehyde-bare-smd	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-aldehyde-bare-smd.log	4abb2eea0e7b6ae64a08c276aa723cc8b24d4ac16bbd5ee91555125c8fa953e7						
+													
+ex:exp_aa002-aldehyde-bare	Vibrational analysis aa002-aldehyde-bare	gc:VibrationalAnalysis	ex:file_aa002-aldehyde-bare_inp	ex:file_aa002-aldehyde-bare_dat|ex:file_aa002-aldehyde-bare_log				wB97X-D	6-21G+(d,p)	water	PCM	OPTIMIZE	true
+ex:file_aa002-aldehyde-bare_inp	Input file aa002-aldehyde-bare	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-aldehyde-bare.inp	437c1ffa7e19197db831608a14299562c2e6f1e1184b305d0d60353182056f73						
+ex:file_aa002-aldehyde-bare_dat	Output data aa002-aldehyde-bare	ex:DataFile			ex:exp_aa002-aldehyde-bare								
+ex:file_aa002-aldehyde-bare_log	Output log aa002-aldehyde-bare	ex:LogFile			ex:exp_aa002-aldehyde-bare	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-aldehyde-bare.log	25cc390daa03caac453cd5132a739b9f5ab204f68eca2d449c4afa87c6e3d2b8						
+													
+ex:exp_aa002-aldehyde-pcseg2	Single point aa002-aldehyde-pcseg2	gc:SinglePoint	ex:file_aa002-aldehyde-pcseg2_inp	ex:file_aa002-aldehyde-pcseg2_dat|ex:file_aa002-aldehyde-pcseg2_log				wB97X-D	PCSEG-2	water	PCM	ENERGY	
+ex:file_aa002-aldehyde-pcseg2_inp	Input file aa002-aldehyde-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-aldehyde-pcseg2.inp	7f62b7fcc088332a36be90e9d45cc64b64a634122072d1ad502a543c4dc9f93e						
+ex:file_aa002-aldehyde-pcseg2_dat	Output data aa002-aldehyde-pcseg2	ex:DataFile			ex:exp_aa002-aldehyde-pcseg2								
+ex:file_aa002-aldehyde-pcseg2_log	Output log aa002-aldehyde-pcseg2	ex:LogFile			ex:exp_aa002-aldehyde-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-aldehyde-pcseg2.log	bab9066a8b31e4a2b304d78ba029617c0d849fc19b499823eff0098db98cef49						
+													
+ex:exp_aa002-hydrate-bare-smd	Vibrational analysis aa002-hydrate-bare-smd	gc:VibrationalAnalysis	ex:file_aa002-hydrate-bare-smd_inp	ex:file_aa002-hydrate-bare-smd_dat|ex:file_aa002-hydrate-bare-smd_log				wB97X-D	6-21G+(d,p)	water	SMD	OPTIMIZE	true
+ex:file_aa002-hydrate-bare-smd_inp	Input file aa002-hydrate-bare-smd	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-hydrate-bare-smd.inp	a1de72c008cac7874af0173fcb15ab9f74713c650256b144fdc55aa5502603dd						
+ex:file_aa002-hydrate-bare-smd_dat	Output data aa002-hydrate-bare-smd	ex:DataFile			ex:exp_aa002-hydrate-bare-smd								
+ex:file_aa002-hydrate-bare-smd_log	Output log aa002-hydrate-bare-smd	ex:LogFile			ex:exp_aa002-hydrate-bare-smd	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-hydrate-bare-smd.log	6fbf0bfa2cdc11575fb023fde99c51028fb2640da7e40cafe951834b7be88d23						
+													
+ex:exp_aa002-hydrate-bare	Vibrational analysis aa002-hydrate-bare	gc:VibrationalAnalysis	ex:file_aa002-hydrate-bare_inp	ex:file_aa002-hydrate-bare_dat|ex:file_aa002-hydrate-bare_log				wB97X-D	6-21G+(d,p)	water	PCM	OPTIMIZE	true
+ex:file_aa002-hydrate-bare_inp	Input file aa002-hydrate-bare	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-hydrate-bare.inp	bc312b0ef4a57437db9cbe620faaa0e3ad105780c6c7300cac4edafc835e8e03						
+ex:file_aa002-hydrate-bare_dat	Output data aa002-hydrate-bare	ex:DataFile			ex:exp_aa002-hydrate-bare								
+ex:file_aa002-hydrate-bare_log	Output log aa002-hydrate-bare	ex:LogFile			ex:exp_aa002-hydrate-bare	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-hydrate-bare.log	a7898d95535906fb118587d27144e6994106456169922083a5d8a0964bb5188d						
+													
+ex:exp_aa002-hydrate-pcseg2	Single point aa002-hydrate-pcseg2	gc:SinglePoint	ex:file_aa002-hydrate-pcseg2_inp	ex:file_aa002-hydrate-pcseg2_dat|ex:file_aa002-hydrate-pcseg2_log				wB97X-D	PCSEG-2	water	PCM	ENERGY	
+ex:file_aa002-hydrate-pcseg2_inp	Input file aa002-hydrate-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-hydrate-pcseg2.inp	73543d0dc0f078c9fc970783ed479314f3cf8bc7ac157bce497548f2d728161c						
+ex:file_aa002-hydrate-pcseg2_dat	Output data aa002-hydrate-pcseg2	ex:DataFile			ex:exp_aa002-hydrate-pcseg2								
+ex:file_aa002-hydrate-pcseg2_log	Output log aa002-hydrate-pcseg2	ex:LogFile			ex:exp_aa002-hydrate-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-hydrate-pcseg2.log	6da1440447da6b1dc43efa59043e4158f5bd8f791135f1259785e79da1777627						
+													
+ex:exp_aa002-water-bare-smd	Vibrational analysis aa002-water-bare-smd	gc:VibrationalAnalysis	ex:file_aa002-water-bare-smd_inp	ex:file_aa002-water-bare-smd_dat|ex:file_aa002-water-bare-smd_log				wB97X-D	6-21G+(d,p)	water	SMD	OPTIMIZE	true
+ex:file_aa002-water-bare-smd_inp	Input file aa002-water-bare-smd	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-water-bare-smd.inp	43cf353769b5127636162f909b70dfaa0d7e4c218e3d96c5ad496063f82bd7e2						
+ex:file_aa002-water-bare-smd_dat	Output data aa002-water-bare-smd	ex:DataFile			ex:exp_aa002-water-bare-smd								
+ex:file_aa002-water-bare-smd_log	Output log aa002-water-bare-smd	ex:LogFile			ex:exp_aa002-water-bare-smd	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-water-bare-smd.log	95405a4c4a3e1ba680a6c6f883ea7de152d2b1c39d04bfabfb5d6ebb42c3436c						
+													
+ex:exp_aa002-water-bare	Vibrational analysis aa002-water-bare	gc:VibrationalAnalysis	ex:file_aa002-water-bare_inp	ex:file_aa002-water-bare_dat|ex:file_aa002-water-bare_log				wB97X-D	6-21G+(d,p)	water	PCM	OPTIMIZE	true
+ex:file_aa002-water-bare_inp	Input file aa002-water-bare	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-water-bare.inp	bccbda6fdda4885ce7f2732c6f2f51677aeec789968328680b6f0ecf073293e5						
+ex:file_aa002-water-bare_dat	Output data aa002-water-bare	ex:DataFile			ex:exp_aa002-water-bare								
+ex:file_aa002-water-bare_log	Output log aa002-water-bare	ex:LogFile			ex:exp_aa002-water-bare	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-water-bare.log	7c6622993eb1d33d145b5d1fd3fb6661bd569b5ed88e4c30d0d9b11d0fb06ed5						
+													
+ex:exp_aa002-water-pcseg2	Single point aa002-water-pcseg2	gc:SinglePoint	ex:file_aa002-water-pcseg2_inp	ex:file_aa002-water-pcseg2_dat|ex:file_aa002-water-pcseg2_log				wB97X-D	PCSEG-2	water	PCM	ENERGY	
+ex:file_aa002-water-pcseg2_inp	Input file aa002-water-pcseg2	ex:InputFile			ex:avogadro_build	file:////home/darren/Projects/active/ont_mm/examples/aa/inputs/aa002-water-pcseg2.inp	3df728b89a8658f5e771d5c35bc3af7bbe4472e4f080952230bfd64e59f876a5						
+ex:file_aa002-water-pcseg2_dat	Output data aa002-water-pcseg2	ex:DataFile			ex:exp_aa002-water-pcseg2								
+ex:file_aa002-water-pcseg2_log	Output log aa002-water-pcseg2	ex:LogFile			ex:exp_aa002-water-pcseg2	file:////home/darren/Projects/active/ont_mm/examples/aa/outputs/aa002-water-pcseg2.log	e3efed41d8c94b35cdd0ff7a1d28d6fea2d7c370f71324b4db45f3d5a5b2f7c5						
+													
