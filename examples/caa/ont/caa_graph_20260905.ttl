@@ -2043,6 +2043,14 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                                    rdfs:label "has visibility"@en .
 
 
+###  http://schema.org/sha256
+<http://schema.org/sha256> rdf:type owl:DatatypeProperty ;
+                           rdfs:domain <http://schema.org/MediaObject> ;
+                           rdfs:range xsd:string ;
+                           rdfs:comment "The SHA-2 SHA256 hash of the content of the item, as a lowercase hexadecimal string. Reused directly from https://schema.org/sha256 - confirmed via direct testing (2026-09-25) to introduce no reasoning issues when used on an individual not formally typed schema:MediaObject." ;
+                           rdfs:label "sha256" .
+
+
 ###  http://www.theworldavatar.com/ontology/ontopesscan/OntoPESScan.owl#hasInputAtomIds
 <http://www.theworldavatar.com/ontology/ontopesscan/OntoPESScan.owl#hasInputAtomIds> rdf:type owl:DatatypeProperty ;
                                                                                      rdfs:domain <http://www.theworldavatar.com/ontology/ontopesscan/OntoPESScan.owl#ScanPoint> ;
@@ -4628,6 +4636,12 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
 <http://qudt.org/schema/qudt/Unit> rdf:type owl:Class .
 
 
+###  http://schema.org/MediaObject
+<http://schema.org/MediaObject> rdf:type owl:Class ;
+                                rdfs:comment "An image, video, audio, or generic file - reused here from https://schema.org/MediaObject purely as the declared domain of schema:sha256; this project's own file individuals keep their existing gc:/ex: types and are not asserted as schema:MediaObject." ;
+                                rdfs:label "MediaObject" .
+
+
 ###  http://www.theworldavatar.com/ontology/ontopesscan/OntoPESScan.owl#AngleCoordinate
 <http://www.theworldavatar.com/ontology/ontopesscan/OntoPESScan.owl#AngleCoordinate> rdf:type owl:Class ;
                                                                                      rdfs:subClassOf <http://www.theworldavatar.com/ontology/ontopesscan/OntoPESScan.owl#ScanCoordinate> ;
@@ -7189,6 +7203,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa001_inp> rdf:type owl:NamedIndividual ,
                                               <http://example.org/InputFile> ;
                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                     <http://schema.org/sha256> "e7504b7396ea08a6932828620a1dbd945141904d4b864def7ba886cd79b29249" ;
                                      <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa001.inp" ;
                                      rdfs:label "Input file caa001" .
 
@@ -7197,6 +7212,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa001_log> rdf:type owl:NamedIndividual ,
                                               <http://example.org/LogFile> ;
                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa001> ;
+                                     <http://schema.org/sha256> "433170d4c04f2e610206202c67c161ae85ef380485857b354760d2323f4b939f" ;
                                      <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa001.log" ;
                                      rdfs:label "Output log caa001" .
 
@@ -7212,6 +7228,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa001a_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa001> ;
+                                      <http://schema.org/sha256> "3c5059e0091d89eb1a39fc0b28e6ea6d1e2cb6628fae1658ba5883c6db3bb0d2" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa001a.inp" ;
                                       rdfs:label "Input file caa001a" .
 
@@ -7220,6 +7237,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa001a_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa001a> ;
+                                      <http://schema.org/sha256> "d303a8b59175d641347e111b4d63cc427acbf4e067c9a95560c06098a3b87451" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa001a.log" ;
                                       rdfs:label "Output log caa001a" .
 
@@ -7235,6 +7253,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa001b_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa001a> ;
+                                      <http://schema.org/sha256> "d8607964208d39241d7db6ed2f5d330fe925ed295805851f4991cfff34eda48a" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa001b.inp" ;
                                       rdfs:label "Input file caa001b" .
 
@@ -7243,6 +7262,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa001b_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa001b> ;
+                                      <http://schema.org/sha256> "4e857a65286b0160cc21896c3e8084d4812c554555425dfbbff37a0790a8664c" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa001b.log" ;
                                       rdfs:label "Output log caa001b" .
 
@@ -7258,6 +7278,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa002_inp> rdf:type owl:NamedIndividual ,
                                               <http://example.org/InputFile> ;
                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                     <http://schema.org/sha256> "d511fe5d874dcd965e281caea7a1ffbee55db60dfd9e87708bb2c7c438ff36ec" ;
                                      <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa002.inp" ;
                                      rdfs:label "Input file caa002" .
 
@@ -7266,6 +7287,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa002_log> rdf:type owl:NamedIndividual ,
                                               <http://example.org/LogFile> ;
                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa002> ;
+                                     <http://schema.org/sha256> "5b795bc9b92a90468ca85b28f55cb5168f81907ece7d6f35c4e75f2cd4cf64ca" ;
                                      <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa002.log" ;
                                      rdfs:label "Output log caa002" .
 
@@ -7281,6 +7303,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa002a_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa002> ;
+                                      <http://schema.org/sha256> "b81b1fc8c6c23b4d6066230df9ddb842b5e90033d5579ffaf0f5693bc8586f51" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa002a.inp" ;
                                       rdfs:label "Input file caa002a" .
 
@@ -7289,6 +7312,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa002a_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa002a> ;
+                                      <http://schema.org/sha256> "f8abd3262b7d9644e23c4118ca29aec4477b8232902db66cb97522fb3135539a" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa002a.log" ;
                                       rdfs:label "Output log caa002a" .
 
@@ -7304,6 +7328,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa002b_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa002a> ;
+                                      <http://schema.org/sha256> "1dfb96969c517962f555a5ced65666179fabe0ada857c38104ebbecc8b939706" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa002b.inp" ;
                                       rdfs:label "Input file caa002b" .
 
@@ -7312,6 +7337,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa002b_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa002b> ;
+                                      <http://schema.org/sha256> "d2ec044aecc269c7f766f1f3e4dbdbfa8e823490d4f61cad600f0dfd601a9839" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa002b.log" ;
                                       rdfs:label "Output log caa002b" .
 
@@ -7327,6 +7353,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa002c_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa002b> ;
+                                      <http://schema.org/sha256> "d0fbe421f254e3bb09d9bd540c18ca32493827550c9ae6a5fdbd76d4737e89ed" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa002c.inp" ;
                                       rdfs:label "Input file caa002c" .
 
@@ -7335,6 +7362,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa002c_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa002c> ;
+                                      <http://schema.org/sha256> "263c239d90502a2e48fdd9e10486f31cc2d9a755c6ecf8c39c4f2ab7f6799f88" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa002c.log" ;
                                       rdfs:label "Output log caa002c" .
 
@@ -7350,6 +7378,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa002d_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa002c> ;
+                                      <http://schema.org/sha256> "7f3696eae33a784ceb24390fdce35d27a6443c45d4f220af1642909b0c19c095" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa002d.inp" ;
                                       rdfs:label "Input file caa002d" .
 
@@ -7358,6 +7387,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa002d_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa002d> ;
+                                      <http://schema.org/sha256> "b83b194261e3a26718a16e4d48cc675f8ccfe524a4f3536be1238ea722815fc9" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa002d.log" ;
                                       rdfs:label "Output log caa002d" .
 
@@ -7373,6 +7403,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa002e_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa002d> ;
+                                      <http://schema.org/sha256> "389fa86f63bedc9acb13c32c8ccc39638b7360e51ea3ea964a9dc351a10b1fcd" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa002e.inp" ;
                                       rdfs:label "Input file caa002e" .
 
@@ -7381,6 +7412,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa002e_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa002e> ;
+                                      <http://schema.org/sha256> "6daf258a561214b8b3ec8b5955652c645ba21eec41c2bddc1915f9fb230b19b1" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa002e.log" ;
                                       rdfs:label "Output log caa002e" .
 
@@ -7396,6 +7428,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa003a_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                      <http://schema.org/sha256> "8c4a253bf537e6b8f1a9c5640c09c0524adc3ff53b2b18c946f7051f409f96b8" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa003a.inp" ;
                                       rdfs:label "Input file caa003a" .
 
@@ -7404,6 +7437,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa003a_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa003a> ;
+                                      <http://schema.org/sha256> "19ccd07570e29e4e1925f4ba1ce89adce81fe61465cbeb99e2b0bd71abde5d4b" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa003a.log" ;
                                       rdfs:label "Output log caa003a" .
 
@@ -7419,6 +7453,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa003b_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa003a> ;
+                                      <http://schema.org/sha256> "152869f589c46b6500106d56743eae01861dbefe97406aac8b4e5eda12e7ebc3" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa003b.inp" ;
                                       rdfs:label "Input file caa003b" .
 
@@ -7427,6 +7462,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa003b_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa003b> ;
+                                      <http://schema.org/sha256> "0f40e37beeb8ea4ae3efb8e409d1570414b84aaad1c38ed5ac595c5f7fd8da61" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa003b.log" ;
                                       rdfs:label "Output log caa003b" .
 
@@ -7442,6 +7478,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa003c_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa003b> ;
+                                      <http://schema.org/sha256> "f6f29d3b0d167b83e6db985777a40dabc5aae55b9920935e6805fb9b8008a684" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa003c.inp" ;
                                       rdfs:label "Input file caa003c" .
 
@@ -7450,6 +7487,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa003c_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa003c> ;
+                                      <http://schema.org/sha256> "964ea51f2fcfd529f07057772111b745c62ea0ac99f5745e2208f2767e0ce2bd" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa003c.log" ;
                                       rdfs:label "Output log caa003c" .
 
@@ -7465,6 +7503,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa003d_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa003c> ;
+                                      <http://schema.org/sha256> "5b77dbf3496aa3122eca6bda898ff4fdbcce90118e9865cfcb3e7d648f836d63" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa003d.inp" ;
                                       rdfs:label "Input file caa003d" .
 
@@ -7473,6 +7512,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa003d_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa003d> ;
+                                      <http://schema.org/sha256> "a7bfdbae52cc494a57d54cc0eb37c1d1941dfa85c4c78bf9b69961af78add129" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa003d.log" ;
                                       rdfs:label "Output log caa003d" .
 
@@ -7488,6 +7528,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa004a_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                      <http://schema.org/sha256> "3bf16a6a56c378ef50742e1030237002b29f3e5ce632ff7d1753fddf20d08687" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa004a.inp" ;
                                       rdfs:label "Input file caa004a" .
 
@@ -7496,6 +7537,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa004a_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa004a> ;
+                                      <http://schema.org/sha256> "e47206d5c1707ac3761c7d1cc36e50318f721b39c7facff36e94c7bb6e5319c8" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004a.log" ;
                                       rdfs:label "Output log caa004a" .
 
@@ -7511,6 +7553,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa004b_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa004a> ;
+                                      <http://schema.org/sha256> "1eb340a9c02678110e344e363375905552ade9cd1759893543b75947c63ae62c" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa004b.inp" ;
                                       rdfs:label "Input file caa004b" .
 
@@ -7519,6 +7562,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa004b_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa004b> ;
+                                      <http://schema.org/sha256> "4f06bcac33697d9ad48add29f7cadd5bcb8528d9b74ab0041865e86ee0a6fa14" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004b.log" ;
                                       rdfs:label "Output log caa004b" .
 
@@ -7534,6 +7578,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa004c_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa004b> ;
+                                      <http://schema.org/sha256> "17fdd323546fe87558fbc1e68579f15cdbfefa3ed07658ff2a3da1c8d8661b8d" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa004c.inp" ;
                                       rdfs:label "Input file caa004c" .
 
@@ -7542,6 +7587,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa004c_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa004c> ;
+                                      <http://schema.org/sha256> "333f0c65309a640e49ef54f9d9d7a258dab19186491183396708f5934ed1db7f" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004c.log" ;
                                       rdfs:label "Output log caa004c" .
 
@@ -7557,6 +7603,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa004d_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa004c> ;
+                                      <http://schema.org/sha256> "56eb10f5e2f95e1a9e4840dfb273094270d3aae433ac2081f9caf0d1b32c939c" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa004d.inp" ;
                                       rdfs:label "Input file caa004d" .
 
@@ -7565,6 +7612,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa004d_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa004d> ;
+                                      <http://schema.org/sha256> "f0c3d57d30ecee380e8be5df210418eb5c142f06e0dcba0097e87fc46b7a0509" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004d.log" ;
                                       rdfs:label "Output log caa004d" .
 
@@ -7580,6 +7628,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa004e_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa004d> ;
+                                      <http://schema.org/sha256> "48d6ee64785b217b8d2717fb66b744bcebae458041dbbc8437e7c3e4f3fe5991" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa004e.inp" ;
                                       rdfs:label "Input file caa004e" .
 
@@ -7588,6 +7637,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa004e_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa004e> ;
+                                      <http://schema.org/sha256> "8d1f1d65e31df23519ab324ca9cbf42a62aa7745db50e8caf9eb195c6e11df26" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004e.log" ;
                                       rdfs:label "Output log caa004e" .
 
@@ -7603,6 +7653,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa004f_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa004e> ;
+                                      <http://schema.org/sha256> "0efb727a7e167389d29864083ead5d180a445b17ce6a3ac889b634bb52228b31" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa004f.inp" ;
                                       rdfs:label "Input file caa004f" .
 
@@ -7611,6 +7662,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa004f_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa004f> ;
+                                      <http://schema.org/sha256> "237777a958b62284cf7a4e96b69b96de4620d03a32bbc476e74b601a7764d976" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004f.log" ;
                                       rdfs:label "Output log caa004f" .
 
@@ -7626,6 +7678,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa004g_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa004f> ;
+                                      <http://schema.org/sha256> "b10153c9321f98d501746f53bc2d5477b4023e516ea2aa9e35531a9ac1a54720" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa004g.inp" ;
                                       rdfs:label "Input file caa004g" .
 
@@ -7634,6 +7687,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa004g_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa004g> ;
+                                      <http://schema.org/sha256> "17baee066d168580a188f1b26ddc8f931493e06e1516d5a3401616a2d94fd9b4" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004g.log" ;
                                       rdfs:label "Output log caa004g" .
 
@@ -7649,6 +7703,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa004h_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa004g> ;
+                                      <http://schema.org/sha256> "3afbda05d38d6b367ca6be7addabfd388d30ee43908d0225e84174006434e363" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa004h.inp" ;
                                       rdfs:label "Input file caa004h" .
 
@@ -7657,6 +7712,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa004h_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa004h> ;
+                                      <http://schema.org/sha256> "cb6d72896741940b4cb6d962d19526b54509299ff207fd17ae38ee3cd790bed3" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004h.log" ;
                                       rdfs:label "Output log caa004h" .
 
@@ -7672,6 +7728,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa004j_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                      <http://schema.org/sha256> "6b8a4e8ead1952746e1709713dbd7beabcdb5ed9719ef7d46fac5ab67f89bd18" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa004j.inp" ;
                                       rdfs:label "Input file caa004j" .
 
@@ -7680,6 +7737,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa004j_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa004j> ;
+                                      <http://schema.org/sha256> "6dcfa2ab35ea1d6277bae9c0a5170f465acc2286440ebd9b7f60950bdd8b7180" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004j.log" ;
                                       rdfs:label "Output log caa004j" .
 
@@ -7695,6 +7753,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa004k_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa004j> ;
+                                      <http://schema.org/sha256> "6b8a4e8ead1952746e1709713dbd7beabcdb5ed9719ef7d46fac5ab67f89bd18" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa004k.inp" ;
                                       rdfs:label "Input file caa004k" .
 
@@ -7703,6 +7762,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa004k_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa004k> ;
+                                      <http://schema.org/sha256> "3bc454c0f9c844a09d7d40d5cb87a3392c39076532c6462b1a50de1d2e37592e" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004k.log" ;
                                       rdfs:label "Output log caa004k" .
 
@@ -7718,6 +7778,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa004l_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa004k> ;
+                                      <http://schema.org/sha256> "db5d1052d20d91c04f87c73674f35b71f040c6b76331cb5f9df0d2d5bf9e9fbf" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa004l.inp" ;
                                       rdfs:label "Input file caa004l" .
 
@@ -7726,6 +7787,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa004l_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa004l> ;
+                                      <http://schema.org/sha256> "1103daa3846c4a4e6417909ecf095af58ed55e241ff67725ab93fbe4904e512f" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004l.log" ;
                                       rdfs:label "Output log caa004l" .
 
@@ -7741,6 +7803,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa004m_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa004l> ;
+                                      <http://schema.org/sha256> "0d5ddd6042bf396ba854fbd3af542aa5ad429cf5fad29ea8b2439c2920901479" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa004m.inp" ;
                                       rdfs:label "Input file caa004m" .
 
@@ -7749,6 +7812,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa004m_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa004m> ;
+                                      <http://schema.org/sha256> "a34c1eb0e4cceeaaffc76959adf9b86c896a27dfe068878d3d2513d87e483188" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa004m.log" ;
                                       rdfs:label "Output log caa004m" .
 
@@ -7764,6 +7828,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005a_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                      <http://schema.org/sha256> "7500c8acf3df29bfee2fd7e96af49bfb6afe42d7886f7e3c0ac1b4f1dd68da1c" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005a.inp" ;
                                       rdfs:label "Input file caa005a" .
 
@@ -7772,6 +7837,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005a_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa005a> ;
+                                      <http://schema.org/sha256> "22068eb58746ac7b188006b396950395d2a78a40335845685794e5165684d6dd" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005a.log" ;
                                       rdfs:label "Output log caa005a" .
 
@@ -7787,6 +7853,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005b-cl-atom-basischeck_inp> rdf:type owl:NamedIndividual ,
                                                                   <http://example.org/InputFile> ;
                                                          <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                                         <http://schema.org/sha256> "2da612629bc053263e09452a295d7120b21c20a312b64714efed8a8bce0abc7e" ;
                                                          <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005b-cl-atom-basischeck.inp" ;
                                                          rdfs:label "Input file caa005b-cl-atom-basischeck" .
 
@@ -7795,6 +7862,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005b-cl-atom-basischeck_log> rdf:type owl:NamedIndividual ,
                                                                   <http://example.org/LogFile> ;
                                                          <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa005b-cl-atom-basischeck> ;
+                                                         <http://schema.org/sha256> "ecbc086e362f72ed9abe29277b6ed958305cf9574b37515b2fab29c90a24a5cf" ;
                                                          <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005b-cl-atom-basischeck.log" ;
                                                          rdfs:label "Output log caa005b-cl-atom-basischeck" .
 
@@ -7810,6 +7878,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005b-cl-atom-extfil-test_inp> rdf:type owl:NamedIndividual ,
                                                                    <http://example.org/InputFile> ;
                                                           <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                                          <http://schema.org/sha256> "a57145067dd37510ba7b2fa3b0c719242f9f8c1119dd68a6ec919cdd3ec1e9b7" ;
                                                           <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005b-cl-atom-extfil-test.inp" ;
                                                           rdfs:label "Input file caa005b-cl-atom-extfil-test" .
 
@@ -7818,6 +7887,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005b-cl-atom-extfil-test_log> rdf:type owl:NamedIndividual ,
                                                                    <http://example.org/LogFile> ;
                                                           <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa005b-cl-atom-extfil-test> ;
+                                                          <http://schema.org/sha256> "6878d6e9ead63c4d4602724640998fe83a79b4ce8b68d239b47360c6e16196ef" ;
                                                           <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005b-cl-atom-extfil-test.log" ;
                                                           rdfs:label "Output log caa005b-cl-atom-extfil-test" .
 
@@ -7833,6 +7903,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRC-def2svp-test_inp> rdf:type owl:NamedIndividual ,
                                                                <http://example.org/InputFile> ;
                                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                                      <http://schema.org/sha256> "dc14fa71db61003c2e2dfb3c9c77eabfdc8828442358aad9076a3d007421b9c9" ;
                                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRC-def2svp-test.inp" ;
                                                       rdfs:label "Input file caa005bIRC-def2svp-test" .
 
@@ -7841,6 +7912,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRC-def2svp-test_log> rdf:type owl:NamedIndividual ,
                                                                <http://example.org/LogFile> ;
                                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa005bIRC-def2svp-test> ;
+                                                      <http://schema.org/sha256> "87a4b669f8ae7dbdad8fa7e02cb042e83c224e1b68e0b88feeef826e83964ee0" ;
                                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRC-def2svp-test.log" ;
                                                       rdfs:label "Output log caa005bIRC-def2svp-test" .
 
@@ -7856,6 +7928,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRC-pcseg2-test_inp> rdf:type owl:NamedIndividual ,
                                                               <http://example.org/InputFile> ;
                                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                                     <http://schema.org/sha256> "1a12f8d7a4ac45712631229b809f51c66382fdb23f6e1960c6c15172b5cea4b5" ;
                                                      <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRC-pcseg2-test.inp" ;
                                                      rdfs:label "Input file caa005bIRC-pcseg2-test" .
 
@@ -7864,6 +7937,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRC-pcseg2-test_log> rdf:type owl:NamedIndividual ,
                                                               <http://example.org/LogFile> ;
                                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa005bIRC-pcseg2-test> ;
+                                                     <http://schema.org/sha256> "49880f5c47a727c7fdbe4bb6b2574457f8d540909f614af44b2aa0160a6f6aa5" ;
                                                      <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRC-pcseg2-test.log" ;
                                                      rdfs:label "Output log caa005bIRC-pcseg2-test" .
 
@@ -7879,6 +7953,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRC-trimmedTZVPP-test_inp> rdf:type owl:NamedIndividual ,
                                                                     <http://example.org/InputFile> ;
                                                            <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                                           <http://schema.org/sha256> "318fa0a70a88baf7e30dfda0d859d982492587ce05740c35f693dec23b35f1e6" ;
                                                            <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRC-trimmedTZVPP-test.inp" ;
                                                            rdfs:label "Input file caa005bIRC-trimmedTZVPP-test" .
 
@@ -7887,6 +7962,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRC-trimmedTZVPP-test_log> rdf:type owl:NamedIndividual ,
                                                                     <http://example.org/LogFile> ;
                                                            <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa005bIRC-trimmedTZVPP-test> ;
+                                                           <http://schema.org/sha256> "e0f051999d3d6da4b9710fd55d9cefaf46e0a1207920db5e8b2bf9a90b41479e" ;
                                                            <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRC-trimmedTZVPP-test.log" ;
                                                            rdfs:label "Output log caa005bIRC-trimmedTZVPP-test" .
 
@@ -7902,6 +7978,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRCCML1st-prerelax-631Gdp_inp> rdf:type owl:NamedIndividual ,
                                                                         <http://example.org/InputFile> ;
                                                                <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                                               <http://schema.org/sha256> "c3e47d8b24b2f6afedb7827d7d8a7cef065f82f004a3c6f7c537215b0efd9662" ;
                                                                <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRCCML1st-prerelax-631Gdp.inp" ;
                                                                rdfs:label "Input file caa005bIRCCML1st-prerelax-631Gdp" .
 
@@ -7910,6 +7987,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRCCML1st-prerelax-631Gdp_log> rdf:type owl:NamedIndividual ,
                                                                         <http://example.org/LogFile> ;
                                                                <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa005bIRCCML1st-prerelax-631Gdp> ;
+                                                               <http://schema.org/sha256> "0352c3742194e0c63d934f2a29bc2647f7e623e00bb226732cc4947c8d569d78" ;
                                                                <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML1st-prerelax-631Gdp.log" ;
                                                                rdfs:label "Output log caa005bIRCCML1st-prerelax-631Gdp" .
 
@@ -7925,6 +8003,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRCCML1st_inp> rdf:type owl:NamedIndividual ,
                                                         <http://example.org/InputFile> ;
                                                <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                               <http://schema.org/sha256> "6ebbeb282a730ecfad4ec9a5b7bff2fa65c064fb44d2c88e37f04d6bf2daf8ca" ;
                                                <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRCCML1st.inp" ;
                                                rdfs:label "Input file caa005bIRCCML1st" .
 
@@ -7933,6 +8012,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRCCML1st_log> rdf:type owl:NamedIndividual ,
                                                         <http://example.org/LogFile> ;
                                                <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa005bIRCCML1st> ;
+                                               <http://schema.org/sha256> "906dacfad48ed8e76762c35469086e10fa0d20d525ce212c2d0b8e9c9fc87694" ;
                                                <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML1st.log" ;
                                                rdfs:label "Output log caa005bIRCCML1st" .
 
@@ -7948,6 +8028,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix_inp> rdf:type owl:NamedIndividual ,
                                                                                 <http://example.org/InputFile> ;
                                                                        <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                                                       <http://schema.org/sha256> "198d5fb9e63cf723195ddb2ed050daae8e844c47b9075a060eeef0d2a32613ed" ;
                                                                        <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix.inp" ;
                                                                        rdfs:label "Input file caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix" .
 
@@ -7956,6 +8037,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix_log> rdf:type owl:NamedIndividual ,
                                                                                 <http://example.org/LogFile> ;
                                                                        <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix> ;
+                                                                       <http://schema.org/sha256> "e96c3cd84f184b0cb80f6b28cf29aeb7b2c775c48eb1ace79afc53dfea58662e" ;
                                                                        <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix.log" ;
                                                                        rdfs:label "Output log caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix" .
 
@@ -7971,6 +8053,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRCCML1stdef2TZVPP-uhfcheck_inp> rdf:type owl:NamedIndividual ,
                                                                           <http://example.org/InputFile> ;
                                                                  <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                                                 <http://schema.org/sha256> "2e1b2ea2c808f483f1f1f0d7f803d16fd53f563629baa7b159ff6a25a5cef457" ;
                                                                  <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRCCML1stdef2TZVPP-uhfcheck.inp" ;
                                                                  rdfs:label "Input file caa005bIRCCML1stdef2TZVPP-uhfcheck" .
 
@@ -7979,6 +8062,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRCCML1stdef2TZVPP-uhfcheck_log> rdf:type owl:NamedIndividual ,
                                                                           <http://example.org/LogFile> ;
                                                                  <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa005bIRCCML1stdef2TZVPP-uhfcheck> ;
+                                                                 <http://schema.org/sha256> "9c179f6e8750e929f18e99b9c0923b25868631e07dc2cc52cd7ac70582459803" ;
                                                                  <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML1stdef2TZVPP-uhfcheck.log" ;
                                                                  rdfs:label "Output log caa005bIRCCML1stdef2TZVPP-uhfcheck" .
 
@@ -7994,6 +8078,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRCCML1stdef2TZVPP_inp> rdf:type owl:NamedIndividual ,
                                                                  <http://example.org/InputFile> ;
                                                         <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                                        <http://schema.org/sha256> "ad87949344e8677fd62467c77c89c51f4eb2e47589c7724f7b8c4291a0d70896" ;
                                                         <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRCCML1stdef2TZVPP.inp" ;
                                                         rdfs:label "Input file caa005bIRCCML1stdef2TZVPP" .
 
@@ -8002,6 +8087,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRCCML1stdef2TZVPP_log> rdf:type owl:NamedIndividual ,
                                                                  <http://example.org/LogFile> ;
                                                         <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa005bIRCCML1stdef2TZVPP> ;
+                                                        <http://schema.org/sha256> "3a8e34b60e62886f81f044717922877325b2dcc8928b2919a95fc0915a5f1ada" ;
                                                         <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML1stdef2TZVPP.log" ;
                                                         rdfs:label "Output log caa005bIRCCML1stdef2TZVPP" .
 
@@ -8017,6 +8103,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRCCML1stdef2TZVPPa_inp> rdf:type owl:NamedIndividual ,
                                                                   <http://example.org/InputFile> ;
                                                          <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                                         <http://schema.org/sha256> "67637a5b3aacc16d0a672473b6d8c10de31df2fe11b791ba1d151c5048e652aa" ;
                                                          <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRCCML1stdef2TZVPPa.inp" ;
                                                          rdfs:label "Input file caa005bIRCCML1stdef2TZVPPa" .
 
@@ -8025,6 +8112,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRCCML1stdef2TZVPPa_log> rdf:type owl:NamedIndividual ,
                                                                   <http://example.org/LogFile> ;
                                                          <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa005bIRCCML1stdef2TZVPPa> ;
+                                                         <http://schema.org/sha256> "effb6da61aab6ff70728374dd53e0c29e51fcd7737131c6e5913cafa8f9d6bec" ;
                                                          <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML1stdef2TZVPPa.log" ;
                                                          rdfs:label "Output log caa005bIRCCML1stdef2TZVPPa" .
 
@@ -8040,6 +8128,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRCCML1stdef2TZVPPb_inp> rdf:type owl:NamedIndividual ,
                                                                   <http://example.org/InputFile> ;
                                                          <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                                         <http://schema.org/sha256> "613f4dee243d9cd03b4690c64b629dfd11b7d378a3ed96666d341d7f2047218d" ;
                                                          <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRCCML1stdef2TZVPPb.inp" ;
                                                          rdfs:label "Input file caa005bIRCCML1stdef2TZVPPb" .
 
@@ -8048,6 +8137,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRCCML1stdef2TZVPPb_log> rdf:type owl:NamedIndividual ,
                                                                   <http://example.org/LogFile> ;
                                                          <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa005bIRCCML1stdef2TZVPPb> ;
+                                                         <http://schema.org/sha256> "0d7c9cbc31ff5f59f518543befbd774fd9949620c9b645416b7ca5138471f81a" ;
                                                          <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML1stdef2TZVPPb.log" ;
                                                          rdfs:label "Output log caa005bIRCCML1stdef2TZVPPb" .
 
@@ -8063,6 +8153,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRCCML1stdef2TZVPPc_inp> rdf:type owl:NamedIndividual ,
                                                                   <http://example.org/InputFile> ;
                                                          <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                                         <http://schema.org/sha256> "f165ca86031f570c00d47c548be4a8e270008bb4ec3004a00c9a80ae67ab188a" ;
                                                          <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRCCML1stdef2TZVPPc.inp" ;
                                                          rdfs:label "Input file caa005bIRCCML1stdef2TZVPPc" .
 
@@ -8071,6 +8162,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRCCML1stdef2TZVPPc_log> rdf:type owl:NamedIndividual ,
                                                                   <http://example.org/LogFile> ;
                                                          <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa005bIRCCML1stdef2TZVPPc> ;
+                                                         <http://schema.org/sha256> "338b062bfc41300d40f1a9c3f07361136761e3187164efdeea41eadb6a07a5c6" ;
                                                          <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML1stdef2TZVPPc.log" ;
                                                          rdfs:label "Output log caa005bIRCCML1stdef2TZVPPc" .
 
@@ -8086,6 +8178,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRCCML1stdef2TZVPPd_inp> rdf:type owl:NamedIndividual ,
                                                                   <http://example.org/InputFile> ;
                                                          <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                                         <http://schema.org/sha256> "1ea8508735a6d27f465ff9d8ad9490fdf58a4e6b36b55e5d8c0706c6f8812a91" ;
                                                          <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRCCML1stdef2TZVPPd.inp" ;
                                                          rdfs:label "Input file caa005bIRCCML1stdef2TZVPPd" .
 
@@ -8094,6 +8187,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRCCML1stdef2TZVPPd_log> rdf:type owl:NamedIndividual ,
                                                                   <http://example.org/LogFile> ;
                                                          <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa005bIRCCML1stdef2TZVPPd> ;
+                                                         <http://schema.org/sha256> "5ceceacc4575f36e71133ec12b577db324b6496b17e967f77cd4431f4b3b771c" ;
                                                          <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML1stdef2TZVPPd.log" ;
                                                          rdfs:label "Output log caa005bIRCCML1stdef2TZVPPd" .
 
@@ -8109,6 +8203,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRCCML1stdef2TZVPPe_inp> rdf:type owl:NamedIndividual ,
                                                                   <http://example.org/InputFile> ;
                                                          <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                                         <http://schema.org/sha256> "1db57029a8396f14dc830d9c49c9c6a3a0dada7a60d013598e359fc0ee7b4987" ;
                                                          <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRCCML1stdef2TZVPPe.inp" ;
                                                          rdfs:label "Input file caa005bIRCCML1stdef2TZVPPe" .
 
@@ -8117,6 +8212,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRCCML1stdef2TZVPPe_log> rdf:type owl:NamedIndividual ,
                                                                   <http://example.org/LogFile> ;
                                                          <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa005bIRCCML1stdef2TZVPPe> ;
+                                                         <http://schema.org/sha256> "8eded2a0d8fe730a67ac81625b27ac125dcac46f77b2a78eacaf402104a4871d" ;
                                                          <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML1stdef2TZVPPe.log" ;
                                                          rdfs:label "Output log caa005bIRCCML1stdef2TZVPPe" .
 
@@ -8132,6 +8228,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRCCML_last_inp> rdf:type owl:NamedIndividual ,
                                                           <http://example.org/InputFile> ;
                                                  <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                                 <http://schema.org/sha256> "edf4be407ccf7289d82b13b37501d5833f1d51d89d85581a9f07f69fd0898bfd" ;
                                                  <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bIRCCML_last.inp" ;
                                                  rdfs:label "Input file caa005bIRCCML_last" .
 
@@ -8140,6 +8237,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bIRCCML_last_log> rdf:type owl:NamedIndividual ,
                                                           <http://example.org/LogFile> ;
                                                  <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa005bIRCCML_last> ;
+                                                 <http://schema.org/sha256> "3e9708a2bc01a85717a9a733a6770c2234ace493c065b2f0d3aef47fd925fb2f" ;
                                                  <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bIRCCML_last.log" ;
                                                  rdfs:label "Output log caa005bIRCCML_last" .
 
@@ -8155,6 +8253,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bTSaIRCb_inp> rdf:type owl:NamedIndividual ,
                                                       <http://example.org/InputFile> ;
                                              <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                             <http://schema.org/sha256> "7e75604f774aa1565f01500d4d5bf76532fc1181c3349ab057bdcb51665d148b" ;
                                              <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bTSaIRCb.inp" ;
                                              rdfs:label "Input file caa005bTSaIRCb" .
 
@@ -8163,6 +8262,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bTSaIRCb_log> rdf:type owl:NamedIndividual ,
                                                       <http://example.org/LogFile> ;
                                              <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa005bTSaIRCb> ;
+                                             <http://schema.org/sha256> "527e137bb7dc119e5ea7763ad63cb4b0159cfd887d90a4db83e00d7a963b9785" ;
                                              <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bTSaIRCb.log" ;
                                              rdfs:label "Output log caa005bTSaIRCb" .
 
@@ -8178,6 +8278,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bTSaIRCf_inp> rdf:type owl:NamedIndividual ,
                                                       <http://example.org/InputFile> ;
                                              <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                             <http://schema.org/sha256> "1085be98c6bad4fdc9d5b8bb6dd64f6360eca2148a3fb34e29cfb9064afba6f1" ;
                                              <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bTSaIRCf.inp" ;
                                              rdfs:label "Input file caa005bTSaIRCf" .
 
@@ -8186,6 +8287,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bTSaIRCf_log> rdf:type owl:NamedIndividual ,
                                                       <http://example.org/LogFile> ;
                                              <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa005bTSaIRCf> ;
+                                             <http://schema.org/sha256> "62e0743b76cf1065e0db60f69deb24b6758b7ecbca072d226fed5b764ebea0ff" ;
                                              <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bTSaIRCf.log" ;
                                              rdfs:label "Output log caa005bTSaIRCf" .
 
@@ -8201,6 +8303,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bTSa_inp> rdf:type owl:NamedIndividual ,
                                                   <http://example.org/InputFile> ;
                                          <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                         <http://schema.org/sha256> "e3426c66e6be1f5956e4d518ddebd2cda629521eb7c2db12112f17aeca567239" ;
                                          <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bTSa.inp" ;
                                          rdfs:label "Input file caa005bTSa" .
 
@@ -8209,6 +8312,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bTSa_log> rdf:type owl:NamedIndividual ,
                                                   <http://example.org/LogFile> ;
                                          <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa005bTSa> ;
+                                         <http://schema.org/sha256> "db091b79ade8a0cd8770df107a8db0c181182ef3fa235fdc6038c910fe2220dd" ;
                                          <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bTSa.log" ;
                                          rdfs:label "Output log caa005bTSa" .
 
@@ -8224,6 +8328,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bTSb-hess_inp> rdf:type owl:NamedIndividual ,
                                                        <http://example.org/InputFile> ;
                                               <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                              <http://schema.org/sha256> "7d3a38897b2cd5d34630f722c9fd84f456f878ef6030cf2b20393ec884753443" ;
                                               <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bTSb-hess.inp" ;
                                               rdfs:label "Input file caa005bTSb-hess" .
 
@@ -8232,6 +8337,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bTSb-hess_log> rdf:type owl:NamedIndividual ,
                                                        <http://example.org/LogFile> ;
                                               <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa005bTSb-hess> ;
+                                              <http://schema.org/sha256> "c0ce43e8d0325f9118b1c0def8248c193eb686eae5db3a14f2c85ef597b5c11a" ;
                                               <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bTSb-hess.log" ;
                                               rdfs:label "Output log caa005bTSb-hess" .
 
@@ -8247,6 +8353,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bTSb-pcseg2_inp> rdf:type owl:NamedIndividual ,
                                                          <http://example.org/InputFile> ;
                                                 <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                                <http://schema.org/sha256> "5c43e27ebb82df6644b00741cef65410fcdeb4e5dc1684b50a7ce15cc9abd6ec" ;
                                                 <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bTSb-pcseg2.inp" ;
                                                 rdfs:label "Input file caa005bTSb-pcseg2" .
 
@@ -8255,6 +8362,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bTSb-pcseg2_log> rdf:type owl:NamedIndividual ,
                                                          <http://example.org/LogFile> ;
                                                 <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa005bTSb-pcseg2> ;
+                                                <http://schema.org/sha256> "b87d89ea9a487d2d0f98135ea130dfb3733b78b136273a7941657e229363aa68" ;
                                                 <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bTSb-pcseg2.log" ;
                                                 rdfs:label "Output log caa005bTSb-pcseg2" .
 
@@ -8270,6 +8378,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bTSb_inp> rdf:type owl:NamedIndividual ,
                                                   <http://example.org/InputFile> ;
                                          <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                         <http://schema.org/sha256> "95f3bb34eb0a66644003e63851b39bae716816bfce7103c75bb33c1a593d856f" ;
                                          <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005bTSb.inp" ;
                                          rdfs:label "Input file caa005bTSb" .
 
@@ -8278,6 +8387,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005bTSb_log> rdf:type owl:NamedIndividual ,
                                                   <http://example.org/LogFile> ;
                                          <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa005bTSb> ;
+                                         <http://schema.org/sha256> "754058bc6e48016d96aaccd27dc775cb8feb3bf6e2b281b98585eea3e9bdbe29" ;
                                          <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005bTSb.log" ;
                                          rdfs:label "Output log caa005bTSb" .
 
@@ -8293,6 +8403,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005b_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                      <http://schema.org/sha256> "1942047a15629e372d8c58de16990800bff63fec01a521debad80250beb00819" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa005b.inp" ;
                                       rdfs:label "Input file caa005b" .
 
@@ -8301,6 +8412,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa005b_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa005b> ;
+                                      <http://schema.org/sha256> "7cc41b3198a85bafb39a61fe3cd0fe3125bbfeed866dc5eb0497338a96481198" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa005b.log" ;
                                       rdfs:label "Output log caa005b" .
 
@@ -8316,6 +8428,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa006a_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                      <http://schema.org/sha256> "287bdb9b75c2fc737b7d188c9ab036f6bdc54ae5324f3d78ba2b2e9f62b945fe" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa006a.inp" ;
                                       rdfs:label "Input file caa006a" .
 
@@ -8324,6 +8437,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa006a_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa006a> ;
+                                      <http://schema.org/sha256> "202650957c2a8194e7169383d3dc5afd210ec4ff7f5049017bd54efceb097e99" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa006a.log" ;
                                       rdfs:label "Output log caa006a" .
 
@@ -8339,6 +8453,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa006b_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa006a> ;
+                                      <http://schema.org/sha256> "987c372be06e3e0e31e2b6cf5347fbb4a2f7860da19ef9f047f8e635d7da55be" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa006b.inp" ;
                                       rdfs:label "Input file caa006b" .
 
@@ -8347,6 +8462,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa006b_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa006b> ;
+                                      <http://schema.org/sha256> "55627e65a43d58f20c0738702c4979f6062990725f620af8b268dc893fb20de5" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa006b.log" ;
                                       rdfs:label "Output log caa006b" .
 
@@ -8362,6 +8478,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa006c_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa006b> ;
+                                      <http://schema.org/sha256> "e8d777ac574efa05d2638046afe751b4d2d383b2f7b5aedf5c953f0c589ea657" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa006c.inp" ;
                                       rdfs:label "Input file caa006c" .
 
@@ -8370,6 +8487,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa006c_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa006c> ;
+                                      <http://schema.org/sha256> "4c54491a2810bd9746abd4460eb6b212d4075c04e3b8fe25681fba7d27602d72" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa006c.log" ;
                                       rdfs:label "Output log caa006c" .
 
@@ -8385,6 +8503,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa007a-pcseg2_inp> rdf:type owl:NamedIndividual ,
                                                       <http://example.org/InputFile> ;
                                              <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                             <http://schema.org/sha256> "07608cac5ff5567d0965a8b6318a8876f6aa012c711cc9069e9cf9c2cfb40de8" ;
                                              <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa007a-pcseg2.inp" ;
                                              rdfs:label "Input file caa007a-pcseg2" .
 
@@ -8393,6 +8512,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa007a-pcseg2_log> rdf:type owl:NamedIndividual ,
                                                       <http://example.org/LogFile> ;
                                              <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa007a-pcseg2> ;
+                                             <http://schema.org/sha256> "0201f06ad04a1d263d083f2f0eb77e2513730242e7f3bc736d8d1fd8d66318e9" ;
                                              <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa007a-pcseg2.log" ;
                                              rdfs:label "Output log caa007a-pcseg2" .
 
@@ -8408,6 +8528,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa007b-pcseg2_inp> rdf:type owl:NamedIndividual ,
                                                       <http://example.org/InputFile> ;
                                              <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                             <http://schema.org/sha256> "70ae823c70a28ab6407ec224f0e2e48c8b679f05b49bfc5048b4ee6a04e0fc4f" ;
                                              <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa007b-pcseg2.inp" ;
                                              rdfs:label "Input file caa007b-pcseg2" .
 
@@ -8416,6 +8537,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa007b-pcseg2_log> rdf:type owl:NamedIndividual ,
                                                       <http://example.org/LogFile> ;
                                              <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa007b-pcseg2> ;
+                                             <http://schema.org/sha256> "87558340902e3e6fd55498166f603d7951e005b1a65352e219c62f2bd92da566" ;
                                              <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa007b-pcseg2.log" ;
                                              rdfs:label "Output log caa007b-pcseg2" .
 
@@ -8431,6 +8553,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa007b_inp> rdf:type owl:NamedIndividual ,
                                                <http://example.org/InputFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                      <http://schema.org/sha256> "ba79bf214044b92e3596972e1231fba3666a9181314c51993449a201e644f61b" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa007b.inp" ;
                                       rdfs:label "Input file caa007b" .
 
@@ -8439,6 +8562,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa007b_log> rdf:type owl:NamedIndividual ,
                                                <http://example.org/LogFile> ;
                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa007b> ;
+                                      <http://schema.org/sha256> "0b3ee45312892058554fd1944a5c3b8788aef3d2f0aab71dc1b67e8f8cc6a333" ;
                                       <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa007b.log" ;
                                       rdfs:label "Output log caa007b" .
 
@@ -8454,6 +8578,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa008-aldehyde-bare_inp> rdf:type owl:NamedIndividual ,
                                                             <http://example.org/InputFile> ;
                                                    <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                                   <http://schema.org/sha256> "f4a6d75e3e0e6db9b71b4321e3eded811591313f2d79cdd6f7d96298684b6150" ;
                                                    <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa008-aldehyde-bare.inp" ;
                                                    rdfs:label "Input file caa008-aldehyde-bare" .
 
@@ -8462,6 +8587,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa008-aldehyde-bare_log> rdf:type owl:NamedIndividual ,
                                                             <http://example.org/LogFile> ;
                                                    <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa008-aldehyde-bare> ;
+                                                   <http://schema.org/sha256> "1e561b6b134a0a7c7ceb1c6edfbf6a51f821a7ed8936076d9e82eb2b3b3e7feb" ;
                                                    <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa008-aldehyde-bare.log" ;
                                                    rdfs:label "Output log caa008-aldehyde-bare" .
 
@@ -8477,6 +8603,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa008-aldehyde-pcseg2_inp> rdf:type owl:NamedIndividual ,
                                                               <http://example.org/InputFile> ;
                                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                                     <http://schema.org/sha256> "b9919c068ff2353da561a4cee5e86a590f7498a7b6cf35d6de5654202de11757" ;
                                                      <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa008-aldehyde-pcseg2.inp" ;
                                                      rdfs:label "Input file caa008-aldehyde-pcseg2" .
 
@@ -8485,6 +8612,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa008-aldehyde-pcseg2_log> rdf:type owl:NamedIndividual ,
                                                               <http://example.org/LogFile> ;
                                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa008-aldehyde-pcseg2> ;
+                                                     <http://schema.org/sha256> "878d7de3b83a980f52cde4aa4977633ac5c2bb9d6dd7ff5d8eb8fc76753e10bf" ;
                                                      <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa008-aldehyde-pcseg2.log" ;
                                                      rdfs:label "Output log caa008-aldehyde-pcseg2" .
 
@@ -8500,6 +8628,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa008-hydrate-bare_inp> rdf:type owl:NamedIndividual ,
                                                            <http://example.org/InputFile> ;
                                                   <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                                  <http://schema.org/sha256> "7ce4b8afe0adb4384df470db7f3a8cbb6b129c5dbdd986cdd658337780f57746" ;
                                                   <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa008-hydrate-bare.inp" ;
                                                   rdfs:label "Input file caa008-hydrate-bare" .
 
@@ -8508,6 +8637,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa008-hydrate-bare_log> rdf:type owl:NamedIndividual ,
                                                            <http://example.org/LogFile> ;
                                                   <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa008-hydrate-bare> ;
+                                                  <http://schema.org/sha256> "29424ff5fae2ada61ea84c18b0e9f7199615d3404630d94e873f69f7fb7440d1" ;
                                                   <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa008-hydrate-bare.log" ;
                                                   rdfs:label "Output log caa008-hydrate-bare" .
 
@@ -8523,6 +8653,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa008-hydrate-pcseg2_inp> rdf:type owl:NamedIndividual ,
                                                              <http://example.org/InputFile> ;
                                                     <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                                    <http://schema.org/sha256> "1b3dff22040e6d3e0dd24182f4d6ab14328f61d5fd55c6e6a46e3d5e43315f6e" ;
                                                     <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa008-hydrate-pcseg2.inp" ;
                                                     rdfs:label "Input file caa008-hydrate-pcseg2" .
 
@@ -8531,6 +8662,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa008-hydrate-pcseg2_log> rdf:type owl:NamedIndividual ,
                                                              <http://example.org/LogFile> ;
                                                     <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa008-hydrate-pcseg2> ;
+                                                    <http://schema.org/sha256> "d86381b7448abd2f04b2c5affc33f67b7e0cb41351a9bce92b828909e0eec631" ;
                                                     <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa008-hydrate-pcseg2.log" ;
                                                     rdfs:label "Output log caa008-hydrate-pcseg2" .
 
@@ -8546,6 +8678,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa008-water-bare_inp> rdf:type owl:NamedIndividual ,
                                                          <http://example.org/InputFile> ;
                                                 <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                                <http://schema.org/sha256> "36556e9bc2fe45e3d84e639776c1d85bc20f4ac00f4b4998e5f4c1a90c02286a" ;
                                                 <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa008-water-bare.inp" ;
                                                 rdfs:label "Input file caa008-water-bare" .
 
@@ -8554,6 +8687,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa008-water-bare_log> rdf:type owl:NamedIndividual ,
                                                          <http://example.org/LogFile> ;
                                                 <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa008-water-bare> ;
+                                                <http://schema.org/sha256> "c16f8061c9f8bfc1a6b5de4f701ac17b29a7f218ebf2767544ace045771f9221" ;
                                                 <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa008-water-bare.log" ;
                                                 rdfs:label "Output log caa008-water-bare" .
 
@@ -8569,6 +8703,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa008-water-pcseg2_inp> rdf:type owl:NamedIndividual ,
                                                            <http://example.org/InputFile> ;
                                                   <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/avogadro_build> ;
+                                                  <http://schema.org/sha256> "f9fe2643e3e30d94ab4dc1020a7d4b0e6781295cfcacac7b66790b928f386b93" ;
                                                   <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/inputs/caa008-water-pcseg2.inp" ;
                                                   rdfs:label "Input file caa008-water-pcseg2" .
 
@@ -8577,6 +8712,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_caa008-water-pcseg2_log> rdf:type owl:NamedIndividual ,
                                                            <http://example.org/LogFile> ;
                                                   <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_caa008-water-pcseg2> ;
+                                                  <http://schema.org/sha256> "3ae39236971a2ccf9ccde48c9da96bc5dbbf4c9fa580df117235d14e91edd91f" ;
                                                   <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/caa/outputs/caa008-water-pcseg2.log" ;
                                                   rdfs:label "Output log caa008-water-pcseg2" .
 
