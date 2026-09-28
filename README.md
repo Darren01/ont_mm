@@ -362,6 +362,8 @@ got the code in Step 1.
 paths <- c(
   "gamess_functions/R/gamess_input_utils.R",
   "gamess_functions/R/classify_gamess_jobs.R",
+  "gamess_functions/R/extract_basis.R",
+  "gamess_functions/R/extract_level_of_theory.R",
   "gamess_functions/R/extract_ir_spectrum.R",
   "gamess_functions/R/extract_ir_diagnostics.R",
   "gamess_functions/R/extract_thermochemistry.R",
@@ -386,6 +388,15 @@ paths <- c(
   "ont_mm/scripts/process_gamess_directory.R"
 )
 ```
+
+If a later step fails with `could not find function "some_name"`, the
+file that defines it is almost certainly missing from this list -
+most likely because it was added to the repo after you first copied
+the list. `extract_level_of_theory.R` (which needs `extract_basis.R`
+alongside it, since it reuses that file's own basis-set parsing) was
+exactly this: added later, so any copy of this list from before then
+will fail at `process_experiments()` with
+`could not find function "extract_level_of_theory_parts"`.
 
 **Option A (cloned):**
 
