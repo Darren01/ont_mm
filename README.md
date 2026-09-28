@@ -279,7 +279,17 @@ my_output_dir    <- strip_trailing_slash("/path/to/your/output/folder")   # .log
 my_data_dir      <- strip_trailing_slash("/path/to/your/dat/folder")      # .dat files - see the note below if you don't have one
 my_ontology_dir  <- strip_trailing_slash("/path/to/where/you/want/the/instance/data")
 my_graph_file    <- file.path(my_ontology_dir, "your_graph_YYYYMMDD.ttl")   # dated, same convention as releases/
-my_release_file  <- file.path(my_ontology_dir, "gc_core.ttl")
+
+# Option A (cloned): the release and the small extensions file both came
+# with the clone - point straight at them, nothing to download. (For a real
+# project you may prefer to copy gc_core.ttl into your own ontology folder,
+# so the exact release you built against travels with your data.)
+my_release_file    <- file.path(my_code_dir, "ont_mm/releases/2026-08-08/gc_core.ttl")
+my_extensions_file <- file.path(my_code_dir, "ont_mm/schema_terms.ttl")
+# Option B (no clone): Step 4 downloads both into your ontology folder.
+# Comment out the two Option A lines above and use these instead:
+# my_release_file    <- file.path(my_ontology_dir, "gc_core.ttl")
+# my_extensions_file <- file.path(my_ontology_dir, "schema_terms.ttl")
 
 # Option A (cloned):
 my_experiment_template <- file.path(my_code_dir, "ont_mm/templates/experiment_template.tsv")
@@ -330,6 +340,22 @@ check_robot_setup()
 # check_robot_setup(java_path = "C:/path/to/java11/bin/java.exe")
 ```
 
+### 1d. Check the one R package it needs
+
+Building the instance data records a SHA-256 checksum for every input,
+log and data file, using R's `digest` package - the only package
+outside base R that the main pipeline needs. Worth checking now,
+rather than finding out when Step 3 stops:
+
+```r
+if (!requireNamespace("digest", quietly = TRUE)) install.packages("digest")
+```
+
+Without it, `process_experiments()` - the first thing Step 3 runs -
+fails straight away with `there is no package called 'digest'`. (The
+optional DOI-notes feature, `fetch_doi_metadata()`, separately needs
+`jsonlite`, and says so itself if it's missing.)
+
 ### 2. Classify your files first - just to see what's there
 
 Before running anything else, get a quick inventory of what job types
@@ -366,6 +392,7 @@ paths <- c(
   "gamess_functions/R/extract_level_of_theory.R",
   "gamess_functions/R/extract_ir_spectrum.R",
   "gamess_functions/R/extract_ir_diagnostics.R",
+  "gamess_functions/R/identify_diagnostic_modes.R",
   "gamess_functions/R/extract_thermochemistry.R",
   "gamess_functions/R/extract_electronic_energy.R",
   "gamess_functions/R/extract_irc_trajectory.R",
@@ -385,7 +412,8 @@ paths <- c(
   "ont_mm/scripts/process_electronic_energy_results.R",
   "ont_mm/scripts/process_reaction_path_results.R",
   "ont_mm/scripts/process_contraints.R",
-  "ont_mm/scripts/process_gamess_directory.R"
+  "ont_mm/scripts/process_gamess_directory.R",
+  "ont_mm/scripts/filter_vibrational_modes.R"
 )
 ```
 
@@ -548,6 +576,37 @@ something invented for this project. `build_ontology_graph()` in the
 next step picks this file up automatically alongside everything else,
 as long as it's sitting in `my_ontology_dir` under this exact filename.
 
+### 3c. Optional: keep only the vibrational modes that matter
+
+By default, every vibrational mode from every frequency calculation
+goes into the graph - typically the bulk of its peak data, and almost
+all of it never queried. `filter_vibrational_modes()` keeps only the
+diagnostically useful ones - the imaginary frequencies, and GAMESS's
+own translation/rotation modes - and rewrites the spectra, peak and
+float-value instance files in place. On the bundled examples it cut
+the peak rows from 1191 to 208 (`caa`) and from 489 to 96 (`aa`), with
+every imaginary frequency still present. Nothing is lost for good: the
+full mode list stays in the `.log` file each experiment links to via
+`prov:generated`. (The reasoning behind keeping results rather than
+raw output is at the top of
+[COMPETENCY_QUESTIONS.md](./COMPETENCY_QUESTIONS.md).)
+
+Its two files (`identify_diagnostic_modes.R` and
+`filter_vibrational_modes.R`) are already in Step 3's list, so there's
+nothing more to source. Run it after Step 3 and before Step 4:
+
+```r
+filter_result <- filter_vibrational_modes(
+  ontology_dir = my_ontology_dir,
+  output_dir = my_output_dir
+)
+```
+
+Safe to run more than once. To get the unfiltered version back, delete
+the spectra, peak and float-value `*_instances.tsv` files and re-run
+Step 3 (which skips experiments already present, so the files have to
+go first).
+
 ### 4. Build the queryable graph
 
 **Option A (cloned):**
@@ -605,13 +664,36 @@ system(paste0(
 ))
 ```
 
+If you didn't clone, download the small extensions file the same way
+(`schema_terms.ttl` - explained just below). The same SSL notes apply,
+so use whichever method worked for the release file, adding
+`method = "wininet"` if that's what it was:
+
+```r
+download.file(
+  "https://raw.githubusercontent.com/Darren01/ont_mm/master/schema_terms.ttl",
+  destfile = my_extensions_file
+)
+```
+
+`extensions_file` is a small file declaring `schema:sha256`, the
+property each file's checksum is recorded with. It's optional - leave
+it out and the build still works - but then `schema:sha256` is
+auto-declared with no domain, range or description, and nothing tells
+you. It's kept separate from `release_file` deliberately: that's a
+versioned upstream release, and this project's own additions shouldn't
+be edited into it. Passing it also writes a `release_with_extensions.ttl`
+into `my_ontology_dir` - an intermediate file, regenerated on every
+build, safe to ignore.
+
 Then:
 
 ```r
 build_ontology_graph(
   ontology_dir = my_ontology_dir,
   release_file = my_release_file,
-  output_file  = my_graph_file
+  output_file  = my_graph_file,
+  extensions_file = my_extensions_file
 )
 ```
 
@@ -664,10 +746,11 @@ print(shorten_uris(res))
 
 ### 5b. Building additional projects
 
-Everything above is a one-time setup - `my_code_dir` and `release_file`
-don't change per project, only your actual data does. Once Steps 1-1c
-are done, building (or rebuilding) a *different* project doesn't need
-the full walkthrough again - just fresh data paths and one call:
+Everything above is a one-time setup - `my_code_dir`, `my_release_file`
+and `my_extensions_file` don't change per project, only your actual
+data does. Once Steps 1-1c are done, building (or rebuilding) a
+*different* project doesn't need the full walkthrough again - just
+fresh data paths and one call:
 
 ```r
 my_input_dir    <- "/path/to/a/different/project/inputs"
@@ -692,11 +775,15 @@ result <- process_gamess_directory(
   experiment_template_file = my_experiment_template
 )
 
+# Optional, see Step 3c:
+filter_vibrational_modes(ontology_dir = my_ontology_dir, output_dir = my_output_dir)
+
 source(file.path(my_code_dir, "ont_mm/scripts/build_ontology_graph.R"))
 build_ontology_graph(
   ontology_dir = my_ontology_dir,
-  release_file = release_file,
-  output_file  = my_graph_file
+  release_file = my_release_file,
+  output_file  = my_graph_file,
+  extensions_file = my_extensions_file
 )
 ```
 
@@ -705,6 +792,10 @@ somewhere for each real project you work on (outside any git repo if
 the data is confidential, same as always) - it becomes your quick
 "rebuild this project" command whenever new runs are added, without
 re-deriving the sequence from scratch each time.
+
+If that script will be run repeatedly on the same folder (say, weekly),
+read [Updating an existing graph](#updating-an-existing-graph-eg-weekly)
+first - re-running is safe, but not always correct.
 
 ### Step 5 (optional, recommended): validate the graph
 
@@ -802,6 +893,111 @@ it calls bare `java`, relying entirely on `PATH`. Because of this,
 correctly either way - but if you ever set `JAVA_HOME` manually
 yourself outside this function on Windows, know that it won't do
 anything for `shacl.bat` specifically.
+
+### Step 6 (optional): add a reasoned graph
+
+The graph from Step 4 holds only what was directly asserted. A reasoner
+(HermiT, run through `robot`) can add what follows logically from
+`dl_axioms.ttl` - most usefully, marking every peak with a negative
+frequency as an `ex:ImaginaryFrequencyPeak`, so "which results show an
+imaginary frequency?" becomes `?peak a ex:ImaginaryFrequencyPeak`
+instead of a numeric filter (and its `xsd:decimal`/`xsd:float`
+gotcha). It also checks the graph against the axiom that no experiment
+can be more than one of the five experiment types; a genuine
+inconsistency stops the build and prints the `robot explain` command
+that shows why.
+
+The result is a *separate* file - the asserted graph stays untouched,
+and stays what SHACL validates. The playground's "(reasoned)" datasets
+load graphs built this way, if you want to see the difference side by
+side.
+
+**Option A (cloned):**
+```r
+source(file.path(my_code_dir, "gamess_functions/R/build_reasoned_graph.R"))
+my_dl_axioms_file <- file.path(my_code_dir, "ont_mm/dl_axioms.ttl")
+```
+
+**Option B (no clone):**
+```r
+source_github("gamess_functions", "R/build_reasoned_graph.R")
+my_dl_axioms_file <- file.path(my_ontology_dir, "dl_axioms.ttl")
+download.file(
+  "https://raw.githubusercontent.com/Darren01/ont_mm/master/dl_axioms.ttl",
+  destfile = my_dl_axioms_file
+)   # robot reads it, so like release_file it has to be a real local file
+```
+
+Then:
+
+```r
+build_reasoned_graph(
+  asserted_graph_file = my_graph_file,
+  extensions_file = my_dl_axioms_file,
+  output_file = sub("\\.ttl$", "_reasoned.ttl", my_graph_file)
+)
+```
+
+(`extensions_file` here is the DL axioms; in Step 4 the same argument
+name takes the schema-term declarations - different file, same name.)
+This is real reasoning, not a quick check: expect several minutes on a
+full graph (about six for the bundled `caa` graph, in testing), and it
+needs the same `robot`/Java setup as Step 1c.
+
+### Updating an existing graph (e.g. weekly)
+
+Re-running the steps on a folder that already has instance data is
+safe, but whether the result is *correct* depends on what changed
+since the last build. `process_gamess_directory()` skips any experiment
+already in the results instance files (see the gotcha in Step 3), but
+rewrites `experiment_template_instances.tsv` from scratch every time -
+recomputing every file's checksum as it goes. So:
+
+- **Only new runs were added:** just re-run. New experiments are
+  added, existing ones are left alone.
+- **You pulled updated code:** existing rows keep the old code's
+  output (the Step 3 gotcha).
+- **A calculation was re-run, or a `.log`/`.inp`/`.dat` file was
+  edited or replaced:** the checksum updates, but the values extracted
+  from that file (energies, frequencies, ...) are *not* re-extracted,
+  because that experiment is still "already present". The graph quietly
+  ends up holding the new file's fingerprint next to the old file's
+  results - which defeats what the checksum is for.
+
+For either of the last two cases - and as a simple default for a
+scheduled rebuild, since it's cheap next to the reasoning in Step 6 -
+do a clean rebuild: clear the *generated* instance files, then re-run.
+Look at what matches first:
+
+```r
+list.files(my_ontology_dir, pattern = "_instances\\.tsv$", full.names = TRUE)
+```
+
+then remove them:
+
+```r
+unlink(list.files(my_ontology_dir, pattern = "_instances\\.tsv$", full.names = TRUE))
+```
+
+The pattern is deliberate. It removes only the generated
+`*_instances.tsv` files - **not** `*.tsv`, because `run_notes.tsv`
+(Step 3b) is the one file in that folder you write by hand and can't
+regenerate (along with anything else of your own you keep there).
+Everything else - the `*_template.ttl` files,
+`release_with_extensions.ttl`, the graph itself - is overwritten by the
+next build, so there's nothing more to clear.
+
+A weekly routine, then:
+
+1. If you cloned, `git pull` both repos - and re-check your Step 3 file
+   list against this README's, since it has gone stale before.
+2. Clear the instance files, as above.
+3. Re-run Step 3 (process), 3c (filter, if you use it) and 3b
+   (annotations), then Step 4 (build).
+4. Step 5 (validate), and Step 6 if you use reasoned graphs - **every
+   time**. A reasoned graph is a snapshot of the asserted graph it was
+   built from, so it goes stale the moment that graph is rebuilt, with
+   no warning.
 
 ## 🚀 Quick Start (the bundled example)
 
