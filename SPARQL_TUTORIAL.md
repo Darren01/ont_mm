@@ -802,11 +802,361 @@ Both return an empty table with no complaint. When you get one, check the names 
 
 Four habits carry over to everything else: explore in scratch and keep only what earns its place, put the prefix block at the top, look at what came back before writing the next query, and when a name is unfamiliar, ask the graph what it is.
 
+## Chapter 2 - Following links, and finding what's missing
+
+Chapter 1 ended on a discovery: a frequency isn't a number, it's a `FloatValue` thing, one hop away. This chapter follows that hop, and several more like it - from a single value, up to an experiment's own results, up again to the files behind them, and finally out to a value in a completely different graph on the other side of the web.
+
+Same tools as before: `arq` (or `robot query`), the `~/queries/prefixes.txt` file from Chapter 1, and the `ask`/`ask2` shortcuts if you kept them. Every query below ran against the same published `aa` graph, and every result shown is real.
+
+---
+
+## Step 1 - Follow one link
+
+Take one real peak, `ex:peak_aa001a_1`, and its frequency property:
+
+```sparql
+SELECT ?fv WHERE { ex:peak_aa001a_1 gc:hasFrequency ?fv }
+```
+
+```text
+-----------------------
+| fv                  |
+=======================
+| ex:freqval_aa001a_1 |
+-----------------------
+```
+
+That's not the frequency itself - it's the address of a `FloatValue` node. Ask *that* node what it holds:
+
+```sparql
+SELECT ?p ?v WHERE { ex:freqval_aa001a_1 ?p ?v }
+```
+
+```text
+------------------------------------------------
+| p                | v                         |
+================================================
+| rdfs:label       | "Frequency mode 1 aa001a" |
+| gc:hasFloatValue | "-1314.49"^^xsd:float     |
+| gc:hasUnit       | gc:cm-1                   |
+| rdf:type         | gc:FloatValue             |
+| rdf:type         | owl:NamedIndividual       |
+------------------------------------------------
+```
+
+There it is: `-1314.49`, in `gc:cm-1`. Two queries, one plain, unglamorous idea: the object of one triple can be the subject of the next, because in RDF an object is never just a value sitting in a cell - it's a real, addressable thing, exactly like the subject was.
+
+**This is worth pausing on**, because it isn't a quirk of this particular ontology. A traditional, flat database would store `-1314.49` as a number in a column, full stop - asking for its unit would mean going and finding the column's own documentation, somewhere else entirely, hoping it hadn't changed since. Here the unit is *in the graph*, one hop from the number itself, because that's what "linked" means in linked data: a value can be a real thing in its own right, with its own further facts attached, addressable the same way anything else is. That's also the entire reason chaining works at all. You're not learning a clever trick - you're just following the data where it already points.
+
+---
+
+## Step 2 - Chain it into one query
+
+Same question, one query. `;` means "same subject again", so a chain of properties can share one variable without repeating it:
+
+```sparql
+SELECT ?freq ?unit WHERE {
+  ex:peak_aa001a_1 gc:hasFrequency ?fv .
+  ?fv gc:hasFloatValue ?freq ;
+      gc:hasUnit ?unit .
+}
+```
+
+```text
+-----------------------------------
+| freq                  | unit    |
+===================================
+| "-1314.49"^^xsd:float | gc:cm-1 |
+-----------------------------------
+```
+
+Read the middle line as "some `?fv`, reached via `gc:hasFrequency`, which itself has a `gc:hasFloatValue` and a `gc:hasUnit`". Nothing new happened here that didn't already happen in Step 1 - the two queries are the same journey, just written as one hop instead of two.
+
+---
+
+## Step 3 - From an experiment down to its results
+
+Peaks don't float free in the graph; an experiment has results, and results have peaks. Follow the whole thing from the top:
+
+```sparql
+SELECT ?p ?v WHERE { ex:exp_aa001a ?p ?v } ORDER BY ?p
+```
+
+Among the answers (Chapter 1's "everything about one thing" question, still the right first move on anything unfamiliar) is `gc:hasResult ex:spectrum_aa001a`. Ask what *that* holds:
+
+```sparql
+SELECT ?p ?v WHERE { ex:spectrum_aa001a ?p ?v } ORDER BY ?p
+```
+
+```text
+-------------------------------------------------------
+| p                   | v                             |
+=======================================================
+| gc:hasFrequencyPeak | ex:peak_aa001a_1              |
+| gc:hasFrequencyPeak | ex:peak_aa001a_2              |
+| gc:hasFrequencyPeak | ex:peak_aa001a_3              |
+| gc:hasFrequencyPeak | ex:peak_aa001a_4              |
+| gc:hasFrequencyPeak | ex:peak_aa001a_5              |
+| gc:hasFrequencyPeak | ex:peak_aa001a_6              |
+| gc:hasFrequencyPeak | ex:peak_aa001a_7              |
+| rdf:type            | gc:VibrationalSpectra         |
+| rdf:type            | owl:NamedIndividual           |
+| rdfs:label          | "Vibrational spectrum aa001a" |
+-------------------------------------------------------
+```
+
+Seven peaks. Chain the whole route - experiment, to spectrum, to peak, to frequency value - in one query, and ask a real question of it: which mode has the lowest frequency?
+
+```sparql
+SELECT ?peak ?freq ?unit WHERE {
+  ex:exp_aa001a gc:hasResult ?spec .
+  ?spec gc:hasFrequencyPeak ?peak .
+  ?peak gc:hasFrequency ?fv .
+  ?fv gc:hasFloatValue ?freq ;
+      gc:hasUnit ?unit .
+}
+ORDER BY ?freq
+LIMIT 5
+```
+
+```text
+------------------------------------------------------
+| peak             | freq                  | unit    |
+======================================================
+| ex:peak_aa001a_1 | "-1314.49"^^xsd:float | gc:cm-1 |
+| ex:peak_aa001a_6 | "0.12"^^xsd:float     | gc:cm-1 |
+| ex:peak_aa001a_5 | "0.3"^^xsd:float      | gc:cm-1 |
+| ex:peak_aa001a_7 | "1.29"^^xsd:float     | gc:cm-1 |
+| ex:peak_aa001a_4 | "42.77"^^xsd:float    | gc:cm-1 |
+------------------------------------------------------
+```
+
+Same idea as Step 2, just more hops - nothing new to learn, only more to follow. And the answer is a real one: this experiment has a genuine imaginary frequency, `-1314.49 cm-1`, the negative sign meaning exactly what it means in the vibrational-analysis output this graph was built from.
+
+**With robot:** the same query works unchanged; only the printed addresses are full-length rather than shortened:
+
+```text
+?peak	?freq	?unit
+<http://example.org/peak_aa001a_1>	"-1314.49"^^<http://www.w3.org/2001/XMLSchema#float>	<http://purl.org/gc/cm-1>
+<http://example.org/peak_aa001a_6>	"0.12"^^<http://www.w3.org/2001/XMLSchema#float>	<http://purl.org/gc/cm-1>
+<http://example.org/peak_aa001a_5>	"0.3"^^<http://www.w3.org/2001/XMLSchema#float>	<http://purl.org/gc/cm-1>
+<http://example.org/peak_aa001a_7>	"1.29"^^<http://www.w3.org/2001/XMLSchema#float>	<http://purl.org/gc/cm-1>
+<http://example.org/peak_aa001a_4>	"42.77"^^<http://www.w3.org/2001/XMLSchema#float>	<http://purl.org/gc/cm-1>
+```
+
+---
+
+## Step 4 - From an experiment up to its files
+
+Results trace down into the chemistry. Provenance traces up into the files that produced it. Two properties do this project's own version of that job, and Chapter 1 already met them by name: `prov:used` for what an experiment started from, `prov:generated` for what it produced.
+
+```sparql
+SELECT ?input WHERE { ex:exp_aa001a prov:used ?input }
+```
+
+```text
+----------------------
+| input              |
+======================
+| ex:file_aa001a_inp |
+----------------------
+```
+
+```sparql
+SELECT ?output WHERE { ex:exp_aa001a prov:generated ?output }
+ORDER BY ?output
+```
+
+```text
+----------------------
+| output             |
+======================
+| ex:file_aa001a_dat |
+| ex:file_aa001a_log |
+----------------------
+```
+
+One input, two outputs - a `.dat` and a `.log`, both real files on someone's disk, both now addressable, nameable things in the graph, exactly like the peaks and results above.
+
+---
+
+## Step 5 - What's missing
+
+The [checksum work](./GLOSSARY.md) recorded a `schema:sha256` on files like these, so you can confirm a file's real content hasn't silently changed. Ask for it the way Chapter 1 first asked for an optional label:
+
+```sparql
+SELECT ?output ?hash WHERE {
+  ex:exp_aa001a prov:generated ?output .
+  OPTIONAL { ?output schema:sha256 ?hash . }
+}
+ORDER BY ?output
+```
+
+```text
+-------------------------------------------------------------------------------------------
+| output             | hash                                                               |
+===========================================================================================
+| ex:file_aa001a_dat |                                                                    |
+| ex:file_aa001a_log | "ca9cf795626c1c861c4bb82b1c19c9cfa247ad01202666a558e7c475669ff930" |
+-------------------------------------------------------------------------------------------
+```
+
+The `.log` file has one. The `.dat` file doesn't - `OPTIONAL` means the row survives anyway, with that one column simply empty, rather than the whole file vanishing from the answer. That's a real, honest gap in this published graph, not a manufactured one: every `.dat` file here is missing a checksum, project-wide, for a genuine, traceable reason ([the README says why](./README.md)).
+
+Which raises the natural next question: not "does this one file have a checksum", but "which files don't". `OPTIONAL` plus `FILTER(!BOUND(...))` answers exactly that - get the value if there is one, then keep only the rows where there wasn't:
+
+```sparql
+SELECT ?file WHERE {
+  ?file a ex:DataFile .
+  OPTIONAL { ?file schema:sha256 ?h . }
+  FILTER(!BOUND(?h))
+}
+```
+
+```text
+----------------------------------------------
+| file                                       |
+==============================================
+| ex:file_aa002-aldehyde-pcseg2_dat          |
+| ex:file_aa001f_dat                         |
+| ex:file_aa002-hydrate-bare-smd_dat         |
+| ex:file_aa001d-smd-pcseg2_dat              |
+| ex:file_aa001e_dat                         |
+| ex:file_aa001b_dat                         |
+| ex:file_aa001d_dat                         |
+| ex:file_aa001g-smd-pcseg2_dat              |
+| ex:file_aa001c_dat                         |
+| ex:file_aa001a_dat                         |
+| ex:file_aa001g-smd_dat                     |
+| ex:file_aa002-aldehyde-bare_dat            |
+| ex:file_aa001h_dat                         |
+| ex:file_aa002-water-bare_dat               |
+| ex:file_aa001h-smd_dat                     |
+| ex:file_aa001g_dat                         |
+| ex:file_aa002-aldehyde-bare-smd-check_dat  |
+| ex:file_aa001h-pcseg2_dat                  |
+| ex:file_aa001-ts-pcseg2_dat                |
+| ex:file_aa001g-pcseg2_dat                  |
+| ex:file_aa002-aldehyde-bare-smd_dat        |
+| ex:file_aa002-aldehyde-bare-smd-hcore_dat  |
+| ex:file_aa002-aldehyde-bare-smd-energy_dat |
+| ex:file_aa002-hydrate-bare_dat             |
+| ex:file_aa001h-smd-pcseg2_dat              |
+| ex:file_aa002-water-bare-smd_dat           |
+| ex:file_aa002-hydrate-pcseg2_dat           |
+| ex:file_aa001d-smd_dat                     |
+| ex:file_aa002-water-pcseg2_dat             |
+| ex:file_aa001d-smd-hess_dat                |
+----------------------------------------------
+```
+
+> **With robot:** the same query, same result - 30 rows, one per `.dat` file, full addresses as always:
+>
+> ```text
+> ?file
+> <http://example.org/file_aa002-aldehyde-pcseg2_dat>
+> <http://example.org/file_aa001f_dat>
+> <http://example.org/file_aa002-hydrate-bare-smd_dat>
+> <http://example.org/file_aa001d-smd-pcseg2_dat>
+> <http://example.org/file_aa001e_dat>
+> <http://example.org/file_aa001b_dat>
+> <http://example.org/file_aa001d_dat>
+> <http://example.org/file_aa001g-smd-pcseg2_dat>
+> <http://example.org/file_aa001c_dat>
+> <http://example.org/file_aa001a_dat>
+> <http://example.org/file_aa001g-smd_dat>
+> <http://example.org/file_aa002-aldehyde-bare_dat>
+> <http://example.org/file_aa001h_dat>
+> <http://example.org/file_aa002-water-bare_dat>
+> <http://example.org/file_aa001h-smd_dat>
+> <http://example.org/file_aa001g_dat>
+> <http://example.org/file_aa002-aldehyde-bare-smd-check_dat>
+> <http://example.org/file_aa001h-pcseg2_dat>
+> <http://example.org/file_aa001-ts-pcseg2_dat>
+> <http://example.org/file_aa001g-pcseg2_dat>
+> <http://example.org/file_aa002-aldehyde-bare-smd_dat>
+> <http://example.org/file_aa002-aldehyde-bare-smd-hcore_dat>
+> <http://example.org/file_aa002-aldehyde-bare-smd-energy_dat>
+> <http://example.org/file_aa002-hydrate-bare_dat>
+> <http://example.org/file_aa001h-smd-pcseg2_dat>
+> <http://example.org/file_aa002-water-bare-smd_dat>
+> <http://example.org/file_aa002-hydrate-pcseg2_dat>
+> <http://example.org/file_aa001d-smd_dat>
+> <http://example.org/file_aa002-water-pcseg2_dat>
+> <http://example.org/file_aa001d-smd-hess_dat>
+> ```
+
+Thirty files, every `.dat` in this dataset. **Worth reading carefully, though: an empty result here is not automatically a problem.** This graph deliberately doesn't hold everything a `.log` file contains - `filter_vibrational_modes()`, used to build it, keeps only the imaginary frequencies and the six translation/rotation modes, not the full vibrational spectrum. That's not lost data; it's a map drawn at a scale that stays usable, with the full, unabridged territory still one hop away in the `.log` file itself, via `prov:generated`. Finding something absent from the graph tells you the graph doesn't index it - it doesn't yet tell you whether that's a genuine gap or a deliberate choice. The only way to tell them apart is the same principle either way: check whether the source file it points to still has it.
+
+---
+
+## Step 6 - The Wikidata payoff
+
+Chapter 1 asked Wikidata for acetone's density with the simple, direct form:
+
+```sparql
+SELECT ?density WHERE { wd:Q49546 wdt:P2054 ?density }
+```
+
+That's genuinely the `wdt:` ("truthy") shortcut - the single best-ranked value, with nothing else attached. The real statement behind it holds more, the same way `gc:hasFrequency` led somewhere rather than being a number itself. Wikidata's own version of that indirection uses different names - `p:` for the full statement, `psv:` for its value node, `wikibase:quantityAmount` and `wikibase:quantityUnit` for what that node holds - but it's the identical shape:
+
+```sparql
+PREFIX wd:  <http://www.wikidata.org/entity/>
+PREFIX p:   <http://www.wikidata.org/prop/>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+
+SELECT ?amount ?unit WHERE {
+  wd:Q49546 p:P2054 ?statement .
+  ?statement psv:P2054 ?value .
+  ?value wikibase:quantityAmount ?amount ;
+         wikibase:quantityUnit ?unit .
+}
+```
+
+```bash
+cat > /tmp/wd2.rq <<'EOF'
+PREFIX wd:  <http://www.wikidata.org/entity/>
+PREFIX p:   <http://www.wikidata.org/prop/>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+
+SELECT ?amount ?unit
+WHERE {
+  wd:Q49546 p:P2054 ?statement .
+  ?statement psv:P2054 ?value .
+  ?value wikibase:quantityAmount ?amount ;
+         wikibase:quantityUnit ?unit .
+}
+EOF
+
+curl -s -G https://query.wikidata.org/sparql -H 'Accept: text/csv' -A 'sparql-tutorial/0.1 (your-contact-here)' --data-urlencode query@/tmp/wd2.rq
+```
+
+```text
+amount,unit
+0.7902,http://www.wikidata.org/entity/Q13147228
+```
+
+`?unit` comes back as another Wikidata item address, `wd:Q13147228`, not a readable word - which is Step 4 of Chapter 1 again: ask that address what it is.
+
+```sparql
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?label WHERE { wd:Q13147228 rdfs:label ?label FILTER(LANG(?label) = "en") }
+```
+
+That returns "gram per cubic centimetre" - confirmed directly, the genuine SI unit for density, not a label to take on trust. **Worth being careful here, and not just skimming past it:** Wikidata's own page for that item describes it as the "SI unit of density", which is easy to misread on a first pass as the page being *about* density itself, rather than being the unit density happens to be measured in. The address is the only thing that's actually reliable; the description next to it is written for people, and people-language is exactly the kind of thing worth double-checking against the query rather than assuming.
+
+The same one habit, the same shape of query, answering the same kind of question, on a graph you didn't build and have never seen the inside of. That's the whole chapter in one sentence: once you can follow a link, it doesn't matter whose graph it is.
+
+---
+
+## What's still open
+
+Not everything a `.log` file contains belongs in the graph - Step 5 already touched on why. A full geometry trajectory, per-cycle SCF convergence, timing data: all real, all currently living only in the file, none of it indexed here. Whether more of it should be is a genuinely open, unresolved question, and probably doesn't have one right answer - it depends what a given user actually needs, which this project can't guess on their behalf. What `ont_mm` can promise is the map: a graph that tells you which file to open. What you do once you've opened it is a different tool's job.
+
 ## Where next
 
-- **Chapter 2 (to come):** following links from an experiment to its files, values that live inside their own nodes - ending with the unit on acetone's density in Wikidata - and finding what's *missing*.
+- **Chapter 3 (to come):** how you'd find codes like `Q49546`/`P2054` yourself, for a substance or property you don't already know - a real, different skill (search by label, not by an address you were simply handed) that this chapter deliberately left for later.
 - [COMPETENCY_QUESTIONS.md](./COMPETENCY_QUESTIONS.md) - worked questions about experiments, energies and frequencies.
-- The [SPARQL playground](./tools/sparql_playground.html) - runs in a browser with nothing to install. It is a quick way to try queries, with limits: it runs on a simpler engine that ignores some standard SPARQL, which is one reason to graduate to `arq` for real work.
-- The [W3C SPARQL 1.1 Query Language](https://www.w3.org/TR/sparql11-query/) specification, and Jena's [command-line documentation](https://jena.apache.org/documentation/query/cmds.html). Because `arq` is a complete SPARQL engine, queries from any SPARQL tutorial should run on your graph as written.
-
-Everything in this tutorial comes from that last link - the real, generic SPARQL and Jena documentation - applied directly to this project's own graph, with real output from real queries you can check your own against. That combination is the actual point of a tutorial like this one: the generic references teach the language for any dataset; this one teaches it *on this data*, alongside the reasons this particular graph looks the way it does. If you don't care about this project's own dataset, or how it was built, the generic references above teach the same language without any of that - everything here still applies, just without the specific examples.
+- The [SPARQL playground](./tools/sparql_playground.html) - its own "Find files missing a checksum" example is the query from Step 5, in a browser, with nothing to install.
