@@ -107,7 +107,7 @@ You don't have to build that URL by hand. Browse to the file on GitHub and click
 
 Stop and notice what that is. You've asked a question of a graph that lives on someone else's server, using a text file you wrote in a minute and one command. You didn't clone anything, load a database or write a program. Anything published as RDF can be asked this way, and the rest of this tutorial is about asking it well.
 
-**Same skill, different graph.** How hard would it be to ask something you didn't build at all? Wikidata - the large public knowledge graph run by the Wikimedia Foundation - answers SPARQL over the web. Acetone is item `Q49546` in Wikidata, and density is property `P2054`. So: what is the density of acetone?
+**Same skill, different graph.** How hard would it be to ask something you didn't build at all? Wikidata - the large public knowledge graph run by the Wikimedia Foundation - answers SPARQL over the web. Acetone is item `Q49546` in Wikidata, and density is property `P2054`. (How anyone finds those two codes in the first place, for a substance and property they didn't already know, is a fair question, and a real one - Wikidata is a graph like any other, and asking it "what's your code for acetone?" is itself a query. We'll come back to it.) So: what is the density of acetone?
 
 ```bash
 cat > wd1.rq <<'EOF'
@@ -405,6 +405,63 @@ EOF
 
 It reuses one scratch file, `ask.rq`, so it's for the throw-away questions: when one turns out to matter, save it as a numbered file and promote it, as in Step 0. Using robot instead of arq? Swap the last line of the function for `robot query --input "$G" --query /tmp/sparql/ask.rq /tmp/sparql/ask.tsv && cat /tmp/sparql/ask.tsv`.
 
+**A variant, if you work with more than one graph:** `ask` always asks the graph in `$G`. `ask2` takes the graph as its first argument instead, so you can point the same question at a different graph without redefining anything. Run the exact question from a moment ago again, first as a reminder:
+
+```bash
+ask <<'EOF'
+SELECT ?type (COUNT(?thing) AS ?n)
+WHERE { ?thing a ?type }
+GROUP BY ?type
+ORDER BY DESC(?n) ?type
+LIMIT 3
+EOF
+```
+
+```text
+-------------------------------
+| type                 | n    |
+===============================
+| owl:NamedIndividual  | 1102 |
+| owl:Class            | 328  |
+| gc:ReactionPathPoint | 268  |
+-------------------------------
+```
+
+then define `ask2` and point it at a different, published graph - `caa` this time:
+
+```bash
+ask2() {
+  local d="$1"
+  mkdir -p /tmp/sparql
+  cat ~/queries/prefixes.txt - > /tmp/sparql/ask.rq
+  arq --data "$d" --query /tmp/sparql/ask.rq
+}
+```
+
+```bash
+G2=https://raw.githubusercontent.com/Darren01/ont_mm/main/examples/caa/ont/caa_graph_20260905.ttl   # the caa graph, loaded straight from its own URL
+
+ask2 "$G2" <<'EOF'
+SELECT ?type (COUNT(?thing) AS ?n)
+WHERE { ?thing a ?type }
+GROUP BY ?type
+ORDER BY DESC(?n) ?type
+LIMIT 3
+EOF
+```
+
+```text
+------------------------------
+| type                | n    |
+==============================
+| owl:NamedIndividual | 1759 |
+| gc:FloatValue       | 416  |
+| owl:Class           | 328  |
+------------------------------
+```
+
+Same question, same shape, one argument changed - and third place is genuinely different: `gc:ReactionPathPoint` in `aa`, `gc:FloatValue` in `caa`. That's a real, quick way to sanity-check that two datasets built by the same pipeline aren't identical underneath. Worth trying for a while to see whether it earns a permanent place next to `ask`, rather than assuming it will.
+
 ---
 
 ## Step 3 - What just happened?
@@ -493,7 +550,27 @@ Look at what came back. This time the *subject* slot holds one fixed thing, and 
 
 **If the query itself looks odd** - no `a` anywhere, unlike every query so far - that's worth pausing on. `a` is just a stand-in for one specific predicate, `rdf:type`, in the middle slot of a triple pattern. Step 1 fixed that slot to `a` and left the other two (`?thing`, `?type`) as variables, which is why it could only ever answer "what type is this?". Here the middle slot is a variable too (`?property`), so nothing is fixed except the subject: the pattern reads "`gc:FrequencyPeak`, connected by any property, to any value" - every fact about that one thing, whichever predicates happen to hold it. `a` will come back the moment you fix the type again, as it does in Step 5's `?thing a gc:FrequencyPeak ; ?property ?value`.
 
-**Try it on something else.** Go back to Step 2's list (or run `arq --data $G --query ~/queries/types-in-graph.rq` again) and pick a different name from it - `gc:SinglePoint`, say, or `ex:LogFile` - then put it in place of `gc:FrequencyPeak` above. The query doesn't change shape at all; only the one fixed term does. Flipping between the two files like this, list then detail then back to the list, is the fastest way to get a feel for what's actually in a graph you didn't build yourself.
+**Try it on something else.** Go back to Step 2's list (or run `arq --data $G --query ~/queries/types-in-graph.rq` again) and pick a different name from it - `gc:SinglePoint`, say, or `ex:LogFile`. This is exactly the quick, one-off question the `ask()` shortcut from Step 2 was built for, so use it rather than editing a saved file:
+
+```bash
+ask <<'EOF'
+SELECT ?property ?value WHERE { gc:SinglePoint ?property ?value }
+EOF
+```
+
+```text
+-------------------------------------------------------------------------------------------------------------------------------------
+| property         | value                                                                                                          |
+=====================================================================================================================================
+| rdfs:label       | "Single Point"@en                                                                                              |
+| rdfs:isDefinedBy | <http://chemicalsemantics.com/>                                                                                |
+| rdfs:comment     | "A class for Single Point calculations - computation of the energy of molecular system for given geometry."@en |
+| rdfs:subClassOf  | gc:MolecularComputation                                                                                        |
+| rdf:type         | owl:Class                                                                                                      |
+-------------------------------------------------------------------------------------------------------------------------------------
+```
+
+Only the one fixed term changed; the query's shape didn't. Flipping between the two files like this - the list, then a detail, then back to the list - is the fastest way to get a feel for what's actually in a graph you didn't build yourself.
 
 Other ontologies sometimes keep definitions in other properties, so this "everything about X" question is the way to find out which one a given term uses. It works for any name on any list.
 
