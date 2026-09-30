@@ -789,6 +789,42 @@ Both return an empty table with no complaint. When you get one, check the names 
 
 **A prefix you forgot to declare.** This one does complain, and the message names the culprit - Jena reports something like `Unresolved prefixed name: gc:FrequencyPeak`, with the line and column.
 
+## If you get something back, but not what you expected
+
+The harder case: no error, a plausible-looking table, and it's still the wrong answer - because the query asked a different question from the one you meant. The most common way this happens is swapping subject and object in a triple pattern. Step 1's own query:
+
+```sparql
+SELECT ?type (COUNT(?thing) AS ?howMany) WHERE { ?thing a ?type } GROUP BY ?type ORDER BY DESC(?howMany) ?type LIMIT 3
+```
+
+```text
+----------------------------------
+| type                 | howMany |
+==================================
+| owl:NamedIndividual  | 1102    |
+| owl:Class            | 328     |
+| gc:ReactionPathPoint | 268     |
+----------------------------------
+```
+
+Swap the two variables in the pattern - `?type a ?thing` instead of `?thing a ?type` - and nothing about the query looks obviously broken:
+
+```sparql
+SELECT ?type (COUNT(?thing) AS ?howMany) WHERE { ?type a ?thing } GROUP BY ?type ORDER BY DESC(?howMany) ?type LIMIT 3
+```
+
+```text
+------------------------------------
+| type                   | howMany |
+====================================
+| ex:exp_aa001-ts-pcseg2 | 3       |
+| ex:exp_aa001a          | 3       |
+| ex:exp_aa001b          | 3       |
+------------------------------------
+```
+
+Real output, no error - and a completely different question. The first asks "for each type, how many things have it". The second asks "for each thing that has at least one type, how many types does it have" - and these three experiments each genuinely have three (`owl:NamedIndividual` plus two more specific ones). `?a` and `?b` in a pattern are never interchangeable just because they're both variables: which one is the subject and which is the object is the entire meaning of the line. When a result looks plausible but doesn't match your own sense of the data, re-reading the pattern itself - which variable sits where - is worth doing before anything else.
+
 ---
 
 ## What you've learned
@@ -811,6 +847,8 @@ Same tools as before: `arq` (or `robot query`), the `~/queries/prefixes.txt` fil
 ---
 
 ## Step 1 - Follow one link
+
+*How was `ex:peak_aa001a_1` chosen in the first place? The same way you'd choose any starting point when you don't already have a specific name in mind: ask the graph for any example of what you want, and use whatever comes back. `SELECT ?peak WHERE { ?peak a gc:FrequencyPeak } LIMIT 1` - by type - or `SELECT ?a ?fv WHERE { ?a gc:hasFrequency ?fv }` - by property - both work equally well; either approach would have handed you a real, working name to start from.*
 
 Take one real peak, `ex:peak_aa001a_1`, and its frequency property:
 
