@@ -103,6 +103,17 @@ files and want to build and query your own instantiated ontology from them.
 `examples/README.md` instead - that's a construction history, not a
 usage guide, which is why this section exists separately.)
 
+**Already have a built graph, and just need to update it** - new runs
+added, code pulled that fixes something, or a single value turned out
+wrong? Read [Updating an existing graph](#updating-an-existing-graph-eg-weekly)
+first, not the numbered steps below. It's placed after Step 6 in this
+file because it needs every step to have been explained first, but
+that's a document-structure reason, not a "read this last" one - if
+you already have a graph, the numbered steps below are for a first
+build, not yours, and starting from Step 1 anyway is exactly how a
+one-line fix turns into having redone the whole thing before you find
+the section that would have told you not to.
+
 ### Recommended folder structure, for more than one project
 
 If you're only ever going to have one project, don't worry about this -
@@ -963,8 +974,37 @@ recomputing every file's checksum as it goes. So:
   because that experiment is still "already present". The graph quietly
   ends up holding the new file's fingerprint next to the old file's
   results - which defeats what the checksum is for.
+- **You pulled a fix that changes how a value should be *typed* or
+  *declared*, not its actual content:** a real example, found and
+  fixed during this project's own development - `gc:hasIndex` has a
+  declared range of `xsd:nonNegativeInteger`, but an early version of
+  `process_reaction_path_results.R` wrote it as a plain, untyped
+  literal (`I gc:hasIndex` instead of the correct
+  `AT gc:hasIndex^^xsd:nonNegativeInteger`). SHACL didn't catch it -
+  it only surfaced when Step 6's own reasoner reported the whole
+  ontology inconsistent. The values themselves (`278`, `279`, ...)
+  were always correct; only the second row of
+  `reaction_path_point_template_instances.tsv` - the one that tells
+  `robot template` how to type each column - had the old, wrong
+  directive baked in from before the fix. Deleting and reprocessing
+  isn't needed, and for a file this one shares with unrelated results
+  (`float_value_template_instances.tsv`, `spectra_result_template_instances.tsv`)
+  it's real, avoidable extra work. Editing that one line directly
+  fixes every existing row the next time the graph is built:
 
-For either of the last two cases - and as a simple default for a
+  ```bash
+  sed -n '2p' reaction_path_point_template_instances.tsv   # check it's the old directive first
+  sed -i '2s/.*/ID\tLABEL\tTYPE\tAT gc:hasIndex^^xsd:nonNegativeInteger\tI gc:hasPathEnergy/' reaction_path_point_template_instances.tsv
+  ```
+
+  The general version of this: if `robot reason` (Step 6) reports an
+  inconsistency and its own suggested `robot explain` command points
+  at a datatype range violation, check whether the *value* is wrong or
+  just its *declared type* - if it's the latter, the instance file's
+  own type-directive row is very likely the one place that needs
+  fixing, not the data.
+
+For the second and third cases above - and as a simple default for a
 scheduled rebuild, since it's cheap next to the reasoning in Step 6 -
 do a clean rebuild: clear the *generated* instance files, then re-run.
 Look at what matches first:
