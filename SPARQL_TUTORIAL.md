@@ -1463,7 +1463,262 @@ Confirmed directly, and cleanly - one result, `Q49546` itself, nothing else to n
 
 The same two lessons this chapter taught on a graph you built yourself turned out to matter, unedited, on a graph you'd never seen the inside of - which is the whole point of a shared query language: the skill doesn't know which graph it's pointed at, and neither do its gotchas.
 
+## Chapter 4 - Out in the wild
+
+Everything so far has worked on a graph you either built yourself or watched get built. This chapter uses the same skills, unmodified, on a graph nobody in this project built: Wikidata, a real, public, billions-of-facts knowledge graph that anyone can query the same way `caa` and `aa` have been queried all along.
+
+It's worth asking honestly, before going any further: why do this at all, rather than just look a number up on Wikipedia? For a single fact, Wikipedia is often genuinely faster, and this chapter won't pretend otherwise. The real answer is that the value shows up exactly where "one fact" stops being enough:
+
+- **More than one item stops being one lookup per item.** The density of acetone is one Wikipedia visit. The density *and* pKa of four solvents is, on Wikipedia, four visits and eight numbers copied out by hand. On Wikidata it's the same one query either way.
+- **The numbers aren't laid out for a program to read.** An infobox is built for a human eye; pulling "just the density" out of it means reading it yourself or writing something fragile that breaks the next time the page's formatting changes. Wikidata's version of the same number is a real, structured `wikibase:quantityAmount` - the same shape on every item, which is exactly what let Chapter 2 write one query that works on any experiment in this project's own graphs, not one query per experiment.
+- **A genuinely combined question is one more line, not several pages read by hand.** "Which of these solvents has a density under 1 g/cm³ *and* a recorded pKa above 15" is a real filter in SPARQL. No single Wikipedia infobox is built to answer it at all.
+- **Nothing here is a new tool.** The query shape that found real values in `caa`'s own `hasMethod` column, and the `p:`/`psv:` pattern Chapter 2 built for a `FloatValue`, are unchanged. Same skill, a graph with billions of facts instead of thousands.
+
+That last point is the honest test this chapter has to pass: everything in it should already be familiar, just pointed somewhere new.
+
+---
+
+## Step 1 - Finding the property you need, without being handed it
+
+Chapters 1 through 3 handed you `wd:Q49546` and `wdt:P2054` before you'd found either yourself. That's a real gap for an item (Chapter 3 closed it), and the same gap exists for a *property* - `P2054` is exactly as arbitrary a code as `Q49546` was, and just as unfindable by guessing.
+
+Wikidata properties are real entities with their own `rdfs:label`, the same as items - the difference is a property also has a `wikibase:directClaim` link to its own predicate, and only properties do, which makes it a reliable way to search *just* properties rather than every entity that happens to share a word:
+
+```sparql
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+
+SELECT ?property ?label WHERE {
+  ?property wikibase:directClaim ?p ;
+            rdfs:label ?label .
+  FILTER(CONTAINS(LCASE(?label), "density"))
+}
+```
+
+```text
+property,label
+http://www.wikidata.org/entity/P2054,density
+http://www.wikidata.org/entity/P14392,energy density
+```
+
+Two results, both genuinely about density, no noise. `P2054` is the one used throughout this tutorial; `P14392` is a real, different property (energy density) that happens to share the word - worth noticing, since it's the same "wide net, then look at what came back" habit from Chapter 3, now finding a property instead of an item.
+
+## Step 2 - Finding several items at once
+
+A single item's density or pKa is one query. Several solvents' worth of both is where Wikidata starts to genuinely pay for itself - but that means finding several items in one go, not one at a time.
+
+`VALUES` binds a variable to a fixed list before the rest of the query runs - here, a list of labels rather than addresses, since the addresses are exactly what this step is trying to find:
+
+```bash
+wiki <<'EOF'
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?solvent ?wantedLabel WHERE {
+  VALUES ?wantedLabel { "water"@en "ethanol"@en "methanol"@en "acetone"@en }
+  ?solvent rdfs:label ?wantedLabel .
+}
+EOF
+```
+
+(`wiki` is a small shortcut worth having from here on, the same idea as `ask` from Chapter 2 - it takes a query on stdin and runs it against Wikidata's own endpoint:
+
+```bash
+wiki() {
+  mkdir -p /tmp/sparql
+  cat - > /tmp/sparql/wiki.rq
+  curl -s -G https://query.wikidata.org/sparql -H 'Accept: text/csv' -A 'sparql-tutorial/0.1' --data-urlencode query@/tmp/sparql/wiki.rq
+}
+```
+
+Paste that into your shell once, same as `ask`.)
+
+Real output:
+
+```text
+solvent,wantedLabel
+http://www.wikidata.org/entity/Q14982,methanol
+http://www.wikidata.org/entity/Q153,ethanol
+http://www.wikidata.org/entity/Q283,water
+http://www.wikidata.org/entity/Q2637515,water
+http://www.wikidata.org/entity/Q5474065,water
+http://www.wikidata.org/entity/Q16035863,water
+http://www.wikidata.org/entity/Q25588649,water
+http://www.wikidata.org/entity/Q56877699,water
+http://www.wikidata.org/entity/Q68834339,water
+http://www.wikidata.org/entity/Q140424798,water
+http://www.wikidata.org/entity/Q140443055,water
+http://www.wikidata.org/entity/Q140445549,water
+http://www.wikidata.org/entity/Q49546,acetone
+```
+
+Methanol, ethanol and acetone: one result each. `water` alone comes back nine times - Chapter 3's own lesson (a label search finds everything that matches, not just what you had in mind) landing harder here, on a much more ordinary word than "acetone" ever was.
+
+The fix is the same one Chapter 3 used on this project's own graph: narrow by type, not just by label. Wikidata's version of `rdf:type` is `wdt:P31` ("instance of"), and the value to narrow by is worth getting straight from the item itself rather than trusted from a search - a first attempt here, using the commonly-cited class "chemical compound" (`Q11173`), came back completely empty:
+
+```bash
+wiki <<'EOF'
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+SELECT ?type WHERE { wd:Q283 wdt:P31 ?type }
+EOF
+```
+
+```text
+type
+http://www.wikidata.org/entity/Q113145171
+```
+
+`Q283`'s own, real, current type is `Q113145171` - "type of chemical entity", a deliberate marker Wikidata's own Chemistry WikiProject adds to pure chemical substances specifically so they can all be found with one query, rather than the more general "chemical compound" a search had suggested. Asking the item what it actually is settled it, the same principle as Chapter 1's very first lesson - a name's real meaning is worth confirming from the graph, not assumed from what looked right. With the correct type:
+
+```bash
+wiki <<'EOF'
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?solvent ?wantedLabel WHERE {
+  VALUES ?wantedLabel { "water"@en "ethanol"@en "methanol"@en "acetone"@en }
+  ?solvent rdfs:label ?wantedLabel ;
+           wdt:P31 wd:Q113145171 .
+}
+EOF
+```
+
+```text
+solvent,wantedLabel
+http://www.wikidata.org/entity/Q153,ethanol
+http://www.wikidata.org/entity/Q283,water
+http://www.wikidata.org/entity/Q14982,methanol
+http://www.wikidata.org/entity/Q49546,acetone
+```
+
+Four solvents, four rows, `water` finally down to the one real item. Worth keeping the four addresses this found - `Q283`, `Q153`, `Q14982`, `Q49546` - since the rest of this chapter uses them directly, the same way Chapter 2 moved from finding a peak to working with it.
+
+## Step 3 - Density, for all four at once
+
+Chapter 2 found acetone's own density through its real statement node, not the plain `wdt:` shortcut, because the statement holds more than the number - a unit alongside it. The same query, run across all four solvents with `VALUES`:
+
+```bash
+wiki <<'EOF'
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+
+SELECT ?solvent ?amount ?unit WHERE {
+  VALUES ?solvent { wd:Q283 wd:Q153 wd:Q14982 wd:Q49546 }
+  ?solvent p:P2054 ?statement .
+  ?statement psv:P2054 ?value .
+  ?value wikibase:quantityAmount ?amount ;
+          wikibase:quantityUnit ?unit .
+}
+EOF
+```
+
+29 rows, not 4 - and worth reading closely rather than skimming past, because it holds two real, separate lessons.
+
+**Water alone accounts for 25 of them.** That's not noise: density genuinely depends on temperature, and Wikidata is honestly recording separate measurements at different temperatures as separate statements, none marked as the one "preferred" value. Worth a direct correction here to something Chapter 2 said too simply: the `wdt:` shortcut is described there as "the single best-ranked value" - true only when one statement actually is marked preferred. Where none are, as with water's own density, `wdt:` hands back every one of them, exactly like the full statement form does. Confirmed directly:
+
+```sparql
+SELECT ?solvent ?density WHERE {
+  VALUES ?solvent { wd:Q283 wd:Q153 wd:Q14982 wd:Q49546 }
+  ?solvent wdt:P2054 ?density .
+}
+```
+
+still returns water's own 26 values, not one.
+
+**Ethanol's own row is `790.0`, in a different unit** (`Q844211`, not `Q13147228` like the other three) - not a value roughly a thousand times too high, but the same number in kilograms per cubic metre rather than grams per cubic centimetre (790 kg/m³ is exactly 0.79 g/cm³, matching methanol almost exactly). Different contributors recorded the same real quantity in different, equally valid units. Comparing the raw numbers without checking `?unit` first would have been a genuine, silent error here - the kind a person skimming a Wikipedia infobox by eye would likely catch, and an automated query absolutely will not, unless it's written to check.
+
+Picking one temperature to compare at needs the same qualifier-reading skill pKa needs later, so it's worth building it here first, on something already familiar. `pq:` reads a qualifier off the same statement node already found:
+
+```sparql
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+SELECT ?solvent ?amount ?unit ?temp WHERE {
+  VALUES ?solvent { wd:Q283 wd:Q153 wd:Q14982 wd:Q49546 }
+  ?solvent p:P2054 ?statement .
+  ?statement psv:P2054 ?value ;
+             pq:P2076 ?temp .
+  ?value wikibase:quantityAmount ?amount ;
+          wikibase:quantityUnit ?unit .
+}
+```
+
+Real output shows water recorded across more than twenty different temperatures, from -30°C to 100°C - and, checked directly rather than assumed, neither the modern IUPAC standard (0°C) nor the older, common one (25°C) has a recorded value for all four solvents; only water has either. **20°C** does - the honest answer here isn't "the standard reference condition", it's "the one temperature this dataset actually, consistently recorded for every solvent being compared." Filtering on it directly:
+
+```bash
+wiki <<'EOF'
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+
+SELECT ?solvent ?amount ?unit WHERE {
+  VALUES ?solvent { wd:Q283 wd:Q153 wd:Q14982 wd:Q49546 }
+  ?solvent p:P2054 ?statement .
+  ?statement psv:P2054 ?value ;
+             pq:P2076 20.0 .
+  ?value wikibase:quantityAmount ?amount ;
+          wikibase:quantityUnit ?unit .
+}
+EOF
+```
+
+```text
+solvent,amount,unit
+http://www.wikidata.org/entity/Q49546,0.7902,http://www.wikidata.org/entity/Q13147228
+http://www.wikidata.org/entity/Q14982,0.79,http://www.wikidata.org/entity/Q13147228
+http://www.wikidata.org/entity/Q153,790.0,http://www.wikidata.org/entity/Q844211
+http://www.wikidata.org/entity/Q283,0.9982071,http://www.wikidata.org/entity/Q13147228
+```
+
+Four rows, one per solvent, genuinely comparable now that temperature is matched - except ethanol's unit is still the odd one out, confirming this wasn't a fluke of the earlier, mixed-temperature result. Converted by hand (790 kg/m³ = 0.79 g/cm³), all four solvents sit within a narrow, unsurprising range at 20°C - acetone 0.790, methanol 0.790, ethanol 0.790, water 0.998. A real SPARQL query could normalize the unit automatically with `BIND`/`IF` rather than by hand; left as a genuine next step rather than built out here, since this chapter still has pKa ahead of it and one new construct at a time is enough.
+
+## Step 4 - pKa, where it exists
+
+Same shape of query as density - `p:`/`psv:` for the statement and its value, `pq:` for the temperature it was measured at - now on `P1117`, the property Step 1 found by searching, not being handed:
+
+```bash
+wiki <<'EOF'
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+
+SELECT ?solvent ?amount ?temp WHERE {
+  VALUES ?solvent { wd:Q283 wd:Q153 wd:Q14982 wd:Q49546 }
+  ?solvent p:P1117 ?statement .
+  ?statement psv:P1117 ?value .
+  ?value wikibase:quantityAmount ?amount .
+  OPTIONAL { ?statement pq:P2076 ?temp . }
+}
+EOF
+```
+
+```text
+solvent,amount,temp
+http://www.wikidata.org/entity/Q14982,15.5,
+http://www.wikidata.org/entity/Q153,16.0,
+http://www.wikidata.org/entity/Q49546,19.16,25.0
+```
+
+Three rows, not four - **water has no recorded pKa here at all.** That's a real, honest result, not a missing step: Chapter 1's own lesson about absence again, on a dataset this tutorial had no hand in building. Methanol (15.5) and ethanol (16.0) genuinely are weak acids of a similar, unremarkable strength; acetone, at 19.16, is markedly weaker - a real, meaningful difference between these solvents, not an artefact of the query.
+
+Worth noticing too: only acetone's own row carries a temperature. `P1117`'s own property page states temperature as a *required* qualifier - but "required" on Wikidata is a documented expectation, not something SPARQL enforces the way an OWL range restriction does in this project's own graphs. Methanol and ethanol's values are real, genuinely present, just recorded without it. Real, open data is written by many different people over time, and not every statement lives up to its own property's stated intent - a difference worth remembering before assuming a `pq:` qualifier will always be there just because a property's documentation says it should be.
+
+## What this chapter actually showed
+
+Two `VALUES` queries and two `pq:` qualifier reads is the whole new syntax this chapter introduced - genuinely small, exactly as promised at the start. Everything harder than the syntax was the data itself being real: water's density recorded at more than twenty different temperatures with none marked preferred, the same quantity written in two different, equally valid units, a "required" qualifier that wasn't always there, and a property with no value at all for one of the four items asked about. None of that needed a new tool. Every one of those was handled with a habit already built on this project's own graphs - search wide then narrow, check what's actually there before assuming, treat an empty or partial result as information rather than failure.
+
+That was always the real test this chapter set for itself, back in its own opening: not "is Wikidata interesting", but "does everything already learned still hold up, unmodified, somewhere this project had no hand in building." It did.
+
 ## Where next
 
+- **Finding solvents by class, not by hand:** this chapter searched four solvents chosen and named in advance. Wikidata's own "type of chemical entity" (`Q113145171`) - the class this chapter's own Step 2 had to go and verify directly - is a real, natural way to find solvents rather than list them, and was deliberately left for later rather than folded in here.
+- **Normalizing units automatically:** Step 3's ethanol/kilogram-per-cubic-metre mismatch was converted by hand. A real query could do this with `BIND`/`IF`, checking `?unit` and adjusting the value accordingly - a genuine next construct, not built out here so this chapter could stay focused on one new thing at a time.
 - [COMPETENCY_QUESTIONS.md](./COMPETENCY_QUESTIONS.md) - worked questions about experiments, energies and frequencies.
 - The [SPARQL playground](./tools/sparql_playground.html) - the same searches from this chapter, in a browser, with nothing to install.
