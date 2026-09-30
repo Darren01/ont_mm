@@ -1454,9 +1454,14 @@ SELECT ?item WHERE {
 }
 ```
 
-*I can't reach Wikidata's own endpoint from here to confirm this one - if you run it, tell me what comes back.* If `Q49546` is the only result, that's the case-sensitivity fix doing all the work on its own. If several results still come back, the wide-net lesson from Step 1 applies on top: add a type check, the same way `aldehyde` narrowed down to real experiments there.
+```text
+item
+http://www.wikidata.org/entity/Q49546
+```
 
-Either way, the same two lessons this chapter taught on a graph you built yourself turned out to matter, unedited, on a graph you'd never seen the inside of - which is the whole point of a shared query language: the skill doesn't know which graph it's pointed at, and neither do its gotchas.
+Confirmed directly, and cleanly - one result, `Q49546` itself, nothing else to narrow down. The case fix alone was the whole story here; the wide-net problem from earlier in this section never actually needed its own separate fix once the label matched.
+
+The same two lessons this chapter taught on a graph you built yourself turned out to matter, unedited, on a graph you'd never seen the inside of - which is the whole point of a shared query language: the skill doesn't know which graph it's pointed at, and neither do its gotchas.
 
 ## Where next
 
