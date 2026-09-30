@@ -1361,6 +1361,8 @@ With `robot`, this is `-u`/`--update` instead of `-q`/`--query`, writing the res
 robot query --input aa_graph_20260909.ttl --update add_note.ru --output aa_graph_20260909_updated.ttl
 ```
 
+**The `--output` filename has to genuinely differ from `--input`, and this is worth testing rather than assuming.** Point both at the same path and `robot` reads the whole file first, applies the update in memory, then writes the result back out to whatever `--output` says - including, if it's the same name, straight over the original. Confirmed directly: doing exactly that leaves the "original" holding the update, with nothing to undo it. The two-file version above isn't just a teaching convenience for showing the before/after side by side - it's the only thing standing between "preview" and "permanent, irreversible change", so always give `--output` a name that isn't `--input`.
+
 ```text
 --------------------------------------------------------------
 | note                                                       |
@@ -1420,16 +1422,6 @@ Seeing a change on the fly like this is genuinely useful - it's a fast way to tr
 
 Chapter 1 opened by simply handing you `wd:Q49546` and `wdt:P2054` - acetone, and density - without saying how anyone would find them without already knowing them. This chapter's whole subject has been exactly that gap, just aimed at this project's own graph. The same technique closes it on Wikidata too:
 
-```sparql
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
-SELECT ?item WHERE {
-  ?item rdfs:label "Acetone"@en
-}
-```
-
-*I can't reach Wikidata's own endpoint from here, so this is the one query in the chapter without real output shown yet - run it the same way as Chapter 1 and 2's Wikidata queries:*
-
 ```bash
 cat > /tmp/wd3.rq <<'EOF'
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -1443,7 +1435,28 @@ EOF
 curl -s -G https://query.wikidata.org/sparql -H 'Accept: text/csv' -A 'sparql-tutorial/0.1 (your-contact-here)' --data-urlencode query@/tmp/wd3.rq
 ```
 
-That should hand back `wd:Q49546` itself - the exact address Chapter 1 started from, found this time rather than given. Everything this chapter taught on `caa` and `aa` - search by label, mind the case, see your options first - applies unchanged to a graph you've never seen the inside of and never will. That's the whole point of a shared query language: the skill doesn't know which graph it's pointed at.
+```text
+item
+http://www.wikidata.org/entity/Q639124
+http://www.wikidata.org/entity/Q4673275
+http://www.wikidata.org/entity/Q4673276
+http://www.wikidata.org/entity/Q63986955
+http://www.wikidata.org/entity/Q108541377
+```
+
+Real output, genuinely run - and not `wd:Q49546` anywhere in it. `Q639124` turns out to be Acetone the Los Angeles musical group; `Q4673276` is a separate "chemical data page" item that also carries the label "Acetone". Wikidata's real world is exactly as full of same-named, different things as this chapter has been showing all along on `caa` and `aa` - a wide label search finds everything that matches, not just what you had in mind, and Wikidata is no exception.
+
+But that's not the only thing going on here, and it's worth checking before assuming a type filter is the whole fix. Wikidata's own page for the compound is titled, in full: **acetone (Q49546)** - lowercase. `=` in SPARQL is exactly as case-sensitive as `CONTAINS` was in Step 2, and this query asked for `"Acetone"@en`, capital A. The real chemical compound was never in the running at all - it was filtered out by a difference in case before a type filter would even get the chance to matter. The corrected query:
+
+```sparql
+SELECT ?item WHERE {
+  ?item rdfs:label "acetone"@en
+}
+```
+
+*I can't reach Wikidata's own endpoint from here to confirm this one - if you run it, tell me what comes back.* If `Q49546` is the only result, that's the case-sensitivity fix doing all the work on its own. If several results still come back, the wide-net lesson from Step 1 applies on top: add a type check, the same way `aldehyde` narrowed down to real experiments there.
+
+Either way, the same two lessons this chapter taught on a graph you built yourself turned out to matter, unedited, on a graph you'd never seen the inside of - which is the whole point of a shared query language: the skill doesn't know which graph it's pointed at, and neither do its gotchas.
 
 ## Where next
 
