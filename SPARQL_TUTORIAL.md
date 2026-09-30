@@ -1193,8 +1193,259 @@ The same one habit, the same shape of query, answering the same kind of question
 
 Not everything a `.log` file contains belongs in the graph - Step 5 already touched on why. A full geometry trajectory, per-cycle SCF convergence, timing data: all real, all currently living only in the file, none of it indexed here. Whether more of it should be is a genuinely open, unresolved question, and probably doesn't have one right answer - it depends what a given user actually needs, which this project can't guess on their behalf. What `ont_mm` can promise is the map: a graph that tells you which file to open. What you do once you've opened it is a different tool's job.
 
+## Chapter 3 - Finding things when you don't know their name
+
+Every query so far started from a name already in hand - `ex:peak_aa001a_1`, `gc:FrequencyPeak`, `ex:exp_aa001a`. Real questions rarely start that way. This chapter is about the other direction: you know roughly what you're looking for, not its exact name, and the graph has to help you find it.
+
+Same tools, same graph, same real output throughout.
+
+---
+
+## Step 1 - Search by label
+
+You remember an experiment involved an aldehyde, but not its exact name. `CONTAINS` searches inside a string rather than matching it exactly:
+
+```sparql
+SELECT ?thing ?label WHERE {
+  ?thing rdfs:label ?label .
+  FILTER(CONTAINS(?label, "aldehyde"))
+}
+```
+
+That's a wide net - 46 rows in this graph, and worth seeing why:
+
+```text
+-----------------------------------------------------------------------------------------------------
+| thing                                      | label                                                |
+=====================================================================================================
+| ex:peak_aa002-aldehyde-bare_4              | "Mode 4 aa002-aldehyde-bare"                         |
+| ex:intval_aa002-aldehyde-bare_6            | "IR intensity mode 6 aa002-aldehyde-bare"            |
+| ex:exp_aa002-aldehyde-bare-smd             | "Vibrational analysis aa002-aldehyde-bare-smd"       |
+| ex:file_aa002-aldehyde-bare-smd-energy_dat | "Output data aa002-aldehyde-bare-smd-energy"         |
+| ex:freqval_aa002-aldehyde-bare_4           | "Frequency mode 4 aa002-aldehyde-bare"               |
+| ex:file_aa002-aldehyde-bare-smd-check_dat  | "Output data aa002-aldehyde-bare-smd-check"          |
+| ex:exp_aa002-aldehyde-bare-smd-energy      | "Single point aa002-aldehyde-bare-smd-energy"        |
+| ex:file_aa002-aldehyde-bare-smd-energy_inp | "Input file aa002-aldehyde-bare-smd-energy"          |
+| ex:file_aa002-aldehyde-bare_dat            | "Output data aa002-aldehyde-bare"                    |
+... (38 more rows)
+-----------------------------------------------------------------------------------------------------
+```
+
+Peaks, files, energies, spectra, experiments - everything with a matching label, not just the experiments you probably had in mind. A label search finds every *kind* of thing at once, because `rdfs:label` doesn't care what it's attached to. Narrow it to experiments specifically - `prov:used` is a reliable test for that, since only something that actually ran has an input file:
+
+```sparql
+SELECT ?exp ?label WHERE {
+  ?exp prov:used ?f ;
+       rdfs:label ?label .
+  FILTER(CONTAINS(?label, "aldehyde"))
+}
+```
+
+```text
+------------------------------------------------------------------------------------------------
+| exp                                   | label                                                |
+================================================================================================
+| ex:exp_aa002-aldehyde-pcseg2          | "Single point aa002-aldehyde-pcseg2"                 |
+| ex:exp_aa002-aldehyde-bare-smd        | "Vibrational analysis aa002-aldehyde-bare-smd"       |
+| ex:exp_aa002-aldehyde-bare-smd-hcore  | "Vibrational analysis aa002-aldehyde-bare-smd-hcore" |
+| ex:exp_aa002-aldehyde-bare-smd-check  | "Vibrational analysis aa002-aldehyde-bare-smd-check" |
+| ex:exp_aa002-aldehyde-bare-smd-energy | "Single point aa002-aldehyde-bare-smd-energy"        |
+| ex:exp_aa002-aldehyde-bare            | "Vibrational analysis aa002-aldehyde-bare"           |
+------------------------------------------------------------------------------------------------
+```
+
+Six experiments, not forty-five. The wide search isn't a mistake to avoid - it's often the right first move precisely because it doesn't assume you already know what kind of thing you're after. Narrowing comes after, once you can see what's actually there.
+
+---
+
+## Step 2 - Case sensitivity
+
+`CONTAINS` is case-sensitive. Search for the wrong case and nothing warns you:
+
+```sparql
+SELECT ?exp WHERE {
+  ?exp prov:used ?f ; rdfs:label ?label .
+  FILTER(CONTAINS(?label, "ALDEHYDE"))
+}
+```
+
+```text
+-------
+| exp |
+=======
+-------
+```
+
+An empty table again - Chapter 1's own lesson, showing up in a new place. `LCASE` fixes it by lowering both sides before comparing:
+
+```sparql
+SELECT (COUNT(?exp) AS ?n) WHERE {
+  ?exp prov:used ?f ; rdfs:label ?label .
+  FILTER(CONTAINS(LCASE(?label), "aldehyde"))
+}
+```
+
+```text
+-----
+| n |
+=====
+| 6 |
+-----
+```
+
+Worth making a habit of `LCASE` on both sides of any label search, rather than trusting you'll always remember how something was capitalised when it was written.
+
+---
+
+## Step 3 - See your options before you filter
+
+Before writing `FILTER(?method = "...")`, it's worth asking what values are even possible - this graph's own `aa` dataset only ever used one method, which would make a filter example here pointless. `caa` didn't:
+
+```sparql
+SELECT DISTINCT ?method WHERE { ?exp gc:hasMethod ?method }
+```
+
+```text
+-------------
+| method    |
+=============
+| "wB97X-D" |
+| "CCSD(T)" |
+| "UHF"     |
+| "RHF"     |
+-------------
+```
+
+Four real methods, including `CCSD(T)` - worth a note of its own, since its parentheses need no special treatment inside a SPARQL string (`FILTER(?method = "CCSD(T)")` works exactly as written; the parentheses only mean something to the *query syntax* outside the quotes). `DISTINCT` here does the same job it did back in Chapter 1: it turns "one row per experiment" into "one row per value actually used" - the options worth filtering by, before you commit to one.
+
+---
+
+## Step 4 - Search the human-written notes, and change them with SPARQL
+
+Not everything worth finding is a structured property. `skos:editorialNote` holds real, free-text notes - the kind you'd write while troubleshooting a run. Search them the same way as any other label:
+
+```sparql
+SELECT ?exp ?note WHERE {
+  ?exp skos:editorialNote ?note .
+  FILTER(CONTAINS(?note, "PURIFY"))
+}
+```
+
+```text
+------------------------------------------------------------------------------------------
+| exp           | note                                                                   |
+==========================================================================================
+| ex:exp_aa001c | "used PURIFY=.t. in $FORCE which gave rotations/translations as 0cm-1" |
+| ex:exp_aa001a | "prepared without PURIFY=.t. and hence lost accuracy."                 |
+------------------------------------------------------------------------------------------
+```
+
+Two experiments - but a third, `ex:exp_aa001b`, hit the same real issue and typed `PURFIFY` in its own note. Text search only finds what's actually spelled the way you searched for; that typo is invisible to this query and would need its own line (`|| CONTAINS(?note, "PURFIFY")`) to catch. Structured properties don't have this problem - `gc:hasMethod` can't be misspelled once it's written - which is exactly the trade-off between free text and structured data: notes are cheap to write and can say anything, but they can't be searched with the confidence a real property gives you.
+
+### Adding a note with SPARQL, to see the result on the fly
+
+SPARQL isn't only for asking questions. `INSERT DATA` adds a triple directly:
+
+```sparql
+PREFIX ex: <http://example.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+INSERT DATA {
+  ex:exp_aa001a skos:editorialNote "A second, added note - just to see what this looks like." .
+}
+```
+
+With `robot`, this is `-u`/`--update` instead of `-q`/`--query`, writing the result to a new file with `-o`:
+
+```bash
+robot query --input aa_graph_20260909.ttl --update add_note.ru --output aa_graph_20260909_updated.ttl
+```
+
+```text
+--------------------------------------------------------------
+| note                                                       |
+==============================================================
+| "prepared without PURIFY=.t. and hence lost accuracy."     |
+| "A second, added note - just to see what this looks like." |
+--------------------------------------------------------------
+```
+
+`ex:exp_aa001a` now has two notes, side by side - genuinely useful for trying out a change before committing to it. But notice what `--output` actually did: it wrote a *new file*. Query the original `aa_graph_20260909.ttl` again and the second note simply isn't there:
+
+```text
+----------------------------------------------------------
+| note                                                   |
+==========================================================
+| "prepared without PURIFY=.t. and hence lost accuracy." |
+----------------------------------------------------------
+```
+
+That's not a bug to work around - it's the entire point, and worth sitting with rather than rushing past. This graph is a generated file, rebuilt from `run_notes.tsv` every time. A note added straight into a `.ttl` file lives only in that one output, until the next real rebuild quietly regenerates the graph from `run_notes.tsv` and doesn't know the SPARQL-added note ever existed. If you're happy with a note after seeing it this way, the durable version of "add it" is the same as it's always been in this project: write it into `run_notes.tsv`, then rebuild properly - not because SPARQL Update doesn't work, but because `run_notes.tsv` is this project's actual source of truth, and the graph is only ever a faithful copy of it.
+
+### One update, many triples: fixing something at scale
+
+`INSERT DATA` adds one specific triple. `DELETE`/`WHERE` finds every triple matching a pattern and removes all of them in a single operation - genuinely more powerful, and worth seeing on something real. Recall from Chapter 1: `gc:FrequencyPeak` carries two `rdfs:comment` values, one a real definition and the other a generic placeholder ("A class for FrequencyPeak.") left over from when the upstream ontology was first scaffolded. It isn't the only one - 51 classes across the release carry that same placeholder pattern. One update removes every one of them, wherever it appears:
+
+```sparql
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+DELETE {
+  ?class rdfs:comment ?placeholder .
+}
+WHERE {
+  ?class rdfs:comment ?placeholder .
+  FILTER(STRSTARTS(STR(?placeholder), "A class for "))
+}
+```
+
+```text
+Before: 51 classes carry the generic placeholder comment.
+After the update: 0.
+The real comment on gc:FrequencyPeak: still present, 1 occurrence.
+```
+
+All 51, gone in one pass - and the real, useful comment on `gc:FrequencyPeak` survives untouched, because the pattern only matches the generic placeholder shape, not genuine documentation. This is the same searching skill as the rest of the chapter, just aimed at *changing* the graph instead of reading it: describe the pattern of what's wrong, and SPARQL finds every instance of it for you, rather than you finding and fixing each one by hand.
+
+### What "permanent and logged" would actually need
+
+Seeing a change on the fly like this is genuinely useful - it's a fast way to try something before committing to it. But the moment a change should stick, the question becomes: stick *where*, and how would anyone later know it happened? For this project, the honest answer already exists in how it's built, rather than needing anything new:
+
+- **The source of truth stays a file.** For notes, that's `run_notes.tsv`; the ontology's own upstream text is `gc_core.ttl`. A SPARQL Update to the built graph is a preview of a change, not the change itself, for exactly the reason shown above - it evaporates on the next real rebuild.
+- **Git is the audit trail.** Every edit to `run_notes.tsv` (or, for something like the placeholder-comment fix, an upstream correction) is a real commit, with a real message saying what changed and why - which is a genuine, working audit trail already, not something this project is missing.
+- **Does the graph itself need a checksum, the way `.log` and `.dat` files already have one?** A fair question, and there's a real, published answer to it - [Trusty URIs](https://arxiv.org/abs/1401.5775) (Kuhn & Dumontier, 2014), built for precisely this: making RDF content verifiable even when a hash of it needs to appear *inside* the content itself. Their own paper discusses Git directly, and makes the relevant point plainly: Git's commit hashes already give exactly this guarantee - verifiable, immutable, checkable - just scoped to this one repository rather than the open web. Since nothing outside this repository currently cites this graph independently of it, that scope is the one that actually matters here. If it ever needed to be checked without the repository - the same way an `.inp` file's checksum lives in the graph, not inside the `.inp` file itself - the honest version would be a plain hash of the built `.ttl`, kept in a small file *next to* it rather than a triple *inside* it, for the same reason a checksum never describes itself: an RDF graph can be written out in more than one byte-for-byte-different way while meaning exactly the same thing, so a hash of the graph's bytes is a real answer to "does this exact file match", not to "does this graph still say the same thing" - a subtler question this project hasn't needed to answer yet.
+
+---
+
+## Step 5 - The same question, back where we started
+
+Chapter 1 opened by simply handing you `wd:Q49546` and `wdt:P2054` - acetone, and density - without saying how anyone would find them without already knowing them. This chapter's whole subject has been exactly that gap, just aimed at this project's own graph. The same technique closes it on Wikidata too:
+
+```sparql
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?item WHERE {
+  ?item rdfs:label "Acetone"@en
+}
+```
+
+*I can't reach Wikidata's own endpoint from here, so this is the one query in the chapter without real output shown yet - run it the same way as Chapter 1 and 2's Wikidata queries:*
+
+```bash
+cat > /tmp/wd3.rq <<'EOF'
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?item
+WHERE {
+  ?item rdfs:label "Acetone"@en
+}
+EOF
+
+curl -s -G https://query.wikidata.org/sparql -H 'Accept: text/csv' -A 'sparql-tutorial/0.1 (your-contact-here)' --data-urlencode query@/tmp/wd3.rq
+```
+
+That should hand back `wd:Q49546` itself - the exact address Chapter 1 started from, found this time rather than given. Everything this chapter taught on `caa` and `aa` - search by label, mind the case, see your options first - applies unchanged to a graph you've never seen the inside of and never will. That's the whole point of a shared query language: the skill doesn't know which graph it's pointed at.
+
 ## Where next
 
-- **Chapter 3 (to come):** how you'd find codes like `Q49546`/`P2054` yourself, for a substance or property you don't already know - a real, different skill (search by label, not by an address you were simply handed) that this chapter deliberately left for later.
 - [COMPETENCY_QUESTIONS.md](./COMPETENCY_QUESTIONS.md) - worked questions about experiments, energies and frequencies.
-- The [SPARQL playground](./tools/sparql_playground.html) - its own "Find files missing a checksum" example is the query from Step 5, in a browser, with nothing to install.
+- The [SPARQL playground](./tools/sparql_playground.html) - the same searches from this chapter, in a browser, with nothing to install.
