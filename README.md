@@ -466,14 +466,20 @@ graph. That's the next step.
 
 **A real, direct gotcha, confirmed rather than assumed:** `data_dir`
 defaults to `output_dir` if you leave it out - meaning every `.dat`
-file individual still gets created, just silently with no real
-`fileURL` or `schema:sha256` at all, since GAMESS (US) never actually
-writes `.dat` files into the same folder as `.log` files. Confirmed
-directly that this never throws an error either way - a missing or
-wrongly-pathed `.dat` file just leaves those two properties blank for
-that one file, nothing worse. The [SPARQL playground](./tools/sparql_playground.html)'s
-own "Find files missing a checksum" example is a genuine, direct way
-to check for this on any dataset, old or new.
+file individual still gets created, just with no real `fileURL` or
+`schema:sha256` at all, since GAMESS (US) never actually writes `.dat`
+files into the same folder as `.log` files. A missing or wrongly-pathed
+`.dat` (or `.log`) file never throws an error - it just leaves those
+two properties blank for that one file, nothing worse - but
+`process_experiments()` does say so: one line per kind of missing
+file, giving how many experiments are affected, which folder it
+looked in, and the first ten names. A complete dataset prints
+nothing at all. (If you ever see that line naming your `outputs`
+folder as where it looked for `.dat` files, `data_dir` was left at its
+default.) For a graph that's already built, the
+[SPARQL playground](./tools/sparql_playground.html)'s own "Find files
+missing a checksum" example is a genuine, direct way to check, on any
+dataset, old or new.
 
 **A real, twice-confirmed gotcha, worth knowing before it costs you an
 afternoon of confused debugging:** `process_gamess_directory()`

@@ -61,6 +61,27 @@ process_experiments <- function(
       ""
     }
   }
+
+  # One consolidated heads-up per kind of missing file - and only when
+  # something actually is missing, so a complete dataset stays silent.
+  # Deliberately message(), not warning(): this pipeline already produces
+  # dozens of warnings from other steps, which R collapses into a single
+  # "There were N warnings" line at the end that is easy to scroll past.
+  # Not an error either way - a missing file just leaves that file's
+  # fileURL and schema:sha256 blank, as it always has; this only says so.
+  report_missing <- function(kind, dir, missing_names, total, consequence) {
+    if (length(missing_names) == 0) return(invisible(NULL))
+    shown <- head(missing_names, 10)
+    more  <- length(missing_names) - length(shown)
+    message(
+      length(missing_names), " of ", total, " experiments ",
+      if (length(missing_names) == 1) "has" else "have", " no ", kind,
+      " file in ", dir, ": ", paste(shown, collapse = ", "),
+      if (more > 0) paste0(" ... and ", more, " more") else "",
+      ". ", consequence
+    )
+    invisible(NULL)
+  }
   
   # =========================
   # Files
@@ -71,6 +92,8 @@ process_experiments <- function(
   
   rows <- list()
   idx <- 1
+  missing_dat <- character(0)
+  missing_log <- character(0)
   
   # =========================
   # Add initial activity
@@ -99,6 +122,9 @@ process_experiments <- function(
     input_url <- make_url(file)
     data_url  <- make_url(file.path(data_dir, paste0(name, ".dat")))
     log_url   <- make_url(file.path(output_dir, paste0(name, ".log")))
+
+    if (!file.exists(file.path(data_dir, paste0(name, ".dat")))) missing_dat <- c(missing_dat, name)
+    if (!file.exists(file.path(output_dir, paste0(name, ".log")))) missing_log <- c(missing_log, name)
     
     # provenance lookup
     prov_source <- prov_map$provWasGeneratedBy[
@@ -225,6 +251,12 @@ process_experiments <- function(
     idx <- idx + 1
   }
   
+  report_missing(".dat", data_dir, missing_dat, length(input_files),
+                 "fileURL and schema:sha256 are left blank.")
+  report_missing(".log", output_dir, missing_log, length(input_files),
+                 paste("fileURL and schema:sha256 are left blank,",
+                       "and no level of theory is read."))
+
   # =========================
   # Combine safely
   # =========================
