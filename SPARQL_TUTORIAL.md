@@ -135,6 +135,8 @@ That's the same shape as every query so far: a pattern with a fixed subject (ace
 - **`-A` sets a User-Agent.** Wikimedia asks clients to identify themselves and can reject requests that don't, so put your own project name and a contact there.
 - **You may get more than one row.** Wikidata can hold several densities for a substance, for example at different temperatures. And if you get only the header line, that's the "nothing back" case at the end of this chapter: Wikidata may simply not hold a density for that item.
 
+Typing that `cat` and `curl` pair every time gets tedious quickly. Step 2 wraps it in a one-word shortcut, the same way it wraps `arq` in `ask`.
+
 That's genuinely close to the reference value: Wikipedia lists acetone at 0.7845 g/cm³ at 25 °C, and Wikidata's own figure here is near enough that the small difference is just two sources measuring under slightly different conditions, not an error in the query. If your own number instead looked out by a factor of 1000, that would be the real clue - a missing unit, not a wrong value - and we'll come back to exactly that. The simple `wdt:` form used here gives you the value on its own; Wikidata records the unit on a separate value node, one step away. That is the same shape as `gc:FloatValue` in our own graph, which the graph defines as "containing value and unit". Once you've seen how our graph does it (Chapter 2), you'll be able to follow Wikidata's unit the same way, and we'll finish Chapter 2 by doing exactly that.
 
 ---
@@ -471,6 +473,35 @@ EOF
 ```
 
 It only looks odd because the pipe appears before you've even typed the query - but it still only fires once `ask` actually produces output, same as any other command. `| less` works the same way, and so does `ask2`: `ask2 "$G2" <<'EOF' | grep 'gc:'`.
+
+**The same idea for Wikidata.** Step 0 asked Wikidata a question with a `cat` and a long `curl`. That pair is worth wrapping the way `arq` was: `wiki` takes a query on standard input and sends it to Wikidata's endpoint instead of loading a file.
+
+```bash
+wiki() {
+  mkdir -p /tmp/sparql
+  cat - > /tmp/sparql/wiki.rq
+  curl -s -G https://query.wikidata.org/sparql -H 'Accept: text/csv' -A 'sparql-tutorial/0.1 (your-contact-here)' --data-urlencode query@/tmp/sparql/wiki.rq
+}
+```
+
+Step 0's question then becomes:
+
+```bash
+wiki <<'EOF'
+PREFIX wd:  <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+SELECT ?density
+WHERE { wd:Q49546 wdt:P2054 ?density }
+EOF
+```
+
+```text
+density
+0.7902
+```
+
+Same number as before. Two differences from `ask` are worth knowing. It doesn't prepend your prefix file, because Wikidata needs its own prefixes (`wd:`, `wdt:` and others), which is why they're written out in the query. And the answer comes back as CSV rather than `arq`'s table, because that's what the `Accept` header asks for. Piping works exactly as it does for `ask`: `| grep` or `| less` goes right after the opening `<<'EOF'`. The name is only a label - call it something shorter if you like.
 
 ---
 
@@ -1530,13 +1561,13 @@ SELECT ?solvent ?wantedLabel WHERE {
 EOF
 ```
 
-(`wiki` is a small shortcut worth having from here on, the same idea as `ask` from Chapter 2 - it takes a query on stdin and runs it against Wikidata's own endpoint:
+(`wiki` is the shortcut from Chapter 1, Step 2 - the same idea as `ask`, but sending the query to Wikidata's own endpoint. If you skipped it, here it is again:
 
 ```bash
 wiki() {
   mkdir -p /tmp/sparql
   cat - > /tmp/sparql/wiki.rq
-  curl -s -G https://query.wikidata.org/sparql -H 'Accept: text/csv' -A 'sparql-tutorial/0.1' --data-urlencode query@/tmp/sparql/wiki.rq
+  curl -s -G https://query.wikidata.org/sparql -H 'Accept: text/csv' -A 'sparql-tutorial/0.1 (your-contact-here)' --data-urlencode query@/tmp/sparql/wiki.rq
 }
 ```
 
