@@ -1272,7 +1272,7 @@ That's a wide net - 46 rows in this graph, and worth seeing why:
 -----------------------------------------------------------------------------------------------------
 ```
 
-Peaks, files, energies, spectra, experiments - everything with a matching label, not just the experiments you probably had in mind. A label search finds every *kind* of thing at once, because `rdfs:label` doesn't care what it's attached to. Narrow it to experiments specifically - `prov:used` is a reliable test for that, since only something that actually ran has an input file:
+Peaks, files, energies, spectra, experiments - everything with a matching label, not just the experiments you probably had in mind. A label search finds every *kind* of thing at once, because `rdfs:label` doesn't care what it's attached to. Narrow it to experiments specifically - `prov:used` is a reliable test for that, since only something that actually ran has an input file (Chapter 4 shows why this beats the more obvious class):
 
 ```sparql
 SELECT ?exp ?label WHERE {
@@ -1504,9 +1504,256 @@ Confirmed directly, and cleanly - one result, `Q49546` itself, nothing else to n
 
 The same two lessons this chapter taught on a graph you built yourself turned out to matter, unedited, on a graph you'd never seen the inside of - which is the whole point of a shared query language: the skill doesn't know which graph it's pointed at, and neither do its gotchas.
 
-## Chapter 4 - Out in the wild
+## Chapter 4 - A field guide to a graph you didn't build
 
-Everything so far has worked on a graph you either built yourself or watched get built. This chapter uses the same skills, unmodified, on a graph nobody in this project built: Wikidata, a real, public, billions-of-facts knowledge graph that anyone can query the same way `caa` and `aa` have been queried all along.
+Chapters 1 to 3 each taught a move. This chapter puts them in order, using a question that sounds trivial and isn't: **which experiments are in this graph, and how many?** There is almost no new syntax (`IN` and `FILTER NOT EXISTS`, both small). What's new is a habit - checking an answer a second way before trusting it - and the example is a real one, where the obvious first answer comes back short with no sign that anything is wrong.
+
+Every query below runs against the published `aa` graph unless it says otherwise.
+
+---
+
+## Step 1 - Take the plausible answer, then count something else
+
+Chapter 1's type list is where an unknown graph begins. Scanning it for something experiment-like, `gc:MolecularComputation` looks exactly right. Count it - and, beside it, the three kinds of file the pipeline records for every run (an input, a data file and a log, one of each per experiment, as Chapter 2 showed). `IN` keeps the rows whose value is in the list:
+
+```sparql
+SELECT ?type (COUNT(?thing) AS ?n) WHERE {
+  ?thing a ?type .
+  FILTER(?type IN (gc:MolecularComputation, ex:InputFile, ex:DataFile, ex:LogFile))
+}
+GROUP BY ?type ORDER BY ?type
+```
+
+```text
+--------------------------------
+| type                    | n  |
+================================
+| ex:DataFile             | 30 |
+| ex:InputFile            | 30 |
+| ex:LogFile              | 30 |
+| gc:MolecularComputation | 27 |
+--------------------------------
+```
+
+Three counts of 30 and one of 27. Nothing errored, and 27 looks like a perfectly reasonable answer on its own. It is only visibly wrong because a second, independent count disagrees with it - which is the whole reason to take one.
+
+---
+
+## Step 2 - When two counts disagree, find the difference
+
+Which experiments - things with an input file, the test Chapter 3 used - are missing the class? `FILTER NOT EXISTS { ... }` keeps a row only if the pattern inside matches nothing, which is the direct way to say "without". (Chapter 2 spelled the same idea with `OPTIONAL` plus `FILTER(!BOUND(...))`. That form also works in the playground, whose simpler engine silently ignores `FILTER NOT EXISTS`; on a full engine like `arq`, this one says it more directly.)
+
+```sparql
+SELECT ?exp WHERE {
+  ?exp prov:used ?f .
+  FILTER NOT EXISTS { ?exp a gc:MolecularComputation }
+}
+ORDER BY ?exp
+```
+
+```text
+----------------------------------------
+| exp                                  |
+========================================
+| ex:exp_aa002-aldehyde-bare-smd       |
+| ex:exp_aa002-aldehyde-bare-smd-check |
+| ex:exp_aa002-aldehyde-bare-smd-hcore |
+----------------------------------------
+```
+
+Three runs of one calculation, the SMD aldehyde: the plain run and two diagnostic variants of it. What do they lack that the others have? Ask one of them for everything it has (Chapter 1's question), and compare with `ex:exp_aa001a` from Chapter 2:
+
+```sparql
+SELECT ?p ?v WHERE { ex:exp_aa002-aldehyde-bare-smd-hcore ?p ?v } ORDER BY ?p ?v
+```
+
+```text
+-------------------------------------------------------------------------------
+| p                    | v                                                    |
+===============================================================================
+| ex:hasHssend         | true                                                 |
+| ex:hasRuntyp         | "OPTIMIZE"                                           |
+| ex:hasSolvationModel | "SMD"                                                |
+| ex:hasSolvent        | "water"                                              |
+| gc:hasBasisSet       | "6-21G+(d,p)"                                        |
+| gc:hasMethod         | "wB97X-D"                                            |
+| rdf:type             | gc:VibrationalAnalysis                               |
+| rdf:type             | owl:NamedIndividual                                  |
+| rdfs:label           | "Vibrational analysis aa002-aldehyde-bare-smd-hcore" |
+| prov:generated       | ex:file_aa002-aldehyde-bare-smd-hcore_dat            |
+| prov:generated       | ex:file_aa002-aldehyde-bare-smd-hcore_log            |
+| prov:used            | ex:file_aa002-aldehyde-bare-smd-hcore_inp            |
+-------------------------------------------------------------------------------
+```
+
+Label, method, basis set, input and output files are all there. What's missing is `gc:hasResult`. Check that this is the whole story: how many experiments have a result, and does any experiment carry the class without one?
+
+```sparql
+SELECT (COUNT(DISTINCT ?exp) AS ?withResults) WHERE { ?exp gc:hasResult ?r }
+```
+
+```text
+---------------
+| withResults |
+===============
+| 27          |
+---------------
+```
+
+```sparql
+SELECT ?exp WHERE {
+  ?exp a gc:MolecularComputation .
+  FILTER NOT EXISTS { ?exp gc:hasResult ?r }
+}
+```
+
+```text
+-------
+| exp |
+=======
+-------
+```
+
+27 with a result, and nothing has the class without one - so every experiment with the class has a result, and the counts match: the same 27 experiments, not merely the same number.
+
+`gc:MolecularComputation` is not a label the pipeline puts on every experiment. It arrives as a by-product: the scripts that attach results, constraints and notes to an experiment each write that class on it, so an experiment that nothing was attached to never gets it. These three produced no results, so they never did - and a note added to one of them would give it the class, whether or not there are results. The class wasn't wrong about anything it said. It was answering a different question - "which experiments have had something attached?" - from the one that was asked.
+
+---
+
+## Step 3 - Pick something every one of them has, and check it
+
+A relationship can do what the class couldn't. Everything that ran has an input file and, as Chapter 2 showed, generated output files. Count each:
+
+```sparql
+SELECT (COUNT(DISTINCT ?exp) AS ?n) WHERE { ?exp prov:used ?f }
+```
+
+```text
+------
+| n  |
+======
+| 30 |
+------
+```
+
+```sparql
+SELECT (COUNT(DISTINCT ?exp) AS ?n) WHERE { ?exp prov:generated ?o }
+```
+
+```text
+------
+| n  |
+======
+| 30 |
+------
+```
+
+And the kinds of experiment - Chapter 1's breakdown, restricted to things that ran:
+
+```sparql
+SELECT ?type (COUNT(DISTINCT ?exp) AS ?n) WHERE { ?exp prov:used ?f ; a ?type }
+GROUP BY ?type ORDER BY DESC(?n) ?type
+```
+
+```text
+--------------------------------
+| type                    | n  |
+================================
+| owl:NamedIndividual     | 30 |
+| gc:MolecularComputation | 27 |
+| gc:VibrationalAnalysis  | 16 |
+| gc:SinglePoint          | 10 |
+| gc:IRC                  | 2  |
+| gc:SaddlePoint          | 2  |
+--------------------------------
+```
+
+The four specific kinds - 16, 10, 2 and 2 - add up to 30, so every experiment has exactly one of them (the other rows are broader tags: `owl:NamedIndividual` on everything, and the unreliable class). Now input files, output files, the file counts from Step 1 and the sum of the kinds all say 30. The class said 27.
+
+If you want the list rather than the count, the playground's "basic inventory" example is exactly that, with the kinds spelled out.
+
+---
+
+## Step 4 - Does the answer travel?
+
+A test that works on one graph might only have been fitted to it. Run Step 3's count, and then its breakdown, again on `caa`, with `ask2 "$G2"` from Chapter 1:
+
+```text
+------
+| n  |
+======
+| 61 |
+------
+```
+
+```text
+--------------------------------
+| type                    | n  |
+================================
+| owl:NamedIndividual     | 61 |
+| gc:MolecularComputation | 60 |
+| gc:VibrationalAnalysis  | 43 |
+| gc:SinglePoint          | 13 |
+| gc:IRC                  | 2  |
+| gc:SaddlePoint          | 2  |
+| gc:GeometryOptimization | 1  |
+--------------------------------
+```
+
+Five specific kinds this time - `gc:GeometryOptimization` has one experiment - and 43 + 13 + 2 + 2 + 1 is 61, matching the `prov:used` count. A list of kinds written for `aa` would have missed that one; the relationship didn't care. That's also why the playground's inventory lists all five. The class is short again, 60 of 61, and the missing experiment is `ex:exp_caa001` - the lone geometry optimisation, which has no results attached: no results, no class, the same pattern as in `aa`.
+
+One more trap, if you use the reasoned graph (README Step 6): inference can make a loose class looser. The same class on `aa`'s published reasoned graph - `ask2` takes a URL as well as a file:
+
+```bash
+ask2 https://raw.githubusercontent.com/Darren01/ont_mm/main/examples/aa/ont/aa_graph_reasoned.ttl <<'EOF'
+SELECT (COUNT(DISTINCT ?x) AS ?n) WHERE { ?x a gc:MolecularComputation }
+EOF
+```
+
+```text
+-------
+| n   |
+=======
+| 426 |
+-------
+```
+
+Not 30, and not 27: reaction path points, frequency peaks, atoms and other things now count as "a computation" too. The relationship holds up where the class doesn't - Step 3's `prov:used` count, on the same reasoned graph:
+
+```text
+------
+| n  |
+======
+| 30 |
+------
+```
+
+Whatever you decide counts as "an experiment" in the asserted graph, re-check it on the reasoned one before relying on it.
+
+---
+
+## The recipe, in one place
+
+Facing a graph you know nothing about:
+
+1. **What kinds of thing are here, and how many of each?** (Chapter 1, Steps 1 to 3)
+2. **What do the interesting ones mean?** Ask for their labels and definitions. (Chapter 1, Step 4)
+3. **Is there one class for "all of them"?** If the obvious class exists, treat it as a candidate, not the answer. If none fits, look for something every one of them has - usually a relationship. (Steps 1 and 3 above)
+4. **Count it a second way, from a different part of the model** - files, results, outputs - **and when counts disagree, find out why.** (Steps 1 and 2 above)
+5. **Look at one in full, then ask what that kind of thing has.** (Chapter 1, Steps 4 and 5; Chapter 2, Step 1)
+6. **See the real values before you filter on them, and follow the links to what they point at.** (Chapter 2; Chapter 3, Step 3)
+7. **Look for what's missing, and check whether it's deliberate.** (Chapter 2, Step 5)
+8. **Check that the answer travels** - to another graph, and to the reasoned version of the same one. (Step 4 above)
+
+Steps 3, 4 and 8 are this chapter's. The rest were already in Chapters 1 to 3, but nowhere as one sequence.
+
+## What this chapter showed
+
+The class was never wrong about anything it said. It answered a different question - "which experiments have had something attached?" - from the one that was asked, and the only thing that revealed it was a second count. That is the habit to take to any graph you didn't build: before you trust a number, ask something else that has to agree with it. Chapter 5 is the first time this is tried on a graph nobody here built.
+
+## Chapter 5 - Out in the wild
+
+Everything so far has worked on a graph you either built yourself or watched get built. This chapter uses the same skills, unmodified, on a graph nobody in this project built: Wikidata, a real, public, billions-of-facts knowledge graph that anyone can query the same way `caa` and `aa` have been queried all along. Chapter 4 ended with a recipe for approaching a graph you know nothing about; this chapter is its first test on one nobody here built.
 
 It's worth asking honestly, before going any further: why do this at all, rather than just look a number up on Wikipedia? For a single fact, Wikipedia is often genuinely faster, and this chapter won't pretend otherwise. The real answer is that the value shows up exactly where "one fact" stops being enough:
 
