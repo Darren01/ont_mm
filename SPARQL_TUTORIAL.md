@@ -1385,15 +1385,17 @@ Two experiments - but a third, `ex:exp_aa001b`, hit the same real issue and type
 
 ### Adding a note with SPARQL, to see the result on the fly
 
-SPARQL isn't only for asking questions. `INSERT DATA` adds a triple directly:
+SPARQL isn't only for asking questions. `INSERT DATA` adds a triple directly. It can't go through `ask`, though: `arq` only understands queries, and given an update it stops at the parser with an error like `Was expecting one of: "select" ... "describe" ... "ask"`. Save it in a file instead and hand the file to `robot`. (`.ru` is the usual extension for a SPARQL Update, as `.rq` is for a query - a convention only. The file carries its own `PREFIX` lines because `robot` doesn't prepend your prefix file the way `ask` does.)
 
-```sparql
+```bash
+cat > add_note.ru <<'EOF'
 PREFIX ex: <http://example.org/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 INSERT DATA {
   ex:exp_aa001a skos:editorialNote "A second, added note - just to see what this looks like." .
 }
+EOF
 ```
 
 With `robot`, this is `-u`/`--update` instead of `-q`/`--query`, writing the result to a new file with `-o`:
@@ -1429,7 +1431,10 @@ That's not a bug to work around - it's the entire point, and worth sitting with 
 
 `INSERT DATA` adds one specific triple. `DELETE`/`WHERE` finds every triple matching a pattern and removes all of them in a single operation - genuinely more powerful, and worth seeing on something real. Recall from Chapter 1: `gc:FrequencyPeak` carries two `rdfs:comment` values, one a real definition and the other a generic placeholder ("A class for FrequencyPeak.") left over from when the upstream ontology was first scaffolded. It isn't the only one - 51 classes across the release carry that same placeholder pattern. One update removes every one of them, wherever it appears:
 
-```sparql
+Save it as `remove_placeholders.ru`, run it the same way - to a new file, never over the original - and count the placeholder lines before and after, plus the real comment on `gc:FrequencyPeak` to check it survived:
+
+```bash
+cat > remove_placeholders.ru <<'EOF'
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 DELETE {
@@ -1439,15 +1444,22 @@ WHERE {
   ?class rdfs:comment ?placeholder .
   FILTER(STRSTARTS(STR(?placeholder), "A class for "))
 }
+EOF
+
+robot query --input aa_graph_20260909.ttl --update remove_placeholders.ru --output aa_graph_noplaceholders.ttl
+
+grep -c '"A class for [A-Za-z]*\."@en' aa_graph_20260909.ttl
+grep -c '"A class for [A-Za-z]*\."@en' aa_graph_noplaceholders.ttl
+grep -c 'A class representing frequency peak' aa_graph_noplaceholders.ttl
 ```
 
 ```text
-Before: 51 classes carry the generic placeholder comment.
-After the update: 0.
-The real comment on gc:FrequencyPeak: still present, 1 occurrence.
+51
+0
+1
 ```
 
-All 51, gone in one pass - and the real, useful comment on `gc:FrequencyPeak` survives untouched, because the pattern only matches the generic placeholder shape, not genuine documentation. This is the same searching skill as the rest of the chapter, just aimed at *changing* the graph instead of reading it: describe the pattern of what's wrong, and SPARQL finds every instance of it for you, rather than you finding and fixing each one by hand.
+All 51, gone in one pass (the counts above are before, after, and the surviving real comment) - and the real, useful comment on `gc:FrequencyPeak` survives untouched, because the pattern only matches the generic placeholder shape, not genuine documentation. This is the same searching skill as the rest of the chapter, just aimed at *changing* the graph instead of reading it: describe the pattern of what's wrong, and SPARQL finds every instance of it for you, rather than you finding and fixing each one by hand.
 
 ### What "permanent and logged" would actually need
 

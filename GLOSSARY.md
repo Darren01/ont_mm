@@ -7,6 +7,12 @@ itself, not to any one dataset's actual contents. That's deliberately
 how this glossary is scoped: every term below is one that
 [`COMPETENCY_QUESTIONS.md`](./COMPETENCY_QUESTIONS.md) actually
 references, whether or not the `caa` example happens to populate it.
+One deliberate exception: the file classes (`ex:InputFile`,
+`ex:DataFile`, `ex:LogFile`), `ex:fileURL` and `ex:involvesAtom1` to
+`ex:involvesAtom4` are not referenced by any competency question, but
+they turn up in the [SPARQL tutorial](./SPARQL_TUTORIAL.md)'s own
+examples and in anyone's first queries of these graphs, so they are
+defined here too rather than left to be guessed.
 
 Where a definition comes directly from the ontology's own schema
 (`gc_core.ttl`), it's quoted as such. Where a term is this project's
@@ -132,6 +138,28 @@ itself (unlike the `prov:` terms above): a small, separate file,
 property's real declaration, kept apart from that versioned release
 for the same reason [`dl_axioms.ttl`](./dl_axioms.ttl) is.
 
+**`ex:InputFile`**, **`ex:DataFile`**, **`ex:LogFile`** - this
+project's own classes, never formally defined until now, for the
+three files recorded for every experiment: the GAMESS (US) input deck
+it was run from (`.inp`), the `.dat` (PUNCH) file it wrote, and its
+`.log` - the printed output its results are read from. There is
+always one of each per experiment, and the individual exists even if
+the real file wasn't found on disk when the graph was built: the
+published `aa` and `caa` graphs have a `DataFile` for every experiment
+and not one `ex:fileURL` or `schema:sha256` among them. An experiment
+reaches its input through `prov:used` and its data and log files
+through `prov:generated`, above.
+
+**`ex:fileURL`** - this project's own property, never formally defined
+until now: where the real file is, as a `file:` URL for its absolute
+path on the machine the graph was built on. It is a plain string, not
+a link a query can follow, and it is not portable - it names the
+builder's own folders, so it won't resolve on anyone else's machine.
+It is only written where the file was actually found at build time;
+otherwise the property is absent altogether, and so is the file's
+`schema:sha256`, since both come from the same lookup of the real
+file.
+
 ## Constraints
 
 **`ex:DistanceConstraint`**, **`ex:AngleConstraint`**,
@@ -139,6 +167,23 @@ for the same reason [`dl_axioms.ttl`](./dl_axioms.ttl) is.
 formally defined until now: a geometric restriction applied during a
 calculation, fixing a bond distance, bond angle, or dihedral angle to
 a specific target value rather than letting it optimize freely.
+
+**`ex:hasConstraint`** - this project's own property, never formally
+defined until now: links an experiment to each geometric constraint
+applied during it, one link per constraint. The constraint is a node
+of one of the classes above, carrying its own `ex:targetValue`,
+`gc:hasUnit` and `gc:constraintMode`, and naming the atoms it fixes
+with **`ex:involvesAtom1`** to **`ex:involvesAtom4`** - up to four:
+two for a distance, three for an angle, four for a dihedral (the
+published `aa` and `caa` graphs contain only distance constraints).
+Worth knowing before following one of those links: an atom is named
+`ex:atom_<n>`, where `<n>` is the atom's number in the GAMESS input,
+and that is all the graph knows about it. The node is declared and
+nothing more - no element, no coordinates, no label - and the same
+`ex:atom_10` is reused by every experiment that mentions atom 10 (19
+different experiments in `caa`), whichever molecule's numbering that
+is. It identifies a position in an input file, not an atom in the
+world.
 
 **`ex:targetValue`** - this project's own property, never formally
 defined until now: the specific numeric value (with `gc:hasUnit`,
