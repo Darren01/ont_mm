@@ -465,12 +465,12 @@ Same question, same shape, one argument changed - and third place is genuinely d
 **Piping `ask`'s own output somewhere else** works too, though the heredoc makes it look backwards the first time you write it: the pipe goes right after the opening `<<'EOF'`, on the same line as the call itself, not after the closing `EOF`:
 
 ```bash
-ask $G <<'EOF' | grep 'gc:'
+ask <<'EOF' | grep 'gc:'
 SELECT ?type (COUNT(?thing) AS ?n) WHERE { ?thing a ?type } GROUP BY ?type ORDER BY DESC(?n) ?type
 EOF
 ```
 
-It only looks odd because the pipe appears before you've even typed the query - but it still only fires once `ask` actually produces output, same as any other command. `| less` works the same way.
+It only looks odd because the pipe appears before you've even typed the query - but it still only fires once `ask` actually produces output, same as any other command. `| less` works the same way, and so does `ask2`: `ask2 "$G2" <<'EOF' | grep 'gc:'`.
 
 ---
 
