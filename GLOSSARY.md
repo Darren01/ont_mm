@@ -8,12 +8,12 @@ how this glossary is scoped: every term below is one that
 [`COMPETENCY_QUESTIONS.md`](./COMPETENCY_QUESTIONS.md) actually
 references, whether or not the `caa` example happens to populate it.
 One deliberate exception: the file classes (`ex:InputFile`,
-`ex:DataFile`, `ex:LogFile`), `ex:fileURL` and `ex:involvesAtom1` to
-`ex:involvesAtom4` and the defined class `ex:Experiment` are not
-referenced by any competency question, but
-they turn up in the [SPARQL tutorial](./SPARQL_TUTORIAL.md)'s own
-examples and in anyone's first queries of these graphs, so they are
-defined here too rather than left to be guessed.
+`ex:DataFile`, `ex:LogFile`), `ex:fileURL`, `ex:involvesAtom1` to
+`ex:involvesAtom4` and the two defined classes (`ex:Experiment`,
+`ex:ImaginaryFrequencyPeak`) are not referenced by any competency
+question, but they turn up in the [SPARQL tutorial](./SPARQL_TUTORIAL.md)'s
+own examples, in README Step 6, and in anyone's first queries of these
+graphs, so they are defined here too rather than left to be guessed.
 
 Where a definition comes directly from the ontology's own schema
 (`gc_core.ttl`), it's quoted as such. Where a term is this project's
@@ -253,6 +253,22 @@ an imaginary frequency - the standard, real signal used throughout
 this project to flag whether a geometry is a genuine stationary point
 (zero expected for a minimum, exactly one for a confirmed transition
 state).
+
+**`ex:ImaginaryFrequencyPeak`** - this project's own class, never
+formally defined until now: a `gc:FrequencyPeak` whose `gc:hasFrequency`
+value is strictly negative, which is GAMESS's convention for an
+imaginary vibrational mode. A genuine transition state has exactly one
+and a minimum has none; a vibrational analysis that shows one where
+none is expected flags an unconverged geometry. It is *derived*, not
+asserted: the reasoner classifies each peak from
+[`dl_axioms.ttl`](./dl_axioms.ttl) (section 1), purely from the sign of
+the value, so it appears only in a reasoned graph (README Step 6), and
+"which results show an imaginary frequency?" becomes
+`?peak a ex:ImaginaryFrequencyPeak` instead of a numeric filter. Exactly
+zero does not count - tested deliberately, not assumed - which matters
+because the six translation and rotation modes sit near zero without
+being imaginary. Counted both ways on the published `aa` and `caa`
+graphs, the class and the numeric test agree.
 
 ## Reaction paths
 
