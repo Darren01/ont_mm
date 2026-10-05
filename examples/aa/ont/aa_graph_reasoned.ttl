@@ -2072,6 +2072,17 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
 <http://example.org/DistanceConstraint> rdf:type owl:Class .
 
 
+###  http://example.org/Experiment
+<http://example.org/Experiment> rdf:type owl:Class ;
+                                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://www.w3.org/ns/prov#used> ;
+                                                      owl:someValuesFrom <http://example.org/InputFile>
+                                                    ] ;
+                                rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
+                                rdfs:comment "A calculation run: anything that used an input file (prov:used some ex:InputFile). Derived by the reasoner rather than asserted by the pipeline, so it appears only in reasoned graphs. Each experiment also keeps its specific kind (gc:SinglePoint, gc:VibrationalAnalysis, and so on)."@en ;
+                                rdfs:label "Experiment"@en .
+
+
 ###  http://example.org/ImaginaryFrequencyPeak
 <http://example.org/ImaginaryFrequencyPeak> rdf:type owl:Class ;
                                             owl:equivalentClass [ owl:intersectionOf ( <http://purl.org/gc/FrequencyPeak>
@@ -5359,11 +5370,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa001-ts-pcseg2
 <http://example.org/exp_aa001-ts-pcseg2> rdf:type owl:NamedIndividual ,
+                                                  <http://example.org/Experiment> ,
                                                   <http://purl.org/gc/Atom> ,
                                                   <http://purl.org/gc/MolecularComputation> ,
                                                   <http://purl.org/gc/MolecularMethodology> ,
-                                                  <http://purl.org/gc/SinglePoint> ,
-                                                  <http://www.w3.org/ns/prov#Activity> ;
+                                                  <http://purl.org/gc/SinglePoint> ;
                                          <http://purl.org/gc/hasResult> <http://example.org/energies_aa001-ts-pcseg2> ;
                                          <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001-ts-pcseg2_dat> ,
                                                                                <http://example.org/file_aa001-ts-pcseg2_log> ;
@@ -5379,11 +5390,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa001a
 <http://example.org/exp_aa001a> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/Experiment> ,
                                          <http://purl.org/gc/Atom> ,
                                          <http://purl.org/gc/MolecularComputation> ,
                                          <http://purl.org/gc/MolecularMethodology> ,
-                                         <http://purl.org/gc/VibrationalAnalysis> ,
-                                         <http://www.w3.org/ns/prov#Activity> ;
+                                         <http://purl.org/gc/VibrationalAnalysis> ;
                                 <http://example.org/hasConstraint> <http://example.org/constraint_aa001a_d1> ,
                                                                    <http://example.org/constraint_aa001a_d2> ;
                                 <http://purl.org/gc/hasResult> <http://example.org/energies_aa001a> ,
@@ -5404,11 +5415,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa001b
 <http://example.org/exp_aa001b> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/Experiment> ,
                                          <http://purl.org/gc/Atom> ,
                                          <http://purl.org/gc/MolecularComputation> ,
                                          <http://purl.org/gc/MolecularMethodology> ,
-                                         <http://purl.org/gc/VibrationalAnalysis> ,
-                                         <http://www.w3.org/ns/prov#Activity> ;
+                                         <http://purl.org/gc/VibrationalAnalysis> ;
                                 <http://example.org/hasConstraint> <http://example.org/constraint_aa001b_d1> ,
                                                                    <http://example.org/constraint_aa001b_d2> ;
                                 <http://purl.org/gc/hasResult> <http://example.org/energies_aa001b> ,
@@ -5429,11 +5440,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa001c
 <http://example.org/exp_aa001c> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/Experiment> ,
                                          <http://purl.org/gc/Atom> ,
                                          <http://purl.org/gc/MolecularComputation> ,
                                          <http://purl.org/gc/MolecularMethodology> ,
-                                         <http://purl.org/gc/VibrationalAnalysis> ,
-                                         <http://www.w3.org/ns/prov#Activity> ;
+                                         <http://purl.org/gc/VibrationalAnalysis> ;
                                 <http://example.org/hasConstraint> <http://example.org/constraint_aa001c_d1> ,
                                                                    <http://example.org/constraint_aa001c_d2> ;
                                 <http://purl.org/gc/hasResult> <http://example.org/energies_aa001c> ,
@@ -5454,11 +5465,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa001d
 <http://example.org/exp_aa001d> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/Experiment> ,
                                          <http://purl.org/gc/Atom> ,
                                          <http://purl.org/gc/MolecularComputation> ,
                                          <http://purl.org/gc/MolecularMethodology> ,
-                                         <http://purl.org/gc/SaddlePoint> ,
-                                         <http://www.w3.org/ns/prov#Activity> ;
+                                         <http://purl.org/gc/SaddlePoint> ;
                                 <http://purl.org/gc/hasResult> <http://example.org/energies_aa001d> ,
                                                                <http://example.org/spectrum_aa001d> ;
                                 <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001d_dat> ,
@@ -5476,11 +5487,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa001d-smd
 <http://example.org/exp_aa001d-smd> rdf:type owl:NamedIndividual ,
+                                             <http://example.org/Experiment> ,
                                              <http://purl.org/gc/Atom> ,
                                              <http://purl.org/gc/MolecularComputation> ,
                                              <http://purl.org/gc/MolecularMethodology> ,
-                                             <http://purl.org/gc/SaddlePoint> ,
-                                             <http://www.w3.org/ns/prov#Activity> ;
+                                             <http://purl.org/gc/SaddlePoint> ;
                                     <http://purl.org/gc/hasResult> <http://example.org/energies_aa001d-smd> ,
                                                                    <http://example.org/spectrum_aa001d-smd> ;
                                     <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001d-smd_dat> ,
@@ -5497,11 +5508,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa001d-smd-hess
 <http://example.org/exp_aa001d-smd-hess> rdf:type owl:NamedIndividual ,
+                                                  <http://example.org/Experiment> ,
                                                   <http://purl.org/gc/Atom> ,
                                                   <http://purl.org/gc/MolecularComputation> ,
                                                   <http://purl.org/gc/MolecularMethodology> ,
-                                                  <http://purl.org/gc/VibrationalAnalysis> ,
-                                                  <http://www.w3.org/ns/prov#Activity> ;
+                                                  <http://purl.org/gc/VibrationalAnalysis> ;
                                          <http://purl.org/gc/hasResult> <http://example.org/energies_aa001d-smd-hess> ,
                                                                         <http://example.org/spectrum_aa001d-smd-hess> ;
                                          <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001d-smd-hess_dat> ,
@@ -5517,11 +5528,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa001d-smd-pcseg2
 <http://example.org/exp_aa001d-smd-pcseg2> rdf:type owl:NamedIndividual ,
+                                                    <http://example.org/Experiment> ,
                                                     <http://purl.org/gc/Atom> ,
                                                     <http://purl.org/gc/MolecularComputation> ,
                                                     <http://purl.org/gc/MolecularMethodology> ,
-                                                    <http://purl.org/gc/SinglePoint> ,
-                                                    <http://www.w3.org/ns/prov#Activity> ;
+                                                    <http://purl.org/gc/SinglePoint> ;
                                            <http://purl.org/gc/hasResult> <http://example.org/energies_aa001d-smd-pcseg2> ;
                                            <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001d-smd-pcseg2_dat> ,
                                                                                  <http://example.org/file_aa001d-smd-pcseg2_log> ;
@@ -5536,11 +5547,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa001e
 <http://example.org/exp_aa001e> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/Experiment> ,
                                          <http://purl.org/gc/Atom> ,
                                          <http://purl.org/gc/IRC> ,
                                          <http://purl.org/gc/MolecularComputation> ,
-                                         <http://purl.org/gc/MolecularMethodology> ,
-                                         <http://www.w3.org/ns/prov#Activity> ;
+                                         <http://purl.org/gc/MolecularMethodology> ;
                                 <http://purl.org/gc/hasResult> <http://example.org/reactionpath_aa001e> ;
                                 <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001e_dat> ,
                                                                       <http://example.org/file_aa001e_log> ;
@@ -5556,11 +5567,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa001f
 <http://example.org/exp_aa001f> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/Experiment> ,
                                          <http://purl.org/gc/Atom> ,
                                          <http://purl.org/gc/IRC> ,
                                          <http://purl.org/gc/MolecularComputation> ,
-                                         <http://purl.org/gc/MolecularMethodology> ,
-                                         <http://www.w3.org/ns/prov#Activity> ;
+                                         <http://purl.org/gc/MolecularMethodology> ;
                                 <http://purl.org/gc/hasResult> <http://example.org/reactionpath_aa001e> ;
                                 <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001f_dat> ,
                                                                       <http://example.org/file_aa001f_log> ;
@@ -5576,11 +5587,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa001g
 <http://example.org/exp_aa001g> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/Experiment> ,
                                          <http://purl.org/gc/Atom> ,
                                          <http://purl.org/gc/MolecularComputation> ,
                                          <http://purl.org/gc/MolecularMethodology> ,
-                                         <http://purl.org/gc/VibrationalAnalysis> ,
-                                         <http://www.w3.org/ns/prov#Activity> ;
+                                         <http://purl.org/gc/VibrationalAnalysis> ;
                                 <http://purl.org/gc/hasResult> <http://example.org/energies_aa001g> ,
                                                                <http://example.org/spectrum_aa001g> ;
                                 <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001g_dat> ,
@@ -5598,11 +5609,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa001g-pcseg2
 <http://example.org/exp_aa001g-pcseg2> rdf:type owl:NamedIndividual ,
+                                                <http://example.org/Experiment> ,
                                                 <http://purl.org/gc/Atom> ,
                                                 <http://purl.org/gc/MolecularComputation> ,
                                                 <http://purl.org/gc/MolecularMethodology> ,
-                                                <http://purl.org/gc/SinglePoint> ,
-                                                <http://www.w3.org/ns/prov#Activity> ;
+                                                <http://purl.org/gc/SinglePoint> ;
                                        <http://purl.org/gc/hasResult> <http://example.org/energies_aa001g-pcseg2> ;
                                        <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001g-pcseg2_dat> ,
                                                                              <http://example.org/file_aa001g-pcseg2_log> ;
@@ -5618,11 +5629,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa001g-smd
 <http://example.org/exp_aa001g-smd> rdf:type owl:NamedIndividual ,
+                                             <http://example.org/Experiment> ,
                                              <http://purl.org/gc/Atom> ,
                                              <http://purl.org/gc/MolecularComputation> ,
                                              <http://purl.org/gc/MolecularMethodology> ,
-                                             <http://purl.org/gc/VibrationalAnalysis> ,
-                                             <http://www.w3.org/ns/prov#Activity> ;
+                                             <http://purl.org/gc/VibrationalAnalysis> ;
                                     <http://purl.org/gc/hasResult> <http://example.org/energies_aa001g-smd> ,
                                                                    <http://example.org/spectrum_aa001g-smd> ;
                                     <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001g-smd_dat> ,
@@ -5639,11 +5650,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa001g-smd-pcseg2
 <http://example.org/exp_aa001g-smd-pcseg2> rdf:type owl:NamedIndividual ,
+                                                    <http://example.org/Experiment> ,
                                                     <http://purl.org/gc/Atom> ,
                                                     <http://purl.org/gc/MolecularComputation> ,
                                                     <http://purl.org/gc/MolecularMethodology> ,
-                                                    <http://purl.org/gc/SinglePoint> ,
-                                                    <http://www.w3.org/ns/prov#Activity> ;
+                                                    <http://purl.org/gc/SinglePoint> ;
                                            <http://purl.org/gc/hasResult> <http://example.org/energies_aa001g-smd-pcseg2> ;
                                            <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001g-smd-pcseg2_dat> ,
                                                                                  <http://example.org/file_aa001g-smd-pcseg2_log> ;
@@ -5658,11 +5669,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa001h
 <http://example.org/exp_aa001h> rdf:type owl:NamedIndividual ,
+                                         <http://example.org/Experiment> ,
                                          <http://purl.org/gc/Atom> ,
                                          <http://purl.org/gc/MolecularComputation> ,
                                          <http://purl.org/gc/MolecularMethodology> ,
-                                         <http://purl.org/gc/VibrationalAnalysis> ,
-                                         <http://www.w3.org/ns/prov#Activity> ;
+                                         <http://purl.org/gc/VibrationalAnalysis> ;
                                 <http://purl.org/gc/hasResult> <http://example.org/energies_aa001h> ,
                                                                <http://example.org/spectrum_aa001h> ;
                                 <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001h_dat> ,
@@ -5680,11 +5691,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa001h-pcseg2
 <http://example.org/exp_aa001h-pcseg2> rdf:type owl:NamedIndividual ,
+                                                <http://example.org/Experiment> ,
                                                 <http://purl.org/gc/Atom> ,
                                                 <http://purl.org/gc/MolecularComputation> ,
                                                 <http://purl.org/gc/MolecularMethodology> ,
-                                                <http://purl.org/gc/SinglePoint> ,
-                                                <http://www.w3.org/ns/prov#Activity> ;
+                                                <http://purl.org/gc/SinglePoint> ;
                                        <http://purl.org/gc/hasResult> <http://example.org/energies_aa001h-pcseg2> ;
                                        <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001h-pcseg2_dat> ,
                                                                              <http://example.org/file_aa001h-pcseg2_log> ;
@@ -5700,11 +5711,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa001h-smd
 <http://example.org/exp_aa001h-smd> rdf:type owl:NamedIndividual ,
+                                             <http://example.org/Experiment> ,
                                              <http://purl.org/gc/Atom> ,
                                              <http://purl.org/gc/MolecularComputation> ,
                                              <http://purl.org/gc/MolecularMethodology> ,
-                                             <http://purl.org/gc/VibrationalAnalysis> ,
-                                             <http://www.w3.org/ns/prov#Activity> ;
+                                             <http://purl.org/gc/VibrationalAnalysis> ;
                                     <http://purl.org/gc/hasResult> <http://example.org/energies_aa001h-smd> ,
                                                                    <http://example.org/spectrum_aa001h-smd> ;
                                     <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001h-smd_dat> ,
@@ -5721,11 +5732,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa001h-smd-pcseg2
 <http://example.org/exp_aa001h-smd-pcseg2> rdf:type owl:NamedIndividual ,
+                                                    <http://example.org/Experiment> ,
                                                     <http://purl.org/gc/Atom> ,
                                                     <http://purl.org/gc/MolecularComputation> ,
                                                     <http://purl.org/gc/MolecularMethodology> ,
-                                                    <http://purl.org/gc/SinglePoint> ,
-                                                    <http://www.w3.org/ns/prov#Activity> ;
+                                                    <http://purl.org/gc/SinglePoint> ;
                                            <http://purl.org/gc/hasResult> <http://example.org/energies_aa001h-smd-pcseg2> ;
                                            <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001h-smd-pcseg2_dat> ,
                                                                                  <http://example.org/file_aa001h-smd-pcseg2_log> ;
@@ -5740,11 +5751,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa002-aldehyde-bare
 <http://example.org/exp_aa002-aldehyde-bare> rdf:type owl:NamedIndividual ,
+                                                      <http://example.org/Experiment> ,
                                                       <http://purl.org/gc/Atom> ,
                                                       <http://purl.org/gc/MolecularComputation> ,
                                                       <http://purl.org/gc/MolecularMethodology> ,
-                                                      <http://purl.org/gc/VibrationalAnalysis> ,
-                                                      <http://www.w3.org/ns/prov#Activity> ;
+                                                      <http://purl.org/gc/VibrationalAnalysis> ;
                                              <http://purl.org/dc/terms/relation> <https://doi.org/10.1021/ja00249a034> ;
                                              <http://purl.org/gc/hasResult> <http://example.org/energies_aa002-aldehyde-bare> ,
                                                                             <http://example.org/spectrum_aa002-aldehyde-bare> ;
@@ -5763,10 +5774,10 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa002-aldehyde-bare-smd
 <http://example.org/exp_aa002-aldehyde-bare-smd> rdf:type owl:NamedIndividual ,
+                                                          <http://example.org/Experiment> ,
                                                           <http://purl.org/gc/Atom> ,
                                                           <http://purl.org/gc/MolecularMethodology> ,
-                                                          <http://purl.org/gc/VibrationalAnalysis> ,
-                                                          <http://www.w3.org/ns/prov#Activity> ;
+                                                          <http://purl.org/gc/VibrationalAnalysis> ;
                                                  <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-aldehyde-bare-smd_dat> ,
                                                                                        <http://example.org/file_aa002-aldehyde-bare-smd_log> ;
                                                  <http://www.w3.org/ns/prov#used> <http://example.org/file_aa002-aldehyde-bare-smd_inp> ;
@@ -5781,10 +5792,10 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa002-aldehyde-bare-smd-check
 <http://example.org/exp_aa002-aldehyde-bare-smd-check> rdf:type owl:NamedIndividual ,
+                                                                <http://example.org/Experiment> ,
                                                                 <http://purl.org/gc/Atom> ,
                                                                 <http://purl.org/gc/MolecularMethodology> ,
-                                                                <http://purl.org/gc/VibrationalAnalysis> ,
-                                                                <http://www.w3.org/ns/prov#Activity> ;
+                                                                <http://purl.org/gc/VibrationalAnalysis> ;
                                                        <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-aldehyde-bare-smd-check_dat> ,
                                                                                              <http://example.org/file_aa002-aldehyde-bare-smd-check_log> ;
                                                        <http://www.w3.org/ns/prov#used> <http://example.org/file_aa002-aldehyde-bare-smd-check_inp> ;
@@ -5799,11 +5810,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa002-aldehyde-bare-smd-energy
 <http://example.org/exp_aa002-aldehyde-bare-smd-energy> rdf:type owl:NamedIndividual ,
+                                                                 <http://example.org/Experiment> ,
                                                                  <http://purl.org/gc/Atom> ,
                                                                  <http://purl.org/gc/MolecularComputation> ,
                                                                  <http://purl.org/gc/MolecularMethodology> ,
-                                                                 <http://purl.org/gc/SinglePoint> ,
-                                                                 <http://www.w3.org/ns/prov#Activity> ;
+                                                                 <http://purl.org/gc/SinglePoint> ;
                                                         <http://purl.org/gc/hasResult> <http://example.org/energies_aa002-aldehyde-bare-smd-energy> ;
                                                         <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-aldehyde-bare-smd-energy_dat> ,
                                                                                               <http://example.org/file_aa002-aldehyde-bare-smd-energy_log> ;
@@ -5818,10 +5829,10 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa002-aldehyde-bare-smd-hcore
 <http://example.org/exp_aa002-aldehyde-bare-smd-hcore> rdf:type owl:NamedIndividual ,
+                                                                <http://example.org/Experiment> ,
                                                                 <http://purl.org/gc/Atom> ,
                                                                 <http://purl.org/gc/MolecularMethodology> ,
-                                                                <http://purl.org/gc/VibrationalAnalysis> ,
-                                                                <http://www.w3.org/ns/prov#Activity> ;
+                                                                <http://purl.org/gc/VibrationalAnalysis> ;
                                                        <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-aldehyde-bare-smd-hcore_dat> ,
                                                                                              <http://example.org/file_aa002-aldehyde-bare-smd-hcore_log> ;
                                                        <http://www.w3.org/ns/prov#used> <http://example.org/file_aa002-aldehyde-bare-smd-hcore_inp> ;
@@ -5836,11 +5847,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa002-aldehyde-pcseg2
 <http://example.org/exp_aa002-aldehyde-pcseg2> rdf:type owl:NamedIndividual ,
+                                                        <http://example.org/Experiment> ,
                                                         <http://purl.org/gc/Atom> ,
                                                         <http://purl.org/gc/MolecularComputation> ,
                                                         <http://purl.org/gc/MolecularMethodology> ,
-                                                        <http://purl.org/gc/SinglePoint> ,
-                                                        <http://www.w3.org/ns/prov#Activity> ;
+                                                        <http://purl.org/gc/SinglePoint> ;
                                                <http://purl.org/gc/hasResult> <http://example.org/energies_aa002-aldehyde-pcseg2> ;
                                                <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-aldehyde-pcseg2_dat> ,
                                                                                      <http://example.org/file_aa002-aldehyde-pcseg2_log> ;
@@ -5856,11 +5867,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa002-hydrate-bare
 <http://example.org/exp_aa002-hydrate-bare> rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/Experiment> ,
                                                      <http://purl.org/gc/Atom> ,
                                                      <http://purl.org/gc/MolecularComputation> ,
                                                      <http://purl.org/gc/MolecularMethodology> ,
-                                                     <http://purl.org/gc/VibrationalAnalysis> ,
-                                                     <http://www.w3.org/ns/prov#Activity> ;
+                                                     <http://purl.org/gc/VibrationalAnalysis> ;
                                             <http://purl.org/gc/hasResult> <http://example.org/energies_aa002-hydrate-bare> ,
                                                                            <http://example.org/spectrum_aa002-hydrate-bare> ;
                                             <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-hydrate-bare_dat> ,
@@ -5878,11 +5889,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa002-hydrate-bare-smd
 <http://example.org/exp_aa002-hydrate-bare-smd> rdf:type owl:NamedIndividual ,
+                                                         <http://example.org/Experiment> ,
                                                          <http://purl.org/gc/Atom> ,
                                                          <http://purl.org/gc/MolecularComputation> ,
                                                          <http://purl.org/gc/MolecularMethodology> ,
-                                                         <http://purl.org/gc/VibrationalAnalysis> ,
-                                                         <http://www.w3.org/ns/prov#Activity> ;
+                                                         <http://purl.org/gc/VibrationalAnalysis> ;
                                                 <http://purl.org/gc/hasResult> <http://example.org/energies_aa002-hydrate-bare-smd> ,
                                                                                <http://example.org/spectrum_aa002-hydrate-bare-smd> ;
                                                 <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-hydrate-bare-smd_dat> ,
@@ -5899,11 +5910,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa002-hydrate-pcseg2
 <http://example.org/exp_aa002-hydrate-pcseg2> rdf:type owl:NamedIndividual ,
+                                                       <http://example.org/Experiment> ,
                                                        <http://purl.org/gc/Atom> ,
                                                        <http://purl.org/gc/MolecularComputation> ,
                                                        <http://purl.org/gc/MolecularMethodology> ,
-                                                       <http://purl.org/gc/SinglePoint> ,
-                                                       <http://www.w3.org/ns/prov#Activity> ;
+                                                       <http://purl.org/gc/SinglePoint> ;
                                               <http://purl.org/gc/hasResult> <http://example.org/energies_aa002-hydrate-pcseg2> ;
                                               <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-hydrate-pcseg2_dat> ,
                                                                                     <http://example.org/file_aa002-hydrate-pcseg2_log> ;
@@ -5919,11 +5930,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa002-water-bare
 <http://example.org/exp_aa002-water-bare> rdf:type owl:NamedIndividual ,
+                                                   <http://example.org/Experiment> ,
                                                    <http://purl.org/gc/Atom> ,
                                                    <http://purl.org/gc/MolecularComputation> ,
                                                    <http://purl.org/gc/MolecularMethodology> ,
-                                                   <http://purl.org/gc/VibrationalAnalysis> ,
-                                                   <http://www.w3.org/ns/prov#Activity> ;
+                                                   <http://purl.org/gc/VibrationalAnalysis> ;
                                           <http://purl.org/gc/hasResult> <http://example.org/energies_aa002-water-bare> ,
                                                                          <http://example.org/spectrum_aa002-water-bare> ;
                                           <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-water-bare_dat> ,
@@ -5941,11 +5952,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa002-water-bare-smd
 <http://example.org/exp_aa002-water-bare-smd> rdf:type owl:NamedIndividual ,
+                                                       <http://example.org/Experiment> ,
                                                        <http://purl.org/gc/Atom> ,
                                                        <http://purl.org/gc/MolecularComputation> ,
                                                        <http://purl.org/gc/MolecularMethodology> ,
-                                                       <http://purl.org/gc/VibrationalAnalysis> ,
-                                                       <http://www.w3.org/ns/prov#Activity> ;
+                                                       <http://purl.org/gc/VibrationalAnalysis> ;
                                               <http://purl.org/gc/hasResult> <http://example.org/energies_aa002-water-bare-smd> ,
                                                                              <http://example.org/spectrum_aa002-water-bare-smd> ;
                                               <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-water-bare-smd_dat> ,
@@ -5962,11 +5973,11 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa002-water-pcseg2
 <http://example.org/exp_aa002-water-pcseg2> rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/Experiment> ,
                                                      <http://purl.org/gc/Atom> ,
                                                      <http://purl.org/gc/MolecularComputation> ,
                                                      <http://purl.org/gc/MolecularMethodology> ,
-                                                     <http://purl.org/gc/SinglePoint> ,
-                                                     <http://www.w3.org/ns/prov#Activity> ;
+                                                     <http://purl.org/gc/SinglePoint> ;
                                             <http://purl.org/gc/hasResult> <http://example.org/energies_aa002-water-pcseg2> ;
                                             <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-water-pcseg2_dat> ,
                                                                                   <http://example.org/file_aa002-water-pcseg2_log> ;

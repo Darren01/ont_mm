@@ -9,7 +9,8 @@ how this glossary is scoped: every term below is one that
 references, whether or not the `caa` example happens to populate it.
 One deliberate exception: the file classes (`ex:InputFile`,
 `ex:DataFile`, `ex:LogFile`), `ex:fileURL` and `ex:involvesAtom1` to
-`ex:involvesAtom4` are not referenced by any competency question, but
+`ex:involvesAtom4` and the defined class `ex:Experiment` are not
+referenced by any competency question, but
 they turn up in the [SPARQL tutorial](./SPARQL_TUTORIAL.md)'s own
 examples and in anyone's first queries of these graphs, so they are
 defined here too rather than left to be guessed.
@@ -28,7 +29,27 @@ exactly how a raw `RUNTYP` value gets mapped to one of these.
 
 **`gc:MolecularComputation`** - *"A class for MolecularComputation."*
 (Gainesville Core's own definition - genuinely this brief.) The
-general parent class every experiment type below belongs to.
+general parent class every experiment type below belongs to. It is
+not a reliable way to list experiments, though - see `ex:Experiment`,
+below.
+
+**`ex:Experiment`** - this project's own class, never formally defined
+until now: a calculation run, meaning anything that used an input file
+(`prov:used` some `ex:InputFile`). It is *derived*, not asserted: the
+reasoner works it out from [`dl_axioms.ttl`](./dl_axioms.ttl)
+(section 3), so it appears only in a reasoned graph (README Step 6);
+in the asserted graph, `prov:used` is the test instead. Each experiment
+keeps its specific kind from the list below, and the structure-building
+step (`ex:avogadro_build`), which used nothing, is correctly not one.
+Its parent is `prov:Activity`, and because it is more specific than
+that, a reasoned graph no longer returns experiments for
+`?x a prov:Activity` - ask for `ex:Experiment` instead. It exists
+because no upstream class means "an experiment": `gc:MolecularComputation`
+is only attached as a by-product of writing results, constraints or
+notes for one, so it misses experiments with none of those, and once
+reasoned it matches far more than experiments. Nearest concepts
+elsewhere, none imported: OBI's `data transformation` (`OBI_0200000`),
+EXPO's `ComputationalExperiment` and ASMO's `Simulation`.
 
 **`gc:GeometryOptimization`** - *"A class for calculations in
 computational chemistry that aim to find molecular geometry of lowest

@@ -1742,6 +1742,24 @@ Not 30, and not 27: reaction path points, frequency peaks, atoms and other thing
 
 Whatever you decide counts as "an experiment" in the asserted graph, re-check it on the reasoned one before relying on it.
 
+There is now a one-line answer on the reasoned graph too. `dl_axioms.ttl` defines `ex:Experiment` as anything that used an input file, so the reasoner writes it onto every experiment:
+
+```bash
+ask2 https://raw.githubusercontent.com/Darren01/ont_mm/main/examples/aa/ont/aa_graph_reasoned.ttl <<'EOF'
+SELECT (COUNT(DISTINCT ?x) AS ?n) WHERE { ?x a ex:Experiment }
+EOF
+```
+
+```text
+------
+| n  |
+======
+| 30 |
+------
+```
+
+Thirty again, and for the same reason: it is Step 3's `prov:used` test, written as a class. It exists only in reasoned graphs - the asserted graph still needs `prov:used`. One consequence is worth knowing: ROBOT writes only each thing's most specific types, so on a reasoned graph `?x a prov:Activity` no longer returns the experiments (older copies of the reasoned graph did), only the structure-building step. Ask for `ex:Experiment` instead.
+
 ---
 
 ## The recipe, in one place

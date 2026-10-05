@@ -1,6 +1,7 @@
 @prefix gc: <http://purl.org/gc/> .
 @prefix ex: <http://example.org/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -69,3 +70,42 @@ ex:ImaginaryFrequencyPeak a owl:Class ;
        gc:SaddlePoint
        gc:IRC
    ) .
+
+# =========================================================
+# 3. Experiment - a defined class
+# =========================================================
+# Confirmed working: tested against the published aa graph with a real
+# reasoner (HermiT). Every individual with a prov:used link to an
+# ex:InputFile is classified as ex:Experiment - exactly the 30
+# experiments in aa, none missing and none extra - and each keeps its
+# specific kind (gc:SinglePoint, gc:VibrationalAnalysis, ...).
+# ex:avogadro_build, which used nothing, correctly is not one. The
+# result was consistent alongside axioms 1 and 2 above.
+#
+# Why a defined class and not subclass axioms: robot reason writes
+# only an individual's most specific inferred types, so declaring the
+# five experiment kinds as subclasses of ex:Experiment produced no
+# ex:Experiment assertions at all (tested: 0 of 30). An equivalence
+# sits beside the specific kind rather than above it, so it is written
+# out - the same way ex:ImaginaryFrequencyPeak is, above.
+#
+# Why it exists: no single upstream class means "an experiment".
+# gc:MolecularComputation is only attached as a by-product when
+# results, constraints or notes are written for an experiment, so it
+# misses experiments with none of those; and once reasoned it matches
+# many things that are not experiments at all. See the SPARQL
+# tutorial, Chapter 4.
+#
+# One deliberate consequence: ex:Experiment is now more specific than
+# the prov:Activity that experiments otherwise get from the domain of
+# prov:used, so "?x a prov:Activity" no longer returns experiments in
+# a reasoned graph (31 became 1 in aa) - use ex:Experiment instead.
+ex:Experiment a owl:Class ;
+    rdfs:label "Experiment"@en ;
+    rdfs:comment "A calculation run: anything that used an input file (prov:used some ex:InputFile). Derived by the reasoner rather than asserted by the pipeline, so it appears only in reasoned graphs. Each experiment also keeps its specific kind (gc:SinglePoint, gc:VibrationalAnalysis, and so on)."@en ;
+    rdfs:subClassOf prov:Activity ;
+    owl:equivalentClass [
+        a owl:Restriction ;
+        owl:onProperty prov:used ;
+        owl:someValuesFrom ex:InputFile
+    ] .

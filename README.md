@@ -919,8 +919,10 @@ The graph from Step 4 holds only what was directly asserted. A reasoner
 frequency as an `ex:ImaginaryFrequencyPeak`, so "which results show an
 imaginary frequency?" becomes `?peak a ex:ImaginaryFrequencyPeak`
 instead of a numeric filter (and its `xsd:decimal`/`xsd:float`
-gotcha). It also checks the graph against the axiom that no experiment
-can be more than one of the five experiment types; a genuine
+gotcha). It likewise marks every calculation run as an `ex:Experiment`
+(anything that used an input file), so "which experiments are there?"
+is `?x a ex:Experiment`. It also checks the graph against the axiom that
+no experiment can be more than one of the five experiment types; a genuine
 inconsistency stops the build and prints the `robot explain` command
 that shows why.
 
