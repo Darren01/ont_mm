@@ -1,1474 +1,320 @@
-# Molecular Modelling Project Ontology (ont_mm)
-
-A domain ontology for representing and structuring molecular modelling workflows, with a focus on **traceability**, **reproducibility**, and **data integration**.
-
-**This project is one half of a pair.** [gamess_functions](https://github.com/Darren01/gamess_functions)
-does the actual work of reading GAMESS (US) output and turning it into
-the structured data this ontology represents - extraction, SHACL
-validation, and every querying tool from zero-SPARQL through to
-writing your own, all live there. `ont_mm` is the schema and the
-build/query orchestration around it; `gamess_functions` is what you'll
-actually be sourcing constantly to make any of this work. Nothing
-below (starting with the very first code example) runs without it.
-
-## 🔍 What you actually get
-
-Once your GAMESS runs are built into a queryable graph, this is the
-payoff - no SPARQL required, one function call:
-
-```r
-source("gamess_functions/R/sparql_to_file.R")   # summarize_graph() needs this internally
-source("gamess_functions/R/summarize_graph.R")
-summarize_graph("examples/ont/gc_core_full_20260802.ttl")
-```
-
-```
-=== Summary of gc_core_full_20260802.ttl ===
-
-Experiments: 3
-GeometryOptimization  VibrationalAnalysis
-                   2                    1
-
-Your own review notes: 0
-
-Imaginary (negative) frequencies found: 0
-
-Constraints: 6
-```
-
-This bundled example is a small, 3-experiment demo - genuinely 0
-annotations and 0 imaginary frequencies here, honestly reported rather
-than dressed up, since nobody's added review notes to it and nothing
-in it happens to be a non-minimum geometry.
-
-On a real, actively-used project, these same two lines carry real
-weight. The annotations aren't just labels - they're your own record
-of the actual scientific reasoning as a project develops: why a run
-failed and what fixed it, a control calculation that ruled out one
-explanation in favour of another, confirmation that a stationary point
-really is the transition state it was meant to be. All of that,
-surfaced directly from the graph itself alongside the calculations it
-describes, with no separate lab notebook to keep in sync and no SPARQL
-required. The imaginary-frequency count does its own quieter but
-equally real job - a one-line sanity check across every result you
-have, flagging anything that isn't the minimum (or, for a transition
-state search, the single expected saddle point) it's supposed to be,
-before you build an entire analysis on top of a geometry that never
-actually converged the way you assumed.
-
-If you want more specific answers than that,
-`gamess_functions/examples/query_your_ontology.R` has a tiered path
-from copy-paste templates through to writing your own SPARQL, with a
-short primer built entirely from real lessons this project actually
-hit along the way.
-
-## 🔬 Try it right now - zero install
-
-**[Open the SPARQL playground directly](https://darren01.github.io/ont_mm/tools/sparql_playground.html)**
-- runs entirely in your own browser, no cloning, no R, nothing to set
-up. A dropdown lets you switch between the two real example graphs
-this repo publishes - [`caa`](./examples/caa/) (the default) and
-[`aa`](./examples/aa/) - loading whichever you pick live from GitHub,
-with three working example queries (generic across both datasets,
-since they share the same ontology schema) and an optional graph view
-alongside the usual table of results. Link directly to a specific one
-with `?dataset=aa` on the URL.
-
-(The file itself is [`tools/sparql_playground.html`](./tools/sparql_playground.html)
-if you'd rather download and adapt your own copy - e.g. to point it at
-a different graph.)
-
-This is one concrete way of making a graph queryable without asking
-anyone to install anything - not the only way, and not a permanent,
-always-on public endpoint (a genuine SPARQL *endpoint*, in the formal
-sense, is a live server, which this deliberately isn't). If you want
-that instead:
-
-- **Run your own, self-hosted endpoint**: [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/)
-  loads a `.ttl` file and exposes a real, live SPARQL HTTP endpoint -
-  free and well-documented, though it only stays reachable while
-  Fuseki itself is running somewhere with a stable address (your own
-  laptop won't stay up when it's off).
-- **A hosted third-party triplestore** (e.g. GraphDB, Stardog) can
-  give you a permanent, publicly reachable endpoint without running
-  your own server - typically involves signup and a commercial tier
-  beyond a small free allowance, and we haven't evaluated a specific
-  current provider closely enough to recommend one here.
-
-## 🧪 Using This With Your Own Data
-
-This is the part you actually want if you have your own GAMESS input/output
-files and want to build and query your own instantiated ontology from them.
-(If you just want to see how the bundled example was built, see
-`examples/README.md` instead - that's a construction history, not a
-usage guide, which is why this section exists separately.)
-
-**Already have a built graph, and just need to update it** - new runs
-added, code pulled that fixes something, or a single value turned out
-wrong? Read [Updating an existing graph](#updating-an-existing-graph-eg-weekly)
-first, not the numbered steps below. It's placed after Step 6 in this
-file because it needs every step to have been explained first, but
-that's a document-structure reason, not a "read this last" one - if
-you already have a graph, the numbered steps below are for a first
-build, not yours, and starting from Step 1 anyway is exactly how a
-one-line fix turns into having redone the whole thing before you find
-the section that would have told you not to.
-
-### Recommended folder structure, for more than one project
-
-If you're only ever going to have one project, don't worry about this -
-just follow the steps below. But if you have (or expect to have) more
-than one project sharing the same `gamess_functions`/`ont_mm` code, this
-structure has been used in practice and works well:
-
-```
-MolecularModelling/
-|-- ont/                    <- gamess_functions/ and ont_mm/ cloned once, here
-|   |-- gamess_functions/
-|   `-- ont_mm/
-|-- Project_A/
-|   |-- input/
-|   |-- output/
-|   |-- data/
-|   |-- ont/                <- Project_A's own instance TSVs, built graph, run_notes.tsv
-|   `-- README.txt
-|-- Project_B/
-|   |-- input/
-|   |-- output/
-|   |-- data/
-|   |-- ont/                <- completely separate from Project_A's
-|   `-- README.txt
-```
-
-The key idea: one shared `ont/` for the code (cloned once, `git pull`-ed
-as it updates), and a *separate* `ont/` folder inside each individual
-project for that project's own instance data, built graph, and
-`run_notes.tsv`. This mirrors the same shared-code-vs-project-data
-split `gamess_functions` and `ont_mm` themselves already follow -
-`my_code_dir` points at the shared folder once; `my_ontology_dir`
-changes per project.
-
-### 1. Get the code
-
-Two genuinely separate options - pick one and use it consistently for
-every file below. Mixing them (sourcing one file by URL, then trying to
-`source("gamess_functions/...")` as a local path without having cloned)
-is the single most common mistake here - that local path only exists if
-you actually cloned.
-
-**Option A - clone (simplest, recommended if unsure):**
-
-**Important: this is a shell/terminal command, not R code.** Run it in
-a terminal (Command Prompt, PowerShell, Git Bash, or similar) - pasting
-it into an R console will fail, since R doesn't understand `git` as a
-command by itself. Note *where* you run this from - that folder is
-`my_code_dir` below.
-
-```bash
-git clone https://github.com/Darren01/gamess_functions.git
-git clone https://github.com/Darren01/ont_mm.git
-```
-
-**Already cloned these before?** Running `git clone` again gives an error
-like `fatal: destination path 'gamess_functions' already exists and is
-not an empty directory` - a real error message, but not one to fix by
-re-cloning. It means exactly what it says: you already have this repo,
-and `git clone` is only for getting a copy for the first time. What you
-actually want is to update your existing copy - `cd` into the folder
-itself and pull the latest changes instead:
-
-```bash
-cd gamess_functions
-git pull
-cd ../ont_mm
-git pull
-```
-
-This applies every time you come back to work with these tools, not
-just the first time you hit the error - `git pull` is the everyday
-command, `git clone` is a one-time-only step.
-
-One more real trap worth knowing about: `git pull` needs to be run
-*from inside* the actual repo folder (`gamess_functions/` or
-`ont_mm/` itself), not from their parent folder. Run from the wrong
-place, `git` doesn't necessarily fail loudly - it may find a
-different, unrelated `.git` folder further up your directory tree
-(e.g. one you set up yourself to track your own project) and try to
-operate on that instead, producing confusing, unrelated errors that
-have nothing to do with `gamess_functions` or `ont_mm` at all. If a
-`git pull` or `git clone` error looks strange or unrelated to what
-you expected, `pwd` first to confirm you're actually inside the right
-folder before troubleshooting anything else.
-
-**Option B - no cloning, fetch each file from GitHub directly:**
-
-This part *is* R code - run it in your R console, not a terminal.
-
-```r
-source_github <- function(repo, path, branch = "master") {
-  url <- paste0("https://raw.githubusercontent.com/Darren01/", repo, "/", branch, "/", path)
-  lines <- readLines(url, warn = FALSE)
-  source(textConnection(lines))
-}
-
-source_all_github <- function(paths, branch = "master") {
-  for (p in paths) {
-    parts <- strsplit(p, "/", fixed = TRUE)[[1]]
-    repo <- parts[1]
-    rest <- paste(parts[-1], collapse = "/")
-    source_github(repo, rest, branch = branch)
-  }
-}
-```
-
-Define both once here. Step 3 below gives the actual list of files as a
-single `paths` vector, used either with a plain loop (if you cloned) or
-with `source_all_github(paths)` (if you didn't) - same list either way,
-nothing to duplicate or hand-edit.
-
-(You may see `devtools::source_url()` suggested elsewhere for this same
-task - it works, but pulls in a large dependency chain that can fail for
-reasons unrelated to this project, e.g. version conflicts between
-`devtools` and packages you already have installed. `source_github()`
-above needs nothing beyond base R.)
-
-Optional: if you want a snapshot that won't change even as this project
-keeps being developed, pass a specific commit's ID as `branch` instead
-of relying on the default `"master"` - the short code (e.g. `a1b2c3d`)
-shown next to each entry on the repo's "commits" page on GitHub.
-
-### 1b. Set your paths once
-
-Every step below uses these same variables - set them here, once, and
-nothing further down needs a path retyped or re-pasted. This is also
-where a very common, confusing failure gets prevented up front: every
-`source("gamess_functions/...")` example elsewhere assumes R's current
-working directory *is* the folder you cloned into - if it isn't (e.g.
-you're running R from a different project folder), those relative
-paths silently fail with a "file not found" error that gives no hint
-why. `my_code_dir` below fixes that regardless of where you're
-actually running R from.
-
-```r
-# strip_trailing_slash: R's file.path() doesn't collapse a trailing
-# slash you've already included, producing a literal, confusing
-# double-slash ("./ontology//gc_core.ttl") if you happen to type one.
-# Applying this once here means it doesn't matter either way.
-strip_trailing_slash <- function(x) sub("/+$", "", x)
-
-# Defines source_github()/source_all_github() if they're not already
-# present in this session - relevant whichever option you're using.
-# Option A (cloned) doesn't strictly need these, but defining them costs
-# nothing and does no harm; Option B genuinely needs them, and may not
-# have them yet even if Step 1's own block already ran once - e.g. if
-# you're resuming a session, or jumped straight here. Found necessary
-# in practice for both options, not just a theoretical edge case.
-if (!exists("source_github")) {
-  source_github <- function(repo, path, branch = "master") {
-    url <- paste0("https://raw.githubusercontent.com/Darren01/", repo, "/", branch, "/", path)
-    lines <- readLines(url, warn = FALSE)
-    source(textConnection(lines))
-  }
-}
-if (!exists("source_all_github")) {
-  source_all_github <- function(paths, branch = "master") {
-    for (p in paths) {
-      parts <- strsplit(p, "/", fixed = TRUE)[[1]]
-      repo <- parts[1]
-      rest <- paste(parts[-1], collapse = "/")
-      source_github(repo, rest, branch = branch)
-    }
-  }
-}
-
-# Option A (cloned): the folder containing both gamess_functions/ and
-# ont_mm/ as subfolders - wherever you ran `git clone` from in Step 1.
-my_code_dir <- strip_trailing_slash("/path/to/wherever/you/cloned/both/repos")
-
-my_input_dir     <- strip_trailing_slash("/path/to/your/input/folder")    # .inp files
-my_output_dir    <- strip_trailing_slash("/path/to/your/output/folder")   # .log files
-my_data_dir      <- strip_trailing_slash("/path/to/your/dat/folder")      # .dat files - see the note below if you don't have one
-my_ontology_dir  <- strip_trailing_slash("/path/to/where/you/want/the/instance/data")
-my_graph_file    <- file.path(my_ontology_dir, "your_graph_YYYYMMDD.ttl")   # dated, same convention as releases/
-
-# Option A (cloned): the release and the small extensions file both came
-# with the clone - point straight at them, nothing to download. (For a real
-# project you may prefer to copy gc_core.ttl into your own ontology folder,
-# so the exact release you built against travels with your data.)
-my_release_file    <- file.path(my_code_dir, "ont_mm/releases/2026-08-08/gc_core.ttl")
-my_extensions_file <- file.path(my_code_dir, "ont_mm/schema_terms.ttl")
-# Option B (no clone): Step 4 downloads both into your ontology folder.
-# Comment out the two Option A lines above and use these instead:
-# my_release_file    <- file.path(my_ontology_dir, "gc_core.ttl")
-# my_extensions_file <- file.path(my_ontology_dir, "schema_terms.ttl")
-
-# Option A (cloned):
-my_experiment_template <- file.path(my_code_dir, "ont_mm/templates/experiment_template.tsv")
-# Option B (no clone) - read.delim() can read a URL directly, no
-# download needed (confirmed - unlike release_file below, which does
-# need a real local file). Comment out the Option A line above if
-# using this instead:
-# my_experiment_template <- "https://raw.githubusercontent.com/Darren01/ont_mm/master/templates/experiment_template.tsv"
-```
-
-**If your data is confidential**, make sure `my_ontology_dir` points at
-a folder *outside* any git repository entirely - not a subfolder of
-`ont_mm`, even one you plan to `.gitignore`. A folder with no repo at
-all is a structural guarantee nothing can accidentally end up on
-GitHub; a gitignore rule is just a reminder you have to get right every
-time.
-
-```r
-dir.create(my_ontology_dir, recursive = TRUE, showWarnings = FALSE)
-```
-
-### 1c. Check `robot` works before doing anything else
-
-Worth doing now, before Steps 2-3, not after - there's no point
-spending time classifying files and building instance data only to
-discover at Step 4 that `robot` itself doesn't work.
-
-**Option A (cloned):**
-```r
-source(file.path(my_code_dir, "ont_mm/scripts/check_robot_setup.R"))
-```
-
-**Option B (no clone):**
-```r
-source_github("ont_mm", "scripts/check_robot_setup.R")   # source_github defined above
-```
-
-This catches two real issues found testing on a locked-down Windows
-machine: Java 11+ is required (an older default Java on PATH, even
-with a newer one also installed, gives a confusing, unrelated-looking
-failure deep inside a build rather than a clear version error), and
-confirms `robot` itself is actually callable.
-
-```r
-check_robot_setup()
-# If it reports the wrong Java version and you have a compatible one
-# installed elsewhere, point at it directly rather than fighting PATH:
-# check_robot_setup(java_path = "C:/path/to/java11/bin/java.exe")
-```
-
-### 1d. Check the one R package it needs
-
-Building the instance data records a SHA-256 checksum for every input,
-log and data file, using R's `digest` package - the only package
-outside base R that the main pipeline needs. Worth checking now,
-rather than finding out when Step 3 stops:
-
-```r
-if (!requireNamespace("digest", quietly = TRUE)) install.packages("digest")
-```
-
-Without it, `process_experiments()` - the first thing Step 3 runs -
-fails straight away with `there is no package called 'digest'`. (The
-optional DOI-notes feature, `fetch_doi_metadata()`, separately needs
-`jsonlite`, and says so itself if it's missing.)
-
-### 2. Classify your files first - just to see what's there
-
-Before running anything else, get a quick inventory of what job types
-you actually have.
-
-**Option A (cloned):**
-```r
-source(file.path(my_code_dir, "gamess_functions/R/classify_gamess_jobs.R"))
-```
-
-**Option B (no clone):**
-```r
-source_github("gamess_functions", "R/classify_gamess_jobs.R")   # defined in Step 1
-```
-
-Either way:
-```r
-classify_gamess_jobs(my_output_dir)
-```
-
-This alone is a useful sanity check - confirms the code recognises your
-files before you commit to a full build.
-
-### 3. Build the instance data
-
-One list of files, defined once - loop over it however matches how you
-got the code in Step 1.
-
-```r
-paths <- c(
-  "gamess_functions/R/gamess_input_utils.R",
-  "gamess_functions/R/classify_gamess_jobs.R",
-  "gamess_functions/R/extract_basis.R",
-  "gamess_functions/R/extract_level_of_theory.R",
-  "gamess_functions/R/extract_ir_spectrum.R",
-  "gamess_functions/R/extract_ir_diagnostics.R",
-  "gamess_functions/R/identify_diagnostic_modes.R",
-  "gamess_functions/R/extract_thermochemistry.R",
-  "gamess_functions/R/extract_electronic_energy.R",
-  "gamess_functions/R/extract_irc_trajectory.R",
-  "gamess_functions/R/combine_irc_trajectories.R",
-  "gamess_functions/R/extract_constraints.R",
-  "gamess_functions/R/check_vibrational_quality.R",
-  "gamess_functions/R/geometry_to_atoms.R",
-  "gamess_functions/R/ir_spectrum_to_templates.R",
-  "gamess_functions/R/thermochemistry_to_templates.R",
-  "gamess_functions/R/electronic_energy_to_templates.R",
-  "gamess_functions/R/reaction_path_to_templates.R",
-  "gamess_functions/R/constraints_to_templates.R",
-  "ont_mm/scripts/build_provenance.R",
-  "ont_mm/scripts/process_experiments.R",
-  "ont_mm/scripts/process_results.R",
-  "ont_mm/scripts/process_thermo_results.R",
-  "ont_mm/scripts/process_electronic_energy_results.R",
-  "ont_mm/scripts/process_reaction_path_results.R",
-  "ont_mm/scripts/process_contraints.R",
-  "ont_mm/scripts/process_gamess_directory.R",
-  "ont_mm/scripts/filter_vibrational_modes.R"
-)
-```
-
-If a later step fails with `could not find function "some_name"`, the
-file that defines it is almost certainly missing from this list -
-most likely because it was added to the repo after you first copied
-the list. `extract_level_of_theory.R` (which needs `extract_basis.R`
-alongside it, since it reuses that file's own basis-set parsing) was
-exactly this: added later, so any copy of this list from before then
-will fail at `process_experiments()` with
-`could not find function "extract_level_of_theory_parts"`.
-
-**Option A (cloned):**
-
-```r
-for (p in file.path(my_code_dir, paths)) source(p)
-```
-
-**Option B (no clone):**
-
-```r
-source_all_github(paths)   # defined in Step 1
-```
-
-Either way, run it against your own folders:
-
-```r
-result <- process_gamess_directory(
-  input_dir  = my_input_dir,
-  output_dir = my_output_dir,
-  data_dir   = my_data_dir,
-  ontology_dir = my_ontology_dir,
-  experiment_template_file = my_experiment_template
-)
-```
-
-This writes instance TSV files - it does not yet produce a queryable
-graph. That's the next step.
-
-**A real, direct gotcha, confirmed rather than assumed:** `data_dir`
-defaults to `output_dir` if you leave it out - meaning every `.dat`
-file individual still gets created, just with no real `fileURL` or
-`schema:sha256` at all, since GAMESS (US) never actually writes `.dat`
-files into the same folder as `.log` files. A missing or wrongly-pathed
-`.dat` (or `.log`) file never throws an error - it just leaves those
-two properties blank for that one file, nothing worse - but
-`process_experiments()` does say so: one line per kind of missing
-file, giving how many experiments are affected, which folder it
-looked in, and the first ten names. A complete dataset prints
-nothing at all. (If you ever see that line naming your `outputs`
-folder as where it looked for `.dat` files, `data_dir` was left at its
-default.) For a graph that's already built, the
-[SPARQL playground](./tools/sparql_playground.html)'s own "Find files
-missing a checksum" example is a genuine, direct way to check, on any
-dataset, old or new.
-
-**A real, twice-confirmed gotcha, worth knowing before it costs you an
-afternoon of confused debugging:** `process_gamess_directory()`
-deliberately skips any experiment it finds already present in the
-relevant `*_template_instances.tsv` file, rather than reprocessing it
-- this is what makes it safe and fast to re-run as you add new data
-over time, without endlessly reprocessing everything from scratch.
-
-The real cost of that convenience: if you `git pull` a `gamess_functions`
-update containing a genuine bug fix (e.g. a writer function that used
-to write bad data for some experiments), re-running this step will
-**not** automatically fix those already-processed experiments - the
-old, wrong rows are already "present," so they're silently kept as-is,
-not regenerated with the corrected code. This has genuinely happened
-more than once, surfacing later as a confusing SHACL validation
-failure on data that was built before a fix existed, with no obvious
-connection between the two events by the time it's noticed.
-
-If you've just pulled a `gamess_functions` update and aren't sure
-whether it affects your already-built instance data, the safe fix is
-to delete the specific `*_template_instances.tsv` file the fix relates
-to (check the fix's own commit message/changelog for which writer it
-touched) and re-run this step - it will regenerate every experiment
-fresh, not just new ones, since none of them are "already present"
-anymore:
-
-```r
-file.remove(file.path(my_ontology_dir, "constraint_template_instances.tsv"))
-# then re-run process_gamess_directory() as above
-```
-
-When genuinely unsure which file(s) a given update might affect,
-deleting all of them and doing a full, fresh rebuild is always safe -
-just slower, not wrong.
-
-### 3b. Optional: add your own review notes
-
-Once you've actually looked at some results and formed an opinion -
-"this run's constraints broke the geometry," "converged to a
-saddle point instead of the intended minimum" - that's exactly the
-kind of thing worth recording *in* the ontology, not just in your own
-head or a separate notes file. This is a real, existing part of the
-pipeline, not a suggestion for later.
-
-Keep a plain `run_notes.tsv` file (tab-separated, `filename<TAB>your
-comment`) somewhere in your project - e.g. alongside your other `ont/`
-files:
-
-```
-run003b.log	constraint distance was too aggressive, geometry distorted
-run004a.log	starting geometry for the next scan in this series
-```
-
-**Optional third field**: if a run was based on, or is being compared
-against, a specific paper, add its DOI (pipe-separated for more than
-one) as a third tab-separated field:
-
-```
-run004a.log	starting geometry for the next scan in this series	10.1021/ja00249a034
-```
-
-This gets written as a real `dcterms:relation` to the paper's own
-resolvable `https://doi.org/...` URL - see
-[papers_ontology](https://github.com/Darren01/papers_ontology) for the
-other side of this link. The two directions are genuinely independent,
-not automatically bidirectional: this links *from* the experiment
-*to* the paper; linking the paper back to the experiment is a separate
-step, done in `papers_ontology`'s own `doi_notes.tsv`.
-
-A line must have exactly 2 or exactly 3 tab-separated fields - not "2
-or more, treat everything after the first tab as the comment," which
-is how earlier versions of this worked. A comment containing a literal
-tab character would now be (correctly) flagged as ambiguous rather
-than silently absorbed - unlikely in practice for hand-typed free
-text.
-
-**Option A (cloned):**
-```r
-source(file.path(my_code_dir, "gamess_functions/R/notes_to_annotations.R"))
-```
-
-**Option B (no clone):**
-```r
-source_github("gamess_functions", "R/notes_to_annotations.R")
-```
-
-Either way:
-```r
-rows <- notes_to_annotations(file.path(my_ontology_dir, "run_notes.tsv"))
-write_annotations(rows, file.path(my_ontology_dir, "annotation_template_instances.tsv"))
-```
-
-**This only writes a TSV file - it does not touch your queryable graph.**
-Your notes won't show up in any query until you go back and re-run
-Step 4's `build_ontology_graph()` afterward, same as any other change
-to your instance data.
-
-**You'll likely come back to this step more than once, and that's the
-intended workflow, not a workaround** - reviewing your results as a
-whole (e.g. via `summarize_graph()`) often surfaces things worth
-recording that weren't obvious when a run first finished. Editing
-`run_notes.tsv` and re-running the two commands above at any later
-time is completely safe: `write_annotations()` always regenerates the
-file fresh from your notes' *current* full content, rather than
-appending - so revisiting old notes, adding new ones, or both, never
-duplicates anything already recorded.
-
-Each note attaches as a real `rdfs:comment` on the corresponding
-experiment - a standard, well-understood RDFS annotation property, not
-something invented for this project. `build_ontology_graph()` in the
-next step picks this file up automatically alongside everything else,
-as long as it's sitting in `my_ontology_dir` under this exact filename.
-
-### 3c. Optional: keep only the vibrational modes that matter
-
-By default, every vibrational mode from every frequency calculation
-goes into the graph - typically the bulk of its peak data, and almost
-all of it never queried. `filter_vibrational_modes()` keeps only the
-diagnostically useful ones - the imaginary frequencies, and GAMESS's
-own translation/rotation modes - and rewrites the spectra, peak and
-float-value instance files in place. On the bundled examples it cut
-the peak rows from 1191 to 208 (`caa`) and from 489 to 96 (`aa`), with
-every imaginary frequency still present. Nothing is lost for good: the
-full mode list stays in the `.log` file each experiment links to via
-`prov:generated`. (The reasoning behind keeping results rather than
-raw output is at the top of
-[COMPETENCY_QUESTIONS.md](./COMPETENCY_QUESTIONS.md).)
-
-Its two files (`identify_diagnostic_modes.R` and
-`filter_vibrational_modes.R`) are already in Step 3's list, so there's
-nothing more to source. Run it after Step 3 and before Step 4:
-
-```r
-filter_result <- filter_vibrational_modes(
-  ontology_dir = my_ontology_dir,
-  output_dir = my_output_dir
-)
-```
-
-Safe to run more than once. To get the unfiltered version back, delete
-the spectra, peak and float-value `*_instances.tsv` files and re-run
-Step 3 (which skips experiments already present, so the files have to
-go first).
-
-### 4. Build the queryable graph
-
-**Option A (cloned):**
-```r
-source(file.path(my_code_dir, "ont_mm/scripts/build_ontology_graph.R"))
-```
-
-**Option B (no clone):**
-```r
-source_github("ont_mm", "scripts/build_ontology_graph.R")   # defined in Step 1
-```
-
-(`robot` was already checked back in Step 1c - if that passed, you're
-good to continue here without re-checking.)
-
-`release_file` needs to be a genuine local file either way - it's
-passed to `robot`, a separate external program, not read by R itself,
-so R's URL-reading convenience (which worked for
-`experiment_template_file` above) doesn't apply here. If you didn't
-clone, download it first, into `my_ontology_dir` (already set up above):
-
-```r
-download.file(
-  "https://raw.githubusercontent.com/Darren01/ont_mm/master/releases/2026-08-08/gc_core.ttl",
-  destfile = my_release_file
-)
-```
-
-**On a corporate network, this may fail with an SSL error** (e.g.
-`SSL connect error` from a TLS-inspecting proxy such as Fortinet,
-Zscaler, or similar - these decrypt and re-sign HTTPS traffic with
-their own internal certificate, which R's bundled certificate store
-doesn't trust, even though Windows' own certificate store usually
-does). Try this first, since it uses Windows' own trust store rather
-than disabling certificate checking:
-
-```r
-download.file(
-  "https://raw.githubusercontent.com/Darren01/ont_mm/master/releases/2026-08-08/gc_core.ttl",
-  destfile = my_release_file,
-  method = "wininet"
-)
-```
-
-If that still fails and you have WSL available, this is a confirmed
-working fallback - note it does disable certificate verification
-(`--no-check-certificate`), which is reasonable for this specific,
-known-safe file but shouldn't become a habit for downloading things in
-general:
-
-```r
-system(paste0(
-  "wsl wget --no-check-certificate -O ", my_release_file,
-  " https://raw.githubusercontent.com/Darren01/ont_mm/master/releases/2026-08-08/gc_core.ttl"
-))
-```
-
-If you didn't clone, download the small extensions file the same way
-(`schema_terms.ttl` - explained just below). The same SSL notes apply,
-so use whichever method worked for the release file, adding
-`method = "wininet"` if that's what it was:
-
-```r
-download.file(
-  "https://raw.githubusercontent.com/Darren01/ont_mm/master/schema_terms.ttl",
-  destfile = my_extensions_file
-)
-```
-
-`extensions_file` is a small file declaring `schema:sha256`, the
-property each file's checksum is recorded with. It's optional - leave
-it out and the build still works - but then `schema:sha256` is
-auto-declared with no domain, range or description, and nothing tells
-you. It's kept separate from `release_file` deliberately: that's a
-versioned upstream release, and this project's own additions shouldn't
-be edited into it. Passing it also writes a `release_with_extensions.ttl`
-into `my_ontology_dir` - an intermediate file, regenerated on every
-build, safe to ignore.
-
-Then:
-
-```r
-build_ontology_graph(
-  ontology_dir = my_ontology_dir,
-  release_file = my_release_file,
-  output_file  = my_graph_file,
-  extensions_file = my_extensions_file
-)
-```
-
-This automates the `robot template` + `robot merge` sequence - it skips
-any template with no corresponding instance data found, rather than
-erroring, so it's fine if your dataset doesn't have every result type
-(e.g. no IRC data at all).
-
-**If this reports "No templates were successfully built"**, it means
-Step 3 never actually produced any `*_template_instances.tsv` files in
-`my_ontology_dir` - check Step 3 completed without an error before
-troubleshooting this step, rather than the other way round.
-
-### 5. Query it
-
-**Option A (cloned):**
-```r
-source(file.path(my_code_dir, "gamess_functions/R/sparql_to_file.R"))
-```
-
-**Option B (no clone):**
-```r
-source_github("gamess_functions", "R/sparql_to_file.R")   # defined in Step 1
-```
-
-```r
-# This is a deliberately minimal placeholder to confirm the connection
-# works - it has no filter, so it matches EVERY typed subject in the
-# whole graph: your actual experiments and results, but also every
-# class/property in the merged ontology schema itself (they're all one
-# graph). That's expected, not a bug - it's just not the useful
-# starting query. For that, see
-# gamess_functions/examples/query_your_ontology.R, whose first example
-# filters down to just your own experiments by type.
-sparql_query(
-  graph_file = my_graph_file,
-  query = "SELECT ?exp ?type WHERE { ?exp a ?type . }"
-)
-```
-
-Raw results show full URIs (e.g. `http://example.org/exp_rem01b`) -
-wrap any result in `shorten_uris()` for short, readable names instead
-(`exp_rem01b`); numbers and free text pass through untouched, only
-URIs get shortened:
-
-```r
-source_github("gamess_functions", "R/shorten_uris.R")
-print(shorten_uris(res))
-```
-
-### 5b. Building additional projects
-
-Everything above is a one-time setup - `my_code_dir`, `my_release_file`
-and `my_extensions_file` don't change per project, only your actual
-data does. Once Steps 1-1c are done, building (or rebuilding) a
-*different* project doesn't need the full walkthrough again - just
-fresh data paths and one call:
-
-```r
-my_input_dir    <- "/path/to/a/different/project/inputs"
-my_output_dir   <- "/path/to/a/different/project/outputs"
-my_data_dir     <- "/path/to/a/different/project/dat"
-my_ontology_dir <- "/path/to/a/different/project/ont"
-my_graph_file   <- file.path(my_ontology_dir, "your_graph_YYYYMMDD.ttl")
-
-# Option A (cloned):
-source(file.path(my_code_dir, "ont_mm/scripts/build_provenance.R"))
-source(file.path(my_code_dir, "ont_mm/scripts/process_experiments.R"))
-# ...(the rest of Step 3's paths list, all sourced the same way)
-
-# Option B (no clone):
-# source_all_github(paths)   # the same paths vector from Step 3
-
-result <- process_gamess_directory(
-  input_dir  = my_input_dir,
-  output_dir = my_output_dir,
-  data_dir   = my_data_dir,
-  ontology_dir = my_ontology_dir,
-  experiment_template_file = my_experiment_template
-)
-
-# Optional, see Step 3c:
-filter_vibrational_modes(ontology_dir = my_ontology_dir, output_dir = my_output_dir)
-
-source(file.path(my_code_dir, "ont_mm/scripts/build_ontology_graph.R"))
-build_ontology_graph(
-  ontology_dir = my_ontology_dir,
-  release_file = my_release_file,
-  output_file  = my_graph_file,
-  extensions_file = my_extensions_file
-)
-```
-
-Worth keeping a short project-specific script like this saved
-somewhere for each real project you work on (outside any git repo if
-the data is confidential, same as always) - it becomes your quick
-"rebuild this project" command whenever new runs are added, without
-re-deriving the sequence from scratch each time.
-
-If that script will be run repeatedly on the same folder (say, weekly),
-read [Updating an existing graph](#updating-an-existing-graph-eg-weekly)
-first - re-running is safe, but not always correct.
-
-### Step 5 (optional, recommended): validate the graph
-
-`robot report` checks the *schema*'s own structural soundness -
-missing labels, dangling references, and so on. It doesn't check
-whether the *data* in a built graph actually makes sense - a
-`gc:hasFloatValue` silently typed as `xsd:string` instead of
-`xsd:float` passes a schema check cleanly, while quietly breaking
-every numeric comparison query built against it. This project hit
-exactly that bug, and a second one just like it, before
-[SHACL](https://www.w3.org/TR/shacl/) validation existed to catch it
-automatically.
-
-[`shapes/gc_core_shapes.ttl`](./shapes/gc_core_shapes.ttl) holds real
-shapes, each tied to a specific bug actually found in this project's
-own development - not textbook examples. Run via
-[`validate_graph_shacl()`](https://github.com/Darren01/gamess_functions/blob/master/R/validate_graph_shacl.R)
-(in `gamess_functions`):
-
-```r
-source(file.path(my_code_dir, "gamess_functions/R/validate_graph_shacl.R"))
-
-result <- validate_graph_shacl(
-  graph_file  = my_graph_file,
-  shapes_file = file.path(my_code_dir, "ont_mm/shapes/gc_core_shapes.ttl")
-)
-```
-
-Requires `shacl` on your PATH (part of the [Apache
-Jena](https://jena.apache.org/download/) command-line tools - a
-separate download from `robot`, though both are Java-based, so no new
-language runtime is needed). If `shacl` isn't reachable the same way
-`robot` already is (e.g. it was only added to `PATH` via `.bashrc`,
-which a GUI-launched RStudio session may never read), either symlink
-it into the same location `robot` already lives in, or pass its full
-path via `validate_graph_shacl()`'s own `shacl_cmd` argument.
-
-One real, confirmed Jena quirk worth knowing about, already handled
-for you inside `validate_graph_shacl()`: Jena's `shacl` script blindly
-trusts a `JAVA_HOME` environment variable if one is set at all, with
-no check that it actually points at a working Java install - unlike
-`robot`, which doesn't reference `JAVA_HOME` anywhere in its own
-script. A stale `JAVA_HOME` (pointing at a long-gone old Java version,
-inherited from some part of your environment that may be hard to
-track down) can make `shacl` fail outright even when a perfectly good,
-current Java is available and `robot` itself works fine.
-`validate_graph_shacl()` clears `JAVA_HOME` for the duration of the
-`shacl` call only, and restores your original value afterwards - you
-shouldn't need to do anything about this yourself, but if you ever
-call `shacl` directly rather than through this wrapper and it fails
-mysteriously, this is worth checking first.
-
-### If the default Java itself is too old, not just JAVA_HOME
-
-A different, separate problem from the one above - confirmed on a real
-Windows machine with multiple Java versions installed, where the
-system default was still Java 8: `shacl` will fail with something like
-
-```
-Exception in thread "main" java.lang.UnsupportedClassVersionError:
-shacl/shacl has been compiled by a more recent version of the Java
-Runtime (class file version 65.0), this version of the Java Runtime
-only recognizes class file versions up to 52.0
-```
-
-Clearing `JAVA_HOME` doesn't help here, because the *fallback* Java is
-also too old - there's no good Java for the fallback to find. Two
-things needed: a genuinely compatible Java has to actually exist on
-the machine (`check_robot_setup()`'s own scan finds these - it needs
-one too, for `robot` to work), and `validate_graph_shacl()` needs to
-be pointed at it directly via its `java_home` argument:
-
-```r
-check_robot_setup()   # if it reports Java 8 with no [OK] alternative,
-                       # you'll need to install a compatible one first
-
-result <- validate_graph_shacl(
-  graph_file  = my_graph_file,
-  shapes_file = file.path(my_code_dir, "ont_mm/shapes/gc_core_shapes.ttl"),
-  java_home   = "C:/Program Files/Eclipse Adoptium/jdk-21.0.12.8-hotspot"  # your own path
-)
-```
-
-Match the version to what the error actually asks for - the class file
-version number in the error tells you exactly which Java is needed
-(65 = Java 21, 61 = Java 17, 55 = Java 11); pointing at a *different*
-compatible-sounding version can still produce the same error again.
-
-**A genuinely Windows-specific finding, confirmed directly against
-Jena's own real source code, not assumed:** on Linux/Mac, setting
-`JAVA_HOME` is enough on its own, because the `shacl` script explicitly
-checks it. Windows' `shacl.bat` does **not** read `JAVA_HOME` at all -
-it calls bare `java`, relying entirely on `PATH`. Because of this,
-`java_home` above sets `PATH` as well as `JAVA_HOME`, so it works
-correctly either way - but if you ever set `JAVA_HOME` manually
-yourself outside this function on Windows, know that it won't do
-anything for `shacl.bat` specifically.
-
-### Step 6 (optional): add a reasoned graph
-
-The graph from Step 4 holds only what was directly asserted. A reasoner
-(HermiT, run through `robot`) can add what follows logically from
-`dl_axioms.ttl` - most usefully, marking every peak with a negative
-frequency as an `ex:ImaginaryFrequencyPeak`, so "which results show an
-imaginary frequency?" becomes `?peak a ex:ImaginaryFrequencyPeak`
-instead of a numeric filter (and its `xsd:decimal`/`xsd:float`
-gotcha). It likewise marks every calculation run as an `ex:Experiment`
-(anything that used an input file), so "which experiments are there?"
-is `?x a ex:Experiment`. It also checks the graph against the axiom that
-no experiment can be more than one of the five experiment types; a genuine
-inconsistency stops the build and prints the `robot explain` command
-that shows why.
-
-The result is a *separate* file - the asserted graph stays untouched,
-and stays what SHACL validates. The playground's "(reasoned)" datasets
-load graphs built this way, if you want to see the difference side by
-side.
-
-**Option A (cloned):**
-```r
-source(file.path(my_code_dir, "gamess_functions/R/build_reasoned_graph.R"))
-my_dl_axioms_file <- file.path(my_code_dir, "ont_mm/dl_axioms.ttl")
-```
-
-**Option B (no clone):**
-```r
-source_github("gamess_functions", "R/build_reasoned_graph.R")
-my_dl_axioms_file <- file.path(my_ontology_dir, "dl_axioms.ttl")
-download.file(
-  "https://raw.githubusercontent.com/Darren01/ont_mm/master/dl_axioms.ttl",
-  destfile = my_dl_axioms_file
-)   # robot reads it, so like release_file it has to be a real local file
-```
-
-Then:
-
-```r
-build_reasoned_graph(
-  asserted_graph_file = my_graph_file,
-  extensions_file = my_dl_axioms_file,
-  output_file = sub("\\.ttl$", "_reasoned.ttl", my_graph_file)
-)
-```
-
-(`extensions_file` here is the DL axioms; in Step 4 the same argument
-name takes the schema-term declarations - different file, same name.)
-This is real reasoning, not a quick check: expect several minutes on a
-full graph (about six for the bundled `caa` graph, in testing), and it
-needs the same `robot`/Java setup as Step 1c.
-
-### Updating an existing graph (e.g. weekly)
-
-Re-running the steps on a folder that already has instance data is
-safe, but whether the result is *correct* depends on what changed
-since the last build. `process_gamess_directory()` skips any experiment
-already in the results instance files (see the gotcha in Step 3), but
-rewrites `experiment_template_instances.tsv` from scratch every time -
-recomputing every file's checksum as it goes. So:
-
-- **Only new runs were added:** just re-run. New experiments are
-  added, existing ones are left alone.
-- **You pulled updated code:** existing rows keep the old code's
-  output (the Step 3 gotcha).
-- **A calculation was re-run, or a `.log`/`.inp`/`.dat` file was
-  edited or replaced:** the checksum updates, but the values extracted
-  from that file (energies, frequencies, ...) are *not* re-extracted,
-  because that experiment is still "already present". The graph quietly
-  ends up holding the new file's fingerprint next to the old file's
-  results - which defeats what the checksum is for.
-- **You pulled a fix that changes how a value should be *typed* or
-  *declared*, not its actual content:** a real example, found and
-  fixed during this project's own development - `gc:hasIndex` has a
-  declared range of `xsd:nonNegativeInteger`, but an early version of
-  `process_reaction_path_results.R` wrote it as a plain, untyped
-  literal (`I gc:hasIndex` instead of the correct
-  `AT gc:hasIndex^^xsd:nonNegativeInteger`). SHACL didn't catch it -
-  it only surfaced when Step 6's own reasoner reported the whole
-  ontology inconsistent. The values themselves (`278`, `279`, ...)
-  were always correct; only the second row of
-  `reaction_path_point_template_instances.tsv` - the one that tells
-  `robot template` how to type each column - had the old, wrong
-  directive baked in from before the fix. Deleting and reprocessing
-  isn't needed, and for a file this one shares with unrelated results
-  (`float_value_template_instances.tsv`, `spectra_result_template_instances.tsv`)
-  it's real, avoidable extra work. Editing that one line directly
-  fixes every existing row the next time the graph is built:
-
-  ```bash
-  sed -n '2p' reaction_path_point_template_instances.tsv   # check it's the old directive first
-  sed -i '2s/.*/ID\tLABEL\tTYPE\tAT gc:hasIndex^^xsd:nonNegativeInteger\tI gc:hasPathEnergy/' reaction_path_point_template_instances.tsv
-  ```
-
-  The general version of this: if `robot reason` (Step 6) reports an
-  inconsistency and its own suggested `robot explain` command points
-  at a datatype range violation, check whether the *value* is wrong or
-  just its *declared type* - if it's the latter, the instance file's
-  own type-directive row is very likely the one place that needs
-  fixing, not the data.
-
-For the second and third cases above - and as a simple default for a
-scheduled rebuild, since it's cheap next to the reasoning in Step 6 -
-do a clean rebuild: clear the *generated* instance files, then re-run.
-Look at what matches first:
-
-```r
-list.files(my_ontology_dir, pattern = "_instances\\.tsv$", full.names = TRUE)
-```
-
-then remove them:
-
-```r
-unlink(list.files(my_ontology_dir, pattern = "_instances\\.tsv$", full.names = TRUE))
-```
-
-The pattern is deliberate. It removes only the generated
-`*_instances.tsv` files - **not** `*.tsv`, because `run_notes.tsv`
-(Step 3b) is the one file in that folder you write by hand and can't
-regenerate (along with anything else of your own you keep there).
-Everything else - the `*_template.ttl` files,
-`release_with_extensions.ttl`, the graph itself - is overwritten by the
-next build, so there's nothing more to clear.
-
-A weekly routine, then:
-
-1. If you cloned, `git pull` both repos - and re-check your Step 3 file
-   list against this README's, since it has gone stale before.
-2. Clear the instance files, as above.
-3. Re-run Step 3 (process), 3c (filter, if you use it) and 3b
-   (annotations), then Step 4 (build).
-4. Step 5 (validate), and Step 6 if you use reasoned graphs - **every
-   time**. A reasoned graph is a snapshot of the asserted graph it was
-   built from, so it goes stale the moment that graph is rebuilt, with
-   no warning.
-
-## 🚀 Quick Start (the bundled example)
-
-👉 **New here? Start with the working example:**
-
-examples/
-
-Follow the guide in:
-
-examples/README.md
-
-In a few minutes, you will:
-
-* Generate ontology instances from templates
-* Build a complete workflow graph
-* Run a working SPARQL query
-
-This is the fastest way to understand how the ontology works in practice.
-
-## Overview
-
-Molecular modelling projects generate complex networks of files, parameters, and results. While these are often stored in well-defined directory structures, the relationships between them are rarely captured in a formal, machine-readable way.
-
-This project develops an ontology to represent those relationships as a graph, enabling structured understanding of how modelling work is organised, executed, and interpreted.
-
-The focus is on **pre-publication computational workflows** —the exploratory phase where models are built, tested, and refined.
-
-![building the versioned schema](./images/ont_mm_schema_build.svg "Building the gc: core schema, from source ontologies to a dated release")
-
-![instantiating the ontology](./images/ont_mm_instantiation.svg "Turning a release into a queryable, instantiated ontology from real experiment data")
+## About this fork
+
+This is a maintained fork of the Gainesville Core Ontology (GNVC v0.7), 
+originally developed by Chemical Semantics, Inc. and mirrored by NFDI4Chem.
+
+GNVC is a valuable ontology for publishing computational chemistry results, 
+but v0.7 contains several structural defects that prevent clean import and 
+use with current OWL tooling. This fork aims to repair those defects while 
+preserving the original term IRIs and conceptual structure, and to extend 
+coverage where gaps have been identified.
+
+If you are the original author or a stakeholder in GNVC, we would welcome 
+contact. The goal is to bring this ontology back into active maintenance, 
+not to replace or compete with any future official release.
 
 ---
 
-## Motivation
+## Repairs in v0.8.0
 
-Typical challenges in molecular modelling projects include:
+The working file is `gc07_without_imports.owl`. The following structural 
+defects from GNVC v0.7 have been repaired:
 
-* Track provenance of computed results
-* Reproduce calculations reliably
-* Understand dependencies between inputs, methods and outputs
+### Fix 1 — DAML periodic table import removed
+GNVC v0.7 imported the DAML periodic table 
+(http://www.daml.org/2003/01/periodictable/PeriodicTable.owl), a 2003-era 
+precursor to OWL that is no longer resolvable. This import was removed and 
+replaced with a local `gc:Element` stub class with a `rdfs:seeAlso` reference 
+to ChEBI (http://purl.obolibrary.org/obo/CHEBI_33250).
 
-This ontology addresses these by providing a formal framework linking:
+### Fix 2 — QUDT namespace updated
+GNVC referenced QUDT unit classes via the old NASA namespace 
+(http://data.nasa.gov/qudt/owl/qudt#) which is no longer active. All 
+references have been updated to the current QUDT namespace 
+(http://qudt.org/schema/qudt/).
 
-* Files
-* Computational constraints
-* Generated results
-* Experiment sequences
+### Fix 3 — gc:Bond class/individual collision resolved
+A cardinality restriction was incorrectly applied to gc:Bond as a named 
+individual rather than as a class axiom. This has been corrected by moving 
+the restriction to a proper owl:subClassOf axiom on the class.
 
----
+### Fix 4 — gc:RHF/UHF/ROHF modelling corrected
+gc:RHF was simultaneously declared as a class and a named individual. 
+gc:RHF, gc:UHF, and gc:ROHF are now consistently modelled as subclasses 
+of gc:SpinType, consistent with the dominant pattern used for methodology 
+classes elsewhere in GNVC.
 
-## Scope
+### Fix 5 — gc:hasFloatValue class/property collision resolved
+gc:hasFloatValue was declared as both a datatype property and a class. 
+The spurious class declaration was removed. The range of gc:hasMass was 
+corrected from gc:hasFloatValue (a property) to gc:FloatValue (the 
+correct class).
 
-### 1. Files
+### Fix 6 — Meta-level domain/range declarations removed
+gc:hasMolecularProperty and gc:hasAtomProperty had rdfs:Class and 
+owl:ObjectProperty as domain/range values respectively. These meta-level 
+constructs have been removed. The stray owl:ObjectProperty and rdfs:Class 
+class declarations have also been removed.
 
-* File types and naming conventions
-* Relationships (inputs, outputs, intermediates)
-* File dependencies within workflows
+### Fix 7 — UTF-8 encoding errors corrected
+String literals containing non-ASCII characters were corrupted due to 
+double-encoding. Affected terms: Schrödinger, Møller-Plesset.
 
-### 2. Constraints
+### Fix 8 — gc:hasSystemMultiplicity consolidated
+gc:hasSystemMultiplicity existed as both an object property and a datatype 
+property with conflicting axioms. These have been consolidated into a single 
+datatype property with correct domain (gc:MolecularSystem), range 
+(xsd:positiveInteger), and complete annotations.
 
-* Computational methods and parameters
-* Assumptions and modelling conditions
-* Simulation configurations
-
-### 3. Results
-
-* Output data and derived properties
-* Links to originating inputs and constraints
-* Metadata for interpretation and validation
-
----
-
-## Objectives
-
-* Define a consistent schema for molecular modelling projects
-* Enable full traceability from results back to inputs
-* Support reproducible and reusable computational workflows
-* Bridge raw simulation data and semantic representations
-
----
-
-## Approach
-
-The ontology builds on established standards:
-
-Gainesville Core Ontology (GC) for domain concepts
-PROV-O for provenance modelling
-
-Relevant terms are extracted, modularised, and combined into a coherent domain ontology.
-
-Structured data is generated using:
-
-- **ROBOT templates** (TSV → RDF/OWL)
-- **R scripts** for parsing and transformation
+### Fix 9 — Ontology metadata updated
+The ontology version has been bumped to 0.8.0 with a proper owl:versionIRI. 
+dc:modified and dcterms:contributor annotations have been added. Stale 
+commented-out import statements and encoding errors in the description have 
+been removed.
 
 ---
 
-## Template System (ROBOT)
+## Quality improvements in v0.8.0
 
-All ontology instances are generated using ROBOT templates:
+Beyond structural repairs, the following quality improvements have been made:
 
-```text
-Row 1	→	Human-readable headers
-Row 2	→	ROBOT template script
-Row 3+	→	Data
-```
-
-Example:
-
-```text
-ID	Label	Type	used	generated	wasGeneratedBy	fileURL
-ID	LABEL	TYPE	I prov:used	I prov:generated SPLIT=|	I prov:wasGeneratedBy	A ex:fileURL
-```
+- Duplicate rdfs:label values resolved across 15 terms
+- Missing rdfs:label annotations added to 13 terms
+- QUDT unit class declarations given proper labels
+- Multiple label conflicts resolved
+- dcterms:license added in ROBOT-compatible form
+- UTF-8 encoding errors fixed throughout
 
 ---
 
-## Scripted Workflow Generation (R)
+## Formal definitions (IAO:0000115) — work in progress
 
-The repository now includes a set of R scripts that automate the generation of ontology-ready data from molecular modelling project directories.
+Formal OBO Foundry definitions have been added for the following terms, 
+sourced from the IUPAC Gold Book (https://goldbook.iupac.org) and IUPAC 
+PAC recommendations:
 
-These scripts transform structured file systems (inputs, outputs, data) into **ROBOT template instances**, enabling reproducible and scalable ontology population.
+- gc:BasisSet — Gold Book BT06999
+- gc:Atom — Gold Book A00493
+- gc:Molecule — Gold Book M03986
+- gc:Orbital — Gold Book O04317
+- gc:WaveFunction — Gold Book W06659
+- gc:DensityFunctional — PAC 1999, 71, 1919
 
-### Overview of Scripts
+Definitions for remaining terms are in progress. Contributions welcome — 
+see open issues labelled `good first issue`.
 
-Located in:
-
-```text
-scripts/
-```
-
-| Script                                | Purpose                                                      |
-| ------------------------------------- | ------------------------------------------------------------ |
-| `process_experiments.R`               | Generates experiment-level provenance and file relationships |
-| `build_provenance.R`                  | Infers provenance chains from input file naming conventions  |
-| `process_constraints.R`               | Extracts and structures computational constraints            |
-| `provenance_enrichment_experiments.R` | Adds additional provenance relationships to experiment data  |
-| `url_enrichment_experiments.R`        | Resolves and injects file URLs into experiment records       |
+The following review informed the design decisions in this fork:
+https://doi.org/10.26434/chemrxiv-2024-fvzpq
 
 ---
 
-## Provenance Handling
+## Original NFDI4Chem mirror note
 
-A key feature of the workflow is **automatic provenance reconstruction**.
-
-### Default Behaviour
-
-If no provenance file is provided:
-
-* The **first input file** in a sequence is assumed to originate from:
-
-  ```
-  ex:avogadro_build
-  ```
-
-* Subsequent files are linked sequentially:
-
-  ```
-  step_01 → step_01a → step_01b → step_02
-  ```
-
-* Each file is treated as being generated by the **previous experiment**, forming a provenance chain:
-
-  ```
-  ex:file_step_01a_inp → ex:exp_step_01
-  ```
-
-* If a break in sequence is detected:
-
-  * Provenance resets to `ex:avogadro_build`
+This repository contains a copy of the Gainesville Core Ontology that was 
+developed by Chemical Semantics in 2015. The NFDI4Chem terminology service 
+created the original mirror because the original IRI no longer resolves.
+The ontology was taken from this snapshot of the internet archive:
+https://web.archive.org/web/20221005233201fw_/http://ontologies.makolab.com/gc/gc07.owl
+Since this archived version imports outdated and unresolvable versions of 
+BFO and QUDT, the associated import statements were commented out in the 
+original mirror (see gc07_without_imports.owl).
 
 ---
 
-### Supported Naming Patterns
+## Contributing
 
-The provenance system detects workflow structure from filenames:
+If you would like to contribute definitions, bug fixes, or extensions:
 
-#### Numeric sequences
+1. Open an issue describing what you want to add or fix
+2. Fork this repository
+3. Make your changes to `gc07_without_imports.owl`
+4. Verify with `xmllint --noout gc07_without_imports.owl` and 
+   `robot convert --input gc07_without_imports.owl --output test.ttl`
+5. Open a pull request
 
-```
-step_01 → step_02 → step_03
-```
-
-#### Sub-step sequences
-
-```
-step_01 → step_01a → step_01b → step_01c
-```
-
-#### Mixed progression
-
-```
-step_01 → step_01a → step_01b → step_02
-```
+Issues labelled `good first issue` are suitable for new contributors and 
+typically involve adding a formal IAO:0000115 definition to an existing term.
 
 ---
 
-### Optional Provenance File
+## Additions in v0.8.1
 
-Users may supply a provenance file to override inferred relationships.
+### gc:debyeSquaredPerAmuAngstromSquared added
+GAMESS (US) reports IR intensity in Debye**2/amu-Angstrom**2, which had no 
+corresponding unit individual in the ontology (`gc:cm-1` existed for 
+frequency, but nothing for intensity). Added as a properly QUDT-typed 
+individual (`qudt:DerivedUnit`), consistent with the existing `gc:cm-1` 
+pattern. Distinct from the km/mol convention used by some other packages 
+(e.g. Gaussian) - the two require a conversion factor (1 Debye**2/amu-Angstrom**2 
+= 42.2561 km/mol), not a direct equivalence.
 
-Format (TSV):
+Contributed via the ont_mm project (github.com/Darren01/ont_mm), which 
+consumes this ontology for a GAMESS output extraction and SPARQL-driven 
+data pipeline.
 
-```text
-ID	provWasGeneratedBy
-ex:file_step_02_inp	ex:manual_adjustment
-```
+## Additions in v0.8.2
 
-#### Important behaviour
+### Thermochemistry classes and properties added
+GAMESS (US) (and other quantum chemistry packages) reports thermochemical
+state functions - zero-point energy, enthalpy, entropy, and Gibbs free
+energy - computed from a vibrational/frequency analysis. These had no
+corresponding classes in the ontology; SystemEnergies previously only
+covered ElectronicEnergy, CoreEnergy, and TotalBOPotentialEnergy.
 
-* The system **first builds a complete provenance graph automatically**
-* The provenance file then **selectively overrides specific entries**
-* Empty or missing values in the file are ignored
-* Unknown IDs generate warnings
+Added four new classes (all subClassOf SystemEnergies) and four
+corresponding properties (all subPropertyOf hasSystemEnergiesResult,
+domain SystemEnergies, range FloatValue), each with a Gold-Book-sourced
+IAO:0000115 definition:
 
-This ensures:
+- gc:ZeroPointEnergy / gc:hasZeroPointEnergy (Gold Book 08215)
+- gc:Enthalpy / gc:hasEnthalpy (Gold Book E02141)
+- gc:Entropy / gc:hasEntropy (Gold Book E02149)
+- gc:GibbsFreeEnergy / gc:hasGibbsFreeEnergy (Gold Book G02629)
 
-* No gaps in provenance
-* Default chaining is preserved
-* Manual corrections are safely applied
+Also added gc:joulePerMoleKelvin, a QUDT-typed unit individual for
+entropy's native unit (J/(mol K)) - distinct from the kJ/mol unit used
+for enthalpy and Gibbs free energy in the same GAMESS output table.
 
----
+Contributed via the ont_mm project (github.com/Darren01/ont_mm), which
+consumes this ontology for a GAMESS output extraction and SPARQL-driven
+data pipeline.
 
-## Workflow Pipeline
+## Additions in v0.8.3
 
-A typical workflow is:
+### gc:degree added
+Bond angle and dihedral angle constraint values had no corresponding
+unit individual in the ontology - only gc:angstrom existed, for
+distance constraints.
 
-1. Prepare directory structure:
+Added gc:degree as a properly QUDT-typed individual (qudt:PlaneAngleUnit).
 
-   ```
-   inputs/
-   data/
-   outputs/
-   ```
+Contributed via the ont_mm project (github.com/Darren01/ont_mm), which
+consumes this ontology for a GAMESS output extraction and SPARQL-driven
+data pipeline.
 
-2. Run experiment processing:
+## Additions in v0.8.4
 
-   ```r
-   process_experiments(...)
-   ```
+### SaddlePoint, IRC, ReactionPath, ReactionPathPoint added
+A transition-state/reaction-pathway workflow - locating a saddle point,
+then following the intrinsic reaction coordinate away from it in both
+directions to connect reactants and products - had no corresponding
+vocabulary anywhere in the ontology. A review of related ontologies in
+the same ecosystem (OntoCompChem, OntoPESScan) confirmed neither covers
+this either - both are limited to single point/geometry optimization/
+frequency calculations and potential energy surface scans respectively;
+transition-state search and IRC following appear to be a genuine gap
+in the existing landscape, not something reused from elsewhere.
 
-3. (Optional) Apply enrichment steps:
+Added four new classes:
 
-   ```r
-   provenance_enrichment_experiments(...)
-   url_enrichment_experiments(...)
-   ```
+- gc:SaddlePoint (subClassOf MolecularComputation) - a calculation
+  that locates a stationary point with exactly one direction of
+  negative curvature (a first-order saddle point), corresponding to a
+  transition state.
+- gc:IRC (subClassOf MolecularComputation) - a calculation that
+  follows the intrinsic reaction coordinate away from a saddle point,
+  in either the forward or backward direction.
+- gc:ReactionPath - the combined reaction path connecting reactants to
+  products via a transition state, typically assembled from a forward
+  and a backward IRC run sharing the same saddle point.
+- gc:ReactionPathPoint - a single point along a reaction path, with an
+  index (position along the path) and an energy value relative to the
+  starting point.
 
-4. Generate ROBOT template instances:
+Contributed via the ont_mm project (github.com/Darren01/ont_mm), which
+consumes this ontology for a GAMESS output extraction and SPARQL-driven
+data pipeline.
 
-   ```
-   *.tsv → RDF/OWL
-   ```
+## Additions in v0.8.5
 
----
+### InfraRedSpectrum merged into InfraRedSpectra; UVVisSpectrum re-parented
+Two disconnected duplicate/orphaned terms found and fixed:
 
-## Design Principles
+InfraRedSpectrum and InfraRedSpectra were accidental duplicates for the
+same concept - the plural was already correctly subClassOf
+VibrationalSpectra, properly wired into the CalculationResult chain;
+the singular was disconnected (subClassOf GainesvilleCoreTerm only) but
+carried the real Gold Book citation (IUPAC 08618). Moved the citation
+onto the properly-wired class, deleted the duplicate. No pipeline
+impact - neither class was referenced by any built writer at the time.
 
-The scripting layer follows a few key principles:
+UVVisSpectrum was similarly disconnected. Re-parented from
+GainesvilleCoreTerm to ElectronicSpectra (properly wired, same sibling
+pattern as InfraRedSpectra/RamanSpectra under VibrationalSpectra) - now
+automatically eligible for the existing hasFrequencyPeak property
+(domain already includes ElectronicSpectra), no new properties needed.
 
-* **Deterministic**: same inputs always produce the same graph
-* **Recoverable**: provenance inferred from file structure
-* **Override-safe**: manual inputs refine, not replace, defaults
-* **Composable**: scripts can be run independently or chained
+Contributed via the ont_mm project (github.com/Darren01/ont_mm), which
+consumes this ontology for a GAMESS output extraction and SPARQL-driven
+data pipeline.
 
----
+## Fixes in v0.8.6
 
-## Notes
+### Dangling domain references corrected
+Three properties (xAxis, yAxis, yAxisUnit) still had rdfs:domain
+pointing at InfraRedSpectrum, the class deleted in v0.8.5's merge -
+left dangling by that change rather than caught at the time. Corrected
+to point at InfraRedSpectra, the class InfraRedSpectrum was merged
+into.
 
-* File ordering is determined by filename sorting — consistent naming (e.g. zero-padding) is recommended
-* Provenance inference assumes structured naming conventions
-* The system is designed for **lightweight workflow reconstruction**, not full workflow management
+Contributed via the ont_mm project (github.com/Darren01/ont_mm), which
+consumes this ontology for a GAMESS output extraction and SPARQL-driven
+data pipeline.
 
----
+## Additions in v0.8.7
 
+### gc:ppm added
+NMR shielding and chemical shift values (isotropic and anisotropy
+components) had no corresponding unit individual in the ontology -
+nothing in gc: represented parts per million, the standard unit both
+quantities are conventionally reported in.
 
-## Repository Structure
+Added gc:ppm as a properly QUDT-typed individual (qudt:Unit), with an
+owl:sameAs link to the real, current QUDT PPM unit
+(http://qudt.org/vocab/unit/PPM, itself typed qudt:Unit under
+quantitykind:DimensionlessRatio, alongside PERCENT/PPB/PPT) - the same
+verify-before-reuse discipline as gc:degree and gc:angstrom.
 
-*(To be defined as the project evolves)*
+(Originally added in the commit before this one, but without its own
+version bump - v0.8.7 corrects that, rather than leaving gc:ppm
+permanently unversioned.)
 
-```text
-ont_mm
-|--builds				# Combined ontology outputs
-|  |--gc_core.ttl
-|  |--README.md
-|--docs					# Supporting queries and term lists
-|  |--fix_annotations.sparql
-|  |--fix_license.sparql
-|  |--fix_label.sparql
-|  |--gc_terms.txt
-|  |--prov_terms.txt
-|--examples				# a worked example
-|  |--data
-|  |  |--rem01.dat
-|  |  |--rem01a.dat
-|  |  |--rem01b.dat
-|  |--inputs
-|  |  |--rem01.inp
-|  |  |--rem01a.inp
-|  |  |--rem01b.inp
-|  |--ont
-|  |  |--constraint_template_instances.tsv
-|  |  |--constraint_template.ttl
-|  |  |--experiment_template_instances.tsv
-|  |  |--experiment_template.ttl
-|  |  |--gc_core_full.ttl
-|  |  |--results_template_instances.tsv
-|  |  |--results_template.ttl
-|  |--ont_script
-|  |  |--constraint_template_instances_script.tsv
-|  |--outputs
-|  |  |--rem01.log
-|  |  |--rem01a.log
-|  |  |--rem01b.log
-|  |--README.md
-|--images
-|  |--ont_mm_schema_build.excalidraw
-|  |--ont_mm_schema_build.svg
-|  |--ont_mm_instantiation.excalidraw
-|  |--ont_mm_instantiation.svg
-|--modules				# Extracted ontology modules
-|  |--gc_module.ttl
-|  |--prov_module.ttl
-|  |--README.md
-|--README.md
-|--releases				# versioned ontologies
-|  |--2026-05-08
-|  |  |--gc_core.ttl
-|--scripts				# Processing and build scripts
-|  |--build_provenance.R
-|  |--process_experiments.R
-|  |--process_constraints.R
-|  |--provenance_enrichment_experiments.R
-|  |--url_enrichment_experiments.R
-|--source				# Source ontologies
-|  |--catalog-v001.xml
-|  |--EMPTY.owl
-|  |--gc.owl				# Gainesville Core ontology
-|  |--prov-o.owl			# Provenance ontology
-|--templates				# Ontology templates
-|  |--constraint_template.tsv
-|  |--experiment_template.tsv
-|  |--results_template.tsv
-```
+Contributed via the ont_mm project (github.com/Darren01/ont_mm), which
+consumes this ontology for a GAMESS output extraction and SPARQL-driven
+data pipeline.
 
-## Current Status
+## Fixes in v0.8.8
 
-**Stable and in active real-world use.** This has moved past "early
-prototype" - it's the working pipeline behind a real, ongoing
-computational chemistry project, not just a demonstration of the idea:
+### Multiple rdfs:domain declarations now read as "any of", not "all of"
+Six properties - hasBasisSet, hasForceField, hasFrequencyPeak, hasMass,
+hasParameterSet and hasPeakCount - each listed two or three rdfs:domain
+classes as separate statements. In OWL separate domain statements are
+conjunctive: a subject must belong to *all* of the listed classes. The
+intent was plainly "any of". Reasoned over real data this produced
+false conclusions: every experiment typed as a gc:Atom, and every
+infrared spectrum also typed as an NMR spectrum and an electronic
+spectrum.
 
-* A complete, automated pipeline: `process_gamess_directory()` ->
-  `build_ontology_graph()` -> `validate_graph_shacl()`, each a single
-  function call
-* Real SHACL validation, with shapes tied to actual bugs found during
-  this project's own development, not theoretical examples
-* Your own review notes and literature references become part of the
-  graph itself (`run_notes.tsv`/`doi_notes.tsv`), linked in both
-  directions
-* Querying that scales to how comfortable you are with SPARQL - zero
-  SPARQL (`summarize_graph()`) through to a full tiered primer
-  (`gamess_functions/examples/query_your_ontology.R`)
-* Setup diagnostics (`check_robot_setup()`) that catch real, previously-hit
-  problems (wrong Java version, PATH issues) with a clear fix, not a
-  cryptic failure deep inside a build
-* Proven on more than the bundled demo - a real, independent project's
-  data, not just the 3-experiment example
+Each of the six now has a single rdfs:domain, the owl:unionOf the
+classes it listed - the same form three other properties already used.
+Verified by rebuilding two real datasets from the ont_mm project and
+reasoning over them: the reasoner stays consistent, exactly the false
+types disappear (30 gc:Atom, 15 NMR and 15 electronic spectrum
+assertions in one dataset; 61, 32 and 32 in the other), and nothing
+else changes.
 
-Now genuinely in **periodic review mode**: real bugs found through
-actual use get fixed as they surface, not on a schedule. If something
-looks wrong or unclear, it's worth raising - this isn't considered
-"finished and untouchable," just no longer under active, ground-up
-development.
+Deliberately not changed: hasBasisSet is still declared as both an
+object property and a datatype property (illegal punning in OWL 2 DL),
+with ranges BasisSet and Literal. And as a sub-property of hasFeature,
+whose domain is MolecularMethodology, it still implies that whatever
+carries a basis set is a methodology - which matches its own definition
+("assigned to a given quantum methodology"), so that is a modelling
+question for data producers rather than a defect to patch here.
 
-## Future Work
+Contributed via the ont_mm project (github.com/Darren01/ont_mm), which
+consumes this ontology for a GAMESS output extraction and SPARQL-driven
+data pipeline.
 
-Deliberately short - most of what would once have been listed here is
-already built and proven (SHACL validation, in particular, used to be
-listed here as aspirational; it's real now).
-
-Genuinely still open:
-
-* `extract_electronic_energy()`'s `VibrationalAnalysis` extension (a
-  real, scoped gap, not yet needed by any project using this so far)
-* Temperature capture in the graph (needs a deliberate design decision
-  about `gc:MolecularSystem`, not a quick patch)
-* Improve support for Dunning and ECP basis sets
-
-**Anything larger belongs in its own project, not bolted onto this
-one.** A Shiny front end, or LinkML as a genuine alternative to
-`robot template` (worth comparing honestly, including where it falls
-short) - both real, worth doing eventually, and both big enough to
-deserve their own repo and their own attention, rather than becoming
-a permanent, half-finished feature branch of `ont_mm` itself.
-
-## Long-term vision
-
-To provide a reusable framework for structuring computational chemistry workflows as semantic graphs, enabling:
-
-* Reproducibility
-* Provenance tracking
-* Integration with knowledge systems
-* Advanced querying and analysis
-
-## Author
-
-[Darren Rhodes]
-
-## License
-
-This project is licensed under the MIT License – see the [LICENSE](./LICENSE.txt) file for details.
-
-## TOOLS
-
-- [Gamess (US)](https://www.msg.chem.iastate.edu/gamess/)
-- [robot](https://robot.obolibrary.org/)
-- [Apache Jena](https://jena.apache.org/download/) (for `shacl` - SHACL validation)
-- [RStudio](https://posit.co/download/rstudio-desktop)
-- [turtle viewer](https://semantechs.co.uk/turtle-editor-viewer/)
-- [rdflib.js](https://github.com/linkeddata/rdflib.js) (RDF parsing and
-  SPARQL support for `tools/sparql_playground.html`, running entirely
-  in the browser)
-- [vis-network](https://github.com/visjs/vis-network) (the optional
-  graph view in `tools/sparql_playground.html`)
-- [Jmol](https://jmol.sourceforge.net/) (used to generate the reaction
-  animation GIFs in both the `caa` and `aa` examples - see
-  `examples/caa/animation/README.md` and `examples/aa/animation/README.md`)
+## Acknowledgements
+The repair and documentation work in this fork was carried out by Darren Rhodes
+using Claude (Anthropic) as a technical assistant for XML editing, ROBOT tooling, and OWL pattern guidance.
