@@ -1,6 +1,6 @@
 # Queries for the real caa dataset specifically.
 source("../../../gamess_functions/R/sparql_to_file.R")   # adjust to your own checkout layout
-graph <- "ont/caa_graph_20260905.ttl"
+graph <- "ont/caa_graph_20261007.ttl"
 
 # ---------------------------------------------------------------------
 # 1. Every experiment, by type - the basic inventory

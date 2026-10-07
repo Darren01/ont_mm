@@ -295,7 +295,7 @@ my_graph_file    <- file.path(my_ontology_dir, "your_graph_YYYYMMDD.ttl")   # da
 # with the clone - point straight at them, nothing to download. (For a real
 # project you may prefer to copy gc_core.ttl into your own ontology folder,
 # so the exact release you built against travels with your data.)
-my_release_file    <- file.path(my_code_dir, "ont_mm/releases/2026-08-08/gc_core.ttl")
+my_release_file    <- file.path(my_code_dir, "ont_mm/releases/2026-10-07/gc_core.ttl")
 my_extensions_file <- file.path(my_code_dir, "ont_mm/schema_terms.ttl")
 # Option B (no clone): Step 4 downloads both into your ontology folder.
 # Comment out the two Option A lines above and use these instead:
@@ -647,7 +647,7 @@ clone, download it first, into `my_ontology_dir` (already set up above):
 
 ```r
 download.file(
-  "https://raw.githubusercontent.com/Darren01/ont_mm/master/releases/2026-08-08/gc_core.ttl",
+  "https://raw.githubusercontent.com/Darren01/ont_mm/master/releases/2026-10-07/gc_core.ttl",
   destfile = my_release_file
 )
 ```
@@ -662,7 +662,7 @@ than disabling certificate checking:
 
 ```r
 download.file(
-  "https://raw.githubusercontent.com/Darren01/ont_mm/master/releases/2026-08-08/gc_core.ttl",
+  "https://raw.githubusercontent.com/Darren01/ont_mm/master/releases/2026-10-07/gc_core.ttl",
   destfile = my_release_file,
   method = "wininet"
 )
@@ -677,7 +677,7 @@ general:
 ```r
 system(paste0(
   "wsl wget --no-check-certificate -O ", my_release_file,
-  " https://raw.githubusercontent.com/Darren01/ont_mm/master/releases/2026-08-08/gc_core.ttl"
+  " https://raw.githubusercontent.com/Darren01/ont_mm/master/releases/2026-10-07/gc_core.ttl"
 ))
 ```
 

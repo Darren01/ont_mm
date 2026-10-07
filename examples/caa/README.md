@@ -274,7 +274,7 @@ ORDER BY ?spectrum ?freq
 
 **The tiered-tool equivalent:**
 ```r
-summarize_graph("ont/caa_graph_20260905.ttl")
+summarize_graph("ont/caa_graph_20261007.ttl")
 ```
 
 Getting correct results from the SPARQL version requires knowing

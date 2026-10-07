@@ -142,7 +142,7 @@ source(file.path(my_code_dir, "ont_mm/scripts/build_ontology_graph.R"))
 
 build_ontology_graph(
   ontology_dir = my_ontology_dir,
-  release_file = file.path(my_code_dir, "ont_mm/releases/2026-08-08/gc_core.ttl"),
+  release_file = file.path(my_code_dir, "ont_mm/releases/2026-10-07/gc_core.ttl"),
   output_file  = file.path(my_ontology_dir, "gc_core_full.ttl")
 )
 ```

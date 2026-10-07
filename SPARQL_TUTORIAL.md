@@ -4,7 +4,7 @@
 
 You've built a graph. You know roughly what's in it, but "roughly" doesn't get you far when you want to ask a real question. This chapter shows how to ask the graph itself: what kinds of things it contains, what those things *are*, and what properties they have.
 
-Each step introduces one idea, then stops to look at what just happened before moving on. Every example runs against the published `aa` graph (`examples/aa/ont/aa_graph_20260909.ttl`), so your output should match what's printed here. Once it does, point the same queries at your own graph.
+Each step introduces one idea, then stops to look at what just happened before moving on. Every example runs against the published `aa` graph (`examples/aa/ont/aa_graph_20261007.ttl`), so your output should match what's printed here. Once it does, point the same queries at your own graph.
 
 **What you need:** a built graph (a `.ttl` file), and either `arq` - Apache Jena's command-line SPARQL tool, which comes in the same download as `shacl` (see Step 5 of the [README](./README.md)) - or `robot`, which you already have. If `arq` won't start, the Jena setup notes in the README (Java version, and `JENAROOT` on Windows) are the first thing to check. Where robot does the same job differently, you'll find a note saying how.
 
@@ -19,7 +19,7 @@ Every result table below is real output from running that query on that graph. A
 ```bash
 mkdir -p /tmp/sparql && cd /tmp/sparql               # a scratch folder for today's questions
 
-G=~/ont_mm/examples/aa/ont/aa_graph_20260909.ttl     # adjust to wherever you cloned it
+G=~/ont_mm/examples/aa/ont/aa_graph_20261007.ttl     # adjust to wherever you cloned it
 
 cat > q1.rq <<'EOF'
 SELECT * WHERE { ?s ?p ?o } LIMIT 3
@@ -79,7 +79,7 @@ You'll do the promoting for real at the end of Step 3. It looks like this:
 ```bash
 cat - q3.rq > ~/queries/types-in-graph.rq <<'EOF'
 # Question: what kinds of things are in the graph, and how many of each?
-# Graph:    aa_graph_20260909.ttl
+# Graph:    aa_graph_20261007.ttl
 # Learned:  owl:NamedIndividual is a tag on every item - ignore it; units come from QUDT (declare a qudt: prefix)
 # Replaces: q1 (SELECT * ... LIMIT 3) - three arbitrary triples, told me nothing
 EOF
@@ -98,12 +98,12 @@ EOF
 `arq --help` says `--data` accepts a URL as well as a file, so you can point it straight at a published graph without cloning anything:
 
 ```bash
-arq --data https://raw.githubusercontent.com/Darren01/ont_mm/main/examples/aa/ont/aa_graph_20260909.ttl --query q1.rq
+arq --data https://raw.githubusercontent.com/Darren01/ont_mm/main/examples/aa/ont/aa_graph_20261007.ttl --query q1.rq
 ```
 
 (Robot can do it too: `robot query --input-iri <the same URL> --query q1.rq out.tsv`.)
 
-You don't have to build that URL by hand. Browse to the file on GitHub and click the "Raw" button; the address bar then shows something like `.../ont_mm/raw/refs/heads/main/examples/aa/ont/aa_graph_20260909.ttl`, which works exactly the same way - it just redirects to the form above.
+You don't have to build that URL by hand. Browse to the file on GitHub and click the "Raw" button; the address bar then shows something like `.../ont_mm/raw/refs/heads/main/examples/aa/ont/aa_graph_20261007.ttl`, which works exactly the same way - it just redirects to the form above.
 
 Stop and notice what that is. You've asked a question of a graph that lives on someone else's server, using a text file you wrote in a minute and one command. You didn't clone anything, load a database or write a program. Anything published as RDF can be asked this way, and the rest of this tutorial is about asking it well.
 
@@ -162,7 +162,7 @@ arq --data $G --query q2.rq
 | type                                            | howMany |
 =============================================================
 | <http://www.w3.org/2002/07/owl#NamedIndividual> | 1102    |
-| <http://www.w3.org/2002/07/owl#Class>           | 328     |
+| <http://www.w3.org/2002/07/owl#Class>           | 334     |
 | <http://purl.org/gc/ReactionPathPoint>          | 268     |
 | <http://purl.org/gc/FloatValue>                 | 192     |
 | <http://www.w3.org/2002/07/owl#ObjectProperty>  | 154     |
@@ -174,7 +174,7 @@ arq --data $G --query q2.rq
 > ```text
 > ?type	?howMany
 > <http://www.w3.org/2002/07/owl#NamedIndividual>	1102
-> <http://www.w3.org/2002/07/owl#Class>	328
+> <http://www.w3.org/2002/07/owl#Class>	334
 > <http://purl.org/gc/ReactionPathPoint>	268
 > <http://purl.org/gc/FloatValue>	192
 > <http://www.w3.org/2002/07/owl#ObjectProperty>	154
@@ -210,7 +210,7 @@ PREFIX chem: <http://purl.org/gc/>
 | type                                            | howMany |
 =============================================================
 | <http://www.w3.org/2002/07/owl#NamedIndividual> | 1102    |
-| <http://www.w3.org/2002/07/owl#Class>           | 328     |
+| <http://www.w3.org/2002/07/owl#Class>           | 334     |
 | chem:ReactionPathPoint                          | 268     |
 | chem:FloatValue                                 | 192     |
 | <http://www.w3.org/2002/07/owl#ObjectProperty>  | 154     |
@@ -278,7 +278,7 @@ arq --data $G --query q3.rq
 | type                                                   | howMany |
 ====================================================================
 | owl:NamedIndividual                                    | 1102    |
-| owl:Class                                              | 328     |
+| owl:Class                                              | 334     |
 | gc:ReactionPathPoint                                   | 268     |
 | gc:FloatValue                                          | 192     |
 | owl:ObjectProperty                                     | 154     |
@@ -301,7 +301,7 @@ That's the first 12 of 37 rows; the full list is here if you want it.
 | type                                                   | howMany |
 ====================================================================
 | owl:NamedIndividual                                    | 1102    |
-| owl:Class                                              | 328     |
+| owl:Class                                              | 334     |
 | gc:ReactionPathPoint                                   | 268     |
 | gc:FloatValue                                          | 192     |
 | owl:ObjectProperty                                     | 154     |
@@ -367,7 +367,7 @@ With that line added, the same rows print as:
 > ```text
 > ?type	?howMany
 > <http://www.w3.org/2002/07/owl#NamedIndividual>	1102
-> <http://www.w3.org/2002/07/owl#Class>	328
+> <http://www.w3.org/2002/07/owl#Class>	334
 > <http://purl.org/gc/ReactionPathPoint>	268
 > ```
 
@@ -400,7 +400,7 @@ EOF
 | type                 | n    |
 ===============================
 | owl:NamedIndividual  | 1102 |
-| owl:Class            | 328  |
+| owl:Class            | 334  |
 | gc:ReactionPathPoint | 268  |
 -------------------------------
 ```
@@ -424,7 +424,7 @@ EOF
 | type                 | n    |
 ===============================
 | owl:NamedIndividual  | 1102 |
-| owl:Class            | 328  |
+| owl:Class            | 334  |
 | gc:ReactionPathPoint | 268  |
 -------------------------------
 ```
@@ -441,7 +441,7 @@ ask2() {
 ```
 
 ```bash
-G2=https://raw.githubusercontent.com/Darren01/ont_mm/main/examples/caa/ont/caa_graph_20260905.ttl   # the caa graph, loaded straight from its own URL
+G2=https://raw.githubusercontent.com/Darren01/ont_mm/main/examples/caa/ont/caa_graph_20261007.ttl   # the caa graph, loaded straight from its own URL
 
 ask2 "$G2" <<'EOF'
 SELECT ?type (COUNT(?thing) AS ?n)
@@ -458,7 +458,7 @@ EOF
 ==============================
 | owl:NamedIndividual | 1759 |
 | gc:FloatValue       | 416  |
-| owl:Class           | 328  |
+| owl:Class           | 334  |
 ------------------------------
 ```
 
@@ -543,7 +543,7 @@ That last query, with its prefix block, is worth keeping. Promote it, as describ
 ```bash
 cat - q3.rq > ~/queries/types-in-graph.rq <<'EOF'
 # Question: what kinds of things are in the graph, and how many of each?
-# Graph:    aa_graph_20260909.ttl
+# Graph:    aa_graph_20261007.ttl
 # Learned:  owl:NamedIndividual is a tag on every item - ignore it; units come from QUDT (declare a qudt: prefix)
 # Replaces: q1 (SELECT * ... LIMIT 3) - three arbitrary triples, told me nothing
 EOF
@@ -843,7 +843,7 @@ SELECT ?type (COUNT(?thing) AS ?howMany) WHERE { ?thing a ?type } GROUP BY ?type
 | type                 | howMany |
 ==================================
 | owl:NamedIndividual  | 1102    |
-| owl:Class            | 328     |
+| owl:Class            | 334     |
 | gc:ReactionPathPoint | 268     |
 ----------------------------------
 ```
@@ -1401,7 +1401,7 @@ EOF
 With `robot`, this is `-u`/`--update` instead of `-q`/`--query`, writing the result to a new file with `-o`:
 
 ```bash
-robot query --input aa_graph_20260909.ttl --update add_note.ru --output aa_graph_20260909_updated.ttl
+robot query --input aa_graph_20261007.ttl --update add_note.ru --output aa_graph_20261007_updated.ttl
 ```
 
 **The `--output` filename has to genuinely differ from `--input`, and this is worth testing rather than assuming.** Point both at the same path and `robot` reads the whole file first, applies the update in memory, then writes the result back out to whatever `--output` says - including, if it's the same name, straight over the original. Confirmed directly: doing exactly that leaves the "original" holding the update, with nothing to undo it. The two-file version above isn't just a teaching convenience for showing the before/after side by side - it's the only thing standing between "preview" and "permanent, irreversible change", so always give `--output` a name that isn't `--input`.
@@ -1415,7 +1415,7 @@ robot query --input aa_graph_20260909.ttl --update add_note.ru --output aa_graph
 --------------------------------------------------------------
 ```
 
-`ex:exp_aa001a` now has two notes, side by side - genuinely useful for trying out a change before committing to it. But notice what `--output` actually did: it wrote a *new file*. Query the original `aa_graph_20260909.ttl` again and the second note simply isn't there:
+`ex:exp_aa001a` now has two notes, side by side - genuinely useful for trying out a change before committing to it. But notice what `--output` actually did: it wrote a *new file*. Query the original `aa_graph_20261007.ttl` again and the second note simply isn't there:
 
 ```text
 ----------------------------------------------------------
@@ -1446,9 +1446,9 @@ WHERE {
 }
 EOF
 
-robot query --input aa_graph_20260909.ttl --update remove_placeholders.ru --output aa_graph_noplaceholders.ttl
+robot query --input aa_graph_20261007.ttl --update remove_placeholders.ru --output aa_graph_noplaceholders.ttl
 
-grep -c '"A class for [A-Za-z]*\."@en' aa_graph_20260909.ttl
+grep -c '"A class for [A-Za-z]*\."@en' aa_graph_20261007.ttl
 grep -c '"A class for [A-Za-z]*\."@en' aa_graph_noplaceholders.ttl
 grep -c 'A class representing frequency peak' aa_graph_noplaceholders.ttl
 ```
