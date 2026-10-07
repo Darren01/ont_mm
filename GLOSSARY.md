@@ -9,11 +9,16 @@ how this glossary is scoped: every term below is one that
 references, whether or not the `caa` example happens to populate it.
 One deliberate exception: the file classes (`ex:InputFile`,
 `ex:DataFile`, `ex:LogFile`), `ex:fileURL`, `ex:involvesAtom1` to
-`ex:involvesAtom4` and the two defined classes (`ex:Experiment`,
-`ex:ImaginaryFrequencyPeak`) are not referenced by any competency
-question, but they turn up in the [SPARQL tutorial](./SPARQL_TUTORIAL.md)'s
-own examples, in README Step 6, and in anyone's first queries of these
-graphs, so they are defined here too rather than left to be guessed.
+`ex:involvesAtom4`, the two defined classes (`ex:Experiment`,
+`ex:ImaginaryFrequencyPeak`) and, from Gainesville Core, six classes
+(`gc:SystemEnergies`, `gc:FloatValue`, `gc:VibrationalSpectra`,
+`gc:FrequencyPeak`, `gc:ReactionPath`, `gc:ReactionPathPoint`) and one
+property (`gc:hasIntensity`) are not referenced by any competency
+question by name - the questions reach those classes only through the
+properties that link to them - but they turn up in the
+[SPARQL tutorial](./SPARQL_TUTORIAL.md)'s own examples, in README
+Step 6, and in anyone's first queries of these graphs, so they are
+defined here too rather than left to be guessed.
 
 Where a definition comes directly from the ontology's own schema
 (`gc_core.ttl`), it's quoted as such. Where a term is this project's
@@ -220,6 +225,17 @@ the computations."* The general link from an experiment to whatever it
 produced - energies, spectra, or a reaction path, depending on the
 experiment type.
 
+**`gc:SystemEnergies`** - *"A class for various types of energies
+associated with molecular system."* One per experiment that produced
+energies, linked from the experiment by `gc:hasResult`. It holds no
+numbers itself: each energy hangs off it through its own property -
+`gc:hasZeroPointEnergy`, `gc:hasEnthalpy`, `gc:hasEntropy`,
+`gc:hasGibbsFreeEnergy` or `gc:hasElectronicEnergy` - pointing at a
+`gc:FloatValue`. Which experiments carry which: a frequency analysis
+(and a saddle-point run that also computed a Hessian) carries the four
+thermochemical quantities, and a single point carries only its
+electronic energy.
+
 **`gc:hasFloatValue`** - *"A property that describes floating point
 value."* The actual number at the end of a reification chain - e.g.
 `experiment -> hasResult -> energies -> hasEnthalpy -> [an entity] ->
@@ -227,6 +243,28 @@ hasFloatValue -> the real number`. Every energetic quantity below
 follows this same pattern: the named property (`hasEnthalpy`, etc.)
 points to a separate entity, not the number directly, and that
 entity's own `hasFloatValue` holds the real value.
+
+**`gc:FloatValue`** - *"A class for float value, containing value and
+unit."* A number with its unit, as a node of its own: `gc:hasFloatValue`
+holds the number (an `xsd:float`) and `gc:hasUnit` the unit, itself an
+individual. In these graphs exactly eight properties point at one:
+`gc:hasFrequency` (unit "cm-1"), `gc:hasIntensity` (unit
+"Debye^2/amu-Angstrom^2"), `gc:hasElectronicEnergy`,
+`gc:hasZeroPointEnergy` and `gc:hasPathEnergy` (unit "hartree"),
+`gc:hasEnthalpy` and `gc:hasGibbsFreeEnergy` (unit `gc:kiloJoules`,
+label "kilo joules") and `gc:hasEntropy` (unit "J/(mol K)"). The
+enthalpy and Gibbs values are read from the log as kJ/mol, so the "per
+mole" comes from the extraction, not from the unit.
+
+In a reasoned graph every `gc:FloatValue` is also typed
+`gc:CalculationResult` and `rdfs:Class`, and every unit `rdfs:Class`.
+Neither type says anything about the data. The first follows because
+the properties pointing at a value are all sub-properties of
+`gc:hasResult`, whose range is `gc:CalculationResult`; the second
+because `gc:hasUnit` sits under `gc:hasAuxiliaryProperty`, whose domain
+and range are both `rdfs:Class` (upstream describes that as an upper
+property for publication-related properties, so it looks like a
+misplacement).
 
 **`gc:hasElectronicEnergy`** - *"A property that describes the
 electronic energy."*
@@ -243,9 +281,29 @@ free energy."*
 
 ## Vibrational data
 
+**`gc:VibrationalSpectra`** - *"A class for spectra resulting from the
+molecular vibrations."* One per experiment whose log yielded a
+frequency result, linked from the experiment by `gc:hasResult`; an
+experiment with no parsed frequency result simply has none. The class
+name is plural but each individual is a single spectrum (the labels
+read "Vibrational spectrum ..."). It reaches its peaks through
+`gc:hasFrequencyPeak`.
+
 **`gc:hasFrequencyPeak`** - *"A property that describes the value of a
 frequency peak of the vibrational spectrum."* Links a spectrum to one
 of its individual peaks.
+
+**`gc:FrequencyPeak`** - *"A class representing frequency peak of the
+spectrum."* (Upstream also carries a placeholder second comment, *"A
+class for FrequencyPeak."*) One vibrational mode, with its frequency
+(`gc:hasFrequency`) and intensity (`gc:hasIntensity`), each a
+`gc:FloatValue`. A spectrum here does not hold every mode: the
+imaginary ones and GAMESS's six translation/rotation modes are kept,
+typically six to eight per spectrum, and the rest are filtered out by
+`filter_vibrational_modes()` (the full list stays in the `.log`). The
+six near-zero modes are therefore not vibrations of the molecule, and a
+negative frequency marks an imaginary one - typed
+`ex:ImaginaryFrequencyPeak` in a reasoned graph (below).
 
 **`gc:hasFrequency`** - *"A property that describes the value of a
 frequency at the peak of the spectrum."* A negative value here means
@@ -253,6 +311,12 @@ an imaginary frequency - the standard, real signal used throughout
 this project to flag whether a geometry is a genuine stationary point
 (zero expected for a minimum, exactly one for a confirmed transition
 state).
+
+**`gc:hasIntensity`** - *"A property that describes the value of the
+intensity of a peak of a spectrum."* Links a peak to its intensity, a
+`gc:FloatValue` with the unit "Debye^2/amu-Angstrom^2". Its domain is
+`gc:FrequencyPeak`, and like `gc:hasFrequency` it is a sub-property of
+`gc:hasResult`.
 
 **`ex:ImaginaryFrequencyPeak`** - this project's own class, never
 formally defined until now: a `gc:FrequencyPeak` whose `gc:hasFrequency`
@@ -272,8 +336,33 @@ graphs, the class and the numeric test agree.
 
 ## Reaction paths
 
+**`gc:ReactionPath`** - *"A minimum-energy reaction path on a
+potential energy surface in mass-weighted coordinates, connecting
+reactants to products via the transition state."* The release also
+carries a longer comment: *"A class for the combined reaction path
+connecting reactants to products via a transition state, typically
+assembled from a forward and a backward IRC run sharing the same saddle
+point."* In these graphs there is one per IRC pair: the forward and the
+backward IRC experiment both link to the same path through
+`gc:hasResult`, and the path reaches its points through
+`gc:hasReactionPathPoint`.
+
 **`gc:hasReactionPathPoint`** - *"A property linking a reaction path
 to one of its constituent points."*
+
+**`gc:ReactionPathPoint`** - *"A class representing a single point
+along a reaction path, with an index (position along the path) and an
+energy value relative to the starting point. May originate from an
+individual forward or backward IRC log, or from a combined
+reaction-path file assembled from both."* In these graphs `gc:hasIndex`
+runs continuously along the whole combined path (1 to N, each used
+once); the direction appears only in the label, "(forward)" or
+"(backward)"; and `gc:hasPathEnergy` points at a `gc:FloatValue`. One
+caution against the definition: the stored energy is the absolute total
+energy from the IRC log, in hartree (about -306 for the first point of
+the `aa` path), not a value relative to the start. Subtract a reference
+point - the first point, or the transition state - to get relative
+energies.
 
 **`gc:hasIndex`** - *"A property that defines a sequential arrangement
 of material in numerical order, i.e. Frequency Peak, Orbital or a
@@ -281,7 +370,9 @@ sequence number in residue."* Used here to give reaction path points
 their real, intended order.
 
 **`gc:hasPathEnergy`** - *"A property that describes the relative
-energy at a point along a reaction path."*
+energy at a point along a reaction path."* In these graphs the value is
+the absolute total energy from the IRC log, in hartree, not an energy
+relative to the start (see `gc:ReactionPathPoint`).
 
 ## Literature and review
 
