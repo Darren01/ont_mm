@@ -192,3 +192,341 @@ ex:intval_aa002-water-bare_3	IR intensity mode 3 aa002-water-bare	gc:FloatValue	
 ex:intval_aa002-water-bare_4	IR intensity mode 4 aa002-water-bare	gc:FloatValue	0	gc:debyeSquaredPerAmuAngstromSquared
 ex:intval_aa002-water-bare_5	IR intensity mode 5 aa002-water-bare	gc:FloatValue	0	gc:debyeSquaredPerAmuAngstromSquared
 ex:intval_aa002-water-bare_6	IR intensity mode 6 aa002-water-bare	gc:FloatValue	0	gc:debyeSquaredPerAmuAngstromSquared
+ex:zpe_aa001a	Zero-point energy aa001a	gc:FloatValue	0.104051	gc:hartree
+ex:enthalpy_aa001a	Enthalpy aa001a	gc:FloatValue	291.94	gc:kiloJoules
+ex:entropy_aa001a	Entropy aa001a	gc:FloatValue	321.846	gc:joulePerMoleKelvin
+ex:gibbs_aa001a	Gibbs free energy aa001a	gc:FloatValue	195.982	gc:kiloJoules
+ex:zpe_aa001b	Zero-point energy aa001b	gc:FloatValue	0.10406	gc:hartree
+ex:enthalpy_aa001b	Enthalpy aa001b	gc:FloatValue	291.955	gc:kiloJoules
+ex:entropy_aa001b	Entropy aa001b	gc:FloatValue	321.95	gc:joulePerMoleKelvin
+ex:gibbs_aa001b	Gibbs free energy aa001b	gc:FloatValue	195.966	gc:kiloJoules
+ex:zpe_aa001c	Zero-point energy aa001c	gc:FloatValue	0.103977	gc:hartree
+ex:enthalpy_aa001c	Enthalpy aa001c	gc:FloatValue	291.929	gc:kiloJoules
+ex:entropy_aa001c	Entropy aa001c	gc:FloatValue	327.08	gc:joulePerMoleKelvin
+ex:gibbs_aa001c	Gibbs free energy aa001c	gc:FloatValue	194.41	gc:kiloJoules
+ex:zpe_aa001d-smd-hess	Zero-point energy aa001d-smd-hess	gc:FloatValue	0.102539	gc:hartree
+ex:enthalpy_aa001d-smd-hess	Enthalpy aa001d-smd-hess	gc:FloatValue	289.016	gc:kiloJoules
+ex:entropy_aa001d-smd-hess	Entropy aa001d-smd-hess	gc:FloatValue	329.536	gc:joulePerMoleKelvin
+ex:gibbs_aa001d-smd-hess	Gibbs free energy aa001d-smd-hess	gc:FloatValue	190.765	gc:kiloJoules
+ex:zpe_aa001d-smd	Zero-point energy aa001d-smd	gc:FloatValue	0.103211	gc:hartree
+ex:enthalpy_aa001d-smd	Enthalpy aa001d-smd	gc:FloatValue	290.264	gc:kiloJoules
+ex:entropy_aa001d-smd	Entropy aa001d-smd	gc:FloatValue	324.928	gc:joulePerMoleKelvin
+ex:gibbs_aa001d-smd	Gibbs free energy aa001d-smd	gc:FloatValue	193.386	gc:kiloJoules
+ex:zpe_aa001d	Zero-point energy aa001d	gc:FloatValue	0.103326	gc:hartree
+ex:enthalpy_aa001d	Enthalpy aa001d	gc:FloatValue	290.411	gc:kiloJoules
+ex:entropy_aa001d	Entropy aa001d	gc:FloatValue	323.496	gc:joulePerMoleKelvin
+ex:gibbs_aa001d	Gibbs free energy aa001d	gc:FloatValue	193.96	gc:kiloJoules
+ex:zpe_aa001g-smd	Zero-point energy aa001g-smd	gc:FloatValue	0.110793	gc:hartree
+ex:enthalpy_aa001g-smd	Enthalpy aa001g-smd	gc:FloatValue	313.298	gc:kiloJoules
+ex:entropy_aa001g-smd	Entropy aa001g-smd	gc:FloatValue	345.712	gc:joulePerMoleKelvin
+ex:gibbs_aa001g-smd	Gibbs free energy aa001g-smd	gc:FloatValue	210.224	gc:kiloJoules
+ex:zpe_aa001g	Zero-point energy aa001g	gc:FloatValue	0.111006	gc:hartree
+ex:enthalpy_aa001g	Enthalpy aa001g	gc:FloatValue	313.765	gc:kiloJoules
+ex:entropy_aa001g	Entropy aa001g	gc:FloatValue	345.328	gc:joulePerMoleKelvin
+ex:gibbs_aa001g	Gibbs free energy aa001g	gc:FloatValue	210.806	gc:kiloJoules
+ex:zpe_aa001h-smd	Zero-point energy aa001h-smd	gc:FloatValue	0.107229	gc:hartree
+ex:enthalpy_aa001h-smd	Enthalpy aa001h-smd	gc:FloatValue	307.834	gc:kiloJoules
+ex:entropy_aa001h-smd	Entropy aa001h-smd	gc:FloatValue	386.211	gc:joulePerMoleKelvin
+ex:gibbs_aa001h-smd	Gibbs free energy aa001h-smd	gc:FloatValue	192.685	gc:kiloJoules
+ex:zpe_aa001h	Zero-point energy aa001h	gc:FloatValue	0.105542	gc:hartree
+ex:enthalpy_aa001h	Enthalpy aa001h	gc:FloatValue	305.242	gc:kiloJoules
+ex:entropy_aa001h	Entropy aa001h	gc:FloatValue	406.679	gc:joulePerMoleKelvin
+ex:gibbs_aa001h	Gibbs free energy aa001h	gc:FloatValue	183.991	gc:kiloJoules
+ex:zpe_aa002-aldehyde-bare	Zero-point energy aa002-aldehyde-bare	gc:FloatValue	0.05596	gc:hartree
+ex:enthalpy_aa002-aldehyde-bare	Enthalpy aa002-aldehyde-bare	gc:FloatValue	159.571	gc:kiloJoules
+ex:entropy_aa002-aldehyde-bare	Entropy aa002-aldehyde-bare	gc:FloatValue	262.252	gc:joulePerMoleKelvin
+ex:gibbs_aa002-aldehyde-bare	Gibbs free energy aa002-aldehyde-bare	gc:FloatValue	81.38	gc:kiloJoules
+ex:zpe_aa002-hydrate-bare-smd	Zero-point energy aa002-hydrate-bare-smd	gc:FloatValue	0.085396	gc:hartree
+ex:enthalpy_aa002-hydrate-bare-smd	Enthalpy aa002-hydrate-bare-smd	gc:FloatValue	239.936	gc:kiloJoules
+ex:entropy_aa002-hydrate-bare-smd	Entropy aa002-hydrate-bare-smd	gc:FloatValue	290.964	gc:joulePerMoleKelvin
+ex:gibbs_aa002-hydrate-bare-smd	Gibbs free energy aa002-hydrate-bare-smd	gc:FloatValue	153.185	gc:kiloJoules
+ex:zpe_aa002-hydrate-bare	Zero-point energy aa002-hydrate-bare	gc:FloatValue	0.085321	gc:hartree
+ex:enthalpy_aa002-hydrate-bare	Enthalpy aa002-hydrate-bare	gc:FloatValue	239.822	gc:kiloJoules
+ex:entropy_aa002-hydrate-bare	Entropy aa002-hydrate-bare	gc:FloatValue	291.443	gc:joulePerMoleKelvin
+ex:gibbs_aa002-hydrate-bare	Gibbs free energy aa002-hydrate-bare	gc:FloatValue	152.929	gc:kiloJoules
+ex:zpe_aa002-water-bare-smd	Zero-point energy aa002-water-bare-smd	gc:FloatValue	0.021229	gc:hartree
+ex:enthalpy_aa002-water-bare-smd	Enthalpy aa002-water-bare-smd	gc:FloatValue	65.663	gc:kiloJoules
+ex:entropy_aa002-water-bare-smd	Entropy aa002-water-bare-smd	gc:FloatValue	194.365	gc:joulePerMoleKelvin
+ex:gibbs_aa002-water-bare-smd	Gibbs free energy aa002-water-bare-smd	gc:FloatValue	7.714	gc:kiloJoules
+ex:zpe_aa002-water-bare	Zero-point energy aa002-water-bare	gc:FloatValue	0.021277	gc:hartree
+ex:enthalpy_aa002-water-bare	Enthalpy aa002-water-bare	gc:FloatValue	65.791	gc:kiloJoules
+ex:entropy_aa002-water-bare	Entropy aa002-water-bare	gc:FloatValue	194.351	gc:joulePerMoleKelvin
+ex:gibbs_aa002-water-bare	Gibbs free energy aa002-water-bare	gc:FloatValue	7.845	gc:kiloJoules
+ex:electronic_energy_aa001-ts-pcseg2	Electronic energy aa001-ts-pcseg2 (R-WB97X-D)	gc:FloatValue	-306.714042503	gc:hartree
+ex:electronic_energy_aa001d-smd-pcseg2	Electronic energy aa001d-smd-pcseg2 (R-WB97X-D)	gc:FloatValue	-306.7160750773	gc:hartree
+ex:electronic_energy_aa001g-pcseg2	Electronic energy aa001g-pcseg2 (R-WB97X-D)	gc:FloatValue	-306.7634175698	gc:hartree
+ex:electronic_energy_aa001g-smd-pcseg2	Electronic energy aa001g-smd-pcseg2 (R-WB97X-D)	gc:FloatValue	-306.765072965	gc:hartree
+ex:electronic_energy_aa001h-pcseg2	Electronic energy aa001h-pcseg2 (R-WB97X-D)	gc:FloatValue	-306.7600026985	gc:hartree
+ex:electronic_energy_aa001h-smd-pcseg2	Electronic energy aa001h-smd-pcseg2 (R-WB97X-D)	gc:FloatValue	-306.7609438141	gc:hartree
+ex:electronic_energy_aa002-aldehyde-bare-smd-energy	Electronic energy aa002-aldehyde-bare-smd-energy (R-WB97X-D)	gc:FloatValue	-153.6219222698	gc:hartree
+ex:electronic_energy_aa002-aldehyde-pcseg2	Electronic energy aa002-aldehyde-pcseg2 (R-WB97X-D)	gc:FloatValue	-153.8475244368	gc:hartree
+ex:electronic_energy_aa002-hydrate-pcseg2	Electronic energy aa002-hydrate-pcseg2 (R-WB97X-D)	gc:FloatValue	-230.3069697877	gc:hartree
+ex:electronic_energy_aa002-water-pcseg2	Electronic energy aa002-water-pcseg2 (R-WB97X-D)	gc:FloatValue	-76.4501868289	gc:hartree
+ex:pathenergy_aa001e_1	Path energy 1 aa001e	gc:FloatValue	-306.3327285	gc:hartree
+ex:pathenergy_aa001e_2	Path energy 2 aa001e	gc:FloatValue	-306.3327093	gc:hartree
+ex:pathenergy_aa001e_3	Path energy 3 aa001e	gc:FloatValue	-306.3326853	gc:hartree
+ex:pathenergy_aa001e_4	Path energy 4 aa001e	gc:FloatValue	-306.3326572	gc:hartree
+ex:pathenergy_aa001e_5	Path energy 5 aa001e	gc:FloatValue	-306.3326271	gc:hartree
+ex:pathenergy_aa001e_6	Path energy 6 aa001e	gc:FloatValue	-306.3325988	gc:hartree
+ex:pathenergy_aa001e_7	Path energy 7 aa001e	gc:FloatValue	-306.3325722	gc:hartree
+ex:pathenergy_aa001e_8	Path energy 8 aa001e	gc:FloatValue	-306.332547	gc:hartree
+ex:pathenergy_aa001e_9	Path energy 9 aa001e	gc:FloatValue	-306.3325218	gc:hartree
+ex:pathenergy_aa001e_10	Path energy 10 aa001e	gc:FloatValue	-306.3324954	gc:hartree
+ex:pathenergy_aa001e_11	Path energy 11 aa001e	gc:FloatValue	-306.3324671	gc:hartree
+ex:pathenergy_aa001e_12	Path energy 12 aa001e	gc:FloatValue	-306.3324387	gc:hartree
+ex:pathenergy_aa001e_13	Path energy 13 aa001e	gc:FloatValue	-306.3324098	gc:hartree
+ex:pathenergy_aa001e_14	Path energy 14 aa001e	gc:FloatValue	-306.3323794	gc:hartree
+ex:pathenergy_aa001e_15	Path energy 15 aa001e	gc:FloatValue	-306.3323484	gc:hartree
+ex:pathenergy_aa001e_16	Path energy 16 aa001e	gc:FloatValue	-306.3323176	gc:hartree
+ex:pathenergy_aa001e_17	Path energy 17 aa001e	gc:FloatValue	-306.3322863	gc:hartree
+ex:pathenergy_aa001e_18	Path energy 18 aa001e	gc:FloatValue	-306.3322536	gc:hartree
+ex:pathenergy_aa001e_19	Path energy 19 aa001e	gc:FloatValue	-306.3322196	gc:hartree
+ex:pathenergy_aa001e_20	Path energy 20 aa001e	gc:FloatValue	-306.3321849	gc:hartree
+ex:pathenergy_aa001e_21	Path energy 21 aa001e	gc:FloatValue	-306.3321501	gc:hartree
+ex:pathenergy_aa001e_22	Path energy 22 aa001e	gc:FloatValue	-306.3321155	gc:hartree
+ex:pathenergy_aa001e_23	Path energy 23 aa001e	gc:FloatValue	-306.3320813	gc:hartree
+ex:pathenergy_aa001e_24	Path energy 24 aa001e	gc:FloatValue	-306.3320476	gc:hartree
+ex:pathenergy_aa001e_25	Path energy 25 aa001e	gc:FloatValue	-306.3320149	gc:hartree
+ex:pathenergy_aa001e_26	Path energy 26 aa001e	gc:FloatValue	-306.3319835	gc:hartree
+ex:pathenergy_aa001e_27	Path energy 27 aa001e	gc:FloatValue	-306.3319534	gc:hartree
+ex:pathenergy_aa001e_28	Path energy 28 aa001e	gc:FloatValue	-306.3319248	gc:hartree
+ex:pathenergy_aa001e_29	Path energy 29 aa001e	gc:FloatValue	-306.3318972	gc:hartree
+ex:pathenergy_aa001e_30	Path energy 30 aa001e	gc:FloatValue	-306.3318703	gc:hartree
+ex:pathenergy_aa001e_31	Path energy 31 aa001e	gc:FloatValue	-306.3318437	gc:hartree
+ex:pathenergy_aa001e_32	Path energy 32 aa001e	gc:FloatValue	-306.3318176	gc:hartree
+ex:pathenergy_aa001e_33	Path energy 33 aa001e	gc:FloatValue	-306.3317907	gc:hartree
+ex:pathenergy_aa001e_34	Path energy 34 aa001e	gc:FloatValue	-306.3317611	gc:hartree
+ex:pathenergy_aa001e_35	Path energy 35 aa001e	gc:FloatValue	-306.3317285	gc:hartree
+ex:pathenergy_aa001e_36	Path energy 36 aa001e	gc:FloatValue	-306.3316944	gc:hartree
+ex:pathenergy_aa001e_37	Path energy 37 aa001e	gc:FloatValue	-306.33166	gc:hartree
+ex:pathenergy_aa001e_38	Path energy 38 aa001e	gc:FloatValue	-306.3316267	gc:hartree
+ex:pathenergy_aa001e_39	Path energy 39 aa001e	gc:FloatValue	-306.3315948	gc:hartree
+ex:pathenergy_aa001e_40	Path energy 40 aa001e	gc:FloatValue	-306.3315643	gc:hartree
+ex:pathenergy_aa001e_41	Path energy 41 aa001e	gc:FloatValue	-306.3315322	gc:hartree
+ex:pathenergy_aa001e_42	Path energy 42 aa001e	gc:FloatValue	-306.3315009	gc:hartree
+ex:pathenergy_aa001e_43	Path energy 43 aa001e	gc:FloatValue	-306.331471	gc:hartree
+ex:pathenergy_aa001e_44	Path energy 44 aa001e	gc:FloatValue	-306.3314423	gc:hartree
+ex:pathenergy_aa001e_45	Path energy 45 aa001e	gc:FloatValue	-306.3314148	gc:hartree
+ex:pathenergy_aa001e_46	Path energy 46 aa001e	gc:FloatValue	-306.3313885	gc:hartree
+ex:pathenergy_aa001e_47	Path energy 47 aa001e	gc:FloatValue	-306.3313638	gc:hartree
+ex:pathenergy_aa001e_48	Path energy 48 aa001e	gc:FloatValue	-306.33134	gc:hartree
+ex:pathenergy_aa001e_49	Path energy 49 aa001e	gc:FloatValue	-306.3313158	gc:hartree
+ex:pathenergy_aa001e_50	Path energy 50 aa001e	gc:FloatValue	-306.3312925	gc:hartree
+ex:pathenergy_aa001e_51	Path energy 51 aa001e	gc:FloatValue	-306.3312696	gc:hartree
+ex:pathenergy_aa001e_52	Path energy 52 aa001e	gc:FloatValue	-306.3312476	gc:hartree
+ex:pathenergy_aa001e_53	Path energy 53 aa001e	gc:FloatValue	-306.3312258	gc:hartree
+ex:pathenergy_aa001e_54	Path energy 54 aa001e	gc:FloatValue	-306.3312038	gc:hartree
+ex:pathenergy_aa001e_55	Path energy 55 aa001e	gc:FloatValue	-306.3311816	gc:hartree
+ex:pathenergy_aa001e_56	Path energy 56 aa001e	gc:FloatValue	-306.3311588	gc:hartree
+ex:pathenergy_aa001e_57	Path energy 57 aa001e	gc:FloatValue	-306.3311359	gc:hartree
+ex:pathenergy_aa001e_58	Path energy 58 aa001e	gc:FloatValue	-306.3311133	gc:hartree
+ex:pathenergy_aa001e_59	Path energy 59 aa001e	gc:FloatValue	-306.3310907	gc:hartree
+ex:pathenergy_aa001e_60	Path energy 60 aa001e	gc:FloatValue	-306.331068	gc:hartree
+ex:pathenergy_aa001e_61	Path energy 61 aa001e	gc:FloatValue	-306.3310448	gc:hartree
+ex:pathenergy_aa001e_62	Path energy 62 aa001e	gc:FloatValue	-306.3310221	gc:hartree
+ex:pathenergy_aa001e_63	Path energy 63 aa001e	gc:FloatValue	-306.3309992	gc:hartree
+ex:pathenergy_aa001e_64	Path energy 64 aa001e	gc:FloatValue	-306.3309769	gc:hartree
+ex:pathenergy_aa001e_65	Path energy 65 aa001e	gc:FloatValue	-306.3309543	gc:hartree
+ex:pathenergy_aa001e_66	Path energy 66 aa001e	gc:FloatValue	-306.3309303	gc:hartree
+ex:pathenergy_aa001e_67	Path energy 67 aa001e	gc:FloatValue	-306.3309045	gc:hartree
+ex:pathenergy_aa001e_68	Path energy 68 aa001e	gc:FloatValue	-306.3308778	gc:hartree
+ex:pathenergy_aa001e_69	Path energy 69 aa001e	gc:FloatValue	-306.3308493	gc:hartree
+ex:pathenergy_aa001e_70	Path energy 70 aa001e	gc:FloatValue	-306.3308197	gc:hartree
+ex:pathenergy_aa001e_71	Path energy 71 aa001e	gc:FloatValue	-306.330789	gc:hartree
+ex:pathenergy_aa001e_72	Path energy 72 aa001e	gc:FloatValue	-306.3307591	gc:hartree
+ex:pathenergy_aa001e_73	Path energy 73 aa001e	gc:FloatValue	-306.3307315	gc:hartree
+ex:pathenergy_aa001e_74	Path energy 74 aa001e	gc:FloatValue	-306.3307054	gc:hartree
+ex:pathenergy_aa001e_75	Path energy 75 aa001e	gc:FloatValue	-306.3306803	gc:hartree
+ex:pathenergy_aa001e_76	Path energy 76 aa001e	gc:FloatValue	-306.3306559	gc:hartree
+ex:pathenergy_aa001e_77	Path energy 77 aa001e	gc:FloatValue	-306.3306318	gc:hartree
+ex:pathenergy_aa001e_78	Path energy 78 aa001e	gc:FloatValue	-306.3306077	gc:hartree
+ex:pathenergy_aa001e_79	Path energy 79 aa001e	gc:FloatValue	-306.3305839	gc:hartree
+ex:pathenergy_aa001e_80	Path energy 80 aa001e	gc:FloatValue	-306.3305598	gc:hartree
+ex:pathenergy_aa001e_81	Path energy 81 aa001e	gc:FloatValue	-306.3305353	gc:hartree
+ex:pathenergy_aa001e_82	Path energy 82 aa001e	gc:FloatValue	-306.3305107	gc:hartree
+ex:pathenergy_aa001e_83	Path energy 83 aa001e	gc:FloatValue	-306.3304866	gc:hartree
+ex:pathenergy_aa001e_84	Path energy 84 aa001e	gc:FloatValue	-306.3304618	gc:hartree
+ex:pathenergy_aa001e_85	Path energy 85 aa001e	gc:FloatValue	-306.3304359	gc:hartree
+ex:pathenergy_aa001e_86	Path energy 86 aa001e	gc:FloatValue	-306.3304094	gc:hartree
+ex:pathenergy_aa001e_87	Path energy 87 aa001e	gc:FloatValue	-306.3303833	gc:hartree
+ex:pathenergy_aa001e_88	Path energy 88 aa001e	gc:FloatValue	-306.3303575	gc:hartree
+ex:pathenergy_aa001e_89	Path energy 89 aa001e	gc:FloatValue	-306.3303323	gc:hartree
+ex:pathenergy_aa001e_90	Path energy 90 aa001e	gc:FloatValue	-306.330307	gc:hartree
+ex:pathenergy_aa001e_91	Path energy 91 aa001e	gc:FloatValue	-306.3302824	gc:hartree
+ex:pathenergy_aa001e_92	Path energy 92 aa001e	gc:FloatValue	-306.3302589	gc:hartree
+ex:pathenergy_aa001e_93	Path energy 93 aa001e	gc:FloatValue	-306.3302359	gc:hartree
+ex:pathenergy_aa001e_94	Path energy 94 aa001e	gc:FloatValue	-306.3302135	gc:hartree
+ex:pathenergy_aa001e_95	Path energy 95 aa001e	gc:FloatValue	-306.3301916	gc:hartree
+ex:pathenergy_aa001e_96	Path energy 96 aa001e	gc:FloatValue	-306.3301692	gc:hartree
+ex:pathenergy_aa001e_97	Path energy 97 aa001e	gc:FloatValue	-306.3301475	gc:hartree
+ex:pathenergy_aa001e_98	Path energy 98 aa001e	gc:FloatValue	-306.3301255	gc:hartree
+ex:pathenergy_aa001e_99	Path energy 99 aa001e	gc:FloatValue	-306.3301029	gc:hartree
+ex:pathenergy_aa001e_100	Path energy 100 aa001e	gc:FloatValue	-306.3300795	gc:hartree
+ex:pathenergy_aa001e_101	Path energy 101 aa001e	gc:FloatValue	-306.3300554	gc:hartree
+ex:pathenergy_aa001e_102	Path energy 102 aa001e	gc:FloatValue	-306.3300305	gc:hartree
+ex:pathenergy_aa001e_103	Path energy 103 aa001e	gc:FloatValue	-306.3300046	gc:hartree
+ex:pathenergy_aa001e_104	Path energy 104 aa001e	gc:FloatValue	-306.329978	gc:hartree
+ex:pathenergy_aa001e_105	Path energy 105 aa001e	gc:FloatValue	-306.3299507	gc:hartree
+ex:pathenergy_aa001e_106	Path energy 106 aa001e	gc:FloatValue	-306.3299219	gc:hartree
+ex:pathenergy_aa001e_107	Path energy 107 aa001e	gc:FloatValue	-306.3298906	gc:hartree
+ex:pathenergy_aa001e_108	Path energy 108 aa001e	gc:FloatValue	-306.3298554	gc:hartree
+ex:pathenergy_aa001e_109	Path energy 109 aa001e	gc:FloatValue	-306.329817	gc:hartree
+ex:pathenergy_aa001e_110	Path energy 110 aa001e	gc:FloatValue	-306.3297757	gc:hartree
+ex:pathenergy_aa001e_111	Path energy 111 aa001e	gc:FloatValue	-306.3297328	gc:hartree
+ex:pathenergy_aa001e_112	Path energy 112 aa001e	gc:FloatValue	-306.3296899	gc:hartree
+ex:pathenergy_aa001e_113	Path energy 113 aa001e	gc:FloatValue	-306.3296484	gc:hartree
+ex:pathenergy_aa001e_114	Path energy 114 aa001e	gc:FloatValue	-306.3296087	gc:hartree
+ex:pathenergy_aa001e_115	Path energy 115 aa001e	gc:FloatValue	-306.3295704	gc:hartree
+ex:pathenergy_aa001e_116	Path energy 116 aa001e	gc:FloatValue	-306.3295322	gc:hartree
+ex:pathenergy_aa001e_117	Path energy 117 aa001e	gc:FloatValue	-306.3294931	gc:hartree
+ex:pathenergy_aa001e_118	Path energy 118 aa001e	gc:FloatValue	-306.3294523	gc:hartree
+ex:pathenergy_aa001e_119	Path energy 119 aa001e	gc:FloatValue	-306.3294096	gc:hartree
+ex:pathenergy_aa001e_120	Path energy 120 aa001e	gc:FloatValue	-306.329365	gc:hartree
+ex:pathenergy_aa001e_121	Path energy 121 aa001e	gc:FloatValue	-306.3293182	gc:hartree
+ex:pathenergy_aa001e_122	Path energy 122 aa001e	gc:FloatValue	-306.3292686	gc:hartree
+ex:pathenergy_aa001e_123	Path energy 123 aa001e	gc:FloatValue	-306.3292148	gc:hartree
+ex:pathenergy_aa001e_124	Path energy 124 aa001e	gc:FloatValue	-306.3291554	gc:hartree
+ex:pathenergy_aa001e_125	Path energy 125 aa001e	gc:FloatValue	-306.3290908	gc:hartree
+ex:pathenergy_aa001e_126	Path energy 126 aa001e	gc:FloatValue	-306.3290224	gc:hartree
+ex:pathenergy_aa001e_127	Path energy 127 aa001e	gc:FloatValue	-306.328952	gc:hartree
+ex:pathenergy_aa001e_128	Path energy 128 aa001e	gc:FloatValue	-306.328881	gc:hartree
+ex:pathenergy_aa001e_129	Path energy 129 aa001e	gc:FloatValue	-306.3288098	gc:hartree
+ex:pathenergy_aa001e_130	Path energy 130 aa001e	gc:FloatValue	-306.3287385	gc:hartree
+ex:pathenergy_aa001e_131	Path energy 131 aa001e	gc:FloatValue	-306.3286667	gc:hartree
+ex:pathenergy_aa001e_132	Path energy 132 aa001e	gc:FloatValue	-306.3285935	gc:hartree
+ex:pathenergy_aa001e_133	Path energy 133 aa001e	gc:FloatValue	-306.3285174	gc:hartree
+ex:pathenergy_aa001e_134	Path energy 134 aa001e	gc:FloatValue	-306.328437	gc:hartree
+ex:pathenergy_aa001e_135	Path energy 135 aa001e	gc:FloatValue	-306.3283513	gc:hartree
+ex:pathenergy_aa001e_136	Path energy 136 aa001e	gc:FloatValue	-306.32826	gc:hartree
+ex:pathenergy_aa001e_137	Path energy 137 aa001e	gc:FloatValue	-306.328163	gc:hartree
+ex:pathenergy_aa001e_138	Path energy 138 aa001e	gc:FloatValue	-306.3280598	gc:hartree
+ex:pathenergy_aa001e_139	Path energy 139 aa001e	gc:FloatValue	-306.3279495	gc:hartree
+ex:pathenergy_aa001e_140	Path energy 140 aa001e	gc:FloatValue	-306.3278321	gc:hartree
+ex:pathenergy_aa001e_141	Path energy 141 aa001e	gc:FloatValue	-306.327708	gc:hartree
+ex:pathenergy_aa001e_142	Path energy 142 aa001e	gc:FloatValue	-306.327578	gc:hartree
+ex:pathenergy_aa001e_143	Path energy 143 aa001e	gc:FloatValue	-306.3274419	gc:hartree
+ex:pathenergy_aa001e_144	Path energy 144 aa001e	gc:FloatValue	-306.3273002	gc:hartree
+ex:pathenergy_aa001e_145	Path energy 145 aa001e	gc:FloatValue	-306.3271535	gc:hartree
+ex:pathenergy_aa001e_146	Path energy 146 aa001e	gc:FloatValue	-306.3270022	gc:hartree
+ex:pathenergy_aa001e_147	Path energy 147 aa001e	gc:FloatValue	-306.3268459	gc:hartree
+ex:pathenergy_aa001e_148	Path energy 148 aa001e	gc:FloatValue	-306.3266805	gc:hartree
+ex:pathenergy_aa001e_149	Path energy 149 aa001e	gc:FloatValue	-306.3265046	gc:hartree
+ex:pathenergy_aa001e_150	Path energy 150 aa001e	gc:FloatValue	-306.326316	gc:hartree
+ex:pathenergy_aa001e_151	Path energy 151 aa001e	gc:FloatValue	-306.3261134	gc:hartree
+ex:pathenergy_aa001e_152	Path energy 152 aa001e	gc:FloatValue	-306.3258966	gc:hartree
+ex:pathenergy_aa001e_153	Path energy 153 aa001e	gc:FloatValue	-306.3256664	gc:hartree
+ex:pathenergy_aa001e_154	Path energy 154 aa001e	gc:FloatValue	-306.3254235	gc:hartree
+ex:pathenergy_aa001e_155	Path energy 155 aa001e	gc:FloatValue	-306.3251673	gc:hartree
+ex:pathenergy_aa001e_156	Path energy 156 aa001e	gc:FloatValue	-306.3248971	gc:hartree
+ex:pathenergy_aa001e_157	Path energy 157 aa001e	gc:FloatValue	-306.3246137	gc:hartree
+ex:pathenergy_aa001e_158	Path energy 158 aa001e	gc:FloatValue	-306.3243184	gc:hartree
+ex:pathenergy_aa001e_159	Path energy 159 aa001e	gc:FloatValue	-306.3240112	gc:hartree
+ex:pathenergy_aa001e_160	Path energy 160 aa001e	gc:FloatValue	-306.3236927	gc:hartree
+ex:pathenergy_aa001e_161	Path energy 161 aa001e	gc:FloatValue	-306.3233558	gc:hartree
+ex:pathenergy_aa001e_162	Path energy 162 aa001e	gc:FloatValue	-306.3230006	gc:hartree
+ex:pathenergy_aa001e_163	Path energy 163 aa001e	gc:FloatValue	-306.3226264	gc:hartree
+ex:pathenergy_aa001e_164	Path energy 164 aa001e	gc:FloatValue	-306.3222334	gc:hartree
+ex:pathenergy_aa001e_165	Path energy 165 aa001e	gc:FloatValue	-306.3218219	gc:hartree
+ex:pathenergy_aa001e_166	Path energy 166 aa001e	gc:FloatValue	-306.3213907	gc:hartree
+ex:pathenergy_aa001e_167	Path energy 167 aa001e	gc:FloatValue	-306.320938	gc:hartree
+ex:pathenergy_aa001e_168	Path energy 168 aa001e	gc:FloatValue	-306.3204635	gc:hartree
+ex:pathenergy_aa001e_169	Path energy 169 aa001e	gc:FloatValue	-306.3199699	gc:hartree
+ex:pathenergy_aa001e_170	Path energy 170 aa001e	gc:FloatValue	-306.31946	gc:hartree
+ex:pathenergy_aa001e_171	Path energy 171 aa001e	gc:FloatValue	-306.3189358	gc:hartree
+ex:pathenergy_aa001e_172	Path energy 172 aa001e	gc:FloatValue	-306.3183982	gc:hartree
+ex:pathenergy_aa001e_173	Path energy 173 aa001e	gc:FloatValue	-306.3178472	gc:hartree
+ex:pathenergy_aa001e_174	Path energy 174 aa001e	gc:FloatValue	-306.3172825	gc:hartree
+ex:pathenergy_aa001e_175	Path energy 175 aa001e	gc:FloatValue	-306.3167025	gc:hartree
+ex:pathenergy_aa001e_176	Path energy 176 aa001e	gc:FloatValue	-306.316105	gc:hartree
+ex:pathenergy_aa001e_177	Path energy 177 aa001e	gc:FloatValue	-306.3154886	gc:hartree
+ex:pathenergy_aa001e_178	Path energy 178 aa001e	gc:FloatValue	-306.3148541	gc:hartree
+ex:pathenergy_aa001e_179	Path energy 179 aa001e	gc:FloatValue	-306.3142042	gc:hartree
+ex:pathenergy_aa001e_180	Path energy 180 aa001e	gc:FloatValue	-306.3135427	gc:hartree
+ex:pathenergy_aa001e_181	Path energy 181 aa001e	gc:FloatValue	-306.3128721	gc:hartree
+ex:pathenergy_aa001e_182	Path energy 182 aa001e	gc:FloatValue	-306.3121934	gc:hartree
+ex:pathenergy_aa001e_183	Path energy 183 aa001e	gc:FloatValue	-306.3115047	gc:hartree
+ex:pathenergy_aa001e_184	Path energy 184 aa001e	gc:FloatValue	-306.3108028	gc:hartree
+ex:pathenergy_aa001e_185	Path energy 185 aa001e	gc:FloatValue	-306.3100849	gc:hartree
+ex:pathenergy_aa001e_186	Path energy 186 aa001e	gc:FloatValue	-306.3093505	gc:hartree
+ex:pathenergy_aa001e_187	Path energy 187 aa001e	gc:FloatValue	-306.3086012	gc:hartree
+ex:pathenergy_aa001e_188	Path energy 188 aa001e	gc:FloatValue	-306.3078395	gc:hartree
+ex:pathenergy_aa001e_189	Path energy 189 aa001e	gc:FloatValue	-306.3070679	gc:hartree
+ex:pathenergy_aa001e_190	Path energy 190 aa001e	gc:FloatValue	-306.3062881	gc:hartree
+ex:pathenergy_aa001e_191	Path energy 191 aa001e	gc:FloatValue	-306.3054992	gc:hartree
+ex:pathenergy_aa001e_192	Path energy 192 aa001e	gc:FloatValue	-306.3046992	gc:hartree
+ex:pathenergy_aa001e_193	Path energy 193 aa001e	gc:FloatValue	-306.3038861	gc:hartree
+ex:pathenergy_aa001e_194	Path energy 194 aa001e	gc:FloatValue	-306.3030589	gc:hartree
+ex:pathenergy_aa001e_195	Path energy 195 aa001e	gc:FloatValue	-306.3022178	gc:hartree
+ex:pathenergy_aa001e_196	Path energy 196 aa001e	gc:FloatValue	-306.3013633	gc:hartree
+ex:pathenergy_aa001e_197	Path energy 197 aa001e	gc:FloatValue	-306.300493	gc:hartree
+ex:pathenergy_aa001e_198	Path energy 198 aa001e	gc:FloatValue	-306.2995962	gc:hartree
+ex:pathenergy_aa001e_199	Path energy 199 aa001e	gc:FloatValue	-306.2986903	gc:hartree
+ex:pathenergy_aa001e_200	Path energy 200 aa001e	gc:FloatValue	-306.2979415	gc:hartree
+ex:pathenergy_aa001e_201	Path energy 201 aa001e	gc:FloatValue	-306.2980063	gc:hartree
+ex:pathenergy_aa001e_202	Path energy 202 aa001e	gc:FloatValue	-306.2992216	gc:hartree
+ex:pathenergy_aa001e_203	Path energy 203 aa001e	gc:FloatValue	-306.3013006	gc:hartree
+ex:pathenergy_aa001e_204	Path energy 204 aa001e	gc:FloatValue	-306.304145	gc:hartree
+ex:pathenergy_aa001e_205	Path energy 205 aa001e	gc:FloatValue	-306.3075164	gc:hartree
+ex:pathenergy_aa001e_206	Path energy 206 aa001e	gc:FloatValue	-306.311045	gc:hartree
+ex:pathenergy_aa001e_207	Path energy 207 aa001e	gc:FloatValue	-306.3142982	gc:hartree
+ex:pathenergy_aa001e_208	Path energy 208 aa001e	gc:FloatValue	-306.3169501	gc:hartree
+ex:pathenergy_aa001e_209	Path energy 209 aa001e	gc:FloatValue	-306.3190728	gc:hartree
+ex:pathenergy_aa001e_210	Path energy 210 aa001e	gc:FloatValue	-306.3209346	gc:hartree
+ex:pathenergy_aa001e_211	Path energy 211 aa001e	gc:FloatValue	-306.3226411	gc:hartree
+ex:pathenergy_aa001e_212	Path energy 212 aa001e	gc:FloatValue	-306.3242187	gc:hartree
+ex:pathenergy_aa001e_213	Path energy 213 aa001e	gc:FloatValue	-306.3256771	gc:hartree
+ex:pathenergy_aa001e_214	Path energy 214 aa001e	gc:FloatValue	-306.327022	gc:hartree
+ex:pathenergy_aa001e_215	Path energy 215 aa001e	gc:FloatValue	-306.3282573	gc:hartree
+ex:pathenergy_aa001e_216	Path energy 216 aa001e	gc:FloatValue	-306.3293839	gc:hartree
+ex:pathenergy_aa001e_217	Path energy 217 aa001e	gc:FloatValue	-306.3304022	gc:hartree
+ex:pathenergy_aa001e_218	Path energy 218 aa001e	gc:FloatValue	-306.3313178	gc:hartree
+ex:pathenergy_aa001e_219	Path energy 219 aa001e	gc:FloatValue	-306.3321401	gc:hartree
+ex:pathenergy_aa001e_220	Path energy 220 aa001e	gc:FloatValue	-306.3328788	gc:hartree
+ex:pathenergy_aa001e_221	Path energy 221 aa001e	gc:FloatValue	-306.3335439	gc:hartree
+ex:pathenergy_aa001e_222	Path energy 222 aa001e	gc:FloatValue	-306.3341452	gc:hartree
+ex:pathenergy_aa001e_223	Path energy 223 aa001e	gc:FloatValue	-306.3346908	gc:hartree
+ex:pathenergy_aa001e_224	Path energy 224 aa001e	gc:FloatValue	-306.3352007	gc:hartree
+ex:pathenergy_aa001e_225	Path energy 225 aa001e	gc:FloatValue	-306.3356549	gc:hartree
+ex:pathenergy_aa001e_226	Path energy 226 aa001e	gc:FloatValue	-306.3360707	gc:hartree
+ex:pathenergy_aa001e_227	Path energy 227 aa001e	gc:FloatValue	-306.3364523	gc:hartree
+ex:pathenergy_aa001e_228	Path energy 228 aa001e	gc:FloatValue	-306.3368026	gc:hartree
+ex:pathenergy_aa001e_229	Path energy 229 aa001e	gc:FloatValue	-306.3371237	gc:hartree
+ex:pathenergy_aa001e_230	Path energy 230 aa001e	gc:FloatValue	-306.3374175	gc:hartree
+ex:pathenergy_aa001e_231	Path energy 231 aa001e	gc:FloatValue	-306.3376853	gc:hartree
+ex:pathenergy_aa001e_232	Path energy 232 aa001e	gc:FloatValue	-306.3379282	gc:hartree
+ex:pathenergy_aa001e_233	Path energy 233 aa001e	gc:FloatValue	-306.3381472	gc:hartree
+ex:pathenergy_aa001e_234	Path energy 234 aa001e	gc:FloatValue	-306.3383409	gc:hartree
+ex:pathenergy_aa001e_235	Path energy 235 aa001e	gc:FloatValue	-306.3385168	gc:hartree
+ex:pathenergy_aa001e_236	Path energy 236 aa001e	gc:FloatValue	-306.338673	gc:hartree
+ex:pathenergy_aa001e_237	Path energy 237 aa001e	gc:FloatValue	-306.3388129	gc:hartree
+ex:pathenergy_aa001e_238	Path energy 238 aa001e	gc:FloatValue	-306.3389376	gc:hartree
+ex:pathenergy_aa001e_239	Path energy 239 aa001e	gc:FloatValue	-306.3390484	gc:hartree
+ex:pathenergy_aa001e_240	Path energy 240 aa001e	gc:FloatValue	-306.3391464	gc:hartree
+ex:pathenergy_aa001e_241	Path energy 241 aa001e	gc:FloatValue	-306.3392328	gc:hartree
+ex:pathenergy_aa001e_242	Path energy 242 aa001e	gc:FloatValue	-306.3393089	gc:hartree
+ex:pathenergy_aa001e_243	Path energy 243 aa001e	gc:FloatValue	-306.3393761	gc:hartree
+ex:pathenergy_aa001e_244	Path energy 244 aa001e	gc:FloatValue	-306.3394359	gc:hartree
+ex:pathenergy_aa001e_245	Path energy 245 aa001e	gc:FloatValue	-306.3394895	gc:hartree
+ex:pathenergy_aa001e_246	Path energy 246 aa001e	gc:FloatValue	-306.3395379	gc:hartree
+ex:pathenergy_aa001e_247	Path energy 247 aa001e	gc:FloatValue	-306.3395817	gc:hartree
+ex:pathenergy_aa001e_248	Path energy 248 aa001e	gc:FloatValue	-306.3396222	gc:hartree
+ex:pathenergy_aa001e_249	Path energy 249 aa001e	gc:FloatValue	-306.33966	gc:hartree
+ex:pathenergy_aa001e_250	Path energy 250 aa001e	gc:FloatValue	-306.3396956	gc:hartree
+ex:pathenergy_aa001e_251	Path energy 251 aa001e	gc:FloatValue	-306.3397292	gc:hartree
+ex:pathenergy_aa001e_252	Path energy 252 aa001e	gc:FloatValue	-306.3397611	gc:hartree
+ex:pathenergy_aa001e_253	Path energy 253 aa001e	gc:FloatValue	-306.3397926	gc:hartree
+ex:pathenergy_aa001e_254	Path energy 254 aa001e	gc:FloatValue	-306.3398242	gc:hartree
+ex:pathenergy_aa001e_255	Path energy 255 aa001e	gc:FloatValue	-306.3398562	gc:hartree
+ex:pathenergy_aa001e_256	Path energy 256 aa001e	gc:FloatValue	-306.3398901	gc:hartree
+ex:pathenergy_aa001e_257	Path energy 257 aa001e	gc:FloatValue	-306.339925	gc:hartree
+ex:pathenergy_aa001e_258	Path energy 258 aa001e	gc:FloatValue	-306.3399564	gc:hartree
+ex:pathenergy_aa001e_259	Path energy 259 aa001e	gc:FloatValue	-306.3399831	gc:hartree
+ex:pathenergy_aa001e_260	Path energy 260 aa001e	gc:FloatValue	-306.3400062	gc:hartree
+ex:pathenergy_aa001e_261	Path energy 261 aa001e	gc:FloatValue	-306.3400264	gc:hartree
+ex:pathenergy_aa001e_262	Path energy 262 aa001e	gc:FloatValue	-306.3400441	gc:hartree
+ex:pathenergy_aa001e_263	Path energy 263 aa001e	gc:FloatValue	-306.340059	gc:hartree
+ex:pathenergy_aa001e_264	Path energy 264 aa001e	gc:FloatValue	-306.3400715	gc:hartree
+ex:pathenergy_aa001e_265	Path energy 265 aa001e	gc:FloatValue	-306.3400815	gc:hartree
+ex:pathenergy_aa001e_266	Path energy 266 aa001e	gc:FloatValue	-306.3400888	gc:hartree
+ex:pathenergy_aa001e_267	Path energy 267 aa001e	gc:FloatValue	-306.3400931	gc:hartree
+ex:pathenergy_aa001e_268	Path energy 268 aa001e	gc:FloatValue	-306.3400953	gc:hartree

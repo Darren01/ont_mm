@@ -10,6 +10,12 @@
 #' worth keeping - any imaginary frequency, or GAMESS's own
 #' translation/rotation modes - for every experiment already present.
 #'
+#' Only float values that belong to a peak (its hasFrequency and
+#' hasIntensity) are ever removed, and only when that peak is. The
+#' float_value table also holds the energy values - electronic energy,
+#' ZPE, enthalpy, entropy, Gibbs free energy and every reaction-path
+#' energy - which are not peak data and pass through untouched.
+#'
 #' Deliberately its own, separate, explicit step - called after
 #' process_gamess_directory() but before build_ontology_graph() - the
 #' same visible, inspectable pattern as notes_to_annotations(), rather
@@ -95,12 +101,14 @@ filter_vibrational_modes <- function(ontology_dir, output_dir) {
 
   # ---- filter peaks, tracking which float values they still need ----
   needed_float_ids <- character(0)
+  peak_owned_float_ids <- character(0)  # every peak's frequency/intensity, kept or not
   new_peak_data <- character(0)
 
   for (line in peak_data) {
     if (nchar(trimws(line)) == 0) next
     fields <- strsplit(line, "\t", fixed = TRUE)[[1]]
     peak_id <- fields[1]
+    peak_owned_float_ids <- c(peak_owned_float_ids, fields[4], fields[5])
 
     if (peak_id %in% kept_peak_ids_set) {
       new_peak_data <- c(new_peak_data, line)
@@ -111,14 +119,23 @@ filter_vibrational_modes <- function(ontology_dir, output_dir) {
   needed_float_ids_set <- unique(needed_float_ids)
 
   # ---- filter float values ----
+  # A float value is removed only if it belonged to a peak that was
+  # removed. Rows no peak owns (energies, thermochemistry, path
+  # energies) are not peak data and are kept as they are.
+  peak_owned_float_ids_set <- unique(peak_owned_float_ids)
   new_float_data <- character(0)
+  float_before <- 0L
+  float_removed <- 0L
   for (line in float_data) {
     if (nchar(trimws(line)) == 0) next
     fields <- strsplit(line, "\t", fixed = TRUE)[[1]]
     float_id <- fields[1]
+    float_before <- float_before + 1L
 
-    if (float_id %in% needed_float_ids_set) {
+    if (!(float_id %in% peak_owned_float_ids_set) || float_id %in% needed_float_ids_set) {
       new_float_data <- c(new_float_data, line)
+    } else {
+      float_removed <- float_removed + 1L
     }
   }
 
@@ -131,6 +148,9 @@ filter_vibrational_modes <- function(ontology_dir, output_dir) {
       if (length(skipped)) paste(skipped, collapse = ", ") else "(none)", "\n")
   cat("Peak rows:", peaks_before, "->", length(new_peak_data),
       sprintf("(%.0f%% reduction)", 100 * (1 - length(new_peak_data) / peaks_before)), "\n")
+  cat("Float-value rows:", float_before, "->", length(new_float_data),
+      sprintf("(%d removed with their peaks; %d other rows - energies etc. - kept)",
+              float_removed, length(new_float_data) - length(needed_float_ids_set)), "\n")
 
   invisible(list(
     processed = processed,
