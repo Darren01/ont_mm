@@ -18,8 +18,8 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.org/gc/">
-    <owl:versionIRI rdf:resource="http://purl.org/gc/0.8.6"/>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.8.6</owl:versionInfo>
+    <owl:versionIRI rdf:resource="http://purl.org/gc/0.8.8"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.8.8</owl:versionInfo>
     <dcterms:title xml:lang="en">GNVC: Gainesville Core Ontology - standard for publishing results of computational chemistry.</dcterms:title>
     <rdfs:comment xml:lang="en">An ontology for publishing results of computational chemistry.</rdfs:comment>
     <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This ontology aims at complete description of typical Computational Chemistry experiment.
@@ -303,8 +303,14 @@
         <rdfs:subPropertyOf rdf:resource="http://purl.org/gc/hasFeature"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.org/gc/hasMolecularFeature"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/gc/Atom"/>
-        <rdfs:domain rdf:resource="http://purl.org/gc/MolecularMethodology"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/gc/Atom"/>
+                    <rdf:Description rdf:about="http://purl.org/gc/MolecularMethodology"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://purl.org/gc/BasisSet"/>
     </owl:ObjectProperty>
     
@@ -713,8 +719,14 @@
     <owl:ObjectProperty rdf:about="http://purl.org/gc/hasForceField">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/gc/hasFeature"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.org/gc/hasMolecularFeature"/>
-        <rdfs:domain rdf:resource="http://purl.org/gc/MolecularMechanics"/>
-        <rdfs:domain rdf:resource="http://purl.org/gc/MolecularMethodology"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/gc/MolecularMechanics"/>
+                    <rdf:Description rdf:about="http://purl.org/gc/MolecularMethodology"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://purl.org/gc/ForceField"/>
     </owl:ObjectProperty>
     
@@ -750,9 +762,15 @@
 
     <owl:ObjectProperty rdf:about="http://purl.org/gc/hasFrequencyPeak">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/gc/hasResult"/>
-        <rdfs:domain rdf:resource="http://purl.org/gc/ElectronicSpectra"/>
-        <rdfs:domain rdf:resource="http://purl.org/gc/NMRSpectra"/>
-        <rdfs:domain rdf:resource="http://purl.org/gc/VibrationalSpectra"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/gc/ElectronicSpectra"/>
+                    <rdf:Description rdf:about="http://purl.org/gc/NMRSpectra"/>
+                    <rdf:Description rdf:about="http://purl.org/gc/VibrationalSpectra"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://purl.org/gc/FrequencyPeak"/>
         <rdfs:comment xml:lang="en">A property that describes the value of a frequency peak of the vibrational spectrum.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://chemicalsemantics.com/"/>
@@ -858,9 +876,15 @@
 
     <owl:ObjectProperty rdf:about="http://purl.org/gc/hasMass">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/gc/extraGCObjectProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/gc/Atom"/>
-        <rdfs:domain rdf:resource="http://purl.org/gc/MolecularSystem"/>
-        <rdfs:domain rdf:resource="http://purl.org/gc/Molecule"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/gc/Atom"/>
+                    <rdf:Description rdf:about="http://purl.org/gc/MolecularSystem"/>
+                    <rdf:Description rdf:about="http://purl.org/gc/Molecule"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://purl.org/gc/FloatValue"/>
     </owl:ObjectProperty>
     
@@ -1181,8 +1205,14 @@
     <owl:ObjectProperty rdf:about="http://purl.org/gc/hasParameterSet">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/gc/hasFeature"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.org/gc/hasMolecularFeature"/>
-        <rdfs:domain rdf:resource="http://purl.org/gc/MolecularMechanics"/>
-        <rdfs:domain rdf:resource="http://purl.org/gc/MolecularMethodology"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/gc/MolecularMechanics"/>
+                    <rdf:Description rdf:about="http://purl.org/gc/MolecularMethodology"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://purl.org/gc/ParameterSet"/>
     </owl:ObjectProperty>
     
@@ -2110,9 +2140,15 @@
         <rdfs:subPropertyOf rdf:resource="http://purl.org/gc/extraGCDataProperty"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.org/gc/hasMolecularData"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/gc/ElectronicSpectra"/>
-        <rdfs:domain rdf:resource="http://purl.org/gc/NMRSpectra"/>
-        <rdfs:domain rdf:resource="http://purl.org/gc/VibrationalSpectra"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/gc/ElectronicSpectra"/>
+                    <rdf:Description rdf:about="http://purl.org/gc/NMRSpectra"/>
+                    <rdf:Description rdf:about="http://purl.org/gc/VibrationalSpectra"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
         <rdfs:comment xml:lang="en">A property that determinates the count of peaks in a spectrum.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://chemicalsemantics.com/"/>
