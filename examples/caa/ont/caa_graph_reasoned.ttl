@@ -7,7 +7,7 @@
 @base <http://purl.org/gc/core> .
 
 <http://purl.org/gc/core> rdf:type owl:Ontology ;
-                           owl:versionIRI <http://purl.org/gc/core/2026-08-08/gc_core.ttl> ;
+                           owl:versionIRI <http://purl.org/gc/core/2026-10-07/gc_core.ttl> ;
                            <http://creativecommons.org/ns#license> <http://creativecommons.org/licenses/by/3.0/> ;
                            <http://purl.org/dc/elements/1.1/created> "2015-03-04" ;
                            <http://purl.org/dc/elements/1.1/description> """This ontology aims at complete description of typical Computational Chemistry experiment.
@@ -35,7 +35,7 @@
                                         """The design and repair decisions in this fork were informed in part by the landscape review of computational chemistry ontologies: ChemRxiv 2024,
     doi:10.26434/chemrxiv-2024-fvzpq"""@en ;
                            rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
-                           owl:versionInfo "0.8.6" .
+                           owl:versionInfo "0.8.8" .
 
 #################################################################
 #    Annotation properties
@@ -373,8 +373,11 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
                                  rdfs:subPropertyOf <http://purl.org/gc/hasFeature> ,
                                                     <http://purl.org/gc/hasMolecularFeature> ;
                                  rdf:type owl:FunctionalProperty ;
-                                 rdfs:domain <http://purl.org/gc/Atom> ,
-                                             <http://purl.org/gc/MolecularMethodology> ;
+                                 rdfs:domain [ rdf:type owl:Class ;
+                                               owl:unionOf ( <http://purl.org/gc/Atom>
+                                                             <http://purl.org/gc/MolecularMethodology>
+                                                           )
+                                             ] ;
                                  rdfs:range <http://purl.org/gc/BasisSet> .
 
 
@@ -665,8 +668,11 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
 <http://purl.org/gc/hasForceField> rdf:type owl:ObjectProperty ;
                                    rdfs:subPropertyOf <http://purl.org/gc/hasFeature> ,
                                                       <http://purl.org/gc/hasMolecularFeature> ;
-                                   rdfs:domain <http://purl.org/gc/MolecularMechanics> ,
-                                               <http://purl.org/gc/MolecularMethodology> ;
+                                   rdfs:domain [ rdf:type owl:Class ;
+                                                 owl:unionOf ( <http://purl.org/gc/MolecularMechanics>
+                                                               <http://purl.org/gc/MolecularMethodology>
+                                                             )
+                                               ] ;
                                    rdfs:range <http://purl.org/gc/ForceField> .
 
 
@@ -693,9 +699,12 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
 ###  http://purl.org/gc/hasFrequencyPeak
 <http://purl.org/gc/hasFrequencyPeak> rdf:type owl:ObjectProperty ;
                                       rdfs:subPropertyOf <http://purl.org/gc/hasResult> ;
-                                      rdfs:domain <http://purl.org/gc/ElectronicSpectra> ,
-                                                  <http://purl.org/gc/NMRSpectra> ,
-                                                  <http://purl.org/gc/VibrationalSpectra> ;
+                                      rdfs:domain [ rdf:type owl:Class ;
+                                                    owl:unionOf ( <http://purl.org/gc/ElectronicSpectra>
+                                                                  <http://purl.org/gc/NMRSpectra>
+                                                                  <http://purl.org/gc/VibrationalSpectra>
+                                                                )
+                                                  ] ;
                                       rdfs:range <http://purl.org/gc/FrequencyPeak> ;
                                       rdfs:comment "A property that describes the value of a frequency peak of the vibrational spectrum."@en ;
                                       rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
@@ -770,9 +779,12 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
 ###  http://purl.org/gc/hasMass
 <http://purl.org/gc/hasMass> rdf:type owl:ObjectProperty ;
                              rdfs:subPropertyOf <http://purl.org/gc/extraGCObjectProperty> ;
-                             rdfs:domain <http://purl.org/gc/Atom> ,
-                                         <http://purl.org/gc/MolecularSystem> ,
-                                         <http://purl.org/gc/Molecule> ;
+                             rdfs:domain [ rdf:type owl:Class ;
+                                           owl:unionOf ( <http://purl.org/gc/Atom>
+                                                         <http://purl.org/gc/MolecularSystem>
+                                                         <http://purl.org/gc/Molecule>
+                                                       )
+                                         ] ;
                              rdfs:range <http://purl.org/gc/FloatValue> .
 
 
@@ -1022,8 +1034,11 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
 <http://purl.org/gc/hasParameterSet> rdf:type owl:ObjectProperty ;
                                      rdfs:subPropertyOf <http://purl.org/gc/hasFeature> ,
                                                         <http://purl.org/gc/hasMolecularFeature> ;
-                                     rdfs:domain <http://purl.org/gc/MolecularMechanics> ,
-                                                 <http://purl.org/gc/MolecularMethodology> ;
+                                     rdfs:domain [ rdf:type owl:Class ;
+                                                   owl:unionOf ( <http://purl.org/gc/MolecularMechanics>
+                                                                 <http://purl.org/gc/MolecularMethodology>
+                                                               )
+                                                 ] ;
                                      rdfs:range <http://purl.org/gc/ParameterSet> .
 
 
@@ -1041,9 +1056,12 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
 <http://purl.org/gc/hasPeakCount> rdf:type owl:ObjectProperty ;
                                   rdfs:subPropertyOf <http://purl.org/gc/extraGCDataProperty> ;
                                   rdf:type owl:FunctionalProperty ;
-                                  rdfs:domain <http://purl.org/gc/ElectronicSpectra> ,
-                                              <http://purl.org/gc/NMRSpectra> ,
-                                              <http://purl.org/gc/VibrationalSpectra> .
+                                  rdfs:domain [ rdf:type owl:Class ;
+                                                owl:unionOf ( <http://purl.org/gc/ElectronicSpectra>
+                                                              <http://purl.org/gc/NMRSpectra>
+                                                              <http://purl.org/gc/VibrationalSpectra>
+                                                            )
+                                              ] .
 
 
 ###  http://purl.org/gc/hasPropertyCount
@@ -6415,7 +6433,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa001
 <http://example.org/exp_caa001> rdf:type owl:NamedIndividual ,
                                          <http://example.org/Experiment> ,
-                                         <http://purl.org/gc/Atom> ,
                                          <http://purl.org/gc/GeometryOptimization> ,
                                          <http://purl.org/gc/MolecularMethodology> ;
                                 <http://www.w3.org/ns/prov#generated> <http://example.org/file_caa001_dat> ,
@@ -6430,7 +6447,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa001a
 <http://example.org/exp_caa001a> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -6455,7 +6471,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa001b
 <http://example.org/exp_caa001b> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -6481,7 +6496,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa002
 <http://example.org/exp_caa002> rdf:type owl:NamedIndividual ,
                                          <http://example.org/Experiment> ,
-                                         <http://purl.org/gc/Atom> ,
                                          <http://purl.org/gc/MolecularComputation> ,
                                          <http://purl.org/gc/MolecularMethodology> ,
                                          <http://purl.org/gc/VibrationalAnalysis> ;
@@ -6505,7 +6519,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa002a
 <http://example.org/exp_caa002a> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -6530,7 +6543,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa002b
 <http://example.org/exp_caa002b> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -6556,7 +6568,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa002c
 <http://example.org/exp_caa002c> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -6579,7 +6590,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa002d
 <http://example.org/exp_caa002d> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -6603,7 +6613,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa002e
 <http://example.org/exp_caa002e> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -6625,7 +6634,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa003a
 <http://example.org/exp_caa003a> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -6648,7 +6656,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa003b
 <http://example.org/exp_caa003b> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -6671,7 +6678,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa003c
 <http://example.org/exp_caa003c> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -6694,7 +6700,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa003d
 <http://example.org/exp_caa003d> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -6717,7 +6722,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa004a
 <http://example.org/exp_caa004a> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -6740,7 +6744,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa004b
 <http://example.org/exp_caa004b> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -6763,7 +6766,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa004c
 <http://example.org/exp_caa004c> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -6787,7 +6789,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa004d
 <http://example.org/exp_caa004d> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -6811,7 +6812,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa004e
 <http://example.org/exp_caa004e> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -6836,7 +6836,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa004f
 <http://example.org/exp_caa004f> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -6861,7 +6860,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa004g
 <http://example.org/exp_caa004g> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -6886,7 +6884,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa004h
 <http://example.org/exp_caa004h> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -6911,7 +6908,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa004j
 <http://example.org/exp_caa004j> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -6935,7 +6931,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa004k
 <http://example.org/exp_caa004k> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -6959,7 +6954,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa004l
 <http://example.org/exp_caa004l> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -6983,7 +6977,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa004m
 <http://example.org/exp_caa004m> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -7008,7 +7001,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005a
 <http://example.org/exp_caa005a> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -7032,7 +7024,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005b
 <http://example.org/exp_caa005b> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -7057,7 +7048,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005b-cl-atom-basischeck
 <http://example.org/exp_caa005b-cl-atom-basischeck> rdf:type owl:NamedIndividual ,
                                                              <http://example.org/Experiment> ,
-                                                             <http://purl.org/gc/Atom> ,
                                                              <http://purl.org/gc/MolecularComputation> ,
                                                              <http://purl.org/gc/MolecularMethodology> ,
                                                              <http://purl.org/gc/SinglePoint> ;
@@ -7074,7 +7064,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005b-cl-atom-extfil-test
 <http://example.org/exp_caa005b-cl-atom-extfil-test> rdf:type owl:NamedIndividual ,
                                                               <http://example.org/Experiment> ,
-                                                              <http://purl.org/gc/Atom> ,
                                                               <http://purl.org/gc/MolecularComputation> ,
                                                               <http://purl.org/gc/MolecularMethodology> ,
                                                               <http://purl.org/gc/SinglePoint> ;
@@ -7091,7 +7080,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005bIRC-def2svp-test
 <http://example.org/exp_caa005bIRC-def2svp-test> rdf:type owl:NamedIndividual ,
                                                           <http://example.org/Experiment> ,
-                                                          <http://purl.org/gc/Atom> ,
                                                           <http://purl.org/gc/MolecularComputation> ,
                                                           <http://purl.org/gc/MolecularMethodology> ,
                                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -7108,7 +7096,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005bIRC-pcseg2-test
 <http://example.org/exp_caa005bIRC-pcseg2-test> rdf:type owl:NamedIndividual ,
                                                          <http://example.org/Experiment> ,
-                                                         <http://purl.org/gc/Atom> ,
                                                          <http://purl.org/gc/MolecularComputation> ,
                                                          <http://purl.org/gc/MolecularMethodology> ,
                                                          <http://purl.org/gc/VibrationalAnalysis> ;
@@ -7126,7 +7113,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005bIRC-trimmedTZVPP-test
 <http://example.org/exp_caa005bIRC-trimmedTZVPP-test> rdf:type owl:NamedIndividual ,
                                                                <http://example.org/Experiment> ,
-                                                               <http://purl.org/gc/Atom> ,
                                                                <http://purl.org/gc/MolecularComputation> ,
                                                                <http://purl.org/gc/MolecularMethodology> ,
                                                                <http://purl.org/gc/VibrationalAnalysis> ;
@@ -7143,7 +7129,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005bIRCCML1st
 <http://example.org/exp_caa005bIRCCML1st> rdf:type owl:NamedIndividual ,
                                                    <http://example.org/Experiment> ,
-                                                   <http://purl.org/gc/Atom> ,
                                                    <http://purl.org/gc/MolecularComputation> ,
                                                    <http://purl.org/gc/MolecularMethodology> ,
                                                    <http://purl.org/gc/VibrationalAnalysis> ;
@@ -7164,7 +7149,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005bIRCCML1st-prerelax-631Gdp
 <http://example.org/exp_caa005bIRCCML1st-prerelax-631Gdp> rdf:type owl:NamedIndividual ,
                                                                    <http://example.org/Experiment> ,
-                                                                   <http://purl.org/gc/Atom> ,
                                                                    <http://purl.org/gc/MolecularComputation> ,
                                                                    <http://purl.org/gc/MolecularMethodology> ,
                                                                    <http://purl.org/gc/VibrationalAnalysis> ;
@@ -7181,7 +7165,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005bIRCCML1stdef2TZVPP
 <http://example.org/exp_caa005bIRCCML1stdef2TZVPP> rdf:type owl:NamedIndividual ,
                                                             <http://example.org/Experiment> ,
-                                                            <http://purl.org/gc/Atom> ,
                                                             <http://purl.org/gc/MolecularComputation> ,
                                                             <http://purl.org/gc/MolecularMethodology> ,
                                                             <http://purl.org/gc/VibrationalAnalysis> ;
@@ -7203,7 +7186,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005bIRCCML1stdef2TZVPP-uhfcheck
 <http://example.org/exp_caa005bIRCCML1stdef2TZVPP-uhfcheck> rdf:type owl:NamedIndividual ,
                                                                      <http://example.org/Experiment> ,
-                                                                     <http://purl.org/gc/Atom> ,
                                                                      <http://purl.org/gc/MolecularComputation> ,
                                                                      <http://purl.org/gc/MolecularMethodology> ,
                                                                      <http://purl.org/gc/SinglePoint> ;
@@ -7223,7 +7205,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix
 <http://example.org/exp_caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix> rdf:type owl:NamedIndividual ,
                                                                            <http://example.org/Experiment> ,
-                                                                           <http://purl.org/gc/Atom> ,
                                                                            <http://purl.org/gc/MolecularComputation> ,
                                                                            <http://purl.org/gc/MolecularMethodology> ,
                                                                            <http://purl.org/gc/SinglePoint> ;
@@ -7243,7 +7224,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005bIRCCML1stdef2TZVPPa
 <http://example.org/exp_caa005bIRCCML1stdef2TZVPPa> rdf:type owl:NamedIndividual ,
                                                              <http://example.org/Experiment> ,
-                                                             <http://purl.org/gc/Atom> ,
                                                              <http://purl.org/gc/MolecularComputation> ,
                                                              <http://purl.org/gc/MolecularMethodology> ,
                                                              <http://purl.org/gc/VibrationalAnalysis> ;
@@ -7263,7 +7243,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005bIRCCML1stdef2TZVPPb
 <http://example.org/exp_caa005bIRCCML1stdef2TZVPPb> rdf:type owl:NamedIndividual ,
                                                              <http://example.org/Experiment> ,
-                                                             <http://purl.org/gc/Atom> ,
                                                              <http://purl.org/gc/MolecularComputation> ,
                                                              <http://purl.org/gc/MolecularMethodology> ,
                                                              <http://purl.org/gc/VibrationalAnalysis> ;
@@ -7280,7 +7259,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005bIRCCML1stdef2TZVPPc
 <http://example.org/exp_caa005bIRCCML1stdef2TZVPPc> rdf:type owl:NamedIndividual ,
                                                              <http://example.org/Experiment> ,
-                                                             <http://purl.org/gc/Atom> ,
                                                              <http://purl.org/gc/MolecularComputation> ,
                                                              <http://purl.org/gc/MolecularMethodology> ,
                                                              <http://purl.org/gc/VibrationalAnalysis> ;
@@ -7297,7 +7275,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005bIRCCML1stdef2TZVPPd
 <http://example.org/exp_caa005bIRCCML1stdef2TZVPPd> rdf:type owl:NamedIndividual ,
                                                              <http://example.org/Experiment> ,
-                                                             <http://purl.org/gc/Atom> ,
                                                              <http://purl.org/gc/MolecularComputation> ,
                                                              <http://purl.org/gc/MolecularMethodology> ,
                                                              <http://purl.org/gc/VibrationalAnalysis> ;
@@ -7314,7 +7291,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005bIRCCML1stdef2TZVPPe
 <http://example.org/exp_caa005bIRCCML1stdef2TZVPPe> rdf:type owl:NamedIndividual ,
                                                              <http://example.org/Experiment> ,
-                                                             <http://purl.org/gc/Atom> ,
                                                              <http://purl.org/gc/MolecularComputation> ,
                                                              <http://purl.org/gc/MolecularMethodology> ,
                                                              <http://purl.org/gc/VibrationalAnalysis> ;
@@ -7331,7 +7307,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005bIRCCML_last
 <http://example.org/exp_caa005bIRCCML_last> rdf:type owl:NamedIndividual ,
                                                      <http://example.org/Experiment> ,
-                                                     <http://purl.org/gc/Atom> ,
                                                      <http://purl.org/gc/MolecularComputation> ,
                                                      <http://purl.org/gc/MolecularMethodology> ,
                                                      <http://purl.org/gc/VibrationalAnalysis> ;
@@ -7352,7 +7327,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005bTSa
 <http://example.org/exp_caa005bTSa> rdf:type owl:NamedIndividual ,
                                              <http://example.org/Experiment> ,
-                                             <http://purl.org/gc/Atom> ,
                                              <http://purl.org/gc/MolecularComputation> ,
                                              <http://purl.org/gc/MolecularMethodology> ,
                                              <http://purl.org/gc/SaddlePoint> ;
@@ -7374,7 +7348,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005bTSaIRCb
 <http://example.org/exp_caa005bTSaIRCb> rdf:type owl:NamedIndividual ,
                                                  <http://example.org/Experiment> ,
-                                                 <http://purl.org/gc/Atom> ,
                                                  <http://purl.org/gc/IRC> ,
                                                  <http://purl.org/gc/MolecularComputation> ,
                                                  <http://purl.org/gc/MolecularMethodology> ;
@@ -7394,7 +7367,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005bTSaIRCf
 <http://example.org/exp_caa005bTSaIRCf> rdf:type owl:NamedIndividual ,
                                                  <http://example.org/Experiment> ,
-                                                 <http://purl.org/gc/Atom> ,
                                                  <http://purl.org/gc/IRC> ,
                                                  <http://purl.org/gc/MolecularComputation> ,
                                                  <http://purl.org/gc/MolecularMethodology> ;
@@ -7413,7 +7385,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005bTSb
 <http://example.org/exp_caa005bTSb> rdf:type owl:NamedIndividual ,
                                              <http://example.org/Experiment> ,
-                                             <http://purl.org/gc/Atom> ,
                                              <http://purl.org/gc/MolecularComputation> ,
                                              <http://purl.org/gc/MolecularMethodology> ,
                                              <http://purl.org/gc/SaddlePoint> ;
@@ -7430,7 +7401,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005bTSb-hess
 <http://example.org/exp_caa005bTSb-hess> rdf:type owl:NamedIndividual ,
                                                   <http://example.org/Experiment> ,
-                                                  <http://purl.org/gc/Atom> ,
                                                   <http://purl.org/gc/MolecularComputation> ,
                                                   <http://purl.org/gc/MolecularMethodology> ,
                                                   <http://purl.org/gc/VibrationalAnalysis> ;
@@ -7451,7 +7421,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa005bTSb-pcseg2
 <http://example.org/exp_caa005bTSb-pcseg2> rdf:type owl:NamedIndividual ,
                                                     <http://example.org/Experiment> ,
-                                                    <http://purl.org/gc/Atom> ,
                                                     <http://purl.org/gc/MolecularComputation> ,
                                                     <http://purl.org/gc/MolecularMethodology> ,
                                                     <http://purl.org/gc/SinglePoint> ;
@@ -7471,7 +7440,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa006a
 <http://example.org/exp_caa006a> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/SinglePoint> ;
@@ -7491,7 +7459,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa006b
 <http://example.org/exp_caa006b> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/SinglePoint> ;
@@ -7511,7 +7478,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa006c
 <http://example.org/exp_caa006c> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/SinglePoint> ;
@@ -7530,7 +7496,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa007a-pcseg2
 <http://example.org/exp_caa007a-pcseg2> rdf:type owl:NamedIndividual ,
                                                  <http://example.org/Experiment> ,
-                                                 <http://purl.org/gc/Atom> ,
                                                  <http://purl.org/gc/MolecularComputation> ,
                                                  <http://purl.org/gc/MolecularMethodology> ,
                                                  <http://purl.org/gc/SinglePoint> ;
@@ -7550,7 +7515,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa007b
 <http://example.org/exp_caa007b> rdf:type owl:NamedIndividual ,
                                           <http://example.org/Experiment> ,
-                                          <http://purl.org/gc/Atom> ,
                                           <http://purl.org/gc/MolecularComputation> ,
                                           <http://purl.org/gc/MolecularMethodology> ,
                                           <http://purl.org/gc/VibrationalAnalysis> ;
@@ -7572,7 +7536,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa007b-pcseg2
 <http://example.org/exp_caa007b-pcseg2> rdf:type owl:NamedIndividual ,
                                                  <http://example.org/Experiment> ,
-                                                 <http://purl.org/gc/Atom> ,
                                                  <http://purl.org/gc/MolecularComputation> ,
                                                  <http://purl.org/gc/MolecularMethodology> ,
                                                  <http://purl.org/gc/SinglePoint> ;
@@ -7592,7 +7555,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa008-aldehyde-bare
 <http://example.org/exp_caa008-aldehyde-bare> rdf:type owl:NamedIndividual ,
                                                        <http://example.org/Experiment> ,
-                                                       <http://purl.org/gc/Atom> ,
                                                        <http://purl.org/gc/MolecularComputation> ,
                                                        <http://purl.org/gc/MolecularMethodology> ,
                                                        <http://purl.org/gc/VibrationalAnalysis> ;
@@ -7614,7 +7576,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa008-aldehyde-pcseg2
 <http://example.org/exp_caa008-aldehyde-pcseg2> rdf:type owl:NamedIndividual ,
                                                          <http://example.org/Experiment> ,
-                                                         <http://purl.org/gc/Atom> ,
                                                          <http://purl.org/gc/MolecularComputation> ,
                                                          <http://purl.org/gc/MolecularMethodology> ,
                                                          <http://purl.org/gc/SinglePoint> ;
@@ -7634,7 +7595,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa008-hydrate-bare
 <http://example.org/exp_caa008-hydrate-bare> rdf:type owl:NamedIndividual ,
                                                       <http://example.org/Experiment> ,
-                                                      <http://purl.org/gc/Atom> ,
                                                       <http://purl.org/gc/MolecularComputation> ,
                                                       <http://purl.org/gc/MolecularMethodology> ,
                                                       <http://purl.org/gc/VibrationalAnalysis> ;
@@ -7656,7 +7616,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa008-hydrate-pcseg2
 <http://example.org/exp_caa008-hydrate-pcseg2> rdf:type owl:NamedIndividual ,
                                                         <http://example.org/Experiment> ,
-                                                        <http://purl.org/gc/Atom> ,
                                                         <http://purl.org/gc/MolecularComputation> ,
                                                         <http://purl.org/gc/MolecularMethodology> ,
                                                         <http://purl.org/gc/SinglePoint> ;
@@ -7676,7 +7635,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa008-water-bare
 <http://example.org/exp_caa008-water-bare> rdf:type owl:NamedIndividual ,
                                                     <http://example.org/Experiment> ,
-                                                    <http://purl.org/gc/Atom> ,
                                                     <http://purl.org/gc/MolecularComputation> ,
                                                     <http://purl.org/gc/MolecularMethodology> ,
                                                     <http://purl.org/gc/VibrationalAnalysis> ;
@@ -7698,7 +7656,6 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/exp_caa008-water-pcseg2
 <http://example.org/exp_caa008-water-pcseg2> rdf:type owl:NamedIndividual ,
                                                       <http://example.org/Experiment> ,
-                                                      <http://purl.org/gc/Atom> ,
                                                       <http://purl.org/gc/MolecularComputation> ,
                                                       <http://purl.org/gc/MolecularMethodology> ,
                                                       <http://purl.org/gc/SinglePoint> ;
@@ -20691,9 +20648,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa001a
 <http://example.org/spectrum_caa001a> rdf:type owl:NamedIndividual ,
-                                               <http://purl.org/gc/ElectronicSpectra> ,
                                                <http://purl.org/gc/MolecularComputation> ,
-                                               <http://purl.org/gc/NMRSpectra> ,
                                                <http://purl.org/gc/VibrationalSpectra> ;
                                       <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa001a_1> ,
                                                                             <http://example.org/peak_caa001a_2> ,
@@ -20706,9 +20661,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa001b
 <http://example.org/spectrum_caa001b> rdf:type owl:NamedIndividual ,
-                                               <http://purl.org/gc/ElectronicSpectra> ,
                                                <http://purl.org/gc/MolecularComputation> ,
-                                               <http://purl.org/gc/NMRSpectra> ,
                                                <http://purl.org/gc/VibrationalSpectra> ;
                                       <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa001b_1> ,
                                                                             <http://example.org/peak_caa001b_2> ,
@@ -20721,9 +20674,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa002
 <http://example.org/spectrum_caa002> rdf:type owl:NamedIndividual ,
-                                              <http://purl.org/gc/ElectronicSpectra> ,
                                               <http://purl.org/gc/MolecularComputation> ,
-                                              <http://purl.org/gc/NMRSpectra> ,
                                               <http://purl.org/gc/VibrationalSpectra> ;
                                      <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa002_1> ,
                                                                            <http://example.org/peak_caa002_2> ,
@@ -20736,9 +20687,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa002a
 <http://example.org/spectrum_caa002a> rdf:type owl:NamedIndividual ,
-                                               <http://purl.org/gc/ElectronicSpectra> ,
                                                <http://purl.org/gc/MolecularComputation> ,
-                                               <http://purl.org/gc/NMRSpectra> ,
                                                <http://purl.org/gc/VibrationalSpectra> ;
                                       <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa002a_1> ,
                                                                             <http://example.org/peak_caa002a_2> ,
@@ -20752,9 +20701,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa002b
 <http://example.org/spectrum_caa002b> rdf:type owl:NamedIndividual ,
-                                               <http://purl.org/gc/ElectronicSpectra> ,
                                                <http://purl.org/gc/MolecularComputation> ,
-                                               <http://purl.org/gc/NMRSpectra> ,
                                                <http://purl.org/gc/VibrationalSpectra> ;
                                       <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa002b_1> ,
                                                                             <http://example.org/peak_caa002b_2> ,
@@ -20767,9 +20714,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa003a
 <http://example.org/spectrum_caa003a> rdf:type owl:NamedIndividual ,
-                                               <http://purl.org/gc/ElectronicSpectra> ,
                                                <http://purl.org/gc/MolecularComputation> ,
-                                               <http://purl.org/gc/NMRSpectra> ,
                                                <http://purl.org/gc/VibrationalSpectra> ;
                                       <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa003a_1> ,
                                                                             <http://example.org/peak_caa003a_2> ,
@@ -20784,9 +20729,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa003b
 <http://example.org/spectrum_caa003b> rdf:type owl:NamedIndividual ,
-                                               <http://purl.org/gc/ElectronicSpectra> ,
                                                <http://purl.org/gc/MolecularComputation> ,
-                                               <http://purl.org/gc/NMRSpectra> ,
                                                <http://purl.org/gc/VibrationalSpectra> ;
                                       <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa003b_1> ,
                                                                             <http://example.org/peak_caa003b_2> ,
@@ -20799,9 +20742,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa003c
 <http://example.org/spectrum_caa003c> rdf:type owl:NamedIndividual ,
-                                               <http://purl.org/gc/ElectronicSpectra> ,
                                                <http://purl.org/gc/MolecularComputation> ,
-                                               <http://purl.org/gc/NMRSpectra> ,
                                                <http://purl.org/gc/VibrationalSpectra> ;
                                       <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa003c_1> ,
                                                                             <http://example.org/peak_caa003c_2> ,
@@ -20814,9 +20755,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa003d
 <http://example.org/spectrum_caa003d> rdf:type owl:NamedIndividual ,
-                                               <http://purl.org/gc/ElectronicSpectra> ,
                                                <http://purl.org/gc/MolecularComputation> ,
-                                               <http://purl.org/gc/NMRSpectra> ,
                                                <http://purl.org/gc/VibrationalSpectra> ;
                                       <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa003d_1> ,
                                                                             <http://example.org/peak_caa003d_2> ,
@@ -20831,9 +20770,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa004a
 <http://example.org/spectrum_caa004a> rdf:type owl:NamedIndividual ,
-                                               <http://purl.org/gc/ElectronicSpectra> ,
                                                <http://purl.org/gc/MolecularComputation> ,
-                                               <http://purl.org/gc/NMRSpectra> ,
                                                <http://purl.org/gc/VibrationalSpectra> ;
                                       <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa004a_1> ,
                                                                             <http://example.org/peak_caa004a_2> ,
@@ -20846,9 +20783,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa004b
 <http://example.org/spectrum_caa004b> rdf:type owl:NamedIndividual ,
-                                               <http://purl.org/gc/ElectronicSpectra> ,
                                                <http://purl.org/gc/MolecularComputation> ,
-                                               <http://purl.org/gc/NMRSpectra> ,
                                                <http://purl.org/gc/VibrationalSpectra> ;
                                       <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa004b_1> ,
                                                                             <http://example.org/peak_caa004b_2> ,
@@ -20861,9 +20796,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa004c
 <http://example.org/spectrum_caa004c> rdf:type owl:NamedIndividual ,
-                                               <http://purl.org/gc/ElectronicSpectra> ,
                                                <http://purl.org/gc/MolecularComputation> ,
-                                               <http://purl.org/gc/NMRSpectra> ,
                                                <http://purl.org/gc/VibrationalSpectra> ;
                                       <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa004c_1> ,
                                                                             <http://example.org/peak_caa004c_2> ,
@@ -20878,9 +20811,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa004d
 <http://example.org/spectrum_caa004d> rdf:type owl:NamedIndividual ,
-                                               <http://purl.org/gc/ElectronicSpectra> ,
                                                <http://purl.org/gc/MolecularComputation> ,
-                                               <http://purl.org/gc/NMRSpectra> ,
                                                <http://purl.org/gc/VibrationalSpectra> ;
                                       <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa004d_1> ,
                                                                             <http://example.org/peak_caa004d_2> ,
@@ -20894,9 +20825,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa004e
 <http://example.org/spectrum_caa004e> rdf:type owl:NamedIndividual ,
-                                               <http://purl.org/gc/ElectronicSpectra> ,
                                                <http://purl.org/gc/MolecularComputation> ,
-                                               <http://purl.org/gc/NMRSpectra> ,
                                                <http://purl.org/gc/VibrationalSpectra> ;
                                       <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa004e_1> ,
                                                                             <http://example.org/peak_caa004e_2> ,
@@ -20910,9 +20839,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa004f
 <http://example.org/spectrum_caa004f> rdf:type owl:NamedIndividual ,
-                                               <http://purl.org/gc/ElectronicSpectra> ,
                                                <http://purl.org/gc/MolecularComputation> ,
-                                               <http://purl.org/gc/NMRSpectra> ,
                                                <http://purl.org/gc/VibrationalSpectra> ;
                                       <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa004f_1> ,
                                                                             <http://example.org/peak_caa004f_2> ,
@@ -20926,9 +20853,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa004g
 <http://example.org/spectrum_caa004g> rdf:type owl:NamedIndividual ,
-                                               <http://purl.org/gc/ElectronicSpectra> ,
                                                <http://purl.org/gc/MolecularComputation> ,
-                                               <http://purl.org/gc/NMRSpectra> ,
                                                <http://purl.org/gc/VibrationalSpectra> ;
                                       <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa004g_1> ,
                                                                             <http://example.org/peak_caa004g_2> ,
@@ -20941,9 +20866,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa004h
 <http://example.org/spectrum_caa004h> rdf:type owl:NamedIndividual ,
-                                               <http://purl.org/gc/ElectronicSpectra> ,
                                                <http://purl.org/gc/MolecularComputation> ,
-                                               <http://purl.org/gc/NMRSpectra> ,
                                                <http://purl.org/gc/VibrationalSpectra> ;
                                       <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa004h_1> ,
                                                                             <http://example.org/peak_caa004h_2> ,
@@ -20956,9 +20879,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa004j
 <http://example.org/spectrum_caa004j> rdf:type owl:NamedIndividual ,
-                                               <http://purl.org/gc/ElectronicSpectra> ,
                                                <http://purl.org/gc/MolecularComputation> ,
-                                               <http://purl.org/gc/NMRSpectra> ,
                                                <http://purl.org/gc/VibrationalSpectra> ;
                                       <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa004j_1> ,
                                                                             <http://example.org/peak_caa004j_2> ,
@@ -20971,9 +20892,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa004k
 <http://example.org/spectrum_caa004k> rdf:type owl:NamedIndividual ,
-                                               <http://purl.org/gc/ElectronicSpectra> ,
                                                <http://purl.org/gc/MolecularComputation> ,
-                                               <http://purl.org/gc/NMRSpectra> ,
                                                <http://purl.org/gc/VibrationalSpectra> ;
                                       <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa004k_1> ,
                                                                             <http://example.org/peak_caa004k_2> ,
@@ -20986,9 +20905,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa004l
 <http://example.org/spectrum_caa004l> rdf:type owl:NamedIndividual ,
-                                               <http://purl.org/gc/ElectronicSpectra> ,
                                                <http://purl.org/gc/MolecularComputation> ,
-                                               <http://purl.org/gc/NMRSpectra> ,
                                                <http://purl.org/gc/VibrationalSpectra> ;
                                       <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa004l_1> ,
                                                                             <http://example.org/peak_caa004l_2> ,
@@ -21001,9 +20918,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa004m
 <http://example.org/spectrum_caa004m> rdf:type owl:NamedIndividual ,
-                                               <http://purl.org/gc/ElectronicSpectra> ,
                                                <http://purl.org/gc/MolecularComputation> ,
-                                               <http://purl.org/gc/NMRSpectra> ,
                                                <http://purl.org/gc/VibrationalSpectra> ;
                                       <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa004m_1> ,
                                                                             <http://example.org/peak_caa004m_2> ,
@@ -21017,9 +20932,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa005a
 <http://example.org/spectrum_caa005a> rdf:type owl:NamedIndividual ,
-                                               <http://purl.org/gc/ElectronicSpectra> ,
                                                <http://purl.org/gc/MolecularComputation> ,
-                                               <http://purl.org/gc/NMRSpectra> ,
                                                <http://purl.org/gc/VibrationalSpectra> ;
                                       <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa005a_1> ,
                                                                             <http://example.org/peak_caa005a_2> ,
@@ -21033,9 +20946,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa005b
 <http://example.org/spectrum_caa005b> rdf:type owl:NamedIndividual ,
-                                               <http://purl.org/gc/ElectronicSpectra> ,
                                                <http://purl.org/gc/MolecularComputation> ,
-                                               <http://purl.org/gc/NMRSpectra> ,
                                                <http://purl.org/gc/VibrationalSpectra> ;
                                       <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa005b_1> ,
                                                                             <http://example.org/peak_caa005b_2> ,
@@ -21049,9 +20960,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa005bIRCCML1st
 <http://example.org/spectrum_caa005bIRCCML1st> rdf:type owl:NamedIndividual ,
-                                                        <http://purl.org/gc/ElectronicSpectra> ,
                                                         <http://purl.org/gc/MolecularComputation> ,
-                                                        <http://purl.org/gc/NMRSpectra> ,
                                                         <http://purl.org/gc/VibrationalSpectra> ;
                                                <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa005bIRCCML1st_1> ,
                                                                                      <http://example.org/peak_caa005bIRCCML1st_2> ,
@@ -21064,9 +20973,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa005bIRCCML1stdef2TZVPP
 <http://example.org/spectrum_caa005bIRCCML1stdef2TZVPP> rdf:type owl:NamedIndividual ,
-                                                                 <http://purl.org/gc/ElectronicSpectra> ,
                                                                  <http://purl.org/gc/MolecularComputation> ,
-                                                                 <http://purl.org/gc/NMRSpectra> ,
                                                                  <http://purl.org/gc/VibrationalSpectra> ;
                                                         <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa005bIRCCML1stdef2TZVPP_1> ,
                                                                                               <http://example.org/peak_caa005bIRCCML1stdef2TZVPP_2> ,
@@ -21079,9 +20986,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa005bIRCCML_last
 <http://example.org/spectrum_caa005bIRCCML_last> rdf:type owl:NamedIndividual ,
-                                                          <http://purl.org/gc/ElectronicSpectra> ,
                                                           <http://purl.org/gc/MolecularComputation> ,
-                                                          <http://purl.org/gc/NMRSpectra> ,
                                                           <http://purl.org/gc/VibrationalSpectra> ;
                                                  <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa005bIRCCML_last_1> ,
                                                                                        <http://example.org/peak_caa005bIRCCML_last_2> ,
@@ -21094,9 +20999,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa005bTSa
 <http://example.org/spectrum_caa005bTSa> rdf:type owl:NamedIndividual ,
-                                                  <http://purl.org/gc/ElectronicSpectra> ,
                                                   <http://purl.org/gc/MolecularComputation> ,
-                                                  <http://purl.org/gc/NMRSpectra> ,
                                                   <http://purl.org/gc/VibrationalSpectra> ;
                                          <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa005bTSa_1> ,
                                                                                <http://example.org/peak_caa005bTSa_2> ,
@@ -21110,9 +21013,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa005bTSb-hess
 <http://example.org/spectrum_caa005bTSb-hess> rdf:type owl:NamedIndividual ,
-                                                       <http://purl.org/gc/ElectronicSpectra> ,
                                                        <http://purl.org/gc/MolecularComputation> ,
-                                                       <http://purl.org/gc/NMRSpectra> ,
                                                        <http://purl.org/gc/VibrationalSpectra> ;
                                               <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa005bTSb-hess_1> ,
                                                                                     <http://example.org/peak_caa005bTSb-hess_2> ,
@@ -21127,9 +21028,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa007b
 <http://example.org/spectrum_caa007b> rdf:type owl:NamedIndividual ,
-                                               <http://purl.org/gc/ElectronicSpectra> ,
                                                <http://purl.org/gc/MolecularComputation> ,
-                                               <http://purl.org/gc/NMRSpectra> ,
                                                <http://purl.org/gc/VibrationalSpectra> ;
                                       <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa007b_1> ,
                                                                             <http://example.org/peak_caa007b_2> ,
@@ -21142,9 +21041,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa008-aldehyde-bare
 <http://example.org/spectrum_caa008-aldehyde-bare> rdf:type owl:NamedIndividual ,
-                                                            <http://purl.org/gc/ElectronicSpectra> ,
                                                             <http://purl.org/gc/MolecularComputation> ,
-                                                            <http://purl.org/gc/NMRSpectra> ,
                                                             <http://purl.org/gc/VibrationalSpectra> ;
                                                    <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa008-aldehyde-bare_1> ,
                                                                                          <http://example.org/peak_caa008-aldehyde-bare_2> ,
@@ -21157,9 +21054,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa008-hydrate-bare
 <http://example.org/spectrum_caa008-hydrate-bare> rdf:type owl:NamedIndividual ,
-                                                           <http://purl.org/gc/ElectronicSpectra> ,
                                                            <http://purl.org/gc/MolecularComputation> ,
-                                                           <http://purl.org/gc/NMRSpectra> ,
                                                            <http://purl.org/gc/VibrationalSpectra> ;
                                                   <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa008-hydrate-bare_1> ,
                                                                                         <http://example.org/peak_caa008-hydrate-bare_2> ,
@@ -21172,9 +21067,7 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/spectrum_caa008-water-bare
 <http://example.org/spectrum_caa008-water-bare> rdf:type owl:NamedIndividual ,
-                                                         <http://purl.org/gc/ElectronicSpectra> ,
                                                          <http://purl.org/gc/MolecularComputation> ,
-                                                         <http://purl.org/gc/NMRSpectra> ,
                                                          <http://purl.org/gc/VibrationalSpectra> ;
                                                 <http://purl.org/gc/hasFrequencyPeak> <http://example.org/peak_caa008-water-bare_1> ,
                                                                                       <http://example.org/peak_caa008-water-bare_2> ,
