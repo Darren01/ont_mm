@@ -600,7 +600,11 @@ goes into the graph - typically the bulk of its peak data, and almost
 all of it never queried. `filter_vibrational_modes()` keeps only the
 diagnostically useful ones - the imaginary frequencies, and GAMESS's
 own translation/rotation modes - and rewrites the spectra, peak and
-float-value instance files in place. On the bundled examples it cut
+float-value instance files in place. Only peak data is ever removed:
+a float value goes only when its own peak does, so the energy values
+that share that table (electronic energy, ZPE, enthalpy, entropy,
+Gibbs free energy and every reaction-path energy) are left alone.
+On the bundled examples it cut
 the peak rows from 1191 to 208 (`caa`) and from 489 to 96 (`aa`), with
 every imaginary frequency still present. Nothing is lost for good: the
 full mode list stays in the `.log` file each experiment links to via
@@ -1011,6 +1015,36 @@ recomputing every file's checksum as it goes. So:
   just its *declared type* - if it's the latter, the instance file's
   own type-directive row is very likely the one place that needs
   fixing, not the data.
+- **You built a graph with the vibrational-mode filter (Step 3c) before
+  it was fixed on 2026-10-07:** the filter deleted every energy value
+  from `float_value_template_instances.tsv` - electronic energy, ZPE,
+  enthalpy, entropy, Gibbs free energy and each reaction-path energy -
+  because none of them belong to a peak. The energy nodes still exist
+  in the graph, but as empty shells with no value or unit, and nothing
+  reports an error: the peak counts look exactly right. Competency
+  questions 11 and 13 just return no values. To check a graph:
+
+  ```sparql
+  PREFIX gc: <http://purl.org/gc/>
+  SELECT (COUNT(DISTINCT ?e) AS ?energyNodes) (COUNT(DISTINCT ?hv) AS ?withAValue)
+  WHERE {
+    ?s ?pred ?e .
+    FILTER(?pred IN (gc:hasElectronicEnergy, gc:hasEnthalpy, gc:hasEntropy,
+                     gc:hasGibbsFreeEnergy, gc:hasZeroPointEnergy, gc:hasPathEnergy))
+    OPTIONAL { ?e gc:hasFloatValue ?v . BIND(?e AS ?hv) }
+  }
+  ```
+
+  If `withAValue` is lower than `energyNodes` (it was 0 in every graph
+  this was found in), pull the fixed filter. Re-running is not enough,
+  because those experiments are "already present", so delete the seven
+  *results* tables - `spectra_result`, `spectra`, `peak`, `float_value`,
+  `energies`, `reaction_path` and `reaction_path_point` (all
+  `*_template_instances.tsv`) - and re-run Steps 3, 3c and 4. The
+  experiment, constraint and annotation tables, with their checksums,
+  can stay. Delete all seven, not a subset: the writers share these
+  tables, so a partial deletion duplicates rows or loses peak values.
+  Copy the folder somewhere first.
 
 For the second and third cases above - and as a simple default for a
 scheduled rebuild, since it's cheap next to the reasoning in Step 6 -

@@ -162,9 +162,9 @@ arq --data $G --query q2.rq
 | type                                            | howMany |
 =============================================================
 | <http://www.w3.org/2002/07/owl#NamedIndividual> | 1102    |
+| <http://purl.org/gc/FloatValue>                 | 530     |
 | <http://www.w3.org/2002/07/owl#Class>           | 334     |
 | <http://purl.org/gc/ReactionPathPoint>          | 268     |
-| <http://purl.org/gc/FloatValue>                 | 192     |
 | <http://www.w3.org/2002/07/owl#ObjectProperty>  | 154     |
 -------------------------------------------------------------
 ```
@@ -174,9 +174,9 @@ arq --data $G --query q2.rq
 > ```text
 > ?type	?howMany
 > <http://www.w3.org/2002/07/owl#NamedIndividual>	1102
+> <http://purl.org/gc/FloatValue>	530
 > <http://www.w3.org/2002/07/owl#Class>	334
 > <http://purl.org/gc/ReactionPathPoint>	268
-> <http://purl.org/gc/FloatValue>	192
 > <http://www.w3.org/2002/07/owl#ObjectProperty>	154
 > ```
 
@@ -210,9 +210,9 @@ PREFIX chem: <http://purl.org/gc/>
 | type                                            | howMany |
 =============================================================
 | <http://www.w3.org/2002/07/owl#NamedIndividual> | 1102    |
+| chem:FloatValue                                 | 530     |
 | <http://www.w3.org/2002/07/owl#Class>           | 334     |
 | chem:ReactionPathPoint                          | 268     |
-| chem:FloatValue                                 | 192     |
 | <http://www.w3.org/2002/07/owl#ObjectProperty>  | 154     |
 -------------------------------------------------------------
 ```
@@ -278,9 +278,9 @@ arq --data $G --query q3.rq
 | type                                                   | howMany |
 ====================================================================
 | owl:NamedIndividual                                    | 1102    |
+| gc:FloatValue                                          | 530     |
 | owl:Class                                              | 334     |
 | gc:ReactionPathPoint                                   | 268     |
-| gc:FloatValue                                          | 192     |
 | owl:ObjectProperty                                     | 154     |
 | gc:FrequencyPeak                                       | 96      |
 | owl:DatatypeProperty                                   | 65      |
@@ -301,9 +301,9 @@ That's the first 12 of 37 rows; the full list is here if you want it.
 | type                                                   | howMany |
 ====================================================================
 | owl:NamedIndividual                                    | 1102    |
+| gc:FloatValue                                          | 530     |
 | owl:Class                                              | 334     |
 | gc:ReactionPathPoint                                   | 268     |
-| gc:FloatValue                                          | 192     |
 | owl:ObjectProperty                                     | 154     |
 | gc:FrequencyPeak                                       | 96      |
 | owl:DatatypeProperty                                   | 65      |
@@ -367,8 +367,8 @@ With that line added, the same rows print as:
 > ```text
 > ?type	?howMany
 > <http://www.w3.org/2002/07/owl#NamedIndividual>	1102
+> <http://purl.org/gc/FloatValue>	530
 > <http://www.w3.org/2002/07/owl#Class>	334
-> <http://purl.org/gc/ReactionPathPoint>	268
 > ```
 
 ### A shortcut for quick questions
@@ -396,13 +396,13 @@ EOF
 ```
 
 ```text
--------------------------------
-| type                 | n    |
-===============================
-| owl:NamedIndividual  | 1102 |
-| owl:Class            | 334  |
-| gc:ReactionPathPoint | 268  |
--------------------------------
+------------------------------
+| type                | n    |
+==============================
+| owl:NamedIndividual | 1102 |
+| gc:FloatValue       | 530  |
+| owl:Class           | 334  |
+------------------------------
 ```
 
 It reuses one scratch file, `ask.rq`, so it's for the throw-away questions: when one turns out to matter, save it as a numbered file and promote it, as in Step 0. Using robot instead of arq? Swap the last line of the function for `robot query --input "$G" --query /tmp/sparql/ask.rq /tmp/sparql/ask.tsv && cat /tmp/sparql/ask.tsv`.
@@ -420,13 +420,13 @@ EOF
 ```
 
 ```text
--------------------------------
-| type                 | n    |
-===============================
-| owl:NamedIndividual  | 1102 |
-| owl:Class            | 334  |
-| gc:ReactionPathPoint | 268  |
--------------------------------
+------------------------------
+| type                | n    |
+==============================
+| owl:NamedIndividual | 1102 |
+| gc:FloatValue       | 530  |
+| owl:Class           | 334  |
+------------------------------
 ```
 
 then define `ask2` and point it at a different, published graph - `caa` this time:
@@ -457,12 +457,12 @@ EOF
 | type                | n    |
 ==============================
 | owl:NamedIndividual | 1759 |
-| gc:FloatValue       | 416  |
+| gc:FloatValue       | 844  |
 | owl:Class           | 334  |
 ------------------------------
 ```
 
-Same question, same shape, one argument changed - and third place is genuinely different: `gc:ReactionPathPoint` in `aa`, `gc:FloatValue` in `caa`. That's a real, quick way to sanity-check that two datasets built by the same pipeline aren't identical underneath. Worth trying for a while to see whether it earns a permanent place next to `ask`, rather than assuming it will.
+Same question, same shape, one argument changed - and almost every number is genuinely different: 1102 individuals in `aa` against 1759 in `caa`, 530 `gc:FloatValue`s against 844. The one row that matches is `owl:Class | 334`, and that is not a coincidence: it counts the shared vocabulary both graphs are built on, not the data. That's a real, quick way to sanity-check that two datasets built by the same pipeline aren't identical underneath. Worth trying for a while to see whether it earns a permanent place next to `ask`, rather than assuming it will.
 
 **Piping `ask`'s own output somewhere else** works too, though the heredoc makes it look backwards the first time you write it: the pipe goes right after the opening `<<'EOF'`, on the same line as the call itself, not after the closing `EOF`:
 
@@ -839,13 +839,13 @@ SELECT ?type (COUNT(?thing) AS ?howMany) WHERE { ?thing a ?type } GROUP BY ?type
 ```
 
 ```text
-----------------------------------
-| type                 | howMany |
-==================================
-| owl:NamedIndividual  | 1102    |
-| owl:Class            | 334     |
-| gc:ReactionPathPoint | 268     |
-----------------------------------
+---------------------------------
+| type                | howMany |
+=================================
+| owl:NamedIndividual | 1102    |
+| gc:FloatValue       | 530     |
+| owl:Class           | 334     |
+---------------------------------
 ```
 
 Swap the two variables in the pattern - `?type a ?thing` instead of `?thing a ?type` - and nothing about the query looks obviously broken:
