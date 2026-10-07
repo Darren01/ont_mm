@@ -4684,6 +4684,326 @@ rdfs:Class rdf:type owl:Class .
 #    Individuals
 #################################################################
 
+###  http://example.org/electronic_energy_aa001-ts-pcseg2
+<http://example.org/electronic_energy_aa001-ts-pcseg2> rdf:type owl:NamedIndividual ,
+                                                                <http://purl.org/gc/FloatValue> ;
+                                                       <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                                       <http://purl.org/gc/hasFloatValue> "-306.71405"^^xsd:float ;
+                                                       rdfs:label "Electronic energy aa001-ts-pcseg2 (R-WB97X-D)" .
+
+
+###  http://example.org/electronic_energy_aa001d-smd-pcseg2
+<http://example.org/electronic_energy_aa001d-smd-pcseg2> rdf:type owl:NamedIndividual ,
+                                                                  <http://purl.org/gc/FloatValue> ;
+                                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                                         <http://purl.org/gc/hasFloatValue> "-306.71606"^^xsd:float ;
+                                                         rdfs:label "Electronic energy aa001d-smd-pcseg2 (R-WB97X-D)" .
+
+
+###  http://example.org/electronic_energy_aa001g-pcseg2
+<http://example.org/electronic_energy_aa001g-pcseg2> rdf:type owl:NamedIndividual ,
+                                                              <http://purl.org/gc/FloatValue> ;
+                                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                                     <http://purl.org/gc/hasFloatValue> "-306.76343"^^xsd:float ;
+                                                     rdfs:label "Electronic energy aa001g-pcseg2 (R-WB97X-D)" .
+
+
+###  http://example.org/electronic_energy_aa001g-smd-pcseg2
+<http://example.org/electronic_energy_aa001g-smd-pcseg2> rdf:type owl:NamedIndividual ,
+                                                                  <http://purl.org/gc/FloatValue> ;
+                                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                                         <http://purl.org/gc/hasFloatValue> "-306.76508"^^xsd:float ;
+                                                         rdfs:label "Electronic energy aa001g-smd-pcseg2 (R-WB97X-D)" .
+
+
+###  http://example.org/electronic_energy_aa001h-pcseg2
+<http://example.org/electronic_energy_aa001h-pcseg2> rdf:type owl:NamedIndividual ,
+                                                              <http://purl.org/gc/FloatValue> ;
+                                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                                     <http://purl.org/gc/hasFloatValue> "-306.76"^^xsd:float ;
+                                                     rdfs:label "Electronic energy aa001h-pcseg2 (R-WB97X-D)" .
+
+
+###  http://example.org/electronic_energy_aa001h-smd-pcseg2
+<http://example.org/electronic_energy_aa001h-smd-pcseg2> rdf:type owl:NamedIndividual ,
+                                                                  <http://purl.org/gc/FloatValue> ;
+                                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                                         <http://purl.org/gc/hasFloatValue> "-306.76096"^^xsd:float ;
+                                                         rdfs:label "Electronic energy aa001h-smd-pcseg2 (R-WB97X-D)" .
+
+
+###  http://example.org/electronic_energy_aa002-aldehyde-bare-smd-energy
+<http://example.org/electronic_energy_aa002-aldehyde-bare-smd-energy> rdf:type owl:NamedIndividual ,
+                                                                               <http://purl.org/gc/FloatValue> ;
+                                                                      <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                                                      <http://purl.org/gc/hasFloatValue> "-153.62192"^^xsd:float ;
+                                                                      rdfs:label "Electronic energy aa002-aldehyde-bare-smd-energy (R-WB97X-D)" .
+
+
+###  http://example.org/electronic_energy_aa002-aldehyde-pcseg2
+<http://example.org/electronic_energy_aa002-aldehyde-pcseg2> rdf:type owl:NamedIndividual ,
+                                                                      <http://purl.org/gc/FloatValue> ;
+                                                             <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                                             <http://purl.org/gc/hasFloatValue> "-153.84752"^^xsd:float ;
+                                                             rdfs:label "Electronic energy aa002-aldehyde-pcseg2 (R-WB97X-D)" .
+
+
+###  http://example.org/electronic_energy_aa002-hydrate-pcseg2
+<http://example.org/electronic_energy_aa002-hydrate-pcseg2> rdf:type owl:NamedIndividual ,
+                                                                     <http://purl.org/gc/FloatValue> ;
+                                                            <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                                            <http://purl.org/gc/hasFloatValue> "-230.30698"^^xsd:float ;
+                                                            rdfs:label "Electronic energy aa002-hydrate-pcseg2 (R-WB97X-D)" .
+
+
+###  http://example.org/electronic_energy_aa002-water-pcseg2
+<http://example.org/electronic_energy_aa002-water-pcseg2> rdf:type owl:NamedIndividual ,
+                                                                   <http://purl.org/gc/FloatValue> ;
+                                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                                          <http://purl.org/gc/hasFloatValue> "-76.45019"^^xsd:float ;
+                                                          rdfs:label "Electronic energy aa002-water-pcseg2 (R-WB97X-D)" .
+
+
+###  http://example.org/enthalpy_aa001a
+<http://example.org/enthalpy_aa001a> rdf:type owl:NamedIndividual ,
+                                              <http://purl.org/gc/FloatValue> ;
+                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                     <http://purl.org/gc/hasFloatValue> "291.94"^^xsd:float ;
+                                     rdfs:label "Enthalpy aa001a" .
+
+
+###  http://example.org/enthalpy_aa001b
+<http://example.org/enthalpy_aa001b> rdf:type owl:NamedIndividual ,
+                                              <http://purl.org/gc/FloatValue> ;
+                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                     <http://purl.org/gc/hasFloatValue> "291.955"^^xsd:float ;
+                                     rdfs:label "Enthalpy aa001b" .
+
+
+###  http://example.org/enthalpy_aa001c
+<http://example.org/enthalpy_aa001c> rdf:type owl:NamedIndividual ,
+                                              <http://purl.org/gc/FloatValue> ;
+                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                     <http://purl.org/gc/hasFloatValue> "291.929"^^xsd:float ;
+                                     rdfs:label "Enthalpy aa001c" .
+
+
+###  http://example.org/enthalpy_aa001d
+<http://example.org/enthalpy_aa001d> rdf:type owl:NamedIndividual ,
+                                              <http://purl.org/gc/FloatValue> ;
+                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                     <http://purl.org/gc/hasFloatValue> "290.411"^^xsd:float ;
+                                     rdfs:label "Enthalpy aa001d" .
+
+
+###  http://example.org/enthalpy_aa001d-smd
+<http://example.org/enthalpy_aa001d-smd> rdf:type owl:NamedIndividual ,
+                                                  <http://purl.org/gc/FloatValue> ;
+                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                         <http://purl.org/gc/hasFloatValue> "290.264"^^xsd:float ;
+                                         rdfs:label "Enthalpy aa001d-smd" .
+
+
+###  http://example.org/enthalpy_aa001d-smd-hess
+<http://example.org/enthalpy_aa001d-smd-hess> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/FloatValue> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                              <http://purl.org/gc/hasFloatValue> "289.016"^^xsd:float ;
+                                              rdfs:label "Enthalpy aa001d-smd-hess" .
+
+
+###  http://example.org/enthalpy_aa001g
+<http://example.org/enthalpy_aa001g> rdf:type owl:NamedIndividual ,
+                                              <http://purl.org/gc/FloatValue> ;
+                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                     <http://purl.org/gc/hasFloatValue> "313.765"^^xsd:float ;
+                                     rdfs:label "Enthalpy aa001g" .
+
+
+###  http://example.org/enthalpy_aa001g-smd
+<http://example.org/enthalpy_aa001g-smd> rdf:type owl:NamedIndividual ,
+                                                  <http://purl.org/gc/FloatValue> ;
+                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                         <http://purl.org/gc/hasFloatValue> "313.298"^^xsd:float ;
+                                         rdfs:label "Enthalpy aa001g-smd" .
+
+
+###  http://example.org/enthalpy_aa001h
+<http://example.org/enthalpy_aa001h> rdf:type owl:NamedIndividual ,
+                                              <http://purl.org/gc/FloatValue> ;
+                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                     <http://purl.org/gc/hasFloatValue> "305.242"^^xsd:float ;
+                                     rdfs:label "Enthalpy aa001h" .
+
+
+###  http://example.org/enthalpy_aa001h-smd
+<http://example.org/enthalpy_aa001h-smd> rdf:type owl:NamedIndividual ,
+                                                  <http://purl.org/gc/FloatValue> ;
+                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                         <http://purl.org/gc/hasFloatValue> "307.834"^^xsd:float ;
+                                         rdfs:label "Enthalpy aa001h-smd" .
+
+
+###  http://example.org/enthalpy_aa002-aldehyde-bare
+<http://example.org/enthalpy_aa002-aldehyde-bare> rdf:type owl:NamedIndividual ,
+                                                           <http://purl.org/gc/FloatValue> ;
+                                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                                  <http://purl.org/gc/hasFloatValue> "159.571"^^xsd:float ;
+                                                  rdfs:label "Enthalpy aa002-aldehyde-bare" .
+
+
+###  http://example.org/enthalpy_aa002-hydrate-bare
+<http://example.org/enthalpy_aa002-hydrate-bare> rdf:type owl:NamedIndividual ,
+                                                          <http://purl.org/gc/FloatValue> ;
+                                                 <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                                 <http://purl.org/gc/hasFloatValue> "239.822"^^xsd:float ;
+                                                 rdfs:label "Enthalpy aa002-hydrate-bare" .
+
+
+###  http://example.org/enthalpy_aa002-hydrate-bare-smd
+<http://example.org/enthalpy_aa002-hydrate-bare-smd> rdf:type owl:NamedIndividual ,
+                                                              <http://purl.org/gc/FloatValue> ;
+                                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                                     <http://purl.org/gc/hasFloatValue> "239.936"^^xsd:float ;
+                                                     rdfs:label "Enthalpy aa002-hydrate-bare-smd" .
+
+
+###  http://example.org/enthalpy_aa002-water-bare
+<http://example.org/enthalpy_aa002-water-bare> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                               <http://purl.org/gc/hasFloatValue> "65.791"^^xsd:float ;
+                                               rdfs:label "Enthalpy aa002-water-bare" .
+
+
+###  http://example.org/enthalpy_aa002-water-bare-smd
+<http://example.org/enthalpy_aa002-water-bare-smd> rdf:type owl:NamedIndividual ,
+                                                            <http://purl.org/gc/FloatValue> ;
+                                                   <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                                   <http://purl.org/gc/hasFloatValue> "65.663"^^xsd:float ;
+                                                   rdfs:label "Enthalpy aa002-water-bare-smd" .
+
+
+###  http://example.org/entropy_aa001a
+<http://example.org/entropy_aa001a> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/FloatValue> ;
+                                    <http://purl.org/gc/hasUnit> <http://purl.org/gc/joulePerMoleKelvin> ;
+                                    <http://purl.org/gc/hasFloatValue> "321.846"^^xsd:float ;
+                                    rdfs:label "Entropy aa001a" .
+
+
+###  http://example.org/entropy_aa001b
+<http://example.org/entropy_aa001b> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/FloatValue> ;
+                                    <http://purl.org/gc/hasUnit> <http://purl.org/gc/joulePerMoleKelvin> ;
+                                    <http://purl.org/gc/hasFloatValue> "321.95"^^xsd:float ;
+                                    rdfs:label "Entropy aa001b" .
+
+
+###  http://example.org/entropy_aa001c
+<http://example.org/entropy_aa001c> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/FloatValue> ;
+                                    <http://purl.org/gc/hasUnit> <http://purl.org/gc/joulePerMoleKelvin> ;
+                                    <http://purl.org/gc/hasFloatValue> "327.08"^^xsd:float ;
+                                    rdfs:label "Entropy aa001c" .
+
+
+###  http://example.org/entropy_aa001d
+<http://example.org/entropy_aa001d> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/FloatValue> ;
+                                    <http://purl.org/gc/hasUnit> <http://purl.org/gc/joulePerMoleKelvin> ;
+                                    <http://purl.org/gc/hasFloatValue> "323.496"^^xsd:float ;
+                                    rdfs:label "Entropy aa001d" .
+
+
+###  http://example.org/entropy_aa001d-smd
+<http://example.org/entropy_aa001d-smd> rdf:type owl:NamedIndividual ,
+                                                 <http://purl.org/gc/FloatValue> ;
+                                        <http://purl.org/gc/hasUnit> <http://purl.org/gc/joulePerMoleKelvin> ;
+                                        <http://purl.org/gc/hasFloatValue> "324.928"^^xsd:float ;
+                                        rdfs:label "Entropy aa001d-smd" .
+
+
+###  http://example.org/entropy_aa001d-smd-hess
+<http://example.org/entropy_aa001d-smd-hess> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FloatValue> ;
+                                             <http://purl.org/gc/hasUnit> <http://purl.org/gc/joulePerMoleKelvin> ;
+                                             <http://purl.org/gc/hasFloatValue> "329.536"^^xsd:float ;
+                                             rdfs:label "Entropy aa001d-smd-hess" .
+
+
+###  http://example.org/entropy_aa001g
+<http://example.org/entropy_aa001g> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/FloatValue> ;
+                                    <http://purl.org/gc/hasUnit> <http://purl.org/gc/joulePerMoleKelvin> ;
+                                    <http://purl.org/gc/hasFloatValue> "345.328"^^xsd:float ;
+                                    rdfs:label "Entropy aa001g" .
+
+
+###  http://example.org/entropy_aa001g-smd
+<http://example.org/entropy_aa001g-smd> rdf:type owl:NamedIndividual ,
+                                                 <http://purl.org/gc/FloatValue> ;
+                                        <http://purl.org/gc/hasUnit> <http://purl.org/gc/joulePerMoleKelvin> ;
+                                        <http://purl.org/gc/hasFloatValue> "345.712"^^xsd:float ;
+                                        rdfs:label "Entropy aa001g-smd" .
+
+
+###  http://example.org/entropy_aa001h
+<http://example.org/entropy_aa001h> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/FloatValue> ;
+                                    <http://purl.org/gc/hasUnit> <http://purl.org/gc/joulePerMoleKelvin> ;
+                                    <http://purl.org/gc/hasFloatValue> "406.679"^^xsd:float ;
+                                    rdfs:label "Entropy aa001h" .
+
+
+###  http://example.org/entropy_aa001h-smd
+<http://example.org/entropy_aa001h-smd> rdf:type owl:NamedIndividual ,
+                                                 <http://purl.org/gc/FloatValue> ;
+                                        <http://purl.org/gc/hasUnit> <http://purl.org/gc/joulePerMoleKelvin> ;
+                                        <http://purl.org/gc/hasFloatValue> "386.211"^^xsd:float ;
+                                        rdfs:label "Entropy aa001h-smd" .
+
+
+###  http://example.org/entropy_aa002-aldehyde-bare
+<http://example.org/entropy_aa002-aldehyde-bare> rdf:type owl:NamedIndividual ,
+                                                          <http://purl.org/gc/FloatValue> ;
+                                                 <http://purl.org/gc/hasUnit> <http://purl.org/gc/joulePerMoleKelvin> ;
+                                                 <http://purl.org/gc/hasFloatValue> "262.252"^^xsd:float ;
+                                                 rdfs:label "Entropy aa002-aldehyde-bare" .
+
+
+###  http://example.org/entropy_aa002-hydrate-bare
+<http://example.org/entropy_aa002-hydrate-bare> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/joulePerMoleKelvin> ;
+                                                <http://purl.org/gc/hasFloatValue> "291.443"^^xsd:float ;
+                                                rdfs:label "Entropy aa002-hydrate-bare" .
+
+
+###  http://example.org/entropy_aa002-hydrate-bare-smd
+<http://example.org/entropy_aa002-hydrate-bare-smd> rdf:type owl:NamedIndividual ,
+                                                             <http://purl.org/gc/FloatValue> ;
+                                                    <http://purl.org/gc/hasUnit> <http://purl.org/gc/joulePerMoleKelvin> ;
+                                                    <http://purl.org/gc/hasFloatValue> "290.964"^^xsd:float ;
+                                                    rdfs:label "Entropy aa002-hydrate-bare-smd" .
+
+
+###  http://example.org/entropy_aa002-water-bare
+<http://example.org/entropy_aa002-water-bare> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/FloatValue> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/joulePerMoleKelvin> ;
+                                              <http://purl.org/gc/hasFloatValue> "194.351"^^xsd:float ;
+                                              rdfs:label "Entropy aa002-water-bare" .
+
+
+###  http://example.org/entropy_aa002-water-bare-smd
+<http://example.org/entropy_aa002-water-bare-smd> rdf:type owl:NamedIndividual ,
+                                                           <http://purl.org/gc/FloatValue> ;
+                                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/joulePerMoleKelvin> ;
+                                                  <http://purl.org/gc/hasFloatValue> "194.365"^^xsd:float ;
+                                                  rdfs:label "Entropy aa002-water-bare-smd" .
+
+
 ###  http://example.org/freqval_aa001a_1
 <http://example.org/freqval_aa001a_1> rdf:type owl:NamedIndividual ,
                                                <http://purl.org/gc/FloatValue> ;
@@ -5452,6 +5772,126 @@ rdfs:Class rdf:type owl:Class .
                                                 rdfs:label "Frequency mode 6 aa002-water-bare" .
 
 
+###  http://example.org/gibbs_aa001a
+<http://example.org/gibbs_aa001a> rdf:type owl:NamedIndividual ,
+                                           <http://purl.org/gc/FloatValue> ;
+                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                  <http://purl.org/gc/hasFloatValue> "195.982"^^xsd:float ;
+                                  rdfs:label "Gibbs free energy aa001a" .
+
+
+###  http://example.org/gibbs_aa001b
+<http://example.org/gibbs_aa001b> rdf:type owl:NamedIndividual ,
+                                           <http://purl.org/gc/FloatValue> ;
+                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                  <http://purl.org/gc/hasFloatValue> "195.966"^^xsd:float ;
+                                  rdfs:label "Gibbs free energy aa001b" .
+
+
+###  http://example.org/gibbs_aa001c
+<http://example.org/gibbs_aa001c> rdf:type owl:NamedIndividual ,
+                                           <http://purl.org/gc/FloatValue> ;
+                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                  <http://purl.org/gc/hasFloatValue> "194.41"^^xsd:float ;
+                                  rdfs:label "Gibbs free energy aa001c" .
+
+
+###  http://example.org/gibbs_aa001d
+<http://example.org/gibbs_aa001d> rdf:type owl:NamedIndividual ,
+                                           <http://purl.org/gc/FloatValue> ;
+                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                  <http://purl.org/gc/hasFloatValue> "193.96"^^xsd:float ;
+                                  rdfs:label "Gibbs free energy aa001d" .
+
+
+###  http://example.org/gibbs_aa001d-smd
+<http://example.org/gibbs_aa001d-smd> rdf:type owl:NamedIndividual ,
+                                               <http://purl.org/gc/FloatValue> ;
+                                      <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                      <http://purl.org/gc/hasFloatValue> "193.386"^^xsd:float ;
+                                      rdfs:label "Gibbs free energy aa001d-smd" .
+
+
+###  http://example.org/gibbs_aa001d-smd-hess
+<http://example.org/gibbs_aa001d-smd-hess> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                           <http://purl.org/gc/hasFloatValue> "190.765"^^xsd:float ;
+                                           rdfs:label "Gibbs free energy aa001d-smd-hess" .
+
+
+###  http://example.org/gibbs_aa001g
+<http://example.org/gibbs_aa001g> rdf:type owl:NamedIndividual ,
+                                           <http://purl.org/gc/FloatValue> ;
+                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                  <http://purl.org/gc/hasFloatValue> "210.806"^^xsd:float ;
+                                  rdfs:label "Gibbs free energy aa001g" .
+
+
+###  http://example.org/gibbs_aa001g-smd
+<http://example.org/gibbs_aa001g-smd> rdf:type owl:NamedIndividual ,
+                                               <http://purl.org/gc/FloatValue> ;
+                                      <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                      <http://purl.org/gc/hasFloatValue> "210.224"^^xsd:float ;
+                                      rdfs:label "Gibbs free energy aa001g-smd" .
+
+
+###  http://example.org/gibbs_aa001h
+<http://example.org/gibbs_aa001h> rdf:type owl:NamedIndividual ,
+                                           <http://purl.org/gc/FloatValue> ;
+                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                  <http://purl.org/gc/hasFloatValue> "183.991"^^xsd:float ;
+                                  rdfs:label "Gibbs free energy aa001h" .
+
+
+###  http://example.org/gibbs_aa001h-smd
+<http://example.org/gibbs_aa001h-smd> rdf:type owl:NamedIndividual ,
+                                               <http://purl.org/gc/FloatValue> ;
+                                      <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                      <http://purl.org/gc/hasFloatValue> "192.685"^^xsd:float ;
+                                      rdfs:label "Gibbs free energy aa001h-smd" .
+
+
+###  http://example.org/gibbs_aa002-aldehyde-bare
+<http://example.org/gibbs_aa002-aldehyde-bare> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/FloatValue> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                               <http://purl.org/gc/hasFloatValue> "81.38"^^xsd:float ;
+                                               rdfs:label "Gibbs free energy aa002-aldehyde-bare" .
+
+
+###  http://example.org/gibbs_aa002-hydrate-bare
+<http://example.org/gibbs_aa002-hydrate-bare> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/FloatValue> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                              <http://purl.org/gc/hasFloatValue> "152.929"^^xsd:float ;
+                                              rdfs:label "Gibbs free energy aa002-hydrate-bare" .
+
+
+###  http://example.org/gibbs_aa002-hydrate-bare-smd
+<http://example.org/gibbs_aa002-hydrate-bare-smd> rdf:type owl:NamedIndividual ,
+                                                           <http://purl.org/gc/FloatValue> ;
+                                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                                  <http://purl.org/gc/hasFloatValue> "153.185"^^xsd:float ;
+                                                  rdfs:label "Gibbs free energy aa002-hydrate-bare-smd" .
+
+
+###  http://example.org/gibbs_aa002-water-bare
+<http://example.org/gibbs_aa002-water-bare> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/FloatValue> ;
+                                            <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                            <http://purl.org/gc/hasFloatValue> "7.845"^^xsd:float ;
+                                            rdfs:label "Gibbs free energy aa002-water-bare" .
+
+
+###  http://example.org/gibbs_aa002-water-bare-smd
+<http://example.org/gibbs_aa002-water-bare-smd> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                                <http://purl.org/gc/hasFloatValue> "7.714"^^xsd:float ;
+                                                rdfs:label "Gibbs free energy aa002-water-bare-smd" .
+
+
 ###  http://example.org/intval_aa001a_1
 <http://example.org/intval_aa001a_1> rdf:type owl:NamedIndividual ,
                                               <http://purl.org/gc/FloatValue> ;
@@ -6218,6 +6658,2270 @@ rdfs:Class rdf:type owl:Class .
                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
                                                <http://purl.org/gc/hasFloatValue> "0.0"^^xsd:float ;
                                                rdfs:label "IR intensity mode 6 aa002-water-bare" .
+
+
+###  http://example.org/pathenergy_aa001e_1
+<http://example.org/pathenergy_aa001e_1> rdf:type owl:NamedIndividual ,
+                                                  <http://purl.org/gc/FloatValue> ;
+                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                         <http://purl.org/gc/hasFloatValue> "-306.33273"^^xsd:float ;
+                                         rdfs:label "Path energy 1 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_10
+<http://example.org/pathenergy_aa001e_10> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3325"^^xsd:float ;
+                                          rdfs:label "Path energy 10 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_100
+<http://example.org/pathenergy_aa001e_100> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33008"^^xsd:float ;
+                                           rdfs:label "Path energy 100 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_101
+<http://example.org/pathenergy_aa001e_101> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33005"^^xsd:float ;
+                                           rdfs:label "Path energy 101 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_102
+<http://example.org/pathenergy_aa001e_102> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33002"^^xsd:float ;
+                                           rdfs:label "Path energy 102 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_103
+<http://example.org/pathenergy_aa001e_103> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33002"^^xsd:float ;
+                                           rdfs:label "Path energy 103 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_104
+<http://example.org/pathenergy_aa001e_104> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33"^^xsd:float ;
+                                           rdfs:label "Path energy 104 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_105
+<http://example.org/pathenergy_aa001e_105> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32996"^^xsd:float ;
+                                           rdfs:label "Path energy 105 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_106
+<http://example.org/pathenergy_aa001e_106> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32993"^^xsd:float ;
+                                           rdfs:label "Path energy 106 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_107
+<http://example.org/pathenergy_aa001e_107> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3299"^^xsd:float ;
+                                           rdfs:label "Path energy 107 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_108
+<http://example.org/pathenergy_aa001e_108> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32986"^^xsd:float ;
+                                           rdfs:label "Path energy 108 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_109
+<http://example.org/pathenergy_aa001e_109> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3298"^^xsd:float ;
+                                           rdfs:label "Path energy 109 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_11
+<http://example.org/pathenergy_aa001e_11> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33246"^^xsd:float ;
+                                          rdfs:label "Path energy 11 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_110
+<http://example.org/pathenergy_aa001e_110> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32977"^^xsd:float ;
+                                           rdfs:label "Path energy 110 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_111
+<http://example.org/pathenergy_aa001e_111> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32974"^^xsd:float ;
+                                           rdfs:label "Path energy 111 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_112
+<http://example.org/pathenergy_aa001e_112> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32968"^^xsd:float ;
+                                           rdfs:label "Path energy 112 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_113
+<http://example.org/pathenergy_aa001e_113> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32965"^^xsd:float ;
+                                           rdfs:label "Path energy 113 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_114
+<http://example.org/pathenergy_aa001e_114> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32962"^^xsd:float ;
+                                           rdfs:label "Path energy 114 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_115
+<http://example.org/pathenergy_aa001e_115> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32956"^^xsd:float ;
+                                           rdfs:label "Path energy 115 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_116
+<http://example.org/pathenergy_aa001e_116> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32953"^^xsd:float ;
+                                           rdfs:label "Path energy 116 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_117
+<http://example.org/pathenergy_aa001e_117> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3295"^^xsd:float ;
+                                           rdfs:label "Path energy 117 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_118
+<http://example.org/pathenergy_aa001e_118> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32944"^^xsd:float ;
+                                           rdfs:label "Path energy 118 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_119
+<http://example.org/pathenergy_aa001e_119> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3294"^^xsd:float ;
+                                           rdfs:label "Path energy 119 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_12
+<http://example.org/pathenergy_aa001e_12> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33243"^^xsd:float ;
+                                          rdfs:label "Path energy 12 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_120
+<http://example.org/pathenergy_aa001e_120> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32938"^^xsd:float ;
+                                           rdfs:label "Path energy 120 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_121
+<http://example.org/pathenergy_aa001e_121> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3293"^^xsd:float ;
+                                           rdfs:label "Path energy 121 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_122
+<http://example.org/pathenergy_aa001e_122> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32925"^^xsd:float ;
+                                           rdfs:label "Path energy 122 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_123
+<http://example.org/pathenergy_aa001e_123> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32922"^^xsd:float ;
+                                           rdfs:label "Path energy 123 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_124
+<http://example.org/pathenergy_aa001e_124> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32916"^^xsd:float ;
+                                           rdfs:label "Path energy 124 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_125
+<http://example.org/pathenergy_aa001e_125> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3291"^^xsd:float ;
+                                           rdfs:label "Path energy 125 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_126
+<http://example.org/pathenergy_aa001e_126> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.329"^^xsd:float ;
+                                           rdfs:label "Path energy 126 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_127
+<http://example.org/pathenergy_aa001e_127> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32895"^^xsd:float ;
+                                           rdfs:label "Path energy 127 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_128
+<http://example.org/pathenergy_aa001e_128> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3289"^^xsd:float ;
+                                           rdfs:label "Path energy 128 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_129
+<http://example.org/pathenergy_aa001e_129> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3288"^^xsd:float ;
+                                           rdfs:label "Path energy 129 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_13
+<http://example.org/pathenergy_aa001e_13> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3324"^^xsd:float ;
+                                          rdfs:label "Path energy 13 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_130
+<http://example.org/pathenergy_aa001e_130> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32874"^^xsd:float ;
+                                           rdfs:label "Path energy 130 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_131
+<http://example.org/pathenergy_aa001e_131> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32867"^^xsd:float ;
+                                           rdfs:label "Path energy 131 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_132
+<http://example.org/pathenergy_aa001e_132> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32858"^^xsd:float ;
+                                           rdfs:label "Path energy 132 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_133
+<http://example.org/pathenergy_aa001e_133> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32852"^^xsd:float ;
+                                           rdfs:label "Path energy 133 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_134
+<http://example.org/pathenergy_aa001e_134> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32843"^^xsd:float ;
+                                           rdfs:label "Path energy 134 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_135
+<http://example.org/pathenergy_aa001e_135> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32834"^^xsd:float ;
+                                           rdfs:label "Path energy 135 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_136
+<http://example.org/pathenergy_aa001e_136> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32825"^^xsd:float ;
+                                           rdfs:label "Path energy 136 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_137
+<http://example.org/pathenergy_aa001e_137> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32816"^^xsd:float ;
+                                           rdfs:label "Path energy 137 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_138
+<http://example.org/pathenergy_aa001e_138> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32806"^^xsd:float ;
+                                           rdfs:label "Path energy 138 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_139
+<http://example.org/pathenergy_aa001e_139> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32794"^^xsd:float ;
+                                           rdfs:label "Path energy 139 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_14
+<http://example.org/pathenergy_aa001e_14> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33237"^^xsd:float ;
+                                          rdfs:label "Path energy 14 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_140
+<http://example.org/pathenergy_aa001e_140> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32782"^^xsd:float ;
+                                           rdfs:label "Path energy 140 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_141
+<http://example.org/pathenergy_aa001e_141> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3277"^^xsd:float ;
+                                           rdfs:label "Path energy 141 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_142
+<http://example.org/pathenergy_aa001e_142> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32758"^^xsd:float ;
+                                           rdfs:label "Path energy 142 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_143
+<http://example.org/pathenergy_aa001e_143> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32745"^^xsd:float ;
+                                           rdfs:label "Path energy 143 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_144
+<http://example.org/pathenergy_aa001e_144> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3273"^^xsd:float ;
+                                           rdfs:label "Path energy 144 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_145
+<http://example.org/pathenergy_aa001e_145> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32715"^^xsd:float ;
+                                           rdfs:label "Path energy 145 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_146
+<http://example.org/pathenergy_aa001e_146> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.327"^^xsd:float ;
+                                           rdfs:label "Path energy 146 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_147
+<http://example.org/pathenergy_aa001e_147> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32684"^^xsd:float ;
+                                           rdfs:label "Path energy 147 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_148
+<http://example.org/pathenergy_aa001e_148> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3267"^^xsd:float ;
+                                           rdfs:label "Path energy 148 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_149
+<http://example.org/pathenergy_aa001e_149> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3265"^^xsd:float ;
+                                           rdfs:label "Path energy 149 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_15
+<http://example.org/pathenergy_aa001e_15> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33234"^^xsd:float ;
+                                          rdfs:label "Path energy 15 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_150
+<http://example.org/pathenergy_aa001e_150> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32632"^^xsd:float ;
+                                           rdfs:label "Path energy 150 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_151
+<http://example.org/pathenergy_aa001e_151> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3261"^^xsd:float ;
+                                           rdfs:label "Path energy 151 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_152
+<http://example.org/pathenergy_aa001e_152> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3259"^^xsd:float ;
+                                           rdfs:label "Path energy 152 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_153
+<http://example.org/pathenergy_aa001e_153> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32565"^^xsd:float ;
+                                           rdfs:label "Path energy 153 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_154
+<http://example.org/pathenergy_aa001e_154> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3254"^^xsd:float ;
+                                           rdfs:label "Path energy 154 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_155
+<http://example.org/pathenergy_aa001e_155> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32516"^^xsd:float ;
+                                           rdfs:label "Path energy 155 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_156
+<http://example.org/pathenergy_aa001e_156> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3249"^^xsd:float ;
+                                           rdfs:label "Path energy 156 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_157
+<http://example.org/pathenergy_aa001e_157> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32462"^^xsd:float ;
+                                           rdfs:label "Path energy 157 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_158
+<http://example.org/pathenergy_aa001e_158> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3243"^^xsd:float ;
+                                           rdfs:label "Path energy 158 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_159
+<http://example.org/pathenergy_aa001e_159> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.324"^^xsd:float ;
+                                           rdfs:label "Path energy 159 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_16
+<http://example.org/pathenergy_aa001e_16> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3323"^^xsd:float ;
+                                          rdfs:label "Path energy 16 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_160
+<http://example.org/pathenergy_aa001e_160> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3237"^^xsd:float ;
+                                           rdfs:label "Path energy 160 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_161
+<http://example.org/pathenergy_aa001e_161> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32336"^^xsd:float ;
+                                           rdfs:label "Path energy 161 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_162
+<http://example.org/pathenergy_aa001e_162> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.323"^^xsd:float ;
+                                           rdfs:label "Path energy 162 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_163
+<http://example.org/pathenergy_aa001e_163> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32263"^^xsd:float ;
+                                           rdfs:label "Path energy 163 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_164
+<http://example.org/pathenergy_aa001e_164> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32224"^^xsd:float ;
+                                           rdfs:label "Path energy 164 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_165
+<http://example.org/pathenergy_aa001e_165> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3218"^^xsd:float ;
+                                           rdfs:label "Path energy 165 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_166
+<http://example.org/pathenergy_aa001e_166> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32138"^^xsd:float ;
+                                           rdfs:label "Path energy 166 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_167
+<http://example.org/pathenergy_aa001e_167> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32092"^^xsd:float ;
+                                           rdfs:label "Path energy 167 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_168
+<http://example.org/pathenergy_aa001e_168> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32047"^^xsd:float ;
+                                           rdfs:label "Path energy 168 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_169
+<http://example.org/pathenergy_aa001e_169> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.31998"^^xsd:float ;
+                                           rdfs:label "Path energy 169 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_17
+<http://example.org/pathenergy_aa001e_17> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33228"^^xsd:float ;
+                                          rdfs:label "Path energy 17 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_170
+<http://example.org/pathenergy_aa001e_170> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.31946"^^xsd:float ;
+                                           rdfs:label "Path energy 170 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_171
+<http://example.org/pathenergy_aa001e_171> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.31894"^^xsd:float ;
+                                           rdfs:label "Path energy 171 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_172
+<http://example.org/pathenergy_aa001e_172> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3184"^^xsd:float ;
+                                           rdfs:label "Path energy 172 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_173
+<http://example.org/pathenergy_aa001e_173> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.31784"^^xsd:float ;
+                                           rdfs:label "Path energy 173 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_174
+<http://example.org/pathenergy_aa001e_174> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3173"^^xsd:float ;
+                                           rdfs:label "Path energy 174 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_175
+<http://example.org/pathenergy_aa001e_175> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3167"^^xsd:float ;
+                                           rdfs:label "Path energy 175 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_176
+<http://example.org/pathenergy_aa001e_176> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3161"^^xsd:float ;
+                                           rdfs:label "Path energy 176 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_177
+<http://example.org/pathenergy_aa001e_177> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3155"^^xsd:float ;
+                                           rdfs:label "Path energy 177 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_178
+<http://example.org/pathenergy_aa001e_178> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.31485"^^xsd:float ;
+                                           rdfs:label "Path energy 178 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_179
+<http://example.org/pathenergy_aa001e_179> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3142"^^xsd:float ;
+                                           rdfs:label "Path energy 179 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_18
+<http://example.org/pathenergy_aa001e_18> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33224"^^xsd:float ;
+                                          rdfs:label "Path energy 18 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_180
+<http://example.org/pathenergy_aa001e_180> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.31354"^^xsd:float ;
+                                           rdfs:label "Path energy 180 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_181
+<http://example.org/pathenergy_aa001e_181> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.31287"^^xsd:float ;
+                                           rdfs:label "Path energy 181 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_182
+<http://example.org/pathenergy_aa001e_182> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3122"^^xsd:float ;
+                                           rdfs:label "Path energy 182 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_183
+<http://example.org/pathenergy_aa001e_183> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3115"^^xsd:float ;
+                                           rdfs:label "Path energy 183 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_184
+<http://example.org/pathenergy_aa001e_184> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3108"^^xsd:float ;
+                                           rdfs:label "Path energy 184 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_185
+<http://example.org/pathenergy_aa001e_185> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3101"^^xsd:float ;
+                                           rdfs:label "Path energy 185 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_186
+<http://example.org/pathenergy_aa001e_186> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.30936"^^xsd:float ;
+                                           rdfs:label "Path energy 186 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_187
+<http://example.org/pathenergy_aa001e_187> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3086"^^xsd:float ;
+                                           rdfs:label "Path energy 187 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_188
+<http://example.org/pathenergy_aa001e_188> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.30783"^^xsd:float ;
+                                           rdfs:label "Path energy 188 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_189
+<http://example.org/pathenergy_aa001e_189> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.30707"^^xsd:float ;
+                                           rdfs:label "Path energy 189 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_19
+<http://example.org/pathenergy_aa001e_19> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3322"^^xsd:float ;
+                                          rdfs:label "Path energy 19 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_190
+<http://example.org/pathenergy_aa001e_190> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.30627"^^xsd:float ;
+                                           rdfs:label "Path energy 190 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_191
+<http://example.org/pathenergy_aa001e_191> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3055"^^xsd:float ;
+                                           rdfs:label "Path energy 191 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_192
+<http://example.org/pathenergy_aa001e_192> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3047"^^xsd:float ;
+                                           rdfs:label "Path energy 192 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_193
+<http://example.org/pathenergy_aa001e_193> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3039"^^xsd:float ;
+                                           rdfs:label "Path energy 193 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_194
+<http://example.org/pathenergy_aa001e_194> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.30307"^^xsd:float ;
+                                           rdfs:label "Path energy 194 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_195
+<http://example.org/pathenergy_aa001e_195> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.30222"^^xsd:float ;
+                                           rdfs:label "Path energy 195 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_196
+<http://example.org/pathenergy_aa001e_196> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.30136"^^xsd:float ;
+                                           rdfs:label "Path energy 196 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_197
+<http://example.org/pathenergy_aa001e_197> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3005"^^xsd:float ;
+                                           rdfs:label "Path energy 197 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_198
+<http://example.org/pathenergy_aa001e_198> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.2996"^^xsd:float ;
+                                           rdfs:label "Path energy 198 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_199
+<http://example.org/pathenergy_aa001e_199> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.29868"^^xsd:float ;
+                                           rdfs:label "Path energy 199 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_2
+<http://example.org/pathenergy_aa001e_2> rdf:type owl:NamedIndividual ,
+                                                  <http://purl.org/gc/FloatValue> ;
+                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                         <http://purl.org/gc/hasFloatValue> "-306.3327"^^xsd:float ;
+                                         rdfs:label "Path energy 2 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_20
+<http://example.org/pathenergy_aa001e_20> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33218"^^xsd:float ;
+                                          rdfs:label "Path energy 20 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_200
+<http://example.org/pathenergy_aa001e_200> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.29794"^^xsd:float ;
+                                           rdfs:label "Path energy 200 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_201
+<http://example.org/pathenergy_aa001e_201> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.298"^^xsd:float ;
+                                           rdfs:label "Path energy 201 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_202
+<http://example.org/pathenergy_aa001e_202> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.29922"^^xsd:float ;
+                                           rdfs:label "Path energy 202 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_203
+<http://example.org/pathenergy_aa001e_203> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3013"^^xsd:float ;
+                                           rdfs:label "Path energy 203 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_204
+<http://example.org/pathenergy_aa001e_204> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.30414"^^xsd:float ;
+                                           rdfs:label "Path energy 204 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_205
+<http://example.org/pathenergy_aa001e_205> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.30753"^^xsd:float ;
+                                           rdfs:label "Path energy 205 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_206
+<http://example.org/pathenergy_aa001e_206> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.31104"^^xsd:float ;
+                                           rdfs:label "Path energy 206 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_207
+<http://example.org/pathenergy_aa001e_207> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3143"^^xsd:float ;
+                                           rdfs:label "Path energy 207 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_208
+<http://example.org/pathenergy_aa001e_208> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.31696"^^xsd:float ;
+                                           rdfs:label "Path energy 208 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_209
+<http://example.org/pathenergy_aa001e_209> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.31906"^^xsd:float ;
+                                           rdfs:label "Path energy 209 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_21
+<http://example.org/pathenergy_aa001e_21> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33215"^^xsd:float ;
+                                          rdfs:label "Path energy 21 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_210
+<http://example.org/pathenergy_aa001e_210> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32092"^^xsd:float ;
+                                           rdfs:label "Path energy 210 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_211
+<http://example.org/pathenergy_aa001e_211> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32263"^^xsd:float ;
+                                           rdfs:label "Path energy 211 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_212
+<http://example.org/pathenergy_aa001e_212> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32422"^^xsd:float ;
+                                           rdfs:label "Path energy 212 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_213
+<http://example.org/pathenergy_aa001e_213> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32568"^^xsd:float ;
+                                           rdfs:label "Path energy 213 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_214
+<http://example.org/pathenergy_aa001e_214> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32703"^^xsd:float ;
+                                           rdfs:label "Path energy 214 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_215
+<http://example.org/pathenergy_aa001e_215> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32825"^^xsd:float ;
+                                           rdfs:label "Path energy 215 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_216
+<http://example.org/pathenergy_aa001e_216> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.32938"^^xsd:float ;
+                                           rdfs:label "Path energy 216 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_217
+<http://example.org/pathenergy_aa001e_217> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3304"^^xsd:float ;
+                                           rdfs:label "Path energy 217 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_218
+<http://example.org/pathenergy_aa001e_218> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33133"^^xsd:float ;
+                                           rdfs:label "Path energy 218 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_219
+<http://example.org/pathenergy_aa001e_219> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33215"^^xsd:float ;
+                                           rdfs:label "Path energy 219 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_22
+<http://example.org/pathenergy_aa001e_22> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33212"^^xsd:float ;
+                                          rdfs:label "Path energy 22 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_220
+<http://example.org/pathenergy_aa001e_220> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3329"^^xsd:float ;
+                                           rdfs:label "Path energy 220 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_221
+<http://example.org/pathenergy_aa001e_221> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33356"^^xsd:float ;
+                                           rdfs:label "Path energy 221 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_222
+<http://example.org/pathenergy_aa001e_222> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33414"^^xsd:float ;
+                                           rdfs:label "Path energy 222 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_223
+<http://example.org/pathenergy_aa001e_223> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3347"^^xsd:float ;
+                                           rdfs:label "Path energy 223 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_224
+<http://example.org/pathenergy_aa001e_224> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3352"^^xsd:float ;
+                                           rdfs:label "Path energy 224 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_225
+<http://example.org/pathenergy_aa001e_225> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33566"^^xsd:float ;
+                                           rdfs:label "Path energy 225 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_226
+<http://example.org/pathenergy_aa001e_226> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33606"^^xsd:float ;
+                                           rdfs:label "Path energy 226 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_227
+<http://example.org/pathenergy_aa001e_227> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33646"^^xsd:float ;
+                                           rdfs:label "Path energy 227 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_228
+<http://example.org/pathenergy_aa001e_228> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3368"^^xsd:float ;
+                                           rdfs:label "Path energy 228 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_229
+<http://example.org/pathenergy_aa001e_229> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33713"^^xsd:float ;
+                                           rdfs:label "Path energy 229 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_23
+<http://example.org/pathenergy_aa001e_23> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3321"^^xsd:float ;
+                                          rdfs:label "Path energy 23 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_230
+<http://example.org/pathenergy_aa001e_230> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3374"^^xsd:float ;
+                                           rdfs:label "Path energy 230 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_231
+<http://example.org/pathenergy_aa001e_231> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33768"^^xsd:float ;
+                                           rdfs:label "Path energy 231 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_232
+<http://example.org/pathenergy_aa001e_232> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33792"^^xsd:float ;
+                                           rdfs:label "Path energy 232 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_233
+<http://example.org/pathenergy_aa001e_233> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33813"^^xsd:float ;
+                                           rdfs:label "Path energy 233 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_234
+<http://example.org/pathenergy_aa001e_234> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33835"^^xsd:float ;
+                                           rdfs:label "Path energy 234 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_235
+<http://example.org/pathenergy_aa001e_235> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33853"^^xsd:float ;
+                                           rdfs:label "Path energy 235 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_236
+<http://example.org/pathenergy_aa001e_236> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33868"^^xsd:float ;
+                                           rdfs:label "Path energy 236 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_237
+<http://example.org/pathenergy_aa001e_237> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3388"^^xsd:float ;
+                                           rdfs:label "Path energy 237 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_238
+<http://example.org/pathenergy_aa001e_238> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33893"^^xsd:float ;
+                                           rdfs:label "Path energy 238 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_239
+<http://example.org/pathenergy_aa001e_239> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33905"^^xsd:float ;
+                                           rdfs:label "Path energy 239 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_24
+<http://example.org/pathenergy_aa001e_24> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33206"^^xsd:float ;
+                                          rdfs:label "Path energy 24 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_240
+<http://example.org/pathenergy_aa001e_240> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33914"^^xsd:float ;
+                                           rdfs:label "Path energy 240 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_241
+<http://example.org/pathenergy_aa001e_241> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33923"^^xsd:float ;
+                                           rdfs:label "Path energy 241 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_242
+<http://example.org/pathenergy_aa001e_242> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3393"^^xsd:float ;
+                                           rdfs:label "Path energy 242 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_243
+<http://example.org/pathenergy_aa001e_243> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3394"^^xsd:float ;
+                                           rdfs:label "Path energy 243 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_244
+<http://example.org/pathenergy_aa001e_244> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33945"^^xsd:float ;
+                                           rdfs:label "Path energy 244 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_245
+<http://example.org/pathenergy_aa001e_245> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33948"^^xsd:float ;
+                                           rdfs:label "Path energy 245 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_246
+<http://example.org/pathenergy_aa001e_246> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33954"^^xsd:float ;
+                                           rdfs:label "Path energy 246 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_247
+<http://example.org/pathenergy_aa001e_247> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33957"^^xsd:float ;
+                                           rdfs:label "Path energy 247 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_248
+<http://example.org/pathenergy_aa001e_248> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33963"^^xsd:float ;
+                                           rdfs:label "Path energy 248 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_249
+<http://example.org/pathenergy_aa001e_249> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33966"^^xsd:float ;
+                                           rdfs:label "Path energy 249 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_25
+<http://example.org/pathenergy_aa001e_25> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.332"^^xsd:float ;
+                                          rdfs:label "Path energy 25 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_250
+<http://example.org/pathenergy_aa001e_250> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3397"^^xsd:float ;
+                                           rdfs:label "Path energy 250 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_251
+<http://example.org/pathenergy_aa001e_251> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33972"^^xsd:float ;
+                                           rdfs:label "Path energy 251 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_252
+<http://example.org/pathenergy_aa001e_252> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33975"^^xsd:float ;
+                                           rdfs:label "Path energy 252 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_253
+<http://example.org/pathenergy_aa001e_253> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33978"^^xsd:float ;
+                                           rdfs:label "Path energy 253 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_254
+<http://example.org/pathenergy_aa001e_254> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3398"^^xsd:float ;
+                                           rdfs:label "Path energy 254 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_255
+<http://example.org/pathenergy_aa001e_255> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33984"^^xsd:float ;
+                                           rdfs:label "Path energy 255 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_256
+<http://example.org/pathenergy_aa001e_256> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3399"^^xsd:float ;
+                                           rdfs:label "Path energy 256 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_257
+<http://example.org/pathenergy_aa001e_257> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33994"^^xsd:float ;
+                                           rdfs:label "Path energy 257 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_258
+<http://example.org/pathenergy_aa001e_258> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.33997"^^xsd:float ;
+                                           rdfs:label "Path energy 258 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_259
+<http://example.org/pathenergy_aa001e_259> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.34"^^xsd:float ;
+                                           rdfs:label "Path energy 259 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_26
+<http://example.org/pathenergy_aa001e_26> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33197"^^xsd:float ;
+                                          rdfs:label "Path energy 26 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_260
+<http://example.org/pathenergy_aa001e_260> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.34"^^xsd:float ;
+                                           rdfs:label "Path energy 260 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_261
+<http://example.org/pathenergy_aa001e_261> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.34003"^^xsd:float ;
+                                           rdfs:label "Path energy 261 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_262
+<http://example.org/pathenergy_aa001e_262> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.34006"^^xsd:float ;
+                                           rdfs:label "Path energy 262 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_263
+<http://example.org/pathenergy_aa001e_263> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.34006"^^xsd:float ;
+                                           rdfs:label "Path energy 263 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_264
+<http://example.org/pathenergy_aa001e_264> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.34006"^^xsd:float ;
+                                           rdfs:label "Path energy 264 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_265
+<http://example.org/pathenergy_aa001e_265> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3401"^^xsd:float ;
+                                           rdfs:label "Path energy 265 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_266
+<http://example.org/pathenergy_aa001e_266> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3401"^^xsd:float ;
+                                           rdfs:label "Path energy 266 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_267
+<http://example.org/pathenergy_aa001e_267> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3401"^^xsd:float ;
+                                           rdfs:label "Path energy 267 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_268
+<http://example.org/pathenergy_aa001e_268> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/gc/FloatValue> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                           <http://purl.org/gc/hasFloatValue> "-306.3401"^^xsd:float ;
+                                           rdfs:label "Path energy 268 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_27
+<http://example.org/pathenergy_aa001e_27> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33194"^^xsd:float ;
+                                          rdfs:label "Path energy 27 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_28
+<http://example.org/pathenergy_aa001e_28> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33194"^^xsd:float ;
+                                          rdfs:label "Path energy 28 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_29
+<http://example.org/pathenergy_aa001e_29> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3319"^^xsd:float ;
+                                          rdfs:label "Path energy 29 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_3
+<http://example.org/pathenergy_aa001e_3> rdf:type owl:NamedIndividual ,
+                                                  <http://purl.org/gc/FloatValue> ;
+                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                         <http://purl.org/gc/hasFloatValue> "-306.33267"^^xsd:float ;
+                                         rdfs:label "Path energy 3 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_30
+<http://example.org/pathenergy_aa001e_30> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33188"^^xsd:float ;
+                                          rdfs:label "Path energy 30 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_31
+<http://example.org/pathenergy_aa001e_31> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33185"^^xsd:float ;
+                                          rdfs:label "Path energy 31 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_32
+<http://example.org/pathenergy_aa001e_32> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33182"^^xsd:float ;
+                                          rdfs:label "Path energy 32 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_33
+<http://example.org/pathenergy_aa001e_33> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3318"^^xsd:float ;
+                                          rdfs:label "Path energy 33 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_34
+<http://example.org/pathenergy_aa001e_34> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33176"^^xsd:float ;
+                                          rdfs:label "Path energy 34 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_35
+<http://example.org/pathenergy_aa001e_35> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33173"^^xsd:float ;
+                                          rdfs:label "Path energy 35 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_36
+<http://example.org/pathenergy_aa001e_36> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3317"^^xsd:float ;
+                                          rdfs:label "Path energy 36 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_37
+<http://example.org/pathenergy_aa001e_37> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33167"^^xsd:float ;
+                                          rdfs:label "Path energy 37 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_38
+<http://example.org/pathenergy_aa001e_38> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33163"^^xsd:float ;
+                                          rdfs:label "Path energy 38 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_39
+<http://example.org/pathenergy_aa001e_39> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3316"^^xsd:float ;
+                                          rdfs:label "Path energy 39 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_4
+<http://example.org/pathenergy_aa001e_4> rdf:type owl:NamedIndividual ,
+                                                  <http://purl.org/gc/FloatValue> ;
+                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                         <http://purl.org/gc/hasFloatValue> "-306.33267"^^xsd:float ;
+                                         rdfs:label "Path energy 4 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_40
+<http://example.org/pathenergy_aa001e_40> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33157"^^xsd:float ;
+                                          rdfs:label "Path energy 40 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_41
+<http://example.org/pathenergy_aa001e_41> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33154"^^xsd:float ;
+                                          rdfs:label "Path energy 41 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_42
+<http://example.org/pathenergy_aa001e_42> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3315"^^xsd:float ;
+                                          rdfs:label "Path energy 42 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_43
+<http://example.org/pathenergy_aa001e_43> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33148"^^xsd:float ;
+                                          rdfs:label "Path energy 43 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_44
+<http://example.org/pathenergy_aa001e_44> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33145"^^xsd:float ;
+                                          rdfs:label "Path energy 44 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_45
+<http://example.org/pathenergy_aa001e_45> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33142"^^xsd:float ;
+                                          rdfs:label "Path energy 45 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_46
+<http://example.org/pathenergy_aa001e_46> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3314"^^xsd:float ;
+                                          rdfs:label "Path energy 46 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_47
+<http://example.org/pathenergy_aa001e_47> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33136"^^xsd:float ;
+                                          rdfs:label "Path energy 47 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_48
+<http://example.org/pathenergy_aa001e_48> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33133"^^xsd:float ;
+                                          rdfs:label "Path energy 48 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_49
+<http://example.org/pathenergy_aa001e_49> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33133"^^xsd:float ;
+                                          rdfs:label "Path energy 49 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_5
+<http://example.org/pathenergy_aa001e_5> rdf:type owl:NamedIndividual ,
+                                                  <http://purl.org/gc/FloatValue> ;
+                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                         <http://purl.org/gc/hasFloatValue> "-306.33264"^^xsd:float ;
+                                         rdfs:label "Path energy 5 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_50
+<http://example.org/pathenergy_aa001e_50> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3313"^^xsd:float ;
+                                          rdfs:label "Path energy 50 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_51
+<http://example.org/pathenergy_aa001e_51> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33127"^^xsd:float ;
+                                          rdfs:label "Path energy 51 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_52
+<http://example.org/pathenergy_aa001e_52> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33124"^^xsd:float ;
+                                          rdfs:label "Path energy 52 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_53
+<http://example.org/pathenergy_aa001e_53> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33124"^^xsd:float ;
+                                          rdfs:label "Path energy 53 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_54
+<http://example.org/pathenergy_aa001e_54> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3312"^^xsd:float ;
+                                          rdfs:label "Path energy 54 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_55
+<http://example.org/pathenergy_aa001e_55> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33118"^^xsd:float ;
+                                          rdfs:label "Path energy 55 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_56
+<http://example.org/pathenergy_aa001e_56> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33115"^^xsd:float ;
+                                          rdfs:label "Path energy 56 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_57
+<http://example.org/pathenergy_aa001e_57> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33115"^^xsd:float ;
+                                          rdfs:label "Path energy 57 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_58
+<http://example.org/pathenergy_aa001e_58> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33112"^^xsd:float ;
+                                          rdfs:label "Path energy 58 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_59
+<http://example.org/pathenergy_aa001e_59> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3311"^^xsd:float ;
+                                          rdfs:label "Path energy 59 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_6
+<http://example.org/pathenergy_aa001e_6> rdf:type owl:NamedIndividual ,
+                                                  <http://purl.org/gc/FloatValue> ;
+                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                         <http://purl.org/gc/hasFloatValue> "-306.3326"^^xsd:float ;
+                                         rdfs:label "Path energy 6 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_60
+<http://example.org/pathenergy_aa001e_60> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33105"^^xsd:float ;
+                                          rdfs:label "Path energy 60 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_61
+<http://example.org/pathenergy_aa001e_61> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33105"^^xsd:float ;
+                                          rdfs:label "Path energy 61 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_62
+<http://example.org/pathenergy_aa001e_62> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33102"^^xsd:float ;
+                                          rdfs:label "Path energy 62 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_63
+<http://example.org/pathenergy_aa001e_63> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.331"^^xsd:float ;
+                                          rdfs:label "Path energy 63 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_64
+<http://example.org/pathenergy_aa001e_64> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33096"^^xsd:float ;
+                                          rdfs:label "Path energy 64 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_65
+<http://example.org/pathenergy_aa001e_65> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33096"^^xsd:float ;
+                                          rdfs:label "Path energy 65 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_66
+<http://example.org/pathenergy_aa001e_66> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33093"^^xsd:float ;
+                                          rdfs:label "Path energy 66 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_67
+<http://example.org/pathenergy_aa001e_67> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3309"^^xsd:float ;
+                                          rdfs:label "Path energy 67 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_68
+<http://example.org/pathenergy_aa001e_68> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33087"^^xsd:float ;
+                                          rdfs:label "Path energy 68 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_69
+<http://example.org/pathenergy_aa001e_69> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33084"^^xsd:float ;
+                                          rdfs:label "Path energy 69 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_7
+<http://example.org/pathenergy_aa001e_7> rdf:type owl:NamedIndividual ,
+                                                  <http://purl.org/gc/FloatValue> ;
+                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                         <http://purl.org/gc/hasFloatValue> "-306.33258"^^xsd:float ;
+                                         rdfs:label "Path energy 7 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_70
+<http://example.org/pathenergy_aa001e_70> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3308"^^xsd:float ;
+                                          rdfs:label "Path energy 70 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_71
+<http://example.org/pathenergy_aa001e_71> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33078"^^xsd:float ;
+                                          rdfs:label "Path energy 71 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_72
+<http://example.org/pathenergy_aa001e_72> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33075"^^xsd:float ;
+                                          rdfs:label "Path energy 72 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_73
+<http://example.org/pathenergy_aa001e_73> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33072"^^xsd:float ;
+                                          rdfs:label "Path energy 73 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_74
+<http://example.org/pathenergy_aa001e_74> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33072"^^xsd:float ;
+                                          rdfs:label "Path energy 74 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_75
+<http://example.org/pathenergy_aa001e_75> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3307"^^xsd:float ;
+                                          rdfs:label "Path energy 75 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_76
+<http://example.org/pathenergy_aa001e_76> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33066"^^xsd:float ;
+                                          rdfs:label "Path energy 76 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_77
+<http://example.org/pathenergy_aa001e_77> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33063"^^xsd:float ;
+                                          rdfs:label "Path energy 77 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_78
+<http://example.org/pathenergy_aa001e_78> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3306"^^xsd:float ;
+                                          rdfs:label "Path energy 78 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_79
+<http://example.org/pathenergy_aa001e_79> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3306"^^xsd:float ;
+                                          rdfs:label "Path energy 79 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_8
+<http://example.org/pathenergy_aa001e_8> rdf:type owl:NamedIndividual ,
+                                                  <http://purl.org/gc/FloatValue> ;
+                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                         <http://purl.org/gc/hasFloatValue> "-306.33255"^^xsd:float ;
+                                         rdfs:label "Path energy 8 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_80
+<http://example.org/pathenergy_aa001e_80> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33057"^^xsd:float ;
+                                          rdfs:label "Path energy 80 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_81
+<http://example.org/pathenergy_aa001e_81> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33054"^^xsd:float ;
+                                          rdfs:label "Path energy 81 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_82
+<http://example.org/pathenergy_aa001e_82> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3305"^^xsd:float ;
+                                          rdfs:label "Path energy 82 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_83
+<http://example.org/pathenergy_aa001e_83> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33047"^^xsd:float ;
+                                          rdfs:label "Path energy 83 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_84
+<http://example.org/pathenergy_aa001e_84> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33047"^^xsd:float ;
+                                          rdfs:label "Path energy 84 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_85
+<http://example.org/pathenergy_aa001e_85> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33044"^^xsd:float ;
+                                          rdfs:label "Path energy 85 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_86
+<http://example.org/pathenergy_aa001e_86> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3304"^^xsd:float ;
+                                          rdfs:label "Path energy 86 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_87
+<http://example.org/pathenergy_aa001e_87> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33038"^^xsd:float ;
+                                          rdfs:label "Path energy 87 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_88
+<http://example.org/pathenergy_aa001e_88> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33035"^^xsd:float ;
+                                          rdfs:label "Path energy 88 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_89
+<http://example.org/pathenergy_aa001e_89> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33032"^^xsd:float ;
+                                          rdfs:label "Path energy 89 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_9
+<http://example.org/pathenergy_aa001e_9> rdf:type owl:NamedIndividual ,
+                                                  <http://purl.org/gc/FloatValue> ;
+                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                         <http://purl.org/gc/hasFloatValue> "-306.33252"^^xsd:float ;
+                                         rdfs:label "Path energy 9 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_90
+<http://example.org/pathenergy_aa001e_90> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3303"^^xsd:float ;
+                                          rdfs:label "Path energy 90 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_91
+<http://example.org/pathenergy_aa001e_91> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3303"^^xsd:float ;
+                                          rdfs:label "Path energy 91 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_92
+<http://example.org/pathenergy_aa001e_92> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33026"^^xsd:float ;
+                                          rdfs:label "Path energy 92 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_93
+<http://example.org/pathenergy_aa001e_93> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33023"^^xsd:float ;
+                                          rdfs:label "Path energy 93 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_94
+<http://example.org/pathenergy_aa001e_94> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3302"^^xsd:float ;
+                                          rdfs:label "Path energy 94 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_95
+<http://example.org/pathenergy_aa001e_95> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3302"^^xsd:float ;
+                                          rdfs:label "Path energy 95 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_96
+<http://example.org/pathenergy_aa001e_96> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33017"^^xsd:float ;
+                                          rdfs:label "Path energy 96 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_97
+<http://example.org/pathenergy_aa001e_97> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33014"^^xsd:float ;
+                                          rdfs:label "Path energy 97 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_98
+<http://example.org/pathenergy_aa001e_98> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.33014"^^xsd:float ;
+                                          rdfs:label "Path energy 98 aa001e" .
+
+
+###  http://example.org/pathenergy_aa001e_99
+<http://example.org/pathenergy_aa001e_99> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "-306.3301"^^xsd:float ;
+                                          rdfs:label "Path energy 99 aa001e" .
+
+
+###  http://example.org/zpe_aa001a
+<http://example.org/zpe_aa001a> rdf:type owl:NamedIndividual ,
+                                         <http://purl.org/gc/FloatValue> ;
+                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                <http://purl.org/gc/hasFloatValue> "0.104051"^^xsd:float ;
+                                rdfs:label "Zero-point energy aa001a" .
+
+
+###  http://example.org/zpe_aa001b
+<http://example.org/zpe_aa001b> rdf:type owl:NamedIndividual ,
+                                         <http://purl.org/gc/FloatValue> ;
+                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                <http://purl.org/gc/hasFloatValue> "0.10406"^^xsd:float ;
+                                rdfs:label "Zero-point energy aa001b" .
+
+
+###  http://example.org/zpe_aa001c
+<http://example.org/zpe_aa001c> rdf:type owl:NamedIndividual ,
+                                         <http://purl.org/gc/FloatValue> ;
+                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                <http://purl.org/gc/hasFloatValue> "0.103977"^^xsd:float ;
+                                rdfs:label "Zero-point energy aa001c" .
+
+
+###  http://example.org/zpe_aa001d
+<http://example.org/zpe_aa001d> rdf:type owl:NamedIndividual ,
+                                         <http://purl.org/gc/FloatValue> ;
+                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                <http://purl.org/gc/hasFloatValue> "0.103326"^^xsd:float ;
+                                rdfs:label "Zero-point energy aa001d" .
+
+
+###  http://example.org/zpe_aa001d-smd
+<http://example.org/zpe_aa001d-smd> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/FloatValue> ;
+                                    <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                    <http://purl.org/gc/hasFloatValue> "0.103211"^^xsd:float ;
+                                    rdfs:label "Zero-point energy aa001d-smd" .
+
+
+###  http://example.org/zpe_aa001d-smd-hess
+<http://example.org/zpe_aa001d-smd-hess> rdf:type owl:NamedIndividual ,
+                                                  <http://purl.org/gc/FloatValue> ;
+                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                         <http://purl.org/gc/hasFloatValue> "0.102539"^^xsd:float ;
+                                         rdfs:label "Zero-point energy aa001d-smd-hess" .
+
+
+###  http://example.org/zpe_aa001g
+<http://example.org/zpe_aa001g> rdf:type owl:NamedIndividual ,
+                                         <http://purl.org/gc/FloatValue> ;
+                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                <http://purl.org/gc/hasFloatValue> "0.111006"^^xsd:float ;
+                                rdfs:label "Zero-point energy aa001g" .
+
+
+###  http://example.org/zpe_aa001g-smd
+<http://example.org/zpe_aa001g-smd> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/FloatValue> ;
+                                    <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                    <http://purl.org/gc/hasFloatValue> "0.110793"^^xsd:float ;
+                                    rdfs:label "Zero-point energy aa001g-smd" .
+
+
+###  http://example.org/zpe_aa001h
+<http://example.org/zpe_aa001h> rdf:type owl:NamedIndividual ,
+                                         <http://purl.org/gc/FloatValue> ;
+                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                <http://purl.org/gc/hasFloatValue> "0.105542"^^xsd:float ;
+                                rdfs:label "Zero-point energy aa001h" .
+
+
+###  http://example.org/zpe_aa001h-smd
+<http://example.org/zpe_aa001h-smd> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/FloatValue> ;
+                                    <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                    <http://purl.org/gc/hasFloatValue> "0.107229"^^xsd:float ;
+                                    rdfs:label "Zero-point energy aa001h-smd" .
+
+
+###  http://example.org/zpe_aa002-aldehyde-bare
+<http://example.org/zpe_aa002-aldehyde-bare> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/FloatValue> ;
+                                             <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                             <http://purl.org/gc/hasFloatValue> "0.05596"^^xsd:float ;
+                                             rdfs:label "Zero-point energy aa002-aldehyde-bare" .
+
+
+###  http://example.org/zpe_aa002-hydrate-bare
+<http://example.org/zpe_aa002-hydrate-bare> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/gc/FloatValue> ;
+                                            <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                            <http://purl.org/gc/hasFloatValue> "0.085321"^^xsd:float ;
+                                            rdfs:label "Zero-point energy aa002-hydrate-bare" .
+
+
+###  http://example.org/zpe_aa002-hydrate-bare-smd
+<http://example.org/zpe_aa002-hydrate-bare-smd> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/FloatValue> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                                <http://purl.org/gc/hasFloatValue> "0.085396"^^xsd:float ;
+                                                rdfs:label "Zero-point energy aa002-hydrate-bare-smd" .
+
+
+###  http://example.org/zpe_aa002-water-bare
+<http://example.org/zpe_aa002-water-bare> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/FloatValue> ;
+                                          <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                          <http://purl.org/gc/hasFloatValue> "0.021277"^^xsd:float ;
+                                          rdfs:label "Zero-point energy aa002-water-bare" .
+
+
+###  http://example.org/zpe_aa002-water-bare-smd
+<http://example.org/zpe_aa002-water-bare-smd> rdf:type owl:NamedIndividual ,
+                                                       <http://purl.org/gc/FloatValue> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/hartree> ;
+                                              <http://purl.org/gc/hasFloatValue> "0.021229"^^xsd:float ;
+                                              rdfs:label "Zero-point energy aa002-water-bare-smd" .
 
 
 ###  http://purl.org/gc/Amber
