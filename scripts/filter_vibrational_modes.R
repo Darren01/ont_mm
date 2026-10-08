@@ -24,6 +24,9 @@
 #' these TSVs, though the original .log file remains the real source
 #' of truth and is unaffected).
 #'
+#' An experiment whose .log can't be found or diagnosed is reported and
+#' left exactly as it was - all of its peaks and their values are kept.
+#'
 #' @param ontology_dir Directory holding the three instance TSVs.
 #' @param output_dir Directory holding the real .log files, needed to
 #'   re-derive each experiment's own diagnostic modes.
@@ -81,6 +84,10 @@ filter_vibrational_modes <- function(ontology_dir, output_dir) {
     if (is.null(diag)) {
       skipped <- c(skipped, exp_name)
       new_spectra_data <- c(new_spectra_data, line)
+      # An experiment whose modes can't be diagnosed is left exactly as it
+      # was: keep every peak its spectrum lists, so the spectrum never
+      # points at peaks that no longer exist.
+      kept_peak_ids <- c(kept_peak_ids, strsplit(fields[4], "|", fixed = TRUE)[[1]])
       next
     }
 
@@ -144,7 +151,7 @@ filter_vibrational_modes <- function(ontology_dir, output_dir) {
   writeLines(c(float_header, new_float_data), float_file)
 
   cat("Processed:", if (length(processed)) paste(processed, collapse = ", ") else "(none)", "\n")
-  cat("Skipped (log file not found or diagnostics failed):",
+  cat("Skipped, left unfiltered (log file not found or diagnostics failed):",
       if (length(skipped)) paste(skipped, collapse = ", ") else "(none)", "\n")
   cat("Peak rows:", peaks_before, "->", length(new_peak_data),
       sprintf("(%.0f%% reduction)", 100 * (1 - length(new_peak_data) / peaks_before)), "\n")

@@ -20,6 +20,12 @@
 # replaces identify_diagnostic_modes() with a stub so no .log files are
 # needed. Worth re-running after any change to filter_vibrational_modes.R.
 #
+# A second, smaller bug in the same function was found at the same time:
+# for an experiment whose log could not be found or diagnosed, the filter
+# kept the experiment's spectrum row but deleted its peak rows, leaving the
+# spectrum pointing at peaks that no longer existed. Such an experiment is
+# reported and must be left exactly as it was - section 6 below.
+#
 # Paths can be overridden for testing a different copy of the script:
 #   ONT_MM_PATH   (default ~/Projects/active/ont_mm)
 #   FILTER_SCRIPT (default <ONT_MM_PATH>/scripts/filter_vibrational_modes.R)
@@ -32,11 +38,14 @@ cat("Checking:", script, "\n\n")
 
 # ---- fixture ---------------------------------------------------------------
 # expA: 8 modes, diagnostic ones are 1, 2 and 8.  expB: 6 modes, diagnostic 3, 4.
+# expC: 4 modes, but its log cannot be diagnosed, so it must be left alone.
 keep_modes <- list(expA = c(1L, 2L, 8L), expB = c(3L, 4L))
-n_modes    <- c(expA = 8L, expB = 6L)
+n_modes    <- c(expA = 8L, expB = 6L, expC = 4L)
 
 identify_diagnostic_modes <- function(log_file) {
-  list(keep_modes = keep_modes[[sub("\\.log$", "", basename(log_file))]])
+  k <- keep_modes[[sub("\\.log$", "", basename(log_file))]]
+  if (is.null(k)) stop("log file not found")      # expC
+  list(keep_modes = k)
 }
 
 peak_row  <- function(e, n) sprintf("ex:peak_%s_%d\tMode %d %s\tgc:FrequencyPeak\tex:freqval_%s_%d\tex:intval_%s_%d",
@@ -67,7 +76,7 @@ write_table("float_value_template_instances.tsv",
 before <- lapply(c(spectra = "spectra", peak = "peak", float = "float_value"), function(t)
   readLines(file.path(dir, paste0(t, "_template_instances.tsv")))[-(1:2)])
 
-invisible(capture.output(filter_vibrational_modes(dir, "/nonexistent")))
+suppressWarnings(invisible(capture.output(filter_vibrational_modes(dir, "/nonexistent"))))
 
 after <- lapply(c(spectra = "spectra", peak = "peak", float = "float_value"), function(t)
   readLines(file.path(dir, paste0(t, "_template_instances.tsv")))[-(1:2)])
@@ -80,9 +89,10 @@ check <- function(label, ok) {
 }
 
 # ---- 1. only the diagnostic peaks remain -----------------------------------
-cat("=== 1. Only the diagnostic peaks are kept ===\n")
-expected_peaks <- c(sprintf("ex:peak_expA_%d", keep_modes$expA), sprintf("ex:peak_expB_%d", keep_modes$expB))
-check(sprintf("peak table holds exactly the %d diagnostic peaks", length(expected_peaks)),
+cat("=== 1. Only the diagnostic peaks are kept (plus every peak of an undiagnosable experiment) ===\n")
+expC_peaks <- sprintf("ex:peak_expC_%d", seq_len(n_modes[["expC"]]))
+expected_peaks <- c(sprintf("ex:peak_expA_%d", keep_modes$expA), sprintf("ex:peak_expB_%d", keep_modes$expB), expC_peaks)
+check(sprintf("peak table holds exactly the %d expected peaks", length(expected_peaks)),
       setequal(ids(after$peak), expected_peaks))
 
 # ---- 2. peak values follow their peaks ------------------------------------
@@ -115,6 +125,14 @@ check("every peak a remaining spectrum lists still exists",
 cat("\n=== 5. The filter only removes - it never adds or alters a row ===\n")
 check("peak rows are a subset of the original",  all(after$peak  %in% before$peak))
 check("float rows are a subset of the original", all(after$float %in% before$float))
+
+# ---- 6. an undiagnosable experiment is left alone --------------------------
+cat("\n=== 6. An experiment that cannot be diagnosed is left exactly as it was ===\n")
+check("every peak of the undiagnosable experiment is still there", all(expC_peaks %in% ids(after$peak)))
+check("its peak rows are unchanged",
+      setequal(after$peak[grepl("^ex:peak_expC_", after$peak)], before$peak[grepl("^ex:peak_expC_", before$peak)]))
+check("its spectrum row is unchanged",
+      identical(after$spectra[grepl("^ex:spectrum_expC\t", after$spectra)], before$spectra[grepl("^ex:spectrum_expC\t", before$spectra)]))
 
 cat(sprintf("\n%s\n", if (failures == 0) "All checks passed." else sprintf("%d check(s) FAILED.", failures)))
 if (failures > 0) quit(status = 1)
