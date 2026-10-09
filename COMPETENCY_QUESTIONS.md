@@ -543,6 +543,47 @@ For `aa001e` this gives a barrier of about 91 kJ/mol from the first
 point, with the highest point at index 200, and the last point about
 19 kJ/mol below the first.
 
+### Barriers and reaction energy from the same data (question 15)
+
+Activation energy and reaction energy are differences between three
+points on this profile: the first, the highest, and the last. SPARQL
+can fetch the energies but is awkward at subtraction and unit
+conversion, so the subtraction is done in R, on the same `path.csv`:
+
+```r
+d  <- read.csv("path.csv")
+kJ <- 2625.4996                      # kJ/mol per hartree
+e_first <- d$energy[1]
+e_last  <- d$energy[nrow(d)]
+e_top   <- max(d$energy)             # highest point on the path
+
+data.frame(
+  quantity   = c("barrier from the first point",
+                 "barrier from the last point",
+                 "reaction energy (last - first)"),
+  kJ_per_mol = round(c(e_top - e_first, e_top - e_last,
+                       e_last - e_first) * kJ, 1)
+)
+```
+
+For `aa001e` this gives 91.3, 110.7 and -19.3 kJ/mol (checked by hand
+from the query output).
+
+Read the results with these cautions:
+
+- **Which end is the reactant?** The index runs from one end of the
+  path to the other. Before calling a barrier "forward" or "reverse",
+  check which end is the reactant (the IRC forward and backward
+  experiments are named in the tables). If the first point is the
+  product, the two barriers swap and the reaction energy changes sign.
+- **These are estimates.** The ends of an IRC are usually not fully
+  optimised minima, and the energies are electronic only, with no
+  zero-point correction. For a reported barrier, take the optimised
+  reactant, transition state and product energies from #11 and apply
+  the same subtraction.
+- **The highest point approximates the transition state.** It is the
+  highest sampled point, not a located saddle point.
+
 ## 14. Which experiments used a specific method/basis-set combination?
 
 **Status: ✅ Answerable. Verified working**, on both `caa` and `aa` -
@@ -570,10 +611,11 @@ to be read out of the README by hand.
 
 ## 15. What is the activation energy (forward/reverse barrier) and reaction energy for a given pathway?
 
-**Status: ❌ Not really answerable as a single SPARQL query today.**
-Every individual energy value needed is in the graph (see #11), but
-the actual *subtraction* has always been done by hand or in R
-(`compare_energies()`), not in SPARQL. Genuinely open, not solved.
+**Status: ✅ Answerable, with a short R step.** Run the query in #13
+to get the path's energies, then subtract in R - see "Barriers and
+reaction energy from the same data" at the end of #13. SPARQL returns
+the numbers but is not the right tool for the subtraction, so this is
+answered by SPARQL plus a few lines of R, not by a single query.
 
 ---
 
