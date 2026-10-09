@@ -310,27 +310,47 @@ SELECT ?exp ?constraint WHERE {
 
 ## 7. Find a successful run of a given type, at a given level of theory, with its input/output/data files
 
-**Status: ⚠️ Partially answerable** - the type filter, level-of-theory
-filter, and file lookup now all work correctly. One real gap remains:
+**Status: ✅ Answerable. Verified working** on the `aa` graph (12 runs,
+one row each).
 
 ```sparql
-PREFIX gc: <http://purl.org/gc/>
+PREFIX ex:   <http://example.org/>
+PREFIX gc:   <http://purl.org/gc/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 
-SELECT ?exp ?type ?method ?inputFile ?outputFile WHERE {
+SELECT ?exp ?type ?method ?input ?inputPath ?data ?dataPath ?log ?logPath WHERE {
   ?exp a ?type .
   FILTER(?type IN (gc:GeometryOptimization, gc:SaddlePoint, gc:SinglePoint))
   ?exp gc:hasMethod ?method .
   FILTER(?method = "wB97X-D")
-  OPTIONAL { ?exp prov:used ?inputFile . }
-  OPTIONAL { ?exp prov:generated ?outputFile . }
+  OPTIONAL { ?exp prov:used ?input .
+             OPTIONAL { ?input ex:fileURL ?inputPath } }
+  OPTIONAL { ?exp prov:generated ?data . ?data a ex:DataFile .
+             OPTIONAL { ?data ex:fileURL ?dataPath } }
+  OPTIONAL { ?exp prov:generated ?log . ?log a ex:LogFile .
+             OPTIONAL { ?log ex:fileURL ?logPath } }
 }
 ORDER BY ?type ?exp
 ```
 
-**The `.dat` file isn't tracked at all.** Only `prov:used` (`.inp`)
-and `prov:generated` (`.log`) exist. Still genuinely open, unrelated
-to today's level-of-theory work.
+Every run has three files: the input (`prov:used`) and two outputs
+(`prov:generated`), a `DataFile` and a `LogFile`. Asking for each
+output by its class keeps it to **one row per run**; a plain
+`?exp prov:generated ?outputFile` returns one row per output, so every
+run appears twice.
+
+**File paths.** Each `...Path` column is the file's `ex:fileURL`. Two
+things to know:
+
+- The `.dat` files have no `ex:fileURL`, so `?dataPath` is empty. Only
+  the input and the log are looked up on disk when the graph is built.
+- To show **paths instead of names**, delete the ID columns from the
+  `SELECT` line (`?input ?data ?log`) and keep the path columns. To
+  show **only the names**, delete the three `OPTIONAL { ... ex:fileURL
+  ... }` lines and their path variables.
+
+Swap `"wB97X-D"` or the list of types for anything else; both are
+plain filters.
 
 ## 8. Which results show an imaginary (negative) frequency?
 
@@ -427,18 +447,31 @@ SELECT ?exp ?zpeVal ?enthalpyVal ?entropyVal ?gibbsVal ?electronicVal WHERE {
 
 ## 12. What is the full chain of files (input → intermediate data → output) for a given experiment?
 
-**Status: ⚠️ Partially answerable - blocked by the same gap as #7.**
-`prov:used`/`prov:generated` work; the intermediate `.dat` file has
-no property to query for at all.
+**Status: ✅ Answerable. Verified working.** The `.dat` file is
+tracked: it is an `ex:DataFile` that the experiment `prov:generated`,
+alongside its `ex:LogFile`. The chain can also go one step further back,
+to whatever produced the input.
 
 ```sparql
+PREFIX ex:   <http://example.org/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 
-SELECT ?exp ?inputFile ?outputFile WHERE {
-  OPTIONAL { ?exp prov:used ?inputFile . }
-  OPTIONAL { ?exp prov:generated ?outputFile . }
+SELECT ?exp ?input ?madeBy ?data ?log WHERE {
+  VALUES ?exp { ex:exp_aa001d }
+  ?exp prov:used ?input .
+  OPTIONAL { ?input prov:wasGeneratedBy ?madeBy }
+  OPTIONAL { ?exp prov:generated ?data . ?data a ex:DataFile }
+  OPTIONAL { ?exp prov:generated ?log  . ?log  a ex:LogFile }
 }
 ```
+
+Swap `ex:exp_aa001d` for any experiment. `?madeBy` is what produced the
+input file: `ex:avogadro_build` for a hand-built structure, or an
+earlier experiment when the input came from a previous run's result
+(4 such links in `aa`). To follow the chain all the way back, repeat
+the hop with a property path: `?input prov:wasGeneratedBy+ ?ancestor`.
+To list paths as well, add `OPTIONAL { ?input ex:fileURL ?inputPath }`
+(see #7).
 
 ## 13. What are the points along a given reaction path, in order, with their energies?
 
