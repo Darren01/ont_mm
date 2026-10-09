@@ -475,21 +475,73 @@ To list paths as well, add `OPTIONAL { ?input ex:fileURL ?inputPath }`
 
 ## 13. What are the points along a given reaction path, in order, with their energies?
 
-**Status: ⚠️ Partially answerable, genuinely untested.** `hasIndex`
-gives real ordering directly; `hasPathEnergy` follows the same
-reification pattern as everything else energy-related, needing one
-more hop to `hasFloatValue`. Schema-verified but not yet actually run.
+**Status: ✅ Answerable. Verified working** on the `aa` graph: path
+`ex:reactionpath_aa001e` returns all 268 points, in order, each with
+its energy.
 
 ```sparql
+PREFIX ex: <http://example.org/>
 PREFIX gc: <http://purl.org/gc/>
 
-SELECT ?point ?index ?energyVal WHERE {
-  ?path gc:hasReactionPathPoint ?point .
-  ?point gc:hasIndex ?index .
-  OPTIONAL { ?point gc:hasPathEnergy ?energy . ?energy gc:hasFloatValue ?energyVal . }
+SELECT ?index ?energy WHERE {
+  ex:reactionpath_aa001e gc:hasReactionPathPoint ?point .
+  ?point gc:hasIndex ?index ;
+         gc:hasPathEnergy ?e .
+  ?e gc:hasFloatValue ?energy .
 }
 ORDER BY ?index
 ```
+
+Swap `ex:reactionpath_aa001e` for any other path. Leaving the path out
+(`?path gc:hasReactionPathPoint ?point`) works only while the graph
+holds a single path; with several, their points are mixed together.
+
+Three things worth knowing about what comes back:
+
+- **Energies are absolute, in hartree** (about -306.33 here), not
+  relative to the start. See the `gc:hasPathEnergy` note in `GLOSSARY.md`.
+- **The order is the point index only.** There is no IRC coordinate
+  (distance along the path), so a plot against index is not evenly
+  spaced in reaction coordinate.
+- **One path can belong to two experiments.** `ex:reactionpath_aa001e`
+  is the result of both `exp_aa001e` (IRC forward) and `exp_aa001f`
+  (IRC backward): it is the two halves joined into one path.
+
+### Getting the data out for plotting
+
+`ask` prints a text table, which is for reading. To plot, write the
+same question to a CSV file with `arq`. Save the query above as
+`~/queries/path.rq`, then:
+
+```bash
+arq --data "$G" --query ~/queries/path.rq --results CSV > path.csv
+head -3 path.csv
+```
+
+The first lines look like this - plain numbers, with no
+`^^xsd:float` suffixes:
+
+```
+index,energy
+1,-306.33273
+2,-306.3327
+```
+
+Then plot it in R, converting hartree to energy relative to the first
+point in kJ/mol (1 hartree = 2625.4996 kJ/mol):
+
+```r
+d <- read.csv("path.csv")
+d$kJ <- (d$energy - d$energy[1]) * 2625.4996
+plot(d$index, d$kJ, type = "l",
+     xlab = "Path point index",
+     ylab = "Energy relative to first point (kJ/mol)")
+d[which.max(d$energy), ]      # the highest point on the path
+```
+
+For `aa001e` this gives a barrier of about 91 kJ/mol from the first
+point, with the highest point at index 200, and the last point about
+19 kJ/mol below the first.
 
 ## 14. Which experiments used a specific method/basis-set combination?
 
