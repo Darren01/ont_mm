@@ -57,7 +57,8 @@ PLAYGROUND_NOTES = {
     6: {"label": "Find the exact geometry",
         "blurb": "Which experiment used a specific, known constraint value."},
     7: {"label": "Runs at a level of theory",
-        "blurb": "Runs of a given type and method, with their input, data and log files and the paths to them."},
+        "skip": "it has an OPTIONAL inside an OPTIONAL, which the playground's query engine "
+                "(rdflib.js) leaves unbound, so the file columns come back empty. Run it with ask/arq instead."},
     8: {"label": "Imaginary frequencies",
         "blurb": "A data-quality check - flags any result whose geometry may not be a genuine minimum."},
     9: {"label": "One imaginary frequency?",
@@ -135,6 +136,9 @@ def update_doc_links(text, questions):
     """Put one 'Try it in the playground' line under each question heading."""
     for q in questions:
         if q["skip"] or not q["query"]:
+            # No link for a question the playground cannot run; remove a stale one.
+            stale = re.compile(r"(?m)^(## %d\. .*)\n\n?%s.*\n" % (q["n"], re.escape(LINK_MARK)))
+            text = stale.sub(lambda m: m.group(1) + "\n", text, count=1)
             continue
         ds = q["dataset"] or "caa"
         link = (f"{LINK_MARK} [Try this in the playground]"

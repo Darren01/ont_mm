@@ -35,22 +35,28 @@ once you've built a graph.
 **Status key:** ✅ answerable today · ⚠️ partially answerable, with a
 real, specific gap · ❌ not answerable yet, but planned
 
-**A real, important limitation of the playground tool, found by
-actually running every query below against it:** `rdflib.js` (the
-engine behind the playground) has a confirmed, open, unresolved bug
-with `FILTER` - [its own GitHub issue #535](https://github.com/linkeddata/rdflib.js/issues/535)
-states plainly that `FILTER(contains(...))` "does not filter
-anything." Real testing here found the same for `FILTER(?var IN
-(...))` and numeric comparisons. **The playground tool now works
-around this itself** - it strips `FILTER(...)`/`LIMIT`/`OFFSET` from
-your query before sending it to `rdflib.js`, and applies all three by
-hand to the results afterwards, so the queries below work correctly
-*in the playground specifically*. Run the same raw SPARQL text against
-a real engine (`robot query`, Jena, etc.) and it should also work
-there directly, without needing any of this. `STRAFTER`/`BIND`-style
-expressions were also tested and found unreliable in `rdflib.js` -
-the playground's own short-label toggle is the reliable way to get
-short, readable labels within the tool itself.
+**What the playground can and cannot run.** The engine behind it,
+`rdflib.js`, has real gaps - for one, it silently ignores `FILTER`
+([its own issue #535](https://github.com/linkeddata/rdflib.js/issues/535)).
+So the playground works around them itself: it takes `FILTER`, `ORDER BY`,
+`LIMIT`/`OFFSET`, `DISTINCT` and `COUNT` out of your query before
+`rdflib.js` sees it, and applies them by hand to the results. Every
+question below that has a "Try this in the playground" link was also
+checked against a second SPARQL engine (Python's `rdflib`). The one
+disagreement, question 6, is that engine comparing a decimal `1.2` with
+a float `1.2` differently from Jena, which gives the answer shown.
+
+It handles `FILTER` comparisons with a number or text, `IN (...)`,
+`CONTAINS`, `STRSTARTS`, `STRENDS` and `REGEX`, joined with `&&`, and
+`COUNT` with or without `GROUP BY`. It **refuses**, with a message and
+without running anything, `UNION`, `VALUES`, `MINUS`, `BIND`, an
+`OPTIONAL` inside another `OPTIONAL`, and any `FILTER` it does not
+recognise - because `rdflib.js` would otherwise ignore the part it does
+not understand and quietly return too many rows. Those are the questions
+shown below as a dashed button in the playground; run them with `ask`
+(Jena's `arq`) instead, as in the
+[SPARQL tutorial](./SPARQL_TUTORIAL.md). The same query text runs
+unchanged in a real engine (`robot query`, Jena, etc.).
 
 Ordered roughly easiest to hardest - by how many hops through the
 graph a question needs, not by how interesting the question is.
@@ -321,8 +327,6 @@ SELECT ?exp ?constraint WHERE {
 ```
 
 ## 7. Find a successful run of a given type, at a given level of theory, with its input/output/data files
-
-<!-- playground-link --> [Try this in the playground](https://darren01.github.io/ont_mm/tools/sparql_playground.html?dataset=caa&cq=7)
 
 **Status: ✅ Answerable. Verified working** on the `aa` graph (12 runs,
 one row each).

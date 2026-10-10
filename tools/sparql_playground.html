@@ -412,9 +412,23 @@ function linkifyValue(value) {
 function showError(err) {
   const box = document.getElementById("error");
   box.style.display = "block";
-  box.textContent = "Something went wrong:\n\n" + (err && err.message ? err.message : String(err)) +
+  const msg = err && err.message ? err.message : String(err);
+  // A limit of this tool that we know about and can explain: say it
+  // plainly, without the "report this" boilerplate meant for real bugs.
+  if (err && err.expected) {
+    box.textContent = "This query was not run.\n\n" + msg;
+    return;
+  }
+  box.textContent = "Something went wrong:\n\n" + msg +
     "\n\nIf you're seeing this, please copy this whole message (and check your " +
     "browser's own developer console for anything extra) and report it back.";
+}
+
+// An Error for a limit we know about (not a bug).
+function expectedError(message) {
+  const e = new Error(message);
+  e.expected = true;
+  return e;
 }
 
 // =====================================================================
@@ -501,9 +515,9 @@ const CQS = [
     "status": "✅",
     "query": "SELECT ?exp ?type ?method ?input ?inputPath ?data ?dataPath ?log ?logPath WHERE {\n  ?exp a ?type .\n  FILTER(?type IN (gc:GeometryOptimization, gc:SaddlePoint, gc:SinglePoint))\n  ?exp gc:hasMethod ?method .\n  FILTER(?method = \"wB97X-D\")\n  OPTIONAL { ?exp prov:used ?input .\n             OPTIONAL { ?input ex:fileURL ?inputPath } }\n  OPTIONAL { ?exp prov:generated ?data . ?data a ex:DataFile .\n             OPTIONAL { ?data ex:fileURL ?dataPath } }\n  OPTIONAL { ?exp prov:generated ?log . ?log a ex:LogFile .\n             OPTIONAL { ?log ex:fileURL ?logPath } }\n}\nORDER BY ?type ?exp",
     "label": "Runs at a level of theory",
-    "blurb": "Runs of a given type and method, with their input, data and log files and the paths to them.",
+    "blurb": null,
     "dataset": null,
-    "skip": null
+    "skip": "it has an OPTIONAL inside an OPTIONAL, which the playground's query engine (rdflib.js) leaves unbound, so the file columns come back empty. Run it with ask/arq instead."
   },
   {
     "n": 8,
@@ -877,6 +891,81 @@ function init() {
   loadDataset();
 }
 
+// One piece of a FILTER, as a function of a result row - or null if it is
+// not a shape the playground knows. Used by runQuery() above.
+function makeFilterAtom(a) {
+  while (a.charAt(0) === "(" && a.charAt(a.length - 1) === ")") a = a.slice(1, -1).trim();
+  const unq = function (t) { return t.replace(/\\"/g, '"'); };
+  const iri = function (t) { return expandPrefixed(t.replace(/^<|>$/g, "")); };
+  let m;
+  const mk = function (v, fn) { fn.varName = v; return fn; };
+
+  m = a.match(/^\?(\w+)\s*(<=|>=|<|>|=|!=)\s*(-?\d+(?:\.\d+)?(?:[eE][-+]?\d+)?)$/);
+  if (m) {
+    const num = parseFloat(m[3]), op = m[2], v = m[1];
+    return mk(v, function (row) {
+      const x = parseFloat(row[v]);
+      if (isNaN(x)) return false;
+      return op === "<" ? x < num : op === ">" ? x > num : op === "<=" ? x <= num :
+             op === ">=" ? x >= num : op === "=" ? x === num : x !== num;
+    });
+  }
+  m = a.match(/^\?(\w+)\s*(=|!=)\s*"((?:[^"\\]|\\.)*)"$/);
+  if (m) {
+    const text = unq(m[3]), v = m[1], neg = m[2] === "!=";
+    return mk(v, function (row) { return row[v] !== undefined && ((row[v] === text) !== neg); });
+  }
+  m = a.match(/^\?(\w+)\s*(=|!=)\s*(<[^>]+>|[\w-]+:[\w\-]+)$/);
+  if (m) {
+    const target = iri(m[3]), v = m[1], neg = m[2] === "!=";
+    return mk(v, function (row) { return row[v] !== undefined && ((row[v] === target) !== neg); });
+  }
+  m = a.match(/^\?(\w+)\s+IN\s*\(([^)]*)\)$/i);
+  if (m) {
+    const v = m[1];
+    const items = m[2].split(",").map(function (t) {
+      t = t.trim();
+      const q = t.match(/^"((?:[^"\\]|\\.)*)"$/);
+      return q ? unq(q[1]) : iri(t);
+    });
+    return mk(v, function (row) { return items.indexOf(row[v]) !== -1; });
+  }
+  m = a.match(/^(CONTAINS|STRSTARTS|STRENDS)\s*\(\s*(?:STR\s*\(\s*\?(\w+)\s*\)|\?(\w+))\s*,\s*"((?:[^"\\]|\\.)*)"\s*\)$/i);
+  if (m) {
+    const kind = m[1].toUpperCase(), v = m[2] || m[3], text = unq(m[4]);
+    return mk(v, function (row) {
+      const x = row[v];
+      if (x === undefined) return false;
+      return kind === "CONTAINS" ? x.indexOf(text) !== -1 :
+             kind === "STRSTARTS" ? x.indexOf(text) === 0 :
+             x.length >= text.length && x.slice(x.length - text.length) === text;
+    });
+  }
+  m = a.match(/^REGEX\s*\(\s*(?:STR\s*\(\s*\?(\w+)\s*\)|\?(\w+))\s*,\s*"((?:[^"\\]|\\.)*)"\s*(?:,\s*"([a-z]*)"\s*)?\)$/i);
+  if (m) {
+    const v = m[1] || m[2];
+    let rx;
+    try { rx = new RegExp(unq(m[3]), (m[4] || "").replace(/[^ims]/g, "")); } catch (e) { return null; }
+    return mk(v, function (row) { return row[v] !== undefined && rx.test(row[v]); });
+  }
+  return null;
+}
+
+// True if an OPTIONAL { ... } block contains another OPTIONAL.
+function hasNestedOptional(q) {
+  const re = /\bOPTIONAL\s*\{/gi;
+  let m;
+  while ((m = re.exec(q)) !== null) {
+    let depth = 1, j = re.lastIndex;
+    for (; j < q.length && depth > 0; j++) {
+      if (q[j] === "{") depth++;
+      else if (q[j] === "}") depth--;
+    }
+    if (/\bOPTIONAL\b/i.test(q.slice(re.lastIndex, j))) return true;
+  }
+  return false;
+}
+
 function runQuery() {
   const runBtn = document.getElementById("run-btn");
   const resultsEl = document.getElementById("results");
@@ -893,8 +982,8 @@ function runQuery() {
     if (missing.length > 0) {
       runBtn.disabled = false;
       runBtn.textContent = "Run query";
-      throw new Error("This graph does not contain " + missing.join(", ") + ", so the query was not run " +
-        "(it would freeze this page). Some questions name files from one example graph only - " +
+      throw expectedError("This graph does not contain " + missing.join(", ") + " (running the query " +
+        "would freeze this page). Some questions name files from one example graph only - " +
         "check the dataset selector above.");
     }
 
@@ -960,7 +1049,7 @@ function runQuery() {
     // "?x a ?type" genuinely returns both and needs this to show only
     // the meaningful one. Strips a wrapping <...> if given a full URI
     // directly, then reuses expandPrefixed() the same way IN() does.
-    queryText = queryText.replace(/FILTER\s*\(\s*\?(\w+)\s*!=\s*(\S+?)\s*\)/gi,
+    queryText = queryText.replace(/FILTER\s*\(\s*\?(\w+)\s*!=\s*(?!")(\S+?)\s*\)/gi,
       function (whole, varName, rawValue) {
         const expanded = expandPrefixed(rawValue.replace(/^<|>$/g, ""));
         const f = function (row) {
@@ -970,6 +1059,64 @@ function runQuery() {
         manualFilters.push(f);
         return "";
       });
+
+    // Syntax the playground's engine (rdflib.js) cannot run at all. Left
+    // alone it either errors cryptically or - worse - quietly ignores
+    // the part it does not understand and returns too many rows. Say so.
+    const queryNoStrings = queryText.replace(/"(?:[^"\\]|\\.)*"/g, '""');
+    const unsupported = queryNoStrings.match(/\b(UNION|VALUES|MINUS|BIND|SERVICE)\b|FILTER\s+(?:NOT\s+)?EXISTS/i);
+    if (unsupported) {
+      throw expectedError("The playground's query engine (rdflib.js) cannot run " + unsupported[0].toUpperCase() +
+        ". Nothing is wrong with your query - run it with ask (Jena's arq) instead, as in the SPARQL tutorial.");
+    }
+    if (hasNestedOptional(queryNoStrings)) {
+      throw expectedError("The playground's query engine (rdflib.js) cannot run an OPTIONAL inside another OPTIONAL: " +
+        "it leaves the variables unbound, so the columns would come back empty. Nothing is wrong with your query - " +
+        "run it with ask (Jena's arq) instead, as in the SPARQL tutorial.");
+    }
+
+    // Any FILTER the three shapes above did not recognise: try a few more
+    // (text and number comparisons, IN, CONTAINS / STRSTARTS / STRENDS,
+    // REGEX, joined with &&), and refuse anything else rather than
+    // ignore it - an ignored FILTER silently returns every row.
+    // FILTER(BOUND(...)) is left for rdflib.js, which handles it itself.
+    (function () {
+      const re = /FILTER\s*\(/gi;
+      let m, out = "", last = 0;
+      while ((m = re.exec(queryText)) !== null) {
+        let depth = 1, j = re.lastIndex, inStr = false;
+        for (; j < queryText.length && depth > 0; j++) {
+          const ch = queryText[j];
+          if (ch === '"' && queryText[j - 1] !== "\\") inStr = !inStr;
+          else if (!inStr) { if (ch === "(") depth++; else if (ch === ")") depth--; }
+        }
+        const body = queryText.slice(re.lastIndex, j - 1).trim();
+        if (/BOUND\s*\(/i.test(body)) continue;
+        const atoms = [];
+        let cur = "", d2 = 0, str2 = false;
+        for (let k = 0; k < body.length; k++) {
+          const ch = body[k];
+          if (ch === '"' && body[k - 1] !== "\\") str2 = !str2;
+          if (!str2) { if (ch === "(") d2++; if (ch === ")") d2--; }
+          if (!str2 && d2 === 0 && ch === "&" && body[k + 1] === "&") { atoms.push(cur); cur = ""; k++; continue; }
+          cur += ch;
+        }
+        atoms.push(cur);
+        const preds = atoms.map(function (a) { return makeFilterAtom(a.trim()); });
+        if (preds.some(function (x) { return x === null; })) {
+          throw expectedError("The playground cannot apply this FILTER (ignoring it would " +
+            "return too many rows):\n  FILTER(" + body + ")\nIt handles comparisons with a number or text, IN (...), " +
+            "CONTAINS, STRSTARTS, STRENDS and REGEX, joined with &&. Run it with ask (Jena's arq) instead.");
+        }
+        const f = function (row) { return preds.every(function (pr) { return pr(row); }); };
+        f.vars = preds.map(function (pr) { return pr.varName; });
+        manualFilters.push(f);
+        out += queryText.slice(last, m.index);
+        last = j;
+        re.lastIndex = j;
+      }
+      queryText = out + queryText.slice(last);
+    })();
 
     // SELECT DISTINCT ?var [?var2 ...] - rdflib.js parses the DISTINCT
     // keyword without error but genuinely ignores it (confirmed
@@ -1011,6 +1158,13 @@ function runQuery() {
     // aggregation. The SELECT/GROUP BY/ORDER BY clauses are rewritten
     // into a plain, ungrouped projection before parsing; the real
     // grouping, counting, and sorting happen by hand below.
+    let countOnly = null;
+    const countOnlyMatch = queryText.match(/SELECT\s+\(\s*COUNT\s*\(\s*(\*|DISTINCT\s+\?\w+|\?\w+)\s*\)\s+AS\s+\?(\w+)\s*\)\s+WHERE/i);
+    if (countOnlyMatch && !/GROUP\s+BY/i.test(queryText)) {
+      countOnly = { arg: countOnlyMatch[1].trim(), alias: countOnlyMatch[2] };
+      queryText = queryText.replace(countOnlyMatch[0], "SELECT * WHERE");
+    }
+
     let groupByInfo = null;
     const groupBySelectMatch = queryText.match(/SELECT\s+\?(\w+)\s+\(COUNT\(\?(\w+)\)\s+AS\s+\?(\w+)\)\s+WHERE/i);
     const groupByClauseMatch = queryText.match(/GROUP BY\s+\?(\w+)/i);
@@ -1027,6 +1181,41 @@ function runQuery() {
       queryText = queryText.replace(/GROUP BY\s+\?\w+/i, "");
       queryText = queryText.replace(/ORDER BY DESC\(\?\w+\)/i, "");
     }
+
+    // ORDER BY - done by hand, for every query. rdflib.js sorts
+    // everything as text, so an index column came back 1, 10, 100,
+    // 101 ... 2, 20 ... instead of 1, 2, 3. Numbers now sort as
+    // numbers; anything else sorts as text. Handles ?var, ASC(?var)
+    // and DESC(?var), several keys in a row. (GROUP BY and DISTINCT
+    // queries have already had their own ORDER BY taken out above.)
+    let orderKeys = null;
+    const keyPattern = "(?:(?:ASC|DESC)\\s*\\(\\s*\\?\\w+\\s*\\)|\\?\\w+)";
+    const orderMatch = queryText.match(new RegExp("ORDER\\s+BY\\s+(" + keyPattern + "(?:\\s+" + keyPattern + ")*)\\s*$", "i"));
+    if (orderMatch) {
+      orderKeys = [];
+      const partRe = /(?:(ASC|DESC)\s*\(\s*\?(\w+)\s*\)|\?(\w+))/gi;
+      let pm;
+      while ((pm = partRe.exec(orderMatch[1])) !== null) {
+        orderKeys.push({ v: pm[2] || pm[3], desc: (pm[1] || "").toUpperCase() === "DESC" });
+      }
+      queryText = queryText.replace(orderMatch[0], "");
+    }
+
+    // The SELECT list - rdflib.js returns every variable the pattern
+    // mentions, not just the ones asked for, so a query selecting
+    // ?index ?energy showed four columns. Show exactly the selected
+    // ones, in the order written (SELECT * is left alone).
+    let selectVars = null;
+    const selectMatch = queryText.match(/SELECT\s+((?:\?\w+\s+)+)WHERE/i);
+    if (selectMatch) {
+      selectVars = selectMatch[1].trim().split(/\s+/).map(function (v) { return v.slice(1); });
+    }
+
+    // rdflib.js never finishes (the button just stays on "Running...")
+    // when the last triple in a { } block has no full stop after it -
+    // "{ ?exp a ?type }" hangs, "{ ?exp a ?type . }" works - although
+    // SPARQL itself allows leaving it off. Add the missing full stop.
+    queryText = queryText.replace(/([\w>"':\]\-])(\s*)\}/g, "$1 .$2}");
 
     const query = $rdf.SPARQLToQuery(queryText, false, store);
 
@@ -1076,7 +1265,8 @@ function runQuery() {
         // have are left for the later pass, as before.
         const preApplied = new Set();
         manualFilters.forEach(function (f) {
-          if (f.varName && rows.some(function (r) { return f.varName in r; })) preApplied.add(f);
+          const vs = f.vars || (f.varName ? [f.varName] : []);
+          if (vs.length > 0 && vs.every(function (v) { return rows.some(function (r) { return v in r; }); })) preApplied.add(f);
         });
         if (preApplied.size > 0) {
           workingRows = rows.filter(function (row) {
@@ -1092,13 +1282,13 @@ function runQuery() {
           const groups = {};
           workingRows.forEach(function (row) {
             const key = row[groupByInfo.groupVar];
-            if (!groups[key]) groups[key] = new Set();
-            groups[key].add(row[groupByInfo.countVar]);
+            if (!groups[key]) groups[key] = { n: 0 };
+            if (row[groupByInfo.countVar] !== undefined) groups[key].n++;
           });
           workingRows = Object.keys(groups).map(function (key) {
             const grouped = {};
             grouped[groupByInfo.groupVar] = key;
-            grouped[groupByInfo.aliasVar] = groups[key].size;
+            grouped[groupByInfo.aliasVar] = groups[key].n;
             return grouped;
           });
           if (groupByInfo.orderByAlias === groupByInfo.aliasVar) {
@@ -1133,7 +1323,16 @@ function runQuery() {
           varNames = distinctVars.slice();
         }
 
-        if (workingRows.length === 0) {
+        if (selectVars && !groupByInfo && !distinctVars) {
+          varNames = selectVars.slice();
+        } else if (/SELECT\s+\*/i.test(queryText) && !countOnly) {
+          const where = queryText.slice(queryText.search(/WHERE/i));
+          varNames.sort(function (a, b) {
+            return where.indexOf("?" + a) - where.indexOf("?" + b);
+          });
+        }
+
+        if (workingRows.length === 0 && !countOnly) {
           resultsEl.innerHTML = "<p><em>No results.</em> This may be a real, correct " +
             "finding (the pattern genuinely doesn't match anything) rather than an error - " +
             "worth double-checking your query logic either way.</p>";
@@ -1147,10 +1346,43 @@ function runQuery() {
         // totalMatches and LIMIT/OFFSET should both reflect the
         // filtered set, not rdflib.js's raw, unfiltered result count.
         const laterFilters = manualFilters.filter(function (f) { return !preApplied.has(f); });
-        const filteredRows = laterFilters.length === 0 ? workingRows :
+        let filteredRows = laterFilters.length === 0 ? workingRows :
           workingRows.filter(function (row) {
             return laterFilters.every(function (f) { return f(row); });
           });
+
+        if (countOnly) {
+          let n;
+          if (countOnly.arg === "*") n = filteredRows.length;
+          else if (/^DISTINCT/i.test(countOnly.arg)) {
+            const dv = countOnly.arg.replace(/^DISTINCT\s+\?/i, "");
+            n = new Set(filteredRows.filter(function (r) { return r[dv] !== undefined; }).map(function (r) { return r[dv]; })).size;
+          } else {
+            const cv = countOnly.arg.slice(1);
+            n = filteredRows.filter(function (r) { return r[cv] !== undefined; }).length;
+          }
+          const one = {}; one[countOnly.alias] = String(n);
+          filteredRows = [one];
+          varNames = [countOnly.alias];
+        }
+
+        if (orderKeys) {
+          const isNum = function (x) { return typeof x === "string" && /^-?\d+(\.\d+)?([eE][-+]?\d+)?$/.test(x); };
+          const cmp = function (a, b) {
+            if (a === undefined && b === undefined) return 0;
+            if (a === undefined) return -1;      // unbound sorts first, as in SPARQL
+            if (b === undefined) return 1;
+            if (isNum(a) && isNum(b)) return parseFloat(a) - parseFloat(b);
+            return a < b ? -1 : a > b ? 1 : 0;
+          };
+          filteredRows.sort(function (r1, r2) {
+            for (let i = 0; i < orderKeys.length; i++) {
+              const c = cmp(r1[orderKeys[i].v], r2[orderKeys[i].v]);
+              if (c !== 0) return orderKeys[i].desc ? -c : c;
+            }
+            return 0;
+          });
+        }
 
         const totalMatches = filteredRows.length;
         let displayRows = filteredRows.slice(offsetValue);
