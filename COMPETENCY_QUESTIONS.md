@@ -18,9 +18,9 @@ so nothing is ever actually lost, just not duplicated as its own
 triple. This mirrors the same principle AiiDA/Materials Cloud states
 for computational provenance graphs generally: it's often unreasonable
 to keep every piece of output data, but "all information needed to
-reproduce the outputs must be preserved" (Talirz et al., *Materials
+reproduce the outputs must be preserved" ([Talirz et al., *Materials
 Cloud, a platform for open computational science*, Scientific Data 7,
-299 (2020), doi:10.1038/s41597-020-00637-5) - the same trade-off this
+299 (2020), doi:10.1038/s41597-020-00637-5](https://www.nature.com/articles/s41597-020-00637-5)) - the same trade-off this
 graph makes, kept honest by real provenance links rather than by
 leaving anything genuinely irretrievable.
 
@@ -172,6 +172,8 @@ of the real story rather than something to work around.
 
 ## 1. How many experiments of each type exist?
 
+<!-- playground-link --> [Try this in the playground](https://darren01.github.io/ont_mm/tools/sparql_playground.html?dataset=caa&cq=1)
+
 **Status: ✅ Answerable. Verified working.**
 
 ```sparql
@@ -187,6 +189,8 @@ ORDER BY ?type ?exp
 
 ## 2. What review notes has the researcher recorded, and for which experiments?
 
+<!-- playground-link --> [Try this in the playground](https://darren01.github.io/ont_mm/tools/sparql_playground.html?dataset=caa&cq=2)
+
 **Status: ✅ Answerable. Verified working.**
 
 ```sparql
@@ -201,6 +205,8 @@ ORDER BY ?exp
 ```
 
 ## 3. Which output files were generated from a given input file?
+
+<!-- playground-link --> [Try this in the playground](https://darren01.github.io/ont_mm/tools/sparql_playground.html?dataset=caa&cq=3)
 
 **Status: ✅ Answerable. Verified working.**
 
@@ -241,6 +247,8 @@ out above since `owl:NamedIndividual` never distinguishes anything.
 
 ## 4. What geometric constraints were applied in a given experiment, and what were their target values and units?
 
+<!-- playground-link --> [Try this in the playground](https://darren01.github.io/ont_mm/tools/sparql_playground.html?dataset=caa&cq=4)
+
 **Status: ✅ Answerable. Verified working.**
 
 ```sparql
@@ -265,6 +273,8 @@ work fine there.
 
 ## 5. Which experiments are linked to a specific published paper?
 
+<!-- playground-link --> [Try this in the playground](https://darren01.github.io/ont_mm/tools/sparql_playground.html?dataset=caa&cq=5)
+
 **Status: ✅ Answerable. Verified working** against both `caa` and
 `aa` - each correctly finds its own experiment linked to this DOI
 (`exp_caa004a` and `exp_aa002-aldehyde-bare` respectively). Both
@@ -283,6 +293,8 @@ SELECT ?exp WHERE {
 ```
 
 ## 6. Which experiment used a specific, known constraint value?
+
+<!-- playground-link --> [Try this in the playground](https://darren01.github.io/ont_mm/tools/sparql_playground.html?dataset=caa&cq=6)
 
 **Status: ✅ Answerable. Verified working**, once the playground's
 `FILTER` workaround was in place. A real, documented gotcha worth
@@ -309,6 +321,8 @@ SELECT ?exp ?constraint WHERE {
 ```
 
 ## 7. Find a successful run of a given type, at a given level of theory, with its input/output/data files
+
+<!-- playground-link --> [Try this in the playground](https://darren01.github.io/ont_mm/tools/sparql_playground.html?dataset=caa&cq=7)
 
 **Status: ✅ Answerable. Verified working** on the `aa` graph (12 runs,
 one row each).
@@ -354,6 +368,8 @@ plain filters.
 
 ## 8. Which results show an imaginary (negative) frequency?
 
+<!-- playground-link --> [Try this in the playground](https://darren01.github.io/ont_mm/tools/sparql_playground.html?dataset=caa&cq=8)
+
 **Status: ✅ Answerable. Verified working**, once the playground's
 `FILTER` fix was in place - this was one of the queries directly
 confirming the `rdflib.js` bug in the first place (it originally
@@ -385,6 +401,8 @@ value (confirmed directly, not assumed) still present.
 
 ## 9. Does a given transition state show exactly one imaginary frequency, and a given minimum show zero?
 
+<!-- playground-link --> [Try this in the playground](https://darren01.github.io/ont_mm/tools/sparql_playground.html?dataset=caa&cq=9)
+
 **Status: ✅ Answerable. Verified working**, once the `FILTER` fix was
 in place - same root cause as #8.
 
@@ -401,6 +419,8 @@ GROUP BY ?spectrum
 ```
 
 ## 10. Which annotated experiments also show a data-quality issue (an imaginary frequency)?
+
+<!-- playground-link --> [Try this in the playground](https://darren01.github.io/ont_mm/tools/sparql_playground.html?dataset=caa&cq=10)
 
 **Status: ✅ Answerable. Verified working**, once the `FILTER` fix was
 in place - a real, empty result here is a genuine finding about this
@@ -423,6 +443,8 @@ SELECT ?exp ?comment ?freq WHERE {
 ```
 
 ## 11. What is the electronic energy, ZPE, enthalpy, entropy, and Gibbs free energy for a given experiment's result?
+
+<!-- playground-link --> [Try this in the playground](https://darren01.github.io/ont_mm/tools/sparql_playground.html?dataset=caa&cq=11)
 
 **Status: ✅ Answerable.** Every property confirmed to exist exactly as
 written - genuinely deeper than it looks, since each thermodynamic
@@ -474,6 +496,8 @@ To list paths as well, add `OPTIONAL { ?input ex:fileURL ?inputPath }`
 (see #7).
 
 ## 13. What are the points along a given reaction path, in order, with their energies?
+
+<!-- playground-link --> [Try this in the playground](https://darren01.github.io/ont_mm/tools/sparql_playground.html?dataset=aa&cq=13)
 
 **Status: ✅ Answerable. Verified working** on the `aa` graph: path
 `ex:reactionpath_aa001e` returns all 268 points, in order, each with
@@ -585,6 +609,8 @@ Read the results with these cautions:
   highest sampled point, not a located saddle point.
 
 ## 14. Which experiments used a specific method/basis-set combination?
+
+<!-- playground-link --> [Try this in the playground](https://darren01.github.io/ont_mm/tools/sparql_playground.html?dataset=caa&cq=14)
 
 **Status: ✅ Answerable. Verified working**, on both `caa` and `aa` -
 `gc:hasMethod`/`gc:hasBasisSet` are now genuinely populated on every

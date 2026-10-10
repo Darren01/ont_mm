@@ -69,10 +69,12 @@ hit along the way.
 up. A dropdown lets you switch between the two real example graphs
 this repo publishes - [`caa`](./examples/caa/) (the default) and
 [`aa`](./examples/aa/) - loading whichever you pick live from GitHub,
-with three working example queries (generic across both datasets,
-since they share the same ontology schema) and an optional graph view
-alongside the usual table of results. Link directly to a specific one
-with `?dataset=aa` on the URL.
+with a button for each of the [competency questions](./COMPETENCY_QUESTIONS.md)
+it can run (each links back to that question's full explanation, and
+each question in that file links forward to here) and an optional graph
+view alongside the usual table of results. Link directly to a specific
+graph with `?dataset=aa` on the URL, or to a specific question with
+`?dataset=aa&cq=13`.
 
 (The file itself is [`tools/sparql_playground.html`](./tools/sparql_playground.html)
 if you'd rather download and adapt your own copy - e.g. to point it at
@@ -1506,3 +1508,49 @@ This project is licensed under the MIT License – see the [LICENSE](./LICENSE.t
 - [Jmol](https://jmol.sourceforge.net/) (used to generate the reaction
   animation GIFs in both the `caa` and `aa` examples - see
   `examples/caa/animation/README.md` and `examples/aa/animation/README.md`)
+
+<!-- other-tools -->
+## Other tools and further reading
+
+The tools in this repository are deliberately small, and built around
+this project's own graphs. Others may suit what you need better. These
+are not endorsements or comparisons - just places worth knowing about.
+
+**A caution that applies to every website below:** anything you paste
+into an online service may be sent to its server. For unpublished or
+confidential work, use a tool that runs on your own machine. The
+[playground](./tools/sparql_playground.html) here runs in your browser,
+and a Turtle file you pick with its upload option is not sent anywhere.
+
+**Viewing and editing RDF and ontologies**
+
+- [Turtle Editor Viewer](https://semantechs.co.uk/turtle-editor-viewer/) -
+  an online Turtle editor and viewer. *Not tested by this project; check
+  what it does with your data before using it on anything confidential.*
+- [Protégé](https://protege.stanford.edu/) - the standard free,
+  open-source OWL ontology editor from Stanford. The desktop version runs
+  on your own machine; WebProtégé is the browser-based, collaborative
+  version.
+- [RDF Grapher](https://www.ldf.fi/service/rdf-grapher) - turns RDF into
+  a picture of the graph. *It is a web service that sends your input to a
+  server*, so use it only with data that is already public.
+- [YASGUI](https://yasgui.triply.cc/) - a SPARQL query editor and results
+  viewer from Triply (the project is on GitHub as `TriplyDB/Yasgui`). It
+  sends queries to a SPARQL endpoint, so it suits a graph that is hosted
+  somewhere, such as one served by Fuseki.
+
+**Learning SPARQL**
+
+- This repository's own [SPARQL tutorial](./SPARQL_TUTORIAL.md), written
+  around these graphs, and the [competency questions](./COMPETENCY_QUESTIONS.md),
+  which are worked examples of real questions with the queries that
+  answer them.
+- [Apache Jena's SPARQL tutorial](https://jena.apache.org/tutorials/sparql.html) -
+  a short, fast course in SPARQL; Jena's `arq` is what the `ask` shortcut
+  in our tutorial runs.
+- [*Learning SPARQL*](https://www.learningsparql.com/) by Bob DuCharme
+  (O'Reilly) - a book on querying and updating with SPARQL 1.1; the site
+  offers its example code for download.
+- [SPARQL 1.1 Query Language](https://www.w3.org/TR/sparql11-query/) - the
+  W3C Recommendation (21 March 2013). It is the specification, so it is
+  a reference rather than a first read.
