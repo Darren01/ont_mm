@@ -41,6 +41,8 @@ LINK_MARK = "<!-- playground-link -->"
 # Edit these when a question changes; --check does not know them.
 #   dataset: the example graph the question's IDs belong to (the buttons
 #            say so, and link to the right one). Omit if it works on both.
+#   edit:    what the person must change before the query finds anything on
+#            their own graph (shown on "My own graph"; omit if it runs as is).
 #   skip:    why the playground cannot run it (shown instead of a button
 #            that would fail). The question is still listed, with its link.
 PLAYGROUND_NOTES = {
@@ -48,13 +50,13 @@ PLAYGROUND_NOTES = {
         "blurb": "The basic inventory - every experiment, grouped by what kind of calculation it was."},
     2: {"label": "Review notes",
         "blurb": "Every experiment with a recorded annotation - the real, contemporaneous debugging trail."},
-    3: {"label": "Trace a file", "dataset": "caa",
+    3: {"label": "Trace a file", "edit": "the input file ID (ex:file_caa001a_inp) - use one from your own graph", "dataset": "caa",
         "blurb": "Where did these output files come from? Swap the input file for any other experiment's own."},
     4: {"label": "Constraints",
         "blurb": "The geometric constraints applied in each experiment, with their target values and units."},
-    5: {"label": "Linked to a paper",
+    5: {"label": "Linked to a paper", "edit": "the DOI in angle brackets - use one your graph actually links to",
         "blurb": "Which experiment is linked to a specific DOI. An honest \"no results\" is a real finding for a graph with no link recorded."},
-    6: {"label": "Find the exact geometry",
+    6: {"label": "Find the exact geometry", "edit": "the target value (1.2) - use a constraint value from your own runs",
         "blurb": "Which experiment used a specific, known constraint value."},
     7: {"label": "Runs at a level of theory",
         "skip": "it has an OPTIONAL inside an OPTIONAL, which the playground's query engine "
@@ -69,9 +71,9 @@ PLAYGROUND_NOTES = {
          "blurb": "The actual computed numbers: electronic energy, ZPE, enthalpy, entropy, Gibbs free energy."},
     12: {"label": "File chain", "dataset": "aa",
          "skip": "it uses VALUES, which the playground's query engine (rdflib.js) cannot parse. Run it with ask/arq instead."},
-    13: {"label": "Path energies", "dataset": "aa",
+    13: {"label": "Path energies", "edit": "the reaction path ID (ex:reactionpath_aa001e) - use your own path ID", "dataset": "aa",
          "blurb": "Energies are absolute hartree. For the plot and the barriers, use the R steps in the document."},
-    14: {"label": "Method + basis set", "dataset": "caa",
+    14: {"label": "Method + basis set", "edit": "the method (wB97X-D) and basis set (6-31G(d,p)) - use the ones you ran", "dataset": "caa",
          "blurb": "Which experiments used a given method and basis set."},
     15: {"label": "Barriers",
          "skip": "it is answered by a short R step after question 13's query, not by one query."},
@@ -109,6 +111,7 @@ def parse_questions(text):
             "label": note.get("label"),
             "blurb": note.get("blurb"),
             "dataset": note.get("dataset"),
+            "edit": note.get("edit"),
             "skip": note.get("skip") or (None if query else "it has no single query."),
         })
     return out

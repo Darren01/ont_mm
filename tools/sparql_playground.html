@@ -42,7 +42,11 @@
 
 <p id="cq-intro"><strong>Competency questions</strong> - the questions these graphs were built to answer.
 Each button loads that question's query, and links back to its full explanation in
-<a id="cq-doc-link" href="#" target="_blank" rel="noopener">COMPETENCY_QUESTIONS.md</a>.</p>
+<a id="cq-doc-link" href="#" target="_blank" rel="noopener">COMPETENCY_QUESTIONS.md</a>.
+<span id="cq-upload-note" style="display:none"><br><strong>On your own graph:</strong> these assume it was built
+the way this repository describes, so the vocabulary should match. Buttons marked \u270e name something
+specific to the example data (a file ID, a DOI, a value) - the query will find nothing until you edit that
+part to match your own graph; the note under the query says what to change. The unmarked ones should run as they are.</span></p>
 <div id="cq-buttons"></div>
 <p class="example-desc" id="cq-desc"></p>
 
@@ -210,8 +214,9 @@ const DATASETS = {
     pageTitle: "My own graph - SPARQL playground - ont_mm",
     introHtml: "Choose a Turtle (.ttl) file below to load your own graph - " +
       "nothing is uploaded anywhere, the file is read directly in your own " +
-      "browser. None of the ont_mm-specific example queries apply here, " +
-      "since they use this project's own vocabulary - the two queries below " +
+      "browser. The competency questions below assume your graph " +
+      "follows this repository's instructions (some need their example IDs " +
+      "edited first - see the note by the buttons). The two other queries " +
       "work on any RDF graph, and are a genuine, general-purpose way to get " +
       "your bearings in an unfamiliar one: the first gives a rough map of " +
       "what kinds of things it holds, the second shows every predicate it " +
@@ -451,6 +456,7 @@ const CQS = [
     "label": "Experiments by type",
     "blurb": "The basic inventory - every experiment, grouped by what kind of calculation it was.",
     "dataset": null,
+    "edit": null,
     "skip": null
   },
   {
@@ -462,6 +468,7 @@ const CQS = [
     "label": "Review notes",
     "blurb": "Every experiment with a recorded annotation - the real, contemporaneous debugging trail.",
     "dataset": null,
+    "edit": null,
     "skip": null
   },
   {
@@ -473,6 +480,7 @@ const CQS = [
     "label": "Trace a file",
     "blurb": "Where did these output files come from? Swap the input file for any other experiment's own.",
     "dataset": "caa",
+    "edit": "the input file ID (ex:file_caa001a_inp) - use one from your own graph",
     "skip": null
   },
   {
@@ -484,6 +492,7 @@ const CQS = [
     "label": "Constraints",
     "blurb": "The geometric constraints applied in each experiment, with their target values and units.",
     "dataset": null,
+    "edit": null,
     "skip": null
   },
   {
@@ -495,6 +504,7 @@ const CQS = [
     "label": "Linked to a paper",
     "blurb": "Which experiment is linked to a specific DOI. An honest \"no results\" is a real finding for a graph with no link recorded.",
     "dataset": null,
+    "edit": "the DOI in angle brackets - use one your graph actually links to",
     "skip": null
   },
   {
@@ -506,6 +516,7 @@ const CQS = [
     "label": "Find the exact geometry",
     "blurb": "Which experiment used a specific, known constraint value.",
     "dataset": null,
+    "edit": "the target value (1.2) - use a constraint value from your own runs",
     "skip": null
   },
   {
@@ -517,6 +528,7 @@ const CQS = [
     "label": "Runs at a level of theory",
     "blurb": null,
     "dataset": null,
+    "edit": null,
     "skip": "it has an OPTIONAL inside an OPTIONAL, which the playground's query engine (rdflib.js) leaves unbound, so the file columns come back empty. Run it with ask/arq instead."
   },
   {
@@ -528,6 +540,7 @@ const CQS = [
     "label": "Imaginary frequencies",
     "blurb": "A data-quality check - flags any result whose geometry may not be a genuine minimum.",
     "dataset": null,
+    "edit": null,
     "skip": null
   },
   {
@@ -539,6 +552,7 @@ const CQS = [
     "label": "One imaginary frequency?",
     "blurb": "Counts imaginary frequencies per spectrum: a transition state should show exactly one, a minimum none.",
     "dataset": null,
+    "edit": null,
     "skip": null
   },
   {
@@ -550,6 +564,7 @@ const CQS = [
     "label": "Annotated + imaginary",
     "blurb": "Annotated experiments that also show a data-quality issue.",
     "dataset": null,
+    "edit": null,
     "skip": null
   },
   {
@@ -561,6 +576,7 @@ const CQS = [
     "label": "Energetics",
     "blurb": "The actual computed numbers: electronic energy, ZPE, enthalpy, entropy, Gibbs free energy.",
     "dataset": null,
+    "edit": null,
     "skip": null
   },
   {
@@ -572,6 +588,7 @@ const CQS = [
     "label": "File chain",
     "blurb": null,
     "dataset": "aa",
+    "edit": null,
     "skip": "it uses VALUES, which the playground's query engine (rdflib.js) cannot parse. Run it with ask/arq instead."
   },
   {
@@ -583,6 +600,7 @@ const CQS = [
     "label": "Path energies",
     "blurb": "Energies are absolute hartree. For the plot and the barriers, use the R steps in the document.",
     "dataset": "aa",
+    "edit": "the reaction path ID (ex:reactionpath_aa001e) - use your own path ID",
     "skip": null
   },
   {
@@ -594,6 +612,7 @@ const CQS = [
     "label": "Method + basis set",
     "blurb": "Which experiments used a given method and basis set.",
     "dataset": "caa",
+    "edit": "the method (wB97X-D) and basis set (6-31G(d,p)) - use the ones you ran",
     "skip": null
   },
   {
@@ -605,6 +624,7 @@ const CQS = [
     "label": "Barriers",
     "blurb": null,
     "dataset": null,
+    "edit": null,
     "skip": "it is answered by a short R step after question 13's query, not by one query."
   }
 ];
@@ -617,8 +637,9 @@ function baseDatasetId(id) { return String(id).replace(/_reasoned$/, ""); }
 function buildCqButtons() {
   const container = document.getElementById("cq-buttons");
   document.getElementById("cq-doc-link").href = CQ_DOC_URL;
-  document.getElementById("cq-intro").style.display = DATASETS[currentDatasetId].isUserUpload ? "none" : "";
-  if (DATASETS[currentDatasetId].isUserUpload) { container.innerHTML = ""; return; }
+  const upload = !!DATASETS[currentDatasetId].isUserUpload;
+  document.getElementById("cq-intro").style.display = "";
+  document.getElementById("cq-upload-note").style.display = upload ? "" : "none";
   let html = "";
   CQS.forEach(function (q) {
     const label = q.n + " \u00b7 " + (q.label || q.title);
@@ -628,7 +649,7 @@ function buildCqButtons() {
         escapeHtml(label) + ' \u2197</a>';
     } else {
       html += '<button class="example-btn" id="cq-btn-' + q.n + '" onclick="loadCq(' + q.n + ')">' +
-        escapeHtml(label) + '</button>';
+        escapeHtml(label) + (upload && q.edit ? ' \u270e' : '') + '</button>';
     }
   });
   container.innerHTML = html;
@@ -637,7 +658,8 @@ function buildCqButtons() {
 function loadCq(n) {
   const q = CQS.find(function (c) { return c.n === n; });
   if (!q || !q.query) return;
-  document.getElementById("query-box").value = currentPrefixes().trim() + "\n\n" + q.query;
+  // The questions use this project's gc:/ex:/prov: prefixes, even on an uploaded graph.
+  document.getElementById("query-box").value = SHARED.prefixes.trim() + "\n\n" + q.query;
   const desc = document.getElementById("cq-desc");
   desc.textContent = "";
   desc.appendChild(document.createTextNode("Question " + q.n + ": " + q.title + " "));
@@ -646,7 +668,15 @@ function loadCq(n) {
   a.href = cqDocLink(q); a.target = "_blank"; a.rel = "noopener";
   a.textContent = "Read question " + q.n + " in full \u2197";
   desc.appendChild(a);
-  if (q.dataset && baseDatasetId(currentDatasetId) !== q.dataset) {
+  if (DATASETS[currentDatasetId].isUserUpload) {
+    if (q.edit) {
+      desc.appendChild(document.createElement("br"));
+      const ed = document.createElement("strong");
+      ed.textContent = "Edit before running: ";
+      desc.appendChild(ed);
+      desc.appendChild(document.createTextNode("change " + q.edit + ". As written it uses the example data's values, so on your graph it finds nothing."));
+    }
+  } else if (q.dataset && baseDatasetId(currentDatasetId) !== q.dataset) {
     desc.appendChild(document.createElement("br"));
     const warn = document.createElement("strong");
     warn.textContent = "This question names files from the " + q.dataset + " graph. ";
@@ -831,7 +861,7 @@ function parseAndDisplayGraph(ttlText, baseUri) {
     statusEl.textContent = "Graph loaded: " + tripleCount + " triples. Ready to query.";
     document.getElementById("query-area").style.display = "block";
     buildExampleButtons();
-    if (!DATASETS[currentDatasetId].isUserUpload && CQS.length > 0) showInitialQuestion();
+    if (CQS.length > 0) showInitialQuestion();
     else if (currentExamples().length > 0) loadExample(0);
 
   } catch (err) {
@@ -984,7 +1014,7 @@ function runQuery() {
       runBtn.textContent = "Run query";
       throw expectedError("This graph does not contain " + missing.join(", ") + " (running the query " +
         "would freeze this page). Some questions name files from one example graph only - " +
-        "check the dataset selector above.");
+        "check the dataset selector above, or (on your own graph) edit the name to one your graph contains.");
     }
 
     // rdflib.js's SPARQL support is basic and doesn't reliably handle
