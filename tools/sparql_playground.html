@@ -230,6 +230,28 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 `,
     datasetExamples: [
       {
+      label: "Find reaction paths",
+      cq: 13,
+      description: "Lists every reaction path in the graph and the experiment(s) that produced it. Copy the path name from the ?path column into question 13 - use the path name itself, not the experiment name. A path can be the result of two experiments (the forward and backward halves of an IRC share one joined path), so it may appear twice here.",
+      query: `SELECT ?exp ?path WHERE {
+  ?exp <http://purl.org/gc/hasResult> ?path .
+  ?path a <http://purl.org/gc/ReactionPath> .
+}`
+    },
+    {
+      label: "All reaction path energies",
+      cq: 13,
+      description: "Every point of every reaction path in one table (path, index, energy) - the shape you want to write out to a CSV file with arq for plotting or for comparing paths. Energies are absolute, in hartree. With one path in the graph this is the same as question 13.",
+      query: `SELECT ?path ?index ?energy WHERE {
+  ?path a <http://purl.org/gc/ReactionPath> ;
+        <http://purl.org/gc/hasReactionPathPoint> ?point .
+  ?point <http://purl.org/gc/hasIndex> ?index ;
+         <http://purl.org/gc/hasPathEnergy> ?e .
+  ?e <http://purl.org/gc/hasFloatValue> ?energy .
+}
+ORDER BY ?path ?index`
+    },
+      {
         label: "What kinds of things exist?",
         description: "Genuinely generic - works on any RDF graph, not just this project's own. Counts how many individuals exist of each real type actually used, most common first - the fastest way to get a rough map of an unfamiliar graph's own subject matter.",
         query: `SELECT ?type (COUNT(?s) AS ?count) WHERE {
@@ -280,6 +302,28 @@ PREFIX schema: <http://schema.org/>
   // query body itself (SHARED.prefixes is prepended automatically -
   // don't repeat PREFIX lines here).
   examples: [
+    {
+      label: "Find reaction paths",
+      cq: 13,
+      description: "Lists every reaction path in the graph and the experiment(s) that produced it. Copy the path name from the ?path column into question 13 - use the path name itself, not the experiment name. A path can be the result of two experiments (the forward and backward halves of an IRC share one joined path), so it may appear twice here.",
+      query: `SELECT ?exp ?path WHERE {
+  ?exp gc:hasResult ?path .
+  ?path a gc:ReactionPath .
+}`
+    },
+    {
+      label: "All reaction path energies",
+      cq: 13,
+      description: "Every point of every reaction path in one table (path, index, energy) - the shape you want to write out to a CSV file with arq for plotting or for comparing paths. Energies are absolute, in hartree. With one path in the graph this is the same as question 13.",
+      query: `SELECT ?path ?index ?energy WHERE {
+  ?path a gc:ReactionPath ;
+        gc:hasReactionPathPoint ?point .
+  ?point gc:hasIndex ?index ;
+         gc:hasPathEnergy ?e .
+  ?e gc:hasFloatValue ?energy .
+}
+ORDER BY ?path ?index`
+    },
     {
       label: "Find files missing a checksum",
       description: "A real, honest gap-finder, not a hypothetical one: this dataset's own .dat files were never wired into the pipeline's checksum step (only the .inp and .log files were), so this genuinely, correctly finds every one of them. The same query is worth running on any new dataset before trusting its provenance completely - a missing checksum here means a missing file:// URL too, not just a missing hash.",
@@ -1014,7 +1058,8 @@ function runQuery() {
       runBtn.textContent = "Run query";
       throw expectedError("This graph does not contain " + missing.join(", ") + " (running the query " +
         "would freeze this page). Some questions name files from one example graph only - " +
-        "check the dataset selector above, or (on your own graph) edit the name to one your graph contains.");
+        "check the dataset selector above, or (on your own graph) edit the name to one your graph contains. " +
+        "To find the real names, run the \"Find reaction paths\" example and copy the name from its ?path column - the path name, not the experiment name.");
     }
 
     // rdflib.js's SPARQL support is basic and doesn't reliably handle

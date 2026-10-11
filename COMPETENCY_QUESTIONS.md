@@ -520,6 +520,22 @@ SELECT ?index ?energy WHERE {
 ORDER BY ?index
 ```
 
+**Finding the path names in your own graph.** Reaction paths are typed
+`gc:ReactionPath`, and each experiment points at its path with
+`gc:hasResult`:
+
+```sparql
+SELECT ?exp ?path WHERE {
+  ?exp gc:hasResult ?path .
+  ?path a gc:ReactionPath .
+}
+```
+
+Copy the name from the `?path` column (the path, not the experiment;
+for example `reactionpath_caa005bTSaIRCf`, not `exp_caa005bTSaIRCb`).
+A path often appears twice: the forward and backward halves of an IRC
+are two experiments that share one joined path.
+
 Swap `ex:reactionpath_aa001e` for any other path. Leaving the path out
 (`?path gc:hasReactionPathPoint ?point`) works only while the graph
 holds a single path; with several, their points are mixed together.
@@ -554,6 +570,22 @@ index,energy
 1,-306.33273
 2,-306.3327
 ```
+
+To write every path in the graph to one file (a `path` column tells
+them apart), use this instead; it needs no path name at all:
+
+```sparql
+SELECT ?path ?index ?energy WHERE {
+  ?path a gc:ReactionPath ;
+        gc:hasReactionPathPoint ?point .
+  ?point gc:hasIndex ?index ;
+         gc:hasPathEnergy ?e .
+  ?e gc:hasFloatValue ?energy .
+}
+ORDER BY ?path ?index
+```
+
+In R, `split(d, d$path)` gives one data frame per path.
 
 Then plot it in R, converting hartree to energy relative to the first
 point in kJ/mol (1 hartree = 2625.4996 kJ/mol):
