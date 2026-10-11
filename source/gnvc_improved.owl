@@ -18,8 +18,8 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.org/gc/">
-    <owl:versionIRI rdf:resource="http://purl.org/gc/0.8.8"/>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.8.8</owl:versionInfo>
+    <owl:versionIRI rdf:resource="http://purl.org/gc/0.8.9"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.8.9</owl:versionInfo>
     <dcterms:title xml:lang="en">GNVC: Gainesville Core Ontology - standard for publishing results of computational chemistry.</dcterms:title>
     <rdfs:comment xml:lang="en">An ontology for publishing results of computational chemistry.</rdfs:comment>
     <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This ontology aims at complete description of typical Computational Chemistry experiment.
@@ -293,25 +293,6 @@
         <rdfs:subPropertyOf rdf:resource="http://purl.org/gc/extraGCObjectProperty"/>
         <rdfs:comment xml:lang="en">A property that specifies the Basis Count.</rdfs:comment>
         <rdfs:label xml:lang="en">The Basis Count</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/gc/hasBasisSet -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/gc/hasBasisSet">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/gc/hasFeature"/>
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/gc/hasMolecularFeature"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.org/gc/Atom"/>
-                    <rdf:Description rdf:about="http://purl.org/gc/MolecularMethodology"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://purl.org/gc/BasisSet"/>
     </owl:ObjectProperty>
     
 
@@ -796,7 +777,7 @@
         <rdfs:subPropertyOf rdf:resource="http://purl.org/gc/hasResult"/>
         <rdfs:domain rdf:resource="http://purl.org/gc/ReactionPathPoint"/>
         <rdfs:range rdf:resource="http://purl.org/gc/FloatValue"/>
-        <rdfs:comment xml:lang="en">A property that describes the relative energy at a point along a reaction path.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A property that describes the energy at a point along a reaction path. As produced by the ont_mm pipeline this is the absolute total energy from the IRC log, in the unit of its FloatValue (hartree); subtract a reference point, such as the first point or the transition state, to get a relative energy.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://chemicalsemantics.com/"/>
         <rdfs:label xml:lang="en">has path energy</rdfs:label>
     </owl:ObjectProperty>
@@ -1476,7 +1457,7 @@
     <!-- http://purl.org/gc/hasUnit -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/gc/hasUnit">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/gc/hasAuxiliaryProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/gc/extraGCObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/gc/Value"/>
         <rdfs:comment xml:lang="en">A property that describes a unit of the value.</rdfs:comment>
@@ -1688,6 +1669,14 @@
 
     <owl:DatatypeProperty rdf:about="http://purl.org/gc/hasBasisSet">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/gc/Atom"/>
+                    <rdf:Description rdf:about="http://purl.org/gc/MolecularMethodology"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
     </owl:DatatypeProperty>
     
@@ -3602,7 +3591,7 @@
 
     <owl:Class rdf:about="http://purl.org/gc/ReactionPathPoint">
         <rdfs:subClassOf rdf:resource="http://purl.org/gc/GainesvilleCoreTerm"/>
-        <rdfs:comment xml:lang="en">A class representing a single point along a reaction path, with an index (position along the path) and an energy value relative to the starting point. May originate from an individual forward or backward IRC log, or from a combined reaction-path file assembled from both.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A class representing a single point along a reaction path, with an index (position along the path) and an energy value (the absolute total energy from the IRC log, not relative to the starting point). May originate from an individual forward or backward IRC log, or from a combined reaction-path file assembled from both.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://chemicalsemantics.com/"/>
         <rdfs:label xml:lang="en">Reaction Path Point</rdfs:label>
     </owl:Class>
@@ -6151,11 +6140,24 @@
     
 
 
+    <!-- http://purl.org/gc/kiloJoulePerMole -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/gc/kiloJoulePerMole">
+        <rdf:type rdf:resource="http://qudt.org/schema/qudt/DerivedUnit"/>
+        <owl:sameAs rdf:resource="http://qudt.org/vocab/unit/KiloJ-PER-MOL"/>
+        <rdfs:comment xml:lang="en">The unit GAMESS (US) reports enthalpy and Gibbs free energy in: kJ/mol.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://chemicalsemantics.com/"/>
+        <rdfs:label xml:lang="en">kJ/mol</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://purl.org/gc/kiloJoules -->
 
     <owl:NamedIndividual rdf:about="http://purl.org/gc/kiloJoules">
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
         <rdf:type rdf:resource="http://qudt.org/schema/qudt/EnergyAndWorkUnit"/>
-        <rdfs:comment xml:lang="en">a unit of energy</rdfs:comment>
+        <rdfs:comment xml:lang="en">Superseded by gc:kiloJoulePerMole. Kept so existing graphs stay valid: it was used for enthalpy and Gibbs free energy values that are in kJ/mol, so it loses the "per mole". A unit of energy.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://chemicalsemantics.com/"/>
         <rdfs:label xml:lang="en">kilo joules</rdfs:label>
     </owl:NamedIndividual>

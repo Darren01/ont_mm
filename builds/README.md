@@ -59,3 +59,12 @@ OWL as "all of", intended as "any of") now each have one union domain.
 Compared with 2026-08-08 the release differs only by those 15 domain
 statements becoming 6 unions, plus the version annotations. See the
 GC-Ontology-Mirror changelog (v0.8.8) for the reasoning and evidence.
+
+**Release 2026-10-11 (gnvc_improved.owl v0.8.9):** `gc:hasBasisSet` is now a
+single datatype property (it was declared as both an object and a
+datatype property); `gc:hasUnit` no longer sits under
+`gc:hasAuxiliaryProperty`, so a reasoner no longer calls every FloatValue
+and unit a class; the `gc:hasPathEnergy` and `gc:ReactionPathPoint`
+definitions say "absolute" where they said "relative"; and
+`gc:kiloJoulePerMole` is added, with `gc:kiloJoules` kept but
+deprecated. See the GC-Ontology-Mirror changelog (v0.8.9).

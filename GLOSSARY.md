@@ -254,17 +254,23 @@ individual. In these graphs exactly eight properties point at one:
 `gc:hasEnthalpy` and `gc:hasGibbsFreeEnergy` (unit `gc:kiloJoules`,
 label "kilo joules") and `gc:hasEntropy` (unit "J/(mol K)"). The
 enthalpy and Gibbs values are read from the log as kJ/mol, so the "per
-mole" comes from the extraction, not from the unit.
+mole" comes from the extraction, not from the unit. From gc v0.8.9 the
+ontology has `gc:kiloJoulePerMole` (kJ/mol, the same unit as QUDT's
+`KiloJ-PER-MOL`) and `gc:kiloJoules` is deprecated but kept. The
+graphs built so far still use `gc:kiloJoules`; the extraction will
+switch to the new unit when it is next updated.
 
 In a reasoned graph every `gc:FloatValue` is also typed
 `gc:CalculationResult` and `rdfs:Class`, and every unit `rdfs:Class`.
 Neither type says anything about the data. The first follows because
 the properties pointing at a value are all sub-properties of
 `gc:hasResult`, whose range is `gc:CalculationResult`; the second
-because `gc:hasUnit` sits under `gc:hasAuxiliaryProperty`, whose domain
+because `gc:hasUnit` sat under `gc:hasAuxiliaryProperty`, whose domain
 and range are both `rdfs:Class` (upstream describes that as an upper
-property for publication-related properties, so it looks like a
-misplacement).
+property for publication-related properties, so it was a misplacement).
+From gc v0.8.9 `gc:hasUnit` no longer sits there, so a graph reasoned
+over that release does not get the `rdfs:Class` types; graphs reasoned
+over earlier releases still show them.
 
 **`gc:hasElectronicEnergy`** - *"A property that describes the
 electronic energy."*
@@ -352,15 +358,16 @@ to one of its constituent points."*
 
 **`gc:ReactionPathPoint`** - *"A class representing a single point
 along a reaction path, with an index (position along the path) and an
-energy value relative to the starting point. May originate from an
-individual forward or backward IRC log, or from a combined
-reaction-path file assembled from both."* In these graphs `gc:hasIndex`
+energy value (the absolute total energy from the IRC log, not relative
+to the starting point). May originate from an individual forward or
+backward IRC log, or from a combined reaction-path file assembled from
+both."* (The definition said "relative to the starting point" before
+gc v0.8.9; the quoted text is the current wording.) In these graphs `gc:hasIndex`
 runs continuously along the whole combined path (1 to N, each used
 once); the direction appears only in the label, "(forward)" or
-"(backward)"; and `gc:hasPathEnergy` points at a `gc:FloatValue`. One
-caution against the definition: the stored energy is the absolute total
-energy from the IRC log, in hartree (about -306 for the first point of
-the `aa` path), not a value relative to the start. Subtract a reference
+"(backward)"; and `gc:hasPathEnergy` points at a `gc:FloatValue`. The
+stored energy is the absolute total energy from the IRC log, in hartree
+(about -306 for the first point of the `aa` path). Subtract a reference
 point - the first point, or the transition state - to get relative
 energies.
 
@@ -369,10 +376,12 @@ of material in numerical order, i.e. Frequency Peak, Orbital or a
 sequence number in residue."* Used here to give reaction path points
 their real, intended order.
 
-**`gc:hasPathEnergy`** - *"A property that describes the relative
-energy at a point along a reaction path."* In these graphs the value is
-the absolute total energy from the IRC log, in hartree, not an energy
-relative to the start (see `gc:ReactionPathPoint`).
+**`gc:hasPathEnergy`** - *"A property that describes the energy at a
+point along a reaction path. As produced by the ont_mm pipeline this is
+the absolute total energy from the IRC log, in the unit of its
+FloatValue (hartree); subtract a reference point, such as the first
+point or the transition state, to get a relative energy."* (Before gc
+v0.8.9 the definition said "relative energy"; see `gc:ReactionPathPoint`.)
 
 ## Literature and review
 
