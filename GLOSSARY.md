@@ -257,8 +257,10 @@ enthalpy and Gibbs values are read from the log as kJ/mol, so the "per
 mole" comes from the extraction, not from the unit. From gc v0.8.9 the
 ontology has `gc:kiloJoulePerMole` (kJ/mol, the same unit as QUDT's
 `KiloJ-PER-MOL`) and `gc:kiloJoules` is deprecated but kept. The
-graphs built so far still use `gc:kiloJoules`; the extraction will
-switch to the new unit when it is next updated.
+extraction (`thermochemistry_to_templates()` in gamess_functions) now
+writes `gc:kiloJoulePerMole`. Graphs built before that, including the
+current `aa` and `caa` examples, still use `gc:kiloJoules` until they
+are rebuilt.
 
 In a reasoned graph every `gc:FloatValue` is also typed
 `gc:CalculationResult` and `rdfs:Class`, and every unit `rdfs:Class`.
