@@ -39,13 +39,23 @@
 #' @param data_dir Directory containing .dat files (for process_experiments()'s
 #'   provenance tracking). Defaults to output_dir.
 #' @param provenance_file Optional, passed through to process_experiments().
+#' @param species If TRUE, also writes molecule_template_instances.tsv: one gc:Molecule
+#'   per species (e.g. aldehyde + two waters) in every converged geometry optimisation, with
+#'   gc:hasInChIString / gc:hasInChIKey, and a gc:hasMolecule link from each experiment.
+#'   Identifiers are refused, never guessed (undefined stereochemistry, open-shell,
+#'   proton-in-transit geometries get none) - see species_report.tsv in ontology_dir for
+#'   what was refused and why. Needs Python with RDKit. Default FALSE. The file is rewritten
+#'   from scratch on each run.
+#' @param species_helper Path to inchi_species.py; found automatically when NULL.
 #' @return Invisibly, a list summarising what was processed under each
 #'   category, and any IRC pairing issues found.
 #' @export
 process_gamess_directory <- function(input_dir, output_dir, ontology_dir,
                                       experiment_template_file,
                                       data_dir = output_dir,
-                                      provenance_file = NULL) {
+                                      provenance_file = NULL,
+                                      species = FALSE,
+                                      species_helper = NULL) {
 
   summary <- list(
     geometry_optimization = character(0),
@@ -184,6 +194,31 @@ process_gamess_directory <- function(input_dir, output_dir, ontology_dir,
     exp_ids <- paste0("ex:exp_", stems)
     experiment_files <- setNames(inp_files, exp_ids)
     process_contraints(experiment_files, file.path(ontology_dir, "constraint_template_instances.tsv"))
+  }
+
+  # =========================================================
+  # 5b. Species identifiers (opt-in)
+  # =========================================================
+  if (species) {
+    cat("\n=== Species identifiers (InChI / InChIKey) ===\n")
+    if (is.null(species_helper)) {
+      candidates <- c(getOption("gamess.inchi_helper", ""),
+                      "gamess_functions/python/inchi_species.py", "python/inchi_species.py")
+      species_helper <- candidates[nzchar(candidates) & file.exists(candidates)][1]
+      if (is.na(species_helper)) {
+        stop("species = TRUE but inchi_species.py was not found. Pass species_helper = ",
+             "\"path/to/gamess_functions/python/inchi_species.py\".")
+      }
+    }
+    sp_report <- build_species_table(output_dir, ontology_dir,
+                                     instances_name = "molecule_template_instances.tsv",
+                                     helper = species_helper)
+    ok_exp <- unique(sp_report$experiment[sp_report$status == "ok"])
+    summary$species_ok <- ok_exp
+    summary$species_refused <- unique(sp_report$experiment[sp_report$status == "refused"])
+    cat("Experiments with species identifiers written:", length(ok_exp), "\n")
+    cat("Experiments with at least one species refused (no node written for it): ",
+        length(summary$species_refused), " - see species_report.tsv in ", ontology_dir, "\n", sep = "")
   }
 
   # =========================================================

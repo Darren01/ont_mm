@@ -121,6 +121,18 @@ This is what actually reads `rem01.log` etc. and writes the
 `*_template_instances.tsv` files in `examples/ont/` - the raw
 ingredients `build_ontology_graph()` turns into a real graph next.
 
+**Optional - species identifiers (InChI / InChIKey).** Add `species = TRUE` to
+the call above to also write `molecule_template_instances.tsv`: every converged
+geometry optimisation is split into its species (for example chloroacetaldehyde
+plus two waters), each with `gc:hasInChIString` and `gc:hasInChIKey`, and each
+experiment is linked to its system with `gc:hasMolecule`. This needs Python with
+RDKit (`conda install -c conda-forge rdkit` or `python3 -m pip install rdkit`).
+The rule is that a blank identifier is better than a misleading one: a species
+whose geometry is open-shell, has a proton in transit, or whose stereochemistry
+cannot be settled gets no identifier and no node. `species_report.tsv` in the
+ontology folder lists every refusal and the reason. Minima only - transition
+states and IRC points are skipped.
+
 **Step 1b (optional) - your own notes and literature:**
 
 ```r
