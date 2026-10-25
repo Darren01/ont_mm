@@ -670,6 +670,18 @@ const CQS = [
     "dataset": null,
     "edit": null,
     "skip": "it is answered by a short R step after question 13's query, not by one query."
+  },
+  {
+    "n": 16,
+    "title": "Which species occur in the graph, and in which systems?",
+    "anchor": "16-which-species-occur-in-the-graph-and-in-which-systems",
+    "status": "✅",
+    "query": "SELECT ?species ?label ?inchikey (COUNT(?atom) AS ?atoms) WHERE {\n  ?species a gc:Molecule ;\n           rdfs:label ?label ;\n           gc:hasInChIKey ?inchikey ;\n           gc:hasAtom ?atom .\n}\nGROUP BY ?species ?label ?inchikey\nORDER BY ?inchikey ?species\nLIMIT 15",
+    "label": "Species by InChIKey",
+    "blurb": "Which distinct species the graph holds, identified by InChIKey, and in how many systems each occurs.",
+    "dataset": "caa",
+    "edit": null,
+    "skip": null
   }
 ];
 // END GENERATED: competency questions

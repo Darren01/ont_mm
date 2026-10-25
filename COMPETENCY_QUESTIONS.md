@@ -679,6 +679,75 @@ reaction energy from the same data" at the end of #13. SPARQL returns
 the numbers but is not the right tool for the subtraction, so this is
 answered by SPARQL plus a few lines of R, not by a single query.
 
+## 16. Which species occur in the graph, and in which systems?
+
+<!-- playground-link --> [Try this in the playground](https://darren01.github.io/ont_mm/tools/sparql_playground.html?dataset=caa&cq=16)
+
+**Status: ✅ Answerable. Verified working** on `aa` and `caa` (the third query is specific to the `caa` hydrate and returns nothing on `aa`), for the
+systems whose geometry was a located minimum and whose identity could be
+established (see "Species and atoms" in `GLOSSARY.md`). A system with
+no species node is not an error: the geometry was not a minimum, or the
+identity was refused, and `species_report.tsv` in the graph's `ont`
+folder says which and why.
+
+Every species, with its InChIKey and how many atoms it has:
+
+```sparql
+PREFIX gc: <http://purl.org/gc/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?species ?label ?inchikey (COUNT(?atom) AS ?atoms) WHERE {
+  ?species a gc:Molecule ;
+           rdfs:label ?label ;
+           gc:hasInChIKey ?inchikey ;
+           gc:hasAtom ?atom .
+}
+GROUP BY ?species ?label ?inchikey
+ORDER BY ?inchikey ?species
+LIMIT 15
+```
+
+The distinct species, and in how many systems each occurs. This is the
+question the InChIKey exists for: the same compound in different
+experiments has the same key, so it groups:
+
+```sparql
+PREFIX gc: <http://purl.org/gc/>
+
+SELECT ?inchikey ?inchi (COUNT(DISTINCT ?system) AS ?systems) WHERE {
+  ?system gc:hasMolecule ?species .
+  ?species gc:hasInChIKey ?inchikey ;
+           gc:hasInChIString ?inchi .
+}
+GROUP BY ?inchikey ?inchi
+ORDER BY DESC(?systems)
+```
+
+On `caa` it returns three species: water (`XLYOFNOQVPJJNP-UHFFFAOYSA-N`,
+H2O) in 26 systems, the chloroacetaldehyde hydrate
+(`QXCPBNVAQSUDRV-UHFFFAOYSA-N`, C2H5ClO2) in 14, and chloroacetaldehyde
+itself (`QSKPIOLLBIHNAC-UHFFFAOYSA-N`, C2H3ClO) in 12.
+
+Which systems contain the hydrate together with a separate water (13 systems on `caa`):
+
+```sparql
+PREFIX gc: <http://purl.org/gc/>
+
+SELECT DISTINCT ?system WHERE {
+  ?system gc:hasMolecule ?a , ?b .
+  ?a gc:hasInChIKey "QXCPBNVAQSUDRV-UHFFFAOYSA-N" .
+  ?b gc:hasInChIKey "XLYOFNOQVPJJNP-UHFFFAOYSA-N" .
+}
+ORDER BY ?system
+```
+
+**What this does not answer.** Atom numbers are the position in the
+input's `$DATA` block, not IUPAC numbers, and they differ between
+experiments, so "atom 5 here is atom 5 there" is not a valid question.
+Coordinates are not in the graph (they stay in the files the graph
+points to). And a species that was refused has no node, so absence
+here is not evidence that a compound was not present.
+
 ---
 
 ## Noted for later, not built yet

@@ -77,6 +77,8 @@ PLAYGROUND_NOTES = {
          "blurb": "Which experiments used a given method and basis set."},
     15: {"label": "Barriers",
          "skip": "it is answered by a short R step after question 13's query, not by one query."},
+    16: {"label": "Species by InChIKey", "dataset": "caa",
+         "blurb": "Which distinct species the graph holds, identified by InChIKey, and in how many systems each occurs."},
 }
 
 

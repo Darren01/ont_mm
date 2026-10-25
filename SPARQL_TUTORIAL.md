@@ -161,11 +161,11 @@ arq --data $G --query q2.rq
 -------------------------------------------------------------
 | type                                            | howMany |
 =============================================================
-| <http://www.w3.org/2002/07/owl#NamedIndividual> | 1102    |
+| <http://www.w3.org/2002/07/owl#NamedIndividual> | 1270    |
 | <http://purl.org/gc/FloatValue>                 | 530     |
 | <http://www.w3.org/2002/07/owl#Class>           | 334     |
 | <http://purl.org/gc/ReactionPathPoint>          | 268     |
-| <http://www.w3.org/2002/07/owl#ObjectProperty>  | 154     |
+| <http://www.w3.org/2002/07/owl#ObjectProperty>  | 153     |
 -------------------------------------------------------------
 ```
 
@@ -173,11 +173,11 @@ arq --data $G --query q2.rq
 >
 > ```text
 > ?type	?howMany
-> <http://www.w3.org/2002/07/owl#NamedIndividual>	1102
+> <http://www.w3.org/2002/07/owl#NamedIndividual>	1270
 > <http://purl.org/gc/FloatValue>	530
 > <http://www.w3.org/2002/07/owl#Class>	334
 > <http://purl.org/gc/ReactionPathPoint>	268
-> <http://www.w3.org/2002/07/owl#ObjectProperty>	154
+> <http://www.w3.org/2002/07/owl#ObjectProperty>	153
 > ```
 
 Each row is a *type* and how many things in the graph have that type. Two things to notice, and we'll take them in turn:
@@ -209,11 +209,11 @@ PREFIX chem: <http://purl.org/gc/>
 -------------------------------------------------------------
 | type                                            | howMany |
 =============================================================
-| <http://www.w3.org/2002/07/owl#NamedIndividual> | 1102    |
+| <http://www.w3.org/2002/07/owl#NamedIndividual> | 1270    |
 | chem:FloatValue                                 | 530     |
 | <http://www.w3.org/2002/07/owl#Class>           | 334     |
 | chem:ReactionPathPoint                          | 268     |
-| <http://www.w3.org/2002/07/owl#ObjectProperty>  | 154     |
+| <http://www.w3.org/2002/07/owl#ObjectProperty>  | 153     |
 -------------------------------------------------------------
 ```
 
@@ -277,37 +277,39 @@ arq --data $G --query q3.rq
 --------------------------------------------------------------------
 | type                                                   | howMany |
 ====================================================================
-| owl:NamedIndividual                                    | 1102    |
+| owl:NamedIndividual                                    | 1270    |
 | gc:FloatValue                                          | 530     |
 | owl:Class                                              | 334     |
 | gc:ReactionPathPoint                                   | 268     |
-| owl:ObjectProperty                                     | 154     |
+| owl:ObjectProperty                                     | 153     |
+| gc:Atom                                                | 131     |
 | gc:FrequencyPeak                                       | 96      |
 | owl:DatatypeProperty                                   | 65      |
 | owl:AnnotationProperty                                 | 37      |
+| gc:Molecule                                            | 35      |
 | ex:DataFile                                            | 30      |
 | ex:InputFile                                           | 30      |
-| ex:LogFile                                             | 30      |
-| gc:MolecularComputation                                | 27      |
 ```
 
-That's the first 12 of 37 rows; the full list is here if you want it.
+That's the first 12 of 39 rows; the full list is here if you want it.
 
 <details>
-<summary>All 37 rows</summary>
+<summary>All 39 rows</summary>
 
 ```text
 --------------------------------------------------------------------
 | type                                                   | howMany |
 ====================================================================
-| owl:NamedIndividual                                    | 1102    |
+| owl:NamedIndividual                                    | 1270    |
 | gc:FloatValue                                          | 530     |
 | owl:Class                                              | 334     |
 | gc:ReactionPathPoint                                   | 268     |
-| owl:ObjectProperty                                     | 154     |
+| owl:ObjectProperty                                     | 153     |
+| gc:Atom                                                | 131     |
 | gc:FrequencyPeak                                       | 96      |
 | owl:DatatypeProperty                                   | 65      |
 | owl:AnnotationProperty                                 | 37      |
+| gc:Molecule                                            | 35      |
 | ex:DataFile                                            | 30      |
 | ex:InputFile                                           | 30      |
 | ex:LogFile                                             | 30      |
@@ -317,8 +319,8 @@ That's the first 12 of 37 rows; the full list is here if you want it.
 | gc:VibrationalAnalysis                                 | 16      |
 | gc:VibrationalSpectra                                  | 15      |
 | gc:SinglePoint                                         | 10      |
+| <http://qudt.org/schema/qudt/DerivedUnit>              | 7       |
 | ex:DistanceConstraint                                  | 6       |
-| <http://qudt.org/schema/qudt/DerivedUnit>              | 6       |
 | gc:ForceField                                          | 4       |
 | gc:ParameterSet                                        | 4       |
 | <http://qudt.org/schema/qudt/EnergyAndWorkUnit>        | 4       |
@@ -351,7 +353,7 @@ PREFIX qudt: <http://qudt.org/schema/qudt/>
 With that line added, the same rows print as:
 
 ```text
-| qudt:DerivedUnit              | 6       |
+| qudt:DerivedUnit              | 7       |
 | qudt:EnergyAndWorkUnit        | 4       |
 | qudt:LengthUnit               | 2       |
 | qudt:ChemistryUnit            | 1       |
@@ -366,7 +368,7 @@ With that line added, the same rows print as:
 >
 > ```text
 > ?type	?howMany
-> <http://www.w3.org/2002/07/owl#NamedIndividual>	1102
+> <http://www.w3.org/2002/07/owl#NamedIndividual>	1270
 > <http://purl.org/gc/FloatValue>	530
 > <http://www.w3.org/2002/07/owl#Class>	334
 > ```
@@ -399,7 +401,7 @@ EOF
 ------------------------------
 | type                | n    |
 ==============================
-| owl:NamedIndividual | 1102 |
+| owl:NamedIndividual | 1270 |
 | gc:FloatValue       | 530  |
 | owl:Class           | 334  |
 ------------------------------
@@ -423,7 +425,7 @@ EOF
 ------------------------------
 | type                | n    |
 ==============================
-| owl:NamedIndividual | 1102 |
+| owl:NamedIndividual | 1270 |
 | gc:FloatValue       | 530  |
 | owl:Class           | 334  |
 ------------------------------
@@ -456,13 +458,13 @@ EOF
 ------------------------------
 | type                | n    |
 ==============================
-| owl:NamedIndividual | 1759 |
+| owl:NamedIndividual | 2187 |
 | gc:FloatValue       | 844  |
-| owl:Class           | 334  |
+| gc:Atom             | 335  |
 ------------------------------
 ```
 
-Same question, same shape, one argument changed - and almost every number is genuinely different: 1102 individuals in `aa` against 1759 in `caa`, 530 `gc:FloatValue`s against 844. The one row that matches is `owl:Class | 334`, and that is not a coincidence: it counts the shared vocabulary both graphs are built on, not the data. That's a real, quick way to sanity-check that two datasets built by the same pipeline aren't identical underneath. Worth trying for a while to see whether it earns a permanent place next to `ask`, rather than assuming it will.
+Same question, same shape, one argument changed - and almost every number is genuinely different: 1270 individuals in `aa` against 2187 in `caa`, 530 `gc:FloatValue`s against 844, and 335 atoms in third place where `aa` has `owl:Class`. That class count, 334, is the same in both graphs (in `caa` it is now fourth, one behind the atoms), and that is not a coincidence: it counts the shared vocabulary both graphs are built on, not the data. That's a real, quick way to sanity-check that two datasets built by the same pipeline aren't identical underneath. Worth trying for a while to see whether it earns a permanent place next to `ask`, rather than assuming it will.
 
 **Piping `ask`'s own output somewhere else** works too, though the heredoc makes it look backwards the first time you write it: the pipe goes right after the opening `<<'EOF'`, on the same line as the call itself, not after the closing `EOF`:
 
@@ -646,21 +648,21 @@ WHERE { ?thing a ?type .
 ORDER BY ?type
 ```
 
-That returns 22 rows - fewer than the 37 types in Step 2, because the ones with no label (the OWL bookkeeping and the `ex:` terms) drop out. The first few:
+That returns 24 rows - fewer than the 39 types in Step 2, because the ones with no label (the OWL bookkeeping and the `ex:` terms) drop out. The first few:
 
 ```text
 ---------------------------------------------------------------------------------------------
 | type                                                   | label                            |
 =============================================================================================
+| gc:Atom                                                | "Atom"@en                        |
 | gc:FloatValue                                          | "Float Value"@en                 |
 | gc:ForceField                                          | "Force Field"@en                 |
 | gc:FrequencyPeak                                       | "Frequency Peak"@en              |
 | gc:IRC                                                 | "IRC"@en                         |
 | gc:Methodology                                         | "Methodology"@en                 |
-| gc:MolecularComputation                                | "Molecular Computation"@en       |
 ```
 
-**Your turn:** definitions are `rdfs:comment`, not `rdfs:label`. Change those two words in the query and run it. You should get **17 rows**, and that is fewer again than the labels: some types have a name but no definition.
+**Your turn:** definitions are `rdfs:comment`, not `rdfs:label`. Change those two words in the query and run it. You should get **21 rows**, and that is fewer again than the labels: some types have a name but no definition.
 
 ---
 
@@ -674,7 +676,7 @@ WHERE { ?s ?property ?o }
 ORDER BY ?property
 ```
 
-`DISTINCT` means "each property once, however often it's used". That's 82 properties in this graph; here are the first rows.
+`DISTINCT` means "each property once, however often it's used". That's 88 properties in this graph; here are the first rows.
 
 ```text
 -------------------------------------------------
@@ -702,17 +704,22 @@ arq --data $G --query props.rq | grep 'gc:'
 
 ```text
 | gc:constraintMode                             |
+| gc:hasAtom                                    |
 | gc:hasBasisSet                                |
 | gc:hasElectronicEnergy                        |
+| gc:hasElementSymbol                           |
 | gc:hasEnthalpy                                |
 | gc:hasEntropy                                 |
 | gc:hasFloatValue                              |
 | gc:hasFrequency                               |
 | gc:hasFrequencyPeak                           |
 | gc:hasGibbsFreeEnergy                         |
+| gc:hasInChIKey                                |
+| gc:hasInChIString                             |
 | gc:hasIndex                                   |
 | gc:hasIntensity                               |
 | gc:hasMethod                                  |
+| gc:hasMolecule                                |
 | gc:hasPathEnergy                              |
 | gc:hasReactionPathPoint                       |
 | gc:hasResult                                  |
@@ -727,17 +734,22 @@ arq --data $G --query props.rq | grep 'gc:'
 >
 > ```text
 > <http://purl.org/gc/constraintMode>
+> <http://purl.org/gc/hasAtom>
 > <http://purl.org/gc/hasBasisSet>
 > <http://purl.org/gc/hasElectronicEnergy>
+> <http://purl.org/gc/hasElementSymbol>
 > <http://purl.org/gc/hasEnthalpy>
 > <http://purl.org/gc/hasEntropy>
 > <http://purl.org/gc/hasFloatValue>
 > <http://purl.org/gc/hasFrequency>
 > <http://purl.org/gc/hasFrequencyPeak>
 > <http://purl.org/gc/hasGibbsFreeEnergy>
+> <http://purl.org/gc/hasInChIKey>
+> <http://purl.org/gc/hasInChIString>
 > <http://purl.org/gc/hasIndex>
 > <http://purl.org/gc/hasIntensity>
 > <http://purl.org/gc/hasMethod>
+> <http://purl.org/gc/hasMolecule>
 > <http://purl.org/gc/hasPathEnergy>
 > <http://purl.org/gc/hasReactionPathPoint>
 > <http://purl.org/gc/hasResult>
@@ -842,7 +854,7 @@ SELECT ?type (COUNT(?thing) AS ?howMany) WHERE { ?thing a ?type } GROUP BY ?type
 ---------------------------------
 | type                | howMany |
 =================================
-| owl:NamedIndividual | 1102    |
+| owl:NamedIndividual | 1270    |
 | gc:FloatValue       | 530     |
 | owl:Class           | 334     |
 ---------------------------------
@@ -1075,12 +1087,12 @@ ORDER BY ?output
 -------------------------------------------------------------------------------------------
 | output             | hash                                                               |
 ===========================================================================================
-| ex:file_aa001a_dat |                                                                    |
+| ex:file_aa001a_dat | "9373342dbe0da04e3bffc3d09e85db344cd10401f7edbf7d902ccd242b06fb8e" |
 | ex:file_aa001a_log | "ca9cf795626c1c861c4bb82b1c19c9cfa247ad01202666a558e7c475669ff930" |
 -------------------------------------------------------------------------------------------
 ```
 
-The `.log` file has one. The `.dat` file doesn't - `OPTIONAL` means the row survives anyway, with that one column simply empty, rather than the whole file vanishing from the answer. That's a real, honest gap in this published graph, not a manufactured one: every `.dat` file here is missing a checksum, project-wide, for a genuine, traceable reason ([the README says why](./README.md)).
+Both files have one now: every `.dat` in the `aa` project was in the data folder when the graph was built, so each got a checksum. (A file's checksum can only be taken from the file itself. If the `.dat` isn't there, the node is still created, from the run's own records, but it has no `schema:sha256` and no `ex:fileURL`; see [the README](./README.md).)
 
 Which raises the natural next question: not "does this one file have a checksum", but "which files don't". `OPTIONAL` plus `FILTER(!BOUND(...))` answers exactly that - get the value if there is one, then keep only the rows where there wasn't:
 
@@ -1090,82 +1102,49 @@ SELECT ?file WHERE {
   OPTIONAL { ?file schema:sha256 ?h . }
   FILTER(!BOUND(?h))
 }
+ORDER BY ?file
 ```
+
+On `aa` the answer is an empty table, which is the good outcome here: there are no gaps to find. Run it where there are some - on `caa`, with `ask2 "$G2"` from Chapter 1:
 
 ```text
-----------------------------------------------
-| file                                       |
-==============================================
-| ex:file_aa002-aldehyde-pcseg2_dat          |
-| ex:file_aa001f_dat                         |
-| ex:file_aa002-hydrate-bare-smd_dat         |
-| ex:file_aa001d-smd-pcseg2_dat              |
-| ex:file_aa001e_dat                         |
-| ex:file_aa001b_dat                         |
-| ex:file_aa001d_dat                         |
-| ex:file_aa001g-smd-pcseg2_dat              |
-| ex:file_aa001c_dat                         |
-| ex:file_aa001a_dat                         |
-| ex:file_aa001g-smd_dat                     |
-| ex:file_aa002-aldehyde-bare_dat            |
-| ex:file_aa001h_dat                         |
-| ex:file_aa002-water-bare_dat               |
-| ex:file_aa001h-smd_dat                     |
-| ex:file_aa001g_dat                         |
-| ex:file_aa002-aldehyde-bare-smd-check_dat  |
-| ex:file_aa001h-pcseg2_dat                  |
-| ex:file_aa001-ts-pcseg2_dat                |
-| ex:file_aa001g-pcseg2_dat                  |
-| ex:file_aa002-aldehyde-bare-smd_dat        |
-| ex:file_aa002-aldehyde-bare-smd-hcore_dat  |
-| ex:file_aa002-aldehyde-bare-smd-energy_dat |
-| ex:file_aa002-hydrate-bare_dat             |
-| ex:file_aa001h-smd-pcseg2_dat              |
-| ex:file_aa002-water-bare-smd_dat           |
-| ex:file_aa002-hydrate-pcseg2_dat           |
-| ex:file_aa001d-smd_dat                     |
-| ex:file_aa002-water-pcseg2_dat             |
-| ex:file_aa001d-smd-hess_dat                |
-----------------------------------------------
+--------------------------------------------------------
+| file                                                 |
+========================================================
+| ex:file_caa005b-cl-atom-basischeck_dat               |
+| ex:file_caa005b-cl-atom-extfil-test_dat              |
+| ex:file_caa005bIRC-def2svp-test_dat                  |
+| ex:file_caa005bIRC-pcseg2-test_dat                   |
+| ex:file_caa005bIRC-trimmedTZVPP-test_dat             |
+| ex:file_caa005bIRCCML1st-prerelax-631Gdp_dat         |
+| ex:file_caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix_dat |
+| ex:file_caa005bIRCCML1stdef2TZVPP-uhfcheck_dat       |
+| ex:file_caa005bIRCCML1stdef2TZVPPb_dat               |
+| ex:file_caa005bIRCCML1stdef2TZVPPc_dat               |
+| ex:file_caa005bIRCCML1stdef2TZVPPd_dat               |
+| ex:file_caa005bIRCCML1stdef2TZVPPe_dat               |
+--------------------------------------------------------
 ```
 
-> **With robot:** the same query, same result - 30 rows, one per `.dat` file, full addresses as always:
+> **With robot:** the same query, same result - 12 rows, one per `.dat` file without a checksum, full addresses as always:
 >
 > ```text
 > ?file
-> <http://example.org/file_aa002-aldehyde-pcseg2_dat>
-> <http://example.org/file_aa001f_dat>
-> <http://example.org/file_aa002-hydrate-bare-smd_dat>
-> <http://example.org/file_aa001d-smd-pcseg2_dat>
-> <http://example.org/file_aa001e_dat>
-> <http://example.org/file_aa001b_dat>
-> <http://example.org/file_aa001d_dat>
-> <http://example.org/file_aa001g-smd-pcseg2_dat>
-> <http://example.org/file_aa001c_dat>
-> <http://example.org/file_aa001a_dat>
-> <http://example.org/file_aa001g-smd_dat>
-> <http://example.org/file_aa002-aldehyde-bare_dat>
-> <http://example.org/file_aa001h_dat>
-> <http://example.org/file_aa002-water-bare_dat>
-> <http://example.org/file_aa001h-smd_dat>
-> <http://example.org/file_aa001g_dat>
-> <http://example.org/file_aa002-aldehyde-bare-smd-check_dat>
-> <http://example.org/file_aa001h-pcseg2_dat>
-> <http://example.org/file_aa001-ts-pcseg2_dat>
-> <http://example.org/file_aa001g-pcseg2_dat>
-> <http://example.org/file_aa002-aldehyde-bare-smd_dat>
-> <http://example.org/file_aa002-aldehyde-bare-smd-hcore_dat>
-> <http://example.org/file_aa002-aldehyde-bare-smd-energy_dat>
-> <http://example.org/file_aa002-hydrate-bare_dat>
-> <http://example.org/file_aa001h-smd-pcseg2_dat>
-> <http://example.org/file_aa002-water-bare-smd_dat>
-> <http://example.org/file_aa002-hydrate-pcseg2_dat>
-> <http://example.org/file_aa001d-smd_dat>
-> <http://example.org/file_aa002-water-pcseg2_dat>
-> <http://example.org/file_aa001d-smd-hess_dat>
+> <http://example.org/file_caa005b-cl-atom-basischeck_dat>
+> <http://example.org/file_caa005b-cl-atom-extfil-test_dat>
+> <http://example.org/file_caa005bIRC-def2svp-test_dat>
+> <http://example.org/file_caa005bIRC-pcseg2-test_dat>
+> <http://example.org/file_caa005bIRC-trimmedTZVPP-test_dat>
+> <http://example.org/file_caa005bIRCCML1st-prerelax-631Gdp_dat>
+> <http://example.org/file_caa005bIRCCML1stdef2TZVPP-uhfcheck-nomix_dat>
+> <http://example.org/file_caa005bIRCCML1stdef2TZVPP-uhfcheck_dat>
+> <http://example.org/file_caa005bIRCCML1stdef2TZVPPb_dat>
+> <http://example.org/file_caa005bIRCCML1stdef2TZVPPc_dat>
+> <http://example.org/file_caa005bIRCCML1stdef2TZVPPd_dat>
+> <http://example.org/file_caa005bIRCCML1stdef2TZVPPe_dat>
 > ```
 
-Thirty files, every `.dat` in this dataset. **Worth reading carefully, though: an empty result here is not automatically a problem.** This graph deliberately doesn't hold everything a `.log` file contains - `filter_vibrational_modes()`, used to build it, keeps only the imaginary frequencies and the six translation/rotation modes, not the full vibrational spectrum. That's not lost data; it's a map drawn at a scale that stays usable, with the full, unabridged territory still one hop away in the `.log` file itself, via `prov:generated`. Finding something absent from the graph tells you the graph doesn't index it - it doesn't yet tell you whether that's a genuine gap or a deliberate choice. The only way to tell them apart is the same principle either way: check whether the source file it points to still has it.
+Twelve files, every `.dat` that was not in the project's `dat/` folder when `caa` was built (the `.log` and `.inp` of those runs are there, the `.dat` is not). **Worth reading carefully, though: an empty result here is not automatically a problem.** This graph deliberately doesn't hold everything a `.log` file contains - `filter_vibrational_modes()`, used to build it, keeps only the imaginary frequencies and the six translation/rotation modes, not the full vibrational spectrum. That's not lost data; it's a map drawn at a scale that stays usable, with the full, unabridged territory still one hop away in the `.log` file itself, via `prov:generated`. Finding something absent from the graph tells you the graph doesn't index it - it doesn't yet tell you whether that's a genuine gap or a deliberate choice. The only way to tell them apart is the same principle either way: check whether the source file it points to still has it.
 
 ---
 
@@ -1253,7 +1232,7 @@ SELECT ?thing ?label WHERE {
 }
 ```
 
-That's a wide net - 46 rows in this graph, and worth seeing why:
+That's a wide net - 70 rows in this graph, and worth seeing why:
 
 ```text
 -----------------------------------------------------------------------------------------------------
@@ -1268,11 +1247,11 @@ That's a wide net - 46 rows in this graph, and worth seeing why:
 | ex:exp_aa002-aldehyde-bare-smd-energy      | "Single point aa002-aldehyde-bare-smd-energy"        |
 | ex:file_aa002-aldehyde-bare-smd-energy_inp | "Input file aa002-aldehyde-bare-smd-energy"          |
 | ex:file_aa002-aldehyde-bare_dat            | "Output data aa002-aldehyde-bare"                    |
-... (38 more rows)
+... (61 more rows)
 -----------------------------------------------------------------------------------------------------
 ```
 
-Peaks, files, energies, spectra, experiments - everything with a matching label, not just the experiments you probably had in mind. A label search finds every *kind* of thing at once, because `rdfs:label` doesn't care what it's attached to. Narrow it to experiments specifically - `prov:used` is a reliable test for that, since only something that actually ran has an input file (Chapter 4 shows why this beats the more obvious class):
+Peaks, files, energies, spectra, atoms, experiments - everything with a matching label, not just the experiments you probably had in mind. A label search finds every *kind* of thing at once, because `rdfs:label` doesn't care what it's attached to. Narrow it to experiments specifically - `prov:used` is a reliable test for that, since only something that actually ran has an input file (Chapter 4 shows why this beats the more obvious class):
 
 ```sparql
 SELECT ?exp ?label WHERE {
@@ -1295,7 +1274,7 @@ SELECT ?exp ?label WHERE {
 ------------------------------------------------------------------------------------------------
 ```
 
-Six experiments, not forty-five. The wide search isn't a mistake to avoid - it's often the right first move precisely because it doesn't assume you already know what kind of thing you're after. Narrowing comes after, once you can see what's actually there.
+Six experiments, not sixty-four. The wide search isn't a mistake to avoid - it's often the right first move precisely because it doesn't assume you already know what kind of thing you're after. Narrowing comes after, once you can see what's actually there.
 
 ---
 

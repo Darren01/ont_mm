@@ -1616,10 +1616,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                                       rdfs:subPropertyOf <http://purl.org/gc/hasMolecularData> ;
                                       rdf:type owl:FunctionalProperty ;
                                       rdfs:domain <http://purl.org/gc/Atom> ;
-                                      rdfs:range xsd:string ;
-                                      rdfs:comment "A property that defines the Symbol of the element of an atom."@en ;
-                                      rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
-                                      rdfs:label "has element symbol"@en .
+                                      rdfs:range xsd:string .
 
 
 ###  http://purl.org/gc/hasEmail
@@ -1686,10 +1683,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
 ###  http://purl.org/gc/hasIndex
 <http://purl.org/gc/hasIndex> rdf:type owl:DatatypeProperty ;
                               rdfs:subPropertyOf <http://purl.org/gc/hasMolecularData> ;
-                              rdfs:range xsd:nonNegativeInteger ;
-                              rdfs:comment "A property that defines a sequential arrangement of material in numerical order, i.e. Frequency Peak, Orbital or a sequence number in residue."@en ;
-                              rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
-                              rdfs:label "has index"@en .
+                              rdfs:range xsd:nonNegativeInteger .
 
 
 ###  http://purl.org/gc/hasInput
@@ -4678,604 +4672,1115 @@ rdfs:Class rdf:type owl:Class .
 #################################################################
 
 ###  http://example.org/atom_aa001a_1
-<http://example.org/atom_aa001a_1> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001a_1> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                   <http://purl.org/gc/hasIndex> "1"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 1 (H) for aa001a" .
 
 
 ###  http://example.org/atom_aa001a_10
-<http://example.org/atom_aa001a_10> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001a_10> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/Atom> ;
+                                    <http://purl.org/gc/hasElementSymbol> "H" ;
+                                    <http://purl.org/gc/hasIndex> "10"^^xsd:nonNegativeInteger ;
+                                    rdfs:label "Atom 10 (H) for aa001a" .
 
 
 ###  http://example.org/atom_aa001a_11
-<http://example.org/atom_aa001a_11> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001a_11> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/Atom> ;
+                                    <http://purl.org/gc/hasElementSymbol> "H" ;
+                                    <http://purl.org/gc/hasIndex> "11"^^xsd:nonNegativeInteger ;
+                                    rdfs:label "Atom 11 (H) for aa001a" .
 
 
 ###  http://example.org/atom_aa001a_12
-<http://example.org/atom_aa001a_12> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001a_12> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/Atom> ;
+                                    <http://purl.org/gc/hasElementSymbol> "H" ;
+                                    <http://purl.org/gc/hasIndex> "12"^^xsd:nonNegativeInteger ;
+                                    rdfs:label "Atom 12 (H) for aa001a" .
 
 
 ###  http://example.org/atom_aa001a_13
-<http://example.org/atom_aa001a_13> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001a_13> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/Atom> ;
+                                    <http://purl.org/gc/hasElementSymbol> "H" ;
+                                    <http://purl.org/gc/hasIndex> "13"^^xsd:nonNegativeInteger ;
+                                    rdfs:label "Atom 13 (H) for aa001a" .
 
 
 ###  http://example.org/atom_aa001a_2
-<http://example.org/atom_aa001a_2> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001a_2> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "C" ;
+                                   <http://purl.org/gc/hasIndex> "2"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 2 (C) for aa001a" .
 
 
 ###  http://example.org/atom_aa001a_3
-<http://example.org/atom_aa001a_3> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001a_3> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "C" ;
+                                   <http://purl.org/gc/hasIndex> "3"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 3 (C) for aa001a" .
 
 
 ###  http://example.org/atom_aa001a_4
-<http://example.org/atom_aa001a_4> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001a_4> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "O" ;
+                                   <http://purl.org/gc/hasIndex> "4"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 4 (O) for aa001a" .
 
 
 ###  http://example.org/atom_aa001a_5
-<http://example.org/atom_aa001a_5> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001a_5> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                   <http://purl.org/gc/hasIndex> "5"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 5 (H) for aa001a" .
 
 
 ###  http://example.org/atom_aa001a_6
-<http://example.org/atom_aa001a_6> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001a_6> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                   <http://purl.org/gc/hasIndex> "6"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 6 (H) for aa001a" .
 
 
 ###  http://example.org/atom_aa001a_7
-<http://example.org/atom_aa001a_7> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001a_7> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "O" ;
+                                   <http://purl.org/gc/hasIndex> "7"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 7 (O) for aa001a" .
 
 
 ###  http://example.org/atom_aa001a_8
-<http://example.org/atom_aa001a_8> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001a_8> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "O" ;
+                                   <http://purl.org/gc/hasIndex> "8"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 8 (O) for aa001a" .
 
 
 ###  http://example.org/atom_aa001a_9
-<http://example.org/atom_aa001a_9> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001a_9> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                   <http://purl.org/gc/hasIndex> "9"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 9 (H) for aa001a" .
 
 
 ###  http://example.org/atom_aa001b_1
-<http://example.org/atom_aa001b_1> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001b_1> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                   <http://purl.org/gc/hasIndex> "1"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 1 (H) for aa001b" .
 
 
 ###  http://example.org/atom_aa001b_10
-<http://example.org/atom_aa001b_10> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001b_10> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/Atom> ;
+                                    <http://purl.org/gc/hasElementSymbol> "H" ;
+                                    <http://purl.org/gc/hasIndex> "10"^^xsd:nonNegativeInteger ;
+                                    rdfs:label "Atom 10 (H) for aa001b" .
 
 
 ###  http://example.org/atom_aa001b_11
-<http://example.org/atom_aa001b_11> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001b_11> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/Atom> ;
+                                    <http://purl.org/gc/hasElementSymbol> "H" ;
+                                    <http://purl.org/gc/hasIndex> "11"^^xsd:nonNegativeInteger ;
+                                    rdfs:label "Atom 11 (H) for aa001b" .
 
 
 ###  http://example.org/atom_aa001b_12
-<http://example.org/atom_aa001b_12> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001b_12> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/Atom> ;
+                                    <http://purl.org/gc/hasElementSymbol> "H" ;
+                                    <http://purl.org/gc/hasIndex> "12"^^xsd:nonNegativeInteger ;
+                                    rdfs:label "Atom 12 (H) for aa001b" .
 
 
 ###  http://example.org/atom_aa001b_13
-<http://example.org/atom_aa001b_13> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001b_13> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/Atom> ;
+                                    <http://purl.org/gc/hasElementSymbol> "H" ;
+                                    <http://purl.org/gc/hasIndex> "13"^^xsd:nonNegativeInteger ;
+                                    rdfs:label "Atom 13 (H) for aa001b" .
 
 
 ###  http://example.org/atom_aa001b_2
-<http://example.org/atom_aa001b_2> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001b_2> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "C" ;
+                                   <http://purl.org/gc/hasIndex> "2"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 2 (C) for aa001b" .
 
 
 ###  http://example.org/atom_aa001b_3
-<http://example.org/atom_aa001b_3> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001b_3> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "C" ;
+                                   <http://purl.org/gc/hasIndex> "3"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 3 (C) for aa001b" .
 
 
 ###  http://example.org/atom_aa001b_4
-<http://example.org/atom_aa001b_4> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001b_4> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "O" ;
+                                   <http://purl.org/gc/hasIndex> "4"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 4 (O) for aa001b" .
 
 
 ###  http://example.org/atom_aa001b_5
-<http://example.org/atom_aa001b_5> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001b_5> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                   <http://purl.org/gc/hasIndex> "5"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 5 (H) for aa001b" .
 
 
 ###  http://example.org/atom_aa001b_6
-<http://example.org/atom_aa001b_6> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001b_6> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                   <http://purl.org/gc/hasIndex> "6"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 6 (H) for aa001b" .
 
 
 ###  http://example.org/atom_aa001b_7
-<http://example.org/atom_aa001b_7> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001b_7> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "O" ;
+                                   <http://purl.org/gc/hasIndex> "7"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 7 (O) for aa001b" .
 
 
 ###  http://example.org/atom_aa001b_8
-<http://example.org/atom_aa001b_8> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001b_8> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "O" ;
+                                   <http://purl.org/gc/hasIndex> "8"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 8 (O) for aa001b" .
 
 
 ###  http://example.org/atom_aa001b_9
-<http://example.org/atom_aa001b_9> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001b_9> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                   <http://purl.org/gc/hasIndex> "9"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 9 (H) for aa001b" .
 
 
 ###  http://example.org/atom_aa001c_1
-<http://example.org/atom_aa001c_1> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001c_1> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                   <http://purl.org/gc/hasIndex> "1"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 1 (H) for aa001c" .
 
 
 ###  http://example.org/atom_aa001c_10
-<http://example.org/atom_aa001c_10> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001c_10> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/Atom> ;
+                                    <http://purl.org/gc/hasElementSymbol> "H" ;
+                                    <http://purl.org/gc/hasIndex> "10"^^xsd:nonNegativeInteger ;
+                                    rdfs:label "Atom 10 (H) for aa001c" .
 
 
 ###  http://example.org/atom_aa001c_11
-<http://example.org/atom_aa001c_11> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001c_11> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/Atom> ;
+                                    <http://purl.org/gc/hasElementSymbol> "H" ;
+                                    <http://purl.org/gc/hasIndex> "11"^^xsd:nonNegativeInteger ;
+                                    rdfs:label "Atom 11 (H) for aa001c" .
 
 
 ###  http://example.org/atom_aa001c_12
-<http://example.org/atom_aa001c_12> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001c_12> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/Atom> ;
+                                    <http://purl.org/gc/hasElementSymbol> "H" ;
+                                    <http://purl.org/gc/hasIndex> "12"^^xsd:nonNegativeInteger ;
+                                    rdfs:label "Atom 12 (H) for aa001c" .
 
 
 ###  http://example.org/atom_aa001c_13
-<http://example.org/atom_aa001c_13> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001c_13> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/Atom> ;
+                                    <http://purl.org/gc/hasElementSymbol> "H" ;
+                                    <http://purl.org/gc/hasIndex> "13"^^xsd:nonNegativeInteger ;
+                                    rdfs:label "Atom 13 (H) for aa001c" .
 
 
 ###  http://example.org/atom_aa001c_2
-<http://example.org/atom_aa001c_2> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001c_2> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "C" ;
+                                   <http://purl.org/gc/hasIndex> "2"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 2 (C) for aa001c" .
 
 
 ###  http://example.org/atom_aa001c_3
-<http://example.org/atom_aa001c_3> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001c_3> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "C" ;
+                                   <http://purl.org/gc/hasIndex> "3"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 3 (C) for aa001c" .
 
 
 ###  http://example.org/atom_aa001c_4
-<http://example.org/atom_aa001c_4> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001c_4> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "O" ;
+                                   <http://purl.org/gc/hasIndex> "4"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 4 (O) for aa001c" .
 
 
 ###  http://example.org/atom_aa001c_5
-<http://example.org/atom_aa001c_5> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001c_5> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                   <http://purl.org/gc/hasIndex> "5"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 5 (H) for aa001c" .
 
 
 ###  http://example.org/atom_aa001c_6
-<http://example.org/atom_aa001c_6> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001c_6> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                   <http://purl.org/gc/hasIndex> "6"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 6 (H) for aa001c" .
 
 
 ###  http://example.org/atom_aa001c_7
-<http://example.org/atom_aa001c_7> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001c_7> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "O" ;
+                                   <http://purl.org/gc/hasIndex> "7"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 7 (O) for aa001c" .
 
 
 ###  http://example.org/atom_aa001c_8
-<http://example.org/atom_aa001c_8> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001c_8> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "O" ;
+                                   <http://purl.org/gc/hasIndex> "8"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 8 (O) for aa001c" .
 
 
 ###  http://example.org/atom_aa001c_9
-<http://example.org/atom_aa001c_9> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001c_9> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                   <http://purl.org/gc/hasIndex> "9"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 9 (H) for aa001c" .
 
 
 ###  http://example.org/atom_aa001g-smd_1
-<http://example.org/atom_aa001g-smd_1> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g-smd_1> rdf:type owl:NamedIndividual ,
+                                                <http://purl.org/gc/Atom> ;
+                                       <http://purl.org/gc/hasElementSymbol> "H" ;
+                                       <http://purl.org/gc/hasIndex> "1"^^xsd:nonNegativeInteger ;
+                                       rdfs:label "Atom 1 (H) for aa001g-smd" .
 
 
 ###  http://example.org/atom_aa001g-smd_10
-<http://example.org/atom_aa001g-smd_10> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g-smd_10> rdf:type owl:NamedIndividual ,
+                                                 <http://purl.org/gc/Atom> ;
+                                        <http://purl.org/gc/hasElementSymbol> "H" ;
+                                        <http://purl.org/gc/hasIndex> "10"^^xsd:nonNegativeInteger ;
+                                        rdfs:label "Atom 10 (H) for aa001g-smd" .
 
 
 ###  http://example.org/atom_aa001g-smd_11
-<http://example.org/atom_aa001g-smd_11> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g-smd_11> rdf:type owl:NamedIndividual ,
+                                                 <http://purl.org/gc/Atom> ;
+                                        <http://purl.org/gc/hasElementSymbol> "H" ;
+                                        <http://purl.org/gc/hasIndex> "11"^^xsd:nonNegativeInteger ;
+                                        rdfs:label "Atom 11 (H) for aa001g-smd" .
 
 
 ###  http://example.org/atom_aa001g-smd_12
-<http://example.org/atom_aa001g-smd_12> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g-smd_12> rdf:type owl:NamedIndividual ,
+                                                 <http://purl.org/gc/Atom> ;
+                                        <http://purl.org/gc/hasElementSymbol> "H" ;
+                                        <http://purl.org/gc/hasIndex> "12"^^xsd:nonNegativeInteger ;
+                                        rdfs:label "Atom 12 (H) for aa001g-smd" .
 
 
 ###  http://example.org/atom_aa001g-smd_13
-<http://example.org/atom_aa001g-smd_13> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g-smd_13> rdf:type owl:NamedIndividual ,
+                                                 <http://purl.org/gc/Atom> ;
+                                        <http://purl.org/gc/hasElementSymbol> "H" ;
+                                        <http://purl.org/gc/hasIndex> "13"^^xsd:nonNegativeInteger ;
+                                        rdfs:label "Atom 13 (H) for aa001g-smd" .
 
 
 ###  http://example.org/atom_aa001g-smd_2
-<http://example.org/atom_aa001g-smd_2> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g-smd_2> rdf:type owl:NamedIndividual ,
+                                                <http://purl.org/gc/Atom> ;
+                                       <http://purl.org/gc/hasElementSymbol> "C" ;
+                                       <http://purl.org/gc/hasIndex> "2"^^xsd:nonNegativeInteger ;
+                                       rdfs:label "Atom 2 (C) for aa001g-smd" .
 
 
 ###  http://example.org/atom_aa001g-smd_3
-<http://example.org/atom_aa001g-smd_3> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g-smd_3> rdf:type owl:NamedIndividual ,
+                                                <http://purl.org/gc/Atom> ;
+                                       <http://purl.org/gc/hasElementSymbol> "C" ;
+                                       <http://purl.org/gc/hasIndex> "3"^^xsd:nonNegativeInteger ;
+                                       rdfs:label "Atom 3 (C) for aa001g-smd" .
 
 
 ###  http://example.org/atom_aa001g-smd_4
-<http://example.org/atom_aa001g-smd_4> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g-smd_4> rdf:type owl:NamedIndividual ,
+                                                <http://purl.org/gc/Atom> ;
+                                       <http://purl.org/gc/hasElementSymbol> "O" ;
+                                       <http://purl.org/gc/hasIndex> "4"^^xsd:nonNegativeInteger ;
+                                       rdfs:label "Atom 4 (O) for aa001g-smd" .
 
 
 ###  http://example.org/atom_aa001g-smd_5
-<http://example.org/atom_aa001g-smd_5> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g-smd_5> rdf:type owl:NamedIndividual ,
+                                                <http://purl.org/gc/Atom> ;
+                                       <http://purl.org/gc/hasElementSymbol> "H" ;
+                                       <http://purl.org/gc/hasIndex> "5"^^xsd:nonNegativeInteger ;
+                                       rdfs:label "Atom 5 (H) for aa001g-smd" .
 
 
 ###  http://example.org/atom_aa001g-smd_6
-<http://example.org/atom_aa001g-smd_6> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g-smd_6> rdf:type owl:NamedIndividual ,
+                                                <http://purl.org/gc/Atom> ;
+                                       <http://purl.org/gc/hasElementSymbol> "H" ;
+                                       <http://purl.org/gc/hasIndex> "6"^^xsd:nonNegativeInteger ;
+                                       rdfs:label "Atom 6 (H) for aa001g-smd" .
 
 
 ###  http://example.org/atom_aa001g-smd_7
-<http://example.org/atom_aa001g-smd_7> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g-smd_7> rdf:type owl:NamedIndividual ,
+                                                <http://purl.org/gc/Atom> ;
+                                       <http://purl.org/gc/hasElementSymbol> "O" ;
+                                       <http://purl.org/gc/hasIndex> "7"^^xsd:nonNegativeInteger ;
+                                       rdfs:label "Atom 7 (O) for aa001g-smd" .
 
 
 ###  http://example.org/atom_aa001g-smd_8
-<http://example.org/atom_aa001g-smd_8> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g-smd_8> rdf:type owl:NamedIndividual ,
+                                                <http://purl.org/gc/Atom> ;
+                                       <http://purl.org/gc/hasElementSymbol> "O" ;
+                                       <http://purl.org/gc/hasIndex> "8"^^xsd:nonNegativeInteger ;
+                                       rdfs:label "Atom 8 (O) for aa001g-smd" .
 
 
 ###  http://example.org/atom_aa001g-smd_9
-<http://example.org/atom_aa001g-smd_9> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g-smd_9> rdf:type owl:NamedIndividual ,
+                                                <http://purl.org/gc/Atom> ;
+                                       <http://purl.org/gc/hasElementSymbol> "H" ;
+                                       <http://purl.org/gc/hasIndex> "9"^^xsd:nonNegativeInteger ;
+                                       rdfs:label "Atom 9 (H) for aa001g-smd" .
 
 
 ###  http://example.org/atom_aa001g_1
-<http://example.org/atom_aa001g_1> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g_1> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                   <http://purl.org/gc/hasIndex> "1"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 1 (H) for aa001g" .
 
 
 ###  http://example.org/atom_aa001g_10
-<http://example.org/atom_aa001g_10> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g_10> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/Atom> ;
+                                    <http://purl.org/gc/hasElementSymbol> "H" ;
+                                    <http://purl.org/gc/hasIndex> "10"^^xsd:nonNegativeInteger ;
+                                    rdfs:label "Atom 10 (H) for aa001g" .
 
 
 ###  http://example.org/atom_aa001g_11
-<http://example.org/atom_aa001g_11> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g_11> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/Atom> ;
+                                    <http://purl.org/gc/hasElementSymbol> "H" ;
+                                    <http://purl.org/gc/hasIndex> "11"^^xsd:nonNegativeInteger ;
+                                    rdfs:label "Atom 11 (H) for aa001g" .
 
 
 ###  http://example.org/atom_aa001g_12
-<http://example.org/atom_aa001g_12> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g_12> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/Atom> ;
+                                    <http://purl.org/gc/hasElementSymbol> "H" ;
+                                    <http://purl.org/gc/hasIndex> "12"^^xsd:nonNegativeInteger ;
+                                    rdfs:label "Atom 12 (H) for aa001g" .
 
 
 ###  http://example.org/atom_aa001g_13
-<http://example.org/atom_aa001g_13> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g_13> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/Atom> ;
+                                    <http://purl.org/gc/hasElementSymbol> "H" ;
+                                    <http://purl.org/gc/hasIndex> "13"^^xsd:nonNegativeInteger ;
+                                    rdfs:label "Atom 13 (H) for aa001g" .
 
 
 ###  http://example.org/atom_aa001g_2
-<http://example.org/atom_aa001g_2> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g_2> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "C" ;
+                                   <http://purl.org/gc/hasIndex> "2"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 2 (C) for aa001g" .
 
 
 ###  http://example.org/atom_aa001g_3
-<http://example.org/atom_aa001g_3> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g_3> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "C" ;
+                                   <http://purl.org/gc/hasIndex> "3"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 3 (C) for aa001g" .
 
 
 ###  http://example.org/atom_aa001g_4
-<http://example.org/atom_aa001g_4> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g_4> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "O" ;
+                                   <http://purl.org/gc/hasIndex> "4"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 4 (O) for aa001g" .
 
 
 ###  http://example.org/atom_aa001g_5
-<http://example.org/atom_aa001g_5> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g_5> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                   <http://purl.org/gc/hasIndex> "5"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 5 (H) for aa001g" .
 
 
 ###  http://example.org/atom_aa001g_6
-<http://example.org/atom_aa001g_6> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g_6> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                   <http://purl.org/gc/hasIndex> "6"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 6 (H) for aa001g" .
 
 
 ###  http://example.org/atom_aa001g_7
-<http://example.org/atom_aa001g_7> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g_7> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "O" ;
+                                   <http://purl.org/gc/hasIndex> "7"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 7 (O) for aa001g" .
 
 
 ###  http://example.org/atom_aa001g_8
-<http://example.org/atom_aa001g_8> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g_8> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "O" ;
+                                   <http://purl.org/gc/hasIndex> "8"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 8 (O) for aa001g" .
 
 
 ###  http://example.org/atom_aa001g_9
-<http://example.org/atom_aa001g_9> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001g_9> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                   <http://purl.org/gc/hasIndex> "9"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 9 (H) for aa001g" .
 
 
 ###  http://example.org/atom_aa001h-smd_1
-<http://example.org/atom_aa001h-smd_1> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h-smd_1> rdf:type owl:NamedIndividual ,
+                                                <http://purl.org/gc/Atom> ;
+                                       <http://purl.org/gc/hasElementSymbol> "H" ;
+                                       <http://purl.org/gc/hasIndex> "1"^^xsd:nonNegativeInteger ;
+                                       rdfs:label "Atom 1 (H) for aa001h-smd" .
 
 
 ###  http://example.org/atom_aa001h-smd_10
-<http://example.org/atom_aa001h-smd_10> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h-smd_10> rdf:type owl:NamedIndividual ,
+                                                 <http://purl.org/gc/Atom> ;
+                                        <http://purl.org/gc/hasElementSymbol> "H" ;
+                                        <http://purl.org/gc/hasIndex> "10"^^xsd:nonNegativeInteger ;
+                                        rdfs:label "Atom 10 (H) for aa001h-smd" .
 
 
 ###  http://example.org/atom_aa001h-smd_11
-<http://example.org/atom_aa001h-smd_11> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h-smd_11> rdf:type owl:NamedIndividual ,
+                                                 <http://purl.org/gc/Atom> ;
+                                        <http://purl.org/gc/hasElementSymbol> "H" ;
+                                        <http://purl.org/gc/hasIndex> "11"^^xsd:nonNegativeInteger ;
+                                        rdfs:label "Atom 11 (H) for aa001h-smd" .
 
 
 ###  http://example.org/atom_aa001h-smd_12
-<http://example.org/atom_aa001h-smd_12> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h-smd_12> rdf:type owl:NamedIndividual ,
+                                                 <http://purl.org/gc/Atom> ;
+                                        <http://purl.org/gc/hasElementSymbol> "H" ;
+                                        <http://purl.org/gc/hasIndex> "12"^^xsd:nonNegativeInteger ;
+                                        rdfs:label "Atom 12 (H) for aa001h-smd" .
 
 
 ###  http://example.org/atom_aa001h-smd_13
-<http://example.org/atom_aa001h-smd_13> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h-smd_13> rdf:type owl:NamedIndividual ,
+                                                 <http://purl.org/gc/Atom> ;
+                                        <http://purl.org/gc/hasElementSymbol> "H" ;
+                                        <http://purl.org/gc/hasIndex> "13"^^xsd:nonNegativeInteger ;
+                                        rdfs:label "Atom 13 (H) for aa001h-smd" .
 
 
 ###  http://example.org/atom_aa001h-smd_2
-<http://example.org/atom_aa001h-smd_2> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h-smd_2> rdf:type owl:NamedIndividual ,
+                                                <http://purl.org/gc/Atom> ;
+                                       <http://purl.org/gc/hasElementSymbol> "C" ;
+                                       <http://purl.org/gc/hasIndex> "2"^^xsd:nonNegativeInteger ;
+                                       rdfs:label "Atom 2 (C) for aa001h-smd" .
 
 
 ###  http://example.org/atom_aa001h-smd_3
-<http://example.org/atom_aa001h-smd_3> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h-smd_3> rdf:type owl:NamedIndividual ,
+                                                <http://purl.org/gc/Atom> ;
+                                       <http://purl.org/gc/hasElementSymbol> "C" ;
+                                       <http://purl.org/gc/hasIndex> "3"^^xsd:nonNegativeInteger ;
+                                       rdfs:label "Atom 3 (C) for aa001h-smd" .
 
 
 ###  http://example.org/atom_aa001h-smd_4
-<http://example.org/atom_aa001h-smd_4> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h-smd_4> rdf:type owl:NamedIndividual ,
+                                                <http://purl.org/gc/Atom> ;
+                                       <http://purl.org/gc/hasElementSymbol> "O" ;
+                                       <http://purl.org/gc/hasIndex> "4"^^xsd:nonNegativeInteger ;
+                                       rdfs:label "Atom 4 (O) for aa001h-smd" .
 
 
 ###  http://example.org/atom_aa001h-smd_5
-<http://example.org/atom_aa001h-smd_5> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h-smd_5> rdf:type owl:NamedIndividual ,
+                                                <http://purl.org/gc/Atom> ;
+                                       <http://purl.org/gc/hasElementSymbol> "H" ;
+                                       <http://purl.org/gc/hasIndex> "5"^^xsd:nonNegativeInteger ;
+                                       rdfs:label "Atom 5 (H) for aa001h-smd" .
 
 
 ###  http://example.org/atom_aa001h-smd_6
-<http://example.org/atom_aa001h-smd_6> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h-smd_6> rdf:type owl:NamedIndividual ,
+                                                <http://purl.org/gc/Atom> ;
+                                       <http://purl.org/gc/hasElementSymbol> "H" ;
+                                       <http://purl.org/gc/hasIndex> "6"^^xsd:nonNegativeInteger ;
+                                       rdfs:label "Atom 6 (H) for aa001h-smd" .
 
 
 ###  http://example.org/atom_aa001h-smd_7
-<http://example.org/atom_aa001h-smd_7> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h-smd_7> rdf:type owl:NamedIndividual ,
+                                                <http://purl.org/gc/Atom> ;
+                                       <http://purl.org/gc/hasElementSymbol> "O" ;
+                                       <http://purl.org/gc/hasIndex> "7"^^xsd:nonNegativeInteger ;
+                                       rdfs:label "Atom 7 (O) for aa001h-smd" .
 
 
 ###  http://example.org/atom_aa001h-smd_8
-<http://example.org/atom_aa001h-smd_8> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h-smd_8> rdf:type owl:NamedIndividual ,
+                                                <http://purl.org/gc/Atom> ;
+                                       <http://purl.org/gc/hasElementSymbol> "O" ;
+                                       <http://purl.org/gc/hasIndex> "8"^^xsd:nonNegativeInteger ;
+                                       rdfs:label "Atom 8 (O) for aa001h-smd" .
 
 
 ###  http://example.org/atom_aa001h-smd_9
-<http://example.org/atom_aa001h-smd_9> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h-smd_9> rdf:type owl:NamedIndividual ,
+                                                <http://purl.org/gc/Atom> ;
+                                       <http://purl.org/gc/hasElementSymbol> "H" ;
+                                       <http://purl.org/gc/hasIndex> "9"^^xsd:nonNegativeInteger ;
+                                       rdfs:label "Atom 9 (H) for aa001h-smd" .
 
 
 ###  http://example.org/atom_aa001h_1
-<http://example.org/atom_aa001h_1> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h_1> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                   <http://purl.org/gc/hasIndex> "1"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 1 (H) for aa001h" .
 
 
 ###  http://example.org/atom_aa001h_10
-<http://example.org/atom_aa001h_10> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h_10> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/Atom> ;
+                                    <http://purl.org/gc/hasElementSymbol> "H" ;
+                                    <http://purl.org/gc/hasIndex> "10"^^xsd:nonNegativeInteger ;
+                                    rdfs:label "Atom 10 (H) for aa001h" .
 
 
 ###  http://example.org/atom_aa001h_11
-<http://example.org/atom_aa001h_11> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h_11> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/Atom> ;
+                                    <http://purl.org/gc/hasElementSymbol> "H" ;
+                                    <http://purl.org/gc/hasIndex> "11"^^xsd:nonNegativeInteger ;
+                                    rdfs:label "Atom 11 (H) for aa001h" .
 
 
 ###  http://example.org/atom_aa001h_12
-<http://example.org/atom_aa001h_12> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h_12> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/Atom> ;
+                                    <http://purl.org/gc/hasElementSymbol> "H" ;
+                                    <http://purl.org/gc/hasIndex> "12"^^xsd:nonNegativeInteger ;
+                                    rdfs:label "Atom 12 (H) for aa001h" .
 
 
 ###  http://example.org/atom_aa001h_13
-<http://example.org/atom_aa001h_13> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h_13> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/gc/Atom> ;
+                                    <http://purl.org/gc/hasElementSymbol> "H" ;
+                                    <http://purl.org/gc/hasIndex> "13"^^xsd:nonNegativeInteger ;
+                                    rdfs:label "Atom 13 (H) for aa001h" .
 
 
 ###  http://example.org/atom_aa001h_2
-<http://example.org/atom_aa001h_2> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h_2> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "C" ;
+                                   <http://purl.org/gc/hasIndex> "2"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 2 (C) for aa001h" .
 
 
 ###  http://example.org/atom_aa001h_3
-<http://example.org/atom_aa001h_3> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h_3> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "C" ;
+                                   <http://purl.org/gc/hasIndex> "3"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 3 (C) for aa001h" .
 
 
 ###  http://example.org/atom_aa001h_4
-<http://example.org/atom_aa001h_4> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h_4> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "O" ;
+                                   <http://purl.org/gc/hasIndex> "4"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 4 (O) for aa001h" .
 
 
 ###  http://example.org/atom_aa001h_5
-<http://example.org/atom_aa001h_5> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h_5> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                   <http://purl.org/gc/hasIndex> "5"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 5 (H) for aa001h" .
 
 
 ###  http://example.org/atom_aa001h_6
-<http://example.org/atom_aa001h_6> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h_6> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                   <http://purl.org/gc/hasIndex> "6"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 6 (H) for aa001h" .
 
 
 ###  http://example.org/atom_aa001h_7
-<http://example.org/atom_aa001h_7> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h_7> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "O" ;
+                                   <http://purl.org/gc/hasIndex> "7"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 7 (O) for aa001h" .
 
 
 ###  http://example.org/atom_aa001h_8
-<http://example.org/atom_aa001h_8> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h_8> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "O" ;
+                                   <http://purl.org/gc/hasIndex> "8"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 8 (O) for aa001h" .
 
 
 ###  http://example.org/atom_aa001h_9
-<http://example.org/atom_aa001h_9> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa001h_9> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/gc/Atom> ;
+                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                   <http://purl.org/gc/hasIndex> "9"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "Atom 9 (H) for aa001h" .
 
 
 ###  http://example.org/atom_aa002-aldehyde-bare-smd-check_1
-<http://example.org/atom_aa002-aldehyde-bare-smd-check_1> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-aldehyde-bare-smd-check_1> rdf:type owl:NamedIndividual ,
+                                                                   <http://purl.org/gc/Atom> ;
+                                                          <http://purl.org/gc/hasElementSymbol> "H" ;
+                                                          <http://purl.org/gc/hasIndex> "1"^^xsd:nonNegativeInteger ;
+                                                          rdfs:label "Atom 1 (H) for aa002-aldehyde-bare-smd-check" .
 
 
 ###  http://example.org/atom_aa002-aldehyde-bare-smd-check_2
-<http://example.org/atom_aa002-aldehyde-bare-smd-check_2> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-aldehyde-bare-smd-check_2> rdf:type owl:NamedIndividual ,
+                                                                   <http://purl.org/gc/Atom> ;
+                                                          <http://purl.org/gc/hasElementSymbol> "C" ;
+                                                          <http://purl.org/gc/hasIndex> "2"^^xsd:nonNegativeInteger ;
+                                                          rdfs:label "Atom 2 (C) for aa002-aldehyde-bare-smd-check" .
 
 
 ###  http://example.org/atom_aa002-aldehyde-bare-smd-check_3
-<http://example.org/atom_aa002-aldehyde-bare-smd-check_3> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-aldehyde-bare-smd-check_3> rdf:type owl:NamedIndividual ,
+                                                                   <http://purl.org/gc/Atom> ;
+                                                          <http://purl.org/gc/hasElementSymbol> "C" ;
+                                                          <http://purl.org/gc/hasIndex> "3"^^xsd:nonNegativeInteger ;
+                                                          rdfs:label "Atom 3 (C) for aa002-aldehyde-bare-smd-check" .
 
 
 ###  http://example.org/atom_aa002-aldehyde-bare-smd-check_4
-<http://example.org/atom_aa002-aldehyde-bare-smd-check_4> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-aldehyde-bare-smd-check_4> rdf:type owl:NamedIndividual ,
+                                                                   <http://purl.org/gc/Atom> ;
+                                                          <http://purl.org/gc/hasElementSymbol> "O" ;
+                                                          <http://purl.org/gc/hasIndex> "4"^^xsd:nonNegativeInteger ;
+                                                          rdfs:label "Atom 4 (O) for aa002-aldehyde-bare-smd-check" .
 
 
 ###  http://example.org/atom_aa002-aldehyde-bare-smd-check_5
-<http://example.org/atom_aa002-aldehyde-bare-smd-check_5> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-aldehyde-bare-smd-check_5> rdf:type owl:NamedIndividual ,
+                                                                   <http://purl.org/gc/Atom> ;
+                                                          <http://purl.org/gc/hasElementSymbol> "H" ;
+                                                          <http://purl.org/gc/hasIndex> "5"^^xsd:nonNegativeInteger ;
+                                                          rdfs:label "Atom 5 (H) for aa002-aldehyde-bare-smd-check" .
 
 
 ###  http://example.org/atom_aa002-aldehyde-bare-smd-check_6
-<http://example.org/atom_aa002-aldehyde-bare-smd-check_6> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-aldehyde-bare-smd-check_6> rdf:type owl:NamedIndividual ,
+                                                                   <http://purl.org/gc/Atom> ;
+                                                          <http://purl.org/gc/hasElementSymbol> "H" ;
+                                                          <http://purl.org/gc/hasIndex> "6"^^xsd:nonNegativeInteger ;
+                                                          rdfs:label "Atom 6 (H) for aa002-aldehyde-bare-smd-check" .
 
 
 ###  http://example.org/atom_aa002-aldehyde-bare-smd-check_7
-<http://example.org/atom_aa002-aldehyde-bare-smd-check_7> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-aldehyde-bare-smd-check_7> rdf:type owl:NamedIndividual ,
+                                                                   <http://purl.org/gc/Atom> ;
+                                                          <http://purl.org/gc/hasElementSymbol> "H" ;
+                                                          <http://purl.org/gc/hasIndex> "7"^^xsd:nonNegativeInteger ;
+                                                          rdfs:label "Atom 7 (H) for aa002-aldehyde-bare-smd-check" .
 
 
 ###  http://example.org/atom_aa002-aldehyde-bare_1
-<http://example.org/atom_aa002-aldehyde-bare_1> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-aldehyde-bare_1> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/Atom> ;
+                                                <http://purl.org/gc/hasElementSymbol> "H" ;
+                                                <http://purl.org/gc/hasIndex> "1"^^xsd:nonNegativeInteger ;
+                                                rdfs:label "Atom 1 (H) for aa002-aldehyde-bare" .
 
 
 ###  http://example.org/atom_aa002-aldehyde-bare_2
-<http://example.org/atom_aa002-aldehyde-bare_2> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-aldehyde-bare_2> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/Atom> ;
+                                                <http://purl.org/gc/hasElementSymbol> "C" ;
+                                                <http://purl.org/gc/hasIndex> "2"^^xsd:nonNegativeInteger ;
+                                                rdfs:label "Atom 2 (C) for aa002-aldehyde-bare" .
 
 
 ###  http://example.org/atom_aa002-aldehyde-bare_3
-<http://example.org/atom_aa002-aldehyde-bare_3> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-aldehyde-bare_3> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/Atom> ;
+                                                <http://purl.org/gc/hasElementSymbol> "C" ;
+                                                <http://purl.org/gc/hasIndex> "3"^^xsd:nonNegativeInteger ;
+                                                rdfs:label "Atom 3 (C) for aa002-aldehyde-bare" .
 
 
 ###  http://example.org/atom_aa002-aldehyde-bare_4
-<http://example.org/atom_aa002-aldehyde-bare_4> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-aldehyde-bare_4> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/Atom> ;
+                                                <http://purl.org/gc/hasElementSymbol> "O" ;
+                                                <http://purl.org/gc/hasIndex> "4"^^xsd:nonNegativeInteger ;
+                                                rdfs:label "Atom 4 (O) for aa002-aldehyde-bare" .
 
 
 ###  http://example.org/atom_aa002-aldehyde-bare_5
-<http://example.org/atom_aa002-aldehyde-bare_5> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-aldehyde-bare_5> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/Atom> ;
+                                                <http://purl.org/gc/hasElementSymbol> "H" ;
+                                                <http://purl.org/gc/hasIndex> "5"^^xsd:nonNegativeInteger ;
+                                                rdfs:label "Atom 5 (H) for aa002-aldehyde-bare" .
 
 
 ###  http://example.org/atom_aa002-aldehyde-bare_6
-<http://example.org/atom_aa002-aldehyde-bare_6> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-aldehyde-bare_6> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/Atom> ;
+                                                <http://purl.org/gc/hasElementSymbol> "H" ;
+                                                <http://purl.org/gc/hasIndex> "6"^^xsd:nonNegativeInteger ;
+                                                rdfs:label "Atom 6 (H) for aa002-aldehyde-bare" .
 
 
 ###  http://example.org/atom_aa002-aldehyde-bare_7
-<http://example.org/atom_aa002-aldehyde-bare_7> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-aldehyde-bare_7> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/Atom> ;
+                                                <http://purl.org/gc/hasElementSymbol> "H" ;
+                                                <http://purl.org/gc/hasIndex> "7"^^xsd:nonNegativeInteger ;
+                                                rdfs:label "Atom 7 (H) for aa002-aldehyde-bare" .
 
 
 ###  http://example.org/atom_aa002-hydrate-bare-smd_1
-<http://example.org/atom_aa002-hydrate-bare-smd_1> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-hydrate-bare-smd_1> rdf:type owl:NamedIndividual ,
+                                                            <http://purl.org/gc/Atom> ;
+                                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                                   <http://purl.org/gc/hasIndex> "1"^^xsd:nonNegativeInteger ;
+                                                   rdfs:label "Atom 1 (H) for aa002-hydrate-bare-smd" .
 
 
 ###  http://example.org/atom_aa002-hydrate-bare-smd_10
-<http://example.org/atom_aa002-hydrate-bare-smd_10> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-hydrate-bare-smd_10> rdf:type owl:NamedIndividual ,
+                                                             <http://purl.org/gc/Atom> ;
+                                                    <http://purl.org/gc/hasElementSymbol> "H" ;
+                                                    <http://purl.org/gc/hasIndex> "10"^^xsd:nonNegativeInteger ;
+                                                    rdfs:label "Atom 10 (H) for aa002-hydrate-bare-smd" .
 
 
 ###  http://example.org/atom_aa002-hydrate-bare-smd_2
-<http://example.org/atom_aa002-hydrate-bare-smd_2> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-hydrate-bare-smd_2> rdf:type owl:NamedIndividual ,
+                                                            <http://purl.org/gc/Atom> ;
+                                                   <http://purl.org/gc/hasElementSymbol> "C" ;
+                                                   <http://purl.org/gc/hasIndex> "2"^^xsd:nonNegativeInteger ;
+                                                   rdfs:label "Atom 2 (C) for aa002-hydrate-bare-smd" .
 
 
 ###  http://example.org/atom_aa002-hydrate-bare-smd_3
-<http://example.org/atom_aa002-hydrate-bare-smd_3> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-hydrate-bare-smd_3> rdf:type owl:NamedIndividual ,
+                                                            <http://purl.org/gc/Atom> ;
+                                                   <http://purl.org/gc/hasElementSymbol> "C" ;
+                                                   <http://purl.org/gc/hasIndex> "3"^^xsd:nonNegativeInteger ;
+                                                   rdfs:label "Atom 3 (C) for aa002-hydrate-bare-smd" .
 
 
 ###  http://example.org/atom_aa002-hydrate-bare-smd_4
-<http://example.org/atom_aa002-hydrate-bare-smd_4> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-hydrate-bare-smd_4> rdf:type owl:NamedIndividual ,
+                                                            <http://purl.org/gc/Atom> ;
+                                                   <http://purl.org/gc/hasElementSymbol> "O" ;
+                                                   <http://purl.org/gc/hasIndex> "4"^^xsd:nonNegativeInteger ;
+                                                   rdfs:label "Atom 4 (O) for aa002-hydrate-bare-smd" .
 
 
 ###  http://example.org/atom_aa002-hydrate-bare-smd_5
-<http://example.org/atom_aa002-hydrate-bare-smd_5> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-hydrate-bare-smd_5> rdf:type owl:NamedIndividual ,
+                                                            <http://purl.org/gc/Atom> ;
+                                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                                   <http://purl.org/gc/hasIndex> "5"^^xsd:nonNegativeInteger ;
+                                                   rdfs:label "Atom 5 (H) for aa002-hydrate-bare-smd" .
 
 
 ###  http://example.org/atom_aa002-hydrate-bare-smd_6
-<http://example.org/atom_aa002-hydrate-bare-smd_6> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-hydrate-bare-smd_6> rdf:type owl:NamedIndividual ,
+                                                            <http://purl.org/gc/Atom> ;
+                                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                                   <http://purl.org/gc/hasIndex> "6"^^xsd:nonNegativeInteger ;
+                                                   rdfs:label "Atom 6 (H) for aa002-hydrate-bare-smd" .
 
 
 ###  http://example.org/atom_aa002-hydrate-bare-smd_7
-<http://example.org/atom_aa002-hydrate-bare-smd_7> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-hydrate-bare-smd_7> rdf:type owl:NamedIndividual ,
+                                                            <http://purl.org/gc/Atom> ;
+                                                   <http://purl.org/gc/hasElementSymbol> "O" ;
+                                                   <http://purl.org/gc/hasIndex> "7"^^xsd:nonNegativeInteger ;
+                                                   rdfs:label "Atom 7 (O) for aa002-hydrate-bare-smd" .
 
 
 ###  http://example.org/atom_aa002-hydrate-bare-smd_8
-<http://example.org/atom_aa002-hydrate-bare-smd_8> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-hydrate-bare-smd_8> rdf:type owl:NamedIndividual ,
+                                                            <http://purl.org/gc/Atom> ;
+                                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                                   <http://purl.org/gc/hasIndex> "8"^^xsd:nonNegativeInteger ;
+                                                   rdfs:label "Atom 8 (H) for aa002-hydrate-bare-smd" .
 
 
 ###  http://example.org/atom_aa002-hydrate-bare-smd_9
-<http://example.org/atom_aa002-hydrate-bare-smd_9> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-hydrate-bare-smd_9> rdf:type owl:NamedIndividual ,
+                                                            <http://purl.org/gc/Atom> ;
+                                                   <http://purl.org/gc/hasElementSymbol> "H" ;
+                                                   <http://purl.org/gc/hasIndex> "9"^^xsd:nonNegativeInteger ;
+                                                   rdfs:label "Atom 9 (H) for aa002-hydrate-bare-smd" .
 
 
 ###  http://example.org/atom_aa002-hydrate-bare_1
-<http://example.org/atom_aa002-hydrate-bare_1> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-hydrate-bare_1> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/Atom> ;
+                                               <http://purl.org/gc/hasElementSymbol> "H" ;
+                                               <http://purl.org/gc/hasIndex> "1"^^xsd:nonNegativeInteger ;
+                                               rdfs:label "Atom 1 (H) for aa002-hydrate-bare" .
 
 
 ###  http://example.org/atom_aa002-hydrate-bare_10
-<http://example.org/atom_aa002-hydrate-bare_10> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-hydrate-bare_10> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/Atom> ;
+                                                <http://purl.org/gc/hasElementSymbol> "H" ;
+                                                <http://purl.org/gc/hasIndex> "10"^^xsd:nonNegativeInteger ;
+                                                rdfs:label "Atom 10 (H) for aa002-hydrate-bare" .
 
 
 ###  http://example.org/atom_aa002-hydrate-bare_2
-<http://example.org/atom_aa002-hydrate-bare_2> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-hydrate-bare_2> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/Atom> ;
+                                               <http://purl.org/gc/hasElementSymbol> "C" ;
+                                               <http://purl.org/gc/hasIndex> "2"^^xsd:nonNegativeInteger ;
+                                               rdfs:label "Atom 2 (C) for aa002-hydrate-bare" .
 
 
 ###  http://example.org/atom_aa002-hydrate-bare_3
-<http://example.org/atom_aa002-hydrate-bare_3> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-hydrate-bare_3> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/Atom> ;
+                                               <http://purl.org/gc/hasElementSymbol> "C" ;
+                                               <http://purl.org/gc/hasIndex> "3"^^xsd:nonNegativeInteger ;
+                                               rdfs:label "Atom 3 (C) for aa002-hydrate-bare" .
 
 
 ###  http://example.org/atom_aa002-hydrate-bare_4
-<http://example.org/atom_aa002-hydrate-bare_4> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-hydrate-bare_4> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/Atom> ;
+                                               <http://purl.org/gc/hasElementSymbol> "O" ;
+                                               <http://purl.org/gc/hasIndex> "4"^^xsd:nonNegativeInteger ;
+                                               rdfs:label "Atom 4 (O) for aa002-hydrate-bare" .
 
 
 ###  http://example.org/atom_aa002-hydrate-bare_5
-<http://example.org/atom_aa002-hydrate-bare_5> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-hydrate-bare_5> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/Atom> ;
+                                               <http://purl.org/gc/hasElementSymbol> "H" ;
+                                               <http://purl.org/gc/hasIndex> "5"^^xsd:nonNegativeInteger ;
+                                               rdfs:label "Atom 5 (H) for aa002-hydrate-bare" .
 
 
 ###  http://example.org/atom_aa002-hydrate-bare_6
-<http://example.org/atom_aa002-hydrate-bare_6> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-hydrate-bare_6> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/Atom> ;
+                                               <http://purl.org/gc/hasElementSymbol> "H" ;
+                                               <http://purl.org/gc/hasIndex> "6"^^xsd:nonNegativeInteger ;
+                                               rdfs:label "Atom 6 (H) for aa002-hydrate-bare" .
 
 
 ###  http://example.org/atom_aa002-hydrate-bare_7
-<http://example.org/atom_aa002-hydrate-bare_7> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-hydrate-bare_7> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/Atom> ;
+                                               <http://purl.org/gc/hasElementSymbol> "O" ;
+                                               <http://purl.org/gc/hasIndex> "7"^^xsd:nonNegativeInteger ;
+                                               rdfs:label "Atom 7 (O) for aa002-hydrate-bare" .
 
 
 ###  http://example.org/atom_aa002-hydrate-bare_8
-<http://example.org/atom_aa002-hydrate-bare_8> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-hydrate-bare_8> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/Atom> ;
+                                               <http://purl.org/gc/hasElementSymbol> "H" ;
+                                               <http://purl.org/gc/hasIndex> "8"^^xsd:nonNegativeInteger ;
+                                               rdfs:label "Atom 8 (H) for aa002-hydrate-bare" .
 
 
 ###  http://example.org/atom_aa002-hydrate-bare_9
-<http://example.org/atom_aa002-hydrate-bare_9> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-hydrate-bare_9> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/Atom> ;
+                                               <http://purl.org/gc/hasElementSymbol> "H" ;
+                                               <http://purl.org/gc/hasIndex> "9"^^xsd:nonNegativeInteger ;
+                                               rdfs:label "Atom 9 (H) for aa002-hydrate-bare" .
 
 
 ###  http://example.org/atom_aa002-water-bare-smd_1
-<http://example.org/atom_aa002-water-bare-smd_1> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-water-bare-smd_1> rdf:type owl:NamedIndividual ,
+                                                          <http://purl.org/gc/Atom> ;
+                                                 <http://purl.org/gc/hasElementSymbol> "O" ;
+                                                 <http://purl.org/gc/hasIndex> "1"^^xsd:nonNegativeInteger ;
+                                                 rdfs:label "Atom 1 (O) for aa002-water-bare-smd" .
 
 
 ###  http://example.org/atom_aa002-water-bare-smd_2
-<http://example.org/atom_aa002-water-bare-smd_2> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-water-bare-smd_2> rdf:type owl:NamedIndividual ,
+                                                          <http://purl.org/gc/Atom> ;
+                                                 <http://purl.org/gc/hasElementSymbol> "H" ;
+                                                 <http://purl.org/gc/hasIndex> "2"^^xsd:nonNegativeInteger ;
+                                                 rdfs:label "Atom 2 (H) for aa002-water-bare-smd" .
 
 
 ###  http://example.org/atom_aa002-water-bare-smd_3
-<http://example.org/atom_aa002-water-bare-smd_3> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-water-bare-smd_3> rdf:type owl:NamedIndividual ,
+                                                          <http://purl.org/gc/Atom> ;
+                                                 <http://purl.org/gc/hasElementSymbol> "H" ;
+                                                 <http://purl.org/gc/hasIndex> "3"^^xsd:nonNegativeInteger ;
+                                                 rdfs:label "Atom 3 (H) for aa002-water-bare-smd" .
 
 
 ###  http://example.org/atom_aa002-water-bare_1
-<http://example.org/atom_aa002-water-bare_1> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-water-bare_1> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/Atom> ;
+                                             <http://purl.org/gc/hasElementSymbol> "O" ;
+                                             <http://purl.org/gc/hasIndex> "1"^^xsd:nonNegativeInteger ;
+                                             rdfs:label "Atom 1 (O) for aa002-water-bare" .
 
 
 ###  http://example.org/atom_aa002-water-bare_2
-<http://example.org/atom_aa002-water-bare_2> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-water-bare_2> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/Atom> ;
+                                             <http://purl.org/gc/hasElementSymbol> "H" ;
+                                             <http://purl.org/gc/hasIndex> "2"^^xsd:nonNegativeInteger ;
+                                             rdfs:label "Atom 2 (H) for aa002-water-bare" .
 
 
 ###  http://example.org/atom_aa002-water-bare_3
-<http://example.org/atom_aa002-water-bare_3> rdf:type owl:NamedIndividual .
+<http://example.org/atom_aa002-water-bare_3> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/gc/Atom> ;
+                                             <http://purl.org/gc/hasElementSymbol> "H" ;
+                                             <http://purl.org/gc/hasIndex> "3"^^xsd:nonNegativeInteger ;
+                                             rdfs:label "Atom 3 (H) for aa002-water-bare" .
 
 
 ###  http://example.org/exp_aa001a
-<http://example.org/exp_aa001a> rdf:type owl:NamedIndividual ,
-                                         <http://purl.org/gc/MolecularComputation> ;
+<http://example.org/exp_aa001a> rdf:type owl:NamedIndividual ;
                                 <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa001a> .
 
 
 ###  http://example.org/exp_aa001b
-<http://example.org/exp_aa001b> rdf:type owl:NamedIndividual ,
-                                         <http://purl.org/gc/MolecularComputation> ;
+<http://example.org/exp_aa001b> rdf:type owl:NamedIndividual ;
                                 <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa001b> .
 
 
 ###  http://example.org/exp_aa001c
-<http://example.org/exp_aa001c> rdf:type owl:NamedIndividual ,
-                                         <http://purl.org/gc/MolecularComputation> ;
+<http://example.org/exp_aa001c> rdf:type owl:NamedIndividual ;
                                 <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa001c> .
 
 
 ###  http://example.org/exp_aa001g
-<http://example.org/exp_aa001g> rdf:type owl:NamedIndividual ,
-                                         <http://purl.org/gc/MolecularComputation> ;
+<http://example.org/exp_aa001g> rdf:type owl:NamedIndividual ;
                                 <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa001g> .
 
 
 ###  http://example.org/exp_aa001g-smd
-<http://example.org/exp_aa001g-smd> rdf:type owl:NamedIndividual ,
-                                             <http://purl.org/gc/MolecularComputation> ;
+<http://example.org/exp_aa001g-smd> rdf:type owl:NamedIndividual ;
                                     <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa001g-smd> .
 
 
 ###  http://example.org/exp_aa001h
-<http://example.org/exp_aa001h> rdf:type owl:NamedIndividual ,
-                                         <http://purl.org/gc/MolecularComputation> ;
+<http://example.org/exp_aa001h> rdf:type owl:NamedIndividual ;
                                 <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa001h> .
 
 
 ###  http://example.org/exp_aa001h-smd
-<http://example.org/exp_aa001h-smd> rdf:type owl:NamedIndividual ,
-                                             <http://purl.org/gc/MolecularComputation> ;
+<http://example.org/exp_aa001h-smd> rdf:type owl:NamedIndividual ;
                                     <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa001h-smd> .
 
 
 ###  http://example.org/exp_aa002-aldehyde-bare
-<http://example.org/exp_aa002-aldehyde-bare> rdf:type owl:NamedIndividual ,
-                                                      <http://purl.org/gc/MolecularComputation> ;
+<http://example.org/exp_aa002-aldehyde-bare> rdf:type owl:NamedIndividual ;
                                              <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa002-aldehyde-bare> .
 
 
 ###  http://example.org/exp_aa002-aldehyde-bare-smd-check
-<http://example.org/exp_aa002-aldehyde-bare-smd-check> rdf:type owl:NamedIndividual ,
-                                                                <http://purl.org/gc/MolecularComputation> ;
+<http://example.org/exp_aa002-aldehyde-bare-smd-check> rdf:type owl:NamedIndividual ;
                                                        <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa002-aldehyde-bare-smd-check> .
 
 
 ###  http://example.org/exp_aa002-hydrate-bare
-<http://example.org/exp_aa002-hydrate-bare> rdf:type owl:NamedIndividual ,
-                                                     <http://purl.org/gc/MolecularComputation> ;
+<http://example.org/exp_aa002-hydrate-bare> rdf:type owl:NamedIndividual ;
                                             <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa002-hydrate-bare> .
 
 
 ###  http://example.org/exp_aa002-hydrate-bare-smd
-<http://example.org/exp_aa002-hydrate-bare-smd> rdf:type owl:NamedIndividual ,
-                                                         <http://purl.org/gc/MolecularComputation> ;
+<http://example.org/exp_aa002-hydrate-bare-smd> rdf:type owl:NamedIndividual ;
                                                 <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa002-hydrate-bare-smd> .
 
 
 ###  http://example.org/exp_aa002-water-bare
-<http://example.org/exp_aa002-water-bare> rdf:type owl:NamedIndividual ,
-                                                   <http://purl.org/gc/MolecularComputation> ;
+<http://example.org/exp_aa002-water-bare> rdf:type owl:NamedIndividual ;
                                           <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa002-water-bare> .
 
 
 ###  http://example.org/exp_aa002-water-bare-smd
-<http://example.org/exp_aa002-water-bare-smd> rdf:type owl:NamedIndividual ,
-                                                       <http://purl.org/gc/MolecularComputation> ;
+<http://example.org/exp_aa002-water-bare-smd> rdf:type owl:NamedIndividual ;
                                               <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa002-water-bare-smd> .
 
 
@@ -5980,6 +6485,11 @@ rdfs:Class rdf:type owl:Class .
                                  rdfs:label "Bond Type"@en .
 
 
+<http://purl.org/gc/hasElementSymbol> rdfs:comment "A property that defines the Symbol of the element of an atom."@en ;
+                                      rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                                      rdfs:label "has element symbol"@en .
+
+
 <http://purl.org/gc/hasExcitedStateMethod> rdfs:comment "A property that defines the method for the calculation of the excited states of molecules."@en ;
                                            rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
                                            rdfs:label "has excited state method"@en .
@@ -6005,6 +6515,11 @@ rdfs:Class rdf:type owl:Class .
 <http://purl.org/gc/hasInChIString> rdfs:comment "A property that describes the InChI String - International Chemical Identifier - a textual identifier for chemical substances."@en ;
                                     rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
                                     rdfs:label "has InChI string"@en .
+
+
+<http://purl.org/gc/hasIndex> rdfs:comment "A property that defines a sequential arrangement of material in numerical order, i.e. Frequency Peak, Orbital or a sequence number in residue."@en ;
+                              rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                              rdfs:label "has index"@en .
 
 
 <http://purl.org/gc/hasInputFile> rdfs:comment "A property that specifies input file for calculations."@en ;

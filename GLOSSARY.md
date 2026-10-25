@@ -251,16 +251,16 @@ individual. In these graphs exactly eight properties point at one:
 `gc:hasFrequency` (unit "cm-1"), `gc:hasIntensity` (unit
 "Debye^2/amu-Angstrom^2"), `gc:hasElectronicEnergy`,
 `gc:hasZeroPointEnergy` and `gc:hasPathEnergy` (unit "hartree"),
-`gc:hasEnthalpy` and `gc:hasGibbsFreeEnergy` (unit `gc:kiloJoules`,
-label "kilo joules") and `gc:hasEntropy` (unit "J/(mol K)"). The
-enthalpy and Gibbs values are read from the log as kJ/mol, so the "per
-mole" comes from the extraction, not from the unit. From gc v0.8.9 the
-ontology has `gc:kiloJoulePerMole` (kJ/mol, the same unit as QUDT's
-`KiloJ-PER-MOL`) and `gc:kiloJoules` is deprecated but kept. The
-extraction (`thermochemistry_to_templates()` in gamess_functions) now
-writes `gc:kiloJoulePerMole`. Graphs built before that, including the
-current `aa` and `caa` examples, still use `gc:kiloJoules` until they
-are rebuilt.
+`gc:hasEnthalpy` and `gc:hasGibbsFreeEnergy` (unit `gc:kiloJoulePerMole`,
+label "kJ/mol") and `gc:hasEntropy` (unit "J/(mol K)"). The
+enthalpy and Gibbs values are read from the log as kJ/mol. From gc
+v0.8.9 the ontology has `gc:kiloJoulePerMole` (kJ/mol, the same unit as
+QUDT's `KiloJ-PER-MOL`), and `gc:kiloJoules` is deprecated but kept so
+that older graphs stay valid. The extraction
+(`thermochemistry_to_templates()` in gamess_functions) writes
+`gc:kiloJoulePerMole`, and the current `aa` and `caa` examples have been
+rebuilt with it. A graph built before that still uses `gc:kiloJoules`
+until it is rebuilt.
 
 In a reasoned graph every `gc:FloatValue` is also typed
 `gc:CalculationResult` and `rdfs:Class`, and every unit `rdfs:Class`.
@@ -384,6 +384,34 @@ the absolute total energy from the IRC log, in the unit of its
 FloatValue (hartree); subtract a reference point, such as the first
 point or the transition state, to get a relative energy."* (Before gc
 v0.8.9 the definition said "relative energy"; see `gc:ReactionPathPoint`.)
+
+## Species and atoms
+
+A calculation is a *system* (the thing the input file describes); what
+is in it are *species*. They are separate nodes so that the same
+compound can be recognised across systems.
+
+- **System**: `ex:molecule_<experiment>` (a `gc:Molecule`), linked from
+  the experiment by `gc:hasMolecule`. It is the whole geometry.
+- **Species**: `ex:species_<experiment>_<k>` (also a `gc:Molecule`),
+  linked from the system by `gc:hasMolecule`. It carries
+  `gc:hasInChIString` and `gc:hasInChIKey`, and `gc:hasAtom` for its
+  atoms. A system with a water and a hydrate has two.
+- **Atom**: `ex:atom_<experiment>_<n>` (a `gc:Atom`) with
+  `gc:hasElementSymbol` and `gc:hasIndex`. The index is the position of
+  the atom in the `$DATA` block of the input file, counted from 1. It is
+  **not** an IUPAC number, and it differs from one experiment to the
+  next. The coordinates are not in the graph; they stay in the files the
+  graph points to.
+
+A species gets an InChI only when the identity can be established
+without guessing. The geometry is checked for connectivity, charge and
+stereochemistry; where a stereocentre or double bond is undefined, or a
+supplied InChI/InChIKey does not match the geometry, the species is
+**refused** and gets no node at all, and the reason is written to
+`species_report.tsv` beside the other instance files. Only minima
+(`OPTIMIZE` runs that report "EQUILIBRIUM GEOMETRY LOCATED") are
+considered. Competency question 16 shows how to ask for a species.
 
 ## Literature and review
 
