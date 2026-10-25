@@ -360,8 +360,11 @@ run appears twice.
 **File paths.** Each `...Path` column is the file's `ex:fileURL`. Two
 things to know:
 
-- The `.dat` files have no `ex:fileURL`, so `?dataPath` is empty. Only
-  the input and the log are looked up on disk when the graph is built.
+- A file only gets an `ex:fileURL` if it was found on disk when the
+  graph was built. In `aa` all three files of every run are found, so
+  all three path columns are filled. In `caa`, 12 runs have no `.dat`
+  in the `dat/` folder, so their `?dataPath` is empty (they also have
+  no checksum; see the tutorial, Chapter 2 Step 5).
 - To show **paths instead of names**, delete the ID columns from the
   `SELECT` line (`?input ?data ?log`) and keep the path columns. To
   show **only the names**, delete the three `OPTIONAL { ... ex:fileURL
