@@ -473,6 +473,8 @@ SELECT ?exp ?zpeVal ?enthalpyVal ?entropyVal ?gibbsVal ?electronicVal WHERE {
 
 ## 12. What is the full chain of files (input → intermediate data → output) for a given experiment?
 
+<!-- playground-link --> [Try this in the playground](https://darren01.github.io/ont_mm/tools/sparql_playground.html?dataset=aa&cq=12)
+
 **Status: ✅ Answerable. Verified working.** The `.dat` file is
 tracked: it is an `ex:DataFile` that the experiment `prov:generated`,
 alongside its `ex:LogFile`. The chain can also go one step further back,
@@ -482,16 +484,18 @@ to whatever produced the input.
 PREFIX ex:   <http://example.org/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 
-SELECT ?exp ?input ?madeBy ?data ?log WHERE {
-  VALUES ?exp { ex:exp_aa001d }
-  ?exp prov:used ?input .
+SELECT ?input ?madeBy ?data ?log WHERE {
+  ex:exp_aa001d prov:used ?input .
   OPTIONAL { ?input prov:wasGeneratedBy ?madeBy }
-  OPTIONAL { ?exp prov:generated ?data . ?data a ex:DataFile }
-  OPTIONAL { ?exp prov:generated ?log  . ?log  a ex:LogFile }
+  OPTIONAL { ex:exp_aa001d prov:generated ?data . ?data a ex:DataFile }
+  OPTIONAL { ex:exp_aa001d prov:generated ?log  . ?log  a ex:LogFile }
 }
 ```
 
-Swap `ex:exp_aa001d` for any experiment. `?madeBy` is what produced the
+To ask about another experiment, change `ex:exp_aa001d` in all three
+places. (An earlier version used `VALUES ?exp { ... }` to name it once,
+which is neater, but the in-browser playground cannot parse `VALUES`;
+this form runs everywhere and returns the same rows.) `?madeBy` is what produced the
 input file: `ex:avogadro_build` for a hand-built structure, or an
 earlier experiment when the input came from a previous run's result
 (4 such links in `aa`). To follow the chain all the way back, repeat
@@ -643,6 +647,43 @@ Read the results with these cautions:
   the same subtraction.
 - **The highest point approximates the transition state.** It is the
   highest sampled point, not a located saddle point.
+
+### All paths at once: `scripts/path_barriers.R`
+
+The R steps above work on one path in one file. To get the barrier and
+reaction energy for **every** reaction path in the graph, plus a plot
+of each, use the script in `scripts/`. It needs base R only.
+
+1. Write all paths to one CSV with `arq`, using the "every path" query
+   above, saved as `~/queries/allpaths.rq`:
+
+   ```bash
+   arq --data "$G" --query ~/queries/allpaths.rq --results CSV > all_paths.csv
+   ```
+
+2. Run the script on it:
+
+   ```bash
+   Rscript scripts/path_barriers.R all_paths.csv path_results
+   ```
+
+It writes `path_results/summary.csv` (one row per path) and one PNG per
+path, and prints the summary. For the two example graphs:
+
+```text
+                        path points ts_index barrier_from_first_kJmol barrier_from_last_kJmol reaction_energy_kJmol
+         reactionpath_aa001e    268      200                    91.34                  110.69                -19.35
+ reactionpath_caa005bTSaIRCf    289      200                    74.46                  112.19                -37.73
+```
+
+(`aa` and `caa` each hold one path; run them separately.) The `aa`
+numbers are the ones worked out by hand above. The same cautions apply:
+the highest point is not a located transition state, the ends of an IRC
+are not optimised minima, the energies are electronic only, and you
+must check which end is the reactant before reading a barrier as
+"forward". The script flags `ts_at_an_end = TRUE` when the highest
+point is the first or last point of a path, which means the path has no
+interior maximum and probably is not complete.
 
 ## 14. Which experiments used a specific method/basis-set combination?
 

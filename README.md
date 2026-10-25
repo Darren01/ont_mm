@@ -74,7 +74,11 @@ it can run (each links back to that question's full explanation, and
 each question in that file links forward to here) and an optional graph
 view alongside the usual table of results. Link directly to a specific
 graph with `?dataset=aa` on the URL, or to a specific question with
-`?dataset=aa&cq=13`.
+`?dataset=aa&cq=13`. The same dropdown has "My own graph (upload a
+file)...", which runs the questions on a Turtle file of yours, read in
+your browser and not sent anywhere; a button marked ✎ names
+something specific to the example data (a file ID, a DOI), so edit that
+part of the query to match your graph.
 
 (The file itself is [`tools/sparql_playground.html`](./tools/sparql_playground.html)
 if you'd rather download and adapt your own copy - e.g. to point it at

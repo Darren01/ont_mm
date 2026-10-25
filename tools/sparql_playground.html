@@ -628,12 +628,12 @@ const CQS = [
     "title": "What is the full chain of files (input → intermediate data → output) for a given experiment?",
     "anchor": "12-what-is-the-full-chain-of-files-input--intermediate-data--output-for-a-given-experiment",
     "status": "✅",
-    "query": "SELECT ?exp ?input ?madeBy ?data ?log WHERE {\n  VALUES ?exp { ex:exp_aa001d }\n  ?exp prov:used ?input .\n  OPTIONAL { ?input prov:wasGeneratedBy ?madeBy }\n  OPTIONAL { ?exp prov:generated ?data . ?data a ex:DataFile }\n  OPTIONAL { ?exp prov:generated ?log  . ?log  a ex:LogFile }\n}",
+    "query": "SELECT ?input ?madeBy ?data ?log WHERE {\n  ex:exp_aa001d prov:used ?input .\n  OPTIONAL { ?input prov:wasGeneratedBy ?madeBy }\n  OPTIONAL { ex:exp_aa001d prov:generated ?data . ?data a ex:DataFile }\n  OPTIONAL { ex:exp_aa001d prov:generated ?log  . ?log  a ex:LogFile }\n}",
     "label": "File chain",
-    "blurb": null,
+    "blurb": "From an experiment back to its input file and what made it, and forward to its .dat and .log outputs.",
     "dataset": "aa",
-    "edit": null,
-    "skip": "it uses VALUES, which the playground's query engine (rdflib.js) cannot parse. Run it with ask/arq instead."
+    "edit": "the experiment ID (ex:exp_aa001d) in all three places - use one from your own graph",
+    "skip": null
   },
   {
     "n": 13,
