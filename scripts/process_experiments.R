@@ -43,7 +43,9 @@ process_experiments <- function(
   
   make_url <- function(path) {
     if (file.exists(path)) {
-      paste0("file:///", normalizePath(path, winslash = "/"))
+      p <- normalizePath(path, winslash = "/")
+      # file:///home/me/x on Linux/macOS, file:///C:/Users/me/x on Windows
+      paste0(if (startsWith(p, "/")) "file://" else "file:///", p)
     } else {
       ""
     }

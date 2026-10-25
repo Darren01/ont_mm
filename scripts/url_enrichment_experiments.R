@@ -35,7 +35,9 @@ enrich_file_urls <- function(template_file,
   # ---------------- URL HELPER ----------------
   make_url <- function(path) {
     if (!file.exists(path)) return("")
-    paste0("file://", normalizePath(path, winslash = "/", mustWork = TRUE))
+    p <- normalizePath(path, winslash = "/", mustWork = TRUE)
+    # file:///home/me/x on Linux/macOS, file:///C:/Users/me/x on Windows
+    paste0(if (startsWith(p, "/")) "file://" else "file:///", p)
   }
   
   # ---------------- PROCESS ROWS ----------------
