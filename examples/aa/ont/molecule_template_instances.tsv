@@ -1,0 +1,50 @@
+ID	Label	Type	hasMolecule	hasAtom	hasInChIString	hasInChIKey
+ID	LABEL	TYPE	I gc:hasMolecule SPLIT=|	I gc:hasAtom SPLIT=|	AT gc:hasInChIString^^xsd:string	AT gc:hasInChIKey^^xsd:string
+ex:exp_aa001a		gc:MolecularComputation	ex:molecule_aa001a			
+ex:molecule_aa001a	Molecule for aa001a	gc:Molecule	ex:species_aa001a_1|ex:species_aa001a_2			
+ex:species_aa001a_1	Species 1 (C2H6O2) in aa001a	gc:Molecule		ex:atom_aa001a_1|ex:atom_aa001a_2|ex:atom_aa001a_3|ex:atom_aa001a_4|ex:atom_aa001a_5|ex:atom_aa001a_6|ex:atom_aa001a_7|ex:atom_aa001a_11|ex:atom_aa001a_12|ex:atom_aa001a_13	InChI=1S/C2H6O2/c1-2(3)4/h2-4H,1H3	AZHSSKPUVBVXLK-UHFFFAOYSA-N
+ex:species_aa001a_2	Species 2 (H2O) in aa001a	gc:Molecule		ex:atom_aa001a_8|ex:atom_aa001a_9|ex:atom_aa001a_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_aa001b		gc:MolecularComputation	ex:molecule_aa001b			
+ex:molecule_aa001b	Molecule for aa001b	gc:Molecule	ex:species_aa001b_1|ex:species_aa001b_2			
+ex:species_aa001b_1	Species 1 (C2H6O2) in aa001b	gc:Molecule		ex:atom_aa001b_1|ex:atom_aa001b_2|ex:atom_aa001b_3|ex:atom_aa001b_4|ex:atom_aa001b_5|ex:atom_aa001b_6|ex:atom_aa001b_7|ex:atom_aa001b_11|ex:atom_aa001b_12|ex:atom_aa001b_13	InChI=1S/C2H6O2/c1-2(3)4/h2-4H,1H3	AZHSSKPUVBVXLK-UHFFFAOYSA-N
+ex:species_aa001b_2	Species 2 (H2O) in aa001b	gc:Molecule		ex:atom_aa001b_8|ex:atom_aa001b_9|ex:atom_aa001b_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_aa001c		gc:MolecularComputation	ex:molecule_aa001c			
+ex:molecule_aa001c	Molecule for aa001c	gc:Molecule	ex:species_aa001c_1|ex:species_aa001c_2			
+ex:species_aa001c_1	Species 1 (C2H6O2) in aa001c	gc:Molecule		ex:atom_aa001c_1|ex:atom_aa001c_2|ex:atom_aa001c_3|ex:atom_aa001c_4|ex:atom_aa001c_5|ex:atom_aa001c_6|ex:atom_aa001c_7|ex:atom_aa001c_11|ex:atom_aa001c_12|ex:atom_aa001c_13	InChI=1S/C2H6O2/c1-2(3)4/h2-4H,1H3	AZHSSKPUVBVXLK-UHFFFAOYSA-N
+ex:species_aa001c_2	Species 2 (H2O) in aa001c	gc:Molecule		ex:atom_aa001c_8|ex:atom_aa001c_9|ex:atom_aa001c_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_aa001g-smd		gc:MolecularComputation	ex:molecule_aa001g-smd			
+ex:molecule_aa001g-smd	Molecule for aa001g-smd	gc:Molecule	ex:species_aa001g-smd_1|ex:species_aa001g-smd_2			
+ex:species_aa001g-smd_1	Species 1 (C2H6O2) in aa001g-smd	gc:Molecule		ex:atom_aa001g-smd_1|ex:atom_aa001g-smd_2|ex:atom_aa001g-smd_3|ex:atom_aa001g-smd_4|ex:atom_aa001g-smd_5|ex:atom_aa001g-smd_6|ex:atom_aa001g-smd_7|ex:atom_aa001g-smd_11|ex:atom_aa001g-smd_12|ex:atom_aa001g-smd_13	InChI=1S/C2H6O2/c1-2(3)4/h2-4H,1H3	AZHSSKPUVBVXLK-UHFFFAOYSA-N
+ex:species_aa001g-smd_2	Species 2 (H2O) in aa001g-smd	gc:Molecule		ex:atom_aa001g-smd_8|ex:atom_aa001g-smd_9|ex:atom_aa001g-smd_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_aa001g		gc:MolecularComputation	ex:molecule_aa001g			
+ex:molecule_aa001g	Molecule for aa001g	gc:Molecule	ex:species_aa001g_1|ex:species_aa001g_2			
+ex:species_aa001g_1	Species 1 (C2H6O2) in aa001g	gc:Molecule		ex:atom_aa001g_1|ex:atom_aa001g_2|ex:atom_aa001g_3|ex:atom_aa001g_4|ex:atom_aa001g_5|ex:atom_aa001g_6|ex:atom_aa001g_7|ex:atom_aa001g_11|ex:atom_aa001g_12|ex:atom_aa001g_13	InChI=1S/C2H6O2/c1-2(3)4/h2-4H,1H3	AZHSSKPUVBVXLK-UHFFFAOYSA-N
+ex:species_aa001g_2	Species 2 (H2O) in aa001g	gc:Molecule		ex:atom_aa001g_8|ex:atom_aa001g_9|ex:atom_aa001g_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_aa001h-smd		gc:MolecularComputation	ex:molecule_aa001h-smd			
+ex:molecule_aa001h-smd	Molecule for aa001h-smd	gc:Molecule	ex:species_aa001h-smd_1|ex:species_aa001h-smd_2|ex:species_aa001h-smd_3			
+ex:species_aa001h-smd_1	Species 1 (C2H4O) in aa001h-smd	gc:Molecule		ex:atom_aa001h-smd_1|ex:atom_aa001h-smd_2|ex:atom_aa001h-smd_3|ex:atom_aa001h-smd_4|ex:atom_aa001h-smd_5|ex:atom_aa001h-smd_6|ex:atom_aa001h-smd_12	InChI=1S/C2H4O/c1-2-3/h2H,1H3	IKHGUXGNUITLKF-UHFFFAOYSA-N
+ex:species_aa001h-smd_2	Species 2 (H2O) in aa001h-smd	gc:Molecule		ex:atom_aa001h-smd_7|ex:atom_aa001h-smd_10|ex:atom_aa001h-smd_11	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:species_aa001h-smd_3	Species 3 (H2O) in aa001h-smd	gc:Molecule		ex:atom_aa001h-smd_8|ex:atom_aa001h-smd_9|ex:atom_aa001h-smd_13	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_aa001h		gc:MolecularComputation	ex:molecule_aa001h			
+ex:molecule_aa001h	Molecule for aa001h	gc:Molecule	ex:species_aa001h_1|ex:species_aa001h_2|ex:species_aa001h_3			
+ex:species_aa001h_1	Species 1 (C2H4O) in aa001h	gc:Molecule		ex:atom_aa001h_1|ex:atom_aa001h_2|ex:atom_aa001h_3|ex:atom_aa001h_4|ex:atom_aa001h_5|ex:atom_aa001h_6|ex:atom_aa001h_12	InChI=1S/C2H4O/c1-2-3/h2H,1H3	IKHGUXGNUITLKF-UHFFFAOYSA-N
+ex:species_aa001h_2	Species 2 (H2O) in aa001h	gc:Molecule		ex:atom_aa001h_7|ex:atom_aa001h_10|ex:atom_aa001h_11	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:species_aa001h_3	Species 3 (H2O) in aa001h	gc:Molecule		ex:atom_aa001h_8|ex:atom_aa001h_9|ex:atom_aa001h_13	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_aa002-aldehyde-bare-smd-check		gc:MolecularComputation	ex:molecule_aa002-aldehyde-bare-smd-check			
+ex:molecule_aa002-aldehyde-bare-smd-check	Molecule for aa002-aldehyde-bare-smd-check	gc:Molecule	ex:species_aa002-aldehyde-bare-smd-check_1			
+ex:species_aa002-aldehyde-bare-smd-check_1	Species 1 (C2H4O) in aa002-aldehyde-bare-smd-check	gc:Molecule		ex:atom_aa002-aldehyde-bare-smd-check_1|ex:atom_aa002-aldehyde-bare-smd-check_2|ex:atom_aa002-aldehyde-bare-smd-check_3|ex:atom_aa002-aldehyde-bare-smd-check_4|ex:atom_aa002-aldehyde-bare-smd-check_5|ex:atom_aa002-aldehyde-bare-smd-check_6|ex:atom_aa002-aldehyde-bare-smd-check_7	InChI=1S/C2H4O/c1-2-3/h2H,1H3	IKHGUXGNUITLKF-UHFFFAOYSA-N
+ex:exp_aa002-aldehyde-bare		gc:MolecularComputation	ex:molecule_aa002-aldehyde-bare			
+ex:molecule_aa002-aldehyde-bare	Molecule for aa002-aldehyde-bare	gc:Molecule	ex:species_aa002-aldehyde-bare_1			
+ex:species_aa002-aldehyde-bare_1	Species 1 (C2H4O) in aa002-aldehyde-bare	gc:Molecule		ex:atom_aa002-aldehyde-bare_1|ex:atom_aa002-aldehyde-bare_2|ex:atom_aa002-aldehyde-bare_3|ex:atom_aa002-aldehyde-bare_4|ex:atom_aa002-aldehyde-bare_5|ex:atom_aa002-aldehyde-bare_6|ex:atom_aa002-aldehyde-bare_7	InChI=1S/C2H4O/c1-2-3/h2H,1H3	IKHGUXGNUITLKF-UHFFFAOYSA-N
+ex:exp_aa002-hydrate-bare-smd		gc:MolecularComputation	ex:molecule_aa002-hydrate-bare-smd			
+ex:molecule_aa002-hydrate-bare-smd	Molecule for aa002-hydrate-bare-smd	gc:Molecule	ex:species_aa002-hydrate-bare-smd_1			
+ex:species_aa002-hydrate-bare-smd_1	Species 1 (C2H6O2) in aa002-hydrate-bare-smd	gc:Molecule		ex:atom_aa002-hydrate-bare-smd_1|ex:atom_aa002-hydrate-bare-smd_2|ex:atom_aa002-hydrate-bare-smd_3|ex:atom_aa002-hydrate-bare-smd_4|ex:atom_aa002-hydrate-bare-smd_5|ex:atom_aa002-hydrate-bare-smd_6|ex:atom_aa002-hydrate-bare-smd_7|ex:atom_aa002-hydrate-bare-smd_8|ex:atom_aa002-hydrate-bare-smd_9|ex:atom_aa002-hydrate-bare-smd_10	InChI=1S/C2H6O2/c1-2(3)4/h2-4H,1H3	AZHSSKPUVBVXLK-UHFFFAOYSA-N
+ex:exp_aa002-hydrate-bare		gc:MolecularComputation	ex:molecule_aa002-hydrate-bare			
+ex:molecule_aa002-hydrate-bare	Molecule for aa002-hydrate-bare	gc:Molecule	ex:species_aa002-hydrate-bare_1			
+ex:species_aa002-hydrate-bare_1	Species 1 (C2H6O2) in aa002-hydrate-bare	gc:Molecule		ex:atom_aa002-hydrate-bare_1|ex:atom_aa002-hydrate-bare_2|ex:atom_aa002-hydrate-bare_3|ex:atom_aa002-hydrate-bare_4|ex:atom_aa002-hydrate-bare_5|ex:atom_aa002-hydrate-bare_6|ex:atom_aa002-hydrate-bare_7|ex:atom_aa002-hydrate-bare_8|ex:atom_aa002-hydrate-bare_9|ex:atom_aa002-hydrate-bare_10	InChI=1S/C2H6O2/c1-2(3)4/h2-4H,1H3	AZHSSKPUVBVXLK-UHFFFAOYSA-N
+ex:exp_aa002-water-bare-smd		gc:MolecularComputation	ex:molecule_aa002-water-bare-smd			
+ex:molecule_aa002-water-bare-smd	Molecule for aa002-water-bare-smd	gc:Molecule	ex:species_aa002-water-bare-smd_1			
+ex:species_aa002-water-bare-smd_1	Species 1 (H2O) in aa002-water-bare-smd	gc:Molecule		ex:atom_aa002-water-bare-smd_1|ex:atom_aa002-water-bare-smd_2|ex:atom_aa002-water-bare-smd_3	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_aa002-water-bare		gc:MolecularComputation	ex:molecule_aa002-water-bare			
+ex:molecule_aa002-water-bare	Molecule for aa002-water-bare	gc:Molecule	ex:species_aa002-water-bare_1			
+ex:species_aa002-water-bare_1	Species 1 (H2O) in aa002-water-bare	gc:Molecule		ex:atom_aa002-water-bare_1|ex:atom_aa002-water-bare_2|ex:atom_aa002-water-bare_3	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N

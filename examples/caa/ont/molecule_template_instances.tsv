@@ -1,0 +1,121 @@
+ID	Label	Type	hasMolecule	hasAtom	hasInChIString	hasInChIKey
+ID	LABEL	TYPE	I gc:hasMolecule SPLIT=|	I gc:hasAtom SPLIT=|	AT gc:hasInChIString^^xsd:string	AT gc:hasInChIKey^^xsd:string
+ex:exp_caa001a		gc:MolecularComputation	ex:molecule_caa001a			
+ex:molecule_caa001a	Molecule for caa001a	gc:Molecule	ex:species_caa001a_1|ex:species_caa001a_2|ex:species_caa001a_3			
+ex:species_caa001a_1	Species 1 (C2H3ClO) in caa001a	gc:Molecule		ex:atom_caa001a_1|ex:atom_caa001a_2|ex:atom_caa001a_3|ex:atom_caa001a_4|ex:atom_caa001a_5|ex:atom_caa001a_6|ex:atom_caa001a_7	InChI=1S/C2H3ClO/c3-1-2-4/h2H,1H2	QSKPIOLLBIHNAC-UHFFFAOYSA-N
+ex:species_caa001a_2	Species 2 (H2O) in caa001a	gc:Molecule		ex:atom_caa001a_8|ex:atom_caa001a_9|ex:atom_caa001a_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:species_caa001a_3	Species 3 (H2O) in caa001a	gc:Molecule		ex:atom_caa001a_11|ex:atom_caa001a_12|ex:atom_caa001a_13	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa001b		gc:MolecularComputation	ex:molecule_caa001b			
+ex:molecule_caa001b	Molecule for caa001b	gc:Molecule	ex:species_caa001b_1|ex:species_caa001b_2|ex:species_caa001b_3			
+ex:species_caa001b_1	Species 1 (C2H3ClO) in caa001b	gc:Molecule		ex:atom_caa001b_1|ex:atom_caa001b_2|ex:atom_caa001b_3|ex:atom_caa001b_4|ex:atom_caa001b_5|ex:atom_caa001b_6|ex:atom_caa001b_7	InChI=1S/C2H3ClO/c3-1-2-4/h2H,1H2	QSKPIOLLBIHNAC-UHFFFAOYSA-N
+ex:species_caa001b_2	Species 2 (H2O) in caa001b	gc:Molecule		ex:atom_caa001b_8|ex:atom_caa001b_9|ex:atom_caa001b_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:species_caa001b_3	Species 3 (H2O) in caa001b	gc:Molecule		ex:atom_caa001b_11|ex:atom_caa001b_12|ex:atom_caa001b_13	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa002		gc:MolecularComputation	ex:molecule_caa002			
+ex:molecule_caa002	Molecule for caa002	gc:Molecule	ex:species_caa002_1|ex:species_caa002_2|ex:species_caa002_3			
+ex:species_caa002_1	Species 1 (C2H3ClO) in caa002	gc:Molecule		ex:atom_caa002_1|ex:atom_caa002_2|ex:atom_caa002_3|ex:atom_caa002_4|ex:atom_caa002_5|ex:atom_caa002_6|ex:atom_caa002_7	InChI=1S/C2H3ClO/c3-1-2-4/h2H,1H2	QSKPIOLLBIHNAC-UHFFFAOYSA-N
+ex:species_caa002_2	Species 2 (H2O) in caa002	gc:Molecule		ex:atom_caa002_8|ex:atom_caa002_9|ex:atom_caa002_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:species_caa002_3	Species 3 (H2O) in caa002	gc:Molecule		ex:atom_caa002_11|ex:atom_caa002_12|ex:atom_caa002_13	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa002a		gc:MolecularComputation	ex:molecule_caa002a			
+ex:molecule_caa002a	Molecule for caa002a	gc:Molecule	ex:species_caa002a_1|ex:species_caa002a_2|ex:species_caa002a_3			
+ex:species_caa002a_1	Species 1 (C2H3ClO) in caa002a	gc:Molecule		ex:atom_caa002a_1|ex:atom_caa002a_2|ex:atom_caa002a_3|ex:atom_caa002a_4|ex:atom_caa002a_5|ex:atom_caa002a_6|ex:atom_caa002a_7	InChI=1S/C2H3ClO/c3-1-2-4/h2H,1H2	QSKPIOLLBIHNAC-UHFFFAOYSA-N
+ex:species_caa002a_2	Species 2 (H2O) in caa002a	gc:Molecule		ex:atom_caa002a_8|ex:atom_caa002a_9|ex:atom_caa002a_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:species_caa002a_3	Species 3 (H2O) in caa002a	gc:Molecule		ex:atom_caa002a_11|ex:atom_caa002a_12|ex:atom_caa002a_13	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa002b		gc:MolecularComputation	ex:molecule_caa002b			
+ex:molecule_caa002b	Molecule for caa002b	gc:Molecule	ex:species_caa002b_1|ex:species_caa002b_2|ex:species_caa002b_3			
+ex:species_caa002b_1	Species 1 (C2H3ClO) in caa002b	gc:Molecule		ex:atom_caa002b_1|ex:atom_caa002b_2|ex:atom_caa002b_3|ex:atom_caa002b_4|ex:atom_caa002b_5|ex:atom_caa002b_6|ex:atom_caa002b_7	InChI=1S/C2H3ClO/c3-1-2-4/h2H,1H2	QSKPIOLLBIHNAC-UHFFFAOYSA-N
+ex:species_caa002b_2	Species 2 (H2O) in caa002b	gc:Molecule		ex:atom_caa002b_8|ex:atom_caa002b_9|ex:atom_caa002b_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:species_caa002b_3	Species 3 (H2O) in caa002b	gc:Molecule		ex:atom_caa002b_11|ex:atom_caa002b_12|ex:atom_caa002b_13	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa003a		gc:MolecularComputation	ex:molecule_caa003a			
+ex:molecule_caa003a	Molecule for caa003a	gc:Molecule	ex:species_caa003a_1|ex:species_caa003a_2|ex:species_caa003a_3			
+ex:species_caa003a_1	Species 1 (C2H3ClO) in caa003a	gc:Molecule		ex:atom_caa003a_1|ex:atom_caa003a_2|ex:atom_caa003a_3|ex:atom_caa003a_4|ex:atom_caa003a_5|ex:atom_caa003a_6|ex:atom_caa003a_7	InChI=1S/C2H3ClO/c3-1-2-4/h2H,1H2	QSKPIOLLBIHNAC-UHFFFAOYSA-N
+ex:species_caa003a_2	Species 2 (H2O) in caa003a	gc:Molecule		ex:atom_caa003a_8|ex:atom_caa003a_9|ex:atom_caa003a_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:species_caa003a_3	Species 3 (H2O) in caa003a	gc:Molecule		ex:atom_caa003a_11|ex:atom_caa003a_12|ex:atom_caa003a_13	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa003b		gc:MolecularComputation	ex:molecule_caa003b			
+ex:molecule_caa003b	Molecule for caa003b	gc:Molecule	ex:species_caa003b_1|ex:species_caa003b_2|ex:species_caa003b_3			
+ex:species_caa003b_1	Species 1 (C2H3ClO) in caa003b	gc:Molecule		ex:atom_caa003b_1|ex:atom_caa003b_2|ex:atom_caa003b_3|ex:atom_caa003b_4|ex:atom_caa003b_5|ex:atom_caa003b_6|ex:atom_caa003b_7	InChI=1S/C2H3ClO/c3-1-2-4/h2H,1H2	QSKPIOLLBIHNAC-UHFFFAOYSA-N
+ex:species_caa003b_2	Species 2 (H2O) in caa003b	gc:Molecule		ex:atom_caa003b_8|ex:atom_caa003b_9|ex:atom_caa003b_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:species_caa003b_3	Species 3 (H2O) in caa003b	gc:Molecule		ex:atom_caa003b_11|ex:atom_caa003b_12|ex:atom_caa003b_13	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa003c		gc:MolecularComputation	ex:molecule_caa003c			
+ex:molecule_caa003c	Molecule for caa003c	gc:Molecule	ex:species_caa003c_1|ex:species_caa003c_2|ex:species_caa003c_3			
+ex:species_caa003c_1	Species 1 (C2H3ClO) in caa003c	gc:Molecule		ex:atom_caa003c_1|ex:atom_caa003c_2|ex:atom_caa003c_3|ex:atom_caa003c_4|ex:atom_caa003c_5|ex:atom_caa003c_6|ex:atom_caa003c_7	InChI=1S/C2H3ClO/c3-1-2-4/h2H,1H2	QSKPIOLLBIHNAC-UHFFFAOYSA-N
+ex:species_caa003c_2	Species 2 (H2O) in caa003c	gc:Molecule		ex:atom_caa003c_8|ex:atom_caa003c_9|ex:atom_caa003c_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:species_caa003c_3	Species 3 (H2O) in caa003c	gc:Molecule		ex:atom_caa003c_11|ex:atom_caa003c_12|ex:atom_caa003c_13	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa003d		gc:MolecularComputation	ex:molecule_caa003d			
+ex:molecule_caa003d	Molecule for caa003d	gc:Molecule	ex:species_caa003d_1|ex:species_caa003d_2|ex:species_caa003d_3			
+ex:species_caa003d_1	Species 1 (C2H3ClO) in caa003d	gc:Molecule		ex:atom_caa003d_1|ex:atom_caa003d_2|ex:atom_caa003d_3|ex:atom_caa003d_4|ex:atom_caa003d_5|ex:atom_caa003d_6|ex:atom_caa003d_7	InChI=1S/C2H3ClO/c3-1-2-4/h2H,1H2	QSKPIOLLBIHNAC-UHFFFAOYSA-N
+ex:species_caa003d_2	Species 2 (H2O) in caa003d	gc:Molecule		ex:atom_caa003d_8|ex:atom_caa003d_9|ex:atom_caa003d_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:species_caa003d_3	Species 3 (H2O) in caa003d	gc:Molecule		ex:atom_caa003d_11|ex:atom_caa003d_12|ex:atom_caa003d_13	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa004a		gc:MolecularComputation	ex:molecule_caa004a			
+ex:molecule_caa004a	Molecule for caa004a	gc:Molecule	ex:species_caa004a_1|ex:species_caa004a_2			
+ex:species_caa004a_1	Species 1 (C2H5ClO2) in caa004a	gc:Molecule		ex:atom_caa004a_1|ex:atom_caa004a_2|ex:atom_caa004a_3|ex:atom_caa004a_4|ex:atom_caa004a_5|ex:atom_caa004a_6|ex:atom_caa004a_7|ex:atom_caa004a_11|ex:atom_caa004a_12|ex:atom_caa004a_13	InChI=1S/C2H5ClO2/c3-1-2(4)5/h2,4-5H,1H2	QXCPBNVAQSUDRV-UHFFFAOYSA-N
+ex:species_caa004a_2	Species 2 (H2O) in caa004a	gc:Molecule		ex:atom_caa004a_8|ex:atom_caa004a_9|ex:atom_caa004a_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa004b		gc:MolecularComputation	ex:molecule_caa004b			
+ex:molecule_caa004b	Molecule for caa004b	gc:Molecule	ex:species_caa004b_1|ex:species_caa004b_2			
+ex:species_caa004b_1	Species 1 (C2H5ClO2) in caa004b	gc:Molecule		ex:atom_caa004b_1|ex:atom_caa004b_2|ex:atom_caa004b_3|ex:atom_caa004b_4|ex:atom_caa004b_5|ex:atom_caa004b_6|ex:atom_caa004b_7|ex:atom_caa004b_11|ex:atom_caa004b_12|ex:atom_caa004b_13	InChI=1S/C2H5ClO2/c3-1-2(4)5/h2,4-5H,1H2	QXCPBNVAQSUDRV-UHFFFAOYSA-N
+ex:species_caa004b_2	Species 2 (H2O) in caa004b	gc:Molecule		ex:atom_caa004b_8|ex:atom_caa004b_9|ex:atom_caa004b_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa004c		gc:MolecularComputation	ex:molecule_caa004c			
+ex:molecule_caa004c	Molecule for caa004c	gc:Molecule	ex:species_caa004c_1|ex:species_caa004c_2			
+ex:species_caa004c_1	Species 1 (C2H5ClO2) in caa004c	gc:Molecule		ex:atom_caa004c_1|ex:atom_caa004c_2|ex:atom_caa004c_3|ex:atom_caa004c_4|ex:atom_caa004c_5|ex:atom_caa004c_6|ex:atom_caa004c_7|ex:atom_caa004c_11|ex:atom_caa004c_12|ex:atom_caa004c_13	InChI=1S/C2H5ClO2/c3-1-2(4)5/h2,4-5H,1H2	QXCPBNVAQSUDRV-UHFFFAOYSA-N
+ex:species_caa004c_2	Species 2 (H2O) in caa004c	gc:Molecule		ex:atom_caa004c_8|ex:atom_caa004c_9|ex:atom_caa004c_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa004d		gc:MolecularComputation	ex:molecule_caa004d			
+ex:molecule_caa004d	Molecule for caa004d	gc:Molecule	ex:species_caa004d_1|ex:species_caa004d_2			
+ex:species_caa004d_1	Species 1 (C2H5ClO2) in caa004d	gc:Molecule		ex:atom_caa004d_1|ex:atom_caa004d_2|ex:atom_caa004d_3|ex:atom_caa004d_4|ex:atom_caa004d_5|ex:atom_caa004d_6|ex:atom_caa004d_7|ex:atom_caa004d_11|ex:atom_caa004d_12|ex:atom_caa004d_13	InChI=1S/C2H5ClO2/c3-1-2(4)5/h2,4-5H,1H2	QXCPBNVAQSUDRV-UHFFFAOYSA-N
+ex:species_caa004d_2	Species 2 (H2O) in caa004d	gc:Molecule		ex:atom_caa004d_8|ex:atom_caa004d_9|ex:atom_caa004d_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa004e		gc:MolecularComputation	ex:molecule_caa004e			
+ex:molecule_caa004e	Molecule for caa004e	gc:Molecule	ex:species_caa004e_1|ex:species_caa004e_2			
+ex:species_caa004e_1	Species 1 (C2H5ClO2) in caa004e	gc:Molecule		ex:atom_caa004e_1|ex:atom_caa004e_2|ex:atom_caa004e_3|ex:atom_caa004e_4|ex:atom_caa004e_5|ex:atom_caa004e_6|ex:atom_caa004e_7|ex:atom_caa004e_11|ex:atom_caa004e_12|ex:atom_caa004e_13	InChI=1S/C2H5ClO2/c3-1-2(4)5/h2,4-5H,1H2	QXCPBNVAQSUDRV-UHFFFAOYSA-N
+ex:species_caa004e_2	Species 2 (H2O) in caa004e	gc:Molecule		ex:atom_caa004e_8|ex:atom_caa004e_9|ex:atom_caa004e_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa004f		gc:MolecularComputation	ex:molecule_caa004f			
+ex:molecule_caa004f	Molecule for caa004f	gc:Molecule	ex:species_caa004f_1|ex:species_caa004f_2			
+ex:species_caa004f_1	Species 1 (C2H5ClO2) in caa004f	gc:Molecule		ex:atom_caa004f_1|ex:atom_caa004f_2|ex:atom_caa004f_3|ex:atom_caa004f_4|ex:atom_caa004f_5|ex:atom_caa004f_6|ex:atom_caa004f_7|ex:atom_caa004f_11|ex:atom_caa004f_12|ex:atom_caa004f_13	InChI=1S/C2H5ClO2/c3-1-2(4)5/h2,4-5H,1H2	QXCPBNVAQSUDRV-UHFFFAOYSA-N
+ex:species_caa004f_2	Species 2 (H2O) in caa004f	gc:Molecule		ex:atom_caa004f_8|ex:atom_caa004f_9|ex:atom_caa004f_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa004g		gc:MolecularComputation	ex:molecule_caa004g			
+ex:molecule_caa004g	Molecule for caa004g	gc:Molecule	ex:species_caa004g_1|ex:species_caa004g_2			
+ex:species_caa004g_1	Species 1 (C2H5ClO2) in caa004g	gc:Molecule		ex:atom_caa004g_1|ex:atom_caa004g_2|ex:atom_caa004g_3|ex:atom_caa004g_4|ex:atom_caa004g_5|ex:atom_caa004g_6|ex:atom_caa004g_7|ex:atom_caa004g_11|ex:atom_caa004g_12|ex:atom_caa004g_13	InChI=1S/C2H5ClO2/c3-1-2(4)5/h2,4-5H,1H2	QXCPBNVAQSUDRV-UHFFFAOYSA-N
+ex:species_caa004g_2	Species 2 (H2O) in caa004g	gc:Molecule		ex:atom_caa004g_8|ex:atom_caa004g_9|ex:atom_caa004g_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa004h		gc:MolecularComputation	ex:molecule_caa004h			
+ex:molecule_caa004h	Molecule for caa004h	gc:Molecule	ex:species_caa004h_1|ex:species_caa004h_2			
+ex:species_caa004h_1	Species 1 (C2H5ClO2) in caa004h	gc:Molecule		ex:atom_caa004h_1|ex:atom_caa004h_2|ex:atom_caa004h_3|ex:atom_caa004h_4|ex:atom_caa004h_5|ex:atom_caa004h_6|ex:atom_caa004h_7|ex:atom_caa004h_11|ex:atom_caa004h_12|ex:atom_caa004h_13	InChI=1S/C2H5ClO2/c3-1-2(4)5/h2,4-5H,1H2	QXCPBNVAQSUDRV-UHFFFAOYSA-N
+ex:species_caa004h_2	Species 2 (H2O) in caa004h	gc:Molecule		ex:atom_caa004h_8|ex:atom_caa004h_9|ex:atom_caa004h_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa004j		gc:MolecularComputation	ex:molecule_caa004j			
+ex:molecule_caa004j	Molecule for caa004j	gc:Molecule	ex:species_caa004j_1|ex:species_caa004j_2			
+ex:species_caa004j_1	Species 1 (C2H5ClO2) in caa004j	gc:Molecule		ex:atom_caa004j_1|ex:atom_caa004j_2|ex:atom_caa004j_3|ex:atom_caa004j_4|ex:atom_caa004j_5|ex:atom_caa004j_6|ex:atom_caa004j_7|ex:atom_caa004j_11|ex:atom_caa004j_12|ex:atom_caa004j_13	InChI=1S/C2H5ClO2/c3-1-2(4)5/h2,4-5H,1H2	QXCPBNVAQSUDRV-UHFFFAOYSA-N
+ex:species_caa004j_2	Species 2 (H2O) in caa004j	gc:Molecule		ex:atom_caa004j_8|ex:atom_caa004j_9|ex:atom_caa004j_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa004k		gc:MolecularComputation	ex:molecule_caa004k			
+ex:molecule_caa004k	Molecule for caa004k	gc:Molecule	ex:species_caa004k_1|ex:species_caa004k_2			
+ex:species_caa004k_1	Species 1 (C2H5ClO2) in caa004k	gc:Molecule		ex:atom_caa004k_1|ex:atom_caa004k_2|ex:atom_caa004k_3|ex:atom_caa004k_4|ex:atom_caa004k_5|ex:atom_caa004k_6|ex:atom_caa004k_7|ex:atom_caa004k_11|ex:atom_caa004k_12|ex:atom_caa004k_13	InChI=1S/C2H5ClO2/c3-1-2(4)5/h2,4-5H,1H2	QXCPBNVAQSUDRV-UHFFFAOYSA-N
+ex:species_caa004k_2	Species 2 (H2O) in caa004k	gc:Molecule		ex:atom_caa004k_8|ex:atom_caa004k_9|ex:atom_caa004k_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa004l		gc:MolecularComputation	ex:molecule_caa004l			
+ex:molecule_caa004l	Molecule for caa004l	gc:Molecule	ex:species_caa004l_1|ex:species_caa004l_2			
+ex:species_caa004l_1	Species 1 (C2H5ClO2) in caa004l	gc:Molecule		ex:atom_caa004l_1|ex:atom_caa004l_2|ex:atom_caa004l_3|ex:atom_caa004l_4|ex:atom_caa004l_5|ex:atom_caa004l_6|ex:atom_caa004l_7|ex:atom_caa004l_11|ex:atom_caa004l_12|ex:atom_caa004l_13	InChI=1S/C2H5ClO2/c3-1-2(4)5/h2,4-5H,1H2	QXCPBNVAQSUDRV-UHFFFAOYSA-N
+ex:species_caa004l_2	Species 2 (H2O) in caa004l	gc:Molecule		ex:atom_caa004l_8|ex:atom_caa004l_9|ex:atom_caa004l_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa004m		gc:MolecularComputation	ex:molecule_caa004m			
+ex:molecule_caa004m	Molecule for caa004m	gc:Molecule	ex:species_caa004m_2			
+ex:species_caa004m_2	Species 2 (H2O) in caa004m	gc:Molecule		ex:atom_caa004m_8|ex:atom_caa004m_9|ex:atom_caa004m_13	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa005bIRC-pcseg2-test		gc:MolecularComputation	ex:molecule_caa005bIRC-pcseg2-test			
+ex:molecule_caa005bIRC-pcseg2-test	Molecule for caa005bIRC-pcseg2-test	gc:Molecule	ex:species_caa005bIRC-pcseg2-test_1|ex:species_caa005bIRC-pcseg2-test_2|ex:species_caa005bIRC-pcseg2-test_3			
+ex:species_caa005bIRC-pcseg2-test_1	Species 1 (C2H3ClO) in caa005bIRC-pcseg2-test	gc:Molecule		ex:atom_caa005bIRC-pcseg2-test_1|ex:atom_caa005bIRC-pcseg2-test_2|ex:atom_caa005bIRC-pcseg2-test_3|ex:atom_caa005bIRC-pcseg2-test_4|ex:atom_caa005bIRC-pcseg2-test_5|ex:atom_caa005bIRC-pcseg2-test_6|ex:atom_caa005bIRC-pcseg2-test_12	InChI=1S/C2H3ClO/c3-1-2-4/h2H,1H2	QSKPIOLLBIHNAC-UHFFFAOYSA-N
+ex:species_caa005bIRC-pcseg2-test_2	Species 2 (H2O) in caa005bIRC-pcseg2-test	gc:Molecule		ex:atom_caa005bIRC-pcseg2-test_7|ex:atom_caa005bIRC-pcseg2-test_10|ex:atom_caa005bIRC-pcseg2-test_11	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:species_caa005bIRC-pcseg2-test_3	Species 3 (H2O) in caa005bIRC-pcseg2-test	gc:Molecule		ex:atom_caa005bIRC-pcseg2-test_8|ex:atom_caa005bIRC-pcseg2-test_9|ex:atom_caa005bIRC-pcseg2-test_13	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa005bIRCCML_last		gc:MolecularComputation	ex:molecule_caa005bIRCCML_last			
+ex:molecule_caa005bIRCCML_last	Molecule for caa005bIRCCML_last	gc:Molecule	ex:species_caa005bIRCCML_last_1|ex:species_caa005bIRCCML_last_2			
+ex:species_caa005bIRCCML_last_1	Species 1 (C2H5ClO2) in caa005bIRCCML_last	gc:Molecule		ex:atom_caa005bIRCCML_last_1|ex:atom_caa005bIRCCML_last_2|ex:atom_caa005bIRCCML_last_3|ex:atom_caa005bIRCCML_last_4|ex:atom_caa005bIRCCML_last_5|ex:atom_caa005bIRCCML_last_6|ex:atom_caa005bIRCCML_last_7|ex:atom_caa005bIRCCML_last_11|ex:atom_caa005bIRCCML_last_12|ex:atom_caa005bIRCCML_last_13	InChI=1S/C2H5ClO2/c3-1-2(4)5/h2,4-5H,1H2	QXCPBNVAQSUDRV-UHFFFAOYSA-N
+ex:species_caa005bIRCCML_last_2	Species 2 (H2O) in caa005bIRCCML_last	gc:Molecule		ex:atom_caa005bIRCCML_last_8|ex:atom_caa005bIRCCML_last_9|ex:atom_caa005bIRCCML_last_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa005bIRCCML1st		gc:MolecularComputation	ex:molecule_caa005bIRCCML1st			
+ex:molecule_caa005bIRCCML1st	Molecule for caa005bIRCCML1st	gc:Molecule	ex:species_caa005bIRCCML1st_1|ex:species_caa005bIRCCML1st_2|ex:species_caa005bIRCCML1st_3			
+ex:species_caa005bIRCCML1st_1	Species 1 (C2H3ClO) in caa005bIRCCML1st	gc:Molecule		ex:atom_caa005bIRCCML1st_1|ex:atom_caa005bIRCCML1st_2|ex:atom_caa005bIRCCML1st_3|ex:atom_caa005bIRCCML1st_4|ex:atom_caa005bIRCCML1st_5|ex:atom_caa005bIRCCML1st_6|ex:atom_caa005bIRCCML1st_12	InChI=1S/C2H3ClO/c3-1-2-4/h2H,1H2	QSKPIOLLBIHNAC-UHFFFAOYSA-N
+ex:species_caa005bIRCCML1st_2	Species 2 (H2O) in caa005bIRCCML1st	gc:Molecule		ex:atom_caa005bIRCCML1st_7|ex:atom_caa005bIRCCML1st_10|ex:atom_caa005bIRCCML1st_11	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:species_caa005bIRCCML1st_3	Species 3 (H2O) in caa005bIRCCML1st	gc:Molecule		ex:atom_caa005bIRCCML1st_8|ex:atom_caa005bIRCCML1st_9|ex:atom_caa005bIRCCML1st_13	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa007b		gc:MolecularComputation	ex:molecule_caa007b			
+ex:molecule_caa007b	Molecule for caa007b	gc:Molecule	ex:species_caa007b_1|ex:species_caa007b_2			
+ex:species_caa007b_1	Species 1 (C2H5ClO2) in caa007b	gc:Molecule		ex:atom_caa007b_1|ex:atom_caa007b_2|ex:atom_caa007b_3|ex:atom_caa007b_4|ex:atom_caa007b_5|ex:atom_caa007b_6|ex:atom_caa007b_7|ex:atom_caa007b_11|ex:atom_caa007b_12|ex:atom_caa007b_13	InChI=1S/C2H5ClO2/c3-1-2(4)5/h2,4-5H,1H2	QXCPBNVAQSUDRV-UHFFFAOYSA-N
+ex:species_caa007b_2	Species 2 (H2O) in caa007b	gc:Molecule		ex:atom_caa007b_8|ex:atom_caa007b_9|ex:atom_caa007b_10	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N
+ex:exp_caa008-aldehyde-bare		gc:MolecularComputation	ex:molecule_caa008-aldehyde-bare			
+ex:molecule_caa008-aldehyde-bare	Molecule for caa008-aldehyde-bare	gc:Molecule	ex:species_caa008-aldehyde-bare_1			
+ex:species_caa008-aldehyde-bare_1	Species 1 (C2H3ClO) in caa008-aldehyde-bare	gc:Molecule		ex:atom_caa008-aldehyde-bare_1|ex:atom_caa008-aldehyde-bare_2|ex:atom_caa008-aldehyde-bare_3|ex:atom_caa008-aldehyde-bare_4|ex:atom_caa008-aldehyde-bare_5|ex:atom_caa008-aldehyde-bare_6|ex:atom_caa008-aldehyde-bare_7	InChI=1S/C2H3ClO/c3-1-2-4/h2H,1H2	QSKPIOLLBIHNAC-UHFFFAOYSA-N
+ex:exp_caa008-hydrate-bare		gc:MolecularComputation	ex:molecule_caa008-hydrate-bare			
+ex:molecule_caa008-hydrate-bare	Molecule for caa008-hydrate-bare	gc:Molecule	ex:species_caa008-hydrate-bare_1			
+ex:species_caa008-hydrate-bare_1	Species 1 (C2H5ClO2) in caa008-hydrate-bare	gc:Molecule		ex:atom_caa008-hydrate-bare_1|ex:atom_caa008-hydrate-bare_2|ex:atom_caa008-hydrate-bare_3|ex:atom_caa008-hydrate-bare_4|ex:atom_caa008-hydrate-bare_5|ex:atom_caa008-hydrate-bare_6|ex:atom_caa008-hydrate-bare_7|ex:atom_caa008-hydrate-bare_8|ex:atom_caa008-hydrate-bare_9|ex:atom_caa008-hydrate-bare_10	InChI=1S/C2H5ClO2/c3-1-2(4)5/h2,4-5H,1H2	QXCPBNVAQSUDRV-UHFFFAOYSA-N
+ex:exp_caa008-water-bare		gc:MolecularComputation	ex:molecule_caa008-water-bare			
+ex:molecule_caa008-water-bare	Molecule for caa008-water-bare	gc:Molecule	ex:species_caa008-water-bare_1			
+ex:species_caa008-water-bare_1	Species 1 (H2O) in caa008-water-bare	gc:Molecule		ex:atom_caa008-water-bare_1|ex:atom_caa008-water-bare_2|ex:atom_caa008-water-bare_3	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N

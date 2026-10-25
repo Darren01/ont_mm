@@ -7,7 +7,7 @@
 @base <http://purl.org/gc/core> .
 
 <http://purl.org/gc/core> rdf:type owl:Ontology ;
-                           owl:versionIRI <http://purl.org/gc/core/2026-10-07/gc_core.ttl> ;
+                           owl:versionIRI <http://purl.org/gc/core/2026-10-11/gc_core.ttl> ;
                            <http://creativecommons.org/ns#license> <http://creativecommons.org/licenses/by/3.0/> ;
                            <http://purl.org/dc/elements/1.1/created> "2015-03-04" ;
                            <http://purl.org/dc/elements/1.1/description> """This ontology aims at complete description of typical Computational Chemistry experiment.
@@ -35,7 +35,7 @@
                                         """The design and repair decisions in this fork were informed in part by the landscape review of computational chemistry ontologies: ChemRxiv 2024,
     doi:10.26434/chemrxiv-2024-fvzpq"""@en ;
                            rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
-                           owl:versionInfo "0.8.8" .
+                           owl:versionInfo "0.8.9" .
 
 #################################################################
 #    Annotation properties
@@ -366,19 +366,6 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
                                    rdfs:subPropertyOf <http://purl.org/gc/extraGCObjectProperty> ;
                                    rdfs:comment "A property that specifies the Basis Count."@en ;
                                    rdfs:label "The Basis Count"@en .
-
-
-###  http://purl.org/gc/hasBasisSet
-<http://purl.org/gc/hasBasisSet> rdf:type owl:ObjectProperty ;
-                                 rdfs:subPropertyOf <http://purl.org/gc/hasFeature> ,
-                                                    <http://purl.org/gc/hasMolecularFeature> ;
-                                 rdf:type owl:FunctionalProperty ;
-                                 rdfs:domain [ rdf:type owl:Class ;
-                                               owl:unionOf ( <http://purl.org/gc/Atom>
-                                                             <http://purl.org/gc/MolecularMethodology>
-                                                           )
-                                             ] ;
-                                 rdfs:range <http://purl.org/gc/BasisSet> .
 
 
 ###  http://purl.org/gc/hasBindingEnergy
@@ -1047,7 +1034,7 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
                                    rdfs:subPropertyOf <http://purl.org/gc/hasResult> ;
                                    rdfs:domain <http://purl.org/gc/ReactionPathPoint> ;
                                    rdfs:range <http://purl.org/gc/FloatValue> ;
-                                   rdfs:comment "A property that describes the relative energy at a point along a reaction path."@en ;
+                                   rdfs:comment "A property that describes the energy at a point along a reaction path. As produced by the ont_mm pipeline this is the absolute total energy from the IRC log, in the unit of its FloatValue (hartree); subtract a reference point, such as the first point or the transition state, to get a relative energy."@en ;
                                    rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
                                    rdfs:label "has path energy"@en .
 
@@ -1289,7 +1276,7 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
 
 ###  http://purl.org/gc/hasUnit
 <http://purl.org/gc/hasUnit> rdf:type owl:ObjectProperty ;
-                             rdfs:subPropertyOf <http://purl.org/gc/hasAuxiliaryProperty> ;
+                             rdfs:subPropertyOf <http://purl.org/gc/extraGCObjectProperty> ;
                              rdf:type owl:FunctionalProperty ;
                              rdfs:domain <http://purl.org/gc/Value> ;
                              rdfs:comment "A property that describes a unit of the value."@en ;
@@ -1615,7 +1602,16 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
 ###  http://purl.org/gc/hasBasisSet
 <http://purl.org/gc/hasBasisSet> rdf:type owl:DatatypeProperty ,
                                           owl:FunctionalProperty ;
-                                 rdfs:range rdfs:Literal .
+                                 rdfs:domain [ rdf:type owl:Class ;
+                                               owl:unionOf ( <http://purl.org/gc/Atom>
+                                                             <http://purl.org/gc/MolecularMethodology>
+                                                           )
+                                             ] ;
+                                 rdfs:range rdfs:Literal ;
+                                 rdfs:comment "A property that allows Basis Sets to be assigned to a given quantum methodology"@en ,
+                                              "A property that allows to define Basis Set -  finite set of functions used to approximately express the Molecular Orbital wavefunction(s) of system, normally atom centered, consisting of AOs differing in local angular momentum for each atom."@en ;
+                                 rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                                 rdfs:label "has basis set"@en .
 
 
 ###  http://purl.org/gc/hasBondCount
@@ -3914,7 +3910,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
 ###  http://purl.org/gc/ReactionPathPoint
 <http://purl.org/gc/ReactionPathPoint> rdf:type owl:Class ;
                                        rdfs:subClassOf <http://purl.org/gc/GainesvilleCoreTerm> ;
-                                       rdfs:comment "A class representing a single point along a reaction path, with an index (position along the path) and an energy value relative to the starting point. May originate from an individual forward or backward IRC log, or from a combined reaction-path file assembled from both."@en ;
+                                       rdfs:comment "A class representing a single point along a reaction path, with an index (position along the path) and an energy value (the absolute total energy from the IRC log, not relative to the starting point). May originate from an individual forward or backward IRC log, or from a combined reaction-path file assembled from both."@en ;
                                        rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
                                        rdfs:label "Reaction Path Point"@en .
 
@@ -4781,6 +4777,530 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/atom_8> rdf:type owl:NamedIndividual .
 
 
+###  http://example.org/atom_aa001a_1
+<http://example.org/atom_aa001a_1> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001a_10
+<http://example.org/atom_aa001a_10> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001a_11
+<http://example.org/atom_aa001a_11> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001a_12
+<http://example.org/atom_aa001a_12> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001a_13
+<http://example.org/atom_aa001a_13> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001a_2
+<http://example.org/atom_aa001a_2> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001a_3
+<http://example.org/atom_aa001a_3> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001a_4
+<http://example.org/atom_aa001a_4> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001a_5
+<http://example.org/atom_aa001a_5> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001a_6
+<http://example.org/atom_aa001a_6> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001a_7
+<http://example.org/atom_aa001a_7> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001a_8
+<http://example.org/atom_aa001a_8> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001a_9
+<http://example.org/atom_aa001a_9> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001b_1
+<http://example.org/atom_aa001b_1> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001b_10
+<http://example.org/atom_aa001b_10> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001b_11
+<http://example.org/atom_aa001b_11> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001b_12
+<http://example.org/atom_aa001b_12> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001b_13
+<http://example.org/atom_aa001b_13> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001b_2
+<http://example.org/atom_aa001b_2> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001b_3
+<http://example.org/atom_aa001b_3> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001b_4
+<http://example.org/atom_aa001b_4> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001b_5
+<http://example.org/atom_aa001b_5> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001b_6
+<http://example.org/atom_aa001b_6> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001b_7
+<http://example.org/atom_aa001b_7> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001b_8
+<http://example.org/atom_aa001b_8> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001b_9
+<http://example.org/atom_aa001b_9> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001c_1
+<http://example.org/atom_aa001c_1> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001c_10
+<http://example.org/atom_aa001c_10> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001c_11
+<http://example.org/atom_aa001c_11> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001c_12
+<http://example.org/atom_aa001c_12> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001c_13
+<http://example.org/atom_aa001c_13> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001c_2
+<http://example.org/atom_aa001c_2> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001c_3
+<http://example.org/atom_aa001c_3> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001c_4
+<http://example.org/atom_aa001c_4> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001c_5
+<http://example.org/atom_aa001c_5> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001c_6
+<http://example.org/atom_aa001c_6> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001c_7
+<http://example.org/atom_aa001c_7> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001c_8
+<http://example.org/atom_aa001c_8> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001c_9
+<http://example.org/atom_aa001c_9> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g-smd_1
+<http://example.org/atom_aa001g-smd_1> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g-smd_10
+<http://example.org/atom_aa001g-smd_10> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g-smd_11
+<http://example.org/atom_aa001g-smd_11> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g-smd_12
+<http://example.org/atom_aa001g-smd_12> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g-smd_13
+<http://example.org/atom_aa001g-smd_13> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g-smd_2
+<http://example.org/atom_aa001g-smd_2> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g-smd_3
+<http://example.org/atom_aa001g-smd_3> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g-smd_4
+<http://example.org/atom_aa001g-smd_4> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g-smd_5
+<http://example.org/atom_aa001g-smd_5> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g-smd_6
+<http://example.org/atom_aa001g-smd_6> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g-smd_7
+<http://example.org/atom_aa001g-smd_7> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g-smd_8
+<http://example.org/atom_aa001g-smd_8> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g-smd_9
+<http://example.org/atom_aa001g-smd_9> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g_1
+<http://example.org/atom_aa001g_1> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g_10
+<http://example.org/atom_aa001g_10> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g_11
+<http://example.org/atom_aa001g_11> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g_12
+<http://example.org/atom_aa001g_12> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g_13
+<http://example.org/atom_aa001g_13> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g_2
+<http://example.org/atom_aa001g_2> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g_3
+<http://example.org/atom_aa001g_3> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g_4
+<http://example.org/atom_aa001g_4> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g_5
+<http://example.org/atom_aa001g_5> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g_6
+<http://example.org/atom_aa001g_6> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g_7
+<http://example.org/atom_aa001g_7> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g_8
+<http://example.org/atom_aa001g_8> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001g_9
+<http://example.org/atom_aa001g_9> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h-smd_1
+<http://example.org/atom_aa001h-smd_1> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h-smd_10
+<http://example.org/atom_aa001h-smd_10> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h-smd_11
+<http://example.org/atom_aa001h-smd_11> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h-smd_12
+<http://example.org/atom_aa001h-smd_12> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h-smd_13
+<http://example.org/atom_aa001h-smd_13> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h-smd_2
+<http://example.org/atom_aa001h-smd_2> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h-smd_3
+<http://example.org/atom_aa001h-smd_3> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h-smd_4
+<http://example.org/atom_aa001h-smd_4> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h-smd_5
+<http://example.org/atom_aa001h-smd_5> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h-smd_6
+<http://example.org/atom_aa001h-smd_6> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h-smd_7
+<http://example.org/atom_aa001h-smd_7> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h-smd_8
+<http://example.org/atom_aa001h-smd_8> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h-smd_9
+<http://example.org/atom_aa001h-smd_9> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h_1
+<http://example.org/atom_aa001h_1> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h_10
+<http://example.org/atom_aa001h_10> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h_11
+<http://example.org/atom_aa001h_11> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h_12
+<http://example.org/atom_aa001h_12> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h_13
+<http://example.org/atom_aa001h_13> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h_2
+<http://example.org/atom_aa001h_2> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h_3
+<http://example.org/atom_aa001h_3> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h_4
+<http://example.org/atom_aa001h_4> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h_5
+<http://example.org/atom_aa001h_5> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h_6
+<http://example.org/atom_aa001h_6> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h_7
+<http://example.org/atom_aa001h_7> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h_8
+<http://example.org/atom_aa001h_8> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa001h_9
+<http://example.org/atom_aa001h_9> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-aldehyde-bare-smd-check_1
+<http://example.org/atom_aa002-aldehyde-bare-smd-check_1> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-aldehyde-bare-smd-check_2
+<http://example.org/atom_aa002-aldehyde-bare-smd-check_2> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-aldehyde-bare-smd-check_3
+<http://example.org/atom_aa002-aldehyde-bare-smd-check_3> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-aldehyde-bare-smd-check_4
+<http://example.org/atom_aa002-aldehyde-bare-smd-check_4> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-aldehyde-bare-smd-check_5
+<http://example.org/atom_aa002-aldehyde-bare-smd-check_5> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-aldehyde-bare-smd-check_6
+<http://example.org/atom_aa002-aldehyde-bare-smd-check_6> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-aldehyde-bare-smd-check_7
+<http://example.org/atom_aa002-aldehyde-bare-smd-check_7> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-aldehyde-bare_1
+<http://example.org/atom_aa002-aldehyde-bare_1> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-aldehyde-bare_2
+<http://example.org/atom_aa002-aldehyde-bare_2> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-aldehyde-bare_3
+<http://example.org/atom_aa002-aldehyde-bare_3> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-aldehyde-bare_4
+<http://example.org/atom_aa002-aldehyde-bare_4> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-aldehyde-bare_5
+<http://example.org/atom_aa002-aldehyde-bare_5> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-aldehyde-bare_6
+<http://example.org/atom_aa002-aldehyde-bare_6> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-aldehyde-bare_7
+<http://example.org/atom_aa002-aldehyde-bare_7> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-hydrate-bare-smd_1
+<http://example.org/atom_aa002-hydrate-bare-smd_1> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-hydrate-bare-smd_10
+<http://example.org/atom_aa002-hydrate-bare-smd_10> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-hydrate-bare-smd_2
+<http://example.org/atom_aa002-hydrate-bare-smd_2> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-hydrate-bare-smd_3
+<http://example.org/atom_aa002-hydrate-bare-smd_3> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-hydrate-bare-smd_4
+<http://example.org/atom_aa002-hydrate-bare-smd_4> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-hydrate-bare-smd_5
+<http://example.org/atom_aa002-hydrate-bare-smd_5> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-hydrate-bare-smd_6
+<http://example.org/atom_aa002-hydrate-bare-smd_6> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-hydrate-bare-smd_7
+<http://example.org/atom_aa002-hydrate-bare-smd_7> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-hydrate-bare-smd_8
+<http://example.org/atom_aa002-hydrate-bare-smd_8> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-hydrate-bare-smd_9
+<http://example.org/atom_aa002-hydrate-bare-smd_9> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-hydrate-bare_1
+<http://example.org/atom_aa002-hydrate-bare_1> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-hydrate-bare_10
+<http://example.org/atom_aa002-hydrate-bare_10> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-hydrate-bare_2
+<http://example.org/atom_aa002-hydrate-bare_2> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-hydrate-bare_3
+<http://example.org/atom_aa002-hydrate-bare_3> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-hydrate-bare_4
+<http://example.org/atom_aa002-hydrate-bare_4> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-hydrate-bare_5
+<http://example.org/atom_aa002-hydrate-bare_5> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-hydrate-bare_6
+<http://example.org/atom_aa002-hydrate-bare_6> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-hydrate-bare_7
+<http://example.org/atom_aa002-hydrate-bare_7> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-hydrate-bare_8
+<http://example.org/atom_aa002-hydrate-bare_8> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-hydrate-bare_9
+<http://example.org/atom_aa002-hydrate-bare_9> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-water-bare-smd_1
+<http://example.org/atom_aa002-water-bare-smd_1> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-water-bare-smd_2
+<http://example.org/atom_aa002-water-bare-smd_2> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-water-bare-smd_3
+<http://example.org/atom_aa002-water-bare-smd_3> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-water-bare_1
+<http://example.org/atom_aa002-water-bare_1> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-water-bare_2
+<http://example.org/atom_aa002-water-bare_2> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/atom_aa002-water-bare_3
+<http://example.org/atom_aa002-water-bare_3> rdf:type owl:NamedIndividual .
+
+
 ###  http://example.org/avogadro_build
 <http://example.org/avogadro_build> rdf:type owl:NamedIndividual ,
                                              <http://www.w3.org/ns/prov#Activity> ;
@@ -5156,7 +5676,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/enthalpy_aa001a
 <http://example.org/enthalpy_aa001a> rdf:type owl:NamedIndividual ,
                                               <http://purl.org/gc/FloatValue> ;
-                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                      <http://purl.org/gc/hasFloatValue> "291.94"^^xsd:float ;
                                      rdfs:label "Enthalpy aa001a" .
 
@@ -5164,7 +5684,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/enthalpy_aa001b
 <http://example.org/enthalpy_aa001b> rdf:type owl:NamedIndividual ,
                                               <http://purl.org/gc/FloatValue> ;
-                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                      <http://purl.org/gc/hasFloatValue> "291.955"^^xsd:float ;
                                      rdfs:label "Enthalpy aa001b" .
 
@@ -5172,7 +5692,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/enthalpy_aa001c
 <http://example.org/enthalpy_aa001c> rdf:type owl:NamedIndividual ,
                                               <http://purl.org/gc/FloatValue> ;
-                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                      <http://purl.org/gc/hasFloatValue> "291.929"^^xsd:float ;
                                      rdfs:label "Enthalpy aa001c" .
 
@@ -5180,7 +5700,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/enthalpy_aa001d
 <http://example.org/enthalpy_aa001d> rdf:type owl:NamedIndividual ,
                                               <http://purl.org/gc/FloatValue> ;
-                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                      <http://purl.org/gc/hasFloatValue> "290.411"^^xsd:float ;
                                      rdfs:label "Enthalpy aa001d" .
 
@@ -5188,7 +5708,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/enthalpy_aa001d-smd
 <http://example.org/enthalpy_aa001d-smd> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/FloatValue> ;
-                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                          <http://purl.org/gc/hasFloatValue> "290.264"^^xsd:float ;
                                          rdfs:label "Enthalpy aa001d-smd" .
 
@@ -5196,7 +5716,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/enthalpy_aa001d-smd-hess
 <http://example.org/enthalpy_aa001d-smd-hess> rdf:type owl:NamedIndividual ,
                                                        <http://purl.org/gc/FloatValue> ;
-                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                               <http://purl.org/gc/hasFloatValue> "289.016"^^xsd:float ;
                                               rdfs:label "Enthalpy aa001d-smd-hess" .
 
@@ -5204,7 +5724,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/enthalpy_aa001g
 <http://example.org/enthalpy_aa001g> rdf:type owl:NamedIndividual ,
                                               <http://purl.org/gc/FloatValue> ;
-                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                      <http://purl.org/gc/hasFloatValue> "313.765"^^xsd:float ;
                                      rdfs:label "Enthalpy aa001g" .
 
@@ -5212,7 +5732,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/enthalpy_aa001g-smd
 <http://example.org/enthalpy_aa001g-smd> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/FloatValue> ;
-                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                          <http://purl.org/gc/hasFloatValue> "313.298"^^xsd:float ;
                                          rdfs:label "Enthalpy aa001g-smd" .
 
@@ -5220,7 +5740,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/enthalpy_aa001h
 <http://example.org/enthalpy_aa001h> rdf:type owl:NamedIndividual ,
                                               <http://purl.org/gc/FloatValue> ;
-                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                      <http://purl.org/gc/hasFloatValue> "305.242"^^xsd:float ;
                                      rdfs:label "Enthalpy aa001h" .
 
@@ -5228,7 +5748,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/enthalpy_aa001h-smd
 <http://example.org/enthalpy_aa001h-smd> rdf:type owl:NamedIndividual ,
                                                   <http://purl.org/gc/FloatValue> ;
-                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                         <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                          <http://purl.org/gc/hasFloatValue> "307.834"^^xsd:float ;
                                          rdfs:label "Enthalpy aa001h-smd" .
 
@@ -5236,7 +5756,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/enthalpy_aa002-aldehyde-bare
 <http://example.org/enthalpy_aa002-aldehyde-bare> rdf:type owl:NamedIndividual ,
                                                            <http://purl.org/gc/FloatValue> ;
-                                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                                   <http://purl.org/gc/hasFloatValue> "159.571"^^xsd:float ;
                                                   rdfs:label "Enthalpy aa002-aldehyde-bare" .
 
@@ -5244,7 +5764,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/enthalpy_aa002-hydrate-bare
 <http://example.org/enthalpy_aa002-hydrate-bare> rdf:type owl:NamedIndividual ,
                                                           <http://purl.org/gc/FloatValue> ;
-                                                 <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                                 <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                                  <http://purl.org/gc/hasFloatValue> "239.822"^^xsd:float ;
                                                  rdfs:label "Enthalpy aa002-hydrate-bare" .
 
@@ -5252,7 +5772,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/enthalpy_aa002-hydrate-bare-smd
 <http://example.org/enthalpy_aa002-hydrate-bare-smd> rdf:type owl:NamedIndividual ,
                                                               <http://purl.org/gc/FloatValue> ;
-                                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                                     <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                                      <http://purl.org/gc/hasFloatValue> "239.936"^^xsd:float ;
                                                      rdfs:label "Enthalpy aa002-hydrate-bare-smd" .
 
@@ -5260,7 +5780,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/enthalpy_aa002-water-bare
 <http://example.org/enthalpy_aa002-water-bare> rdf:type owl:NamedIndividual ,
                                                         <http://purl.org/gc/FloatValue> ;
-                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                                <http://purl.org/gc/hasFloatValue> "65.791"^^xsd:float ;
                                                rdfs:label "Enthalpy aa002-water-bare" .
 
@@ -5268,7 +5788,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/enthalpy_aa002-water-bare-smd
 <http://example.org/enthalpy_aa002-water-bare-smd> rdf:type owl:NamedIndividual ,
                                                             <http://purl.org/gc/FloatValue> ;
-                                                   <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                                   <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                                    <http://purl.org/gc/hasFloatValue> "65.663"^^xsd:float ;
                                                    rdfs:label "Enthalpy aa002-water-bare-smd" .
 
@@ -5416,6 +5936,7 @@ rdfs:Class rdf:type owl:Class .
                                          <http://purl.org/gc/VibrationalAnalysis> ;
                                 <http://example.org/hasConstraint> <http://example.org/constraint_aa001a_d1> ,
                                                                    <http://example.org/constraint_aa001a_d2> ;
+                                <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa001a> ;
                                 <http://purl.org/gc/hasResult> <http://example.org/energies_aa001a> ,
                                                                <http://example.org/spectrum_aa001a> ;
                                 <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001a_dat> ,
@@ -5438,6 +5959,7 @@ rdfs:Class rdf:type owl:Class .
                                          <http://purl.org/gc/VibrationalAnalysis> ;
                                 <http://example.org/hasConstraint> <http://example.org/constraint_aa001b_d1> ,
                                                                    <http://example.org/constraint_aa001b_d2> ;
+                                <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa001b> ;
                                 <http://purl.org/gc/hasResult> <http://example.org/energies_aa001b> ,
                                                                <http://example.org/spectrum_aa001b> ;
                                 <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001b_dat> ,
@@ -5460,6 +5982,7 @@ rdfs:Class rdf:type owl:Class .
                                          <http://purl.org/gc/VibrationalAnalysis> ;
                                 <http://example.org/hasConstraint> <http://example.org/constraint_aa001c_d1> ,
                                                                    <http://example.org/constraint_aa001c_d2> ;
+                                <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa001c> ;
                                 <http://purl.org/gc/hasResult> <http://example.org/energies_aa001c> ,
                                                                <http://example.org/spectrum_aa001c> ;
                                 <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001c_dat> ,
@@ -5584,6 +6107,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa001g> rdf:type owl:NamedIndividual ,
                                          <http://purl.org/gc/MolecularComputation> ,
                                          <http://purl.org/gc/VibrationalAnalysis> ;
+                                <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa001g> ;
                                 <http://purl.org/gc/hasResult> <http://example.org/energies_aa001g> ,
                                                                <http://example.org/spectrum_aa001g> ;
                                 <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001g_dat> ,
@@ -5620,6 +6144,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa001g-smd> rdf:type owl:NamedIndividual ,
                                              <http://purl.org/gc/MolecularComputation> ,
                                              <http://purl.org/gc/VibrationalAnalysis> ;
+                                    <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa001g-smd> ;
                                     <http://purl.org/gc/hasResult> <http://example.org/energies_aa001g-smd> ,
                                                                    <http://example.org/spectrum_aa001g-smd> ;
                                     <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001g-smd_dat> ,
@@ -5654,6 +6179,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa001h> rdf:type owl:NamedIndividual ,
                                          <http://purl.org/gc/MolecularComputation> ,
                                          <http://purl.org/gc/VibrationalAnalysis> ;
+                                <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa001h> ;
                                 <http://purl.org/gc/hasResult> <http://example.org/energies_aa001h> ,
                                                                <http://example.org/spectrum_aa001h> ;
                                 <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001h_dat> ,
@@ -5690,6 +6216,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa001h-smd> rdf:type owl:NamedIndividual ,
                                              <http://purl.org/gc/MolecularComputation> ,
                                              <http://purl.org/gc/VibrationalAnalysis> ;
+                                    <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa001h-smd> ;
                                     <http://purl.org/gc/hasResult> <http://example.org/energies_aa001h-smd> ,
                                                                    <http://example.org/spectrum_aa001h-smd> ;
                                     <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa001h-smd_dat> ,
@@ -5725,6 +6252,7 @@ rdfs:Class rdf:type owl:Class .
                                                       <http://purl.org/gc/MolecularComputation> ,
                                                       <http://purl.org/gc/VibrationalAnalysis> ;
                                              <http://purl.org/dc/terms/relation> <https://doi.org/10.1021/ja00249a034> ;
+                                             <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa002-aldehyde-bare> ;
                                              <http://purl.org/gc/hasResult> <http://example.org/energies_aa002-aldehyde-bare> ,
                                                                             <http://example.org/spectrum_aa002-aldehyde-bare> ;
                                              <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-aldehyde-bare_dat> ,
@@ -5757,7 +6285,9 @@ rdfs:Class rdf:type owl:Class .
 
 ###  http://example.org/exp_aa002-aldehyde-bare-smd-check
 <http://example.org/exp_aa002-aldehyde-bare-smd-check> rdf:type owl:NamedIndividual ,
+                                                                <http://purl.org/gc/MolecularComputation> ,
                                                                 <http://purl.org/gc/VibrationalAnalysis> ;
+                                                       <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa002-aldehyde-bare-smd-check> ;
                                                        <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-aldehyde-bare-smd-check_dat> ,
                                                                                              <http://example.org/file_aa002-aldehyde-bare-smd-check_log> ;
                                                        <http://www.w3.org/ns/prov#used> <http://example.org/file_aa002-aldehyde-bare-smd-check_inp> ;
@@ -5822,6 +6352,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa002-hydrate-bare> rdf:type owl:NamedIndividual ,
                                                      <http://purl.org/gc/MolecularComputation> ,
                                                      <http://purl.org/gc/VibrationalAnalysis> ;
+                                            <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa002-hydrate-bare> ;
                                             <http://purl.org/gc/hasResult> <http://example.org/energies_aa002-hydrate-bare> ,
                                                                            <http://example.org/spectrum_aa002-hydrate-bare> ;
                                             <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-hydrate-bare_dat> ,
@@ -5841,6 +6372,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa002-hydrate-bare-smd> rdf:type owl:NamedIndividual ,
                                                          <http://purl.org/gc/MolecularComputation> ,
                                                          <http://purl.org/gc/VibrationalAnalysis> ;
+                                                <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa002-hydrate-bare-smd> ;
                                                 <http://purl.org/gc/hasResult> <http://example.org/energies_aa002-hydrate-bare-smd> ,
                                                                                <http://example.org/spectrum_aa002-hydrate-bare-smd> ;
                                                 <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-hydrate-bare-smd_dat> ,
@@ -5876,6 +6408,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa002-water-bare> rdf:type owl:NamedIndividual ,
                                                    <http://purl.org/gc/MolecularComputation> ,
                                                    <http://purl.org/gc/VibrationalAnalysis> ;
+                                          <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa002-water-bare> ;
                                           <http://purl.org/gc/hasResult> <http://example.org/energies_aa002-water-bare> ,
                                                                          <http://example.org/spectrum_aa002-water-bare> ;
                                           <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-water-bare_dat> ,
@@ -5895,6 +6428,7 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/exp_aa002-water-bare-smd> rdf:type owl:NamedIndividual ,
                                                        <http://purl.org/gc/MolecularComputation> ,
                                                        <http://purl.org/gc/VibrationalAnalysis> ;
+                                              <http://purl.org/gc/hasMolecule> <http://example.org/molecule_aa002-water-bare-smd> ;
                                               <http://purl.org/gc/hasResult> <http://example.org/energies_aa002-water-bare-smd> ,
                                                                              <http://example.org/spectrum_aa002-water-bare-smd> ;
                                               <http://www.w3.org/ns/prov#generated> <http://example.org/file_aa002-water-bare-smd_dat> ,
@@ -5930,6 +6464,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001-ts-pcseg2_dat> rdf:type owl:NamedIndividual ,
                                                        <http://example.org/DataFile> ;
                                               <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001-ts-pcseg2> ;
+                                              <http://schema.org/sha256> "8072ffbe6ce1fd46ff2ffeb4ca02c11530e84f45541b4d18c579d3d62a66c7ca" ;
+                                              <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001-ts-pcseg2.dat" ;
                                               rdfs:label "Output data aa001-ts-pcseg2" .
 
 
@@ -5955,6 +6491,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001a_dat> rdf:type owl:NamedIndividual ,
                                               <http://example.org/DataFile> ;
                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001a> ;
+                                     <http://schema.org/sha256> "9373342dbe0da04e3bffc3d09e85db344cd10401f7edbf7d902ccd242b06fb8e" ;
+                                     <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001a.dat" ;
                                      rdfs:label "Output data aa001a" .
 
 
@@ -5980,6 +6518,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001b_dat> rdf:type owl:NamedIndividual ,
                                               <http://example.org/DataFile> ;
                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001b> ;
+                                     <http://schema.org/sha256> "043e24f30de305f8d4bb7a9ee733b711ffc46ba95dfd4c42f6b4986f4b5e18c8" ;
+                                     <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001b.dat" ;
                                      rdfs:label "Output data aa001b" .
 
 
@@ -6005,6 +6545,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001c_dat> rdf:type owl:NamedIndividual ,
                                               <http://example.org/DataFile> ;
                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001c> ;
+                                     <http://schema.org/sha256> "189cdfbbe6f496e5a27ee6cd44dfba7ad88bca88b91ec325be0d6160cbca44ae" ;
+                                     <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001c.dat" ;
                                      rdfs:label "Output data aa001c" .
 
 
@@ -6030,6 +6572,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001d-smd-hess_dat> rdf:type owl:NamedIndividual ,
                                                        <http://example.org/DataFile> ;
                                               <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001d-smd-hess> ;
+                                              <http://schema.org/sha256> "c80ba258a0a3d46449ecde500ee6ad595a466b7b1185085ecda3b72619cc0b83" ;
+                                              <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001d-smd-hess.dat" ;
                                               rdfs:label "Output data aa001d-smd-hess" .
 
 
@@ -6055,6 +6599,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001d-smd-pcseg2_dat> rdf:type owl:NamedIndividual ,
                                                          <http://example.org/DataFile> ;
                                                 <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001d-smd-pcseg2> ;
+                                                <http://schema.org/sha256> "45bd1e256dfe3ddf3c3480d0d54d4fd8a223c500e5d58ad9dc0892f65dfcaef1" ;
+                                                <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001d-smd-pcseg2.dat" ;
                                                 rdfs:label "Output data aa001d-smd-pcseg2" .
 
 
@@ -6080,6 +6626,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001d-smd_dat> rdf:type owl:NamedIndividual ,
                                                   <http://example.org/DataFile> ;
                                          <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001d-smd> ;
+                                         <http://schema.org/sha256> "cdb8936e5d8d97caafb4e2d8177e176ba7098976bca8ef053a36e4bcbebed11b" ;
+                                         <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001d-smd.dat" ;
                                          rdfs:label "Output data aa001d-smd" .
 
 
@@ -6105,6 +6653,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001d_dat> rdf:type owl:NamedIndividual ,
                                               <http://example.org/DataFile> ;
                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001d> ;
+                                     <http://schema.org/sha256> "31069b19844195585755078d9f5c5d57546d97720bcf10fe26d0d481956c328d" ;
+                                     <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001d.dat" ;
                                      rdfs:label "Output data aa001d" .
 
 
@@ -6130,6 +6680,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001e_dat> rdf:type owl:NamedIndividual ,
                                               <http://example.org/DataFile> ;
                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001e> ;
+                                     <http://schema.org/sha256> "7ccacc19c09dbe5f40febaf05b89ebf06bb8e11dacf6bcc969c13f1139cc231e" ;
+                                     <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001e.dat" ;
                                      rdfs:label "Output data aa001e" .
 
 
@@ -6155,6 +6707,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001f_dat> rdf:type owl:NamedIndividual ,
                                               <http://example.org/DataFile> ;
                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001f> ;
+                                     <http://schema.org/sha256> "5ead3fc660fc86574336e110e1ab110e274650bd9b6f27d22cebc253a93177bc" ;
+                                     <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001f.dat" ;
                                      rdfs:label "Output data aa001f" .
 
 
@@ -6180,6 +6734,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001g-pcseg2_dat> rdf:type owl:NamedIndividual ,
                                                      <http://example.org/DataFile> ;
                                             <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001g-pcseg2> ;
+                                            <http://schema.org/sha256> "5066c1d82673e3f34aedf816b19deaca32e8fc6c6f63c879cbbeb86da01ba500" ;
+                                            <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001g-pcseg2.dat" ;
                                             rdfs:label "Output data aa001g-pcseg2" .
 
 
@@ -6205,6 +6761,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001g-smd-pcseg2_dat> rdf:type owl:NamedIndividual ,
                                                          <http://example.org/DataFile> ;
                                                 <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001g-smd-pcseg2> ;
+                                                <http://schema.org/sha256> "6bf90a8a219d874f47ffd485a4cc9387acf2c4e37c476a14a1af80cf9509fe0e" ;
+                                                <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001g-smd-pcseg2.dat" ;
                                                 rdfs:label "Output data aa001g-smd-pcseg2" .
 
 
@@ -6230,6 +6788,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001g-smd_dat> rdf:type owl:NamedIndividual ,
                                                   <http://example.org/DataFile> ;
                                          <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001g-smd> ;
+                                         <http://schema.org/sha256> "68efe4622257e24e5b43173c90e15e0cab9f21ad1c68e7f4532a8fd9a24195e6" ;
+                                         <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001g-smd.dat" ;
                                          rdfs:label "Output data aa001g-smd" .
 
 
@@ -6255,6 +6815,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001g_dat> rdf:type owl:NamedIndividual ,
                                               <http://example.org/DataFile> ;
                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001g> ;
+                                     <http://schema.org/sha256> "2b1853a877df3da7aa4b4b2d30e03e62318f429c620fa292c6b34b365f48cccf" ;
+                                     <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001g.dat" ;
                                      rdfs:label "Output data aa001g" .
 
 
@@ -6280,6 +6842,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001h-pcseg2_dat> rdf:type owl:NamedIndividual ,
                                                      <http://example.org/DataFile> ;
                                             <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001h-pcseg2> ;
+                                            <http://schema.org/sha256> "75a29c11019f05b90411bc159a5f6ecce464317f6fa118d1251031cac358e1e1" ;
+                                            <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001h-pcseg2.dat" ;
                                             rdfs:label "Output data aa001h-pcseg2" .
 
 
@@ -6305,6 +6869,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001h-smd-pcseg2_dat> rdf:type owl:NamedIndividual ,
                                                          <http://example.org/DataFile> ;
                                                 <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001h-smd-pcseg2> ;
+                                                <http://schema.org/sha256> "13b776edd4bd36750a5acb86429d70bea84dd91232b72fed0d4332ed3daf1155" ;
+                                                <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001h-smd-pcseg2.dat" ;
                                                 rdfs:label "Output data aa001h-smd-pcseg2" .
 
 
@@ -6330,6 +6896,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001h-smd_dat> rdf:type owl:NamedIndividual ,
                                                   <http://example.org/DataFile> ;
                                          <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001h-smd> ;
+                                         <http://schema.org/sha256> "5efdcf2678f660519d1d9c83911153a518772b1fbdec0279454c6e84a2c6d712" ;
+                                         <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001h-smd.dat" ;
                                          rdfs:label "Output data aa001h-smd" .
 
 
@@ -6355,6 +6923,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001h_dat> rdf:type owl:NamedIndividual ,
                                               <http://example.org/DataFile> ;
                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001h> ;
+                                     <http://schema.org/sha256> "aafcf2fb8c4ca11000572f565b0d6ed54f68b2620d77ef8573c36c792561375c" ;
+                                     <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001h.dat" ;
                                      rdfs:label "Output data aa001h" .
 
 
@@ -6380,6 +6950,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa002-aldehyde-bare-smd-check_dat> rdf:type owl:NamedIndividual ,
                                                                      <http://example.org/DataFile> ;
                                                             <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa002-aldehyde-bare-smd-check> ;
+                                                            <http://schema.org/sha256> "0f5dc822c87f09ee720f76d718b65a9b439d6383f466ef770144dd4cd2c39ab2" ;
+                                                            <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa002-aldehyde-bare-smd-check.dat" ;
                                                             rdfs:label "Output data aa002-aldehyde-bare-smd-check" .
 
 
@@ -6405,6 +6977,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa002-aldehyde-bare-smd-energy_dat> rdf:type owl:NamedIndividual ,
                                                                       <http://example.org/DataFile> ;
                                                              <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa002-aldehyde-bare-smd-energy> ;
+                                                             <http://schema.org/sha256> "26842a8be1c4bbad5d160bba94c141f60b317d7823b1b16684706bf6dfc530a7" ;
+                                                             <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa002-aldehyde-bare-smd-energy.dat" ;
                                                              rdfs:label "Output data aa002-aldehyde-bare-smd-energy" .
 
 
@@ -6430,6 +7004,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa002-aldehyde-bare-smd-hcore_dat> rdf:type owl:NamedIndividual ,
                                                                      <http://example.org/DataFile> ;
                                                             <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa002-aldehyde-bare-smd-hcore> ;
+                                                            <http://schema.org/sha256> "280e7d60d52ba7c5f37364c8299f1ace5993927cbb3cab37d716fd597fbd16ec" ;
+                                                            <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa002-aldehyde-bare-smd-hcore.dat" ;
                                                             rdfs:label "Output data aa002-aldehyde-bare-smd-hcore" .
 
 
@@ -6455,6 +7031,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa002-aldehyde-bare-smd_dat> rdf:type owl:NamedIndividual ,
                                                                <http://example.org/DataFile> ;
                                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa002-aldehyde-bare-smd> ;
+                                                      <http://schema.org/sha256> "280e7d60d52ba7c5f37364c8299f1ace5993927cbb3cab37d716fd597fbd16ec" ;
+                                                      <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa002-aldehyde-bare-smd.dat" ;
                                                       rdfs:label "Output data aa002-aldehyde-bare-smd" .
 
 
@@ -6480,6 +7058,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa002-aldehyde-bare_dat> rdf:type owl:NamedIndividual ,
                                                            <http://example.org/DataFile> ;
                                                   <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa002-aldehyde-bare> ;
+                                                  <http://schema.org/sha256> "f98aa73abbbaae3d4ad14732aafe6ca83d6069b53ea868ba1e69d79e38e8ba78" ;
+                                                  <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa002-aldehyde-bare.dat" ;
                                                   rdfs:label "Output data aa002-aldehyde-bare" .
 
 
@@ -6505,6 +7085,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa002-aldehyde-pcseg2_dat> rdf:type owl:NamedIndividual ,
                                                              <http://example.org/DataFile> ;
                                                     <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa002-aldehyde-pcseg2> ;
+                                                    <http://schema.org/sha256> "9f7054e82bf57c69f3407754aee1742f10d2898846e9dfe2d548d0535060b805" ;
+                                                    <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa002-aldehyde-pcseg2.dat" ;
                                                     rdfs:label "Output data aa002-aldehyde-pcseg2" .
 
 
@@ -6530,6 +7112,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa002-hydrate-bare-smd_dat> rdf:type owl:NamedIndividual ,
                                                               <http://example.org/DataFile> ;
                                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa002-hydrate-bare-smd> ;
+                                                     <http://schema.org/sha256> "7ea24dc3fee28798f30e0bede80adea8c3c4c46b91cfdb81af5de9bd79fcaef6" ;
+                                                     <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa002-hydrate-bare-smd.dat" ;
                                                      rdfs:label "Output data aa002-hydrate-bare-smd" .
 
 
@@ -6555,6 +7139,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa002-hydrate-bare_dat> rdf:type owl:NamedIndividual ,
                                                           <http://example.org/DataFile> ;
                                                  <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa002-hydrate-bare> ;
+                                                 <http://schema.org/sha256> "8807be72e2d9281928eb0b88befec731b3ebf5178bdf43647acc678d8a8dab6f" ;
+                                                 <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa002-hydrate-bare.dat" ;
                                                  rdfs:label "Output data aa002-hydrate-bare" .
 
 
@@ -6580,6 +7166,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa002-hydrate-pcseg2_dat> rdf:type owl:NamedIndividual ,
                                                             <http://example.org/DataFile> ;
                                                    <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa002-hydrate-pcseg2> ;
+                                                   <http://schema.org/sha256> "8e4bafc32630b667ffe44e1eb49b3e04cf2d55135ba38bb2bfcc34d1dc262ad4" ;
+                                                   <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa002-hydrate-pcseg2.dat" ;
                                                    rdfs:label "Output data aa002-hydrate-pcseg2" .
 
 
@@ -6605,6 +7193,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa002-water-bare-smd_dat> rdf:type owl:NamedIndividual ,
                                                             <http://example.org/DataFile> ;
                                                    <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa002-water-bare-smd> ;
+                                                   <http://schema.org/sha256> "98c45c700b34dd1396c26decf5c7bbd8ece3c9f40610e40c508bf09cbf1c75e5" ;
+                                                   <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa002-water-bare-smd.dat" ;
                                                    rdfs:label "Output data aa002-water-bare-smd" .
 
 
@@ -6630,6 +7220,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa002-water-bare_dat> rdf:type owl:NamedIndividual ,
                                                         <http://example.org/DataFile> ;
                                                <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa002-water-bare> ;
+                                               <http://schema.org/sha256> "ec5ed8108ee4760417e8f6e4d689ae19272a5b56a05ef2f805a6f49963ab7a98" ;
+                                               <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa002-water-bare.dat" ;
                                                rdfs:label "Output data aa002-water-bare" .
 
 
@@ -6655,6 +7247,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa002-water-pcseg2_dat> rdf:type owl:NamedIndividual ,
                                                           <http://example.org/DataFile> ;
                                                  <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa002-water-pcseg2> ;
+                                                 <http://schema.org/sha256> "7e66584d4908a6a901fbeace2004e870a3008641b74dcf05719fb7c6180b00ed" ;
+                                                 <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa002-water-pcseg2.dat" ;
                                                  rdfs:label "Output data aa002-water-pcseg2" .
 
 
@@ -7447,7 +8041,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/gibbs_aa001a
 <http://example.org/gibbs_aa001a> rdf:type owl:NamedIndividual ,
                                            <http://purl.org/gc/FloatValue> ;
-                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                   <http://purl.org/gc/hasFloatValue> "195.982"^^xsd:float ;
                                   rdfs:label "Gibbs free energy aa001a" .
 
@@ -7455,7 +8049,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/gibbs_aa001b
 <http://example.org/gibbs_aa001b> rdf:type owl:NamedIndividual ,
                                            <http://purl.org/gc/FloatValue> ;
-                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                   <http://purl.org/gc/hasFloatValue> "195.966"^^xsd:float ;
                                   rdfs:label "Gibbs free energy aa001b" .
 
@@ -7463,7 +8057,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/gibbs_aa001c
 <http://example.org/gibbs_aa001c> rdf:type owl:NamedIndividual ,
                                            <http://purl.org/gc/FloatValue> ;
-                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                   <http://purl.org/gc/hasFloatValue> "194.41"^^xsd:float ;
                                   rdfs:label "Gibbs free energy aa001c" .
 
@@ -7471,7 +8065,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/gibbs_aa001d
 <http://example.org/gibbs_aa001d> rdf:type owl:NamedIndividual ,
                                            <http://purl.org/gc/FloatValue> ;
-                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                   <http://purl.org/gc/hasFloatValue> "193.96"^^xsd:float ;
                                   rdfs:label "Gibbs free energy aa001d" .
 
@@ -7479,7 +8073,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/gibbs_aa001d-smd
 <http://example.org/gibbs_aa001d-smd> rdf:type owl:NamedIndividual ,
                                                <http://purl.org/gc/FloatValue> ;
-                                      <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                      <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                       <http://purl.org/gc/hasFloatValue> "193.386"^^xsd:float ;
                                       rdfs:label "Gibbs free energy aa001d-smd" .
 
@@ -7487,7 +8081,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/gibbs_aa001d-smd-hess
 <http://example.org/gibbs_aa001d-smd-hess> rdf:type owl:NamedIndividual ,
                                                     <http://purl.org/gc/FloatValue> ;
-                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                           <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                            <http://purl.org/gc/hasFloatValue> "190.765"^^xsd:float ;
                                            rdfs:label "Gibbs free energy aa001d-smd-hess" .
 
@@ -7495,7 +8089,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/gibbs_aa001g
 <http://example.org/gibbs_aa001g> rdf:type owl:NamedIndividual ,
                                            <http://purl.org/gc/FloatValue> ;
-                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                   <http://purl.org/gc/hasFloatValue> "210.806"^^xsd:float ;
                                   rdfs:label "Gibbs free energy aa001g" .
 
@@ -7503,7 +8097,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/gibbs_aa001g-smd
 <http://example.org/gibbs_aa001g-smd> rdf:type owl:NamedIndividual ,
                                                <http://purl.org/gc/FloatValue> ;
-                                      <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                      <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                       <http://purl.org/gc/hasFloatValue> "210.224"^^xsd:float ;
                                       rdfs:label "Gibbs free energy aa001g-smd" .
 
@@ -7511,7 +8105,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/gibbs_aa001h
 <http://example.org/gibbs_aa001h> rdf:type owl:NamedIndividual ,
                                            <http://purl.org/gc/FloatValue> ;
-                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                   <http://purl.org/gc/hasFloatValue> "183.991"^^xsd:float ;
                                   rdfs:label "Gibbs free energy aa001h" .
 
@@ -7519,7 +8113,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/gibbs_aa001h-smd
 <http://example.org/gibbs_aa001h-smd> rdf:type owl:NamedIndividual ,
                                                <http://purl.org/gc/FloatValue> ;
-                                      <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                      <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                       <http://purl.org/gc/hasFloatValue> "192.685"^^xsd:float ;
                                       rdfs:label "Gibbs free energy aa001h-smd" .
 
@@ -7527,7 +8121,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/gibbs_aa002-aldehyde-bare
 <http://example.org/gibbs_aa002-aldehyde-bare> rdf:type owl:NamedIndividual ,
                                                         <http://purl.org/gc/FloatValue> ;
-                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                               <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                                <http://purl.org/gc/hasFloatValue> "81.38"^^xsd:float ;
                                                rdfs:label "Gibbs free energy aa002-aldehyde-bare" .
 
@@ -7535,7 +8129,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/gibbs_aa002-hydrate-bare
 <http://example.org/gibbs_aa002-hydrate-bare> rdf:type owl:NamedIndividual ,
                                                        <http://purl.org/gc/FloatValue> ;
-                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                              <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                               <http://purl.org/gc/hasFloatValue> "152.929"^^xsd:float ;
                                               rdfs:label "Gibbs free energy aa002-hydrate-bare" .
 
@@ -7543,7 +8137,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/gibbs_aa002-hydrate-bare-smd
 <http://example.org/gibbs_aa002-hydrate-bare-smd> rdf:type owl:NamedIndividual ,
                                                            <http://purl.org/gc/FloatValue> ;
-                                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                                  <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                                   <http://purl.org/gc/hasFloatValue> "153.185"^^xsd:float ;
                                                   rdfs:label "Gibbs free energy aa002-hydrate-bare-smd" .
 
@@ -7551,7 +8145,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/gibbs_aa002-water-bare
 <http://example.org/gibbs_aa002-water-bare> rdf:type owl:NamedIndividual ,
                                                      <http://purl.org/gc/FloatValue> ;
-                                            <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                            <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                             <http://purl.org/gc/hasFloatValue> "7.845"^^xsd:float ;
                                             rdfs:label "Gibbs free energy aa002-water-bare" .
 
@@ -7559,7 +8153,7 @@ rdfs:Class rdf:type owl:Class .
 ###  http://example.org/gibbs_aa002-water-bare-smd
 <http://example.org/gibbs_aa002-water-bare-smd> rdf:type owl:NamedIndividual ,
                                                          <http://purl.org/gc/FloatValue> ;
-                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoules> ;
+                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/kiloJoulePerMole> ;
                                                 <http://purl.org/gc/hasFloatValue> "7.714"^^xsd:float ;
                                                 rdfs:label "Gibbs free energy aa002-water-bare-smd" .
 
@@ -8330,6 +8924,106 @@ rdfs:Class rdf:type owl:Class .
                                                <http://purl.org/gc/hasUnit> <http://purl.org/gc/debyeSquaredPerAmuAngstromSquared> ;
                                                <http://purl.org/gc/hasFloatValue> "0.0"^^xsd:float ;
                                                rdfs:label "IR intensity mode 6 aa002-water-bare" .
+
+
+###  http://example.org/molecule_aa001a
+<http://example.org/molecule_aa001a> rdf:type owl:NamedIndividual ,
+                                              <http://purl.org/gc/Molecule> ;
+                                     <http://purl.org/gc/hasMolecule> <http://example.org/species_aa001a_1> ,
+                                                                      <http://example.org/species_aa001a_2> ;
+                                     rdfs:label "Molecule for aa001a" .
+
+
+###  http://example.org/molecule_aa001b
+<http://example.org/molecule_aa001b> rdf:type owl:NamedIndividual ,
+                                              <http://purl.org/gc/Molecule> ;
+                                     <http://purl.org/gc/hasMolecule> <http://example.org/species_aa001b_1> ,
+                                                                      <http://example.org/species_aa001b_2> ;
+                                     rdfs:label "Molecule for aa001b" .
+
+
+###  http://example.org/molecule_aa001c
+<http://example.org/molecule_aa001c> rdf:type owl:NamedIndividual ,
+                                              <http://purl.org/gc/Molecule> ;
+                                     <http://purl.org/gc/hasMolecule> <http://example.org/species_aa001c_1> ,
+                                                                      <http://example.org/species_aa001c_2> ;
+                                     rdfs:label "Molecule for aa001c" .
+
+
+###  http://example.org/molecule_aa001g
+<http://example.org/molecule_aa001g> rdf:type owl:NamedIndividual ,
+                                              <http://purl.org/gc/Molecule> ;
+                                     <http://purl.org/gc/hasMolecule> <http://example.org/species_aa001g_1> ,
+                                                                      <http://example.org/species_aa001g_2> ;
+                                     rdfs:label "Molecule for aa001g" .
+
+
+###  http://example.org/molecule_aa001g-smd
+<http://example.org/molecule_aa001g-smd> rdf:type owl:NamedIndividual ,
+                                                  <http://purl.org/gc/Molecule> ;
+                                         <http://purl.org/gc/hasMolecule> <http://example.org/species_aa001g-smd_1> ,
+                                                                          <http://example.org/species_aa001g-smd_2> ;
+                                         rdfs:label "Molecule for aa001g-smd" .
+
+
+###  http://example.org/molecule_aa001h
+<http://example.org/molecule_aa001h> rdf:type owl:NamedIndividual ,
+                                              <http://purl.org/gc/Molecule> ;
+                                     <http://purl.org/gc/hasMolecule> <http://example.org/species_aa001h_1> ,
+                                                                      <http://example.org/species_aa001h_2> ,
+                                                                      <http://example.org/species_aa001h_3> ;
+                                     rdfs:label "Molecule for aa001h" .
+
+
+###  http://example.org/molecule_aa001h-smd
+<http://example.org/molecule_aa001h-smd> rdf:type owl:NamedIndividual ,
+                                                  <http://purl.org/gc/Molecule> ;
+                                         <http://purl.org/gc/hasMolecule> <http://example.org/species_aa001h-smd_1> ,
+                                                                          <http://example.org/species_aa001h-smd_2> ,
+                                                                          <http://example.org/species_aa001h-smd_3> ;
+                                         rdfs:label "Molecule for aa001h-smd" .
+
+
+###  http://example.org/molecule_aa002-aldehyde-bare
+<http://example.org/molecule_aa002-aldehyde-bare> rdf:type owl:NamedIndividual ,
+                                                           <http://purl.org/gc/Molecule> ;
+                                                  <http://purl.org/gc/hasMolecule> <http://example.org/species_aa002-aldehyde-bare_1> ;
+                                                  rdfs:label "Molecule for aa002-aldehyde-bare" .
+
+
+###  http://example.org/molecule_aa002-aldehyde-bare-smd-check
+<http://example.org/molecule_aa002-aldehyde-bare-smd-check> rdf:type owl:NamedIndividual ,
+                                                                     <http://purl.org/gc/Molecule> ;
+                                                            <http://purl.org/gc/hasMolecule> <http://example.org/species_aa002-aldehyde-bare-smd-check_1> ;
+                                                            rdfs:label "Molecule for aa002-aldehyde-bare-smd-check" .
+
+
+###  http://example.org/molecule_aa002-hydrate-bare
+<http://example.org/molecule_aa002-hydrate-bare> rdf:type owl:NamedIndividual ,
+                                                          <http://purl.org/gc/Molecule> ;
+                                                 <http://purl.org/gc/hasMolecule> <http://example.org/species_aa002-hydrate-bare_1> ;
+                                                 rdfs:label "Molecule for aa002-hydrate-bare" .
+
+
+###  http://example.org/molecule_aa002-hydrate-bare-smd
+<http://example.org/molecule_aa002-hydrate-bare-smd> rdf:type owl:NamedIndividual ,
+                                                              <http://purl.org/gc/Molecule> ;
+                                                     <http://purl.org/gc/hasMolecule> <http://example.org/species_aa002-hydrate-bare-smd_1> ;
+                                                     rdfs:label "Molecule for aa002-hydrate-bare-smd" .
+
+
+###  http://example.org/molecule_aa002-water-bare
+<http://example.org/molecule_aa002-water-bare> rdf:type owl:NamedIndividual ,
+                                                        <http://purl.org/gc/Molecule> ;
+                                               <http://purl.org/gc/hasMolecule> <http://example.org/species_aa002-water-bare_1> ;
+                                               rdfs:label "Molecule for aa002-water-bare" .
+
+
+###  http://example.org/molecule_aa002-water-bare-smd
+<http://example.org/molecule_aa002-water-bare-smd> rdf:type owl:NamedIndividual ,
+                                                            <http://purl.org/gc/Molecule> ;
+                                                   <http://purl.org/gc/hasMolecule> <http://example.org/species_aa002-water-bare-smd_1> ;
+                                                   rdfs:label "Molecule for aa002-water-bare-smd" .
 
 
 ###  http://example.org/pathenergy_aa001e_1
@@ -13662,6 +14356,313 @@ rdfs:Class rdf:type owl:Class .
                                          rdfs:label "Reaction path aa001e" .
 
 
+###  http://example.org/species_aa001a_1
+<http://example.org/species_aa001a_1> rdf:type owl:NamedIndividual ,
+                                               <http://purl.org/gc/Molecule> ;
+                                      <http://purl.org/gc/hasAtom> <http://example.org/atom_aa001a_1> ,
+                                                                   <http://example.org/atom_aa001a_11> ,
+                                                                   <http://example.org/atom_aa001a_12> ,
+                                                                   <http://example.org/atom_aa001a_13> ,
+                                                                   <http://example.org/atom_aa001a_2> ,
+                                                                   <http://example.org/atom_aa001a_3> ,
+                                                                   <http://example.org/atom_aa001a_4> ,
+                                                                   <http://example.org/atom_aa001a_5> ,
+                                                                   <http://example.org/atom_aa001a_6> ,
+                                                                   <http://example.org/atom_aa001a_7> ;
+                                      <http://purl.org/gc/hasInChIKey> "AZHSSKPUVBVXLK-UHFFFAOYSA-N" ;
+                                      <http://purl.org/gc/hasInChIString> "InChI=1S/C2H6O2/c1-2(3)4/h2-4H,1H3" ;
+                                      rdfs:label "Species 1 (C2H6O2) in aa001a" .
+
+
+###  http://example.org/species_aa001a_2
+<http://example.org/species_aa001a_2> rdf:type owl:NamedIndividual ,
+                                               <http://purl.org/gc/Molecule> ;
+                                      <http://purl.org/gc/hasAtom> <http://example.org/atom_aa001a_10> ,
+                                                                   <http://example.org/atom_aa001a_8> ,
+                                                                   <http://example.org/atom_aa001a_9> ;
+                                      <http://purl.org/gc/hasInChIKey> "XLYOFNOQVPJJNP-UHFFFAOYSA-N" ;
+                                      <http://purl.org/gc/hasInChIString> "InChI=1S/H2O/h1H2" ;
+                                      rdfs:label "Species 2 (H2O) in aa001a" .
+
+
+###  http://example.org/species_aa001b_1
+<http://example.org/species_aa001b_1> rdf:type owl:NamedIndividual ,
+                                               <http://purl.org/gc/Molecule> ;
+                                      <http://purl.org/gc/hasAtom> <http://example.org/atom_aa001b_1> ,
+                                                                   <http://example.org/atom_aa001b_11> ,
+                                                                   <http://example.org/atom_aa001b_12> ,
+                                                                   <http://example.org/atom_aa001b_13> ,
+                                                                   <http://example.org/atom_aa001b_2> ,
+                                                                   <http://example.org/atom_aa001b_3> ,
+                                                                   <http://example.org/atom_aa001b_4> ,
+                                                                   <http://example.org/atom_aa001b_5> ,
+                                                                   <http://example.org/atom_aa001b_6> ,
+                                                                   <http://example.org/atom_aa001b_7> ;
+                                      <http://purl.org/gc/hasInChIKey> "AZHSSKPUVBVXLK-UHFFFAOYSA-N" ;
+                                      <http://purl.org/gc/hasInChIString> "InChI=1S/C2H6O2/c1-2(3)4/h2-4H,1H3" ;
+                                      rdfs:label "Species 1 (C2H6O2) in aa001b" .
+
+
+###  http://example.org/species_aa001b_2
+<http://example.org/species_aa001b_2> rdf:type owl:NamedIndividual ,
+                                               <http://purl.org/gc/Molecule> ;
+                                      <http://purl.org/gc/hasAtom> <http://example.org/atom_aa001b_10> ,
+                                                                   <http://example.org/atom_aa001b_8> ,
+                                                                   <http://example.org/atom_aa001b_9> ;
+                                      <http://purl.org/gc/hasInChIKey> "XLYOFNOQVPJJNP-UHFFFAOYSA-N" ;
+                                      <http://purl.org/gc/hasInChIString> "InChI=1S/H2O/h1H2" ;
+                                      rdfs:label "Species 2 (H2O) in aa001b" .
+
+
+###  http://example.org/species_aa001c_1
+<http://example.org/species_aa001c_1> rdf:type owl:NamedIndividual ,
+                                               <http://purl.org/gc/Molecule> ;
+                                      <http://purl.org/gc/hasAtom> <http://example.org/atom_aa001c_1> ,
+                                                                   <http://example.org/atom_aa001c_11> ,
+                                                                   <http://example.org/atom_aa001c_12> ,
+                                                                   <http://example.org/atom_aa001c_13> ,
+                                                                   <http://example.org/atom_aa001c_2> ,
+                                                                   <http://example.org/atom_aa001c_3> ,
+                                                                   <http://example.org/atom_aa001c_4> ,
+                                                                   <http://example.org/atom_aa001c_5> ,
+                                                                   <http://example.org/atom_aa001c_6> ,
+                                                                   <http://example.org/atom_aa001c_7> ;
+                                      <http://purl.org/gc/hasInChIKey> "AZHSSKPUVBVXLK-UHFFFAOYSA-N" ;
+                                      <http://purl.org/gc/hasInChIString> "InChI=1S/C2H6O2/c1-2(3)4/h2-4H,1H3" ;
+                                      rdfs:label "Species 1 (C2H6O2) in aa001c" .
+
+
+###  http://example.org/species_aa001c_2
+<http://example.org/species_aa001c_2> rdf:type owl:NamedIndividual ,
+                                               <http://purl.org/gc/Molecule> ;
+                                      <http://purl.org/gc/hasAtom> <http://example.org/atom_aa001c_10> ,
+                                                                   <http://example.org/atom_aa001c_8> ,
+                                                                   <http://example.org/atom_aa001c_9> ;
+                                      <http://purl.org/gc/hasInChIKey> "XLYOFNOQVPJJNP-UHFFFAOYSA-N" ;
+                                      <http://purl.org/gc/hasInChIString> "InChI=1S/H2O/h1H2" ;
+                                      rdfs:label "Species 2 (H2O) in aa001c" .
+
+
+###  http://example.org/species_aa001g-smd_1
+<http://example.org/species_aa001g-smd_1> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/Molecule> ;
+                                          <http://purl.org/gc/hasAtom> <http://example.org/atom_aa001g-smd_1> ,
+                                                                       <http://example.org/atom_aa001g-smd_11> ,
+                                                                       <http://example.org/atom_aa001g-smd_12> ,
+                                                                       <http://example.org/atom_aa001g-smd_13> ,
+                                                                       <http://example.org/atom_aa001g-smd_2> ,
+                                                                       <http://example.org/atom_aa001g-smd_3> ,
+                                                                       <http://example.org/atom_aa001g-smd_4> ,
+                                                                       <http://example.org/atom_aa001g-smd_5> ,
+                                                                       <http://example.org/atom_aa001g-smd_6> ,
+                                                                       <http://example.org/atom_aa001g-smd_7> ;
+                                          <http://purl.org/gc/hasInChIKey> "AZHSSKPUVBVXLK-UHFFFAOYSA-N" ;
+                                          <http://purl.org/gc/hasInChIString> "InChI=1S/C2H6O2/c1-2(3)4/h2-4H,1H3" ;
+                                          rdfs:label "Species 1 (C2H6O2) in aa001g-smd" .
+
+
+###  http://example.org/species_aa001g-smd_2
+<http://example.org/species_aa001g-smd_2> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/Molecule> ;
+                                          <http://purl.org/gc/hasAtom> <http://example.org/atom_aa001g-smd_10> ,
+                                                                       <http://example.org/atom_aa001g-smd_8> ,
+                                                                       <http://example.org/atom_aa001g-smd_9> ;
+                                          <http://purl.org/gc/hasInChIKey> "XLYOFNOQVPJJNP-UHFFFAOYSA-N" ;
+                                          <http://purl.org/gc/hasInChIString> "InChI=1S/H2O/h1H2" ;
+                                          rdfs:label "Species 2 (H2O) in aa001g-smd" .
+
+
+###  http://example.org/species_aa001g_1
+<http://example.org/species_aa001g_1> rdf:type owl:NamedIndividual ,
+                                               <http://purl.org/gc/Molecule> ;
+                                      <http://purl.org/gc/hasAtom> <http://example.org/atom_aa001g_1> ,
+                                                                   <http://example.org/atom_aa001g_11> ,
+                                                                   <http://example.org/atom_aa001g_12> ,
+                                                                   <http://example.org/atom_aa001g_13> ,
+                                                                   <http://example.org/atom_aa001g_2> ,
+                                                                   <http://example.org/atom_aa001g_3> ,
+                                                                   <http://example.org/atom_aa001g_4> ,
+                                                                   <http://example.org/atom_aa001g_5> ,
+                                                                   <http://example.org/atom_aa001g_6> ,
+                                                                   <http://example.org/atom_aa001g_7> ;
+                                      <http://purl.org/gc/hasInChIKey> "AZHSSKPUVBVXLK-UHFFFAOYSA-N" ;
+                                      <http://purl.org/gc/hasInChIString> "InChI=1S/C2H6O2/c1-2(3)4/h2-4H,1H3" ;
+                                      rdfs:label "Species 1 (C2H6O2) in aa001g" .
+
+
+###  http://example.org/species_aa001g_2
+<http://example.org/species_aa001g_2> rdf:type owl:NamedIndividual ,
+                                               <http://purl.org/gc/Molecule> ;
+                                      <http://purl.org/gc/hasAtom> <http://example.org/atom_aa001g_10> ,
+                                                                   <http://example.org/atom_aa001g_8> ,
+                                                                   <http://example.org/atom_aa001g_9> ;
+                                      <http://purl.org/gc/hasInChIKey> "XLYOFNOQVPJJNP-UHFFFAOYSA-N" ;
+                                      <http://purl.org/gc/hasInChIString> "InChI=1S/H2O/h1H2" ;
+                                      rdfs:label "Species 2 (H2O) in aa001g" .
+
+
+###  http://example.org/species_aa001h-smd_1
+<http://example.org/species_aa001h-smd_1> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/Molecule> ;
+                                          <http://purl.org/gc/hasAtom> <http://example.org/atom_aa001h-smd_1> ,
+                                                                       <http://example.org/atom_aa001h-smd_12> ,
+                                                                       <http://example.org/atom_aa001h-smd_2> ,
+                                                                       <http://example.org/atom_aa001h-smd_3> ,
+                                                                       <http://example.org/atom_aa001h-smd_4> ,
+                                                                       <http://example.org/atom_aa001h-smd_5> ,
+                                                                       <http://example.org/atom_aa001h-smd_6> ;
+                                          <http://purl.org/gc/hasInChIKey> "IKHGUXGNUITLKF-UHFFFAOYSA-N" ;
+                                          <http://purl.org/gc/hasInChIString> "InChI=1S/C2H4O/c1-2-3/h2H,1H3" ;
+                                          rdfs:label "Species 1 (C2H4O) in aa001h-smd" .
+
+
+###  http://example.org/species_aa001h-smd_2
+<http://example.org/species_aa001h-smd_2> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/Molecule> ;
+                                          <http://purl.org/gc/hasAtom> <http://example.org/atom_aa001h-smd_10> ,
+                                                                       <http://example.org/atom_aa001h-smd_11> ,
+                                                                       <http://example.org/atom_aa001h-smd_7> ;
+                                          <http://purl.org/gc/hasInChIKey> "XLYOFNOQVPJJNP-UHFFFAOYSA-N" ;
+                                          <http://purl.org/gc/hasInChIString> "InChI=1S/H2O/h1H2" ;
+                                          rdfs:label "Species 2 (H2O) in aa001h-smd" .
+
+
+###  http://example.org/species_aa001h-smd_3
+<http://example.org/species_aa001h-smd_3> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/gc/Molecule> ;
+                                          <http://purl.org/gc/hasAtom> <http://example.org/atom_aa001h-smd_13> ,
+                                                                       <http://example.org/atom_aa001h-smd_8> ,
+                                                                       <http://example.org/atom_aa001h-smd_9> ;
+                                          <http://purl.org/gc/hasInChIKey> "XLYOFNOQVPJJNP-UHFFFAOYSA-N" ;
+                                          <http://purl.org/gc/hasInChIString> "InChI=1S/H2O/h1H2" ;
+                                          rdfs:label "Species 3 (H2O) in aa001h-smd" .
+
+
+###  http://example.org/species_aa001h_1
+<http://example.org/species_aa001h_1> rdf:type owl:NamedIndividual ,
+                                               <http://purl.org/gc/Molecule> ;
+                                      <http://purl.org/gc/hasAtom> <http://example.org/atom_aa001h_1> ,
+                                                                   <http://example.org/atom_aa001h_12> ,
+                                                                   <http://example.org/atom_aa001h_2> ,
+                                                                   <http://example.org/atom_aa001h_3> ,
+                                                                   <http://example.org/atom_aa001h_4> ,
+                                                                   <http://example.org/atom_aa001h_5> ,
+                                                                   <http://example.org/atom_aa001h_6> ;
+                                      <http://purl.org/gc/hasInChIKey> "IKHGUXGNUITLKF-UHFFFAOYSA-N" ;
+                                      <http://purl.org/gc/hasInChIString> "InChI=1S/C2H4O/c1-2-3/h2H,1H3" ;
+                                      rdfs:label "Species 1 (C2H4O) in aa001h" .
+
+
+###  http://example.org/species_aa001h_2
+<http://example.org/species_aa001h_2> rdf:type owl:NamedIndividual ,
+                                               <http://purl.org/gc/Molecule> ;
+                                      <http://purl.org/gc/hasAtom> <http://example.org/atom_aa001h_10> ,
+                                                                   <http://example.org/atom_aa001h_11> ,
+                                                                   <http://example.org/atom_aa001h_7> ;
+                                      <http://purl.org/gc/hasInChIKey> "XLYOFNOQVPJJNP-UHFFFAOYSA-N" ;
+                                      <http://purl.org/gc/hasInChIString> "InChI=1S/H2O/h1H2" ;
+                                      rdfs:label "Species 2 (H2O) in aa001h" .
+
+
+###  http://example.org/species_aa001h_3
+<http://example.org/species_aa001h_3> rdf:type owl:NamedIndividual ,
+                                               <http://purl.org/gc/Molecule> ;
+                                      <http://purl.org/gc/hasAtom> <http://example.org/atom_aa001h_13> ,
+                                                                   <http://example.org/atom_aa001h_8> ,
+                                                                   <http://example.org/atom_aa001h_9> ;
+                                      <http://purl.org/gc/hasInChIKey> "XLYOFNOQVPJJNP-UHFFFAOYSA-N" ;
+                                      <http://purl.org/gc/hasInChIString> "InChI=1S/H2O/h1H2" ;
+                                      rdfs:label "Species 3 (H2O) in aa001h" .
+
+
+###  http://example.org/species_aa002-aldehyde-bare-smd-check_1
+<http://example.org/species_aa002-aldehyde-bare-smd-check_1> rdf:type owl:NamedIndividual ,
+                                                                      <http://purl.org/gc/Molecule> ;
+                                                             <http://purl.org/gc/hasAtom> <http://example.org/atom_aa002-aldehyde-bare-smd-check_1> ,
+                                                                                          <http://example.org/atom_aa002-aldehyde-bare-smd-check_2> ,
+                                                                                          <http://example.org/atom_aa002-aldehyde-bare-smd-check_3> ,
+                                                                                          <http://example.org/atom_aa002-aldehyde-bare-smd-check_4> ,
+                                                                                          <http://example.org/atom_aa002-aldehyde-bare-smd-check_5> ,
+                                                                                          <http://example.org/atom_aa002-aldehyde-bare-smd-check_6> ,
+                                                                                          <http://example.org/atom_aa002-aldehyde-bare-smd-check_7> ;
+                                                             <http://purl.org/gc/hasInChIKey> "IKHGUXGNUITLKF-UHFFFAOYSA-N" ;
+                                                             <http://purl.org/gc/hasInChIString> "InChI=1S/C2H4O/c1-2-3/h2H,1H3" ;
+                                                             rdfs:label "Species 1 (C2H4O) in aa002-aldehyde-bare-smd-check" .
+
+
+###  http://example.org/species_aa002-aldehyde-bare_1
+<http://example.org/species_aa002-aldehyde-bare_1> rdf:type owl:NamedIndividual ,
+                                                            <http://purl.org/gc/Molecule> ;
+                                                   <http://purl.org/gc/hasAtom> <http://example.org/atom_aa002-aldehyde-bare_1> ,
+                                                                                <http://example.org/atom_aa002-aldehyde-bare_2> ,
+                                                                                <http://example.org/atom_aa002-aldehyde-bare_3> ,
+                                                                                <http://example.org/atom_aa002-aldehyde-bare_4> ,
+                                                                                <http://example.org/atom_aa002-aldehyde-bare_5> ,
+                                                                                <http://example.org/atom_aa002-aldehyde-bare_6> ,
+                                                                                <http://example.org/atom_aa002-aldehyde-bare_7> ;
+                                                   <http://purl.org/gc/hasInChIKey> "IKHGUXGNUITLKF-UHFFFAOYSA-N" ;
+                                                   <http://purl.org/gc/hasInChIString> "InChI=1S/C2H4O/c1-2-3/h2H,1H3" ;
+                                                   rdfs:label "Species 1 (C2H4O) in aa002-aldehyde-bare" .
+
+
+###  http://example.org/species_aa002-hydrate-bare-smd_1
+<http://example.org/species_aa002-hydrate-bare-smd_1> rdf:type owl:NamedIndividual ,
+                                                               <http://purl.org/gc/Molecule> ;
+                                                      <http://purl.org/gc/hasAtom> <http://example.org/atom_aa002-hydrate-bare-smd_1> ,
+                                                                                   <http://example.org/atom_aa002-hydrate-bare-smd_10> ,
+                                                                                   <http://example.org/atom_aa002-hydrate-bare-smd_2> ,
+                                                                                   <http://example.org/atom_aa002-hydrate-bare-smd_3> ,
+                                                                                   <http://example.org/atom_aa002-hydrate-bare-smd_4> ,
+                                                                                   <http://example.org/atom_aa002-hydrate-bare-smd_5> ,
+                                                                                   <http://example.org/atom_aa002-hydrate-bare-smd_6> ,
+                                                                                   <http://example.org/atom_aa002-hydrate-bare-smd_7> ,
+                                                                                   <http://example.org/atom_aa002-hydrate-bare-smd_8> ,
+                                                                                   <http://example.org/atom_aa002-hydrate-bare-smd_9> ;
+                                                      <http://purl.org/gc/hasInChIKey> "AZHSSKPUVBVXLK-UHFFFAOYSA-N" ;
+                                                      <http://purl.org/gc/hasInChIString> "InChI=1S/C2H6O2/c1-2(3)4/h2-4H,1H3" ;
+                                                      rdfs:label "Species 1 (C2H6O2) in aa002-hydrate-bare-smd" .
+
+
+###  http://example.org/species_aa002-hydrate-bare_1
+<http://example.org/species_aa002-hydrate-bare_1> rdf:type owl:NamedIndividual ,
+                                                           <http://purl.org/gc/Molecule> ;
+                                                  <http://purl.org/gc/hasAtom> <http://example.org/atom_aa002-hydrate-bare_1> ,
+                                                                               <http://example.org/atom_aa002-hydrate-bare_10> ,
+                                                                               <http://example.org/atom_aa002-hydrate-bare_2> ,
+                                                                               <http://example.org/atom_aa002-hydrate-bare_3> ,
+                                                                               <http://example.org/atom_aa002-hydrate-bare_4> ,
+                                                                               <http://example.org/atom_aa002-hydrate-bare_5> ,
+                                                                               <http://example.org/atom_aa002-hydrate-bare_6> ,
+                                                                               <http://example.org/atom_aa002-hydrate-bare_7> ,
+                                                                               <http://example.org/atom_aa002-hydrate-bare_8> ,
+                                                                               <http://example.org/atom_aa002-hydrate-bare_9> ;
+                                                  <http://purl.org/gc/hasInChIKey> "AZHSSKPUVBVXLK-UHFFFAOYSA-N" ;
+                                                  <http://purl.org/gc/hasInChIString> "InChI=1S/C2H6O2/c1-2(3)4/h2-4H,1H3" ;
+                                                  rdfs:label "Species 1 (C2H6O2) in aa002-hydrate-bare" .
+
+
+###  http://example.org/species_aa002-water-bare-smd_1
+<http://example.org/species_aa002-water-bare-smd_1> rdf:type owl:NamedIndividual ,
+                                                             <http://purl.org/gc/Molecule> ;
+                                                    <http://purl.org/gc/hasAtom> <http://example.org/atom_aa002-water-bare-smd_1> ,
+                                                                                 <http://example.org/atom_aa002-water-bare-smd_2> ,
+                                                                                 <http://example.org/atom_aa002-water-bare-smd_3> ;
+                                                    <http://purl.org/gc/hasInChIKey> "XLYOFNOQVPJJNP-UHFFFAOYSA-N" ;
+                                                    <http://purl.org/gc/hasInChIString> "InChI=1S/H2O/h1H2" ;
+                                                    rdfs:label "Species 1 (H2O) in aa002-water-bare-smd" .
+
+
+###  http://example.org/species_aa002-water-bare_1
+<http://example.org/species_aa002-water-bare_1> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/gc/Molecule> ;
+                                                <http://purl.org/gc/hasAtom> <http://example.org/atom_aa002-water-bare_1> ,
+                                                                             <http://example.org/atom_aa002-water-bare_2> ,
+                                                                             <http://example.org/atom_aa002-water-bare_3> ;
+                                                <http://purl.org/gc/hasInChIKey> "XLYOFNOQVPJJNP-UHFFFAOYSA-N" ;
+                                                <http://purl.org/gc/hasInChIString> "InChI=1S/H2O/h1H2" ;
+                                                rdfs:label "Species 1 (H2O) in aa002-water-bare" .
+
+
 ###  http://example.org/spectrum_aa001a
 <http://example.org/spectrum_aa001a> rdf:type owl:NamedIndividual ,
                                               <http://purl.org/gc/VibrationalSpectra> ;
@@ -14127,12 +15128,24 @@ rdfs:Class rdf:type owl:Class .
                                              rdfs:label "kilo calories per angstrom"@en .
 
 
+###  http://purl.org/gc/kiloJoulePerMole
+<http://purl.org/gc/kiloJoulePerMole> rdf:type owl:NamedIndividual ,
+                                               <http://qudt.org/schema/qudt/DerivedUnit> ;
+                                      owl:sameAs <http://qudt.org/vocab/unit/KiloJ-PER-MOL> ;
+                                      rdfs:comment "The unit GAMESS (US) reports enthalpy and Gibbs free energy in: kJ/mol."@en ;
+                                      rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                                      rdfs:label "kJ/mol"@en .
+
+
+###  http://qudt.org/vocab/unit/KiloJ-PER-MOL
+
 ###  http://purl.org/gc/kiloJoules
 <http://purl.org/gc/kiloJoules> rdf:type owl:NamedIndividual ,
                                          <http://qudt.org/schema/qudt/EnergyAndWorkUnit> ;
-                                rdfs:comment "a unit of energy"@en ;
+                                rdfs:comment "Superseded by gc:kiloJoulePerMole. Kept so existing graphs stay valid: it was used for enthalpy and Gibbs free energy values that are in kJ/mol, so it loses the \"per mole\". A unit of energy."@en ;
                                 rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
-                                rdfs:label "kilo joules"@en .
+                                rdfs:label "kilo joules"@en ;
+                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.org/gc/kmPerMol
@@ -14181,6 +15194,10 @@ rdfs:Class rdf:type owl:Class .
 
 
 ###  http://qudt.org/vocab/unit/kelvin
+
+###  http://qudt.org/vocab/unit/KiloJ-PER-MOL
+<http://qudt.org/vocab/unit/KiloJ-PER-MOL> rdf:type owl:NamedIndividual .
+
 
 ###  http://qudt.org/vocab/unit/Kilocalorie
 <http://qudt.org/vocab/unit/Kilocalorie> rdf:type owl:NamedIndividual .
@@ -14239,12 +15256,6 @@ rdfs:Class rdf:type owl:Class .
                                                   "A property that allows to describe an atom, like NMR Shielding"@en ;
                                      rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
                                      rdfs:label "has atom property"@en .
-
-
-<http://purl.org/gc/hasBasisSet> rdfs:comment "A property that allows Basis Sets to be assigned to a given quantum methodology"@en ,
-                                              "A property that allows to define Basis Set -  finite set of functions used to approximately express the Molecular Orbital wavefunction(s) of system, normally atom centered, consisting of AOs differing in local angular momentum for each atom."@en ;
-                                 rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
-                                 rdfs:label "has basis set"@en .
 
 
 <http://purl.org/gc/hasBondOrder> rdfs:comment "A property that specifies bond order."@en ;

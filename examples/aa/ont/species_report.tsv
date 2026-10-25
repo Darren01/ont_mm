@@ -1,0 +1,40 @@
+experiment	index	atoms	formula	status	route	inchi	inchikey	message
+aa001-ts-pcseg2	NA			skipped				not a geometry optimisation
+aa001a	1	1,2,3,4,5,6,7,11,12,13	C2H6O2	ok	generated	InChI=1S/C2H6O2/c1-2(3)4/h2-4H,1H3	AZHSSKPUVBVXLK-UHFFFAOYSA-N	
+aa001a	2	8,9,10	H2O	ok	generated	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N	
+aa001b	1	1,2,3,4,5,6,7,11,12,13	C2H6O2	ok	generated	InChI=1S/C2H6O2/c1-2(3)4/h2-4H,1H3	AZHSSKPUVBVXLK-UHFFFAOYSA-N	
+aa001b	2	8,9,10	H2O	ok	generated	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N	
+aa001c	1	1,2,3,4,5,6,7,11,12,13	C2H6O2	ok	generated	InChI=1S/C2H6O2/c1-2(3)4/h2-4H,1H3	AZHSSKPUVBVXLK-UHFFFAOYSA-N	
+aa001c	2	8,9,10	H2O	ok	generated	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N	
+aa001d-smd-hess	NA			skipped				not a geometry optimisation
+aa001d-smd-pcseg2	NA			skipped				not a geometry optimisation
+aa001d-smd	NA			skipped				not a geometry optimisation
+aa001d	NA			skipped				not a geometry optimisation
+aa001e	NA			skipped				not a geometry optimisation
+aa001f	NA			skipped				not a geometry optimisation
+aa001g-pcseg2	NA			skipped				not a geometry optimisation
+aa001g-smd-pcseg2	NA			skipped				not a geometry optimisation
+aa001g-smd	1	1,2,3,4,5,6,7,11,12,13	C2H6O2	ok	generated	InChI=1S/C2H6O2/c1-2(3)4/h2-4H,1H3	AZHSSKPUVBVXLK-UHFFFAOYSA-N	
+aa001g-smd	2	8,9,10	H2O	ok	generated	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N	
+aa001g	1	1,2,3,4,5,6,7,11,12,13	C2H6O2	ok	generated	InChI=1S/C2H6O2/c1-2(3)4/h2-4H,1H3	AZHSSKPUVBVXLK-UHFFFAOYSA-N	
+aa001g	2	8,9,10	H2O	ok	generated	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N	
+aa001h-pcseg2	NA			skipped				not a geometry optimisation
+aa001h-smd-pcseg2	NA			skipped				not a geometry optimisation
+aa001h-smd	1	1,2,3,4,5,6,12	C2H4O	ok	generated	InChI=1S/C2H4O/c1-2-3/h2H,1H3	IKHGUXGNUITLKF-UHFFFAOYSA-N	
+aa001h-smd	2	7,10,11	H2O	ok	generated	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N	
+aa001h-smd	3	8,9,13	H2O	ok	generated	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N	
+aa001h	1	1,2,3,4,5,6,12	C2H4O	ok	generated	InChI=1S/C2H4O/c1-2-3/h2H,1H3	IKHGUXGNUITLKF-UHFFFAOYSA-N	
+aa001h	2	7,10,11	H2O	ok	generated	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N	
+aa001h	3	8,9,13	H2O	ok	generated	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N	
+aa002-aldehyde-bare-smd-check	1	1,2,3,4,5,6,7	C2H4O	ok	generated	InChI=1S/C2H4O/c1-2-3/h2H,1H3	IKHGUXGNUITLKF-UHFFFAOYSA-N	
+aa002-aldehyde-bare-smd-energy	NA			skipped				not a geometry optimisation
+aa002-aldehyde-bare-smd-hcore	NA			skipped				no equilibrium geometry located
+aa002-aldehyde-bare-smd	NA			skipped				no equilibrium geometry located
+aa002-aldehyde-bare	1	1,2,3,4,5,6,7	C2H4O	ok	generated	InChI=1S/C2H4O/c1-2-3/h2H,1H3	IKHGUXGNUITLKF-UHFFFAOYSA-N	
+aa002-aldehyde-pcseg2	NA			skipped				not a geometry optimisation
+aa002-hydrate-bare-smd	1	1,2,3,4,5,6,7,8,9,10	C2H6O2	ok	generated	InChI=1S/C2H6O2/c1-2(3)4/h2-4H,1H3	AZHSSKPUVBVXLK-UHFFFAOYSA-N	
+aa002-hydrate-bare	1	1,2,3,4,5,6,7,8,9,10	C2H6O2	ok	generated	InChI=1S/C2H6O2/c1-2(3)4/h2-4H,1H3	AZHSSKPUVBVXLK-UHFFFAOYSA-N	
+aa002-hydrate-pcseg2	NA			skipped				not a geometry optimisation
+aa002-water-bare-smd	1	1,2,3	H2O	ok	generated	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N	
+aa002-water-bare	1	1,2,3	H2O	ok	generated	InChI=1S/H2O/h1H2	XLYOFNOQVPJJNP-UHFFFAOYSA-N	
+aa002-water-pcseg2	NA			skipped				not a geometry optimisation

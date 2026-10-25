@@ -193,65 +193,65 @@ ex:intval_aa002-water-bare_4	IR intensity mode 4 aa002-water-bare	gc:FloatValue	
 ex:intval_aa002-water-bare_5	IR intensity mode 5 aa002-water-bare	gc:FloatValue	0	gc:debyeSquaredPerAmuAngstromSquared
 ex:intval_aa002-water-bare_6	IR intensity mode 6 aa002-water-bare	gc:FloatValue	0	gc:debyeSquaredPerAmuAngstromSquared
 ex:zpe_aa001a	Zero-point energy aa001a	gc:FloatValue	0.104051	gc:hartree
-ex:enthalpy_aa001a	Enthalpy aa001a	gc:FloatValue	291.94	gc:kiloJoules
+ex:enthalpy_aa001a	Enthalpy aa001a	gc:FloatValue	291.94	gc:kiloJoulePerMole
 ex:entropy_aa001a	Entropy aa001a	gc:FloatValue	321.846	gc:joulePerMoleKelvin
-ex:gibbs_aa001a	Gibbs free energy aa001a	gc:FloatValue	195.982	gc:kiloJoules
+ex:gibbs_aa001a	Gibbs free energy aa001a	gc:FloatValue	195.982	gc:kiloJoulePerMole
 ex:zpe_aa001b	Zero-point energy aa001b	gc:FloatValue	0.10406	gc:hartree
-ex:enthalpy_aa001b	Enthalpy aa001b	gc:FloatValue	291.955	gc:kiloJoules
+ex:enthalpy_aa001b	Enthalpy aa001b	gc:FloatValue	291.955	gc:kiloJoulePerMole
 ex:entropy_aa001b	Entropy aa001b	gc:FloatValue	321.95	gc:joulePerMoleKelvin
-ex:gibbs_aa001b	Gibbs free energy aa001b	gc:FloatValue	195.966	gc:kiloJoules
+ex:gibbs_aa001b	Gibbs free energy aa001b	gc:FloatValue	195.966	gc:kiloJoulePerMole
 ex:zpe_aa001c	Zero-point energy aa001c	gc:FloatValue	0.103977	gc:hartree
-ex:enthalpy_aa001c	Enthalpy aa001c	gc:FloatValue	291.929	gc:kiloJoules
+ex:enthalpy_aa001c	Enthalpy aa001c	gc:FloatValue	291.929	gc:kiloJoulePerMole
 ex:entropy_aa001c	Entropy aa001c	gc:FloatValue	327.08	gc:joulePerMoleKelvin
-ex:gibbs_aa001c	Gibbs free energy aa001c	gc:FloatValue	194.41	gc:kiloJoules
+ex:gibbs_aa001c	Gibbs free energy aa001c	gc:FloatValue	194.41	gc:kiloJoulePerMole
 ex:zpe_aa001d-smd-hess	Zero-point energy aa001d-smd-hess	gc:FloatValue	0.102539	gc:hartree
-ex:enthalpy_aa001d-smd-hess	Enthalpy aa001d-smd-hess	gc:FloatValue	289.016	gc:kiloJoules
+ex:enthalpy_aa001d-smd-hess	Enthalpy aa001d-smd-hess	gc:FloatValue	289.016	gc:kiloJoulePerMole
 ex:entropy_aa001d-smd-hess	Entropy aa001d-smd-hess	gc:FloatValue	329.536	gc:joulePerMoleKelvin
-ex:gibbs_aa001d-smd-hess	Gibbs free energy aa001d-smd-hess	gc:FloatValue	190.765	gc:kiloJoules
+ex:gibbs_aa001d-smd-hess	Gibbs free energy aa001d-smd-hess	gc:FloatValue	190.765	gc:kiloJoulePerMole
 ex:zpe_aa001d-smd	Zero-point energy aa001d-smd	gc:FloatValue	0.103211	gc:hartree
-ex:enthalpy_aa001d-smd	Enthalpy aa001d-smd	gc:FloatValue	290.264	gc:kiloJoules
+ex:enthalpy_aa001d-smd	Enthalpy aa001d-smd	gc:FloatValue	290.264	gc:kiloJoulePerMole
 ex:entropy_aa001d-smd	Entropy aa001d-smd	gc:FloatValue	324.928	gc:joulePerMoleKelvin
-ex:gibbs_aa001d-smd	Gibbs free energy aa001d-smd	gc:FloatValue	193.386	gc:kiloJoules
+ex:gibbs_aa001d-smd	Gibbs free energy aa001d-smd	gc:FloatValue	193.386	gc:kiloJoulePerMole
 ex:zpe_aa001d	Zero-point energy aa001d	gc:FloatValue	0.103326	gc:hartree
-ex:enthalpy_aa001d	Enthalpy aa001d	gc:FloatValue	290.411	gc:kiloJoules
+ex:enthalpy_aa001d	Enthalpy aa001d	gc:FloatValue	290.411	gc:kiloJoulePerMole
 ex:entropy_aa001d	Entropy aa001d	gc:FloatValue	323.496	gc:joulePerMoleKelvin
-ex:gibbs_aa001d	Gibbs free energy aa001d	gc:FloatValue	193.96	gc:kiloJoules
+ex:gibbs_aa001d	Gibbs free energy aa001d	gc:FloatValue	193.96	gc:kiloJoulePerMole
 ex:zpe_aa001g-smd	Zero-point energy aa001g-smd	gc:FloatValue	0.110793	gc:hartree
-ex:enthalpy_aa001g-smd	Enthalpy aa001g-smd	gc:FloatValue	313.298	gc:kiloJoules
+ex:enthalpy_aa001g-smd	Enthalpy aa001g-smd	gc:FloatValue	313.298	gc:kiloJoulePerMole
 ex:entropy_aa001g-smd	Entropy aa001g-smd	gc:FloatValue	345.712	gc:joulePerMoleKelvin
-ex:gibbs_aa001g-smd	Gibbs free energy aa001g-smd	gc:FloatValue	210.224	gc:kiloJoules
+ex:gibbs_aa001g-smd	Gibbs free energy aa001g-smd	gc:FloatValue	210.224	gc:kiloJoulePerMole
 ex:zpe_aa001g	Zero-point energy aa001g	gc:FloatValue	0.111006	gc:hartree
-ex:enthalpy_aa001g	Enthalpy aa001g	gc:FloatValue	313.765	gc:kiloJoules
+ex:enthalpy_aa001g	Enthalpy aa001g	gc:FloatValue	313.765	gc:kiloJoulePerMole
 ex:entropy_aa001g	Entropy aa001g	gc:FloatValue	345.328	gc:joulePerMoleKelvin
-ex:gibbs_aa001g	Gibbs free energy aa001g	gc:FloatValue	210.806	gc:kiloJoules
+ex:gibbs_aa001g	Gibbs free energy aa001g	gc:FloatValue	210.806	gc:kiloJoulePerMole
 ex:zpe_aa001h-smd	Zero-point energy aa001h-smd	gc:FloatValue	0.107229	gc:hartree
-ex:enthalpy_aa001h-smd	Enthalpy aa001h-smd	gc:FloatValue	307.834	gc:kiloJoules
+ex:enthalpy_aa001h-smd	Enthalpy aa001h-smd	gc:FloatValue	307.834	gc:kiloJoulePerMole
 ex:entropy_aa001h-smd	Entropy aa001h-smd	gc:FloatValue	386.211	gc:joulePerMoleKelvin
-ex:gibbs_aa001h-smd	Gibbs free energy aa001h-smd	gc:FloatValue	192.685	gc:kiloJoules
+ex:gibbs_aa001h-smd	Gibbs free energy aa001h-smd	gc:FloatValue	192.685	gc:kiloJoulePerMole
 ex:zpe_aa001h	Zero-point energy aa001h	gc:FloatValue	0.105542	gc:hartree
-ex:enthalpy_aa001h	Enthalpy aa001h	gc:FloatValue	305.242	gc:kiloJoules
+ex:enthalpy_aa001h	Enthalpy aa001h	gc:FloatValue	305.242	gc:kiloJoulePerMole
 ex:entropy_aa001h	Entropy aa001h	gc:FloatValue	406.679	gc:joulePerMoleKelvin
-ex:gibbs_aa001h	Gibbs free energy aa001h	gc:FloatValue	183.991	gc:kiloJoules
+ex:gibbs_aa001h	Gibbs free energy aa001h	gc:FloatValue	183.991	gc:kiloJoulePerMole
 ex:zpe_aa002-aldehyde-bare	Zero-point energy aa002-aldehyde-bare	gc:FloatValue	0.05596	gc:hartree
-ex:enthalpy_aa002-aldehyde-bare	Enthalpy aa002-aldehyde-bare	gc:FloatValue	159.571	gc:kiloJoules
+ex:enthalpy_aa002-aldehyde-bare	Enthalpy aa002-aldehyde-bare	gc:FloatValue	159.571	gc:kiloJoulePerMole
 ex:entropy_aa002-aldehyde-bare	Entropy aa002-aldehyde-bare	gc:FloatValue	262.252	gc:joulePerMoleKelvin
-ex:gibbs_aa002-aldehyde-bare	Gibbs free energy aa002-aldehyde-bare	gc:FloatValue	81.38	gc:kiloJoules
+ex:gibbs_aa002-aldehyde-bare	Gibbs free energy aa002-aldehyde-bare	gc:FloatValue	81.38	gc:kiloJoulePerMole
 ex:zpe_aa002-hydrate-bare-smd	Zero-point energy aa002-hydrate-bare-smd	gc:FloatValue	0.085396	gc:hartree
-ex:enthalpy_aa002-hydrate-bare-smd	Enthalpy aa002-hydrate-bare-smd	gc:FloatValue	239.936	gc:kiloJoules
+ex:enthalpy_aa002-hydrate-bare-smd	Enthalpy aa002-hydrate-bare-smd	gc:FloatValue	239.936	gc:kiloJoulePerMole
 ex:entropy_aa002-hydrate-bare-smd	Entropy aa002-hydrate-bare-smd	gc:FloatValue	290.964	gc:joulePerMoleKelvin
-ex:gibbs_aa002-hydrate-bare-smd	Gibbs free energy aa002-hydrate-bare-smd	gc:FloatValue	153.185	gc:kiloJoules
+ex:gibbs_aa002-hydrate-bare-smd	Gibbs free energy aa002-hydrate-bare-smd	gc:FloatValue	153.185	gc:kiloJoulePerMole
 ex:zpe_aa002-hydrate-bare	Zero-point energy aa002-hydrate-bare	gc:FloatValue	0.085321	gc:hartree
-ex:enthalpy_aa002-hydrate-bare	Enthalpy aa002-hydrate-bare	gc:FloatValue	239.822	gc:kiloJoules
+ex:enthalpy_aa002-hydrate-bare	Enthalpy aa002-hydrate-bare	gc:FloatValue	239.822	gc:kiloJoulePerMole
 ex:entropy_aa002-hydrate-bare	Entropy aa002-hydrate-bare	gc:FloatValue	291.443	gc:joulePerMoleKelvin
-ex:gibbs_aa002-hydrate-bare	Gibbs free energy aa002-hydrate-bare	gc:FloatValue	152.929	gc:kiloJoules
+ex:gibbs_aa002-hydrate-bare	Gibbs free energy aa002-hydrate-bare	gc:FloatValue	152.929	gc:kiloJoulePerMole
 ex:zpe_aa002-water-bare-smd	Zero-point energy aa002-water-bare-smd	gc:FloatValue	0.021229	gc:hartree
-ex:enthalpy_aa002-water-bare-smd	Enthalpy aa002-water-bare-smd	gc:FloatValue	65.663	gc:kiloJoules
+ex:enthalpy_aa002-water-bare-smd	Enthalpy aa002-water-bare-smd	gc:FloatValue	65.663	gc:kiloJoulePerMole
 ex:entropy_aa002-water-bare-smd	Entropy aa002-water-bare-smd	gc:FloatValue	194.365	gc:joulePerMoleKelvin
-ex:gibbs_aa002-water-bare-smd	Gibbs free energy aa002-water-bare-smd	gc:FloatValue	7.714	gc:kiloJoules
+ex:gibbs_aa002-water-bare-smd	Gibbs free energy aa002-water-bare-smd	gc:FloatValue	7.714	gc:kiloJoulePerMole
 ex:zpe_aa002-water-bare	Zero-point energy aa002-water-bare	gc:FloatValue	0.021277	gc:hartree
-ex:enthalpy_aa002-water-bare	Enthalpy aa002-water-bare	gc:FloatValue	65.791	gc:kiloJoules
+ex:enthalpy_aa002-water-bare	Enthalpy aa002-water-bare	gc:FloatValue	65.791	gc:kiloJoulePerMole
 ex:entropy_aa002-water-bare	Entropy aa002-water-bare	gc:FloatValue	194.351	gc:joulePerMoleKelvin
-ex:gibbs_aa002-water-bare	Gibbs free energy aa002-water-bare	gc:FloatValue	7.845	gc:kiloJoules
+ex:gibbs_aa002-water-bare	Gibbs free energy aa002-water-bare	gc:FloatValue	7.845	gc:kiloJoulePerMole
 ex:electronic_energy_aa001-ts-pcseg2	Electronic energy aa001-ts-pcseg2 (R-WB97X-D)	gc:FloatValue	-306.714042503	gc:hartree
 ex:electronic_energy_aa001d-smd-pcseg2	Electronic energy aa001d-smd-pcseg2 (R-WB97X-D)	gc:FloatValue	-306.7160750773	gc:hartree
 ex:electronic_energy_aa001g-pcseg2	Electronic energy aa001g-pcseg2 (R-WB97X-D)	gc:FloatValue	-306.7634175698	gc:hartree

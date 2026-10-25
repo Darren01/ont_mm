@@ -7,7 +7,7 @@
 @base <http://purl.org/gc/core> .
 
 <http://purl.org/gc/core> rdf:type owl:Ontology ;
-                           owl:versionIRI <http://purl.org/gc/core/2026-10-07/gc_core.ttl> ;
+                           owl:versionIRI <http://purl.org/gc/core/2026-10-11/gc_core.ttl> ;
                            <http://creativecommons.org/ns#license> <http://creativecommons.org/licenses/by/3.0/> ;
                            <http://purl.org/dc/elements/1.1/created> "2015-03-04" ;
                            <http://purl.org/dc/elements/1.1/description> """This ontology aims at complete description of typical Computational Chemistry experiment.
@@ -35,7 +35,7 @@
                                         """The design and repair decisions in this fork were informed in part by the landscape review of computational chemistry ontologies: ChemRxiv 2024,
     doi:10.26434/chemrxiv-2024-fvzpq"""@en ;
                            rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
-                           owl:versionInfo "0.8.8" .
+                           owl:versionInfo "0.8.9" .
 
 #################################################################
 #    Annotation properties
@@ -338,19 +338,6 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
                                    rdfs:subPropertyOf <http://purl.org/gc/extraGCObjectProperty> ;
                                    rdfs:comment "A property that specifies the Basis Count."@en ;
                                    rdfs:label "The Basis Count"@en .
-
-
-###  http://purl.org/gc/hasBasisSet
-<http://purl.org/gc/hasBasisSet> rdf:type owl:ObjectProperty ;
-                                 rdfs:subPropertyOf <http://purl.org/gc/hasFeature> ,
-                                                    <http://purl.org/gc/hasMolecularFeature> ;
-                                 rdf:type owl:FunctionalProperty ;
-                                 rdfs:domain [ rdf:type owl:Class ;
-                                               owl:unionOf ( <http://purl.org/gc/Atom>
-                                                             <http://purl.org/gc/MolecularMethodology>
-                                                           )
-                                             ] ;
-                                 rdfs:range <http://purl.org/gc/BasisSet> .
 
 
 ###  http://purl.org/gc/hasBindingEnergy
@@ -1019,7 +1006,7 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
                                    rdfs:subPropertyOf <http://purl.org/gc/hasResult> ;
                                    rdfs:domain <http://purl.org/gc/ReactionPathPoint> ;
                                    rdfs:range <http://purl.org/gc/FloatValue> ;
-                                   rdfs:comment "A property that describes the relative energy at a point along a reaction path."@en ;
+                                   rdfs:comment "A property that describes the energy at a point along a reaction path. As produced by the ont_mm pipeline this is the absolute total energy from the IRC log, in the unit of its FloatValue (hartree); subtract a reference point, such as the first point or the transition state, to get a relative energy."@en ;
                                    rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
                                    rdfs:label "has path energy"@en .
 
@@ -1261,7 +1248,7 @@ rdfs:comment rdf:type owl:AnnotationProperty ;
 
 ###  http://purl.org/gc/hasUnit
 <http://purl.org/gc/hasUnit> rdf:type owl:ObjectProperty ;
-                             rdfs:subPropertyOf <http://purl.org/gc/hasAuxiliaryProperty> ;
+                             rdfs:subPropertyOf <http://purl.org/gc/extraGCObjectProperty> ;
                              rdf:type owl:FunctionalProperty ;
                              rdfs:domain <http://purl.org/gc/Value> ;
                              rdfs:comment "A property that describes a unit of the value."@en ;
@@ -1587,6 +1574,11 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
 ###  http://purl.org/gc/hasBasisSet
 <http://purl.org/gc/hasBasisSet> rdf:type owl:DatatypeProperty ,
                                           owl:FunctionalProperty ;
+                                 rdfs:domain [ rdf:type owl:Class ;
+                                               owl:unionOf ( <http://purl.org/gc/Atom>
+                                                             <http://purl.org/gc/MolecularMethodology>
+                                                           )
+                                             ] ;
                                  rdfs:range rdfs:Literal .
 
 
@@ -3877,7 +3869,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
 ###  http://purl.org/gc/ReactionPathPoint
 <http://purl.org/gc/ReactionPathPoint> rdf:type owl:Class ;
                                        rdfs:subClassOf <http://purl.org/gc/GainesvilleCoreTerm> ;
-                                       rdfs:comment "A class representing a single point along a reaction path, with an index (position along the path) and an energy value relative to the starting point. May originate from an individual forward or backward IRC log, or from a combined reaction-path file assembled from both."@en ;
+                                       rdfs:comment "A class representing a single point along a reaction path, with an index (position along the path) and an energy value (the absolute total energy from the IRC log, not relative to the starting point). May originate from an individual forward or backward IRC log, or from a combined reaction-path file assembled from both."@en ;
                                        rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
                                        rdfs:label "Reaction Path Point"@en .
 
@@ -5175,6 +5167,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001-ts-pcseg2_dat> rdf:type owl:NamedIndividual ,
                                                        <http://example.org/DataFile> ;
                                               <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001-ts-pcseg2> ;
+                                              <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001-ts-pcseg2.dat" ;
+                                              <http://schema.org/sha256> "8072ffbe6ce1fd46ff2ffeb4ca02c11530e84f45541b4d18c579d3d62a66c7ca" ;
                                               rdfs:label "Output data aa001-ts-pcseg2" .
 
 
@@ -5200,6 +5194,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001a_dat> rdf:type owl:NamedIndividual ,
                                               <http://example.org/DataFile> ;
                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001a> ;
+                                     <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001a.dat" ;
+                                     <http://schema.org/sha256> "9373342dbe0da04e3bffc3d09e85db344cd10401f7edbf7d902ccd242b06fb8e" ;
                                      rdfs:label "Output data aa001a" .
 
 
@@ -5225,6 +5221,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001b_dat> rdf:type owl:NamedIndividual ,
                                               <http://example.org/DataFile> ;
                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001b> ;
+                                     <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001b.dat" ;
+                                     <http://schema.org/sha256> "043e24f30de305f8d4bb7a9ee733b711ffc46ba95dfd4c42f6b4986f4b5e18c8" ;
                                      rdfs:label "Output data aa001b" .
 
 
@@ -5250,6 +5248,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001c_dat> rdf:type owl:NamedIndividual ,
                                               <http://example.org/DataFile> ;
                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001c> ;
+                                     <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001c.dat" ;
+                                     <http://schema.org/sha256> "189cdfbbe6f496e5a27ee6cd44dfba7ad88bca88b91ec325be0d6160cbca44ae" ;
                                      rdfs:label "Output data aa001c" .
 
 
@@ -5275,6 +5275,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001d-smd-hess_dat> rdf:type owl:NamedIndividual ,
                                                        <http://example.org/DataFile> ;
                                               <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001d-smd-hess> ;
+                                              <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001d-smd-hess.dat" ;
+                                              <http://schema.org/sha256> "c80ba258a0a3d46449ecde500ee6ad595a466b7b1185085ecda3b72619cc0b83" ;
                                               rdfs:label "Output data aa001d-smd-hess" .
 
 
@@ -5300,6 +5302,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001d-smd-pcseg2_dat> rdf:type owl:NamedIndividual ,
                                                          <http://example.org/DataFile> ;
                                                 <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001d-smd-pcseg2> ;
+                                                <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001d-smd-pcseg2.dat" ;
+                                                <http://schema.org/sha256> "45bd1e256dfe3ddf3c3480d0d54d4fd8a223c500e5d58ad9dc0892f65dfcaef1" ;
                                                 rdfs:label "Output data aa001d-smd-pcseg2" .
 
 
@@ -5325,6 +5329,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001d-smd_dat> rdf:type owl:NamedIndividual ,
                                                   <http://example.org/DataFile> ;
                                          <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001d-smd> ;
+                                         <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001d-smd.dat" ;
+                                         <http://schema.org/sha256> "cdb8936e5d8d97caafb4e2d8177e176ba7098976bca8ef053a36e4bcbebed11b" ;
                                          rdfs:label "Output data aa001d-smd" .
 
 
@@ -5350,6 +5356,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001d_dat> rdf:type owl:NamedIndividual ,
                                               <http://example.org/DataFile> ;
                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001d> ;
+                                     <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001d.dat" ;
+                                     <http://schema.org/sha256> "31069b19844195585755078d9f5c5d57546d97720bcf10fe26d0d481956c328d" ;
                                      rdfs:label "Output data aa001d" .
 
 
@@ -5375,6 +5383,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001e_dat> rdf:type owl:NamedIndividual ,
                                               <http://example.org/DataFile> ;
                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001e> ;
+                                     <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001e.dat" ;
+                                     <http://schema.org/sha256> "7ccacc19c09dbe5f40febaf05b89ebf06bb8e11dacf6bcc969c13f1139cc231e" ;
                                      rdfs:label "Output data aa001e" .
 
 
@@ -5400,6 +5410,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001f_dat> rdf:type owl:NamedIndividual ,
                                               <http://example.org/DataFile> ;
                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001f> ;
+                                     <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001f.dat" ;
+                                     <http://schema.org/sha256> "5ead3fc660fc86574336e110e1ab110e274650bd9b6f27d22cebc253a93177bc" ;
                                      rdfs:label "Output data aa001f" .
 
 
@@ -5425,6 +5437,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001g-pcseg2_dat> rdf:type owl:NamedIndividual ,
                                                      <http://example.org/DataFile> ;
                                             <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001g-pcseg2> ;
+                                            <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001g-pcseg2.dat" ;
+                                            <http://schema.org/sha256> "5066c1d82673e3f34aedf816b19deaca32e8fc6c6f63c879cbbeb86da01ba500" ;
                                             rdfs:label "Output data aa001g-pcseg2" .
 
 
@@ -5450,6 +5464,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001g-smd-pcseg2_dat> rdf:type owl:NamedIndividual ,
                                                          <http://example.org/DataFile> ;
                                                 <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001g-smd-pcseg2> ;
+                                                <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001g-smd-pcseg2.dat" ;
+                                                <http://schema.org/sha256> "6bf90a8a219d874f47ffd485a4cc9387acf2c4e37c476a14a1af80cf9509fe0e" ;
                                                 rdfs:label "Output data aa001g-smd-pcseg2" .
 
 
@@ -5475,6 +5491,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001g-smd_dat> rdf:type owl:NamedIndividual ,
                                                   <http://example.org/DataFile> ;
                                          <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001g-smd> ;
+                                         <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001g-smd.dat" ;
+                                         <http://schema.org/sha256> "68efe4622257e24e5b43173c90e15e0cab9f21ad1c68e7f4532a8fd9a24195e6" ;
                                          rdfs:label "Output data aa001g-smd" .
 
 
@@ -5500,6 +5518,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001g_dat> rdf:type owl:NamedIndividual ,
                                               <http://example.org/DataFile> ;
                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001g> ;
+                                     <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001g.dat" ;
+                                     <http://schema.org/sha256> "2b1853a877df3da7aa4b4b2d30e03e62318f429c620fa292c6b34b365f48cccf" ;
                                      rdfs:label "Output data aa001g" .
 
 
@@ -5525,6 +5545,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001h-pcseg2_dat> rdf:type owl:NamedIndividual ,
                                                      <http://example.org/DataFile> ;
                                             <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001h-pcseg2> ;
+                                            <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001h-pcseg2.dat" ;
+                                            <http://schema.org/sha256> "75a29c11019f05b90411bc159a5f6ecce464317f6fa118d1251031cac358e1e1" ;
                                             rdfs:label "Output data aa001h-pcseg2" .
 
 
@@ -5550,6 +5572,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001h-smd-pcseg2_dat> rdf:type owl:NamedIndividual ,
                                                          <http://example.org/DataFile> ;
                                                 <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001h-smd-pcseg2> ;
+                                                <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001h-smd-pcseg2.dat" ;
+                                                <http://schema.org/sha256> "13b776edd4bd36750a5acb86429d70bea84dd91232b72fed0d4332ed3daf1155" ;
                                                 rdfs:label "Output data aa001h-smd-pcseg2" .
 
 
@@ -5575,6 +5599,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001h-smd_dat> rdf:type owl:NamedIndividual ,
                                                   <http://example.org/DataFile> ;
                                          <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001h-smd> ;
+                                         <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001h-smd.dat" ;
+                                         <http://schema.org/sha256> "5efdcf2678f660519d1d9c83911153a518772b1fbdec0279454c6e84a2c6d712" ;
                                          rdfs:label "Output data aa001h-smd" .
 
 
@@ -5600,6 +5626,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa001h_dat> rdf:type owl:NamedIndividual ,
                                               <http://example.org/DataFile> ;
                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa001h> ;
+                                     <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa001h.dat" ;
+                                     <http://schema.org/sha256> "aafcf2fb8c4ca11000572f565b0d6ed54f68b2620d77ef8573c36c792561375c" ;
                                      rdfs:label "Output data aa001h" .
 
 
@@ -5625,6 +5653,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa002-aldehyde-bare-smd-check_dat> rdf:type owl:NamedIndividual ,
                                                                      <http://example.org/DataFile> ;
                                                             <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa002-aldehyde-bare-smd-check> ;
+                                                            <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa002-aldehyde-bare-smd-check.dat" ;
+                                                            <http://schema.org/sha256> "0f5dc822c87f09ee720f76d718b65a9b439d6383f466ef770144dd4cd2c39ab2" ;
                                                             rdfs:label "Output data aa002-aldehyde-bare-smd-check" .
 
 
@@ -5650,6 +5680,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa002-aldehyde-bare-smd-energy_dat> rdf:type owl:NamedIndividual ,
                                                                       <http://example.org/DataFile> ;
                                                              <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa002-aldehyde-bare-smd-energy> ;
+                                                             <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa002-aldehyde-bare-smd-energy.dat" ;
+                                                             <http://schema.org/sha256> "26842a8be1c4bbad5d160bba94c141f60b317d7823b1b16684706bf6dfc530a7" ;
                                                              rdfs:label "Output data aa002-aldehyde-bare-smd-energy" .
 
 
@@ -5675,6 +5707,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa002-aldehyde-bare-smd-hcore_dat> rdf:type owl:NamedIndividual ,
                                                                      <http://example.org/DataFile> ;
                                                             <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa002-aldehyde-bare-smd-hcore> ;
+                                                            <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa002-aldehyde-bare-smd-hcore.dat" ;
+                                                            <http://schema.org/sha256> "280e7d60d52ba7c5f37364c8299f1ace5993927cbb3cab37d716fd597fbd16ec" ;
                                                             rdfs:label "Output data aa002-aldehyde-bare-smd-hcore" .
 
 
@@ -5700,6 +5734,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa002-aldehyde-bare-smd_dat> rdf:type owl:NamedIndividual ,
                                                                <http://example.org/DataFile> ;
                                                       <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa002-aldehyde-bare-smd> ;
+                                                      <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa002-aldehyde-bare-smd.dat" ;
+                                                      <http://schema.org/sha256> "280e7d60d52ba7c5f37364c8299f1ace5993927cbb3cab37d716fd597fbd16ec" ;
                                                       rdfs:label "Output data aa002-aldehyde-bare-smd" .
 
 
@@ -5725,6 +5761,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa002-aldehyde-bare_dat> rdf:type owl:NamedIndividual ,
                                                            <http://example.org/DataFile> ;
                                                   <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa002-aldehyde-bare> ;
+                                                  <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa002-aldehyde-bare.dat" ;
+                                                  <http://schema.org/sha256> "f98aa73abbbaae3d4ad14732aafe6ca83d6069b53ea868ba1e69d79e38e8ba78" ;
                                                   rdfs:label "Output data aa002-aldehyde-bare" .
 
 
@@ -5750,6 +5788,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa002-aldehyde-pcseg2_dat> rdf:type owl:NamedIndividual ,
                                                              <http://example.org/DataFile> ;
                                                     <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa002-aldehyde-pcseg2> ;
+                                                    <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa002-aldehyde-pcseg2.dat" ;
+                                                    <http://schema.org/sha256> "9f7054e82bf57c69f3407754aee1742f10d2898846e9dfe2d548d0535060b805" ;
                                                     rdfs:label "Output data aa002-aldehyde-pcseg2" .
 
 
@@ -5775,6 +5815,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa002-hydrate-bare-smd_dat> rdf:type owl:NamedIndividual ,
                                                               <http://example.org/DataFile> ;
                                                      <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa002-hydrate-bare-smd> ;
+                                                     <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa002-hydrate-bare-smd.dat" ;
+                                                     <http://schema.org/sha256> "7ea24dc3fee28798f30e0bede80adea8c3c4c46b91cfdb81af5de9bd79fcaef6" ;
                                                      rdfs:label "Output data aa002-hydrate-bare-smd" .
 
 
@@ -5800,6 +5842,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa002-hydrate-bare_dat> rdf:type owl:NamedIndividual ,
                                                           <http://example.org/DataFile> ;
                                                  <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa002-hydrate-bare> ;
+                                                 <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa002-hydrate-bare.dat" ;
+                                                 <http://schema.org/sha256> "8807be72e2d9281928eb0b88befec731b3ebf5178bdf43647acc678d8a8dab6f" ;
                                                  rdfs:label "Output data aa002-hydrate-bare" .
 
 
@@ -5825,6 +5869,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa002-hydrate-pcseg2_dat> rdf:type owl:NamedIndividual ,
                                                             <http://example.org/DataFile> ;
                                                    <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa002-hydrate-pcseg2> ;
+                                                   <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa002-hydrate-pcseg2.dat" ;
+                                                   <http://schema.org/sha256> "8e4bafc32630b667ffe44e1eb49b3e04cf2d55135ba38bb2bfcc34d1dc262ad4" ;
                                                    rdfs:label "Output data aa002-hydrate-pcseg2" .
 
 
@@ -5850,6 +5896,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa002-water-bare-smd_dat> rdf:type owl:NamedIndividual ,
                                                             <http://example.org/DataFile> ;
                                                    <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa002-water-bare-smd> ;
+                                                   <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa002-water-bare-smd.dat" ;
+                                                   <http://schema.org/sha256> "98c45c700b34dd1396c26decf5c7bbd8ece3c9f40610e40c508bf09cbf1c75e5" ;
                                                    rdfs:label "Output data aa002-water-bare-smd" .
 
 
@@ -5875,6 +5923,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa002-water-bare_dat> rdf:type owl:NamedIndividual ,
                                                         <http://example.org/DataFile> ;
                                                <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa002-water-bare> ;
+                                               <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa002-water-bare.dat" ;
+                                               <http://schema.org/sha256> "ec5ed8108ee4760417e8f6e4d689ae19272a5b56a05ef2f805a6f49963ab7a98" ;
                                                rdfs:label "Output data aa002-water-bare" .
 
 
@@ -5900,6 +5950,8 @@ rdfs:Class rdf:type owl:Class .
 <http://example.org/file_aa002-water-pcseg2_dat> rdf:type owl:NamedIndividual ,
                                                           <http://example.org/DataFile> ;
                                                  <http://www.w3.org/ns/prov#wasGeneratedBy> <http://example.org/exp_aa002-water-pcseg2> ;
+                                                 <http://example.org/fileURL> "file:////home/darren/Projects/active/ont_mm/examples/aa/dat/aa002-water-pcseg2.dat" ;
+                                                 <http://schema.org/sha256> "7e66584d4908a6a901fbeace2004e870a3008641b74dcf05719fb7c6180b00ed" ;
                                                  rdfs:label "Output data aa002-water-pcseg2" .
 
 
@@ -6080,12 +6132,24 @@ rdfs:Class rdf:type owl:Class .
                                              rdfs:label "kilo calories per angstrom"@en .
 
 
+###  http://purl.org/gc/kiloJoulePerMole
+<http://purl.org/gc/kiloJoulePerMole> rdf:type owl:NamedIndividual ,
+                                               <http://qudt.org/schema/qudt/DerivedUnit> ;
+                                      owl:sameAs <http://qudt.org/vocab/unit/KiloJ-PER-MOL> ;
+                                      rdfs:comment "The unit GAMESS (US) reports enthalpy and Gibbs free energy in: kJ/mol."@en ;
+                                      rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
+                                      rdfs:label "kJ/mol"@en .
+
+
+###  http://qudt.org/vocab/unit/KiloJ-PER-MOL
+
 ###  http://purl.org/gc/kiloJoules
 <http://purl.org/gc/kiloJoules> rdf:type owl:NamedIndividual ,
                                          <http://qudt.org/schema/qudt/EnergyAndWorkUnit> ;
-                                rdfs:comment "a unit of energy"@en ;
+                                rdfs:comment "Superseded by gc:kiloJoulePerMole. Kept so existing graphs stay valid: it was used for enthalpy and Gibbs free energy values that are in kJ/mol, so it loses the \"per mole\". A unit of energy."@en ;
                                 rdfs:isDefinedBy <http://chemicalsemantics.com/> ;
-                                rdfs:label "kilo joules"@en .
+                                rdfs:label "kilo joules"@en ;
+                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.org/gc/kmPerMol
@@ -6134,6 +6198,10 @@ rdfs:Class rdf:type owl:Class .
 
 
 ###  http://qudt.org/vocab/unit/kelvin
+
+###  http://qudt.org/vocab/unit/KiloJ-PER-MOL
+<http://qudt.org/vocab/unit/KiloJ-PER-MOL> rdf:type owl:NamedIndividual .
+
 
 ###  http://qudt.org/vocab/unit/Kilocalorie
 <http://qudt.org/vocab/unit/Kilocalorie> rdf:type owl:NamedIndividual .
