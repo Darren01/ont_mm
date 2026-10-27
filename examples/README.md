@@ -2,6 +2,13 @@
 
 # Examples – Quick Start
 
+**Three datasets.** The walkthrough in this folder uses the small `rem01`
+demo (3 experiments). The two full examples are [`aa`](./aa/) (30
+experiments, acetaldehyde) and [`caa`](./caa/) (61 experiments,
+chloroacetaldehyde). To explore their graphs without building anything,
+open the [SPARQL playground](https://darren01.github.io/ont_mm/tools/sparql_playground.html), or read the
+[competency questions](../COMPETENCY_QUESTIONS.md).
+
 This folder contains a **minimal working example** of a molecular modelling workflow and its representation in the ontology.
 
 It is the recommended starting point for new users.

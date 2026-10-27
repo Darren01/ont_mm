@@ -2,6 +2,32 @@
 
 A domain ontology for representing and structuring molecular modelling workflows, with a focus on **traceability**, **reproducibility**, and **data integration**.
 
+## At a glance
+
+`ont_mm` turns the output of GAMESS (US) calculations into a graph you can
+query: which runs exist, what files they produced, what the energies and
+imaginary frequencies were, and which compounds were in them. It is built
+from real runs, for computational chemists who want a traceable record of
+their work rather than for ontology specialists.
+
+**Three example datasets**
+
+| Dataset | What it is | Size |
+|---|---|---|
+| `rem01` ([`examples/`](./examples/)) | The smallest demo. Start here to see the whole pipeline once. | 3 experiments |
+| [`aa`](./examples/aa/) | Acetaldehyde, water and the hydrate: finding and fixing a wrong number against a benchmark. | 30 experiments |
+| [`caa`](./examples/caa/) | Chloroacetaldehyde: a messy project with constrained scans, a transition state and an IRC. | 61 experiments |
+
+- **Try it without installing anything:** the [SPARQL playground](https://darren01.github.io/ont_mm/tools/sparql_playground.html).
+- **What the graphs can answer:** [16 tested competency questions](./COMPETENCY_QUESTIONS.md), with a one-screen list at the top and a section on what they cannot yet answer.
+- **Learn SPARQL on these graphs:** the [SPARQL tutorial](./SPARQL_TUTORIAL.md).
+- **What the terms mean:** the [glossary](./GLOSSARY.md).
+- **What went wrong while building it:** [lessons learned](./LESSONS_LEARNED.md).
+- **How the terms map to other ontologies:** the [SSSOM worksheet](./mappings/ont_mm-gc-to-canon.sssom.tsv) (a draft).
+
+The rest of this README is the full reference: setup, building a graph,
+validation and the querying tools.
+
 **This project is one half of a pair.** [gamess_functions](https://github.com/Darren01/gamess_functions)
 does the actual work of reading GAMESS (US) output and turning it into
 the structured data this ontology represents - extraction, SHACL

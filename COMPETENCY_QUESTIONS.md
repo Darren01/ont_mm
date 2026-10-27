@@ -7,6 +7,29 @@ ask and answer?** Formal ontology methodology says to write these
 version, checked against what's genuinely been built and tested, not
 what was intended or hoped for.
 
+## The questions at a glance
+
+| # | Question | Status | Playground |
+|---|---|---|---|
+| [1](#1-how-many-experiments-of-each-type-exist) | How many experiments of each type are there? | ✅ | yes |
+| [2](#2-what-review-notes-has-the-researcher-recorded-and-for-which-experiments) | What review notes have I recorded, and on which experiments? | ✅ | yes |
+| [3](#3-which-output-files-were-generated-from-a-given-input-file) | Which output files came from a given input file? | ✅ | yes |
+| [4](#4-what-geometric-constraints-were-applied-in-a-given-experiment-and-what-were-their-target-values-and-units) | Which geometric constraints were applied in an experiment, with targets and units? | ✅ | yes |
+| [5](#5-which-experiments-are-linked-to-a-specific-published-paper) | Which experiments are linked to a published paper? | ✅ | yes |
+| [6](#6-which-experiment-used-a-specific-known-constraint-value) | Which experiment used a known constraint value? | ✅ | yes |
+| [7](#7-find-a-successful-run-of-a-given-type-at-a-given-level-of-theory-with-its-inputoutputdata-files) | Which successful runs of a type at a level of theory, and their files? | ✅ | no (use `arq`) |
+| [8](#8-which-results-show-an-imaginary-negative-frequency) | Which results show an imaginary frequency? | ✅ | yes |
+| [9](#9-does-a-given-transition-state-show-exactly-one-imaginary-frequency-and-a-given-minimum-show-zero) | Does a transition state show exactly one, and a minimum none? | ✅ | yes |
+| [10](#10-which-annotated-experiments-also-show-a-data-quality-issue-an-imaginary-frequency) | Which annotated experiments also show an imaginary frequency? | ✅ | yes |
+| [11](#11-what-is-the-electronic-energy-zpe-enthalpy-entropy-and-gibbs-free-energy-for-a-given-experiments-result) | Electronic energy, ZPE, enthalpy, entropy and Gibbs energy of a result? | ✅ | yes |
+| [12](#12-what-is-the-full-chain-of-files-input--intermediate-data--output-for-a-given-experiment) | The full file chain (input, data, output) for an experiment? | ✅ | yes |
+| [13](#13-what-are-the-points-along-a-given-reaction-path-in-order-with-their-energies) | The points along a reaction path, in order, with energies? | ✅ | yes |
+| [14](#14-which-experiments-used-a-specific-methodbasis-set-combination) | Which experiments used a given method and basis set? | ✅ | yes |
+| [15](#15-what-is-the-activation-energy-forwardreverse-barrier-and-reaction-energy-for-a-given-pathway) | Barriers and reaction energy for a pathway (SPARQL plus a short R step)? | ✅ with an R step | no (use `arq`) |
+| [16](#16-which-species-occur-in-the-graph-and-in-which-systems) | Which species occur (by InChIKey), and in which systems? | ✅ | yes |
+
+What the graphs cannot answer yet is in [Not answerable yet](#not-answerable-yet), at the end of this document. The queries are further down.
+
 **A deliberate scoping principle, worth stating plainly:** this graph
 holds meaningful, bounded *results* (the five thermochemistry values
 in CQ #11, an imaginary frequency as a diagnostic signal) rather than
@@ -98,6 +121,7 @@ hand, CQ #3's provenance query, pointed at its own input file:
 ```sparql
 PREFIX ex: <http://example.org/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
 
 SELECT ?output ?type WHERE {
   ?exp prov:used ex:file_caa005bTSa_inp .
@@ -794,12 +818,54 @@ here is not evidence that a compound was not present.
 
 ---
 
-## Noted for later, not built yet
+## Not answerable yet
 
-- **A guided narrative walkthrough**: starting from #1's basic
-  inventory, narrowing to a specific transition state, tracing its
-  provenance (#3), then examining the geometric constraints that
-  produced it (#4) - a real, connected story showing how these
-  questions actually chain together in practice, rather than reading
-  as a list of disconnected examples. Where this belongs in the
-  document, and its full shape, still to be worked out.
+Every question above is answerable. These are the questions a user of
+these graphs would reasonably ask next, and where the data runs out. Each
+was checked against the current `aa` and `caa` graphs.
+
+1. **Which version of GAMESS produced a run?** Not stored. The graph has
+   no property for software version, build or platform, so two runs from
+   different versions look identical. The information is in the `.log`
+   file, which the graph links to.
+2. **Did a run converge, and if not, why?** Only partly. Imaginary
+   frequencies are queryable (questions 8 to 10), and your own review
+   notes survive as free text (17 in `aa`, 37 in `caa`; question 2). But
+   the convergence verdicts the pipeline computes while building ("needs
+   another iteration", translation/rotation error) are printed to the
+   console and not stored, so "list the runs that did not converge" cannot
+   be asked.
+3. **Is the solvation model a reusable term?** No. `ex:hasSolvationModel`
+   (`"PCM"`, `"SMD"`), `ex:hasSolvent` (`"water"`), `gc:hasMethod` and
+   `gc:hasBasisSet` hold plain text, so a query has to match spelling
+   exactly, and nothing says that two spellings mean the same method. The
+   same applies to the run type (`ex:hasRuntyp`). 8 of the 61 `caa` runs
+   have no `gc:hasMethod` at all; the reason has not been investigated.
+4. **What are the charge and spin multiplicity of a system?** Not stored.
+   Species identification is attempted only for neutral closed-shell
+   minima, and anything else is refused with no node (see
+   `species_report.tsv`: 7 species refused in `caa`). So a charged or
+   open-shell species is absent rather than recorded as charged.
+5. **Do two constraints, or two experiments, involve the same atom?**
+   Not reliably. Atoms are numbered by their position in each input file,
+   so `ex:atom_10` in one experiment can be a different atom from
+   `ex:atom_10` in another, and the constraint properties
+   (`ex:involvesAtom1`, `ex:involvesAtom2`) share that numbering. Comparing
+   atoms across experiments needs an identity that survives renumbering.
+6. **Which species is the reactant, the product or the transition state of
+   a reaction?** Not stored. Reaction paths hold energies by point
+   (question 13), and species nodes exist only for minima. Nothing links a
+   path to the species at its ends, which is why question 15 carries a
+   warning to check by hand which end is the reactant.
+7. **How much compute did a run use?** Cores, memory, wall time and machine
+   are not recorded.
+
+Coordinates are left out on purpose: the graph links to the files that
+hold them instead of copying them in.
+
+Items 3 to 6 are where a shared ontology would help most: a reusable term
+for a method, a basis set or a solvation model; a way to say what a
+species is and what role it plays in a reaction; and an identity for an
+atom that holds across experiments. The
+[SSSOM worksheet](./mappings/ont_mm-gc-to-canon.sssom.tsv) is where the
+current terms are being matched against candidates.

@@ -1,0 +1,72 @@
+# mapping_set_id: https://github.com/Darren01/ont_mm/mappings/ont_mm-gc-to-canon.sssom.tsv
+# mapping_set_title: ont_mm / Gainesville Core terms in use, mapped to Ontologies4Chem canon ontologies
+# mapping_set_description: Every gc: and ex: term used in the aa and caa example graphs, curated against active ontologies (CHEMINF, OntoCompChem, COB, ChEBI, ...). Draft for the 5th Ontologies4Chem Workshop.
+# license: https://creativecommons.org/licenses/by/4.0/
+# mapping_date: 2026-10-26
+# creator_id:
+# curie_map:
+#   gc: http://purl.org/gc/
+#   ex: http://example.org/
+#   CHEMINF: http://purl.obolibrary.org/obo/CHEMINF_
+#   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+#   COB: http://purl.obolibrary.org/obo/COB_
+#   IAO: http://purl.obolibrary.org/obo/IAO_
+#   OBI: http://purl.obolibrary.org/obo/OBI_
+#   ontocompchem: http://www.theworldavatar.com/kg/ontocompchem/
+#   orcid: https://orcid.org/
+#   semapv: https://w3id.org/semapv/vocab/
+#   skos: http://www.w3.org/2004/02/skos/core#
+#   sssom: https://w3id.org/sssom/
+subject_id	subject_label	subject_type	predicate_id	object_id	object_label	mapping_justification	comment
+ex:DataFile		owl class				semapv:ManualMappingCuration	ont_mm project term (ex:); defined only in GLOSSARY.md
+ex:DistanceConstraint		owl class				semapv:ManualMappingCuration	ont_mm project term (ex:); defined only in GLOSSARY.md
+ex:InputFile		owl class				semapv:ManualMappingCuration	ont_mm project term (ex:); defined only in GLOSSARY.md
+ex:LogFile		owl class				semapv:ManualMappingCuration	ont_mm project term (ex:); defined only in GLOSSARY.md
+ex:fileURL						semapv:ManualMappingCuration	ont_mm project term (ex:); not declared in the graph, defined only in GLOSSARY.md
+ex:hasConstraint		owl object property				semapv:ManualMappingCuration	ont_mm project term (ex:); defined only in GLOSSARY.md
+ex:hasHssend						semapv:ManualMappingCuration	ont_mm project term (ex:); not declared in the graph, defined only in GLOSSARY.md
+ex:hasRuntyp						semapv:ManualMappingCuration	ont_mm project term (ex:); not declared in the graph, defined only in GLOSSARY.md
+ex:hasSolvationModel						semapv:ManualMappingCuration	ont_mm project term (ex:); not declared in the graph, defined only in GLOSSARY.md
+ex:hasSolvent						semapv:ManualMappingCuration	ont_mm project term (ex:); not declared in the graph, defined only in GLOSSARY.md
+ex:involvesAtom1		owl object property				semapv:ManualMappingCuration	ont_mm project term (ex:); defined only in GLOSSARY.md
+ex:involvesAtom2		owl object property				semapv:ManualMappingCuration	ont_mm project term (ex:); defined only in GLOSSARY.md
+ex:targetValue						semapv:ManualMappingCuration	ont_mm project term (ex:); not declared in the graph, defined only in GLOSSARY.md
+gc:Atom	Atom	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:FloatValue	Float Value	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:ForceField	Force Field	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:FrequencyPeak	Frequency Peak	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:GeometryOptimization	Geometry optimization	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:IRC	IRC	owl class				semapv:ManualMappingCuration	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7)
+gc:Methodology	Methodology	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:MolecularComputation	Molecular Computation	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:Molecule	Molecule	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:ParameterSet	Parameter Set	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:ReactionPath	Reaction Path	owl class				semapv:ManualMappingCuration	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7)
+gc:ReactionPathPoint	Reaction Path Point	owl class				semapv:ManualMappingCuration	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7)
+gc:SaddlePoint	Saddle Point	owl class				semapv:ManualMappingCuration	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7)
+gc:SinglePoint	Single Point	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:SystemEnergies	System Energies	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:VibrationalAnalysis	Vibrational Analysis	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:VibrationalSpectra	Vibrational Spectra	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:constraintMode						semapv:ManualMappingCuration	used in data but declared in no schema (minted in gc: namespace)
+gc:hasAtom	has atom	owl object property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:hasBasisSet	has basis set	owl data property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:hasElectronicEnergy	has electronic energy	owl object property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:hasElementSymbol	has element symbol	owl data property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:hasEnthalpy	has enthalpy	owl object property				semapv:ManualMappingCuration	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7)
+gc:hasEntropy	has entropy	owl object property				semapv:ManualMappingCuration	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7)
+gc:hasFloatValue	has float value	owl data property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:hasFrequency	has frequency	owl object property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:hasFrequencyPeak	has frequency peak	owl object property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:hasGibbsFreeEnergy	has Gibbs free energy	owl object property				semapv:ManualMappingCuration	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7)
+gc:hasInChIKey	has InChI key	owl data property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:hasInChIString	has InChI string	owl data property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:hasIndex	has index	owl data property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:hasIntensity	has Intensity	owl object property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:hasMethod	has method	owl data property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:hasMolecule	has molecule	owl object property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:hasPathEnergy	has path energy	owl object property				semapv:ManualMappingCuration	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7)
+gc:hasReactionPathPoint	has reaction path point	owl object property				semapv:ManualMappingCuration	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7)
+gc:hasResult	has result	owl object property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:hasUnit	has unit	owl object property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
+gc:hasZeroPointEnergy	has zero-point energy	owl object property				semapv:ManualMappingCuration	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7)
