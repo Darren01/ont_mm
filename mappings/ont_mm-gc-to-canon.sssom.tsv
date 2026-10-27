@@ -3,7 +3,6 @@
 # mapping_set_description: Every gc: and ex: term used in the aa and caa example graphs, curated against active ontologies (CHEMINF, OntoCompChem, COB, ChEBI, ...). Draft for the 5th Ontologies4Chem Workshop.
 # license: https://creativecommons.org/licenses/by/4.0/
 # mapping_date: 2026-10-26
-# creator_id:
 # curie_map:
 #   gc: http://purl.org/gc/
 #   ex: http://example.org/
