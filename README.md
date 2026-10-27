@@ -7,7 +7,7 @@ A domain ontology for representing and structuring molecular modelling workflows
 `ont_mm` turns the output of GAMESS (US) calculations into a graph you can
 query: which runs exist, what files they produced, what the energies and
 imaginary frequencies were, and which compounds were in them. It is built
-from real runs, for computational chemists who want a traceable record of
+from GAMESS runs, for computational chemists who want a traceable record of
 their work rather than for ontology specialists.
 
 **Three example datasets**
@@ -62,21 +62,21 @@ Imaginary (negative) frequencies found: 0
 Constraints: 6
 ```
 
-This bundled example is a small, 3-experiment demo - genuinely 0
-annotations and 0 imaginary frequencies here, honestly reported rather
+This bundled example is a small, 3-experiment demo - 0
+annotations and 0 imaginary frequencies here, reported rather
 than dressed up, since nobody's added review notes to it and nothing
 in it happens to be a non-minimum geometry.
 
-On a real, actively-used project, these same two lines carry real
+On an actively-used project, these same two lines carry
 weight. The annotations aren't just labels - they're your own record
 of the actual scientific reasoning as a project develops: why a run
 failed and what fixed it, a control calculation that ruled out one
 explanation in favour of another, confirmation that a stationary point
-really is the transition state it was meant to be. All of that,
+is the transition state it was meant to be. All of that,
 surfaced directly from the graph itself alongside the calculations it
 describes, with no separate lab notebook to keep in sync and no SPARQL
 required. The imaginary-frequency count does its own quieter but
-equally real job - a one-line sanity check across every result you
+equally important job - a one-line sanity check across every result you
 have, flagging anything that isn't the minimum (or, for a transition
 state search, the single expected saddle point) it's supposed to be,
 before you build an entire analysis on top of a geometry that never
@@ -85,14 +85,14 @@ actually converged the way you assumed.
 If you want more specific answers than that,
 `gamess_functions/examples/query_your_ontology.R` has a tiered path
 from copy-paste templates through to writing your own SPARQL, with a
-short primer built entirely from real lessons this project actually
+short primer built entirely from lessons this project
 hit along the way.
 
 ## 🔬 Try it right now - zero install
 
 **[Open the SPARQL playground directly](https://darren01.github.io/ont_mm/tools/sparql_playground.html)**
 - runs entirely in your own browser, no cloning, no R, nothing to set
-up. A dropdown lets you switch between the two real example graphs
+up. A dropdown lets you switch between the two example graphs
 this repo publishes - [`caa`](./examples/caa/) (the default) and
 [`aa`](./examples/aa/) - loading whichever you pick live from GitHub,
 with a button for each of the [competency questions](./COMPETENCY_QUESTIONS.md)
@@ -112,12 +112,12 @@ a different graph.)
 
 This is one concrete way of making a graph queryable without asking
 anyone to install anything - not the only way, and not a permanent,
-always-on public endpoint (a genuine SPARQL *endpoint*, in the formal
+always-on public endpoint (a true SPARQL *endpoint*, in the formal
 sense, is a live server, which this deliberately isn't). If you want
 that instead:
 
 - **Run your own, self-hosted endpoint**: [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/)
-  loads a `.ttl` file and exposes a real, live SPARQL HTTP endpoint -
+  loads a `.ttl` file and exposes a live SPARQL HTTP endpoint -
   free and well-documented, though it only stays reachable while
   Fuseki itself is running somewhere with a stable address (your own
   laptop won't stay up when it's off).
@@ -182,7 +182,7 @@ changes per project.
 
 ### 1. Get the code
 
-Two genuinely separate options - pick one and use it consistently for
+Two separate options - pick one and use it consistently for
 every file below. Mixing them (sourcing one file by URL, then trying to
 `source("gamess_functions/...")` as a local path without having cloned)
 is the single most common mistake here - that local path only exists if
@@ -203,7 +203,7 @@ git clone https://github.com/Darren01/ont_mm.git
 
 **Already cloned these before?** Running `git clone` again gives an error
 like `fatal: destination path 'gamess_functions' already exists and is
-not an empty directory` - a real error message, but not one to fix by
+not an empty directory` - an error message, but not one to fix by
 re-cloning. It means exactly what it says: you already have this repo,
 and `git clone` is only for getting a copy for the first time. What you
 actually want is to update your existing copy - `cd` into the folder
@@ -220,7 +220,7 @@ This applies every time you come back to work with these tools, not
 just the first time you hit the error - `git pull` is the everyday
 command, `git clone` is a one-time-only step.
 
-One more real trap worth knowing about: `git pull` needs to be run
+One more trap worth knowing about: `git pull` needs to be run
 *from inside* the actual repo folder (`gamess_functions/` or
 `ont_mm/` itself), not from their parent folder. Run from the wrong
 place, `git` doesn't necessarily fail loudly - it may find a
@@ -370,7 +370,7 @@ source(file.path(my_code_dir, "ont_mm/scripts/check_robot_setup.R"))
 source_github("ont_mm", "scripts/check_robot_setup.R")   # source_github defined above
 ```
 
-This catches two real issues found testing on a locked-down Windows
+This catches two issues found testing on a locked-down Windows
 machine: Java 11+ is required (an older default Java on PATH, even
 with a newer one also installed, gives a confusing, unrelated-looking
 failure deep inside a build rather than a clear version error), and
@@ -496,9 +496,9 @@ result <- process_gamess_directory(
 This writes instance TSV files - it does not yet produce a queryable
 graph. That's the next step.
 
-**A real, direct gotcha, confirmed rather than assumed:** `data_dir`
+**A direct gotcha, confirmed rather than assumed:** `data_dir`
 defaults to `output_dir` if you leave it out - meaning every `.dat`
-file individual still gets created, just with no real `fileURL` or
+file individual still gets created, just with no `fileURL` or
 `schema:sha256` at all, since GAMESS (US) never actually writes `.dat`
 files into the same folder as `.log` files. A missing or wrongly-pathed
 `.dat` (or `.log`) file never throws an error - it just leaves those
@@ -510,22 +510,22 @@ nothing at all. (If you ever see that line naming your `outputs`
 folder as where it looked for `.dat` files, `data_dir` was left at its
 default.) For a graph that's already built, the
 [SPARQL playground](./tools/sparql_playground.html)'s own "Find files
-missing a checksum" example is a genuine, direct way to check, on any
+missing a checksum" example is a direct way to check, on any
 dataset, old or new.
 
-**A real, twice-confirmed gotcha, worth knowing before it costs you an
+**A twice-confirmed gotcha, worth knowing before it costs you an
 afternoon of confused debugging:** `process_gamess_directory()`
 deliberately skips any experiment it finds already present in the
 relevant `*_template_instances.tsv` file, rather than reprocessing it
 - this is what makes it safe and fast to re-run as you add new data
 over time, without endlessly reprocessing everything from scratch.
 
-The real cost of that convenience: if you `git pull` a `gamess_functions`
-update containing a genuine bug fix (e.g. a writer function that used
+The cost of that convenience: if you `git pull` a `gamess_functions`
+update containing a bug fix (e.g. a writer function that used
 to write bad data for some experiments), re-running this step will
 **not** automatically fix those already-processed experiments - the
 old, wrong rows are already "present," so they're silently kept as-is,
-not regenerated with the corrected code. This has genuinely happened
+not regenerated with the corrected code. This has happened
 more than once, surfacing later as a confusing SHACL validation
 failure on data that was built before a fix existed, with no obvious
 connection between the two events by the time it's noticed.
@@ -543,7 +543,7 @@ file.remove(file.path(my_ontology_dir, "constraint_template_instances.tsv"))
 # then re-run process_gamess_directory() as above
 ```
 
-When genuinely unsure which file(s) a given update might affect,
+When unsure which file(s) a given update might affect,
 deleting all of them and doing a full, fresh rebuild is always safe -
 just slower, not wrong.
 
@@ -553,7 +553,7 @@ Once you've actually looked at some results and formed an opinion -
 "this run's constraints broke the geometry," "converged to a
 saddle point instead of the intended minimum" - that's exactly the
 kind of thing worth recording *in* the ontology, not just in your own
-head or a separate notes file. This is a real, existing part of the
+head or a separate notes file. This is an existing part of the
 pipeline, not a suggestion for later.
 
 Keep a plain `run_notes.tsv` file (tab-separated, `filename<TAB>your
@@ -573,10 +573,10 @@ one) as a third tab-separated field:
 run004a.log	starting geometry for the next scan in this series	10.1021/ja00249a034
 ```
 
-This gets written as a real `dcterms:relation` to the paper's own
+This gets written as a `dcterms:relation` to the paper's own
 resolvable `https://doi.org/...` URL - see
 [papers_ontology](https://github.com/Darren01/papers_ontology) for the
-other side of this link. The two directions are genuinely independent,
+other side of this link. The two directions are independent,
 not automatically bidirectional: this links *from* the experiment
 *to* the paper; linking the paper back to the experiment is a separate
 step, done in `papers_ontology`'s own `doi_notes.tsv`.
@@ -619,7 +619,7 @@ file fresh from your notes' *current* full content, rather than
 appending - so revisiting old notes, adding new ones, or both, never
 duplicates anything already recorded.
 
-Each note attaches as a real `rdfs:comment` on the corresponding
+Each note attaches as an `rdfs:comment` on the corresponding
 experiment - a standard, well-understood RDFS annotation property, not
 something invented for this project. `build_ontology_graph()` in the
 next step picks this file up automatically alongside everything else,
@@ -675,7 +675,7 @@ source_github("ont_mm", "scripts/build_ontology_graph.R")   # defined in Step 1
 (`robot` was already checked back in Step 1c - if that passed, you're
 good to continue here without re-checking.)
 
-`release_file` needs to be a genuine local file either way - it's
+`release_file` needs to be a local file either way - it's
 passed to `robot`, a separate external program, not read by R itself,
 so R's URL-reading convenience (which worked for
 `experiment_template_file` above) doesn't apply here. If you didn't
@@ -841,7 +841,7 @@ build_ontology_graph(
 ```
 
 Worth keeping a short project-specific script like this saved
-somewhere for each real project you work on (outside any git repo if
+somewhere for each project you work on (outside any git repo if
 the data is confidential, same as always) - it becomes your quick
 "rebuild this project" command whenever new runs are added, without
 re-deriving the sequence from scratch each time.
@@ -862,7 +862,7 @@ exactly that bug, and a second one just like it, before
 [SHACL](https://www.w3.org/TR/shacl/) validation existed to catch it
 automatically.
 
-[`shapes/gc_core_shapes.ttl`](./shapes/gc_core_shapes.ttl) holds real
+[`shapes/gc_core_shapes.ttl`](./shapes/gc_core_shapes.ttl) holds
 shapes, each tied to a specific bug actually found in this project's
 own development - not textbook examples. Run via
 [`validate_graph_shacl()`](https://github.com/Darren01/gamess_functions/blob/master/R/validate_graph_shacl.R)
@@ -886,7 +886,7 @@ which a GUI-launched RStudio session may never read), either symlink
 it into the same location `robot` already lives in, or pass its full
 path via `validate_graph_shacl()`'s own `shacl_cmd` argument.
 
-One real, confirmed Jena quirk worth knowing about, already handled
+One confirmed Jena quirk worth knowing about, already handled
 for you inside `validate_graph_shacl()`: Jena's `shacl` script blindly
 trusts a `JAVA_HOME` environment variable if one is set at all, with
 no check that it actually points at a working Java install - unlike
@@ -903,7 +903,7 @@ mysteriously, this is worth checking first.
 
 ### If the default Java itself is too old, not just JAVA_HOME
 
-A different, separate problem from the one above - confirmed on a real
+A different, separate problem from the one above - confirmed on a
 Windows machine with multiple Java versions installed, where the
 system default was still Java 8: `shacl` will fail with something like
 
@@ -916,7 +916,7 @@ only recognizes class file versions up to 52.0
 
 Clearing `JAVA_HOME` doesn't help here, because the *fallback* Java is
 also too old - there's no good Java for the fallback to find. Two
-things needed: a genuinely compatible Java has to actually exist on
+things needed: a compatible Java has to actually exist on
 the machine (`check_robot_setup()`'s own scan finds these - it needs
 one too, for `robot` to work), and `validate_graph_shacl()` needs to
 be pointed at it directly via its `java_home` argument:
@@ -937,8 +937,8 @@ version number in the error tells you exactly which Java is needed
 (65 = Java 21, 61 = Java 17, 55 = Java 11); pointing at a *different*
 compatible-sounding version can still produce the same error again.
 
-**A genuinely Windows-specific finding, confirmed directly against
-Jena's own real source code, not assumed:** on Linux/Mac, setting
+**A Windows-specific finding, confirmed directly against
+Jena's own source code, not assumed:** on Linux/Mac, setting
 `JAVA_HOME` is enough on its own, because the `shacl` script explicitly
 checks it. Windows' `shacl.bat` does **not** read `JAVA_HOME` at all -
 it calls bare `java`, relying entirely on `PATH`. Because of this,
@@ -958,7 +958,7 @@ instead of a numeric filter (and its `xsd:decimal`/`xsd:float`
 gotcha). It likewise marks every calculation run as an `ex:Experiment`
 (anything that used an input file), so "which experiments are there?"
 is `?x a ex:Experiment`. It also checks the graph against the axiom that
-no experiment can be more than one of the five experiment types; a genuine
+no experiment can be more than one of the five experiment types; an
 inconsistency stops the build and prints the `robot explain` command
 that shows why.
 
@@ -1019,7 +1019,7 @@ recomputing every file's checksum as it goes. So:
   ends up holding the new file's fingerprint next to the old file's
   results - which defeats what the checksum is for.
 - **You pulled a fix that changes how a value should be *typed* or
-  *declared*, not its actual content:** a real example, found and
+  *declared*, not its actual content:** an example, found and
   fixed during this project's own development - `gc:hasIndex` has a
   declared range of `xsd:nonNegativeInteger`, but an early version of
   `process_reaction_path_results.R` wrote it as a plain, untyped
@@ -1033,7 +1033,7 @@ recomputing every file's checksum as it goes. So:
   directive baked in from before the fix. Deleting and reprocessing
   isn't needed, and for a file this one shares with unrelated results
   (`float_value_template_instances.tsv`, `spectra_result_template_instances.tsv`)
-  it's real, avoidable extra work. Editing that one line directly
+  it's avoidable extra work. Editing that one line directly
   fixes every existing row the next time the graph is built:
 
   ```bash
@@ -1459,13 +1459,13 @@ ont_mm
 ## Current Status
 
 **Stable and in active real-world use.** This has moved past "early
-prototype" - it's the working pipeline behind a real, ongoing
+prototype" - it's the working pipeline behind an ongoing
 computational chemistry project, not just a demonstration of the idea:
 
 * A complete, automated pipeline: `process_gamess_directory()` ->
   `build_ontology_graph()` -> `validate_graph_shacl()`, each a single
   function call
-* Real SHACL validation, with shapes tied to actual bugs found during
+* SHACL validation, with shapes tied to actual bugs found during
   this project's own development, not theoretical examples
 * Your own review notes and literature references become part of the
   graph itself (`run_notes.tsv`/`doi_notes.tsv`), linked in both
@@ -1473,13 +1473,13 @@ computational chemistry project, not just a demonstration of the idea:
 * Querying that scales to how comfortable you are with SPARQL - zero
   SPARQL (`summarize_graph()`) through to a full tiered primer
   (`gamess_functions/examples/query_your_ontology.R`)
-* Setup diagnostics (`check_robot_setup()`) that catch real, previously-hit
+* Setup diagnostics (`check_robot_setup()`) that catch previously-hit
   problems (wrong Java version, PATH issues) with a clear fix, not a
   cryptic failure deep inside a build
-* Proven on more than the bundled demo - a real, independent project's
+* Proven on more than the bundled demo - an independent project's
   data, not just the 3-experiment example
 
-Now genuinely in **periodic review mode**: real bugs found through
+Now in **periodic review mode**: bugs found through
 actual use get fixed as they surface, not on a schedule. If something
 looks wrong or unclear, it's worth raising - this isn't considered
 "finished and untouchable," just no longer under active, ground-up
@@ -1491,18 +1491,18 @@ Deliberately short - most of what would once have been listed here is
 already built and proven (SHACL validation, in particular, used to be
 listed here as aspirational; it's real now).
 
-Genuinely still open:
+Still open:
 
 * `extract_electronic_energy()`'s `VibrationalAnalysis` extension (a
-  real, scoped gap, not yet needed by any project using this so far)
+  scoped gap, not yet needed by any project using this so far)
 * Temperature capture in the graph (needs a deliberate design decision
   about `gc:MolecularSystem`, not a quick patch)
 * Improve support for Dunning and ECP basis sets
 
 **Anything larger belongs in its own project, not bolted onto this
-one.** A Shiny front end, or LinkML as a genuine alternative to
-`robot template` (worth comparing honestly, including where it falls
-short) - both real, worth doing eventually, and both big enough to
+one.** A Shiny front end, or LinkML as an alternative to
+`robot template` (worth comparing, including where it falls
+short) - both worth doing eventually, and both big enough to
 deserve their own repo and their own attention, rather than becoming
 a permanent, half-finished feature branch of `ont_mm` itself.
 
@@ -1573,7 +1573,7 @@ and a Turtle file you pick with its upload option is not sent anywhere.
 
 - This repository's own [SPARQL tutorial](./SPARQL_TUTORIAL.md), written
   around these graphs, and the [competency questions](./COMPETENCY_QUESTIONS.md),
-  which are worked examples of real questions with the queries that
+  which are worked examples of questions with the queries that
   answer them.
 - [Apache Jena's SPARQL tutorial](https://jena.apache.org/tutorials/sparql.html) -
   a short, fast course in SPARQL; Jena's `arq` is what the `ask` shortcut

@@ -24,7 +24,7 @@ The example demonstrates how:
 3. Results are generated and linked
 4. Your own review notes and literature references become part of the graph
 5. Everything is combined into a **single, queryable ontology**
-6. The graph is validated against real data-quality rules
+6. The graph is validated against data-quality rules
 
 The workflow corresponds to the left-hand side of *Scheme 1* in the main project documentation.
 
@@ -78,17 +78,16 @@ The ontology is built from several components, each written as a `robot template
 
 ## How the Ontology is Built
 
-**A real, honest note first:** this section used to walk through five
+**A honest note first:** this section used to walk through five
 separate, hand-typed `robot template`/`robot merge` commands. That
-approach had a real, documented failure mode - a shared template file
+approach had a documented failure mode - a shared template file
 (e.g. `spectra_result_template_instances.tsv`) picking up a new row
 from a later step, but the `.ttl` built from it *earlier* never being
 regenerated, silently leaving the final merge using stale data with no
 error at any point. `build_ontology_graph()` (in `ont_mm`) exists
 specifically to eliminate this - it rebuilds every template type fresh,
 every time, so there's no "did I remember to regenerate the shared
-one?" bookkeeping left for you to get wrong. This is the real,
-recommended way to build the graph now - not an alternative to the
+one?" bookkeeping left for you to get wrong. This is the recommended way to build the graph now - not an alternative to the
 manual steps, a replacement for them.
 
 **Step 0 - check your setup** (only needs doing once per machine):
@@ -126,7 +125,7 @@ process_gamess_directory(
 
 This is what actually reads `rem01.log` etc. and writes the
 `*_template_instances.tsv` files in `examples/ont/` - the raw
-ingredients `build_ontology_graph()` turns into a real graph next.
+ingredients `build_ontology_graph()` turns into a graph next.
 
 **Optional - species identifiers (InChI / InChIKey).** Add `species = TRUE` to
 the call above to also write `molecule_template_instances.tsv`: every converged
@@ -148,7 +147,7 @@ rows <- notes_to_annotations(file.path(my_ontology_dir, "run_notes.tsv"))
 write_annotations(rows, file.path(my_ontology_dir, "annotation_template_instances.tsv"))
 ```
 
-`run_notes.tsv` in this folder is a real, working example - including
+`run_notes.tsv` in this folder is a working example - including
 one row with the optional third column, linking `rem01b` to a real DOI
 (the Gainesville Core ontology's own founding paper). `doi_notes.tsv`
 shows the same link the other way round - see the main README's
@@ -185,15 +184,15 @@ result <- validate_graph_shacl(
 )
 ```
 
-Checks the graph against real data-quality rules - not just "is this
+Checks the graph against data-quality rules - not just "is this
 valid OWL," but "does the data actually make sense" (e.g. a
 `gc:hasFloatValue` that's silently a string instead of a number would
 still be valid OWL, but is wrong data - `robot report` wouldn't catch
-this, SHACL does). Each shape in `gc_core_shapes.ttl` is tied to a real
+this, SHACL does). Each shape in `gc_core_shapes.ttl` is tied to a
 bug found during this project's own development, not a theoretical
 example. Requires `shacl` (part of [Apache
 Jena](https://jena.apache.org/download/)) on your PATH - see the main
-README's own SHACL section for setup details and a real, confirmed
+README's own SHACL section for setup details and a confirmed
 Java-detection quirk worth knowing about if this fails unexpectedly.
 
 ---

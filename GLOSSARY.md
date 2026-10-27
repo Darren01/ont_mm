@@ -23,7 +23,7 @@ defined here too rather than left to be guessed.
 Where a definition comes directly from the ontology's own schema
 (`gc_core.ttl`), it's quoted as such. Where a term is this project's
 own (`ex:`), it has never actually had a formal definition anywhere in
-the project until now - noted honestly below, not disguised as
+the project until now - noted below, not disguised as
 something inherited.
 
 ## Experiment types
@@ -33,7 +33,7 @@ actually was - see `classify_gamess_jobs()` in `gamess_functions` for
 exactly how a raw `RUNTYP` value gets mapped to one of these.
 
 **`gc:MolecularComputation`** - *"A class for MolecularComputation."*
-(Gainesville Core's own definition - genuinely this brief.) The
+(Gainesville Core's own definition - this brief.) The
 general parent class every experiment type below belongs to. It is
 not a reliable way to list experiments, though - see `ex:Experiment`,
 below.
@@ -63,14 +63,14 @@ energy."* (Gainesville Core)
 **`gc:VibrationalAnalysis`** - *"A class for the computations of
 vibrational spectrum of molecules."* (Gainesville Core - a second,
 near-duplicate comment, *"A class for VibrationalAnalysis,"* also
-exists in the schema but adds nothing; the one above is the real
+exists in the schema but adds nothing; the one above is the
 definition.)
 
 **This project's own usage note, not part of the Gainesville Core
 definition above:** a run whose raw `RUNTYP=OPTIMIZE` also has
 `HSSEND=.TRUE.` set gets classified as `VibrationalAnalysis`, not
 `GeometryOptimization` - the frequency calculation appended to confirm
-a genuine stationary point is judged the more scientifically
+a stationary point is judged the more scientifically
 significant outcome. Only a "bare" optimization with no frequency
 check stays `GeometryOptimization`. A standalone `RUNTYP=HESSIAN` is
 always `VibrationalAnalysis` too. This is a deliberate design decision
@@ -93,7 +93,7 @@ backward direction."*
 
 **`gc:hasMethod`** - *"A property that defines the calculation method
 for given technology."* Written into every experiment by
-`extract_level_of_theory_parts()` - the real correlated or DFT method
+`extract_level_of_theory_parts()` - the correlated or DFT method
 used (e.g. `wB97X-D`, `CCSD(T)`), or, when no such method was set, the
 raw `SCFTYP` keyword (`RHF`/`UHF`/`ROHF`) instead of leaving this
 blank - a deliberate choice, so a competency question like "which
@@ -101,16 +101,16 @@ experiments used RHF" stays answerable.
 
 **`gc:hasBasisSet`** - *"A property that allows Basis Sets to be
 assigned to a given quantum methodology."* Same extraction path as
-`hasMethod` above. Finding this genuinely queryable for the first time
-surfaced a real, previously-unnoticed extraction bug (`GBASIS=N21` was
-hardcoded to `3-21G` regardless of the real `NGAUSS` value used) - see
+`hasMethod` above. Finding this queryable for the first time
+surfaced a previously-unnoticed extraction bug (`GBASIS=N21` was
+hardcoded to `3-21G` regardless of the `NGAUSS` value used) - see
 `examples/aa/README.md`'s own "A second real bug" section.
 
 **`ex:hasSolvent`**, **`ex:hasSolvationModel`** - this project's own
 properties, never formally defined until now: **`ex:hasSolvent`** is
 the actual solvent named in a `$PCM` group (e.g. `water`);
 **`ex:hasSolvationModel`** is which implicit solvation model was used
-(`PCM` or `SMD` - a real, genuinely different setting `$PCM`'s own
+(`PCM` or `SMD` - a different setting `$PCM`'s own
 `SMD` keyword controls, kept as a separate property rather than folded
 into one string, since this project's own `aa` data shows the
 distinction is scientifically meaningful, not cosmetic).
@@ -119,18 +119,16 @@ distinction is scientifically meaningful, not cosmetic).
 properties, never formally defined until now: the raw GAMESS
 `RUNTYP`/`HSSEND` keyword values `classify_gamess_job()` already
 computes for its own type classification, written into the graph
-alongside it rather than only ever existing internally. Genuinely
-useful on their own, not just as classification inputs - e.g.
+alongside it rather than only ever existing internally. Useful on their own, not just as classification inputs - e.g.
 distinguishing a `SaddlePoint` search that itself computed a
 confirming Hessian (`HSSEND=.t.`) from one that read it from a
 separate companion file instead (like `caa005bTSb`, see
-`examples/caa`'s own real data).
+`examples/caa`'s own data).
 
 ## Files and provenance
 
 **`prov:used`**, **`prov:generated`**, **`prov:wasGeneratedBy`** -
-all from [W3C PROV-O](https://www.w3.org/TR/prov-o/), a real,
-external, widely-used standard for describing where something came
+all from [W3C PROV-O](https://www.w3.org/TR/prov-o/), an external, widely-used standard for describing where something came
 from - already declared in this project's own `gc_core.ttl`, since
 Gainesville Core itself already imports the vocabulary, so no new
 import was ever needed. **`prov:used`** relates an experiment to the
@@ -141,9 +139,9 @@ to the experiment that produced it - the mechanism behind tracing
 "what output came from this input."
 
 These three replaced this project's own, locally-invented
-`ex:hasInputFile`/`ex:hasOutputFile`, once a real audit turned up
+`ex:hasInputFile`/`ex:hasOutputFile`, once an audit turned up
 that exact, already-available PROV-O equivalents had existed the
-whole time. A genuine example of preferring a real, external standard
+whole time. An example of preferring an external standard
 over a project's own invented term once one turns out to exist -
 worth knowing if you're wondering whether an older copy of a graph or
 a saved query still using the old names will keep working: it won't,
@@ -151,17 +149,17 @@ without a rebuild.
 
 **`schema:sha256`** - from [Schema.org](https://schema.org/sha256),
 recorded directly on each input/data/log file individual (the same
-ones `prov:used`/`prov:generated` already point at) as a real content
+ones `prov:used`/`prov:generated` already point at) as a content
 fingerprint - the SHA-256 hash of the file's own, actual bytes at
 build time, not just its filename or path. Considered against
 [SPDX's own checksum model](https://spdx.org/rdf/terms#checksum)
 first, which is the more commonly-cited standard for this - rejected
 only because it requires a separate `Checksum` node plus an
-`algorithm` value for every hash, real overhead this project doesn't
+`algorithm` value for every hash, overhead this project doesn't
 need since it only ever uses SHA-256. Not declared in `gc_core.ttl`
 itself (unlike the `prov:` terms above): a small, separate file,
 [`schema_terms.ttl`](./schema_terms.ttl), carries just this one
-property's real declaration, kept apart from that versioned release
+property's declaration, kept apart from that versioned release
 for the same reason [`dl_axioms.ttl`](./dl_axioms.ttl) is.
 
 **`ex:InputFile`**, **`ex:DataFile`**, **`ex:LogFile`** - this
@@ -239,10 +237,10 @@ electronic energy.
 **`gc:hasFloatValue`** - *"A property that describes floating point
 value."* The actual number at the end of a reification chain - e.g.
 `experiment -> hasResult -> energies -> hasEnthalpy -> [an entity] ->
-hasFloatValue -> the real number`. Every energetic quantity below
+hasFloatValue -> the number`. Every energetic quantity below
 follows this same pattern: the named property (`hasEnthalpy`, etc.)
 points to a separate entity, not the number directly, and that
-entity's own `hasFloatValue` holds the real value.
+entity's own `hasFloatValue` holds the value.
 
 **`gc:FloatValue`** - *"A class for float value, containing value and
 unit."* A number with its unit, as a node of its own: `gc:hasFloatValue`
@@ -315,8 +313,8 @@ negative frequency marks an imaginary one - typed
 
 **`gc:hasFrequency`** - *"A property that describes the value of a
 frequency at the peak of the spectrum."* A negative value here means
-an imaginary frequency - the standard, real signal used throughout
-this project to flag whether a geometry is a genuine stationary point
+an imaginary frequency - the standard signal used throughout
+this project to flag whether a geometry is a stationary point
 (zero expected for a minimum, exactly one for a confirmed transition
 state).
 
@@ -329,7 +327,7 @@ intensity of a peak of a spectrum."* Links a peak to its intensity, a
 **`ex:ImaginaryFrequencyPeak`** - this project's own class, never
 formally defined until now: a `gc:FrequencyPeak` whose `gc:hasFrequency`
 value is strictly negative, which is GAMESS's convention for an
-imaginary vibrational mode. A genuine transition state has exactly one
+imaginary vibrational mode. A confirmed transition state has exactly one
 and a minimum has none; a vibrational analysis that shows one where
 none is expected flags an unconverged geometry. It is *derived*, not
 asserted: the reasoner classifies each peak from
@@ -376,7 +374,7 @@ energies.
 **`gc:hasIndex`** - *"A property that defines a sequential arrangement
 of material in numerical order, i.e. Frequency Peak, Orbital or a
 sequence number in residue."* Used here to give reaction path points
-their real, intended order.
+their intended order.
 
 **`gc:hasPathEnergy`** - *"A property that describes the energy at a
 point along a reaction path. As produced by the ont_mm pipeline this is
@@ -417,11 +415,11 @@ considered. Competency question 16 shows how to ask for a species.
 
 **`dcterms:relation`** - from
 [Dublin Core Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/),
-a real, external, widely-used standard meaning, plainly: a related
+an external, widely-used standard meaning, plainly: a related
 resource. Used here to link an experiment to a published paper's DOI.
 
 **`skos:editorialNote`** - from
-[SKOS](https://www.w3.org/TR/skos-reference/), a real, external,
+[SKOS](https://www.w3.org/TR/skos-reference/), an external,
 widely-used standard for exactly this purpose: an administrative or
 editorial note, not part of the thing itself. Used here for a
 researcher's own, contemporaneous review comments on an experiment -

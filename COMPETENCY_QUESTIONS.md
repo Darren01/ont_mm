@@ -1,10 +1,10 @@
 # Competency Questions
 
-This document exists to answer one question honestly, before you
+This document exists to answer one question, before you
 commit to cloning anything: **what can this ontology actually let you
 ask and answer?** Formal ontology methodology says to write these
 *before* building anything - we didn't, so this is the retroactive
-version, checked against what's genuinely been built and tested, not
+version, checked against what's been built and tested, not
 what was intended or hoped for.
 
 ## The questions at a glance
@@ -44,11 +44,11 @@ to keep every piece of output data, but "all information needed to
 reproduce the outputs must be preserved" ([Talirz et al., *Materials
 Cloud, a platform for open computational science*, Scientific Data 7,
 299 (2020), doi:10.1038/s41597-020-00637-5](https://www.nature.com/articles/s41597-020-00637-5)) - the same trade-off this
-graph makes, kept honest by real provenance links rather than by
-leaving anything genuinely irretrievable.
+graph makes, kept honest by provenance links rather than by
+leaving anything irretrievable.
 
-Every query below is tested against the real
-[`caa` example dataset](./examples/caa/) - a complete, messy, real
+Every query below is tested against the
+[`caa` example dataset](./examples/caa/) - a complete, messy
 computational chemistry project, not a toy. You can try any of these
 yourself with zero setup at all in the
 [SPARQL playground](./tools/sparql_playground.html) (download and open
@@ -56,10 +56,10 @@ directly in your browser), or run them properly against your own data
 once you've built a graph.
 
 **Status key:** ✅ answerable today · ⚠️ partially answerable, with a
-real, specific gap · ❌ not answerable yet, but planned
+specific gap · ❌ not answerable yet, but planned
 
 **What the playground can and cannot run.** The engine behind it,
-`rdflib.js`, has real gaps - for one, it silently ignores `FILTER`
+`rdflib.js`, has gaps - for one, it silently ignores `FILTER`
 ([its own issue #535](https://github.com/linkeddata/rdflib.js/issues/535)).
 So the playground works around them itself: it takes `FILTER`, `ORDER BY`,
 `LIMIT`/`OFFSET`, `DISTINCT` and `COUNT` out of your query before
@@ -79,7 +79,7 @@ not understand and quietly return too many rows. Those are the questions
 shown below as a dashed button in the playground; run them with `ask`
 (Jena's `arq`) instead, as in the
 [SPARQL tutorial](./SPARQL_TUTORIAL.md). The same query text runs
-unchanged in a real engine (`robot query`, Jena, etc.).
+unchanged in another SPARQL engine (`robot query`, Jena, etc.).
 
 Ordered roughly easiest to hardest - by how many hops through the
 graph a question needs, not by how interesting the question is.
@@ -89,11 +89,11 @@ graph a question needs, not by how interesting the question is.
 ## A worked example: following one transition state
 
 The questions below are organised for reference, not for a first
-read. This section instead walks through a real, connected task -
+read. This section instead walks through a connected task -
 finding a transition state and understanding where it came from - to
 show how they actually chain together in practice, and how to adapt
 each step to a different question of your own. Every query here is
-tested and real, run against the actual `caa` graph, not invented for
+tested and run against the actual `caa` graph, not invented for
 the example.
 
 **Start broad.** Suppose you've just been handed this graph and want
@@ -131,7 +131,7 @@ SELECT ?output ?type WHERE {
 }
 ```
 
-A clean result here - just the real `.log` and `.dat` files this run
+A clean result here - just the `.log` and `.dat` files this run
 produced, nothing more tangled. (CQ #3's own notes explain a messier
 case worth knowing about: sometimes this same query returns a *later*
 experiment's own input file, when that run's starting geometry was
@@ -156,9 +156,9 @@ SELECT ?constraint ?type ?target ?unit WHERE {
 }
 ```
 
-**Zero results - a real, genuine finding, not a dead end.** This
+**Zero results - a finding, not a dead end.** This
 specific transition state was found via an unconstrained saddle-point
-search, using a real Hessian - by the time you're searching directly
+search, using a calculated Hessian - by the time you're searching directly
 for a saddle point, you no longer need an artificial geometric
 constraint holding anything in place. The constraints that actually
 narrowed in on this region of the surface were used earlier, in the
@@ -176,9 +176,9 @@ SELECT ?constraint ?type ?target ?unit WHERE {
 }
 ```
 
-Two real constraints - `Distance constraint caa004m (atoms 10-7)` and
+Two constraints - `Distance constraint caa004m (atoms 10-7)` and
 `Distance constraint caa004m (atoms 8-13)`, both fixed to 1.2 Å - a
-genuine two-dimensional scan, not a simple one-parameter search.
+two-dimensional scan, not a simple one-parameter search.
 Note: `caa004m` isn't linked to `caa005bTSa` by any formal
 `prov:wasGeneratedBy` triple in the graph - this is a narrative
 connection (the same scan series, narrowing toward the same region),
@@ -189,14 +189,14 @@ the way CQ #4's own version of this query does.
 
 **Putting it together**: three short queries - an inventory, a
 provenance trace, a constraint lookup - turned "what transition states
-exist?" into a specific, real geometric story: this one was found via
+exist?" into a specific geometric story: this one was found via
 an unconstrained saddle-point search, cleanly producing just its own
-`.log`/`.dat` files, sitting at the end of a real two-dimensional scan
+`.log`/`.dat` files, sitting at the end of a two-dimensional scan
 that held two distances fixed at 1.2 Å each. None of these three
 queries needed anything beyond what's already in the numbered list
 below - the value here is entirely in chaining them, and in noticing
 when a step's own answer (like the empty result above) is itself part
-of the real story rather than something to work around.
+of the story rather than something to work around.
 
 ---
 
@@ -255,21 +255,21 @@ SELECT ?output ?type WHERE {
 **This is a template, not a one-off** - swap `ex:file_caa001a_inp` for
 any other experiment's own input file URI (e.g.
 `ex:file_caa005bTSa_inp`) to trace provenance for a completely
-different run. This is the real, general answer to "where did this
+different run. This is the general answer to "where did this
 output actually come from?" for any experiment in the graph, not just
 the one shown here.
 
-**A genuine, real result worth understanding, not a bug**: this can
+**A result worth understanding, not a bug**: this can
 correctly return a *later* experiment's own input file, not just this
 run's own log/data files - `caa001b`'s input, for instance, is
-genuinely `prov:wasGeneratedBy caa001a`, since its starting geometry
+`prov:wasGeneratedBy caa001a`, since its starting geometry
 was itself built from `caa001a`'s result, as part of the same
 iterative optimisation sequence. `?type` is included specifically so
 this distinction is visible directly in the results, rather than
 looking like an error.
 
-**A second, separate real finding**: every individual in this graph
-genuinely has *two* `rdf:type` triples - `owl:NamedIndividual` (added
+**A second, separate finding**: every individual in this graph
+has *two* `rdf:type` triples - `owl:NamedIndividual` (added
 automatically by `robot` to every instance) alongside its own, actual
 class. A plain `?output a ?type` therefore doubles every row rather
 than erroring - not a bug, just uninformative duplication, filtered
@@ -297,7 +297,7 @@ readable local names: the playground's own short-label toggle does
 this reliably within the tool. `STRAFTER`/`BIND` expressions were
 tried as a SPARQL-native alternative and found *not* to work
 reliably in `rdflib.js` - if you're running this query somewhere else
-entirely (`robot query`, a real Jena endpoint), `STRAFTER(STR(?var),
+entirely (`robot query`, a Jena endpoint), `STRAFTER(STR(?var),
 "http://example.org/")` is the correct SPARQL 1.1 approach and should
 work fine there.
 
@@ -308,7 +308,7 @@ work fine there.
 **Status: ✅ Answerable. Verified working** against both `caa` and
 `aa` - each correctly finds its own experiment linked to this DOI
 (`exp_caa004a` and `exp_aa002-aldehyde-bare` respectively). Both
-projects genuinely share this reference deliberately, not by
+projects share this reference deliberately, not by
 coincidence: Sorensen & Jencks (1987) is specifically about
 acetaldehyde hydration, and the same methodology applies directly to
 chloroacetaldehyde too - `aa`'s own link was added once this was
@@ -327,13 +327,13 @@ SELECT ?exp WHERE {
 <!-- playground-link --> [Try this in the playground](https://darren01.github.io/ont_mm/tools/sparql_playground.html?dataset=caa&cq=6)
 
 **Status: ✅ Answerable. Verified working**, once the playground's
-`FILTER` workaround was in place. A real, documented gotcha worth
+`FILTER` workaround was in place. A documented gotcha worth
 knowing regardless of which tool runs this: a bare number in a triple
 pattern parses as `xsd:decimal`, which won't match this project's
 `xsd:float` data as an exact term - `FILTER`'s numeric comparison
 works correctly across both, a direct triple-pattern match doesn't.
 
-A genuine gap found later, via real use: this query originally only
+A gap found later, in use: this query originally only
 ever returned `?constraint`, never the experiment the question itself
 asks for by name - the constraint's own ID happens to embed the
 experiment name as a substring, but that's not the same as actually
@@ -423,11 +423,10 @@ Not every frequency is extracted into the graph: only the imaginary
 ones and GAMESS's own translation/rotation modes are (see the scoping
 principle in this document's own opening, and
 `identify_diagnostic_modes()`/`filter_vibrational_modes()` in
-`gamess_functions`/`ont_mm`) - real provenance links
+`gamess_functions`/`ont_mm`) - provenance links
 (`prov:wasGeneratedBy`/`prov:generated`) cover the rest, so nothing is
-actually lost, just not duplicated as its own triple. A real,
-measured result of that choice: roughly 80-83% fewer peak/float-value
-triples across both `caa` and `aa`, with every genuinely diagnostic
+actually lost, just not duplicated as its own triple. A measured result of that choice: roughly 80-83% fewer peak/float-value
+triples across both `caa` and `aa`, with every diagnostic
 value (confirmed directly, not assumed) still present.
 
 ## 9. Does a given transition state show exactly one imaginary frequency, and a given minimum show zero?
@@ -454,7 +453,7 @@ GROUP BY ?spectrum
 <!-- playground-link --> [Try this in the playground](https://darren01.github.io/ont_mm/tools/sparql_playground.html?dataset=caa&cq=10)
 
 **Status: ✅ Answerable. Verified working**, once the `FILTER` fix was
-in place - a real, empty result here is a genuine finding about this
+in place - an empty result here is a finding about this
 project's own data (its annotated experiments don't currently overlap
 with the ones showing an imaginary frequency), not a bug.
 
@@ -478,7 +477,7 @@ SELECT ?exp ?comment ?freq WHERE {
 <!-- playground-link --> [Try this in the playground](https://darren01.github.io/ont_mm/tools/sparql_playground.html?dataset=caa&cq=11)
 
 **Status: ✅ Answerable.** Every property confirmed to exist exactly as
-written - genuinely deeper than it looks, since each thermodynamic
+written - deeper than it looks, since each thermodynamic
 quantity is its own separate entity (the same reification pattern as
 frequencies), not a literal sitting directly on the energies record.
 The playground's short-label toggle now also rounds long decimal
@@ -717,9 +716,9 @@ interior maximum and probably is not complete.
 <!-- playground-link --> [Try this in the playground](https://darren01.github.io/ont_mm/tools/sparql_playground.html?dataset=caa&cq=14)
 
 **Status: ✅ Answerable. Verified working**, on both `caa` and `aa` -
-`gc:hasMethod`/`gc:hasBasisSet` are now genuinely populated on every
+`gc:hasMethod`/`gc:hasBasisSet` are now populated on every
 experiment (see `GLOSSARY.md`'s "Level of theory" section for how, and
-`examples/aa/README.md`'s "A second real bug" for a real extraction
+`examples/aa/README.md`'s "A second real bug" for an extraction
 bug this very data uncovered).
 
 ```sparql
@@ -732,10 +731,10 @@ SELECT ?exp WHERE {
 ```
 
 **Running this exact query against `aa` correctly returns zero
-results** - not a bug, a real, genuine finding. `aa`'s own geometry
+results** - not a bug, a finding. `aa`'s own geometry
 and frequency work never used `6-31G(d,p)` at all; it used `6-21G` the
 whole way through (see "A second real bug" in `examples/aa/README.md`).
-This query is itself now a real, working way to discover that
+This query is itself now a working way to discover that
 difference between the two datasets, rather than something that has
 to be read out of the README by hand.
 
