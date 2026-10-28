@@ -1,76 +1,82 @@
-# mapping_set_id: https://github.com/Darren01/ont_mm/mappings/ont_mm-gc-to-canon.sssom.tsv
-# mapping_set_title: ont_mm / Gainesville Core terms in use, mapped to Ontologies4Chem canon ontologies
-# mapping_set_description: "Every gc: and ex: term used in the aa and caa example graphs, curated against active ontologies (CHEMINF, OntoCompChem, COB, ChEBI, ...). Draft for the 5th Ontologies4Chem Workshop."
-# license: https://creativecommons.org/licenses/by/4.0/
-# mapping_date: 2026-10-26
-# creator_id:
-#   - github:Darren01
-# creator_label:
-#   - Darren01
-# curie_map:
-#   gc: http://purl.org/gc/
-#   ex: http://example.org/
-#   CHEMINF: http://purl.obolibrary.org/obo/CHEMINF_
-#   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
-#   COB: http://purl.obolibrary.org/obo/COB_
-#   IAO: http://purl.obolibrary.org/obo/IAO_
-#   OBI: http://purl.obolibrary.org/obo/OBI_
-#   ontocompchem: http://www.theworldavatar.com/kg/ontocompchem/
-#   orcid: https://orcid.org/
-#   semapv: https://w3id.org/semapv/vocab/
-#   skos: http://www.w3.org/2004/02/skos/core#
-#   sssom: https://w3id.org/sssom/
-#   github: https://github.com/
-subject_id	subject_label	subject_type	predicate_id	object_id	object_label	mapping_justification	comment
-ex:DataFile		owl class				semapv:ManualMappingCuration	ont_mm project term (ex:); defined only in GLOSSARY.md
-ex:DistanceConstraint		owl class				semapv:ManualMappingCuration	ont_mm project term (ex:); defined only in GLOSSARY.md
-ex:InputFile		owl class				semapv:ManualMappingCuration	ont_mm project term (ex:); defined only in GLOSSARY.md
-ex:LogFile		owl class				semapv:ManualMappingCuration	ont_mm project term (ex:); defined only in GLOSSARY.md
-ex:fileURL						semapv:ManualMappingCuration	ont_mm project term (ex:); not declared in the graph, defined only in GLOSSARY.md
-ex:hasConstraint		owl object property				semapv:ManualMappingCuration	ont_mm project term (ex:); defined only in GLOSSARY.md
-ex:hasHssend						semapv:ManualMappingCuration	ont_mm project term (ex:); not declared in the graph, defined only in GLOSSARY.md
-ex:hasRuntyp						semapv:ManualMappingCuration	ont_mm project term (ex:); not declared in the graph, defined only in GLOSSARY.md
-ex:hasSolvationModel						semapv:ManualMappingCuration	ont_mm project term (ex:); not declared in the graph, defined only in GLOSSARY.md
-ex:hasSolvent						semapv:ManualMappingCuration	ont_mm project term (ex:); not declared in the graph, defined only in GLOSSARY.md
-ex:involvesAtom1		owl object property				semapv:ManualMappingCuration	ont_mm project term (ex:); defined only in GLOSSARY.md
-ex:involvesAtom2		owl object property				semapv:ManualMappingCuration	ont_mm project term (ex:); defined only in GLOSSARY.md
-ex:targetValue						semapv:ManualMappingCuration	ont_mm project term (ex:); not declared in the graph, defined only in GLOSSARY.md
-gc:Atom	Atom	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:FloatValue	Float Value	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:ForceField	Force Field	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:FrequencyPeak	Frequency Peak	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:GeometryOptimization	Geometry optimization	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:IRC	IRC	owl class				semapv:ManualMappingCuration	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7)
-gc:Methodology	Methodology	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:MolecularComputation	Molecular Computation	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:Molecule	Molecule	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:ParameterSet	Parameter Set	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:ReactionPath	Reaction Path	owl class				semapv:ManualMappingCuration	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7)
-gc:ReactionPathPoint	Reaction Path Point	owl class				semapv:ManualMappingCuration	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7)
-gc:SaddlePoint	Saddle Point	owl class				semapv:ManualMappingCuration	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7)
-gc:SinglePoint	Single Point	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:SystemEnergies	System Energies	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:VibrationalAnalysis	Vibrational Analysis	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:VibrationalSpectra	Vibrational Spectra	owl class				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:constraintMode						semapv:ManualMappingCuration	used in data but declared in no schema (minted in gc: namespace)
-gc:hasAtom	has atom	owl object property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:hasBasisSet	has basis set	owl data property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:hasElectronicEnergy	has electronic energy	owl object property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:hasElementSymbol	has element symbol	owl data property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:hasEnthalpy	has enthalpy	owl object property				semapv:ManualMappingCuration	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7)
-gc:hasEntropy	has entropy	owl object property				semapv:ManualMappingCuration	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7)
-gc:hasFloatValue	has float value	owl data property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:hasFrequency	has frequency	owl object property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:hasFrequencyPeak	has frequency peak	owl object property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:hasGibbsFreeEnergy	has Gibbs free energy	owl object property				semapv:ManualMappingCuration	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7)
-gc:hasInChIKey	has InChI key	owl data property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:hasInChIString	has InChI string	owl data property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:hasIndex	has index	owl data property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:hasIntensity	has Intensity	owl object property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:hasMethod	has method	owl data property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:hasMolecule	has molecule	owl object property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:hasPathEnergy	has path energy	owl object property				semapv:ManualMappingCuration	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7)
-gc:hasReactionPathPoint	has reaction path point	owl object property				semapv:ManualMappingCuration	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7)
-gc:hasResult	has result	owl object property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:hasUnit	has unit	owl object property				semapv:ManualMappingCuration	Gainesville Core 0.7 original
-gc:hasZeroPointEnergy	has zero-point energy	owl object property				semapv:ManualMappingCuration	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7)
+#curie_map:
+#  BFO: http://purl.obolibrary.org/obo/BFO_
+#  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+#  CHMO: http://purl.obolibrary.org/obo/CHMO_
+#  COB: http://purl.obolibrary.org/obo/COB_
+#  IAO: http://purl.obolibrary.org/obo/IAO_
+#  OBI: http://purl.obolibrary.org/obo/OBI_
+#  SIO: http://semanticscience.org/resource/SIO_
+#  dcat: http://www.w3.org/ns/dcat#
+#  ex: http://example.org/
+#  gc: http://purl.org/gc/
+#  github: https://github.com/
+#  owl: http://www.w3.org/2002/07/owl#
+#  semapv: https://w3id.org/semapv/vocab/
+#  skos: http://www.w3.org/2004/02/skos/core#
+#  sssom: https://w3id.org/sssom/
+#mapping_set_id: https://raw.githubusercontent.com/Darren01/ont_mm/main/mappings/ont_mm-gc-to-canon.sssom.tsv
+#mapping_set_description: 'Every gc: and ex: term used in the aa and caa example graphs,
+#  curated against active ontologies (CHEMINF, OntoCompChem, COB, ChEBI, ...). Draft
+#  for the 5th Ontologies4Chem Workshop.'
+#mapping_set_title: ont_mm / Gainesville Core terms in use, mapped to Ontologies4Chem
+#  canon ontologies
+#license: https://creativecommons.org/licenses/by/4.0/
+#creator_id:
+#- github:Darren01
+#creator_label:
+#- Darren01
+#mapping_date: '2026-10-28'
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	subject_type	comment
+ex:DataFile		skos:broadMatch	SIO:000396	file	semapv:ManualMappingCuration	owl class	ont_mm project term (ex:); defined only in GLOSSARY.md; GAMESS .dat (punch) file
+ex:DistanceConstraint		skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl class	ont_mm project term (ex:); defined only in GLOSSARY.md; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+ex:InputFile		skos:broadMatch	SIO:000396	file	semapv:ManualMappingCuration	owl class	ont_mm project term (ex:); defined only in GLOSSARY.md; GAMESS .inp input file
+ex:LogFile		skos:broadMatch	SIO:000396	file	semapv:ManualMappingCuration	owl class	ont_mm project term (ex:); defined only in GLOSSARY.md; GAMESS .log output file
+ex:fileURL		skos:closeMatch	dcat:downloadURL	download URL	semapv:ManualMappingCuration	owl data property	ont_mm project term (ex:); not declared in the graph, defined only in GLOSSARY.md; values are local file:// paths; DCAT is what ChemDCAT-AP uses
+ex:hasConstraint		skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl object property	ont_mm project term (ex:); defined only in GLOSSARY.md; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+ex:hasHssend		skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl data property	ont_mm project term (ex:); not declared in the graph, defined only in GLOSSARY.md; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); GAMESS-specific keyword (HSSEND); probably stays project-local
+ex:hasRuntyp		skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl data property	ont_mm project term (ex:); not declared in the graph, defined only in GLOSSARY.md; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); GAMESS-specific keyword (RUNTYP); the calculation types below are the program-neutral version
+ex:hasSolvationModel		skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl data property	ont_mm project term (ex:); not declared in the graph, defined only in GLOSSARY.md; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology (e.g. PCM, SMD as terms, not strings)
+ex:hasSolvent		skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl data property	ont_mm project term (ex:); not declared in the graph, defined only in GLOSSARY.md; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); OBI:0302732 solvent role and SIO:010417 solvent exist as classes, not as a property; candidate for the new comp-chem ontology
+ex:involvesAtom1		skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl object property	ont_mm project term (ex:); defined only in GLOSSARY.md; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+ex:involvesAtom2		skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl object property	ont_mm project term (ex:); defined only in GLOSSARY.md; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+ex:targetValue		skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl data property	ont_mm project term (ex:); not declared in the graph, defined only in GLOSSARY.md; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+gc:Atom	Atom	skos:closeMatch	CHEBI:33250	atom	semapv:ManualMappingCuration	owl class	Gainesville Core 0.7 original; GC definition matches ChEBI's
+gc:Atom	Atom	skos:closeMatch	COB:0000011	atom	semapv:ManualMappingCuration	owl class	Gainesville Core 0.7 original; COB upper-level class
+gc:FloatValue	Float Value	skos:closeMatch	OBI:0001931	scalar value specification	semapv:ManualMappingCuration	owl class	Gainesville Core 0.7 original; numeral plus unit label, as in GC
+gc:ForceField	Force Field	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl class	Gainesville Core 0.7 original; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+gc:FrequencyPeak	Frequency Peak	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl class	Gainesville Core 0.7 original; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+gc:GeometryOptimization	Geometry optimization	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl class	Gainesville Core 0.7 original; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+gc:IRC	IRC	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl class	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7); none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+gc:Methodology	Methodology	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl class	Gainesville Core 0.7 original; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+gc:MolecularComputation	Molecular Computation	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl class	Gainesville Core 0.7 original; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+gc:Molecule	Molecule	skos:closeMatch	COB:0000013	molecule	semapv:ManualMappingCuration	owl class	Gainesville Core 0.7 original; GC: electrically neutral, >1 atom; COB: covalently connected atoms
+gc:ParameterSet	Parameter Set	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl class	Gainesville Core 0.7 original; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+gc:ReactionPath	Reaction Path	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl class	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7); none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+gc:ReactionPathPoint	Reaction Path Point	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl class	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7); none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+gc:SaddlePoint	Saddle Point	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl class	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7); none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+gc:SinglePoint	Single Point	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl class	Gainesville Core 0.7 original; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+gc:SystemEnergies	System Energies	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl class	Gainesville Core 0.7 original; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology; CHEMINF has only formation/solvation energy descriptors
+gc:VibrationalAnalysis	Vibrational Analysis	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl class	Gainesville Core 0.7 original; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+gc:VibrationalSpectra	Vibrational Spectra	skos:closeMatch	CHMO:0000829	vibrational spectrum	semapv:ManualMappingCuration	owl class	Gainesville Core 0.7 original; CHMO's is measured; GC's is computed
+gc:constraintMode		skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl data property	used in data but declared in no schema (minted in gc: namespace); none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology; also undeclared in GC and in the fork
+gc:hasAtom	has atom	skos:broadMatch	BFO:0000051	has part	semapv:ManualMappingCuration	owl object property	Gainesville Core 0.7 original
+gc:hasBasisSet	has basis set	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl data property	Gainesville Core 0.7 original; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology; see cthoyt/basis-set-ontology-demo
+gc:hasElectronicEnergy	has electronic energy	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl object property	Gainesville Core 0.7 original; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+gc:hasElementSymbol	has element symbol	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl data property	Gainesville Core 0.7 original; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); COB:0000800 has atomic number is the nearest property
+gc:hasEnthalpy	has enthalpy	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl object property	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7); none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+gc:hasEntropy	has entropy	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl object property	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7); none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+gc:hasFloatValue	has float value	skos:closeMatch	IAO:0000004	has measurement value	semapv:ManualMappingCuration	owl data property	Gainesville Core 0.7 original; computed rather than measured value
+gc:hasFrequency	has frequency	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl object property	Gainesville Core 0.7 original; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+gc:hasFrequencyPeak	has frequency peak	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl object property	Gainesville Core 0.7 original; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+gc:hasGibbsFreeEnergy	has Gibbs free energy	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl object property	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7); none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+gc:hasInChIKey	has InChI key	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl data property	Gainesville Core 0.7 original; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); no property; CHEMINF:000059 InChIKey exists as a class
+gc:hasInChIString	has InChI string	skos:exactMatch	COB:0000803	has inchi string	semapv:ManualMappingCuration	owl data property	Gainesville Core 0.7 original
+gc:hasIndex	has index	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl data property	Gainesville Core 0.7 original; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28)
+gc:hasIntensity	has Intensity	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl object property	Gainesville Core 0.7 original; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+gc:hasMethod	has method	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl data property	Gainesville Core 0.7 original; none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+gc:hasMolecule	has molecule	skos:broadMatch	BFO:0000051	has part	semapv:ManualMappingCuration	owl object property	Gainesville Core 0.7 original
+gc:hasPathEnergy	has path energy	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl object property	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7); none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+gc:hasReactionPathPoint	has reaction path point	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl object property	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7); none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology
+gc:hasResult	has result	skos:closeMatch	OBI:0000299	has specified output	semapv:ManualMappingCuration	owl object property	Gainesville Core 0.7 original; computation to its result
+gc:hasUnit	has unit	skos:closeMatch	IAO:0000039	has measurement unit label	semapv:ManualMappingCuration	owl object property	Gainesville Core 0.7 original
+gc:hasZeroPointEnergy	has zero-point energy	skos:exactMatch	sssom:NoTermFound		semapv:ManualMappingCuration	owl object property	added in gc: namespace by the GC-Ontology-Mirror fork (not in GC 0.7); none found in CHEMINF, CHMO, OBI, IAO, COB, SIO or OntoCompChem (2026-10-28); candidate for the new comp-chem ontology; OntoCompChem has a ZeroPointEnergy class, not a property
