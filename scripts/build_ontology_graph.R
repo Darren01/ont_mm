@@ -51,11 +51,15 @@ build_ontology_graph <- function(ontology_dir, release_file, output_file, extens
   # combined file first (robot merge's own --input IS confirmed to
   # accept several), and use that as the experiment template's own
   # --merge-before input instead of release_file directly.
+  # Quote every file path: a path containing a space (e.g. "OneDrive - CPI")
+  # would otherwise be split into separate arguments by the shell.
+  q <- function(x) shQuote(x, type = if (.Platform$OS.type == "windows") "cmd" else "sh")
+
   experiment_merge_input <- release_file
   if (!is.null(extensions_file)) {
     experiment_merge_input <- file.path(ontology_dir, "release_with_extensions.ttl")
-    premerge_args <- c("merge", "--input", release_file, "--input", extensions_file,
-                        "--output", experiment_merge_input)
+    premerge_args <- c("merge", "--input", q(release_file), "--input", q(extensions_file),
+                        "--output", q(experiment_merge_input))
     premerge_result <- system2(robot_cmd, premerge_args, stdout = TRUE, stderr = TRUE)
     premerge_status <- attr(premerge_result, "status")
     if (!is.null(premerge_status) && premerge_status != 0) {
@@ -90,15 +94,15 @@ build_ontology_graph <- function(ontology_dir, release_file, output_file, extens
 
     args <- c(
       "template",
-      "--template", instances_file,
+      "--template", q(instances_file),
       "--merge-before",
-      "--input", merge_before_input,
+      "--input", q(merge_before_input),
       "--ontology-iri", "http://purl.org/gc/core",
       "--prefix", shQuote("gc: http://purl.org/gc/"),
       "--prefix", shQuote("ex: http://example.org/"),
       "--prefix", shQuote("dcterms: http://purl.org/dc/terms/"),
       "--prefix", shQuote("skos: http://www.w3.org/2004/02/skos/core#"),
-      "--output", ttl_file
+      "--output", q(ttl_file)
     )
     if (t == "experiment") {
       args <- c(args, "--prefix", shQuote("prov: http://www.w3.org/ns/prov#"))
@@ -128,9 +132,9 @@ build_ontology_graph <- function(ontology_dir, release_file, output_file, extens
   cat("\nMerging", length(ttl_files), "template(s) into final graph...\n")
   merge_args <- c("merge")
   for (f in ttl_files) {
-    merge_args <- c(merge_args, "--input", f)
+    merge_args <- c(merge_args, "--input", q(f))
   }
-  merge_args <- c(merge_args, "--output", output_file)
+  merge_args <- c(merge_args, "--output", q(output_file))
 
   merge_result <- system2(robot_cmd, merge_args, stdout = TRUE, stderr = TRUE)
   merge_status <- attr(merge_result, "status")
