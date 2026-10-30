@@ -588,6 +588,8 @@ tab character would now be (correctly) flagged as ambiguous rather
 than silently absorbed - unlikely in practice for hand-typed free
 text.
 
+The .inp, .log and .dat files for a run must share exactly the same name (apart from the extension). The pipeline pairs them by name, so a typo in a log or data file name means that run silently loses its level of theory and file links. The .inp name is the master; rename the output files to match it.
+
 **Option A (cloned):**
 ```r
 source(file.path(my_code_dir, "gamess_functions/R/notes_to_annotations.R"))

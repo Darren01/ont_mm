@@ -1,3 +1,27 @@
+# When a run has no .log/.dat with exactly its name, look among the files in
+# that folder that match NO input at all and suggest the closest one. The
+# pipeline pairs files strictly by name (the .inp name is the master), so a
+# typo in an output file name otherwise silently drops that run's level of
+# theory and file links. Returns a character vector like
+# "4-MNEB20261026a -> 4-MNEB-20261026a.log"; suggestions only, nothing is renamed.
+suggest_renames <- function(missing_names, dir, ext, input_stems) {
+  files <- list.files(dir, pattern = paste0("\\.", ext, "$"), ignore.case = TRUE)
+  stems <- sub(paste0("\\.", ext, "$"), "", files, ignore.case = TRUE)
+  keep  <- !(stems %in% input_stems)          # output files no input claims
+  files <- files[keep]; stems <- stems[keep]
+  if (length(stems) == 0) return(character(0))
+  norm <- function(x) gsub("[^a-z0-9]", "", tolower(x))
+  out <- character(0)
+  for (m in missing_names) {
+    d <- as.vector(adist(norm(m), norm(stems)))
+    best <- which(d == min(d))             # all equally close candidates
+    if (min(d) <= max(2, ceiling(0.2 * nchar(norm(m))))) {
+      out <- c(out, paste0(m, " -> ", paste(files[best], collapse = "  OR  ")))
+    }
+  }
+  out
+}
+
 process_experiments <- function(
     template_file,
     input_dir,
@@ -73,6 +97,8 @@ process_experiments <- function(
   # fileURL and schema:sha256 blank, as it always has; this only says so.
   report_missing <- function(kind, dir, missing_names, total, consequence) {
     if (length(missing_names) == 0) return(invisible(NULL))
+    hints <- suggest_renames(missing_names, dir, sub("^\\.", "", kind),
+                             sub("\\.inp$", "", basename(input_files)))
     shown <- head(missing_names, 10)
     more  <- length(missing_names) - length(shown)
     message(
@@ -80,7 +106,11 @@ process_experiments <- function(
       if (length(missing_names) == 1) "has" else "have", " no ", kind,
       " file in ", dir, ": ", paste(shown, collapse = ", "),
       if (more > 0) paste0(" ... and ", more, " more") else "",
-      ". ", consequence
+      ". ", consequence,
+      if (length(hints) > 0) paste0(
+        "\nPossible name mismatch - the .inp name is the master, rename the ",
+        kind, " file to match:\n  ", paste(hints, collapse = "\n  ")
+      ) else ""
     )
     invisible(NULL)
   }
